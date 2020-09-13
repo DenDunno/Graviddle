@@ -1,17 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using System.Threading;
-using System.Threading.Tasks;
 using System;
-using UnityEngine.SceneManagement;
+using System.Collections;
 
 public enum CharState
 {
-    Idle, // = 0
-    Run,  // = 1
-    Fall, // = 2
-    Die   // = 4
+    IDLE, // = 0
+    RUN,  // = 1
+    FALL, // = 2
+    DIE   // = 4
 }
 
 
@@ -31,7 +28,7 @@ public class Character : MonoBehaviour
 
     private float speed = 4.5f;
     private float speed_of_rotation = 5f;
-    private float lift_force = 0.8f;
+    private float lift_force = 0.8f;      // сила, которая толкает персонажа при повороте на 90 градусов (чтобы не цеплял пол)
 
     new private Rigidbody2D rigidbody;
     private Animator animator;
@@ -43,9 +40,9 @@ public class Character : MonoBehaviour
         set { animator.SetInteger("State", (int)value); }
     }
 
-    public static bool IsAlive = true;
-    private bool isGrounded = true;
-    
+    public bool IsAlive    { get; private set; } = true;
+    public bool IsGrounded { get; private set; } = true;
+
 
     private Gravity_direction current_direction;
     private Dictionary <Gravity_direction, Quaternion> gravDir_to_Quaternion;
@@ -80,6 +77,7 @@ public class Character : MonoBehaviour
 
     private Start_portal start_portal;
 
+
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -109,7 +107,6 @@ public class Character : MonoBehaviour
         {
             Run();
             CheckGround();
-            CheckSwipe();
         }
     }
 
@@ -124,10 +121,11 @@ public class Character : MonoBehaviour
     {
         if (touch_controller.Character_movement != Movement.STOP)
         {
-            if (isGrounded)
-                State = CharState.Run;
+            if (IsGrounded)
+                State = CharState.RUN;
 
-            Vector3 move_direction = transform.right * (int)touch_controller.Character_movement * (current_direction == Gravity_direction.UP ? -1 : 1); // Инверсия, когда персонаж вверху
+            // Инверсия, когда персонаж вверху
+            Vector3 move_direction = transform.right * (int)touch_controller.Character_movement * (current_direction == Gravity_direction.UP ? -1 : 1);
 
             transform.position = Vector3.MoveTowards(transform.position, transform.position + move_direction, speed * Time.deltaTime);
 
@@ -152,64 +150,62 @@ public class Character : MonoBehaviour
             }
         }
 
-        else if (isGrounded)
-            State = CharState.Idle;
-    }
-
-
-    private void Change_gravity(NewGravitation newGravitation)
-    {
-        int rotation_angle = (int)Math.Abs(Quaternion.Angle(gravDir_to_Quaternion[current_direction], gravDir_to_Quaternion[newGravitation.direction]));
-
-        if (rotation_angle == 90)
-            rigidbody.AddForce(transform.up * lift_force, ForceMode2D.Impulse); // При смене гравитации на 90 градусов перс "цепляется" за пол
-
-        Physics2D.gravity = newGravitation.gravitaion_vector;
-        current_direction = newGravitation.direction;
-
-        touch_controller.IsSwipe = false;
-    }
-
-
-    private void CheckSwipe()
-    {
-        if (touch_controller.IsSwipe)
-            Change_gravity(swipe_to_new_gravitaion[touch_controller.Swipe]);
+        else if (IsGrounded)
+            State = CharState.IDLE;
     }
 
 
     private void CheckGround()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.5f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1f);
 
-        isGrounded = colliders.Length > 1; 
-        
-        if (!isGrounded)
-        State = CharState.Fall;
+        IsGrounded = colliders.Length > 1;
+
+        if (!IsGrounded)
+            State = CharState.FALL;
     }
 
 
-    public void Die()
+    public void Change_gravity()
+    {
+        NewGravitation newGravitation = swipe_to_new_gravitaion[touch_controller.Swipe];
+
+        int rotation_angle = (int)Math.Abs(Quaternion.Angle(gravDir_to_Quaternion[current_direction], gravDir_to_Quaternion[newGravitation.direction]));
+
+        if (rotation_angle == 90)
+            rigidbody.AddForce(transform.up * lift_force, ForceMode2D.Impulse); // При смене гравитации на 90 градусов персонаж "цепляется" за пол
+
+        Physics2D.gravity = newGravitation.gravitaion_vector;
+        current_direction = newGravitation.direction;
+    }
+
+
+    public IEnumerator Die()
     {
         if (IsAlive) // проверка на "смерть во время смерти" (Когда летишь, будучи мертвым, и натыкаешься на еще что-то)
         {
             IsAlive = false;
-            State = CharState.Die;
-            StartCoroutine(fade_controller.Make_Fade());
+            State = CharState.DIE;
+
+            yield return StartCoroutine(fade_controller.Make_Fade());
+
+            IsAlive = true;
         }
     }
 
 
     public void Restart()
     {
-        State = CharState.Idle;
+        State = CharState.IDLE;
         transform.position = start_position;
         transform.rotation = start_rotation;
         rigidbody.velocity = Vector2.zero;
         current_direction = start_grav.direction;
         Physics2D.gravity = start_grav.gravitaion_vector;
+
         Instantiate(start_portal, transform.position + new Vector3(0, 0.85f, 0), transform.rotation); // портал выше персонажа на 0.85
     }
 }
+
 
 

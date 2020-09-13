@@ -12,10 +12,11 @@ public class Pause : MonoBehaviour
 
     public void Back_to_menu()
     {
-        Time.timeScale = 1;
+        On_Off_PauseMenu(false);
 
         Transit transit;
-        transit = Resources.Load<Transit>("Prefabs/Menu/Transit"); ;
+        transit = Resources.Load<Transit>("Prefabs/Menu/Transit"); 
         transit.SpawnTransit(0);
     }
 }
+

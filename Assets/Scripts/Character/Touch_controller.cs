@@ -20,19 +20,21 @@ public enum Swipe
 }
 
 
-public class Touch_controller : MonoBehaviour , IBeginDragHandler, IDragHandler
+public class Touch_controller : MonoBehaviour, IBeginDragHandler, IDragHandler
 {
-    public Movement Character_movement;
-    public Swipe  Swipe;
-    public bool IsSwipe;
-    
+    public Movement Character_movement { get; private set; }
+    public Swipe Swipe { get; private set; }
+
     private float screen;
-    private float swipe_sensitivity = 15.0f;
+    private float swipe_sensitivity = 1.0f;
+
+    private Character character;
 
 
     private void Start()
     {
         screen = Screen.width;
+        character = FindObjectOfType<Character>();
     }
 
 
@@ -54,30 +56,29 @@ public class Touch_controller : MonoBehaviour , IBeginDragHandler, IDragHandler
     }
   
 
-    public void OnBeginDrag(PointerEventData eventData) 
-    {
-        if (Character.IsAlive)
-            IsSwipe = true;
-
+    public void OnBeginDrag(PointerEventData eventData)
+    { 
         float delta_x = eventData.delta.x;
         float delta_y = eventData.delta.y;
 
-        if (Mathf.Abs(delta_x) > Mathf.Abs(delta_y)) // определяем свайп
+        if (Mathf.Abs(delta_x) + Mathf.Abs(delta_y) > 2 * swipe_sensitivity) // достаточно длинный ли свайп
         {
-            if (delta_x > swipe_sensitivity)
-                Swipe = Swipe.RIGHT;
-            else if (delta_x < -swipe_sensitivity)
-                Swipe = Swipe.LEFT;
-        }
 
-        else
-        {
-            if (delta_y > swipe_sensitivity)
-                Swipe = Swipe.UP;
-            else if (delta_y < -swipe_sensitivity)
-                Swipe = Swipe.DOWN;
+            if (Mathf.Abs(delta_x) > Mathf.Abs(delta_y)) // определяем, в какую сторону свайп "больше"
+            {
+                Swipe = delta_x < -swipe_sensitivity ? Swipe.LEFT : Swipe.RIGHT;
+            }
+
+            else
+            {
+                Swipe = delta_y < -swipe_sensitivity ? Swipe.DOWN : Swipe.UP;
+            }
+
+            if (character.IsAlive && character.IsGrounded) // когда персонаж летит, не происходит смена гравитации
+                character.Change_gravity();
         }
     }
+
 
     public void OnDrag(PointerEventData eventData)
     {

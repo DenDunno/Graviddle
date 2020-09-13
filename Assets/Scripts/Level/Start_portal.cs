@@ -8,6 +8,7 @@ public class Start_portal : MonoBehaviour
     private float speed_of_disappearing;
     private Vector3 disappear_vector;
 
+    private float time_before_disappearance = 1.3f;
 
     private void Start()
     {
@@ -16,7 +17,7 @@ public class Start_portal : MonoBehaviour
 
     private IEnumerator Disappear()
     {
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(time_before_disappearance);
         
         while (transform.localScale.x >= 0)
         {

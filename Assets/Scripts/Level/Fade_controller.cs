@@ -19,12 +19,10 @@ public class Fade_controller : MonoBehaviour
     {
         yield return StartCoroutine(Change_alpha_channel(2, false, death_image)); // затемнение
 
-        character.Restart();
+        character.Restart(); // когда экран черный, делаем все нужные "сбросы" 
 
         yield return new WaitForSeconds(0.7f);
         yield return StartCoroutine(Change_alpha_channel(-1.5f, true, death_image)); // осветление
-
-        Character.IsAlive = true;
     }
 
 

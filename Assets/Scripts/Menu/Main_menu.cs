@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnMusic : MonoBehaviour
+public class Main_menu : MonoBehaviour
 {
     private Object music = null;
 
@@ -17,6 +17,11 @@ public class SpawnMusic : MonoBehaviour
               Т.е. одна непрерывная музыка на все "менюшные" сцены
             */
         }
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 
 }

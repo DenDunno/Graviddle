@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public class Transit : MonoBehaviour
 {
     [SerializeField]
-    private Image Transition_image = null;
+    private Image menu_transition_image = null;
+
+    [SerializeField]
+    private Image level_transition_image = null;
 
 
     private void Start()
@@ -30,15 +33,18 @@ public class Transit : MonoBehaviour
 
     private  IEnumerator Make_Transition(int scene)
     {
+        Image transition_image = scene >= 0 && scene <= 2 ? menu_transition_image : level_transition_image;
+        // Переход в меню или между уровнями
+
         AsyncOperation loading_menu_scene = SceneManager.LoadSceneAsync(scene);
         loading_menu_scene.allowSceneActivation = false;
 
-        yield return StartCoroutine(Fade_controller.Change_alpha_channel(2, false, Transition_image));
+        yield return StartCoroutine(Fade_controller.Change_alpha_channel(2, false, transition_image));
 
         yield return new WaitUntil(() => loading_menu_scene.progress >= 0.9f);
         loading_menu_scene.allowSceneActivation = true;
 
-        yield return StartCoroutine(Fade_controller.Change_alpha_channel(-2, true, Transition_image));
+        yield return StartCoroutine(Fade_controller.Change_alpha_channel(-2, true, transition_image));
 
 
         Destroy(gameObject);

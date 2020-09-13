@@ -9,6 +9,6 @@ public class Obstacle : MonoBehaviour
         Character character = collision.GetComponent<Character>();
 
         if (character)
-            character.Die();
+            StartCoroutine(character.Die());
     }
 }

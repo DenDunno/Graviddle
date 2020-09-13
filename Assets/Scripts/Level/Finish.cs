@@ -10,7 +10,7 @@ public class Finish : MonoBehaviour
     {
         Character character = collision.GetComponent<Character>();
 
-        if (character)
+        if (character && character.IsAlive)
         {
             int active_scene = SceneManager.GetActiveScene().buildIndex;
 
