@@ -43,7 +43,7 @@ public class Touch_controller : MonoBehaviour, IBeginDragHandler, IDragHandler
         int i = 0;
         Character_movement = Movement.STOP;
 
-        while (i < Input.touchCount)
+        while (i < Input.touchCount && Finish.IsPLaying)
         {
             if (Input.GetTouch(i).position.x > screen / 2)
                 Character_movement = Movement.RIGHT;

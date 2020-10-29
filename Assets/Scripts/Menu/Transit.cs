@@ -36,6 +36,8 @@ public class Transit : MonoBehaviour
         Image transition_image = scene >= 0 && scene <= 2 ? menu_transition_image : level_transition_image;
         // Переход в меню или между уровнями
 
+        Time.timeScale = 1f;
+
         AsyncOperation loading_menu_scene = SceneManager.LoadSceneAsync(scene);
         loading_menu_scene.allowSceneActivation = false;
 

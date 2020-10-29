@@ -23,6 +23,8 @@ public enum Gravity_direction
 
 public class Character : MonoBehaviour
 {
+    public static int num_of_rotations = 0;
+
     private Touch_controller touch_controller;
     private Fade_controller fade_controller;
 
@@ -98,6 +100,8 @@ public class Character : MonoBehaviour
         current_direction = start_grav.direction;
         Physics2D.gravity = start_grav.gravitaion_vector;
         rigidbody.gravityScale = 40;
+
+        num_of_rotations = 0;
     }
 
 
@@ -177,6 +181,8 @@ public class Character : MonoBehaviour
 
         Physics2D.gravity = newGravitation.gravitaion_vector;
         current_direction = newGravitation.direction;
+
+        num_of_rotations++;
     }
 
 
