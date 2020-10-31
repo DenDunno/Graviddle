@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
 public class Reward : MonoBehaviour
 {
     [SerializeField]
-    private int bronze_reward = 5;    
+    private int bronze_reward = 5;
 
     [SerializeField]
     private int gold_reward = 2;
@@ -17,10 +15,9 @@ public class Reward : MonoBehaviour
     {
         Texture2D reward_tex = DefineReward();
 
-        Sprite reward_sp = Sprite.Create(reward_tex, new Rect(0, 0, reward_tex.width, reward_tex.height), Vector2.zero);
+        Sprite reward_sprite = Sprite.Create(reward_tex, new Rect(0, 0, reward_tex.width, reward_tex.height), Vector2.zero);
 
-
-        GetComponent<Image>().sprite = reward_sp;
+        GetComponent<Image>().sprite = reward_sprite;
     }
 
 
@@ -39,6 +36,9 @@ public class Reward : MonoBehaviour
         else
             answer = "Gold";
 
+
+        int currentScene = SceneManager.GetActiveScene().buildIndex - 3; // 3 - количество "менюшных" сцен
+        SaveSystem.MakeSave(currentScene, answer);
 
         return Resources.Load<Texture2D>("Level/Cup/" + answer);
     }

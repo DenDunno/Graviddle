@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
-using System;
+﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public enum CharState
 {
@@ -12,7 +12,7 @@ public enum CharState
 }
 
 
-public enum Gravity_direction
+public enum GravityDirection
 {
     LEFT,
     DOWN,
@@ -25,8 +25,8 @@ public class Character : MonoBehaviour
 {
     public static int num_of_rotations = 0;
 
-    private Touch_controller touch_controller;
-    private Fade_controller fade_controller;
+    private TouchController touch_controller;
+    private FadeController fade_controller;
 
     private float speed = 4.5f;
     private float speed_of_rotation = 5f;
@@ -42,19 +42,19 @@ public class Character : MonoBehaviour
         set { animator.SetInteger("State", (int)value); }
     }
 
-    public bool IsAlive    { get; private set; } = true;
+    public bool IsAlive { get; private set; } = true;
     public bool IsGrounded { get; private set; } = true;
 
 
-    private Gravity_direction current_direction;
-    private Dictionary <Gravity_direction, Quaternion> gravDir_to_Quaternion;
+    private GravityDirection current_direction;
+    private Dictionary<GravityDirection, Quaternion> gravDir_to_Quaternion;
 
     private class NewGravitation
     {
-        public Gravity_direction direction;
+        public GravityDirection direction;
         public Vector2 gravitaion_vector;
 
-        public NewGravitation (Gravity_direction d , Vector2 g_v)
+        public NewGravitation(GravityDirection d, Vector2 g_v)
         {
             direction = d;
             gravitaion_vector = g_v;
@@ -64,10 +64,10 @@ public class Character : MonoBehaviour
     private Dictionary<Swipe, NewGravitation> swipe_to_new_gravitaion =
         new Dictionary<Swipe, NewGravitation>()
         {
-             {Swipe.UP    , new NewGravitation (Gravity_direction.UP     ,  new Vector2(0  ,  1)) },
-             {Swipe.DOWN  , new NewGravitation (Gravity_direction.DOWN   ,  new Vector2(0  , -1)) },
-             {Swipe.LEFT  , new NewGravitation (Gravity_direction.LEFT   ,  new Vector2(-1 ,  0)) },
-             {Swipe.RIGHT , new NewGravitation (Gravity_direction.RIGHT  ,  new Vector2(1  ,  0)) }
+             {Swipe.UP    , new NewGravitation (GravityDirection.UP     ,  new Vector2(0  ,  1)) },
+             {Swipe.DOWN  , new NewGravitation (GravityDirection.DOWN   ,  new Vector2(0  , -1)) },
+             {Swipe.LEFT  , new NewGravitation (GravityDirection.LEFT   ,  new Vector2(-1 ,  0)) },
+             {Swipe.RIGHT , new NewGravitation (GravityDirection.RIGHT  ,  new Vector2(1  ,  0)) }
         };
 
 
@@ -77,7 +77,7 @@ public class Character : MonoBehaviour
     private Vector3 start_position;
     private Quaternion start_rotation;
 
-    private Start_portal start_portal;
+    private StartPortal start_portal;
 
 
     private void Start()
@@ -85,13 +85,13 @@ public class Character : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sprite = GetComponentInChildren<SpriteRenderer>();
-        touch_controller = FindObjectOfType<Touch_controller>();
-        fade_controller = FindObjectOfType<Fade_controller>();
-        start_portal = Resources.Load<Start_portal>("Prefabs/Level/Start");
+        touch_controller = FindObjectOfType<TouchController>();
+        fade_controller = FindObjectOfType<FadeController>();
+        start_portal = Resources.Load<StartPortal>("Prefabs/Level/Start");
 
-        gravDir_to_Quaternion = new Dictionary<Gravity_direction, Quaternion>();
+        gravDir_to_Quaternion = new Dictionary<GravityDirection, Quaternion>();
         for (int dir = 0, ang = -90; dir < 4; ++dir, ang += 90)
-            gravDir_to_Quaternion[(Gravity_direction)dir] = Quaternion.AngleAxis(ang, transform.forward);
+            gravDir_to_Quaternion[(GravityDirection)dir] = Quaternion.AngleAxis(ang, transform.forward);
 
         start_grav = swipe_to_new_gravitaion[key_to_start_gravitation];
         start_position = transform.position;
@@ -129,25 +129,25 @@ public class Character : MonoBehaviour
                 State = CharState.RUN;
 
             // Инверсия, когда персонаж вверху
-            Vector3 move_direction = transform.right * (int)touch_controller.Character_movement * (current_direction == Gravity_direction.UP ? -1 : 1);
+            Vector3 move_direction = transform.right * (int)touch_controller.Character_movement * (current_direction == GravityDirection.UP ? -1 : 1);
 
             transform.position = Vector3.MoveTowards(transform.position, transform.position + move_direction, speed * Time.deltaTime);
 
             switch (current_direction)
             {
-                case Gravity_direction.DOWN:
+                case GravityDirection.DOWN:
                     sprite.flipX = move_direction.x < 0.0F;
                     break;
 
-                case Gravity_direction.UP:
+                case GravityDirection.UP:
                     sprite.flipX = move_direction.x > 0.0F;
                     break;
 
-                case Gravity_direction.RIGHT:
+                case GravityDirection.RIGHT:
                     sprite.flipX = move_direction.y < 0.0F;
                     break;
 
-                case Gravity_direction.LEFT:
+                case GravityDirection.LEFT:
                     sprite.flipX = move_direction.y > 0.0F;
                     break;
 
@@ -170,7 +170,7 @@ public class Character : MonoBehaviour
     }
 
 
-    public void Change_gravity()
+    public void ChangeGravity()
     {
         NewGravitation newGravitation = swipe_to_new_gravitaion[touch_controller.Swipe];
 

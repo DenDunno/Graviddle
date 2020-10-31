@@ -14,14 +14,14 @@ public class Transit : MonoBehaviour
 
 
     private void Start()
-    { 
+    {
         DontDestroyOnLoad(gameObject);
     }
-    
+
 
     public void SpawnTransit(int scene)
     {
-        Instantiate(this).ActivateTransit(scene);   
+        Instantiate(this).ActivateTransit(scene);
     }
 
 
@@ -31,7 +31,7 @@ public class Transit : MonoBehaviour
     }
 
 
-    private  IEnumerator Make_Transition(int scene)
+    private IEnumerator Make_Transition(int scene)
     {
         Image transition_image = scene >= 0 && scene <= 2 ? menu_transition_image : level_transition_image;
         // Переход в меню или между уровнями
@@ -41,12 +41,12 @@ public class Transit : MonoBehaviour
         AsyncOperation loading_menu_scene = SceneManager.LoadSceneAsync(scene);
         loading_menu_scene.allowSceneActivation = false;
 
-        yield return StartCoroutine(Fade_controller.Change_alpha_channel(2, false, transition_image));
+        yield return StartCoroutine(FadeController.Change_alpha_channel(2, false, transition_image));
 
         yield return new WaitUntil(() => loading_menu_scene.progress >= 0.9f);
         loading_menu_scene.allowSceneActivation = true;
 
-        yield return StartCoroutine(Fade_controller.Change_alpha_channel(-2, true, transition_image));
+        yield return StartCoroutine(FadeController.Change_alpha_channel(-2, true, transition_image));
 
 
         Destroy(gameObject);

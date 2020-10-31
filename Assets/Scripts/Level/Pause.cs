@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
@@ -15,7 +13,7 @@ public class Pause : MonoBehaviour
         On_Off_PauseMenu(false);
 
         Transit transit;
-        transit = Resources.Load<Transit>("Prefabs/Menu/Transit"); 
+        transit = Resources.Load<Transit>("Prefabs/Menu/Transit");
         transit.SpawnTransit(0);
     }
 }
