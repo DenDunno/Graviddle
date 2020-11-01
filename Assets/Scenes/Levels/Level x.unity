@@ -302,6 +302,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'MovingSpike '
       objectReference: {fileID: 0}
+    - target: {fileID: 6281889084598707212, guid: 118512f900deff94780630f371afa74b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6281889084598707213, guid: 118512f900deff94780630f371afa74b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1560,7 +1565,7 @@ GameObject:
   - component: {fileID: 352014594}
   - component: {fileID: 352014593}
   m_Layer: 0
-  m_Name: MovingAxe
+  m_Name: Axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8697,12 +8702,12 @@ GameObject:
   - component: {fileID: 1885187106}
   - component: {fileID: 1885187105}
   m_Layer: 0
-  m_Name: MovingSawDelay
+  m_Name: SawDelay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1885187104
 Transform:
   m_ObjectHideFlags: 0
@@ -8727,7 +8732,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1885187103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c90225716c41ca4c874a6ffaa9e968e, type: 3}
+  m_Script: {fileID: 11500000, guid: 864e84d60f38cd0409bd07957c9e9aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
@@ -8913,7 +8918,7 @@ GameObject:
   - component: {fileID: 1915967634}
   - component: {fileID: 1915967633}
   m_Layer: 0
-  m_Name: MovingSaw
+  m_Name: Saw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8943,11 +8948,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1915967631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0477bede469dda4f871ff13f1994c7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5bbb54c289882c94ca7c252eca3b44a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  distance: 4.85
+  speed: 3
+  distance: 4.9
   goRight: 1
 --- !u!61 &1915967634
 BoxCollider2D:
@@ -11084,12 +11089,12 @@ GameObject:
   - component: {fileID: 6164044430790880852}
   - component: {fileID: 6164044430790880860}
   m_Layer: 0
-  m_Name: MovingSawDelay
+  m_Name: SawDelay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &6164044430790880858
 Animator:
   serializedVersion: 3
@@ -11133,7 +11138,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6164044430790880857}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c90225716c41ca4c874a6ffaa9e968e, type: 3}
+  m_Script: {fileID: 11500000, guid: 864e84d60f38cd0409bd07957c9e9aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
@@ -11680,6 +11685,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 'MovingSpike '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281889084598707212, guid: 118512f900deff94780630f371afa74b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6281889084598707213, guid: 118512f900deff94780630f371afa74b,
         type: 3}

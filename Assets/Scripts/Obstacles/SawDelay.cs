@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class MovingSawDelay : MovingSaw
+public class SawDelay : Saw
 {
     [SerializeField]
     private float wait_time = 2f;
-    protected override void ChangeTarget(ref Vector3 target)
+    protected override void ChangeTarget()
     {
-        base.ChangeTarget(ref target);
+        base.ChangeTarget();
         StartCoroutine(Wait());
     }
 
