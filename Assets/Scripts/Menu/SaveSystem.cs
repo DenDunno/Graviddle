@@ -64,6 +64,6 @@ public class SaveSystem : MonoBehaviour
 
         string json = JsonConvert.SerializeObject(levels);
 
-        File.WriteAllText(path, json);
+        File.WriteAllText(Path.Combine(Application.dataPath, "Save.json"), json);
     }
 }

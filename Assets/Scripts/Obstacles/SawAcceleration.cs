@@ -18,13 +18,14 @@ public class SawAcceleration : Saw
 
     private float time;
     private float lerp;
-    private double period;
+
+    protected float period;
 
     private void Start()
     {
         start = transform.position; // point A
         target = start + transform.right * distance * (goRight ? 1 : -1); // point B
-        period = 2 * Math.PI / speed;
+        period = (float)(2 * Math.PI / speed);
     }
 
     private void Update()
