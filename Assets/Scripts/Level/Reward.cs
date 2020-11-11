@@ -23,7 +23,7 @@ public class Reward : MonoBehaviour
 
     private Texture2D DefineReward()
     {
-        int result = Character.num_of_rotations;
+        int result = Character.NumOfRotations;
         string answer;
 
 
