@@ -16,28 +16,28 @@ public class SawAcceleration : Saw
     Период f = 2PI / a
     */
 
-    private float time;
-    private float lerp;
+    private float _time;
+    private float _lerp;
 
-    protected float period;
+    protected float _period;
 
     private void Start()
     {
-        start = transform.position; // point A
-        target = start + transform.right * distance * (goRight ? 1 : -1); // point B
-        period = (float)(2 * Math.PI / speed);
+        _start = transform.position; // point A
+        _target = _start + transform.right * _distance * (_goRight ? 1 : -1); // point B
+        _period = (float)(2 * Math.PI / _speed);
     }
 
     private void Update()
     {
-        time += Time.deltaTime;
+        _time += Time.deltaTime;
 
-        if (time >= period)
-            time = 0;
+        if (_time >= _period)
+            _time = 0;
 
-        lerp = (float)(1 - Math.Cos(speed * time)) / 2;
+        _lerp = (float)(1 - Math.Cos(_speed * _time)) / 2;
 
-        transform.position = Vector3.Lerp(start, target, lerp);
+        transform.position = Vector3.Lerp(_start, _target, _lerp);
     }
 }
 

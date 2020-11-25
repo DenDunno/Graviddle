@@ -2,7 +2,7 @@
 
 public class Arrow : Obstacle
 {
-    private float speed = 15f;
+    private float _speed = 15f;
 
     private void Start()
     {
@@ -11,6 +11,6 @@ public class Arrow : Obstacle
 
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + transform.up, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, transform.position + transform.up, _speed * Time.deltaTime);
     }
 }

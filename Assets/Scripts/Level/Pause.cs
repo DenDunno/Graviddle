@@ -2,15 +2,15 @@
 
 public class Pause : MonoBehaviour
 {
-    public void On_Off_PauseMenu(bool active)
+    public void SwitchPauseMenu(bool active)
     {
         gameObject.SetActive(active);
         Time.timeScale = active ? 0 : 1;
     }
 
-    public void Back_to_menu()
+    public void BackToMenu()
     {
-        On_Off_PauseMenu(false);
+        SwitchPauseMenu(false);
 
         Transit transit;
         transit = Resources.Load<Transit>("Prefabs/Menu/Transit");

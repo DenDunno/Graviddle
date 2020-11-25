@@ -3,19 +3,19 @@ using UnityEngine;
 
 public class ArrowTrap : MonoBehaviour
 {
-    private Arrow arrow;
+    private Arrow _arrow;
 
     private void Start()
     {
-        arrow = Resources.Load<Arrow>("Prefabs/Obstacles/Arrow");
-        StartCoroutine(Arrow_spawn());
+        _arrow = Resources.Load<Arrow>("Prefabs/Obstacles/Arrow");
+        StartCoroutine(ArrowSpawn());
     }
 
-    private IEnumerator Arrow_spawn()
+    private IEnumerator ArrowSpawn()
     {
         while (true)
         {
-            Instantiate(arrow, transform.position, transform.rotation);
+            Instantiate(_arrow, transform.position, transform.rotation);
             yield return new WaitForSeconds(2f);
         }
     }

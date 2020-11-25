@@ -6,36 +6,35 @@ using UnityEngine;
 public class FinishPortal : SawAcceleration 
 {
     [SerializeField]
-    private GameObject win_panel = null;
+    private GameObject _winPanel = null;
 
     static public bool IsPLaying { get; private set; }
 
 
     private void Start()
     {
-        start = transform.position;
-        target = start + transform.up / 8;
-        period = (float)(2 * Math.PI / speed);
+        _start = transform.position;
+        _target = _start + transform.up / 8;
+        _period = (float)(2 * Math.PI / _speed);
     }
 
     private void FixedUpdate()
     {
-        IsPLaying = !win_panel.activeInHierarchy;
+        IsPLaying = !_winPanel.activeInHierarchy;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Character character = collision.GetComponent<Character>();
 
-        if (character && character.IsAlive)
+        if (character && Character.IsAlive)
         {
             Time.timeScale = 0.5f;
             Time.fixedDeltaTime = Time.timeScale * 0.02f;
 
 
-            win_panel.SetActive(true);
+            _winPanel.SetActive(true);
 
         }
-
     }
 }

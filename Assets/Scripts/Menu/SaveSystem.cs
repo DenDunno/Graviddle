@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 public class SaveSystem : MonoBehaviour
 {
-    private static string path;
+    private static string _path;
 
-    private static Dictionary<int, string> levels = new Dictionary<int, string>();
+    private static Dictionary<int, string> _levels = new Dictionary<int, string>();
 
-    private Dictionary<string, Color32> paintButton = new Dictionary<string, Color32>
+    private Dictionary<string, Color32> _paintButton = new Dictionary<string, Color32>
     {
         {"Gold"   , new Color32(255, 223, 0 , 255) },
         {"Silver" , new Color32(192, 192, 192, 255)},
@@ -21,11 +21,11 @@ public class SaveSystem : MonoBehaviour
 
     private void Start()
     {
-        path = Path.Combine(Application.dataPath, "Save.json");
+        _path = Path.Combine(Application.dataPath, "Save.json");
         string json = "";
 
-        if (File.Exists(path))
-            json = File.ReadAllText(path);
+        if (File.Exists(_path))
+            json = File.ReadAllText(_path);
 
         if (json.Length != 0) 
             OpenLevels(json);
@@ -52,7 +52,7 @@ public class SaveSystem : MonoBehaviour
                 buttons[i].interactable = true;
 
             if (i < passedLevels.Count) // // раскрасить кнопку пройденных уровней в золотой, серебрянный или бронзовый цвет
-                buttons[i].GetComponent<Image>().color = paintButton[passedLevels[i]]; 
+                buttons[i].GetComponent<Image>().color = _paintButton[passedLevels[i]]; 
         }
     }
 
@@ -60,9 +60,9 @@ public class SaveSystem : MonoBehaviour
 
     public static void MakeSave(int indexOfLevel, string result)
     {
-        levels[indexOfLevel] = result;
+        _levels[indexOfLevel] = result;
 
-        string json = JsonConvert.SerializeObject(levels);
+        string json = JsonConvert.SerializeObject(_levels);
 
         File.WriteAllText(Path.Combine(Application.dataPath, "Save.json"), json);
     }

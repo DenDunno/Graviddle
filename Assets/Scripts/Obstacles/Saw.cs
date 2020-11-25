@@ -3,37 +3,37 @@
 public class Saw : Obstacle
 {
     [SerializeField]
-    protected float speed = 4;
+    protected float _speed = 4;
 
     [SerializeField]
-    protected float distance = 1;
+    protected float _distance = 1;
 
     [SerializeField]
-    protected bool goRight = true;
+    protected bool _goRight = true;
 
-    protected Vector3 start;
-    protected Vector3 target;
-    protected Vector3 temp;
+    protected Vector3 _start;
+    protected Vector3 _target;
+    protected Vector3 _temp;
 
     private void Start()
     {
-        start = transform.position;
-        target = start + transform.right * distance * (goRight ? 1 : -1);
+        _start = transform.position;
+        _target = _start + transform.right * _distance * (_goRight ? 1 : -1);
     }
 
     private void Update()
     {
-        if (Vector2.Distance(transform.position, target) <= Vector2.kEpsilon)
+        if (Vector2.Distance(transform.position, _target) <= Vector2.kEpsilon)
             ChangeTarget();
 
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, _target, _speed * Time.deltaTime);
     }
 
     protected virtual void ChangeTarget()
     {
-        temp = start;
-        start = target;
-        target = temp;
+        _temp = _start;
+        _start = _target;
+        _target = _temp;
     }
 }
 

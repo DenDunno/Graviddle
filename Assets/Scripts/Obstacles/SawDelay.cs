@@ -4,7 +4,7 @@ using UnityEngine;
 public class SawDelay : Saw
 {
     [SerializeField]
-    private float wait_time = 2f;
+    private float _waitTime = 2f;
     protected override void ChangeTarget()
     {
         base.ChangeTarget();
@@ -13,9 +13,9 @@ public class SawDelay : Saw
 
     private IEnumerator Wait()
     {
-        float temp = speed;
-        speed = 0;
-        yield return new WaitForSeconds(wait_time);
-        speed = temp;
+        float temp = _speed;
+        _speed = 0;
+        yield return new WaitForSeconds(_waitTime);
+        _speed = temp;
     }
 }

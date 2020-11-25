@@ -13,17 +13,17 @@ public class Reward : MonoBehaviour
 
     private void Start()
     {
-        Texture2D reward_tex = DefineReward();
+        Texture2D rewardTex = DefineReward();
 
-        Sprite reward_sprite = Sprite.Create(reward_tex, new Rect(0, 0, reward_tex.width, reward_tex.height), Vector2.zero);
+        Sprite rewardSprite = Sprite.Create(rewardTex, new Rect(0, 0, rewardTex.width, rewardTex.height), Vector2.zero);
 
-        GetComponent<Image>().sprite = reward_sprite;
+        GetComponent<Image>().sprite = rewardSprite;
     }
 
 
     private Texture2D DefineReward()
     {
-        int result = Character.NumOfRotations;
+        int result = GravityChangeType.NumOfRotations;
         string answer;
 
 
