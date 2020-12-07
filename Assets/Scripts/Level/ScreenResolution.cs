@@ -2,16 +2,16 @@
 
 public class ScreenResolution : MonoBehaviour
 {
-    new private Camera camera;
+    private Camera _camera;
 
     private void Awake()
     {
-        camera = GetComponent<Camera>();
+        _camera = GetComponent<Camera>();
     }
 
     private void Update()
     {
-        camera.aspect = 1280f / 720f;
+        _camera.aspect = 1280f / 720f;
     }
 }
 

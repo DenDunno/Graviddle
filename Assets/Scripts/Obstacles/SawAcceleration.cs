@@ -21,10 +21,9 @@ public class SawAcceleration : Saw
 
     protected float _period;
 
-    private void Start()
+    protected override void Start()
     {
-        _start = transform.position; // point A
-        _target = _start + transform.right * _distance * (_goRight ? 1 : -1); // point B
+        base.Start();
         _period = (float)(2 * Math.PI / _speed);
     }
 

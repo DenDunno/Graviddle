@@ -2,12 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Character : MonoBehaviour
 {
+    public static UnityEvent TossingUp = new UnityEvent();
     public static bool IsAlive { get; private set; } = true;
     public static bool IsGrounded { get; private set; } = true;
 
+    [SerializeField]
+    private  GravityDirection _startDirection = GravityDirection.DOWN;
     private GravityChangeType _gravitation;
     private MoveСontrolType _move;
     private ScreenFade _fade;
@@ -18,7 +22,7 @@ public class Character : MonoBehaviour
 
     private float _speed = 4.5f;
     private float _speedOfRotation = 5f;
-    private float _liftForce = 0.8f;  // сила, которая толкает персонажа при повороте на 90 градусов (чтобы не цеплял пол)
+    private float _liftForce = 0.8f;  // сила, которая толкает персонажа при повороте на 90 градусов 
 
     private Rigidbody2D _rigidbody;
     private Animator _animator;
@@ -31,24 +35,24 @@ public class Character : MonoBehaviour
         set { _animator.SetInteger("State", (int)value); }
     }
 
+
     private void Start()
     {
+        IsAlive = true;
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _sprite = GetComponentInChildren<SpriteRenderer>();
-
-        GameObject touchCanvas = Instantiate(Resources.Load<GameObject>("Prefabs/Level/TouchCanvas"));
-
-        _gravitation = touchCanvas.GetComponent<GravityChangeType>();
-        _move = touchCanvas.GetComponent<MoveСontrolType>();
+        
+        InstantiateTouchCanvas();
         _fade = FindObjectOfType<ScreenFade>();
-
-        _gravitation.LoadData();
-
+        
         _startPortal = Resources.Load<StartPortal>("Prefabs/Level/StartPortal");
         _startPosition = transform.position;
         _startRotation = transform.rotation;
         _rigidbody.gravityScale = 40;
+        
+        TossingUp.AddListener(OnTossingUp);
+        _gravitation.MakeStartTurn(_startDirection);
     }
 
 
@@ -61,11 +65,12 @@ public class Character : MonoBehaviour
         }
     }
 
+
     private void Update()
     {
-        Quaternion rotationTo = _gravitation.GetRotation();
-        transform.rotation = Quaternion.Lerp(transform.rotation, rotationTo, Time.deltaTime * _speedOfRotation);
+        transform.rotation = Quaternion.Lerp(transform.rotation, _gravitation.GetRotation(), Time.deltaTime * _speedOfRotation);
     }
+
 
     private void Run()
     {
@@ -75,26 +80,26 @@ public class Character : MonoBehaviour
                 _state = CharacterState.RUN;
 
             // Инверсия, когда персонаж вверху
-            Vector3 move_direction = transform.right * (int)_move.Movement * (_gravitation.Direction == GravityDirection.UP ? -1 : 1);
+            Vector3 moveDirection = transform.right * (int)_move.Movement * (_gravitation.Direction == GravityDirection.UP ? -1 : 1);
 
-            transform.position = Vector3.MoveTowards(transform.position, transform.position + move_direction, _speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + moveDirection, _speed * Time.deltaTime);
 
             switch (_gravitation.Direction)
             {
                 case GravityDirection.DOWN:
-                    _sprite.flipX = move_direction.x < 0.0F;
+                    _sprite.flipX = moveDirection.x < 0.0F;
                     break;
 
                 case GravityDirection.UP:
-                    _sprite.flipX = move_direction.x > 0.0F;
+                    _sprite.flipX = moveDirection.x > 0.0F;
                     break;
 
                 case GravityDirection.RIGHT:
-                    _sprite.flipX = move_direction.y < 0.0F;
+                    _sprite.flipX = moveDirection.y < 0.0F;
                     break;
 
                 case GravityDirection.LEFT:
-                    _sprite.flipX = move_direction.y > 0.0F;
+                    _sprite.flipX = moveDirection.y > 0.0F;
                     break;
 
             }
@@ -104,15 +109,24 @@ public class Character : MonoBehaviour
             _state = CharacterState.IDLE;
     }
 
+
     private void SetIsGrounded()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.15f);
 
         IsGrounded = colliders.Length > 1;
 
         if (!IsGrounded)
             _state = CharacterState.FALL;
     }
+
+
+    private void OnTossingUp()
+    {
+        // При смене гравитации на 90 градусов персонаж "цепляется" за пол
+        _rigidbody.AddForce(transform.up * _liftForce, ForceMode2D.Impulse); 
+    }
+
 
     public IEnumerator Die()
     {
@@ -122,24 +136,57 @@ public class Character : MonoBehaviour
             _state = CharacterState.DIE;
 
             yield return StartCoroutine(_fade.MakeFade());
-
             IsAlive = true;
         }
     }
 
-    public void OnTossingUp()
-    {
-        // При смене гравитации на 90 градусов персонаж "цепляется" за пол
-        _rigidbody.AddForce(transform.up * _liftForce, ForceMode2D.Impulse); 
-    }
 
     public void Restart()
     {
         _state = CharacterState.IDLE;
+        _sprite.color = new Color(255, 255, 255, 0); // делаем прозрачным, чтобы плавно вернуть обратно
         transform.position = _startPosition;
         transform.rotation = _startRotation;
         _rigidbody.velocity = Vector2.zero;
-        Instantiate(_startPortal, transform.position + new Vector3(0, 0.85f, 0), transform.rotation); // портал выше персонажа на 0.85
+        _gravitation.MakeStartTurn(_startDirection);
+        Instantiate(_startPortal, transform.position + transform.up * 0.8f, transform.rotation);
+    }
+
+
+    public void Disappear()
+    {
+        StartCoroutine(ScreenFade.ChangeAlphaChannel(-2f, false, (result) => { _sprite.color = result; }));
+    }
+
+
+    private void InstantiateTouchCanvas()
+    {
+        GameObject touchCanvas = Instantiate(Resources.Load<GameObject>("Prefabs/Level/TouchCanvas"));        
+
+        switch (Settings.MoveType)
+        {
+            case MoveTypeEnum.TOUCH:
+                touchCanvas.AddComponent<TouchHandler>();
+                break;
+
+            case MoveTypeEnum.BUTTONS:
+                touchCanvas.AddComponent<ButtonsControl>();
+                break;
+        }
+
+        switch (Settings.GravityChangeType)
+        {
+            case GravityChangeTypeEnum.SWIPE:
+                touchCanvas.AddComponent<SwipeHandler>();
+                break;
+
+            case GravityChangeTypeEnum.JOYSTICK:
+                touchCanvas.AddComponent<JoystickHandler>();
+                break;
+        }
+
+        _gravitation = touchCanvas.GetComponent<GravityChangeType>();
+        _move = touchCanvas.GetComponent<MoveСontrolType>();
     }
 }
 

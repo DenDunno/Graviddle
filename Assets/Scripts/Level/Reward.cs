@@ -4,20 +4,24 @@ using UnityEngine.UI;
 public class Reward : MonoBehaviour
 {
     [SerializeField]
-    private int bronze_reward = 5;
+    private int _bronzeReward = 5;
 
     [SerializeField]
-    private int gold_reward = 2;
+    private int _goldReward = 2;
 
+    [SerializeField]
+    private GameObject _pauseButton = null;
 
+    [SerializeField]
+    private ParticleSystem _starParicles = null;
 
     private void Start()
     {
         Texture2D rewardTex = DefineReward();
-
         Sprite rewardSprite = Sprite.Create(rewardTex, new Rect(0, 0, rewardTex.width, rewardTex.height), Vector2.zero);
-
         GetComponent<Image>().sprite = rewardSprite;
+
+        _pauseButton.SetActive(false);
     }
 
 
@@ -26,21 +30,26 @@ public class Reward : MonoBehaviour
         int result = GravityChangeType.NumOfRotations;
         string answer;
 
-
-        if (result > bronze_reward)
+        if (result > _bronzeReward)
+        {
             answer = "Bronze";
+        }
 
-        else if (result > gold_reward && result <= bronze_reward)
+        else if (result > _goldReward && result <= _bronzeReward)
+        {
             answer = "Silver";
+        }
 
         else
+        {
             answer = "Gold";
-
+            _starParicles.gameObject.SetActive(true);
+        }
 
         int currentScene = SceneManager.GetActiveScene().buildIndex - 3; // 3 - количество "менюшных" сцен
         SaveSystem.MakeSave(currentScene, answer);
 
-        return Resources.Load<Texture2D>("Level/Cup/" + answer);
+        return Resources.Load<Texture2D>("UI/Cup/" + answer);
     }
 
 }

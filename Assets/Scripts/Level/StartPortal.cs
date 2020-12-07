@@ -1,32 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
-public class StartPortal : MonoBehaviour
+public class StartPortal : Portal
 {
-    private float speed = 1f;
-    private float speed_of_disappearing;
-    private Vector3 disappear_vector;
-
-    private float time_before_disappearance = 1.3f;
-
-    private void Start()
+    protected override void Start()
     {
+        _start = transform.position;
+        _target = _start;
+        _period = (float)(2 * Math.PI / _speed);
         StartCoroutine(Disappear());
     }
 
-    private IEnumerator Disappear()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        yield return new WaitForSeconds(time_before_disappearance);
-
-        while (transform.localScale.x >= 0)
-        {
-            speed_of_disappearing = speed * Time.deltaTime;
-            disappear_vector = new Vector2(speed_of_disappearing, speed_of_disappearing);
-
-            transform.localScale -= disappear_vector;
-            yield return new WaitForFixedUpdate();
-        }
-
-        Destroy(gameObject);
     }
 }

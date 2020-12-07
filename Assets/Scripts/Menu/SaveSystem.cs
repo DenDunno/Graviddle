@@ -7,9 +7,8 @@ using UnityEngine.UI;
 
 public class SaveSystem : MonoBehaviour
 {
-    private static string _path;
-
-    private static Dictionary<int, string> _levels = new Dictionary<int, string>();
+    [SerializeField]
+    private Button[] _levelButtons = null;
 
     private Dictionary<string, Color32> _paintButton = new Dictionary<string, Color32>
     {
@@ -18,52 +17,59 @@ public class SaveSystem : MonoBehaviour
         {"Bronze" , new Color32(205, 127, 50, 255)   } 
     };
 
-
+    
     private void Start()
     {
-        _path = Path.Combine(Application.dataPath, "Save.json");
+        string path = Path.Combine(Application.persistentDataPath, "Save.json");
         string json = "";
 
-        if (File.Exists(_path))
-            json = File.ReadAllText(_path);
+        if (File.Exists(path))
+            json = File.ReadAllText(path);
+
+        else
+            File.WriteAllText(path, json);
+
 
         if (json.Length != 0) 
             OpenLevels(json);
 
-        Button _1level = GameObject.FindGameObjectWithTag("Level").GetComponent<Button>();
-        _1level.interactable = true;
+        _levelButtons[0].interactable = true; 
     }
 
 
     private void OpenLevels(string json)
     {
-        var passedLevels = JsonConvert.DeserializeObject<Dictionary<int, string>>(json);
+        var levels = new Dictionary<int, string>();
+        levels = JsonConvert.DeserializeObject<Dictionary<int, string>>(json);
 
-        List <Button> buttons = new List<Button>();
 
-        var tempButtons = GameObject.FindGameObjectsWithTag("Level");
-        foreach (var buttonGameObject in tempButtons)
-            buttons.Add(buttonGameObject.GetComponent<Button>());
-        
-
-        for (int i = 0; i < buttons.Count; ++i)
+        for (int i = 0; i < _levelButtons.Length; ++i)
         {
-            if (i <= passedLevels.Count) // открой все пройденные уровни и следующий
-                buttons[i].interactable = true;
+            if (i <= levels.Count) // открой все пройденные уровни и следующий
+                _levelButtons[i].interactable = true;
 
-            if (i < passedLevels.Count) // // раскрасить кнопку пройденных уровней в золотой, серебрянный или бронзовый цвет
-                buttons[i].GetComponent<Image>().color = _paintButton[passedLevels[i]]; 
+            if (i < levels.Count) // // раскрасить кнопку пройденных уровней в золотой, серебрянный или бронзовый цвет
+                _levelButtons[i].GetComponent<Image>().color = _paintButton[levels[i]];
         }
     }
 
-
-
     public static void MakeSave(int indexOfLevel, string result)
     {
-        _levels[indexOfLevel] = result;
+        string json = "";
+        string path = Path.Combine(Application.persistentDataPath, "Save.json");
+        Dictionary<int, string> levels = new Dictionary<int, string>();
 
-        string json = JsonConvert.SerializeObject(_levels);
+        if (File.Exists(path))
+            json = File.ReadAllText(path);
 
-        File.WriteAllText(Path.Combine(Application.dataPath, "Save.json"), json);
+        levels = JsonConvert.DeserializeObject<Dictionary<int, string>>(json);
+        if (levels == null)
+            levels = new Dictionary<int, string>();
+
+        levels[indexOfLevel] = result;
+
+        json = JsonConvert.SerializeObject(levels);
+
+        File.WriteAllText(Path.Combine(Application.persistentDataPath, "Save.json"), json);
     }
 }

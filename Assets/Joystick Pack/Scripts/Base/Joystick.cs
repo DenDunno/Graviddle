@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
+    public bool JoystickIsTouched { get; private set; } = false;
     public float Horizontal { get { return (snapX) ? SnapFloat(input.x, AxisOptions.Horizontal) : input.x; } }
     public float Vertical { get { return (snapY) ? SnapFloat(input.y, AxisOptions.Vertical) : input.y; } }
     public Vector2 Direction { get { return new Vector2(Horizontal, Vertical); } }
@@ -59,10 +60,10 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     public virtual void OnPointerDown(PointerEventData eventData)
     {
-        OnDrag(eventData);
+        JoystickIsTouched = true;
     }
 
-    public void OnDrag(PointerEventData eventData)
+    public virtual void OnDrag(PointerEventData eventData)
     {
         cam = null;
         if (canvas.renderMode == RenderMode.ScreenSpaceCamera)
@@ -71,7 +72,6 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         Vector2 position = RectTransformUtility.WorldToScreenPoint(cam, background.position);
         Vector2 radius = background.sizeDelta / 2;
         input = (eventData.position - position) / (radius * canvas.scaleFactor);
-        FormatInput();
         HandleInput(input.magnitude, input.normalized, radius, cam);
         handle.anchoredPosition = input * radius * handleRange;
     }
@@ -87,52 +87,38 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
             input = Vector2.zero;
     }
 
-    private void FormatInput()
-    {
-        if (axisOptions == AxisOptions.Horizontal)
-            input = new Vector2(input.x, 0f);
-        else if (axisOptions == AxisOptions.Vertical)
-            input = new Vector2(0f, input.y);
-    }
-
     private float SnapFloat(float value, AxisOptions snapAxis)
     {
         if (value == 0)
             return value;
 
-        if (axisOptions == AxisOptions.Both)
+        
+        float angle = Vector2.Angle(input, Vector2.up);
+
+        if (snapAxis == AxisOptions.Horizontal)
         {
-            float angle = Vector2.Angle(input, Vector2.up);
-            if (snapAxis == AxisOptions.Horizontal)
-            {
-                if (angle < 22.5f || angle > 157.5f)
-                    return 0;
-                else
-                    return (value > 0) ? 1 : -1;
-            }
-            else if (snapAxis == AxisOptions.Vertical)
-            {
-                if (angle > 67.5f && angle < 112.5f)
-                    return 0;
-                else
-                    return (value > 0) ? 1 : -1;
-            }
-            return value;
+            if (angle < 22.5f || angle > 157.5f)
+                return 0;
+             else
+                return (value > 0) ? 1 : -1;
         }
-        else
+
+        else if (snapAxis == AxisOptions.Vertical)
         {
-            if (value > 0)
-                return 1;
-            if (value < 0)
-                return -1;
+           if (angle > 67.5f && angle < 112.5f)
+              return 0;
+           else
+              return (value > 0) ? 1 : -1;
         }
-        return 0;
+
+         return value;
     }
 
     public virtual void OnPointerUp(PointerEventData eventData)
     {
         input = Vector2.zero;
         handle.anchoredPosition = Vector2.zero;
+        JoystickIsTouched = false;
     }
 
     protected Vector2 ScreenPointToAnchoredPosition(Vector2 screenPosition)

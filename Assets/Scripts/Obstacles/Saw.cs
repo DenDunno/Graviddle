@@ -15,7 +15,7 @@ public class Saw : Obstacle
     protected Vector3 _target;
     protected Vector3 _temp;
 
-    private void Start()
+    virtual protected void Start()
     {
         _start = transform.position;
         _target = _start + transform.right * _distance * (_goRight ? 1 : -1);
