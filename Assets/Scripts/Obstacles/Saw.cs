@@ -2,6 +2,10 @@
 
 public class Saw : Obstacle
 {
+    // когда екран черный, преятствие проходит какой-то путь, поэтому коректируем правильную точку респауна 
+    [SerializeField]
+    private float _correlation = 2f;
+
     [SerializeField]
     protected float _speed = 4;
 
@@ -15,11 +19,14 @@ public class Saw : Obstacle
     protected Vector3 _target;
     protected Vector3 _temp;
 
+
     virtual protected void Start()
     {
+        RestartPosition = transform.position + _correlation * transform.right;
         _start = transform.position;
         _target = _start + transform.right * _distance * (_goRight ? 1 : -1);
     }
+
 
     private void Update()
     {
@@ -28,6 +35,7 @@ public class Saw : Obstacle
 
         transform.position = Vector2.MoveTowards(transform.position, _target, _speed * Time.deltaTime);
     }
+
 
     protected virtual void ChangeTarget()
     {

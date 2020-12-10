@@ -1007,6 +1007,7 @@ GameObject:
   - component: {fileID: 6488566792504033221}
   - component: {fileID: 6488566792504033222}
   - component: {fileID: 6488566792504033220}
+  - component: {fileID: 6466074549810468973}
   m_Layer: 5
   m_Name: DeathImage
   m_TagString: Untagged
@@ -1082,6 +1083,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fc4227e018c7114ea43523d5243a8d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6466074549810468973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6488566792504033216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 175d0e00b8cc3fe4b810016495d2fa4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectsToBeRestarted: []
 --- !u!1 &6488566793118386078
 GameObject:
   m_ObjectHideFlags: 0

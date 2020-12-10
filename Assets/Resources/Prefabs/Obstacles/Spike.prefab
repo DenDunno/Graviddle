@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9193019641626066193}
-  - component: {fileID: 3517109471575878410}
+  - component: {fileID: 1894169380978145801}
+  - component: {fileID: 3268562971811990892}
   m_Layer: 0
   m_Name: Spike
   m_TagString: Untagged
@@ -32,20 +33,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &3517109471575878410
-CapsuleCollider:
+--- !u!114 &1894169380978145801
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323306991137571463}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3877536
-  m_Height: 1.0982414
-  m_Direction: 1
-  m_Center: {x: 0.000000028637123, y: -0.063154705, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa3cd27a7781dd47a6ebc284b41481e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &3268562971811990892
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323306991137571463}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0038747173, y: -0.10489513}
+  m_Size: {x: 0.49225038, y: 1.0800344}
+  m_Direction: 0
 --- !u!1 &5723656105032862191
 GameObject:
   m_ObjectHideFlags: 0

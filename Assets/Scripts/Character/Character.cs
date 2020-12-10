@@ -136,6 +136,7 @@ public class Character : MonoBehaviour
             _state = CharacterState.DIE;
 
             yield return StartCoroutine(_fade.MakeFade());
+            yield return StartCoroutine(ScreenFade.ChangeAlphaChannel(1.5f, true, (result) => { _sprite.color = result; })); // респаун
             IsAlive = true;
         }
     }
@@ -156,6 +157,8 @@ public class Character : MonoBehaviour
     public void Disappear()
     {
         StartCoroutine(ScreenFade.ChangeAlphaChannel(-2f, false, (result) => { _sprite.color = result; }));
+        _rigidbody.velocity = Vector2.zero;
+        _rigidbody.gravityScale = 0;
     }
 
 

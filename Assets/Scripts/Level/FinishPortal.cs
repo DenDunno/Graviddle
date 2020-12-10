@@ -26,8 +26,11 @@ public class FinishPortal : Portal
             Time.timeScale = 0.5f;
             Time.fixedDeltaTime = Time.timeScale * 0.02f;
             IsPLaying = false;
+
             character.Disappear();
+            character.transform.position = transform.position;
             StartCoroutine(Disappear());
+
             _winPanel.SetActive(true);
         }
     }

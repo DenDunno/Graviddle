@@ -2,12 +2,15 @@
 using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
+    public Vector3 RestartPosition = Vector3.zero;
     private static bool _enabled = true;
+
 
     private void Start()
     {
         _enabled = true;
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,7 +20,8 @@ public class Obstacle : MonoBehaviour
             StartCoroutine(character.Die());
     }
 
-    public static IEnumerator SwitchOff()
+
+    public static IEnumerator SwitchOff() // персонаж неуязвим во время респауна
     {
         _enabled = false;
         yield return new WaitForSeconds(3f);
