@@ -1,25 +1,27 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 
 public class Restarter : MonoBehaviour
 {
     [SerializeField]
-    private Obstacle[] _objectsToBeRestarted = null;
-    private Character _character;
+    private List<RestartableObject> _objectsToBeRestarted = null;
 
 
     private void Start()
     {
-        _character = FindObjectOfType<Character>();
+        Character character = FindObjectOfType<Character>();
+        StartPortal startPortal = FindObjectOfType<StartPortal>();
+
+        _objectsToBeRestarted.Add(character);
+        _objectsToBeRestarted.Add(startPortal);
     }
 
 
     public  void MakeRestart()
     {
-        _character.Restart();
-
-        foreach (Obstacle obstacle in _objectsToBeRestarted)
-            obstacle.transform.position = obstacle.RestartPosition;
+        foreach (RestartableObject restartableObject in _objectsToBeRestarted)
+            restartableObject.Restart();
     }
 }

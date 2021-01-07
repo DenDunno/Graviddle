@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1789,7 +1789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1c4a75a24bd824b9c7c16315407c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RestartPosition: {x: 0, y: 0, z: 0}
+  _correlation: 2
   _speed: 4
   _distance: 1
   _goRight: 1
@@ -3527,7 +3527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72b71e3084f7af4297973186e65d783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RestartPosition: {x: 0, y: 0, z: 0}
+  _correlation: 2
   _speed: 4
   _distance: 0.1
   _goRight: 1
@@ -5449,6 +5449,11 @@ PrefabInstance:
       propertyPath: _starParicles
       value: 
       objectReference: {fileID: 1831956165}
+    - target: {fileID: 6488566793118386066, guid: 182e756c4d3e4ae4cb005bad892d0cdb,
+        type: 3}
+      propertyPath: _silverReward
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6488566793351928766, guid: 182e756c4d3e4ae4cb005bad892d0cdb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument

@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
-public class Obstacle : MonoBehaviour
+public class Obstacle : RestartableObject
 {
-    public Vector3 RestartPosition = Vector3.zero;
     private static bool _enabled = true;
+    protected Vector3 _restartPosition = Vector3.zero;
 
 
     private void Start()

@@ -3,7 +3,7 @@ using UnityEngine;
 
 // портал должен двигаться вверх-вниз. Идентичный функционал есть в пилы с ускорением
 // OnTriggerEnter2D переписаный, поэтому персонаж не умрет 
-abstract public class Portal : SawAcceleration
+abstract public class TargetPortal : SawAcceleration
 {
     private float _speedOfDisappearing = 1f;
     private Vector3 _disappearVector;
@@ -22,7 +22,5 @@ abstract public class Portal : SawAcceleration
             transform.localScale -= _disappearVector;
             yield return new WaitForFixedUpdate();
         }
-
-        Destroy(gameObject);
     }
 }

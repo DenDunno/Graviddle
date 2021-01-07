@@ -22,7 +22,7 @@ public class Saw : Obstacle
 
     virtual protected void Start()
     {
-        RestartPosition = transform.position + _correlation * transform.right;
+        _restartPosition = transform.position + _correlation * transform.right;
         _start = transform.position;
         _target = _start + transform.right * _distance * (_goRight ? 1 : -1);
     }
@@ -42,6 +42,12 @@ public class Saw : Obstacle
         _temp = _start;
         _start = _target;
         _target = _temp;
+    }
+
+
+    public override void Restart()
+    {
+        transform.position = _restartPosition;
     }
 }
 

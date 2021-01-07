@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Reward : MonoBehaviour
 {
     [SerializeField]
-    private int _bronzeReward = 5;
+    private int _silverReward = 5;
 
     [SerializeField]
     private int _goldReward = 2;
@@ -30,12 +30,12 @@ public class Reward : MonoBehaviour
         int result = GravityChangeType.NumOfRotations;
         string answer;
 
-        if (result > _bronzeReward)
+        if (result > _silverReward)
         {
             answer = "Bronze";
         }
 
-        else if (result > _goldReward && result <= _bronzeReward)
+        else if (result > _goldReward && result <= _silverReward)
         {
             answer = "Silver";
         }

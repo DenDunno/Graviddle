@@ -1,16 +1,32 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Axe : Obstacle
 {
-    [SerializeField]
-    private float _speed = 5f; //скорость туда-сюда
+    private Rigidbody2D _rigidbody;
 
-    [SerializeField]
-    private float _angle = 30; //величина размаха
+    private Vector3 _startPosition;
+    private Quaternion _startRotation;
 
-    private void Update()
+
+    private void Start()
     {
-        transform.rotation = Quaternion.Euler(0, 0, Mathf.Sin(Time.time * _speed) * _angle);
+        _startPosition = transform.position;
+        _startRotation = transform.rotation;
+
+        _rigidbody = GetComponent<Rigidbody2D>();
+    }
+
+
+    public override void Restart()
+    {
+        transform.position = _startPosition;
+        transform.rotation = _startRotation;
+
+        _rigidbody.angularVelocity = 0;
+        _rigidbody.velocity = Vector2.zero;
     }
 }
 

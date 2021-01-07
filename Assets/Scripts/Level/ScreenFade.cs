@@ -27,13 +27,13 @@ public class ScreenFade : MonoBehaviour
     }
 
 
-    public static IEnumerator ChangeAlphaChannel(float speedOfFading, bool glassy, System.Action<Color> callback)
+    public static IEnumerator ChangeAlphaChannel(float fadingSpeed, bool glassy, System.Action<Color> callback)
     {
         float alphaChannel = glassy ? 0 : 1;
 
         while (glassy ? alphaChannel <= 1 : alphaChannel >= 0)
         {
-            alphaChannel += speedOfFading * Time.deltaTime;
+            alphaChannel += fadingSpeed * Time.deltaTime;
             callback(new Color(255, 255, 255, alphaChannel));
             yield return new WaitForFixedUpdate();
         }

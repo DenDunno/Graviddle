@@ -4,24 +4,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Character : MonoBehaviour
+public class Character : RestartableObject
 {
-    public static UnityEvent TossingUp = new UnityEvent();
     public static bool IsAlive { get; private set; } = true;
     public static bool IsGrounded { get; private set; } = true;
 
     [SerializeField]
-    private  GravityDirection _startDirection = GravityDirection.DOWN;
+    private GravityDirection _startDirection = GravityDirection.DOWN;
     private GravityChangeType _gravitation;
     private MoveСontrolType _move;
     private ScreenFade _fade;
 
     private Vector3 _startPosition;
     private Quaternion _startRotation;
-    private StartPortal _startPortal;
+    private Quaternion _newRotation;
 
     private float _speed = 4.5f;
-    private float _speedOfRotation = 5f;
+    private float _rotationSpeed = 5f;
     private float _liftForce = 0.8f;  // сила, которая толкает персонажа при повороте на 90 градусов 
 
     private Rigidbody2D _rigidbody;
@@ -45,13 +44,12 @@ public class Character : MonoBehaviour
         
         InstantiateTouchCanvas();
         _fade = FindObjectOfType<ScreenFade>();
-        
-        _startPortal = Resources.Load<StartPortal>("Prefabs/Level/StartPortal");
+
         _startPosition = transform.position;
         _startRotation = transform.rotation;
         _rigidbody.gravityScale = 40;
-        
-        TossingUp.AddListener(OnTossingUp);
+
+        _gravitation.GravityChanged.AddListener(OnGravityChanged);
         _gravitation.MakeStartTurn(_startDirection);
     }
 
@@ -68,7 +66,7 @@ public class Character : MonoBehaviour
 
     private void Update()
     {
-        transform.rotation = Quaternion.Lerp(transform.rotation, _gravitation.GetRotation(), Time.deltaTime * _speedOfRotation);
+        transform.rotation = Quaternion.Lerp(transform.rotation, _newRotation, Time.deltaTime * _rotationSpeed);
     }
 
 
@@ -121,16 +119,20 @@ public class Character : MonoBehaviour
     }
 
 
-    private void OnTossingUp()
+    private void OnGravityChanged(GravityDirection lastGravityDirection)
     {
-        // При смене гравитации на 90 градусов персонаж "цепляется" за пол
-        _rigidbody.AddForce(transform.up * _liftForce, ForceMode2D.Impulse); 
+        bool rightAngle = Math.Abs(lastGravityDirection - _gravitation.Direction) % 2 == 1;
+
+        if (rightAngle == true) // смена гравитации на 90 градусов 
+            _rigidbody.AddForce(transform.up * _liftForce, ForceMode2D.Impulse);
+
+        _newRotation = _gravitation.GetRotation();
     }
 
 
     public IEnumerator Die()
     {
-        if (IsAlive) // проверка на "смерть во время смерти" (Когда летишь, будучи мертвым, и натыкаешься на еще что-то)
+        if (IsAlive == true) // проверка на "смерть во время смерти" (Когда летишь, будучи мертвым, и натыкаешься на еще что-то)
         {
             IsAlive = false;
             _state = CharacterState.DIE;
@@ -142,7 +144,7 @@ public class Character : MonoBehaviour
     }
 
 
-    public void Restart()
+    public override void Restart()
     {
         _state = CharacterState.IDLE;
         _sprite.color = new Color(255, 255, 255, 0); // делаем прозрачным, чтобы плавно вернуть обратно
@@ -150,7 +152,6 @@ public class Character : MonoBehaviour
         transform.rotation = _startRotation;
         _rigidbody.velocity = Vector2.zero;
         _gravitation.MakeStartTurn(_startDirection);
-        Instantiate(_startPortal, transform.position + transform.up * 0.8f, transform.rotation);
     }
 
 

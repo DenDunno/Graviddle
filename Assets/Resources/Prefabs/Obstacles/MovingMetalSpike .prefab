@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6281889084598707211}
   - component: {fileID: 6281889084598707210}
   m_Layer: 0
-  m_Name: 'Moving_metal_spike '
+  m_Name: 'MovingMetalSpike '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

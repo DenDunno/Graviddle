@@ -8,6 +8,7 @@ public class TouchHandler : MoveСontrolType
     private float _screen;
     private GravityChangeType _characterGravitaion;
 
+
     private void Start()
     {
         _screen = Screen.width;
@@ -18,6 +19,7 @@ public class TouchHandler : MoveСontrolType
             Destroy(button.gameObject);
     }
 
+
     private void Update()
     {
         Movement = Move.STOP;
@@ -27,7 +29,7 @@ public class TouchHandler : MoveСontrolType
             Touch touch = Input.GetTouch(0);
             bool permitToRun = _characterGravitaion.CheckTouch(touch);
 
-            if (permitToRun)
+            if (permitToRun == true)
             {
                 Movement = touch.position.x > _screen / 2 ? Move.RIGHT : Move.LEFT;
             }

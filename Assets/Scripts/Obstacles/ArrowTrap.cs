@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class ArrowTrap : MonoBehaviour
+public class ArrowTrap : Obstacle
 {
     [SerializeField]
-    private float _rechargeTime = 2f;
+    private float _coolDownTime = 2f;
 
     [SerializeField]
     private float _startWaitTime = 2f;
@@ -12,13 +12,15 @@ public class ArrowTrap : MonoBehaviour
     private Arrow _arrow;
     private Vector2 _arrowPosition;
 
+    private Coroutine _arrowSpawn;
+
 
     private void Start()
     {
         _arrow = Resources.Load<Arrow>("Prefabs/Obstacles/Arrow");
         _arrowPosition = transform.position - transform.up;
 
-        StartCoroutine(ArrowSpawn());
+        _arrowSpawn = StartCoroutine(ArrowSpawn());
     }
 
 
@@ -29,8 +31,15 @@ public class ArrowTrap : MonoBehaviour
 
         while (true)
         {
-            yield return new WaitForSeconds(_rechargeTime);
+            yield return new WaitForSeconds(_coolDownTime);
             _arrow.transform.position = _arrowPosition;
         }
+    }
+
+
+    public override void Restart()
+    {
+        StopCoroutine(_arrowSpawn);
+        _arrowSpawn = StartCoroutine(ArrowSpawn());
     }
 }

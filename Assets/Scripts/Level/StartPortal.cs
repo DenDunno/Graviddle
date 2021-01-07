@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class StartPortal : Portal
+public class StartPortal : TargetPortal
 {
     protected override void Start()
     {
@@ -12,7 +12,10 @@ public class StartPortal : Portal
         StartCoroutine(Disappear());
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    public override void Restart()
     {
+        transform.localScale = new Vector3(1, 1, 1);
+        StartCoroutine(Disappear());
     }
 }
