@@ -16,7 +16,7 @@ public class FinishPortal : TargetPortal
         Time.fixedDeltaTime = Time.timeScale * 0.02f;
         _start = transform.position;
         _target = _start + transform.up * _distance;
-        _period = (float)(2 * Math.PI / _speed);
+        _period = (float)(2 * Math.PI / _maxSpeed);
         IsPLaying = true;
     }
 

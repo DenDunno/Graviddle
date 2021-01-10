@@ -16,27 +16,51 @@ public class SawAcceleration : Saw
     Период f = 2PI / a
     */
 
+    protected float _period;
+
     private float _time;
     private float _lerp;
+    private bool _isRestart;
 
-    protected float _period;
 
     protected override void Start()
     {
         base.Start();
-        _period = (float)(2 * Math.PI / _speed);
+        _period = (float)(2 * Math.PI / _maxSpeed);
     }
+
 
     private void Update()
     {
-        _time += Time.deltaTime;
+        if (_isRestart == false)
+        {
+            _time += Time.deltaTime;
 
-        if (_time >= _period)
-            _time = 0;
+            if (_time >= _period)
+                _time = 0;
 
-        _lerp = (float)(1 - Math.Cos(_speed * _time)) / 2;
+            _lerp = (float)(1 - Math.Cos(_maxSpeed * _time)) / 2;
 
-        transform.position = Vector3.Lerp(_start, _target, _lerp);
+            transform.position = Vector3.Lerp(_start, _target, _lerp);
+        }
+    }
+
+
+    public override void Restart()
+    {
+        transform.position = _startPosition;
+        _time = 0;
+        _lerp = 0;
+
+        StartCoroutine(WaitWhileRespawn());
+    }
+
+
+    private IEnumerator WaitWhileRespawn()
+    {
+        _isRestart = true;
+        yield return new WaitForSeconds(ScreenFade.TimeForRespawn);
+        _isRestart = false;
     }
 }
 

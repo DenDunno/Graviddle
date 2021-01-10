@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class ScreenFade : MonoBehaviour
 {
+    public static readonly float TimeForRespawn = 0.7f;
+
     private Image _deathImage;
     private Restarter _restarter;
 
@@ -22,7 +24,7 @@ public class ScreenFade : MonoBehaviour
 
         _restarter.MakeRestart(); // когда экран черный, делаем все нужные "сбросы" 
 
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(TimeForRespawn);
         yield return StartCoroutine(ChangeAlphaChannel(-1.5f, false, (result) => { _deathImage.color = result; })); // осветление
     }
 

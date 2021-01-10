@@ -8,7 +8,7 @@ public class StartPortal : TargetPortal
     {
         _start = transform.position;
         _target = _start;
-        _period = (float)(2 * Math.PI / _speed);
+        _period = (float)(2 * Math.PI / _maxSpeed);
         StartCoroutine(Disappear());
     }
 

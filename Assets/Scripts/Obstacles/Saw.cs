@@ -2,12 +2,8 @@
 
 public class Saw : Obstacle
 {
-    // когда екран черный, преятствие проходит какой-то путь, поэтому коректируем правильную точку респауна 
     [SerializeField]
-    private float _correlation = 2f;
-
-    [SerializeField]
-    protected float _speed = 4;
+    protected float _maxSpeed = 4;
 
     [SerializeField]
     protected float _distance = 1;
@@ -19,10 +15,14 @@ public class Saw : Obstacle
     protected Vector3 _target;
     protected Vector3 _temp;
 
+    protected Vector3 _startPosition;
+    protected float _currentSpeed;
+
 
     virtual protected void Start()
     {
-        _restartPosition = transform.position + _correlation * transform.right;
+        _currentSpeed = _maxSpeed;
+        _startPosition = transform.position;
         _start = transform.position;
         _target = _start + transform.right * _distance * (_goRight ? 1 : -1);
     }
@@ -33,7 +33,7 @@ public class Saw : Obstacle
         if (Vector2.Distance(transform.position, _target) <= Vector2.kEpsilon)
             ChangeTarget();
 
-        transform.position = Vector2.MoveTowards(transform.position, _target, _speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, _target, _currentSpeed * Time.deltaTime);
     }
 
 
@@ -47,7 +47,8 @@ public class Saw : Obstacle
 
     public override void Restart()
     {
-        transform.position = _restartPosition;
+        float correlation = ScreenFade.TimeForRespawn * _maxSpeed * (_goRight ? -1 : 1);
+        transform.position = _startPosition + correlation * transform.right; 
     }
 }
 

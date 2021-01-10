@@ -3,7 +3,6 @@ using UnityEngine;
 public class Obstacle : RestartableObject
 {
     private static bool _enabled = true;
-    protected Vector3 _restartPosition = Vector3.zero;
 
 
     private void Start()

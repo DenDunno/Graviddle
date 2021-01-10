@@ -89,7 +89,7 @@ public class Laser : Obstacle
             yield return StartCoroutine(ToggleLaser());
         }
 
-        while (true)
+        while (_restart == false)
         {
             yield return new WaitForSeconds(_workTime);
             yield return StartCoroutine(ToggleLaser());

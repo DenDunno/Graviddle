@@ -4,18 +4,46 @@ using UnityEngine;
 public class SawDelay : Saw
 {
     [SerializeField]
-    private float _waitTime = 2f;
+    private float _coolDownTime = 2f;
+
+    [SerializeField]
+    private bool _waitAtStart = false;
+
+    private Coroutine _coolDownCoroutine;
+
+
+    protected override void Start()
+    {
+        base.Start();
+
+        if (_waitAtStart == true)
+            _coolDownCoroutine = StartCoroutine(Wait(_coolDownTime));
+    }
+
+
     protected override void ChangeTarget()
     {
         base.ChangeTarget();
-        StartCoroutine(Wait());
+        _coolDownCoroutine = StartCoroutine(Wait(_coolDownTime));
     }
 
-    private IEnumerator Wait()
+
+    private IEnumerator Wait(float waitTime)
     {
-        float temp = _speed;
-        _speed = 0;
-        yield return new WaitForSeconds(_waitTime);
-        _speed = temp;
+        _currentSpeed = 0;
+        yield return new WaitForSeconds(waitTime);
+        _currentSpeed = _maxSpeed;
+    }
+
+
+    public override void Restart()
+    {
+        StopCoroutine(_coolDownCoroutine);
+
+        transform.position = _startPosition;
+        _start = transform.position;    
+        _target = _startPosition + transform.right * _distance * (_goRight ? 1 : -1);
+
+        StartCoroutine(Wait((_waitAtStart ? _coolDownTime : 0) + ScreenFade.TimeForRespawn));
     }
 }
