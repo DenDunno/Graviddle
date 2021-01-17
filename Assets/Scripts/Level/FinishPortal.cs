@@ -31,7 +31,8 @@ public class FinishPortal : TargetPortal
             Time.fixedDeltaTime = Time.timeScale * 0.02f;
             IsPLaying = false;
 
-            character.Disappear();
+            StartCoroutine(character.Disappear());
+
             character.transform.position = transform.position;
             StartCoroutine(Disappear());
 

@@ -13,19 +13,20 @@ public enum GravityDirection
 }
 
 
-public class GravityEvent : UnityEvent<GravityDirection> { }
-
 
 abstract public class GravityChangeType : MonoBehaviour
 {
-    public static int NumOfRotations { get; private set; } = 0;
-
+    public class GravityEvent : UnityEvent<GravityDirection> { }
     public GravityEvent GravityChanged = new GravityEvent();
+
+    public static int NumOfRotations { get; private set; } = 0;
 
     public GravityDirection Direction { get; private set; } = GravityDirection.DOWN;
 
 
-    private readonly Dictionary<GravityDirection, int> DirectionToRotationAngle =
+    protected bool _gravityWasChanged = false;
+
+    private readonly Dictionary<GravityDirection, int> _directionToRotationAngle =
         new Dictionary<GravityDirection, int>()
         {
             {GravityDirection.DOWN  , 0  } ,
@@ -37,15 +38,15 @@ abstract public class GravityChangeType : MonoBehaviour
     private readonly Dictionary<GravityDirection, Vector2> _directionToGravityVector =
         new Dictionary<GravityDirection, Vector2>()
         {
-             {GravityDirection.UP    , new Vector2(0  ,  1)},
              {GravityDirection.DOWN  , new Vector2(0  , -1)},
-             {GravityDirection.LEFT  , new Vector2(-1 ,  0)},
-             {GravityDirection.RIGHT , new Vector2(1  ,  0)}
+             {GravityDirection.RIGHT , new Vector2(1  ,  0)},
+             {GravityDirection.UP    , new Vector2(0  ,  1)},
+             {GravityDirection.LEFT  , new Vector2(-1 ,  0)}
+             
         };
 
     private GravityDirection _lastGravityDirection;
-    protected bool _gravityWasChanged = false;
-
+    
 
 
     public void MakeStartTurn(GravityDirection startDirection)
@@ -61,7 +62,7 @@ abstract public class GravityChangeType : MonoBehaviour
 
     public Quaternion GetRotation()
     {
-        return Quaternion.AngleAxis(DirectionToRotationAngle[Direction], new Vector3(0, 0, 1));
+        return Quaternion.AngleAxis(_directionToRotationAngle[Direction], Vector3.forward);
     }
 
 

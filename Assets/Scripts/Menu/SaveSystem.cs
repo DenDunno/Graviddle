@@ -48,7 +48,7 @@ public class SaveSystem : MonoBehaviour
             if (i <= levels.Count) // открой все пройденные уровни и следующий
                 _levelButtons[i].interactable = true;
 
-            if (i < levels.Count) // // раскрасить кнопку пройденных уровней в золотой, серебрянный или бронзовый цвет
+            if (i < levels.Count) // раскрасить кнопку пройденных уровней в золотой, серебрянный или бронзовый цвет
                 _levelButtons[i].GetComponent<Image>().color = _paintButton[levels[i]];
         }
     }

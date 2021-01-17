@@ -13,11 +13,13 @@ public class FixedJoystick : Joystick
         _joystickHandler = GetComponentInParent<JoystickHandler>();
     }
 
+
     public override void OnDrag(PointerEventData eventData)
     {
         base.OnDrag(eventData);
         _joystickHandler.OnPointerDown();
     }
+
 
     public override void OnPointerUp(PointerEventData eventData)
     {
