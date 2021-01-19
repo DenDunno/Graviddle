@@ -4,9 +4,19 @@ using UnityEngine.EventSystems;
 
 
 
-public class MovementButtons : MoveСontrolType, IPointerUpHandler
+public class MovementButtons : MoveСontrolType
 {
-    public void OnPointerUp(PointerEventData eventData)
+    public void MoveLeft()
+    {
+        Movement = Move.LEFT;
+    }
+
+    public void MoveRight()
+    {
+        Movement = Move.RIGHT;
+    }
+
+    public void Stop()
     {
         Movement = Move.STOP;
     }

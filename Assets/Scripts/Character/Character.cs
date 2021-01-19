@@ -38,19 +38,32 @@ public class Character : RestartableObject
 
     private void Start()
     {
+        InstantiateTouchCanvas();
+
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _sprite = GetComponentInChildren<SpriteRenderer>();
-        
-        InstantiateTouchCanvas();
         _fade = FindObjectOfType<ScreenFade>();
 
         _startPosition = transform.position;
         _startRotation = transform.rotation;
-        _rigidbody.gravityScale = 40;
-
+        
         _gravitation.GravityChanged.AddListener(OnGravityChanged);
         _gravitation.MakeStartTurn(_startDirection);
+
+        _rigidbody.gravityScale = 40;
+    }
+
+
+    private void InstantiateTouchCanvas()
+    {
+        GameObject touchCanvas = Instantiate(Resources.Load<GameObject>("Prefabs/Level/TouchCanvas"));
+
+        touchCanvas.AddComponent(Settings.MoveControlType);
+        touchCanvas.AddComponent(Settings.GravityChangeType);
+
+        _gravitation = touchCanvas.GetComponent<GravityChangeType>();
+        _move = touchCanvas.GetComponent<MoveСontrolType>();
     }
 
 
@@ -151,19 +164,6 @@ public class Character : RestartableObject
         yield return StartCoroutine(ScreenFade.ChangeAlphaChannel(-2f, false, (result) => { _sprite.color = result; }));
 
         Destroy(gameObject);
-    }
-
-
-    private void InstantiateTouchCanvas()
-    {
-        GameObject touchCanvas = Instantiate(Resources.Load<GameObject>("Prefabs/Level/TouchCanvas"));        
-
-        
-       
-        
-
-        _gravitation = touchCanvas.GetComponent<GravityChangeType>();
-        _move = touchCanvas.GetComponent<MoveСontrolType>();
     }
 }
 

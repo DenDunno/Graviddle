@@ -6,16 +6,41 @@ using UnityEngine;
 
 public class Settings : MonoBehaviour
 {
-    private Dictionary<int, Type> GravityChangeType = new Dictionary<int, Type>()
+    public static Type GravityChangeType
     {
-        {0 , Type.GetType("SwipeHandler") },
-        {1 , Type.GetType("JoystickHandler") }
+        get
+        {
+            if (PlayerPrefs.HasKey("GravityChangeType") == true)
+                return _gravityChangeTypes[PlayerPrefs.GetInt("GravityChangeType")];
+
+            else
+                return _gravityChangeTypes[0];
+        }
+    }
+
+    public static Type MoveControlType
+    {
+        get
+        {
+            if (PlayerPrefs.HasKey("MoveControlType") == true)
+                return _moveControlTypes[PlayerPrefs.GetInt("MoveControlType")];
+
+            else
+                return _moveControlTypes[0];
+        }
+    }
+
+
+    private static List<Type> _gravityChangeTypes = new List<Type>()
+    {
+        {Type.GetType("SwipeHandler") },
+        {Type.GetType("JoystickHandler") }
     };
 
-    private Dictionary<int, Type> MoveType = new Dictionary<int, Type>()
+    private static List<Type> _moveControlTypes = new List<Type>()
     {
-        {0 , Type.GetType("SwipeHandler") },
-        {1 , Type.GetType("JoystickHandler") }
+        {Type.GetType("MovementButtons") },
+        {Type.GetType("TapHandler") }
     };
 
 

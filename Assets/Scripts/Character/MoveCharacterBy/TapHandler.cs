@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 
 
-public class TouchHandler : MoveСontrolType
+public class TapHandler : MoveСontrolType
 {   
     private float _screen;
     private GravityChangeType _characterGravitaion;

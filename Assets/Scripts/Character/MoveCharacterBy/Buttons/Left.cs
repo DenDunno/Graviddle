@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Left : MovementButtons, IPointerDownHandler
+public class Left : ControlButton, IPointerDownHandler
 {
     public void OnPointerDown(PointerEventData eventData)
     {
-        Movement = Move.LEFT;
+        _buttonsControl.MoveLeft();
     }
 }
