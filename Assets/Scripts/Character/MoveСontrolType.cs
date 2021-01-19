@@ -7,8 +7,8 @@ using UnityEngine.Events;
 
 public enum Move
 {
-    STOP = 0,
     LEFT = -1,
+    STOP = 0,
     RIGHT = 1
 }
 

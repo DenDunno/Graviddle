@@ -38,7 +38,6 @@ public class Character : RestartableObject
 
     private void Start()
     {
-        IsAlive = true;
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _sprite = GetComponentInChildren<SpriteRenderer>();
@@ -159,27 +158,9 @@ public class Character : RestartableObject
     {
         GameObject touchCanvas = Instantiate(Resources.Load<GameObject>("Prefabs/Level/TouchCanvas"));        
 
-        switch (Settings.MoveType)
-        {
-            case MoveTypeEnum.TOUCH:
-                touchCanvas.AddComponent<TouchHandler>();
-                break;
-
-            case MoveTypeEnum.BUTTONS:
-                touchCanvas.AddComponent<ButtonsControl>();
-                break;
-        }
-
-        switch (Settings.GravityChangeType)
-        {
-            case GravityChangeTypeEnum.SWIPE:
-                touchCanvas.AddComponent<SwipeHandler>();
-                break;
-
-            case GravityChangeTypeEnum.JOYSTICK:
-                touchCanvas.AddComponent<JoystickHandler>();
-                break;
-        }
+        
+       
+        
 
         _gravitation = touchCanvas.GetComponent<GravityChangeType>();
         _move = touchCanvas.GetComponent<MoveСontrolType>();

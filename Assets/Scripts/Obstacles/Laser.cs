@@ -62,7 +62,7 @@ public class Laser : Obstacle
         _collider.offset = new Vector2(_collider.offset.x, 0.5f * _laserDistance - 0.5f); 
         // Offset.y(size.y) = 0.5 * size.y - 0.5 функция зависимости смещение от размера
 
-        if (!_awake) // если лазер выключен, делаем прозрачным
+        if (_awake == false) // если лазер выключен, делаем прозрачным
         {
             SetDistortion(_sourceEnergyParticles[0].material, 1);
             SetDistortion(_sourceEnergyParticles[1].material, 1);
