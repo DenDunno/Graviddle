@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Animator))]
 public class Character : RestartableObject
 {
     public static bool IsAlive { get; private set; } = true;

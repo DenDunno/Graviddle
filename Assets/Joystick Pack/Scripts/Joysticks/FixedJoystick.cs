@@ -17,7 +17,7 @@ public class FixedJoystick : Joystick
     public override void OnDrag(PointerEventData eventData)
     {
         base.OnDrag(eventData);
-        _joystickHandler.OnPointerDown();
+        _joystickHandler.OnPointerDown(Horizontal , Vertical);
     }
 
 

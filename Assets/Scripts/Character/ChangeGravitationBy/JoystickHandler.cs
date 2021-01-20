@@ -7,20 +7,13 @@ using UnityEngine.EventSystems;
 
 public class JoystickHandler : GravityChangeType
 {
-    private FixedJoystick _fixedJoystick;
     private float _joystickSensitivity = 0.3f;
 
 
-    private void Start()
-    {
-        _fixedJoystick = GetComponentInChildren<FixedJoystick>();
-    }
-
-
-    public void OnPointerDown()
+    public void OnPointerDown(float joystickHorizontal , float joystickVertical)
     {
         if (_gravityWasChanged == false)
-        DefineTurn(_joystickSensitivity, _fixedJoystick.Horizontal, _fixedJoystick.Vertical);
+            DefineTurn(_joystickSensitivity, joystickHorizontal, joystickVertical);
     }
 
 
@@ -32,7 +25,7 @@ public class JoystickHandler : GravityChangeType
 
     public override bool CheckTouch(Touch touch)
     {
-        return _fixedJoystick.JoystickIsTouched == false;
+        return Joystick.JoystickIsTouched == false;
     }
 }
 
