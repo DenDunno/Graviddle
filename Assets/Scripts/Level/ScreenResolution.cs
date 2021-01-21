@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Camera))]
 public class ScreenResolution : MonoBehaviour
 {
     private Camera _camera;

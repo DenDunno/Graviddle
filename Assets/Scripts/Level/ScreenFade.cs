@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Restarter))]
+[RequireComponent(typeof(Image))]
 public class ScreenFade : MonoBehaviour
 {
     public static readonly float TimeForRespawn = 0.7f;

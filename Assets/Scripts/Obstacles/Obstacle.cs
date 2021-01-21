@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+
 public class Obstacle : RestartableObject
 {
     private static bool _enabled = true;

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
+[RequireComponent(typeof(Image))]
 public class Reward : MonoBehaviour
 {
     [SerializeField]
