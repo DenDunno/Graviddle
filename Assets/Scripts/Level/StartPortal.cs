@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
+
 public class StartPortal : TargetPortal
 {
     protected override void Start()
