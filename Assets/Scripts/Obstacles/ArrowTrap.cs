@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class ArrowTrap : Obstacle
+public class ArrowTrap : Obstacle , IRestartableObject
 {
     [SerializeField]
     private float _coolDownTime = 2f;
@@ -37,7 +37,7 @@ public class ArrowTrap : Obstacle
     }
 
 
-    public override void Restart()
+    public void Restart()
     {
         StopCoroutine(_arrowSpawn);
         _arrowSpawn = StartCoroutine(ArrowSpawn());

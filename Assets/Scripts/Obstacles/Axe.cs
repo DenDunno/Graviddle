@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Axe : Obstacle
+public class Axe : Obstacle , IRestartableObject
 {
     private Rigidbody2D _rigidbody;
 
@@ -22,7 +19,7 @@ public class Axe : Obstacle
     }
 
 
-    public override void Restart()
+    public void Restart()
     {
         transform.position = _startPosition;
         transform.rotation = _startRotation;

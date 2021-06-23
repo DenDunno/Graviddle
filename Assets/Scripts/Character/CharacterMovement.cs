@@ -13,7 +13,7 @@ public enum Move
 }
 
 
-abstract public class MoveСontrolType : MonoBehaviour
+public class CharacterMovement : MonoBehaviour
 {
     public Move Movement;
 }

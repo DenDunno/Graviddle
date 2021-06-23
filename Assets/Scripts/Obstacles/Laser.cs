@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(BoxCollider2D))]
-public class Laser : Obstacle
+public class Laser : Obstacle , IRestartableObject
 {
     [SerializeField]
     private bool _awake = true;
@@ -149,7 +149,7 @@ public class Laser : Obstacle
     }
 
 
-    public override void Restart()
+    public void Restart()
     {
         StopCoroutine(_launchLaser);
         StopCoroutine(ToggleLaser());

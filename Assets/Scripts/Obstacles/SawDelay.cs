@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class SawDelay : Saw
+public class SawDelay : Saw , IRestartableObject
 {
     [SerializeField]
     private float _coolDownTime = 2f;
@@ -36,7 +36,7 @@ public class SawDelay : Saw
     }
 
 
-    public override void Restart()
+    public void Restart()
     {
         StopCoroutine(_coolDownCoroutine);
 

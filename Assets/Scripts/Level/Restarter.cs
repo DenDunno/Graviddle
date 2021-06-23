@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class Restarter : MonoBehaviour
 {
-    [SerializeField]
-    private List<RestartableObject> _objectsToBeRestarted = null;
+    [SerializeField] private List<IRestartableObject> _objectsToBeRestarted = null;
 
 
     private void Start()
@@ -21,7 +20,9 @@ public class Restarter : MonoBehaviour
 
     public  void MakeRestart()
     {
-        foreach (RestartableObject restartableObject in _objectsToBeRestarted)
+        foreach(var restartableObject in _objectsToBeRestarted)
+        {
             restartableObject.Restart();
+        }
     }
 }

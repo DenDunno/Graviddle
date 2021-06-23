@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SawAcceleration : Saw
+public class SawAcceleration : Saw , IRestartableObject
 {
     /* 
     Взял за основу функцию f(x) = (1 - cos(a * x) ) / 2  , где a - параметр: cкорость
@@ -45,7 +45,7 @@ public class SawAcceleration : Saw
     }
 
 
-    public override void Restart()
+    public void Restart()
     {
         transform.position = _startPosition;
         _time = 0;

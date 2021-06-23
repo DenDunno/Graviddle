@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 
-public class StartPortal : TargetPortal
+public class StartPortal : TargetPortal , IRestartableObject
 {
     protected override void Start()
     {
@@ -14,7 +14,7 @@ public class StartPortal : TargetPortal
     }
 
 
-    public override void Restart()
+    public void Restart()
     {
         transform.localScale = new Vector3(1, 1, 1);
         StartCoroutine(Disappear());

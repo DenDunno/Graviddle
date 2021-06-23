@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.UI;
+﻿
 
-public class RestartableObject : MonoBehaviour
+public interface IRestartableObject
 {
-    public virtual void Restart() { }
+    void Restart();
 }

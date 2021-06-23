@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Obstacle : RestartableObject
+public class Obstacle : MonoBehaviour
 {
     private static bool _enabled = true;
 

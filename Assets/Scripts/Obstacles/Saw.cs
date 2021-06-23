@@ -1,15 +1,10 @@
 ﻿using UnityEngine;
 
-public class Saw : Obstacle
+public class Saw : Obstacle , IRestartableObject
 {
-    [SerializeField]
-    protected float _maxSpeed = 4;
-
-    [SerializeField]
-    protected float _distance = 1;
-
-    [SerializeField]
-    protected bool _goRight = true;
+    [SerializeField] protected float _maxSpeed = 4;
+    [SerializeField] protected float _distance = 1;
+    [SerializeField] protected bool _goRight = true;
 
     protected Vector3 _start;
     protected Vector3 _target;
@@ -45,7 +40,7 @@ public class Saw : Obstacle
     }
 
 
-    public override void Restart()
+    public void Restart()
     {
         float correlation = ScreenFade.TimeForRespawn * _maxSpeed * (_goRight ? -1 : 1);
         transform.position = _startPosition + correlation * transform.right; 
