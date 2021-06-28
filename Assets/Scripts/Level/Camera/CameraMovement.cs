@@ -1,12 +1,20 @@
 ﻿using UnityEngine;
 
 
+[RequireComponent(typeof(CameraBorders))]
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField] private Character _character = null;
     [SerializeField] private SwipeHandler _swipeHandler = null;
 
+    private CameraBorders _cameraBorders;
     private Quaternion _targetRotation;
+
+
+    private void Start()
+    {
+        _cameraBorders = GetComponent<CameraBorders>();
+    }
 
 
     private void OnEnable()
@@ -23,9 +31,12 @@ public class CameraMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        var cameraPosition = Vector3.Lerp(transform.position, _character.transform.position, 2 * Time.deltaTime);
+        var cameraPosition = _character.transform.position;
+        _cameraBorders.ClampCamera(ref cameraPosition);
 
-        transform.position = new Vector3(cameraPosition.x, cameraPosition.y, transform.position.z);
+        cameraPosition.z = transform.position.z;
+
+        transform.position = Vector3.Lerp(transform.position, cameraPosition, 2 * Time.deltaTime);
         transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, 2 * Time.deltaTime);
     }
 

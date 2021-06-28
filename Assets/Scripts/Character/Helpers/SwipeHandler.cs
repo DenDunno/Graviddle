@@ -23,9 +23,11 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler
             DefineTurn(ref swipeInput);
             bool lift = ((int)_lastDirection - (int)_newDirection) % 2 == 1; // 90 angle rotation
 
-            _lastDirection = _newDirection;
-
-            GravityChanged?.Invoke(_newDirection , lift);
+            if (_lastDirection != _newDirection)
+            {
+                _lastDirection = _newDirection;
+                GravityChanged?.Invoke(_newDirection, lift);
+            }
         }
     }
 
