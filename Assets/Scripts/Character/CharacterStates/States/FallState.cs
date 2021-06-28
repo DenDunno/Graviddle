@@ -3,14 +3,15 @@
 
 public class FallState : CharacterState
 {
-    private readonly Transform _characterTransform;
-    private readonly CharacterMovement _movement;
+    private readonly Transform _transform;
+    private readonly CharacterMovement _characterMovement;
+    private readonly float _movementSpeed = 3f;
 
 
     public FallState(Character character) : base(character)
     {
-        _movement = character.GetComponent<CharacterMovement>();
-        _characterTransform = character.transform;
+        _characterMovement = character.GetComponent<CharacterMovement>();
+        _transform = character.transform;
     }
 
 
@@ -22,15 +23,15 @@ public class FallState : CharacterState
 
     public override CharacterState Update()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(_characterTransform.position, 0.15f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(_transform.position, 0.15f);
 
         if (colliders.Length > 1)
         {
             return CharacterStates.IdleState;
         }
 
-        var direction = _characterTransform.position + Vector3.right * (int)_movement.СharacterMovement;
-        _characterTransform.position = Vector3.MoveTowards(_characterTransform.position, direction, 2 * Time.deltaTime);
+        var direction = (Vector2)_transform.position + _characterMovement.MoveDirection;
+        _transform.position = Vector3.MoveTowards(_transform.position, direction, _movementSpeed * Time.deltaTime);
 
         return this;
     }

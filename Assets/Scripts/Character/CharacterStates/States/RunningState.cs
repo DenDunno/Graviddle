@@ -3,14 +3,15 @@
 
 public class RunningState : CharacterState
 {
-    private readonly Transform _characterTransform;
-    private readonly CharacterMovement _movement;
+    private readonly Transform _transform;
+    private readonly CharacterMovement _characterMovement;
+    private readonly float _movementSpeed = 3f;
 
 
     public RunningState(Character character) : base(character)
     {
-        _movement = character.GetComponent<CharacterMovement>();
-        _characterTransform = character.transform;
+        _characterMovement = character.GetComponent<CharacterMovement>();
+        _transform = character.transform;
     }
 
 
@@ -21,16 +22,14 @@ public class RunningState : CharacterState
 
 
     public override CharacterState Update()
-    {
-        int sign = (int)_movement.СharacterMovement;
-
-        if (sign == 0)
+    {   
+        if (_characterMovement.MoveDirection == Vector2.zero)
         {
             return CharacterStates.IdleState;
         }
 
-        var direction = _characterTransform.position + Vector3.right * sign;
-        _characterTransform.position = Vector3.MoveTowards(_characterTransform.position, direction, 2 * Time.deltaTime);
+        var direction = (Vector2)_transform.position + _characterMovement.MoveDirection;
+        _transform.position = Vector3.MoveTowards(_transform.position, direction, _movementSpeed * Time.deltaTime);
 
         return this;
     }

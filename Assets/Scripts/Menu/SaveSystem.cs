@@ -1,14 +1,13 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class SaveSystem : MonoBehaviour
 {
-    [SerializeField]
-    private Button[] _levelButtons = null;
+    [SerializeField] private Button[] _levelButtons = null;
 
     private Dictionary<string, Color32> _paintButton = new Dictionary<string, Color32>
     {
@@ -23,15 +22,20 @@ public class SaveSystem : MonoBehaviour
         string path = Path.Combine(Application.persistentDataPath, "Save.json");
         string json = "";
 
-        if (File.Exists(path))
+        if (File.Exists(path) == true)
+        {
             json = File.ReadAllText(path);
+        }
 
         else
+        {
             File.WriteAllText(path, json);
+        }
 
-
-        if (json.Length != 0) 
+        if (json.Length != 0)
+        {
             OpenLevels(json);
+        }
 
         _levelButtons[0].interactable = true; 
     }
@@ -42,16 +46,20 @@ public class SaveSystem : MonoBehaviour
         var levels = new Dictionary<int, string>();
         levels = JsonConvert.DeserializeObject<Dictionary<int, string>>(json);
 
-
         for (int i = 0; i < _levelButtons.Length; ++i)
         {
             if (i <= levels.Count) // открой все пройденные уровни и следующий
+            {
                 _levelButtons[i].interactable = true;
+            }
 
             if (i < levels.Count) // раскрасить кнопку пройденных уровней в золотой, серебрянный или бронзовый цвет
+            {
                 _levelButtons[i].GetComponent<Image>().color = _paintButton[levels[i]];
+            }
         }
     }
+
 
     public static void MakeSave(int indexOfLevel, string result)
     {

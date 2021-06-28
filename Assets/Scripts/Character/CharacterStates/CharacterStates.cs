@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-
+[RequireComponent(typeof(Character))]
 public class CharacterStates : MonoBehaviour
 {
     public static IdleState IdleState { get; private set; }
@@ -8,16 +8,15 @@ public class CharacterStates : MonoBehaviour
     public static FallState FallState { get; private set; }
     public static DieState DieState { get; private set; }
 
-    [SerializeField] private Character _character;
-    [SerializeField] private SwipeHandler _swipeHandler;
 
-
-    private void Start()
+    public void Init()
     {
-        IdleState = new IdleState(_character, _swipeHandler);
-        RunningState = new RunningState(_character);
-        FallState = new FallState(_character);
-        DieState = new DieState(_character);
+        var character = GetComponent<Character>();
+
+        IdleState = new IdleState(character);
+        RunningState = new RunningState(character);
+        FallState = new FallState(character);
+        DieState = new DieState(character);
     }
 }
 

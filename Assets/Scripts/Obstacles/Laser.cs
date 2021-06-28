@@ -1,35 +1,19 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class Laser : Obstacle , IRestartableObject
 {
-    [SerializeField]
-    private bool _awake = true;
-
-    [SerializeField]
-    private float _laserDistance = 5;
-
-    [SerializeField]
-    private bool _constDistortionSpeed = false;
-
-    [SerializeField]
-    private float _distortionSpeed = 0.3f;
-
-    [SerializeField]
-    private float _startWaitTime = 2f;
-
-    [SerializeField]
-    private float _workTime = 3f;
-
-    [SerializeField]
-    private float _coolDownTime = 2f;
-
-    [SerializeField]
-    private ParticleSystemRenderer[] _sourceEnergyParticles = null;
+    [SerializeField] private bool _awake = true;
+    [SerializeField] private float _laserDistance = 5;
+    [SerializeField] private bool _constDistortionSpeed = false;
+    [SerializeField] private float _distortionSpeed = 0.3f;
+    [SerializeField] private float _startWaitTime = 2f;
+    [SerializeField] private float _workTime = 3f;
+    [SerializeField] private float _coolDownTime = 2f;
+    [SerializeField] private ParticleSystemRenderer[] _sourceEnergyParticles = null;
 
     private LineRenderer _laser;
     private BoxCollider2D _collider;
@@ -49,7 +33,6 @@ public class Laser : Obstacle , IRestartableObject
     {
         _enabled = _awake;
 
-        // просто подобрал значения
         Vector3 targetPosition = transform.position - transform.up / 2 - transform.right * 0.04f;
 
         _laser = GetComponentInChildren<LineRenderer>();

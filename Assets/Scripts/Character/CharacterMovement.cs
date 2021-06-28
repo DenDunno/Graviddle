@@ -1,36 +1,48 @@
 ﻿using UnityEngine;
 
 
+[RequireComponent(typeof(CharacterGravity))]
 public class CharacterMovement : MonoBehaviour
 {
-    public Movement СharacterMovement { get; private set; }
+    public Vector2 MoveDirection { get; private set; }
+
+    private Movement _movement; 
     private SpriteRenderer _spriteRenderer;
+    private CharacterGravity _characterGravity;
 
 
     private void Start()
     {
+        _characterGravity = GetComponent<CharacterGravity>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
 
     private void Update()
     {
-        if (СharacterMovement != Movement.Stop)
+        //inversion when character upside
+        int sign = (int)_movement * _characterGravity.MovementInversion;
+        Movement actualMovement = (Movement)sign;
+
+        MoveDirection = transform.right * sign;
+
+        if (actualMovement != Movement.Stop)
         {
-            _spriteRenderer.flipX = СharacterMovement == Movement.Left;
+            _spriteRenderer.flipX = (actualMovement == Movement.Left);
         }
     }
 
 
-    public void MoveCharacter(Movement movement)
+    public void MoveCharacter(int movement) // called by eventTrigger from Inspector
     {
-        СharacterMovement = movement;
+        movement *= _characterGravity.MovementInversion;
+        _movement = (Movement)movement;
     }
 
 
-    public void StopCharacter()
+    public void StopCharacter() // called by eventTrigger from Inspector
     {
-        СharacterMovement = Movement.Stop;
+        _movement = Movement.Stop;
     }
 }
 

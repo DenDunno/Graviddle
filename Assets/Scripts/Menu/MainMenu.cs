@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
+
 public class MainMenu : MonoBehaviour
 {
-
     private void Start() 
     {
         if (FindObjectOfType<AudioSource>() == null) // выполнится при запуске игры
@@ -17,5 +17,4 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
-
 }

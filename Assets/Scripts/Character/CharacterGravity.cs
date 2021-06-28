@@ -1,26 +1,25 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class CharacterGravity : MonoBehaviour
 {
-    private readonly List<CharacterGravityData> _gravityData = new List<CharacterGravityData>()
-    {
-        new CharacterGravityData(new Vector2(0  , -1) , 0),
-        new CharacterGravityData(new Vector2(1  ,  0) , 90),
-        new CharacterGravityData(new Vector2(0  ,  1) , 180),
-        new CharacterGravityData(new Vector2(-1 ,  0) , 270)
-    };
+    public int MovementInversion { get; private set; } = 1;
+
+    [SerializeField] private SwipeHandler _swipeHandler = null;
 
     private readonly float _rotationSpeed = 5f;
     private Quaternion _targetRotation;
 
-    [SerializeField] private SwipeHandler _swipeHandler;
-    
 
     private void OnEnable()
     {
         _swipeHandler.GravityChanged += OnGravityChanged;
+    }
+
+
+    private void OnDisable()
+    {
+        _swipeHandler.GravityChanged -= OnGravityChanged;
     }
 
 
@@ -30,18 +29,14 @@ public class CharacterGravity : MonoBehaviour
     }
 
 
-    private void OnGravityChanged(GravityDirection gravityDirection)
+    private void OnGravityChanged(GravityDirection gravityDirection , bool lift)
     {
-        var gravityData = _gravityData[(int)gravityDirection];
+        var gravityData = GravityDataPresenter.GravityData[(int)gravityDirection];
 
         Physics2D.gravity = gravityData.GravityVector;
-        _targetRotation = gravityData.CharacterRotation;
-    }
+        _targetRotation = gravityData.Rotation;
 
-
-    private void OnDisable()
-    {
-        _swipeHandler.GravityChanged -= OnGravityChanged;
+        MovementInversion = (gravityDirection == GravityDirection.Up ? -1 : 1);
     }
 }
 

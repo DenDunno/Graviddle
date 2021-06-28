@@ -2,20 +2,15 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 [RequireComponent(typeof(Image))]
 public class Reward : MonoBehaviour
 {
-    [SerializeField]
-    private int _silverReward = 5;
+    [SerializeField] private int _silverReward = 5;
+    [SerializeField] private int _goldReward = 2;
+    [SerializeField] private GameObject _pauseButton = null;
+    [SerializeField] private ParticleSystem _starParicles = null;
 
-    [SerializeField]
-    private int _goldReward = 2;
-
-    [SerializeField]
-    private GameObject _pauseButton = null;
-
-    [SerializeField]
-    private ParticleSystem _starParicles = null;
 
     private void Start()
     {
@@ -29,7 +24,7 @@ public class Reward : MonoBehaviour
 
     private Texture2D DefineReward()
     {
-        int result = GravityChangeType.NumOfRotations;
+        int result = 1;
         string answer;
 
         if (result > _silverReward)

@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 
+
 public class Arrow : Obstacle
 {
     private float _speed = 15f;
+
 
     private void Update()
     {

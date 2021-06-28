@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+
 public class Pause : MonoBehaviour
 {
     public void SwitchPauseMenu(bool active)
@@ -7,6 +8,7 @@ public class Pause : MonoBehaviour
         gameObject.SetActive(active);
         Time.timeScale = active ? 0 : 1;
     }
+
 
     public void BackToMenu()
     {

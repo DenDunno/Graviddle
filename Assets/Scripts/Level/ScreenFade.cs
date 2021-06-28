@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
 [RequireComponent(typeof(Restarter))]
 [RequireComponent(typeof(Image))]
 public class ScreenFade : MonoBehaviour
@@ -21,7 +22,6 @@ public class ScreenFade : MonoBehaviour
 
     public IEnumerator MakeFade()
     {
-        StartCoroutine(Obstacle.SwitchOff()); // во время респауна персонаж неуязвим
         yield return StartCoroutine(ChangeAlphaChannel(2, true, (result) => { _deathImage.color = result; })); // затемнение
 
         _restarter.MakeRestart(); // когда экран черный, делаем все нужные "сбросы" 
