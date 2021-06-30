@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class FallState : CharacterState
 {
-    public Action<bool> GroundedChanged;
-
     private readonly Transform _transform;
     private readonly CharacterMovement _characterMovement;
     private readonly float _movementSpeed = 3f;
@@ -20,7 +18,6 @@ public class FallState : CharacterState
 
     public override void EnterState()
     {
-        GroundedChanged?.Invoke(false);
         _animator.Play("Fall");
     }
 
@@ -30,8 +27,7 @@ public class FallState : CharacterState
         Collider2D[] colliders = Physics2D.OverlapCircleAll(_transform.position, 0.15f);
 
         if (colliders.Length > 1)
-        {
-            GroundedChanged?.Invoke(true);
+        {            
             return CharacterStates.IdleState;
         }
 
