@@ -8,7 +8,7 @@ public class Restarter : MonoBehaviour
 
     public void MakeRestart()
     {
-        foreach (var restartableObject in _objectsToBeRestarted)
+        foreach (IRestartableObject restartableObject in _objectsToBeRestarted)
         {
             restartableObject.Restart();
         }

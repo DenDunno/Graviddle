@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 
 public class FallState : CharacterState
 {
+    public Action<bool> GroundedChanged;
+
     private readonly Transform _transform;
     private readonly CharacterMovement _characterMovement;
     private readonly float _movementSpeed = 3f;
@@ -17,6 +20,7 @@ public class FallState : CharacterState
 
     public override void EnterState()
     {
+        GroundedChanged?.Invoke(false);
         _animator.Play("Fall");
     }
 
@@ -27,10 +31,11 @@ public class FallState : CharacterState
 
         if (colliders.Length > 1)
         {
+            GroundedChanged?.Invoke(true);
             return CharacterStates.IdleState;
         }
 
-        var direction = (Vector2)_transform.position + _characterMovement.MoveDirection;
+        Vector2 direction = (Vector2)_transform.position + _characterMovement.MoveDirection;
         _transform.position = Vector3.MoveTowards(_transform.position, direction, _movementSpeed * Time.deltaTime);
 
         return this;

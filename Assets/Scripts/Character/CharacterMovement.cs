@@ -33,14 +33,14 @@ public class CharacterMovement : MonoBehaviour
     }
 
 
-    public void MoveCharacter(int movement) // called by eventTrigger from Inspector
+    public void MoveCharacter(int movement) // called by eventTrigger from button
     {
         movement *= _characterGravity.MovementInversion;
         _movement = (Movement)movement;
     }
 
 
-    public void StopCharacter() // called by eventTrigger from Inspector
+    public void StopCharacter() // called by eventTrigger from button
     {
         _movement = Movement.Stop;
     }

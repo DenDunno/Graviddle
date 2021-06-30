@@ -29,9 +29,9 @@ public class CharacterGravity : MonoBehaviour
     }
 
 
-    private void OnGravityChanged(GravityDirection gravityDirection , bool lift)
+    private void OnGravityChanged(GravityDirection gravityDirection)
     {
-        var gravityData = GravityDataPresenter.GravityData[(int)gravityDirection];
+        GravityData gravityData = GravityDataPresenter.GravityData[(int)gravityDirection];
 
         Physics2D.gravity = gravityData.GravityVector;
         _targetRotation = gravityData.Rotation;

@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler
 {
-    public Action<GravityDirection , bool> GravityChanged;
+    public Action<GravityDirection> GravityChanged;
 
     private readonly int _numOfDirections = 4;
 
@@ -21,12 +21,11 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler
         if (swipeInput.magnitude > _swipeSensitivity)
         {
             DefineTurn(ref swipeInput);
-            bool lift = ((int)_lastDirection - (int)_newDirection) % 2 == 1; // 90 angle rotation
 
             if (_lastDirection != _newDirection)
             {
                 _lastDirection = _newDirection;
-                GravityChanged?.Invoke(_newDirection, lift);
+                GravityChanged?.Invoke(_newDirection);
             }
         }
     }

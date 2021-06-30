@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
 
-[RequireComponent(typeof(CharacterStates))]
 public class CharacterStateMachine : MonoBehaviour
 {
     private CharacterState _state;
@@ -9,8 +8,6 @@ public class CharacterStateMachine : MonoBehaviour
 
     private void Start()
     {
-        GetComponent<CharacterStates>().Init();
-
         _state = CharacterStates.IdleState;
     }
 
@@ -24,7 +21,7 @@ public class CharacterStateMachine : MonoBehaviour
 
     private void Update()
     {
-        var newState = _state.Update();
+        CharacterState newState = _state.Update();
         
         if (newState != _state)
         {

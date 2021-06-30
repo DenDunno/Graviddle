@@ -23,7 +23,7 @@ public class IdleState : CharacterState
     {
         if (_characterMovement.MoveDirection != Vector2.zero)
         {
-            return CharacterStates.RunningState;
+            return CharacterStates.RunState;
         }
 
         return this;
