@@ -11,6 +11,12 @@ public class CharacterGravity : MonoBehaviour
     private Quaternion _targetRotation;
 
 
+    private void Start()
+    {
+        Physics2D.gravity = new Vector2(0, -1);
+    }
+
+
     private void OnEnable()
     {
         _swipeHandler.GravityChanged += OnGravityChanged;

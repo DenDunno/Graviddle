@@ -14,9 +14,8 @@ public class Pause : MonoBehaviour
     {
         SwitchPauseMenu(false);
 
-        SceneTransit transit;
-        transit = Resources.Load<SceneTransit>("Prefabs/Menu/SceneTransit");
-        transit.SpawnTransit(0);
+        var sceneTransit = Resources.Load<SceneTransit>("SceneTransit");
+        sceneTransit.SpawnTransit(0);
     }
 }
 

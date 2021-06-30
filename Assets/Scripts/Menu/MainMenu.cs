@@ -7,8 +7,8 @@ public class MainMenu : MonoBehaviour
     {
         if (FindObjectOfType<AudioSource>() == null) // выполнится при запуске игры
         {
-            Object _music = Resources.Load("Prefabs/Menu/Music");
-            DontDestroyOnLoad(Instantiate(_music));
+            Object music = Resources.Load("Music");
+            DontDestroyOnLoad(Instantiate(music));
         }
     }
 

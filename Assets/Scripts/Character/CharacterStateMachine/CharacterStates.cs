@@ -9,7 +9,7 @@ public class CharacterStates
     public static DieState DieState { get; private set; }
 
 
-    static CharacterStates()
+    public static void Init()
     {
         var character = Object.FindObjectOfType<Character>();
 

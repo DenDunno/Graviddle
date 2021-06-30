@@ -3,12 +3,10 @@
 
 [RequireComponent(typeof(CameraBorders))]
 public class CameraMovement : MonoBehaviour
-{
-    [SerializeField] private Character _character = null;
-   
-    private readonly float _movementSpeed = 2f;
+{    
+    private readonly float _movingSpeed = 1f;
     private CameraBorders _cameraBorders;
-    
+
 
     private void Start()
     {
@@ -18,12 +16,16 @@ public class CameraMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        Vector3 cameraPosition = _character.transform.position;
-        cameraPosition.z = transform.position.z;
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        {
+            Vector3 cameraPosition = Input.GetTouch(0).deltaPosition;
+            cameraPosition *= -_movingSpeed * Time.deltaTime;
+            cameraPosition = transform.rotation * cameraPosition;
+            cameraPosition = transform.position + cameraPosition;
 
-        //cameraPosition += transform.up * 4.7f;
-        _cameraBorders.ClampCamera(ref cameraPosition);
+            _cameraBorders.ClampCamera(ref cameraPosition);
 
-        transform.position = Vector3.Lerp(transform.position, cameraPosition, _movementSpeed * Time.deltaTime);
+            transform.position = cameraPosition;
+        }
     }
 }

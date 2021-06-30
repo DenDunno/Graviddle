@@ -23,7 +23,7 @@ public class CharacterMovement : MonoBehaviour
         //inversion when character upside
         int sign = (int)_movement * _characterGravity.MovementInversion;
         Movement actualMovement = (Movement)sign;
-
+        
         MoveDirection = transform.right * sign;
 
         if (actualMovement != Movement.Stop)

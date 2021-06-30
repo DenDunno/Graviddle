@@ -3,7 +3,7 @@
 
 public class CameraBorders : MonoBehaviour
 {
-    [SerializeField] private SwipeHandler _swipeHandler;
+    [SerializeField] private SwipeHandler _swipeHandler = null;
 
     [SerializeField] private float _levelWidth = 10;
     [SerializeField] private float _levelHeight = 10;

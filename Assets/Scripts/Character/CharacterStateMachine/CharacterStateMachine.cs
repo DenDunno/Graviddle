@@ -8,6 +8,7 @@ public class CharacterStateMachine : MonoBehaviour
 
     private void Start()
     {
+        CharacterStates.Init();
         _state = CharacterStates.IdleState;
     }
 
