@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler
 {
-    public Action<GravityDirection> GravityChanged;
+    public event Action<GravityDirection> GravityChanged;
 
     private readonly int _numOfDirections = 4;
 

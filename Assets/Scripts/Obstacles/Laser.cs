@@ -22,7 +22,7 @@ public class Laser : Obstacle , IRestartableObject
     private string _noisePowerName  = "Vector1_CEBC9821";
     private string _noiseDirectionName = "Vector2_A7335824";
 
-    private Action <Material , float> _setDistortion;
+    private event Action <Material , float> _setDistortion;
     private bool _enabled = true;
     private bool _restart = false;
 

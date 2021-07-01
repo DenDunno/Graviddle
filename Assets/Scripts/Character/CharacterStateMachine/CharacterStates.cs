@@ -12,9 +12,10 @@ public class CharacterStates
     public static void Init()
     {
         var character = Object.FindObjectOfType<Character>();
+        var swipeHandler = Object.FindObjectOfType<SwipeHandler>();
 
+        FallState = new FallState(character, swipeHandler);
         IdleState = new IdleState(character);
-        FallState = new FallState(character);
         RunState = new RunState(character);
         DieState = new DieState(character);
     }

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-
+using System;
 
 [RequireComponent(typeof(Restarter))]
 [RequireComponent(typeof(Image))]
@@ -31,7 +31,7 @@ public class ScreenFade : MonoBehaviour
     }
 
 
-    public static IEnumerator ChangeAlphaChannel(float fadingSpeed, bool glassy, System.Action<Color> callback)
+    public static IEnumerator ChangeAlphaChannel(float fadingSpeed, bool glassy, Action<Color> callback)
     {
         float alphaChannel = glassy ? 0 : 1;
 

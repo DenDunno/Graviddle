@@ -144,7 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ce9166c45b0c444a58f5cc73f58e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _swipeHandler: {fileID: 0}
+  _swipeHandler: {fileID: 2193011851720177200, guid: 85bbc6cf07021704eb8f8c0a82859b01,
+    type: 3}
   _levelWidth: 11.8
   _levelHeight: 21.4
 --- !u!114 &6186545343902058723
@@ -159,7 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b625cbeccf32b4cad18ae854690ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _character: {fileID: 0}
+  _character: {fileID: 2684562039941863171, guid: a0ca5d21826335e4dae61dcad8de1703,
+    type: 3}
 --- !u!114 &6186545343902058722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b26d71eb0797f1d44a0f16634e420522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _swipeHandler: {fileID: 0}
+  _swipeHandler: {fileID: 2193011851720177200, guid: 85bbc6cf07021704eb8f8c0a82859b01,
+    type: 3}
 --- !u!114 &6186545343902058721
 MonoBehaviour:
   m_ObjectHideFlags: 0
