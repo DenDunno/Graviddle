@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 
 
-public class CharacterStateMachine : MonoBehaviour
+public class CharacterStateMachine : MonoBehaviour , IRestartableObject
 {
     private CharacterState _state;
 
 
     private void Start()
     {
-        CharacterStates.Init();
         _state = CharacterStates.IdleState;
     }
 
@@ -49,7 +48,16 @@ public class CharacterStateMachine : MonoBehaviour
     {
         if (collision.TryGetComponent<Obstacle>(out var obstacle) == true)
         {
-            SwitchState(CharacterStates.DieState);
+            if (_state != CharacterStates.DieState)
+            {
+                SwitchState(CharacterStates.DieState);
+            }
         }
+    }
+
+
+    void IRestartableObject.Restart()
+    {
+        SwitchState(CharacterStates.IdleState);
     }
 }

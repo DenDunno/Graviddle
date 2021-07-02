@@ -10,7 +10,7 @@ public class FallState : CharacterState
     private readonly float _movementSpeed = 3f;
     
 
-    public FallState(Character character , SwipeHandler swipeHandler) : base(character)
+    public FallState(Character character, SwipeHandler swipeHandler) : base(character)
     {
         _swipeHandler = swipeHandler;
         _characterMovement = character.GetComponent<CharacterMovement>();

@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
 
-[RequireComponent(typeof(PortalDisappearance))]
 public class StartPortal :  MonoBehaviour, IRestartableObject
 {   
     private readonly PortalDisappearance portalDisappearance  = new PortalDisappearance();

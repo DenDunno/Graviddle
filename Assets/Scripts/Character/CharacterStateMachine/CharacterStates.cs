@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 
 public class CharacterStates 
@@ -9,15 +10,14 @@ public class CharacterStates
     public static DieState DieState { get; private set; }
 
 
-    public static void Init()
+    public static void Init(Character character , UnityEvent characterDeathEvent)
     {
-        var character = Object.FindObjectOfType<Character>();
         var swipeHandler = Object.FindObjectOfType<SwipeHandler>();
 
-        FallState = new FallState(character, swipeHandler);
         IdleState = new IdleState(character);
+        FallState = new FallState(character, swipeHandler);
         RunState = new RunState(character);
-        DieState = new DieState(character);
+        DieState = new DieState(character, characterDeathEvent);
     }
 }
 

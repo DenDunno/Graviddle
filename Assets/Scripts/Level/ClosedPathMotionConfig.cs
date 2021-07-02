@@ -10,10 +10,10 @@ public class ClosedPathMotionConfig
     public float Distance => _distance;
     public float Speed => _speed;
 
-    [SerializeField] private bool _isHorizontalMovement;
-    [SerializeField] private bool _goRight;
-    [SerializeField] private float _distance;
-    [SerializeField] private float _speed;
+    [SerializeField] private bool _isHorizontalMovement = false;
+    [SerializeField] private bool _goRight = false;
+    [SerializeField] private float _distance = 0;
+    [SerializeField] private float _speed = 0;
 
 
     public void Init(Transform transform)

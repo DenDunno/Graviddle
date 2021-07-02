@@ -5,7 +5,7 @@ using System;
 
 public class MovementWithAcceleration : MonoBehaviour
 {
-    [SerializeField] private ClosedPathMotionConfig _motionConfig;
+    [SerializeField] private ClosedPathMotionConfig _motionConfig = null;
 
     private float _period;
     private float _time;
