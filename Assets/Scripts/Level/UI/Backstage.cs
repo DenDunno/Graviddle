@@ -6,7 +6,9 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class Backstage : MonoBehaviour
 {
-    private readonly float _fadingSpeed = 2f;
+    [SerializeField] private float _fadingSpeed = 2f;
+    [SerializeField] private float _brightenSpeed = 1.5f;
+
     private Image _image;
     
 
@@ -18,18 +20,18 @@ public class Backstage : MonoBehaviour
 
     public IEnumerator MakeFade(IEnumerator backstageAction)
     {
-        yield return StartCoroutine(ChangeAlphaChannel(true)); // dark 
+        yield return StartCoroutine(ChangeAlphaChannel(_fadingSpeed , true)); // dark 
 
         yield return StartCoroutine(backstageAction);
 
-        yield return StartCoroutine(ChangeAlphaChannel(false)); // transparent
+        yield return StartCoroutine(ChangeAlphaChannel(_brightenSpeed , false)); // transparent
     }
 
 
-    private IEnumerator ChangeAlphaChannel(bool transparent)
+    private IEnumerator ChangeAlphaChannel(float fadingSpeed , bool transparent)
     {
         float alphaChannel = transparent ? 0 : 1;
-        var fadingSpeed = _fadingSpeed * (transparent ? 1 : -1);
+        fadingSpeed *= transparent ? 1 : -1;
 
         while (transparent ? alphaChannel <= 1 : alphaChannel >= 0)
         {

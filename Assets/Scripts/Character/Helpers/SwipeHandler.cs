@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler
+public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler 
 {
     public event Action<GravityDirection> GravityChanged;
 

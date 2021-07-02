@@ -19,7 +19,7 @@ public class Axe : Obstacle , IRestartableObject
     }
 
 
-    public void Restart()
+    void IRestartableObject.Restart()
     {
         transform.position = _startPosition;
         transform.rotation = _startRotation;

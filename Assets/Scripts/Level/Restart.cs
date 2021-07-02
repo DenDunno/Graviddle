@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 [RequireComponent(typeof(Backstage))]
 public class Restart : MonoBehaviour
 {
+    //[SerializeField] private UnityEvent AfterRestart = null;
     private IEnumerable<IRestartableObject> _restartableObjects = null;
     private readonly float _restartTime = 0.7f;
     private Backstage _backstage;
@@ -19,9 +21,16 @@ public class Restart : MonoBehaviour
     }
 
 
-    public void MakeRestart()
+    public void ActivateRestart()
     {
-        StartCoroutine(_backstage.MakeFade(RestartObjects()));
+        StartCoroutine(MakeRestart());
+    }
+
+
+    private IEnumerator MakeRestart()
+    {
+        yield return StartCoroutine(_backstage.MakeFade(RestartObjects()));
+        //AfterRestart?.Invoke();
     }
 
 

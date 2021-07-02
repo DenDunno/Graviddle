@@ -1083,6 +1083,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fc4227e018c7114ea43523d5243a8d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fadingSpeed: 1
+  _brightenSpeed: 1.5
 --- !u!114 &6466074549810468973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1184,6 +1186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _silverReward: 5
   _goldReward: 2
+  _pauseButton: {fileID: 0}
   _starParicles: {fileID: 0}
 --- !u!1 &6488566793351928760
 GameObject:

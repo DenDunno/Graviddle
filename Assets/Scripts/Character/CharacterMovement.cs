@@ -2,7 +2,7 @@
 
 
 [RequireComponent(typeof(CharacterGravity))]
-public class CharacterMovement : MonoBehaviour
+public class CharacterMovement : MonoBehaviour , IRestartableObject
 {
     public Vector2 MoveDirection { get; private set; }
 
@@ -43,6 +43,12 @@ public class CharacterMovement : MonoBehaviour
     public void StopCharacter() // called by eventTrigger from button
     {
         _movement = Movement.Stop;
+    }
+
+
+    void IRestartableObject.Restart()
+    {
+        StopCharacter();
     }
 }
 

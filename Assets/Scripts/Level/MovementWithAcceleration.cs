@@ -2,7 +2,6 @@
 using System;
 
 
-
 public class MovementWithAcceleration : MonoBehaviour
 {
     [SerializeField] private ClosedPathMotionConfig _motionConfig = null;

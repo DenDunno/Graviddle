@@ -35,7 +35,7 @@ public class ArrowTrap : Obstacle , IRestartableObject
     }
 
 
-    public void Restart()
+    void IRestartableObject.Restart()
     {
         StopCoroutine(_arrowSpawn);
         _arrowSpawn = StartCoroutine(SpawnArrow());

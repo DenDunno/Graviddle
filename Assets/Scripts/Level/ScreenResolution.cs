@@ -7,7 +7,7 @@ public class ScreenResolution : MonoBehaviour
     private Camera _camera;
 
 
-    private void Awake()
+    private void Start()
     {
         _camera = GetComponent<Camera>();
     }
