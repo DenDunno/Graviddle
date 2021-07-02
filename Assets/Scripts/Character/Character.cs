@@ -3,7 +3,7 @@
 
 public class Character : MonoBehaviour , IRestartableObject
 {
-    public bool IsAlive { get; private set; } = true;
+    private bool _isAlive = true;
     
 
     void IRestartableObject.Restart()

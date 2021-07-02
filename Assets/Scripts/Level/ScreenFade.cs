@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+
 [RequireComponent(typeof(Restarter))]
 [RequireComponent(typeof(Image))]
 public class ScreenFade : MonoBehaviour
