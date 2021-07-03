@@ -9,6 +9,7 @@ public class FinishPortalCapture : MonoBehaviour
     [SerializeField] private GameObject _touchPanel = null;
     private CameraCapture _cameraCapture;
 
+    private readonly float _epsilon = 1f;
     private readonly float _waitTime = 1f;
 
 
@@ -20,7 +21,7 @@ public class FinishPortalCapture : MonoBehaviour
 
     private void Update()
     {
-        if (Vector2.Distance(transform.position, _finishPortal.transform.position) <= 1)
+        if (Vector2.Distance(transform.position, _finishPortal.transform.position) <= _epsilon)
         {
             enabled = false;
             StartCoroutine(WaitToSeePortal());

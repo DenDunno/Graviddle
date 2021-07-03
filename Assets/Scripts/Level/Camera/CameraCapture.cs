@@ -21,12 +21,12 @@ public class CameraCapture : MonoBehaviour
 
     private void LateUpdate()
     {
-        Vector3 cameraPosition = _target.position;
-        cameraPosition.z = transform.position.z;
+        Vector3 newCameraPosition = _target.position;
+        newCameraPosition.z = transform.position.z;
 
-        _cameraBorders.ClampCamera(ref cameraPosition);
+        _cameraBorders.ClampCamera(ref newCameraPosition);
 
-        transform.position = Vector3.Lerp(transform.position, cameraPosition, _captureSpeed * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, newCameraPosition, _captureSpeed * Time.deltaTime);
     }
 
 
