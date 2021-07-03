@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 
 
-[RequireComponent(typeof(CameraBorders))]
-public class CameraMovement : MonoBehaviour
+public class CameraTouchMovement : MonoBehaviour
 {    
     private readonly float _movingSpeed = 1f;
     private CameraBorders _cameraBorders;

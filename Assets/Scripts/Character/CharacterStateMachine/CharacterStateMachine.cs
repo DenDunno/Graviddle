@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class CharacterStateMachine : MonoBehaviour , IRestartableObject
+public class CharacterStateMachine : MonoBehaviour , IRestartableComponent
 {
     private CharacterState _state;
 
@@ -56,7 +56,7 @@ public class CharacterStateMachine : MonoBehaviour , IRestartableObject
     }
 
 
-    void IRestartableObject.Restart()
+    void IRestartableComponent.Restart()
     {
         SwitchState(CharacterStates.IdleState);
     }

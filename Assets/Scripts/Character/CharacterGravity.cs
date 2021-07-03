@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class CharacterGravity : MonoBehaviour , IRestartableObject
+public class CharacterGravity : MonoBehaviour , IRestartableComponent
 {
     public int MovementInversion { get; private set; } = 1;
 
@@ -46,7 +46,7 @@ public class CharacterGravity : MonoBehaviour , IRestartableObject
     }
 
 
-    void IRestartableObject.Restart()
+    void IRestartableComponent.Restart()
     {
         OnGravityChanged(GravityDirection.Down);
     }

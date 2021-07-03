@@ -8,14 +8,7 @@ public class Backstage : MonoBehaviour
 {
     [SerializeField] private float _fadingSpeed = 2f;
     [SerializeField] private float _brightenSpeed = 1.5f;
-
-    private Image _image;
-    
-
-    private void Start()
-    {
-        _image = GetComponent<Image>();
-    }
+    [SerializeField] private Image _image = null;
 
 
     public IEnumerator MakeFade(IEnumerator backstageAction)

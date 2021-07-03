@@ -1,8 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 
-public class CameraRotation : MonoBehaviour
+public class CameraRotation : MonoBehaviour 
 {
     [SerializeField] private SwipeHandler _swipeHandler = null;
 

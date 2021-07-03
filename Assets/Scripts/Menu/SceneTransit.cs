@@ -22,12 +22,17 @@ public class SceneTransit : MonoBehaviour
 
     public void SpawnTransit(int scene)
     {
-        SceneTransit activeSceneTransit = Instantiate(this);
-        activeSceneTransit.MakeTransition(scene);
+        Instantiate(this).ActivateTransit(scene);
     }
 
 
-    private void MakeTransition(int scene)
+    private void ActivateTransit(int scene)
+    {
+        StartCoroutine(MakeTransition(scene));
+    }
+
+
+    private IEnumerator MakeTransition(int scene)
     {
         _scene = scene;
         Time.timeScale = 1f;
@@ -35,8 +40,8 @@ public class SceneTransit : MonoBehaviour
         Image transitionImage = (scene >= 0 && scene <= 2) ? _menuTransitionImage : _levelTransitionImage;
         _backstage = transitionImage.GetComponent<Backstage>();
 
-        StartCoroutine(_backstage.MakeFade(WaitWhileSceneLoading()));
-        
+        yield return StartCoroutine(_backstage.MakeFade(WaitWhileSceneLoading()));
+
         Destroy(gameObject);
     }
 

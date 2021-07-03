@@ -3,6 +3,9 @@
 
 public class Pause : MonoBehaviour
 {
+    [SerializeField] private SceneTransit _sceneTransit = null;
+
+
     public void SwitchPauseMenu(bool active)
     {
         gameObject.SetActive(active);
@@ -13,9 +16,7 @@ public class Pause : MonoBehaviour
     public void BackToMenu()
     {
         SwitchPauseMenu(false);
-
-        var sceneTransit = Resources.Load<SceneTransit>("SceneTransit");
-        sceneTransit.SpawnTransit(0);
+        _sceneTransit.SpawnTransit(0);
     }
 }
 

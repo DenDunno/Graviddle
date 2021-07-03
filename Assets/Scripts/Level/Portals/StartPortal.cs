@@ -1,20 +1,20 @@
 ﻿using UnityEngine;
 
 
-public class StartPortal :  MonoBehaviour, IRestartableObject
+public class StartPortal :  MonoBehaviour, IRestartableComponent
 {   
-    private readonly PortalDisappearance portalDisappearance  = new PortalDisappearance();
+    private readonly PortalDisappearance _portalDisappearance  = new PortalDisappearance();
 
 
     private void Start()
     {
-        StartCoroutine(portalDisappearance.Disappear(transform));
+        StartCoroutine(_portalDisappearance.Disappear(transform));
     }
 
 
-    void IRestartableObject.Restart()
+    void IRestartableComponent.Restart()
     {
         transform.localScale = new Vector3(1, 1, 1);
-        StartCoroutine(portalDisappearance.Disappear(transform));
+        StartCoroutine(_portalDisappearance.Disappear(transform));
     }
 }

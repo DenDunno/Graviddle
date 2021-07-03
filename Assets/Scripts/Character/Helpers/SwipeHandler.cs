@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler 
+public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler , IRestartableComponent
 {
     public event Action<GravityDirection> GravityChanged;
 
@@ -22,12 +21,7 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler
         if (swipeInput.magnitude > _swipeSensitivity)
         {
             DefineTurn(ref swipeInput);
-
-            if (_lastDirection != _newDirection)
-            {
-                _lastDirection = _newDirection;
-                GravityChanged?.Invoke(_newDirection);
-            }
+            TryInvokeGravityEvent();
         }
     }
 
@@ -45,6 +39,25 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler
         }
 
         _newDirection = (GravityDirection)(((int)_newDirection + (int)_lastDirection) % _numOfDirections);        
+    }
+
+
+    private void TryInvokeGravityEvent()
+    {
+        if (_lastDirection != _newDirection)
+        {
+            _lastDirection = _newDirection;
+            GravityChanged?.Invoke(_newDirection);
+        }
+    }
+    
+
+    void IRestartableComponent.Restart()
+    {
+        enabled = true;
+        _newDirection = GravityDirection.Down;
+
+        TryInvokeGravityEvent();
     }
 
 

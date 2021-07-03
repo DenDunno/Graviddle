@@ -689,6 +689,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8514162fe3f3b644a574b3973a19f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneTransit: {fileID: 5251755042352580536, guid: afbfc7b0fb1cc1b4886cb4438fbc94b0,
+    type: 3}
 --- !u!1 &203056327718544601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,6 +1087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fadingSpeed: 1
   _brightenSpeed: 1.5
+  _image: {fileID: 6488566792504033222}
 --- !u!114 &6466074549810468973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1097,6 +1100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 175d0e00b8cc3fe4b810016495d2fa4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AfterRestart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6488566793118386078
 GameObject:
   m_ObjectHideFlags: 0

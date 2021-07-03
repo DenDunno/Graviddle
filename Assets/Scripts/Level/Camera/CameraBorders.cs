@@ -21,7 +21,7 @@ public class CameraBorders : MonoBehaviour
     private void OnDisable()
     {
         _swipeHandler.GravityChanged -= OnGravityChanged;
-    }
+    }    
 
 
     public void ClampCamera(ref Vector3 cameraPosition)

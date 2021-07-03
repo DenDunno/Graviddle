@@ -2,7 +2,7 @@
 
 
 [RequireComponent(typeof(CharacterGravity))]
-public class CharacterMovement : MonoBehaviour , IRestartableObject
+public class CharacterMovement : MonoBehaviour , IRestartableComponent
 {
     public Vector2 MoveDirection { get; private set; }
 
@@ -46,7 +46,7 @@ public class CharacterMovement : MonoBehaviour , IRestartableObject
     }
 
 
-    void IRestartableObject.Restart()
+    void IRestartableComponent.Restart()
     {
         StopCharacter();
     }
