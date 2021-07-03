@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler , IRestartableComponent
+public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler , IRestartableComponent , IAfterRestartComponent
 {
     public event Action<GravityDirection> GravityChanged;
 
@@ -58,6 +58,12 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler , IRe
         _newDirection = GravityDirection.Down;
 
         TryInvokeGravityEvent();
+    }
+
+
+    void IAfterRestartComponent.Restart()
+    {
+        gameObject.SetActive(true);
     }
 
 

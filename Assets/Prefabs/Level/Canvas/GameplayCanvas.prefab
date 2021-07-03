@@ -782,7 +782,7 @@ GameObject:
   - component: {fileID: 6488566792079253146}
   - component: {fileID: 6488566792079253144}
   m_Layer: 5
-  m_Name: Level_score
+  m_Name: LevelScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1542,7 +1542,7 @@ GameObject:
   - component: {fileID: 6488566793674804853}
   - component: {fileID: 6488566793674804854}
   m_Layer: 5
-  m_Name: PauseCanvas
+  m_Name: GameplayCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -32,7 +32,7 @@ public class CharacterStateMachine : MonoBehaviour , IRestartableComponent
 
     private void FixedUpdate()
     {
-        if (_state != CharacterStates.FallState)
+        if (_state != CharacterStates.FallState && _state != CharacterStates.DieState)
         {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.15f);
 

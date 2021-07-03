@@ -21,12 +21,12 @@ public class Backstage : MonoBehaviour
     }
 
 
-    private IEnumerator ChangeAlphaChannel(float fadingSpeed , bool transparent)
+    private IEnumerator ChangeAlphaChannel(float fadingSpeed , bool becomeOpaque)
     {
-        float alphaChannel = transparent ? 0 : 1;
-        fadingSpeed *= transparent ? 1 : -1;
+        float alphaChannel = becomeOpaque ? 0 : 1;
+        fadingSpeed *= becomeOpaque ? 1 : -1;
 
-        while (transparent ? alphaChannel <= 1 : alphaChannel >= 0)
+        while (becomeOpaque ? alphaChannel <= 1 : alphaChannel >= 0)
         {
             alphaChannel += fadingSpeed * Time.deltaTime;
             _image.color = new Color(255, 255, 255, alphaChannel);

@@ -8,15 +8,17 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Backstage))]
 public class Restart : MonoBehaviour
 {
-    [SerializeField] private UnityEvent AfterRestart = null;
     private IEnumerable<IRestartableComponent> _restartableComponents = null;
+    private IEnumerable<IAfterRestartComponent> _afterRestartComponents = null;
+
     private readonly float _restartTime = 0.7f;
     private Backstage _backstage;
 
 
     private void Start()
     {
-        _restartableComponents = FindObjectsOfType<MonoBehaviour>().OfType<IRestartableComponent>();        
+        _restartableComponents = FindObjectsOfType<MonoBehaviour>().OfType<IRestartableComponent>();
+        _afterRestartComponents = FindObjectsOfType<MonoBehaviour>().OfType<IAfterRestartComponent>();
         _backstage = GetComponent<Backstage>();
     }
 
@@ -30,7 +32,11 @@ public class Restart : MonoBehaviour
     private IEnumerator MakeRestart()
     {
         yield return StartCoroutine(_backstage.MakeFade(RestartObjects()));
-        AfterRestart?.Invoke();
+
+        foreach (IAfterRestartComponent afterRestartComponent in _afterRestartComponents)
+        {
+            afterRestartComponent.Restart();
+        }
     }
 
 
