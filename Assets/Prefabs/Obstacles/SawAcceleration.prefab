@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1095226977252894573}
   - component: {fileID: 1095226977252894575}
+  - component: {fileID: 7861932843339143512}
   - component: {fileID: 1095226977252894572}
-  - component: {fileID: 8860016313547009525}
   m_Layer: 0
   m_Name: SawAcceleration
   m_TagString: Untagged
@@ -60,23 +60,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.25, y: 1.2817509}
   m_EdgeRadius: 0
---- !u!114 &1095226977252894572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095226977252894578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bbb54c289882c94ca7c252eca3b44a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _correlation: 2
-  _speed: 3
-  _distance: 4.85
-  _goRight: 1
---- !u!95 &8860016313547009525
+--- !u!95 &7861932843339143512
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -95,6 +79,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1095226977252894572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095226977252894578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 985b3ff4adb0e1b498dea3a71773e04e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _motionWithAcceleration: 0
+  _isHorizontalMovement: 0
+  _goRight: 0
+  _distance: 0
+  _speed: 0
 --- !u!1 &1095226977330811433
 GameObject:
   m_ObjectHideFlags: 0
