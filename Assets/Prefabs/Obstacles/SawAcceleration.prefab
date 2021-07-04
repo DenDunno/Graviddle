@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1095226977252894573}
   - component: {fileID: 1095226977252894575}
   - component: {fileID: 7861932843339143512}
-  - component: {fileID: 1095226977252894572}
+  - component: {fileID: 2638947624761792614}
   m_Layer: 0
   m_Name: SawAcceleration
   m_TagString: Untagged
@@ -79,7 +79,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1095226977252894572
+--- !u!114 &2638947624761792614
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,14 +88,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1095226977252894578}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 985b3ff4adb0e1b498dea3a71773e04e, type: 3}
+  m_Script: {fileID: 11500000, guid: d277644cc1bebef46b034b9c6a32f53b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _motionWithAcceleration: 0
-  _isHorizontalMovement: 0
-  _goRight: 0
-  _distance: 0
-  _speed: 0
+  _motionCalculator:
+    _motionConfig: {fileID: 11400000, guid: 5e462bc1dad40c44d88b34995f4175cb, type: 2}
+    _speed: 4
+  _startPosition: {x: 0, y: 0, z: 0}
+  _targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1095226977330811433
 GameObject:
   m_ObjectHideFlags: 0

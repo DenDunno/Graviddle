@@ -2536,6 +2536,37 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2638947624761792614, guid: 0586323b27d9c2c45acf0db03dc1f895,
+        type: 3}
+      propertyPath: _startPosition.x
+      value: 2.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2638947624761792614, guid: 0586323b27d9c2c45acf0db03dc1f895,
+        type: 3}
+      propertyPath: _startPosition.y
+      value: -3.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 2638947624761792614, guid: 0586323b27d9c2c45acf0db03dc1f895,
+        type: 3}
+      propertyPath: _targetPosition.x
+      value: 7.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 2638947624761792614, guid: 0586323b27d9c2c45acf0db03dc1f895,
+        type: 3}
+      propertyPath: _targetPosition.y
+      value: -3.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 2638947624761792614, guid: 0586323b27d9c2c45acf0db03dc1f895,
+        type: 3}
+      propertyPath: _motionCalculator._speed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2638947624761792614, guid: 0586323b27d9c2c45acf0db03dc1f895,
+        type: 3}
+      propertyPath: _motionConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 5e462bc1dad40c44d88b34995f4175cb,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0586323b27d9c2c45acf0db03dc1f895, type: 3}
 --- !u!1001 &397451705

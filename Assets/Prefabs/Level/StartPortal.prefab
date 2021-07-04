@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5837157009810198336}
   - component: {fileID: 5837157009810198337}
-  - component: {fileID: 6796810774319176565}
   - component: {fileID: 5837157009810198338}
   m_Layer: 0
   m_Name: StartPortal
@@ -53,23 +52,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6796810774319176565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5837157009810198342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 985b3ff4adb0e1b498dea3a71773e04e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _motionWithAcceleration: 1
-  _isHorizontalMovement: 0
-  _goRight: 1
-  _distance: 0.2
-  _speed: 2.5
 --- !u!114 &5837157009810198338
 MonoBehaviour:
   m_ObjectHideFlags: 0

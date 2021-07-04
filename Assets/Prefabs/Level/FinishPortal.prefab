@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 205806455587547125}
   - component: {fileID: 205806455587547124}
   - component: {fileID: 205806455587547122}
-  - component: {fileID: 205806455587547123}
   - component: {fileID: 176760460917412522}
   m_Layer: 0
   m_Name: FinishPortal
@@ -70,23 +69,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.043745995, y: 0.043755412}
   m_Size: {x: 0.8208008, y: 1.5791538}
   m_Direction: 0
---- !u!114 &205806455587547123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205806455587547127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 985b3ff4adb0e1b498dea3a71773e04e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _motionWithAcceleration: 1
-  _isHorizontalMovement: 0
-  _goRight: 1
-  _distance: 0.2
-  _speed: 2.5
 --- !u!114 &176760460917412522
 MonoBehaviour:
   m_ObjectHideFlags: 0
