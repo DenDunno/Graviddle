@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class CameraRotation : MonoBehaviour 
+public class GravityRotation : MonoBehaviour 
 {
     [SerializeField] private SwipeHandler _swipeHandler = null;
 

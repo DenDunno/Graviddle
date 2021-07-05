@@ -7,9 +7,6 @@ public class CharacterGravity : MonoBehaviour , IRestartableComponent
 
     [SerializeField] private SwipeHandler _swipeHandler = null;
 
-    private readonly float _rotationSpeed = 5f;
-    private Quaternion _targetRotation;
-
 
     private void Start()
     {
@@ -29,18 +26,11 @@ public class CharacterGravity : MonoBehaviour , IRestartableComponent
     }
 
 
-    private void Update()
-    {
-        transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, Time.deltaTime * _rotationSpeed);
-    }
-
-
     private void OnGravityChanged(GravityDirection gravityDirection)
     {
         GravityData gravityData = GravityDataPresenter.GravityData[(int)gravityDirection];
 
         Physics2D.gravity = gravityData.GravityVector;
-        _targetRotation = gravityData.Rotation;
 
         MovementInversion = (gravityDirection == GravityDirection.Up ? -1 : 1);
     }
