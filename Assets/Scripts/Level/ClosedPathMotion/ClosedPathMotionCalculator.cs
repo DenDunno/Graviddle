@@ -6,17 +6,14 @@ using UnityEngine;
 public class ClosedPathMotionCalculator 
 {
     [SerializeField] private ClosedPathMotionConfig _motionConfig = null;
-    [SerializeField] private float _speed = 0;
 
     private float _period = 0;
-    private float _time = 0;
-    private Func<float, float> _moveFunction = null;
+    private float _time = 0;    
 
 
     public void Init()
     {
-        _moveFunction = _motionConfig.MoveFunction;
-        _period = _motionConfig.PeriodFunction(_speed);
+        _period = _motionConfig.Period;
     }
 
 
@@ -29,6 +26,6 @@ public class ClosedPathMotionCalculator
             _time = 0;
         }
 
-        return _moveFunction(_speed * _time);        
+        return _motionConfig.EvaluateMathFunction(_time);
     }
 }

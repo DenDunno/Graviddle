@@ -5,9 +5,9 @@ public class ClosedPathMotion : MonoBehaviour
 {
     [SerializeField] private ClosedPathMotionCalculator _motionCalculator = null;
 
-    [SerializeField] private Vector3 _startPosition = Vector3.zero;
-    [SerializeField] private Vector3 _targetPosition = Vector3.zero;
-
+    [SerializeField] private Vector2 _startPosition = Vector2.zero;
+    [SerializeField] private Vector2 _targetPosition = Vector2.zero;
+    
 
     private void Start()
     {
@@ -18,6 +18,6 @@ public class ClosedPathMotion : MonoBehaviour
     private void Update()
     {
         float lerp = _motionCalculator.EvaluateLerpPosition();
-        transform.position = Vector3.Lerp(_startPosition, _targetPosition, lerp);
+        transform.position = Vector2.Lerp(_startPosition, _targetPosition, lerp);
     }
 }

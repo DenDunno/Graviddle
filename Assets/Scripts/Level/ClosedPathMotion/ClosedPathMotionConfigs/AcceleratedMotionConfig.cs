@@ -1,11 +1,13 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 
-[CreateAssetMenu(menuName ="ClosedPathMotionConfig/AcceleratedMotionConfig" , fileName = "AcceleratedMotionConfig")]
 public class AcceleratedMotionConfig : ClosedPathMotionConfig
-{
-    public override Func<float, float> MoveFunction => (float x) => (1 - Mathf.Cos(x)) / 2;
+{     
+    public override float Period => 2 * Mathf.PI / _speed;
 
-    public override Func<float, float> PeriodFunction => (float x) => 2 * Mathf.PI / x;
+
+    public override float EvaluateMathFunction(float time)
+    {
+        return (1 - Mathf.Cos(_speed * time)) / 2;
+    }
 }

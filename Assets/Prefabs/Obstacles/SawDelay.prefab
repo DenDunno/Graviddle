@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1870321902330069691}
   - component: {fileID: 1870321902330069684}
-  - component: {fileID: 1870321902330069692}
   - component: {fileID: 62825001620940680}
+  - component: {fileID: 86488996630343292}
+  - component: {fileID: 7859739332548944796}
   m_Layer: 0
   m_Name: SawDelay
   m_TagString: Untagged
@@ -26,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870321902330069689}
-  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.03, y: 3.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1870321902628827310}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1870321902330069684
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60,23 +61,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.25, y: 1.2599545}
   m_EdgeRadius: 0
---- !u!114 &1870321902330069692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1870321902330069689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 864e84d60f38cd0409bd07957c9e9aa8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _correlation: 2
-  _speed: 10
-  _distance: 9.6
-  _goRight: 1
-  _waitTime: 2
 --- !u!95 &62825001620940680
 Animator:
   serializedVersion: 3
@@ -96,6 +80,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &86488996630343292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870321902330069689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a897dbaca1b2a4ba21c05192b412e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speedReadOnly: 2
+  _waitTime: 2
+--- !u!114 &7859739332548944796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870321902330069689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d277644cc1bebef46b034b9c6a32f53b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _motionCalculator:
+    _motionConfig: {fileID: 86488996630343292}
+  _startPosition: {x: 0, y: 0, z: 0}
+  _targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1870321902628827309
 GameObject:
   m_ObjectHideFlags: 0

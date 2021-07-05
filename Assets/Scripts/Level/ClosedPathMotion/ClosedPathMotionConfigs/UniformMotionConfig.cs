@@ -1,11 +1,13 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "ClosedPathMotionConfig/UniformMotionConfig", fileName = "UniformMotionConfig")]
 public class UniformMotionConfig : ClosedPathMotionConfig
 {
-    public override Func<float, float> MoveFunction => (float x) => -Mathf.Abs(x - 1) + 1;
+    public override float Period =>  2 / _speed;
 
-    public override Func<float, float> PeriodFunction => (float x) => 2 / x;
+
+    public override float EvaluateMathFunction(float time)
+    {
+        return -Mathf.Abs(_speed * time - 1) + 1;
+    }
 }
