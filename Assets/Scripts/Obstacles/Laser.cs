@@ -2,7 +2,7 @@
 
 
 [RequireComponent(typeof(BoxCollider2D))]
-public class Laser : Obstacle , IRestartableComponent
+public class Laser : MonoBehaviour , IRestartableComponent , IObstacle
 {    
     void IRestartableComponent.Restart()
     {

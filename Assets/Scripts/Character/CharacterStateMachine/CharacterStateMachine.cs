@@ -46,7 +46,7 @@ public class CharacterStateMachine : MonoBehaviour , IRestartableComponent
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<Obstacle>(out var obstacle) == true)
+        if (collision.TryGetComponent<IObstacle>(out var obstacle) == true)
         {
             if (_state != CharacterStates.DieState)
             {

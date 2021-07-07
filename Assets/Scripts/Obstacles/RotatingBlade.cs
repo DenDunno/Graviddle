@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class RotatingBlade : Obstacle
+public class RotatingBlade : MonoBehaviour , IObstacle
 {
     [SerializeField] private float _rotationSpeed = 2f;
     private Quaternion _rotationTo;

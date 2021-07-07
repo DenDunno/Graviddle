@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class Arrow : Obstacle
+public class Arrow : MonoBehaviour , IObstacle
 {
     private float _speed = 15f;
 

@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-public class ArrowTrap : Obstacle , IRestartableComponent
+public class ArrowTrap : MonoBehaviour , IRestartableComponent , IObstacle
 {
     [SerializeField] private float _coolDownTime = 2f;
     [SerializeField] private float _startWaitTime = 2f;
