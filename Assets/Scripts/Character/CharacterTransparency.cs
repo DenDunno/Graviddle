@@ -4,19 +4,18 @@
 public class CharacterTransparency : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _spriteRenderer = null;
-    private readonly float _fadingSpeed = 1f;
-    private readonly ScreenFading _screenFading = new ScreenFading();
+    [SerializeField] private ScreenFading _screenFading = null;
 
 
     public void BecomeOpaque()
     {
-        StartCoroutine(_screenFading.ChangeAlphaChannel(_fadingSpeed , true , SetSpriteAlpaChannel));
+        StartCoroutine(_screenFading.ChangeAlphaChannel(true , SetSpriteAlpaChannel));
     }
 
 
     public void BecomeTransparent()
     {
-        StartCoroutine(_screenFading.ChangeAlphaChannel(_fadingSpeed , false , SetSpriteAlpaChannel));
+        StartCoroutine(_screenFading.ChangeAlphaChannel(false , SetSpriteAlpaChannel));
     }
 
 

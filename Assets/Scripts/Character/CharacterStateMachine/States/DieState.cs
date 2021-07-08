@@ -1,21 +1,20 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
+﻿using System;
 
 
 public class DieState : CharacterState
 {
-    private readonly UnityEvent _characterDeathEvent;
+    private readonly Action _characterDeathCallback;
 
 
-    public DieState(Character character, UnityEvent characterDeathEvent) : base(character)
+    public DieState(Character character , Action characterDeathCallback) : base(character)
     {
-        _characterDeathEvent = characterDeathEvent;
+        _characterDeathCallback = characterDeathCallback;
     }
 
 
     public override void EnterState()
     {
-        _characterDeathEvent?.Invoke();
+        _characterDeathCallback();
         _animator.Play("Die");
     }
 

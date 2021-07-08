@@ -3,12 +3,17 @@ using System.Collections;
 using UnityEngine;
 
 
+[Serializable]
 public class ScreenFading 
 {
-    public IEnumerator ChangeAlphaChannel(float fadingSpeed, bool becomeOpaque , Action<float> callBack)
+    [SerializeField] private float _fadingSpeed = 0;
+    [SerializeField] private float _brightenSpeed = 0;
+
+
+    public IEnumerator ChangeAlphaChannel(bool becomeOpaque , Action<float> callBack)
     {
         float alphaChannel = becomeOpaque ? 0 : 1;
-        fadingSpeed *= becomeOpaque ? 1 : -1;
+        float fadingSpeed = becomeOpaque ? _fadingSpeed : -_brightenSpeed;
 
         while (becomeOpaque ? alphaChannel <= 1 : alphaChannel >= 0)
         {

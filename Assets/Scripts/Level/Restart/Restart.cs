@@ -7,12 +7,14 @@ using UnityEngine;
 [RequireComponent(typeof(Backstage))]
 public class Restart : MonoBehaviour
 {
-    private IEnumerable<IRestartableComponent> _restartableComponents = null;
-    private IEnumerable<IAfterRestartComponent> _afterRestartComponents = null;
+    [SerializeField] private Character _character = null;
 
     private readonly float _restartTime = 0.7f;
     private Backstage _backstage;
 
+    private IEnumerable<IRestartableComponent> _restartableComponents = null;
+    private IEnumerable<IAfterRestartComponent> _afterRestartComponents = null;
+    
 
     private void Start()
     {
@@ -22,7 +24,19 @@ public class Restart : MonoBehaviour
     }
 
 
-    public void ActivateRestart() // called by character death event
+    private void OnEnable()
+    {
+        _character.CharacterDied += OnCharacterDied;
+    }
+
+
+    private void OnDisable()
+    {
+        _character.CharacterDied -= OnCharacterDied;
+    }
+
+
+    private void OnCharacterDied()
     {
         StartCoroutine(MakeRestart());
     }

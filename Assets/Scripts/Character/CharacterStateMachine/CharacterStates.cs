@@ -1,7 +1,8 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
+﻿using System;
+using UnityEngine;
 
 
+[Serializable]
 public class CharacterStates 
 { 
     public static IdleState IdleState { get; private set; }
@@ -9,15 +10,15 @@ public class CharacterStates
     public static RunState RunState { get; private set; }
     public static DieState DieState { get; private set; }
 
+    [SerializeField] private SwipeHandler _swipeHandler = null;
+    
 
-    public static void Init(Character character , UnityEvent characterDeathEvent)
+    public void Init(Character character , Action characterDeathCallback)
     {
-        var swipeHandler = Object.FindObjectOfType<SwipeHandler>();
-
         IdleState = new IdleState(character);
-        FallState = new FallState(character, swipeHandler);
+        FallState = new FallState(character, _swipeHandler);
         RunState = new RunState(character);
-        DieState = new DieState(character, characterDeathEvent);
+        DieState = new DieState(character , characterDeathCallback);
     }
 }
 

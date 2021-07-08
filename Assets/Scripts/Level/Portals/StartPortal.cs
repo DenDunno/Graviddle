@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class StartPortal :  MonoBehaviour, IRestartableComponent
 {   
-    private readonly PortalDisappearance _portalDisappearance  = new PortalDisappearance();
+    private readonly PortalDisappearance _portalDisappearance = new PortalDisappearance();
+    private Coroutine _restartCoroutine;
 
 
     private IEnumerator Start()
     {
-        yield return StartCoroutine(_portalDisappearance.Disappear(transform));
+        yield return _restartCoroutine = StartCoroutine(_portalDisappearance.Disappear(transform));
+        
         gameObject.SetActive(false);
     }
 
 
     void IRestartableComponent.Restart()
     {
+        StopCoroutine(_restartCoroutine);
+
         gameObject.SetActive(true);
         transform.localScale = new Vector3(1, 1, 1);
 
-        StartCoroutine(Start());
+        _restartCoroutine = StartCoroutine(Start());
     }
 }

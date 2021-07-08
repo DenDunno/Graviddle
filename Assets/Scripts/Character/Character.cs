@@ -1,20 +1,21 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
+﻿using System;
+using UnityEngine;
 
 
 [RequireComponent(typeof(CharacterTransparency))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class Character : MonoBehaviour , IRestartableComponent , IAfterRestartComponent
 {
-    [SerializeField] private UnityEvent Died = null;
+    public event Action CharacterDied = null;
 
-    private Rigidbody2D _rigidbody;
+    [SerializeField] private CharacterStates _characterStates = null;
     private CharacterTransparency _characterTransparency;
+    private Rigidbody2D _rigidbody;
 
     
     private void Awake()
     {
-        CharacterStates.Init(this , Died);
+        _characterStates.Init(this , Die);
 
         _rigidbody = GetComponent<Rigidbody2D>();
         _characterTransparency = GetComponent<CharacterTransparency>();
@@ -31,6 +32,12 @@ public class Character : MonoBehaviour , IRestartableComponent , IAfterRestartCo
     void IAfterRestartComponent.Restart()
     {
         _characterTransparency.BecomeOpaque();
+    }
+
+
+    private void Die()
+    {
+        CharacterDied?.Invoke();
     }
 }
 
