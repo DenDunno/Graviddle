@@ -5,7 +5,7 @@ public class MainMenu : MonoBehaviour
 {
     private void Start() 
     {
-        if (FindObjectOfType<AudioSource>() == null) // выполнится при запуске игры
+        if (FindObjectOfType<AudioSource>() == null) 
         {
             Object music = Resources.Load("Music");
             DontDestroyOnLoad(Instantiate(music));

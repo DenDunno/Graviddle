@@ -3,7 +3,7 @@
 
 public class Arrow : MonoBehaviour , IObstacle
 {
-    private float _speed = 15f;
+    private readonly float _speed = 15f;
 
 
     private void Update()

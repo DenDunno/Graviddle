@@ -20,7 +20,7 @@ public class SaveSystem : MonoBehaviour
     private void Start()
     {
         string path = Path.Combine(Application.persistentDataPath, "Save.json");
-        string json = "";
+        string json = string.Empty;
 
         if (File.Exists(path) == true)
         {
@@ -48,12 +48,12 @@ public class SaveSystem : MonoBehaviour
 
         for (int i = 0; i < _levelButtons.Length; ++i)
         {
-            if (i <= levels.Count) // открой все пройденные уровни и следующий
+            if (i <= levels.Count) 
             {
                 _levelButtons[i].interactable = true;
             }
 
-            if (i < levels.Count) // раскрасить кнопку пройденных уровней в золотой, серебрянный или бронзовый цвет
+            if (i < levels.Count)
             {
                 _levelButtons[i].GetComponent<Image>().color = _paintButton[levels[i]];
             }
@@ -68,11 +68,16 @@ public class SaveSystem : MonoBehaviour
         Dictionary<int, string> levels = new Dictionary<int, string>();
 
         if (File.Exists(path))
+        {
             json = File.ReadAllText(path);
+        }
 
         levels = JsonConvert.DeserializeObject<Dictionary<int, string>>(json);
+
         if (levels == null)
+        {
             levels = new Dictionary<int, string>();
+        }
 
         levels[indexOfLevel] = result;
 

@@ -1,41 +1,33 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class CharacterTransparency : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _spriteRenderer = null;
     private readonly float _fadingSpeed = 1f;
+    private readonly ScreenFading _screenFading = new ScreenFading();
 
 
     public void BecomeOpaque()
     {
-        StartCoroutine(ChangeAlphaChannel(true));
+        StartCoroutine(_screenFading.ChangeAlphaChannel(_fadingSpeed , true , SetSpriteAlpaChannel));
     }
 
 
     public void BecomeTransparent()
     {
-        StartCoroutine(ChangeAlphaChannel(false));
+        StartCoroutine(_screenFading.ChangeAlphaChannel(_fadingSpeed , false , SetSpriteAlpaChannel));
     }
 
 
     public void BecomeTransparentNow() 
     {
-        _spriteRenderer.color = new Color(255, 255, 255, 0);
+        SetSpriteAlpaChannel(0);
     }
 
 
-    private IEnumerator ChangeAlphaChannel(bool becomeOpaque)
+    private void SetSpriteAlpaChannel(float alphaChannel)
     {
-        float alphaChannel = becomeOpaque ? 0 : 1;
-        float fadingSpeed = _fadingSpeed * (becomeOpaque ? 1 : -1);
-
-        while (becomeOpaque ? alphaChannel <= 1 : alphaChannel >= 0)
-        {
-            alphaChannel += fadingSpeed * Time.deltaTime;
-            _spriteRenderer.color = new Color(255, 255, 255, alphaChannel);
-            yield return new WaitForFixedUpdate();
-        }
+        _spriteRenderer.color = new Color(255, 255, 255, alphaChannel);
     }
 }

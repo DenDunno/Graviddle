@@ -1100,9 +1100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 175d0e00b8cc3fe4b810016495d2fa4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AfterRestart:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &6488566793118386078
 GameObject:
   m_ObjectHideFlags: 0
