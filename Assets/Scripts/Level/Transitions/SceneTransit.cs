@@ -48,12 +48,9 @@ public class SceneTransit : MonoBehaviour
 
     private IEnumerator WaitWhileSceneLoading()
     {
-        AsyncOperation loadingMenuScene = SceneManager.LoadSceneAsync(_scene);
-        loadingMenuScene.allowSceneActivation = false;
-
-        yield return new WaitWhile(() => loadingMenuScene.progress <= 0.85f);
-
-        loadingMenuScene.allowSceneActivation = true;
+        AsyncOperation sceneLoadingOperation = SceneManager.LoadSceneAsync(_scene);
+        
+        yield return new WaitWhile(() => sceneLoadingOperation.isDone == false);        
     }
 }
 
