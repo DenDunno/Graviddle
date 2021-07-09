@@ -6,16 +6,16 @@ using UnityEngine.UI;
 public class Backstage : MonoBehaviour
 {
     [SerializeField] private Image _image = null;
-    [SerializeField] private ScreenFading _screenFading = null;
+    [SerializeField] private ImageFading _imageFading = null;
 
 
     public IEnumerator MakeFade(IEnumerator backstageAction)
     {
-        yield return StartCoroutine(_screenFading.ChangeAlphaChannel(true , SetImageAlphaChannel)); // dark 
+        yield return StartCoroutine(_imageFading.ChangeAlphaChannel(true , SetImageAlphaChannel)); // dark 
 
         yield return StartCoroutine(backstageAction);
 
-        yield return StartCoroutine(_screenFading.ChangeAlphaChannel(false , SetImageAlphaChannel)); // transparent
+        yield return StartCoroutine(_imageFading.ChangeAlphaChannel(false , SetImageAlphaChannel)); // transparent
     }
 
 

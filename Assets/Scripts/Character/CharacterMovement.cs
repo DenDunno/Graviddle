@@ -33,14 +33,14 @@ public class CharacterMovement : MonoBehaviour , IRestartableComponent
     }
 
 
-    public void MoveCharacter(int movement) // called by eventTrigger from button
+    public void MoveCharacter(Movement movement) 
     {
-        movement *= _characterGravity.MovementInversion;
-        _movement = (Movement)movement;
+        int movementInt = (int)movement * _characterGravity.MovementInversion;
+        _movement = (Movement)movementInt;
     }
 
 
-    public void StopCharacter() // called by eventTrigger from button
+    public void StopCharacter() 
     {
         _movement = Movement.Stop;
     }

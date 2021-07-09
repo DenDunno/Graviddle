@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 3389117643975248574}
-  _screenFading:
+  _imageFading:
     _fadingSpeed: 2
     _brightenSpeed: 2
 --- !u!1 &4448375415952588481
@@ -271,6 +271,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 7433289316626203663}
-  _screenFading:
+  _imageFading:
     _fadingSpeed: 2
     _brightenSpeed: 2

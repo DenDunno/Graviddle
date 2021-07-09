@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [Serializable]
-public class ScreenFading 
+public class ImageFading 
 {
     [SerializeField] private float _fadingSpeed = 0;
     [SerializeField] private float _brightenSpeed = 0;
