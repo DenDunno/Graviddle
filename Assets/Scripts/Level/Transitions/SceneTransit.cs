@@ -35,7 +35,6 @@ public class SceneTransit : MonoBehaviour
     private IEnumerator MakeTransition(int scene)
     {
         _scene = scene;
-        Time.timeScale = 1f;
 
         Image transitionImage = (scene >= 0 && scene <= 2) ? _menuTransitionImage : _levelTransitionImage;
         _backstage = transitionImage.GetComponent<Backstage>();

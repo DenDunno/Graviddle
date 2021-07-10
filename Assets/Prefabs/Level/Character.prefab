@@ -177,6 +177,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterStates:
     _swipeHandler: {fileID: 0}
+  _characterTransparency:
+    _spriteRenderer: {fileID: 2684562040544259668}
+    _imageFading:
+      _fadingSpeed: 0.3
+      _brightenSpeed: 1
 --- !u!114 &5905746848208922842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +241,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

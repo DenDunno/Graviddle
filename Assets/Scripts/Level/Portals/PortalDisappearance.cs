@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class PortalDisappearance 
 {
-    private readonly float _speedOfDisappearing = 1f;
+    private readonly float _disappearingSpeed = 1f;
     private readonly float _timeBeforeDisappearance = 1.3f;
+
+
+    public PortalDisappearance(float disappearingSpeed)
+    {
+        _disappearingSpeed = disappearingSpeed;
+    }
 
 
     public IEnumerator Disappear(Transform transform)
@@ -14,7 +20,7 @@ public class PortalDisappearance
 
         while (transform.localScale.x >= 0)
         {
-            float temp = _speedOfDisappearing * Time.deltaTime;
+            float temp = _disappearingSpeed * Time.deltaTime;
             Vector3 disappearVector = new Vector2(temp, temp);
 
             transform.localScale -= disappearVector;

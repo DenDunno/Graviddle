@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StartPortal :  MonoBehaviour, IRestartableComponent
 {   
-    private readonly PortalDisappearance _portalDisappearance = new PortalDisappearance();
+    private readonly PortalDisappearance _portalDisappearance = new PortalDisappearance(1);
     private Coroutine _restartCoroutine;
 
 

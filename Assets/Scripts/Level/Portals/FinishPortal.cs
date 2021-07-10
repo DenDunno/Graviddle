@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 
 public class FinishPortal : MonoBehaviour
@@ -7,11 +8,7 @@ public class FinishPortal : MonoBehaviour
     [SerializeField] private GameObject _touchCanvas = null;
     [SerializeField] private GameObject _pauseButton = null;
 
-
-    private void Start()
-    {
-        ToggleTimeScale(1f);
-    }
+    private readonly PortalDisappearance _portalDisappearance = new PortalDisappearance(0.5f);
 
 
     public void FinishLevel()
@@ -20,13 +17,13 @@ public class FinishPortal : MonoBehaviour
         _pauseButton.SetActive(false);
         _winPanel.SetActive(true);
 
-        ToggleTimeScale(0.5f);
+        StartCoroutine(Disappear());
     }
 
 
-    private void ToggleTimeScale(float timeScale)
+    private IEnumerator Disappear()
     {
-        Time.timeScale = timeScale;
-        Time.fixedDeltaTime = Time.timeScale * 0.02f;
+        yield return StartCoroutine(_portalDisappearance.Disappear(transform));
+        Destroy(gameObject);
     }
 }
