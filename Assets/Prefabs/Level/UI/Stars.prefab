@@ -4790,7 +4790,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -4825,7 +4825,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3558104529579604685}
-  - component: {fileID: 6982116791745101862}
   m_Layer: 6
   m_Name: Stars
   m_TagString: Effects
@@ -4850,22 +4849,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6982116791745101862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3563548931266099181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abdc4e45d40efb04981878cdb141cade, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _stars:
-  - {fileID: 3724981042412149761}
-  - {fileID: 3725109572704312909}
-  - {fileID: 3725144601227061111}
 --- !u!1 &3563581287161433201
 GameObject:
   m_ObjectHideFlags: 0
@@ -4892,8 +4875,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3563581287161433201}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.1, y: -0.35000002, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.3, y: 0, z: 0}
+  m_LocalScale: {x: 1.2358278, y: 1.2358278, z: 1.2358278}
   m_Children:
   - {fileID: 3558303383945301227}
   - {fileID: 3558171883646493497}
@@ -9661,7 +9644,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -14423,7 +14406,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -19185,7 +19168,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -23947,7 +23930,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -28629,7 +28612,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -33445,7 +33428,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -38118,7 +38101,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 5
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -38170,8 +38153,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3563865485012805955}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalScale: {x: 1.2358278, y: 1.2358278, z: 1.2358278}
   m_Children:
   - {fileID: 3566299007820012111}
   - {fileID: 3557987181263209179}
@@ -42939,7 +42922,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -47701,7 +47684,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -52382,7 +52365,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -57064,7 +57047,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -61745,7 +61728,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -66418,7 +66401,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 5
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -71234,7 +71217,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -71286,8 +71269,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3564137797912201959}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1, y: -0.35000002, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.3, y: 0, z: 0}
+  m_LocalScale: {x: 1.2358278, y: 1.2358278, z: 1.2358278}
   m_Children:
   - {fileID: 3557975398996042285}
   - {fileID: 3557969195052224551}
@@ -76055,7 +76038,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -80737,7 +80720,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -85410,7 +85393,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 5
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -90172,7 +90155,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -94853,7 +94836,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -99615,7 +99598,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 170
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
