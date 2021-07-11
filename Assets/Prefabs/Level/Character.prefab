@@ -180,8 +180,8 @@ MonoBehaviour:
   _characterTransparency:
     _spriteRenderer: {fileID: 2684562040544259668}
     _imageFading:
-      _fadingSpeed: 0.3
-      _brightenSpeed: 1
+      _fadingSpeed: 1
+      _brightenSpeed: 0.5
 --- !u!114 &5905746848208922842
 MonoBehaviour:
   m_ObjectHideFlags: 0

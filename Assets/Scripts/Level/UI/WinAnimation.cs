@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class WinAnimation : MonoBehaviour
 {
-    [SerializeField] private Button[] _buttons = null;
-
     private readonly float _duration = 2f;
     private readonly float _waitTime = 0.5f;
+    private readonly float _imageFading = 0.7f;
     private readonly Vector2 _targetPosition = Vector2.zero;
+    
+    [SerializeField] private WinEffects _effects;
+    [SerializeField] private Image _image = null;
 
 
     private void OnEnable()
@@ -18,12 +20,8 @@ public class WinAnimation : MonoBehaviour
 
         sequence.AppendInterval(_waitTime);
         sequence.Append(transform.DOLocalMove(_targetPosition, _duration).SetEase(Ease.OutBack));
-        sequence.onComplete = () =>
-        {
-            foreach(Button button in _buttons)
-            {
-                button.interactable = true;
-            }
-        };
+        sequence.Join(_image.DOFade(_imageFading, _duration));
+
+        sequence.onComplete = ()=> _effects.ActivateEffects();
     }
 }

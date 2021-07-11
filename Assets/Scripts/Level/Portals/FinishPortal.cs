@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class FinishPortal : MonoBehaviour
 {
-    [SerializeField] private GameObject _winPanel = null;
+    [SerializeField] private GameObject _winCanvas = null;
     [SerializeField] private GameObject _touchCanvas = null;
-    [SerializeField] private GameObject _pauseButton = null;
+    [SerializeField] private GameObject _gameplayCanvas = null;
 
     private readonly PortalDisappearance _portalDisappearance = new PortalDisappearance(0.5f);
 
@@ -14,8 +14,8 @@ public class FinishPortal : MonoBehaviour
     public void FinishLevel()
     {
         _touchCanvas.SetActive(false);
-        _pauseButton.SetActive(false);
-        _winPanel.SetActive(true);
+        _gameplayCanvas.SetActive(false);
+        _winCanvas.SetActive(true);
 
         StartCoroutine(Disappear());
     }

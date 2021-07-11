@@ -13,7 +13,7 @@ public class ImageFading
     public IEnumerator ChangeAlphaChannel(bool becomeOpaque , Action<float> callBack)
     {
         float alphaChannel = becomeOpaque ? 0 : 1;
-        float fadingSpeed = becomeOpaque ? _fadingSpeed : -_brightenSpeed;
+        float fadingSpeed = becomeOpaque ? _brightenSpeed : -_fadingSpeed;
 
         while (becomeOpaque ? alphaChannel <= 1 : alphaChannel >= 0)
         {

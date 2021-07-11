@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Menu_music
   - Level
+  - Effects
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - CustomUI
   - 
   - Post Proccess
   - 

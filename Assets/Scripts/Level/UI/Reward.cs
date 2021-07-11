@@ -3,7 +3,8 @@
 
 public class Reward : MonoBehaviour
 {
-    private void Start()
+    public int GetReward()
     {
+        return 3;
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3557975398996042285}
   - component: {fileID: 3725190129700862787}
   - component: {fileID: 3725666900173537669}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Star_01_Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4826,7 +4826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3558104529579604685}
   - component: {fileID: 6982116791745101862}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Stars
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -4877,7 +4877,7 @@ GameObject:
   - component: {fileID: 3558405669450026061}
   - component: {fileID: 3725144601227061111}
   - component: {fileID: 3725867182656756391}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: RightStar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9698,7 +9698,7 @@ GameObject:
   - component: {fileID: 3566307216848560177}
   - component: {fileID: 3724876113515550757}
   - component: {fileID: 3725566627142683545}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: GlowDot_01_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14460,7 +14460,7 @@ GameObject:
   - component: {fileID: 3558171883646493497}
   - component: {fileID: 3724555051147988101}
   - component: {fileID: 3725884173111468513}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: GlowDot_01_Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19222,7 +19222,7 @@ GameObject:
   - component: {fileID: 3557969195052224551}
   - component: {fileID: 3724716437710852271}
   - component: {fileID: 3725496171831695329}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: GlowDot_01_Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23984,7 +23984,7 @@ GameObject:
   - component: {fileID: 3566297464726633731}
   - component: {fileID: 3733234667267263901}
   - component: {fileID: 3725548422067683557}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: GlowDot_02_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28666,7 +28666,7 @@ GameObject:
   - component: {fileID: 3566299007820012111}
   - component: {fileID: 3733428592180158417}
   - component: {fileID: 3726446687402256665}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Star_01_Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33482,7 +33482,7 @@ GameObject:
   - component: {fileID: 3566629646824869445}
   - component: {fileID: 3733327197631645757}
   - component: {fileID: 3725968705183466013}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: GlowDot_02_Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38155,7 +38155,7 @@ GameObject:
   - component: {fileID: 3557857977989786955}
   - component: {fileID: 3725109572704312909}
   - component: {fileID: 3726068917727592277}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: CentreStar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42976,7 +42976,7 @@ GameObject:
   - component: {fileID: 3558397196774110143}
   - component: {fileID: 3733294524918693137}
   - component: {fileID: 3725385101950410481}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: GlowDot_01_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47738,7 +47738,7 @@ GameObject:
   - component: {fileID: 3557925622900943813}
   - component: {fileID: 3724794920240468789}
   - component: {fileID: 3725403823229651303}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: GlowDot_02_End_Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52419,7 +52419,7 @@ GameObject:
   - component: {fileID: 3566847089863725555}
   - component: {fileID: 3725133747131377591}
   - component: {fileID: 3726120223176012289}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: GlowDot_02_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57101,7 +57101,7 @@ GameObject:
   - component: {fileID: 3566847767636825687}
   - component: {fileID: 3725232308013741671}
   - component: {fileID: 3725463996943095435}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: GlowDot_02_End_Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61782,7 +61782,7 @@ GameObject:
   - component: {fileID: 3557964250574887361}
   - component: {fileID: 3733322269503104139}
   - component: {fileID: 3725783167758096319}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: GlowDot_02_Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66455,7 +66455,7 @@ GameObject:
   - component: {fileID: 3558303383945301227}
   - component: {fileID: 3724780602905047713}
   - component: {fileID: 3725340121487456515}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Star_01_Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71271,7 +71271,7 @@ GameObject:
   - component: {fileID: 3566774321411422831}
   - component: {fileID: 3724981042412149761}
   - component: {fileID: 3725403070009179885}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: LeftStar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76092,7 +76092,7 @@ GameObject:
   - component: {fileID: 3558291699085722449}
   - component: {fileID: 3724773173664867803}
   - component: {fileID: 3726160334613105295}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: GlowDot_02_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80774,7 +80774,7 @@ GameObject:
   - component: {fileID: 3566501639162587651}
   - component: {fileID: 3724947261935861945}
   - component: {fileID: 3725864081494273497}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: GlowDot_02_Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85447,7 +85447,7 @@ GameObject:
   - component: {fileID: 3558272130112128325}
   - component: {fileID: 3724818084163739161}
   - component: {fileID: 3725984376569399813}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: GlowDot_01_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90209,7 +90209,7 @@ GameObject:
   - component: {fileID: 3566644542047467031}
   - component: {fileID: 3725221901656180367}
   - component: {fileID: 3726397648296390241}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: GlowDot_02_End_Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94890,7 +94890,7 @@ GameObject:
   - component: {fileID: 3557987181263209179}
   - component: {fileID: 3733288239354319287}
   - component: {fileID: 3726229059658579037}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: GlowDot_01_Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
