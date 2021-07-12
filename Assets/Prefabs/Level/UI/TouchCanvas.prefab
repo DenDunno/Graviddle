@@ -789,7 +789,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5573790767558302488}
         m_TargetAssemblyTypeName: UISwitcher, Assembly-CSharp
-        m_MethodName: TurnOffGameplayUI
+        m_MethodName: TurnOnFinishCaptureUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -11466,12 +11466,12 @@ PrefabInstance:
     - target: {fileID: 205806455587547125, guid: 3814a69fc0e128c4380f1914f44a9b0e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.95
+      value: -7.37
       objectReference: {fileID: 0}
     - target: {fileID: 205806455587547125, guid: 3814a69fc0e128c4380f1914f44a9b0e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.83
+      value: -3.62
       objectReference: {fileID: 0}
     - target: {fileID: 205806455587547125, guid: 3814a69fc0e128c4380f1914f44a9b0e,
         type: 3}
@@ -13175,7 +13175,7 @@ PrefabInstance:
     - target: {fileID: 6604417598869749404, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TurnOffGameplayUI
+      value: TurnOnFinishCaptureUI
       objectReference: {fileID: 0}
     - target: {fileID: 6604417598869749404, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
