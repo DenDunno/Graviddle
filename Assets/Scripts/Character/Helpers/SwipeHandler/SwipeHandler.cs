@@ -14,6 +14,24 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler , IRe
     private float _swipeSensitivity = 1.0f;
 
 
+    private void Start()
+    {
+        CharacterStates.FallState.CharacterGroundedChanged += OnCharacterGroundedChanged;
+    }
+
+    
+    private void OnDestroy()
+    {
+        CharacterStates.FallState.CharacterGroundedChanged -= OnCharacterGroundedChanged;
+    }
+
+
+    private void OnCharacterGroundedChanged(bool isGrounded)
+    {
+        enabled = isGrounded;
+    }
+
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         Vector2 swipeInput = new Vector2(eventData.delta.x, eventData.delta.y);

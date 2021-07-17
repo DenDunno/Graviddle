@@ -1,17 +1,18 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 
 public class FallState : CharacterState
 {
-    private readonly SwipeHandler _swipeHandler;
+    public event Action<bool> CharacterGroundedChanged;
+    
     private readonly Transform _transform;
     private readonly CharacterMovement _characterMovement;
     private readonly float _movementSpeed = 3f;
     
 
-    public FallState(Character character, SwipeHandler swipeHandler) : base(character)
+    public FallState(Character character) : base(character)
     {
-        _swipeHandler = swipeHandler;
         _characterMovement = character.GetComponent<CharacterMovement>();
         _transform = character.transform;
     }
@@ -19,7 +20,7 @@ public class FallState : CharacterState
 
     public override void EnterState()
     {
-        _swipeHandler.enabled = false;
+        CharacterGroundedChanged?.Invoke(false);
         _animator.Play(CharacterAnimations.Fall);
     }
 
@@ -30,7 +31,7 @@ public class FallState : CharacterState
 
         if (colliders.Length > 1)
         {
-            _swipeHandler.enabled = true;
+            CharacterGroundedChanged?.Invoke(true);
             return CharacterStates.IdleState;
         }
 

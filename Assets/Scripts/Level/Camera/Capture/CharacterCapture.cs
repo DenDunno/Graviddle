@@ -6,7 +6,7 @@ public class CharacterCapture : MonoBehaviour
 {
     [SerializeField] private Character _character = null;        
 
-    private readonly float _captureSpeed = 3f;
+    private float _captureSpeed = 3f;
     private CameraBorders _cameraBorders;
 
 

@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Character : MonoBehaviour , IAfterRestartComponent
 {
-    [SerializeField] private CharacterStates _characterStates = null;
     [SerializeField] private CharacterTransparency _characterTransparency = null;
+    private CharacterStates _characterStates;
 
     private bool _isAlive = true;
 
 
     private void Awake()
     {
-        _characterStates.Init(this);
+        _characterStates = new CharacterStates(this);
         CharacterStates.DieState.CharacterDied += OnCharacterDied;
 
         _characterTransparency.BecomeTransparentNow();
