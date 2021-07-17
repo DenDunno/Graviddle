@@ -3750,6 +3750,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9680215e7f7d37945a1fd185c0aea296, type: 3}
+--- !u!114 &552638610 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5310250217595848280, guid: 541cefc2686fbf447be6be187ea3ca43,
+    type: 3}
+  m_PrefabInstance: {fileID: 4963056787881080150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a5f5cf1b6ff0284b8544b23b11a977c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &553914918
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7913,6 +7925,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1400580948}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1411497179 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4963056787618084281, guid: 541cefc2686fbf447be6be187ea3ca43,
+    type: 3}
+  m_PrefabInstance: {fileID: 4963056787881080150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9214d1d1cf2c940a8390934cad48bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1417349968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8754,6 +8778,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1518177505}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1528587401 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4963056787068514320, guid: 541cefc2686fbf447be6be187ea3ca43,
+    type: 3}
+  m_PrefabInstance: {fileID: 4963056787881080150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1539170239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11476,12 +11512,12 @@ PrefabInstance:
     - target: {fileID: 205806455587547125, guid: 3814a69fc0e128c4380f1914f44a9b0e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.47
+      value: 0.39
       objectReference: {fileID: 0}
     - target: {fileID: 205806455587547125, guid: 3814a69fc0e128c4380f1914f44a9b0e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4
+      value: 11.54
       objectReference: {fileID: 0}
     - target: {fileID: 205806455587547125, guid: 3814a69fc0e128c4380f1914f44a9b0e,
         type: 3}
@@ -11651,18 +11687,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4963056787881080150}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1938668931 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 700948516667297732, guid: 541cefc2686fbf447be6be187ea3ca43,
-    type: 3}
-  m_PrefabInstance: {fileID: 4963056787881080150}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938668926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a5f5cf1b6ff0284b8544b23b11a977c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1943223523
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12881,7 +12905,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1938668931}
+      objectReference: {fileID: 552638610}
     - target: {fileID: 576678857234978283, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -12905,7 +12929,7 @@ PrefabInstance:
     - target: {fileID: 576678857234978283, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchCameraPanel
+      value: ToggleCameraTouchControlling
       objectReference: {fileID: 0}
     - target: {fileID: 576678857234978283, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
@@ -13067,6 +13091,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4981943613504531501, guid: 541cefc2686fbf447be6be187ea3ca43,
+        type: 3}
+      propertyPath: _image
+      value: 
+      objectReference: {fileID: 1528587401}
+    - target: {fileID: 4981943613504531501, guid: 541cefc2686fbf447be6be187ea3ca43,
+        type: 3}
+      propertyPath: _effects
+      value: 
+      objectReference: {fileID: 1411497179}
+    - target: {fileID: 5310250217595848280, guid: 541cefc2686fbf447be6be187ea3ca43,
+        type: 3}
+      propertyPath: _mainCamera
+      value: 
+      objectReference: {fileID: 2110057122}
     - target: {fileID: 5341167930685670404, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -13081,7 +13120,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1938668931}
+      objectReference: {fileID: 552638610}
     - target: {fileID: 5341167930685670404, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -13105,7 +13144,7 @@ PrefabInstance:
     - target: {fileID: 5341167930685670404, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchCameraPanel
+      value: ToggleCameraTouchControlling
       objectReference: {fileID: 0}
     - target: {fileID: 5341167930685670404, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}

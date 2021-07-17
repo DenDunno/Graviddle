@@ -120,7 +120,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5573790767558302488}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UISwitcher, Assembly-CSharp
         m_MethodName: SwitchCameraPanel
         m_Mode: 6
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5573790767558302488}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UISwitcher, Assembly-CSharp
         m_MethodName: SwitchCameraPanel
         m_Mode: 6
@@ -379,7 +379,6 @@ GameObject:
   - component: {fileID: 6252179813409311534}
   - component: {fileID: 6252179813409311535}
   - component: {fileID: 6252179813409311532}
-  - component: {fileID: 5573790767558302488}
   m_Layer: 5
   m_Name: TouchCanvas
   m_TagString: Untagged
@@ -470,21 +469,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5573790767558302488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6252179813409311533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a5f5cf1b6ff0284b8544b23b11a977c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mainCamera: {fileID: 0}
-  _touchPanel: {fileID: 7887079680941357942}
-  _cameraPanel: {fileID: 7428937227931690829}
 --- !u!1 &7428937227931690829
 GameObject:
   m_ObjectHideFlags: 0

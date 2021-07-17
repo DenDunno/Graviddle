@@ -7,8 +7,6 @@ using UnityEngine;
 [RequireComponent(typeof(Backstage))]
 public class Restart : MonoBehaviour
 {
-    [SerializeField] private Character _character = null;
-
     private readonly float _restartTime = 0.7f;
     private Backstage _backstage;
 
@@ -26,13 +24,13 @@ public class Restart : MonoBehaviour
 
     private void OnEnable()
     {
-        _character.CharacterDied += OnCharacterDied;
+        CharacterStates.DieState.CharacterDied += OnCharacterDied;
     }
 
 
     private void OnDisable()
     {
-        _character.CharacterDied -= OnCharacterDied;
+        CharacterStates.DieState.CharacterDied -= OnCharacterDied;
     }
 
 

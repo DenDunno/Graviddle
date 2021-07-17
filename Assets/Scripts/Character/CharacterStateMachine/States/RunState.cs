@@ -17,7 +17,7 @@ public class RunState : CharacterState
 
     public override void EnterState()
     {
-        _animator.Play("Run");
+        _animator.Play(CharacterAnimations.Run);
     }
 
 

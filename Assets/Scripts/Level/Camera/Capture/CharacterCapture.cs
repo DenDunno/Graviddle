@@ -6,7 +6,7 @@ public class CharacterCapture : MonoBehaviour
 {
     [SerializeField] private Character _character = null;        
 
-    private readonly float _captureSpeed = 2f;
+    private readonly float _captureSpeed = 3f;
     private CameraBorders _cameraBorders;
 
 
@@ -20,7 +20,7 @@ public class CharacterCapture : MonoBehaviour
     {
         Vector3 newCameraPosition = _character.transform.position;
         newCameraPosition.z = transform.position.z;
-
+        
         _cameraBorders.ClampCamera(ref newCameraPosition);
 
         transform.position = Vector3.Lerp(transform.position, newCameraPosition, _captureSpeed * Time.deltaTime);

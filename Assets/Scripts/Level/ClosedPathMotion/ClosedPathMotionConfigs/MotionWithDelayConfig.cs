@@ -7,7 +7,7 @@ public class MotionWithDelayConfig : ClosedPathMotionConfig
 
     [SerializeField] private float _waitTime = 2f;
     private float _leftLimit;
-    private float _b;
+    private float _b; // y = ax + b: a = speed , x = time
 
 
     private void Start()

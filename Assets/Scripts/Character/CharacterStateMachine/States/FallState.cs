@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class FallState : CharacterState
@@ -21,7 +20,7 @@ public class FallState : CharacterState
     public override void EnterState()
     {
         _swipeHandler.enabled = false;
-        _animator.Play("Fall");
+        _animator.Play(CharacterAnimations.Fall);
     }
 
 

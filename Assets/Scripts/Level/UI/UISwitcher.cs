@@ -8,22 +8,22 @@ public class UISwitcher : MonoBehaviour
     [SerializeField] private GameObject _cameraPanel = null;
 
     private CameraTouchControlling _cameraTouchControlling;
-    private CharacterCapture _cameraCapture;    
+    private CharacterCapture _characterCapture;    
 
 
     private void Start()
     {
         _cameraTouchControlling = _mainCamera.GetComponent<CameraTouchControlling>();
-        _cameraCapture = _mainCamera.GetComponent<CharacterCapture>();
+        _characterCapture = _mainCamera.GetComponent<CharacterCapture>();
     }
 
 
-    public void SwitchCameraPanel(bool becomeActive)
+    public void ToggleCameraTouchControlling(bool cameraTouchControllingEnabled)
     {
-        _touchPanel.SetActive(!becomeActive);
-        _cameraPanel.SetActive(becomeActive);
+        _touchPanel.SetActive(!cameraTouchControllingEnabled);
+        _cameraPanel.SetActive(cameraTouchControllingEnabled);
 
-        _cameraCapture.enabled = !becomeActive;
-        _cameraTouchControlling.enabled = becomeActive;
+        _characterCapture.enabled = !cameraTouchControllingEnabled;
+        _cameraTouchControlling.enabled = cameraTouchControllingEnabled;
     }
 }

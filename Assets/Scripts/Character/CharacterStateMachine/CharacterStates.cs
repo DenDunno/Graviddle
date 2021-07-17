@@ -13,12 +13,12 @@ public class CharacterStates
     [SerializeField] private SwipeHandler _swipeHandler = null;
     
 
-    public void Init(Character character , Action characterDeathCallback)
+    public void Init(Character character)
     {
         IdleState = new IdleState(character);
         FallState = new FallState(character, _swipeHandler);
         RunState = new RunState(character);
-        DieState = new DieState(character , characterDeathCallback);
+        DieState = new DieState(character);
     }
 }
-
+ 

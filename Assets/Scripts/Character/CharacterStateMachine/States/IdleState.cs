@@ -15,7 +15,7 @@ public class IdleState : CharacterState
 
     public override void EnterState()
     {
-        _animator.Play("Idle");
+        _animator.Play(CharacterAnimations.Idle);
     }
 
 

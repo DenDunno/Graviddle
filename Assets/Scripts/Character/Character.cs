@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 
 public class Character : MonoBehaviour , IAfterRestartComponent
 {
-    public event Action CharacterDied = null;
-
     [SerializeField] private CharacterStates _characterStates = null;
     [SerializeField] private CharacterTransparency _characterTransparency = null;
 
@@ -15,10 +12,17 @@ public class Character : MonoBehaviour , IAfterRestartComponent
 
     private void Awake()
     {
-        _characterStates.Init(this , Die);
+        _characterStates.Init(this);
+        CharacterStates.DieState.CharacterDied += OnCharacterDied;
 
         _characterTransparency.BecomeTransparentNow();
         _characterTransparency.BecomeOpaque(this);
+    }
+
+
+    private void OnDestroy()
+    {
+        CharacterStates.DieState.CharacterDied -= OnCharacterDied;
     }
 
 
@@ -29,7 +33,9 @@ public class Character : MonoBehaviour , IAfterRestartComponent
             if (_isAlive == true)
             {
                 finishPortal.FinishLevel();
-                yield return new WaitForSeconds(1f);
+                float waitTime = 1f;
+
+                yield return new WaitForSeconds(waitTime);
 
                 _characterTransparency.BecomeTransparent(this);
             }
@@ -37,13 +43,9 @@ public class Character : MonoBehaviour , IAfterRestartComponent
     }
 
 
-    private void Die()
+    private void OnCharacterDied()
     {
-        if (_isAlive == true)
-        {
-            _isAlive = false;
-            CharacterDied?.Invoke();
-        }
+        _isAlive = false;
     }
 
 

@@ -3,19 +3,18 @@
 
 public class DieState : CharacterState
 {
-    private readonly Action _characterDeathCallback;
+    public event Action CharacterDied;
 
 
-    public DieState(Character character , Action characterDeathCallback) : base(character)
+    public DieState(Character character) : base(character)
     {
-        _characterDeathCallback = characterDeathCallback;
     }
 
 
     public override void EnterState()
     {
-        _characterDeathCallback();
-        _animator.Play("Die");
+        CharacterDied?.Invoke();
+        _animator.Play(CharacterAnimations.Die);
     }
 
 

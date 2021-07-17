@@ -3,18 +3,15 @@
 
 public class SwipeHandlerSwitcher : MonoBehaviour , IAfterRestartComponent
 {
-    [SerializeField] private Character _character = null;
-
-
     private void OnEnable()
     {
-        _character.CharacterDied += OnCharacterDied;
+        CharacterStates.DieState.CharacterDied += OnCharacterDied;
     }
 
 
     private void OnDisable()
     {
-        _character.CharacterDied -= OnCharacterDied;
+        CharacterStates.DieState.CharacterDied -= OnCharacterDied;
     }
 
 

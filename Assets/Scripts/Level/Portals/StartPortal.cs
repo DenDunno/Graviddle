@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-public class StartPortal :  MonoBehaviour, IAfterRestartComponent
+public class StartPortal :  MonoBehaviour, IRestartableComponent
 {   
     private readonly PortalDisappearance _portalDisappearance = new PortalDisappearance(1);
     private Coroutine _restartCoroutine;
@@ -16,7 +16,7 @@ public class StartPortal :  MonoBehaviour, IAfterRestartComponent
     }
 
 
-    void IAfterRestartComponent.Restart()
+    void IRestartableComponent.Restart()
     {
         StopCoroutine(_restartCoroutine);
 
