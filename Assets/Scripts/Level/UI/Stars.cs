@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class Stars : MonoBehaviour
+public class Stars : MonoBehaviour , IAfterRestartComponent
 {
     [SerializeField] private int _gold = 2;
     [SerializeField] private int _silver = 5;
@@ -9,7 +9,19 @@ public class Stars : MonoBehaviour
 
     private int _characterRotations = 0;
 
-    
+
+    private void OnEnable()
+    {
+        _swipeHandler.GravityChanged += OnGravityChanged;
+    }
+
+
+    private void OnDisable()
+    {
+        _swipeHandler.GravityChanged -= OnGravityChanged;
+    }
+
+
     public int GetStars()
     {
         if (_characterRotations <= _gold)
@@ -26,21 +38,14 @@ public class Stars : MonoBehaviour
     }
 
 
-    private void Awake()
-    {
-        _swipeHandler.GravityChanged += OnGravityChanged;
-    }
-
-
-    private void OnDestoy()
-    {
-        _swipeHandler.GravityChanged -= OnGravityChanged;
-    }
-
-
     private void OnGravityChanged(GravityDirection gravityDirection)
     {
-        ++_characterRotations;
-        Debug.Log(_characterRotations);
+        ++_characterRotations;        
+    }
+
+
+    void IAfterRestartComponent.Restart()
+    {
+        _characterRotations = 0;
     }
 }

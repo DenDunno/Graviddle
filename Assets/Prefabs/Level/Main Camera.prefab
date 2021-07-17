@@ -183,13 +183,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6186545343902058747}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42b625cbeccf32b4cad18ae854690ee3, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c1324cbff0001748b7185436659d68e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _character: {fileID: 0}
   _finishPortal: {fileID: 0}
+  _touchPanel: {fileID: 0}
+  _characterCapture: {fileID: 4455638962972475283}
 --- !u!114 &4455638962972475283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,13 +198,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6186545343902058747}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f1b23b59d6b3b24c86085f6c3c3200c, type: 3}
+  m_Script: {fileID: 11500000, guid: 44f9ba5a381fe074380c0db85a9d48d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _finishPortal: {fileID: 0}
-  _touchPanel: {fileID: 0}
+  _character: {fileID: 0}
 --- !u!114 &5649786685365309434
 MonoBehaviour:
   m_ObjectHideFlags: 0

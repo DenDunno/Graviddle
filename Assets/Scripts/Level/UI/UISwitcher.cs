@@ -8,15 +8,13 @@ public class UISwitcher : MonoBehaviour
     [SerializeField] private GameObject _cameraPanel = null;
 
     private CameraTouchControlling _cameraTouchControlling;
-    private CameraCapture _cameraCapture;    
-    private FinishPortalCapture _finishPortalCapture;
+    private CharacterCapture _cameraCapture;    
 
 
     private void Start()
     {
         _cameraTouchControlling = _mainCamera.GetComponent<CameraTouchControlling>();
-        _cameraCapture = _mainCamera.GetComponent<CameraCapture>();
-        _finishPortalCapture = _mainCamera.GetComponent<FinishPortalCapture>();
+        _cameraCapture = _mainCamera.GetComponent<CharacterCapture>();
     }
 
 
@@ -27,15 +25,5 @@ public class UISwitcher : MonoBehaviour
 
         _cameraCapture.enabled = !becomeActive;
         _cameraTouchControlling.enabled = becomeActive;
-    }
-
-
-    public void TurnOnFinishCaptureUI()
-    {
-        _cameraCapture.CaptureFinishPortal();
-
-        _touchPanel.SetActive(false);
-
-        _finishPortalCapture.enabled = true;
     }
 }

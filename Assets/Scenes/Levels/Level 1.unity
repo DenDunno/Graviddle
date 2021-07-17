@@ -1937,6 +1937,11 @@ PrefabInstance:
       objectReference: {fileID: 618570123}
     - target: {fileID: 4455638962972475283, guid: 9fb5dbd51a9c2474c9f3343113ac254b,
         type: 3}
+      propertyPath: _character
+      value: 
+      objectReference: {fileID: 1307443120}
+    - target: {fileID: 4455638962972475283, guid: 9fb5dbd51a9c2474c9f3343113ac254b,
+        type: 3}
       propertyPath: _touchPanel
       value: 
       objectReference: {fileID: 1894141347}
@@ -2067,6 +2072,11 @@ PrefabInstance:
       objectReference: {fileID: 1307443120}
     - target: {fileID: 6445119915811480551, guid: 9fb5dbd51a9c2474c9f3343113ac254b,
         type: 3}
+      propertyPath: _touchPanel
+      value: 
+      objectReference: {fileID: 1894141347}
+    - target: {fileID: 6445119915811480551, guid: 9fb5dbd51a9c2474c9f3343113ac254b,
+        type: 3}
       propertyPath: _finishPortal
       value: 
       objectReference: {fileID: 1888321516}
@@ -2085,9 +2095,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 327160535}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110057122}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42b625cbeccf32b4cad18ae854690ee3, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c1324cbff0001748b7185436659d68e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &353638215 stripped
@@ -11466,12 +11476,12 @@ PrefabInstance:
     - target: {fileID: 205806455587547125, guid: 3814a69fc0e128c4380f1914f44a9b0e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.37
+      value: -21.47
       objectReference: {fileID: 0}
     - target: {fileID: 205806455587547125, guid: 3814a69fc0e128c4380f1914f44a9b0e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.62
+      value: -1.4
       objectReference: {fileID: 0}
     - target: {fileID: 205806455587547125, guid: 3814a69fc0e128c4380f1914f44a9b0e,
         type: 3}
@@ -13135,7 +13145,7 @@ PrefabInstance:
     - target: {fileID: 6604417598869749404, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6604417598869749404, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
@@ -13146,7 +13156,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1938668931}
+      objectReference: {fileID: 327160537}
     - target: {fileID: 6604417598869749404, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -13175,7 +13185,7 @@ PrefabInstance:
     - target: {fileID: 6604417598869749404, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TurnOnFinishCaptureUI
+      value: ToggleFinishPortalCapture
       objectReference: {fileID: 0}
     - target: {fileID: 6604417598869749404, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
@@ -13195,7 +13205,7 @@ PrefabInstance:
     - target: {fileID: 6604417598869749404, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UISwitcher, Assembly-CSharp
+      value: FinishPortalCapture, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6604417598869749404, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
@@ -13215,7 +13225,7 @@ PrefabInstance:
     - target: {fileID: 6604417598869749404, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6604417598869749404, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
@@ -13257,7 +13267,8 @@ PrefabInstance:
       propertyPath: _character
       value: 
       objectReference: {fileID: 1307443120}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4963056787618084262, guid: 541cefc2686fbf447be6be187ea3ca43, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 541cefc2686fbf447be6be187ea3ca43, type: 3}
 --- !u!1001 &5837157009109768109
 PrefabInstance:

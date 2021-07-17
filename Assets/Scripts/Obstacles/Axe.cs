@@ -2,7 +2,7 @@
 
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Axe : MonoBehaviour , IRestartableComponent , IObstacle
+public class Axe : MonoBehaviour , IRestartableComponent, IObstacle
 {
     private Rigidbody2D _rigidbody;
 

@@ -2,7 +2,7 @@
 
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class CharacterRestart : MonoBehaviour, IRestartableComponent, IAfterRestartComponent
+public class CharacterRestart : MonoBehaviour, IRestartableComponent , IAfterRestartComponent
 {
     [SerializeField] private CharacterTransparency _characterTransparency = null;
     private Rigidbody2D _rigidbody;

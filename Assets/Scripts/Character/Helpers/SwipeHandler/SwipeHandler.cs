@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler , IRestartableComponent 
+public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler , IRestartableComponent
 {
     public event Action<GravityDirection> GravityChanged;
 

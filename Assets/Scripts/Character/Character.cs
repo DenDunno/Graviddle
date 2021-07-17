@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 
-public class Character : MonoBehaviour , IRestartableComponent
+public class Character : MonoBehaviour , IAfterRestartComponent
 {
     public event Action CharacterDied = null;
 
@@ -47,7 +47,7 @@ public class Character : MonoBehaviour , IRestartableComponent
     }
 
 
-    void IRestartableComponent.Restart()
+    void IAfterRestartComponent.Restart()
     {
         _isAlive = true;
     }
