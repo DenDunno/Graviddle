@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class UISwitcher : MonoBehaviour
+public class CameraTouchControllingSwitcher : MonoBehaviour
 {
     [SerializeField] private GameObject _mainCamera = null;
     [SerializeField] private GameObject _touchPanel = null;

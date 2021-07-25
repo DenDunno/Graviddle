@@ -5,8 +5,9 @@ using UnityEngine;
 public class Character : MonoBehaviour , IAfterRestartComponent
 {
     [SerializeField] private CharacterTransparency _characterTransparency = null;
-    private CharacterStates _characterStates;
+    [SerializeField] private CharacterVictory _characterVictory;
 
+    private CharacterStates _characterStates;
     private bool _isAlive = true;
 
 
@@ -32,10 +33,10 @@ public class Character : MonoBehaviour , IAfterRestartComponent
         {
             if (_isAlive == true)
             {
-                finishPortal.FinishLevel();
-                float waitTime = 1f;
+                _characterVictory.FinishLevel(this, finishPortal);
 
-                yield return new WaitForSeconds(waitTime);
+                float timeBeforeDisappearance = 1f;
+                yield return new WaitForSeconds(timeBeforeDisappearance);
 
                 _characterTransparency.BecomeTransparent(this);
             }

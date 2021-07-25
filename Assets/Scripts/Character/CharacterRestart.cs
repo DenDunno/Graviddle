@@ -5,18 +5,18 @@
 public class CharacterRestart : MonoBehaviour, IRestartableComponent , IAfterRestartComponent
 {
     [SerializeField] private CharacterTransparency _characterTransparency = null;
-    private Rigidbody2D _rigidbody;
+    private Rigidbody2D _characterRigidbody;
 
 
     private void Start()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
+        _characterRigidbody = GetComponent<Rigidbody2D>();
     }
 
 
     void IRestartableComponent.Restart()
     {
-        _rigidbody.velocity = new Vector2(0, 0);
+        _characterRigidbody.velocity = new Vector2(0, 0);
         _characterTransparency.BecomeTransparentNow();
     }
 

@@ -7,8 +7,9 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler , IRe
 {
     public event Action<GravityDirection> GravityChanged;
 
-    private readonly int _numOfDirections = 4;
+    [SerializeField] private CharacterMovement _characterMovement = null;
 
+    private readonly int _numOfDirections = 4;
     private GravityDirection _newDirection;
     private GravityDirection _lastDirection;
     private float _swipeSensitivity = 1.0f;
@@ -36,7 +37,7 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler , IRe
     {
         Vector2 swipeInput = new Vector2(eventData.delta.x, eventData.delta.y);
 
-        if (swipeInput.magnitude > _swipeSensitivity)
+        if (swipeInput.magnitude > _swipeSensitivity && _characterMovement.MoveDirection == Vector2.zero)
         {
             DefineTurn(ref swipeInput);
             TryInvokeGravityEvent();

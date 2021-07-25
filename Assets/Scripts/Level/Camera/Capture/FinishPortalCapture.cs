@@ -8,7 +8,7 @@ public class FinishPortalCapture : MonoBehaviour
     [SerializeField] private GameObject _touchPanel = null;
     [SerializeField] private CharacterCapture _characterCapture;
 
-    private readonly float _epsilon = 1f;
+    private readonly float _epsilon = 0.4f;
     private readonly float _waitTime = 1f;
     private readonly float _captureSpeed = 2f;
 
@@ -20,12 +20,13 @@ public class FinishPortalCapture : MonoBehaviour
 
         if (Vector2.Distance(transform.position, _finishPortal.transform.position) <= _epsilon)
         {
+            enabled = false;
             StartCoroutine(WaitToSeePortal());
         }
     }
 
 
-    public void ToggleFinishPortalCapture(bool finishCaptureEnabled)
+    public void ToggleFinishPortalCapture(bool finishCaptureEnabled) // called by finish button
     {
         enabled = finishCaptureEnabled;
         _characterCapture.enabled = !finishCaptureEnabled;

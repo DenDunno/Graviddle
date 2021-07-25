@@ -3,13 +3,10 @@
 
 [RequireComponent(typeof(Camera))]
 public class ScreenResolution : MonoBehaviour
-{
-    private Camera _camera;
-
-
+{     
     private void Start()
     {
-        _camera = GetComponent<Camera>();
-        _camera.aspect = 1280f / 720f;
+        Camera camera = GetComponent<Camera>();
+        camera.aspect = 1280f / 720f;
     }
 }
