@@ -1,10 +1,9 @@
 ﻿using DG.Tweening;
-using System;
 using System.Collections;
 using UnityEngine;
 
 
-[Serializable]
+[System.Serializable]
 public class CharacterVictory
 {
     private readonly PortalDisappearance _portalDisappearance = new PortalDisappearance(0.5f);

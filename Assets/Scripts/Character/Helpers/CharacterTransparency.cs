@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-using System;
 
 
-[Serializable]
+[System.Serializable]
 public class CharacterTransparency 
 {
     [SerializeField] private SpriteRenderer _spriteRenderer = null;

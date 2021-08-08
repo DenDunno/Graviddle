@@ -9,7 +9,6 @@ public class WinEffects : MonoBehaviour
     [SerializeField] private ParticleSystem[] _stars = null;
     [SerializeField] private ParticleSystem _sunEffect = null;
     [SerializeField] private ParticleSystem _confetti = null;
-    [SerializeField] private Stars _reward = null;
 
     private float _delayBetweenStars = 0;
 
@@ -34,7 +33,7 @@ public class WinEffects : MonoBehaviour
 
     private IEnumerator ActivateParticles()
     {
-        int stars = _reward.GetStars();
+        int stars = 0;
         
         _stars[0].gameObject.SetActive(true);
 

@@ -11,7 +11,8 @@ public class WinAnimation : MonoBehaviour
     private readonly Vector2 _targetPosition = Vector2.zero;
     
     [SerializeField] private WinEffects _effects = null;
-    [SerializeField] private Image _image = null;
+    [SerializeField] private Image _winPanel = null;
+    [SerializeField] private Image _levelScore = null;
 
 
     private void OnEnable()
@@ -19,8 +20,8 @@ public class WinAnimation : MonoBehaviour
         Sequence sequence = DOTween.Sequence();
 
         sequence.AppendInterval(_waitTime);
-        sequence.Append(transform.DOLocalMove(_targetPosition, _duration).SetEase(Ease.OutBack));
-        sequence.Join(_image.DOFade(_imageFading, _duration));
+        sequence.Append(_levelScore.transform.DOLocalMove(_targetPosition, _duration).SetEase(Ease.OutBack));
+        sequence.Join(_winPanel.DOFade(_imageFading, _duration));
 
         sequence.onComplete = ()=> _effects.ActivateEffects();
     }

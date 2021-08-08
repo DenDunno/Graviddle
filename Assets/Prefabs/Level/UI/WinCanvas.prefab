@@ -411,6 +411,8 @@ GameObject:
   - component: {fileID: 3148451121765021682}
   - component: {fileID: 3148451121765021683}
   - component: {fileID: 3148451121765021684}
+  - component: {fileID: 4866127157690285814}
+  - component: {fileID: 2708194296871931764}
   m_Layer: 6
   m_Name: WinCanvas
   m_TagString: Untagged
@@ -499,6 +501,43 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4866127157690285814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3148451121765021685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 249d5573dc2d52c41ae8968cf81f4615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _effects: {fileID: 2708194296871931764}
+  _winPanel: {fileID: 3148451121859882609}
+  _levelScore: {fileID: 3148451122352303046}
+--- !u!114 &2708194296871931764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3148451121765021685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9214d1d1cf2c940a8390934cad48bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buttons:
+  - {fileID: 3148451121620247210}
+  - {fileID: 3148451120941940319}
+  - {fileID: 3148451121066136771}
+  _stars:
+  - {fileID: 5320652718814070324}
+  - {fileID: 5320216378963772536}
+  - {fileID: 5320251682703097154}
+  _sunEffect: {fileID: 4224070436135052661}
+  _confetti: {fileID: 3742569321760675814}
 --- !u!1 &3148451121859882611
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,8 +626,6 @@ GameObject:
   - component: {fileID: 3148451122352303065}
   - component: {fileID: 3148451122352303045}
   - component: {fileID: 3148451122352303046}
-  - component: {fileID: 3148451122352303064}
-  - component: {fileID: 3058701801287758412}
   m_Layer: 5
   m_Name: LevelScore
   m_TagString: Untagged
@@ -658,43 +695,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3148451122352303064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3148451122352303066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e9214d1d1cf2c940a8390934cad48bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _buttons:
-  - {fileID: 3148451121620247210}
-  - {fileID: 3148451120941940319}
-  - {fileID: 3148451121066136771}
-  _stars:
-  - {fileID: 5320652718814070324}
-  - {fileID: 5320216378963772536}
-  - {fileID: 5320251682703097154}
-  _sunEffect: {fileID: 4224070436135052661}
-  _confetti: {fileID: 3742569321760675814}
-  _reward: {fileID: 0}
---- !u!114 &3058701801287758412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3148451122352303066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 249d5573dc2d52c41ae8968cf81f4615, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _effects: {fileID: 3148451122352303064}
-  _image: {fileID: 3148451121859882609}
 --- !u!1001 &1826590623369275365
 PrefabInstance:
   m_ObjectHideFlags: 0
