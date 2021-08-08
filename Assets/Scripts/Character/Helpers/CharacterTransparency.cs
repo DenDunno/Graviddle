@@ -11,23 +11,23 @@ public class CharacterTransparency
 
     public void BecomeOpaque(MonoBehaviour character)
     {
-        character.StartCoroutine(_imageFading.ChangeAlphaChannel(true , SetSpriteAlpaChannel));
+        character.StartCoroutine(_imageFading.ChangeAlphaChannel(true , SetSpriteAlphaChannel));
     }
 
 
     public void BecomeTransparent(MonoBehaviour character)
     {
-        character.StartCoroutine(_imageFading.ChangeAlphaChannel(false , SetSpriteAlpaChannel));
+        character.StartCoroutine(_imageFading.ChangeAlphaChannel(false , SetSpriteAlphaChannel));
     }
 
 
     public void BecomeTransparentNow() 
     {
-        SetSpriteAlpaChannel(0);
+        SetSpriteAlphaChannel(0);
     }
 
 
-    private void SetSpriteAlpaChannel(float alphaChannel)
+    private void SetSpriteAlphaChannel(float alphaChannel)
     {
         _spriteRenderer.color = new Color(255, 255, 255, alphaChannel);
     }

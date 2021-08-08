@@ -17,13 +17,13 @@ public class CameraTouchControlling : MonoBehaviour
     {         
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
         {
-            Vector3 newcameraPosition = -Input.GetTouch(0).deltaPosition;
-            newcameraPosition *= _movingSpeed * Time.deltaTime;
-            newcameraPosition = transform.rotation * newcameraPosition;
-            newcameraPosition = transform.position + newcameraPosition;
+            Vector3 newCameraPosition = -Input.GetTouch(0).deltaPosition;
+            newCameraPosition *= _movingSpeed * Time.deltaTime;
+            newCameraPosition = transform.rotation * newCameraPosition;
+            newCameraPosition = transform.position + newCameraPosition;
 
-            _cameraBorders.ClampCamera(ref newcameraPosition);
-            transform.position = newcameraPosition;
+            _cameraBorders.ClampCamera(ref newCameraPosition);
+            transform.position = newCameraPosition;
         }
     }
 }

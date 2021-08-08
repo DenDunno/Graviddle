@@ -4,7 +4,7 @@
 public class ClosedPathMotion : MonoBehaviour
 {
     [SerializeField] private ClosedPathMotionCalculator _motionCalculator = null;
-    [SerializeField] private Transform _targetTrasnform = null;
+    [SerializeField] private Transform _targetTransform = null;
 
     private Vector2 _startPosition = Vector2.zero;
     private Vector2 _targetPosition = Vector2.zero;
@@ -12,7 +12,7 @@ public class ClosedPathMotion : MonoBehaviour
 
     private void Start()
     {
-        _targetPosition = _targetTrasnform.position;
+        _targetPosition = _targetTransform.position;
         _startPosition = transform.position;
 
         _motionCalculator.Init();

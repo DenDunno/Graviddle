@@ -7,7 +7,7 @@ public class MotionWithDelayConfig : ClosedPathMotionConfig
 
     [SerializeField] private float _waitTime = 2f;
     private float _leftLimit;
-    private float _b; // y = ax + b: a = speed , x = time
+    private float _mathFunctionOffset; // y = ax + b: a = speed , x = time , b = mathFunctionOffset
 
 
     private void Start()
@@ -15,7 +15,7 @@ public class MotionWithDelayConfig : ClosedPathMotionConfig
         _leftLimit = (1 + _speed * _waitTime) / _speed;
         float x = _leftLimit + _waitTime;
 
-        _b = 1 + _speed * x;
+        _mathFunctionOffset = 1 + _speed * x;
     }
 
 
@@ -26,19 +26,16 @@ public class MotionWithDelayConfig : ClosedPathMotionConfig
             return 0;
         }
 
-        else if (time >= _waitTime && time <= _leftLimit)
+        if (time >= _waitTime && time <= _leftLimit)
         {
             return _speed * (time - _waitTime);
         }
 
-        else if (time >= _leftLimit && time <= _leftLimit + _waitTime)
+        if (time >= _leftLimit && time <= _leftLimit + _waitTime)
         {
             return 1;
         }
 
-        else
-        {
-            return -_speed * time + _b;
-        }
+        return -_speed * time + _mathFunctionOffset;
     }
 }

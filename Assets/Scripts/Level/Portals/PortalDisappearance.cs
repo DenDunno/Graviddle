@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PortalDisappearance 
 {
-    private readonly float _disappearingSpeed = 1f;
     private readonly float _timeBeforeDisappearance = 1.3f;
+    private readonly float _disappearingSpeed;
 
 
     public PortalDisappearance(float disappearingSpeed)

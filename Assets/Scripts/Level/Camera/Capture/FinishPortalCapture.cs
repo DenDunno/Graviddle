@@ -6,7 +6,7 @@ public class FinishPortalCapture : MonoBehaviour
 {
     [SerializeField] private FinishPortal _finishPortal = null;
     [SerializeField] private GameObject _touchPanel = null;
-    [SerializeField] private CharacterCapture _characterCapture;
+    [SerializeField] private CharacterCapture _characterCapture = null;
 
     private readonly float _epsilon = 0.4f;
     private readonly float _waitTime = 1f;

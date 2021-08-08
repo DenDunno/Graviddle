@@ -22,7 +22,7 @@ public class CharacterMovement : MonoBehaviour , IAfterRestartComponent
     {
         //inversion when character upside
         int sign = (int)_movement * _characterGravity.MovementInversion;
-        Movement actualMovement = (Movement)sign;
+        var actualMovement = (Movement)sign;
         
         MoveDirection = transform.right * sign;
 

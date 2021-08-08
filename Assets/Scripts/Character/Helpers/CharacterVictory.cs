@@ -32,9 +32,9 @@ public class CharacterVictory
 
     private void TurnOffCharacterLogic(Character character)
     {
-        CharacterStateMachine stateMachine = character.GetComponent<CharacterStateMachine>();
-        Animator animator = character.GetComponent<Animator>();
-        Rigidbody2D rigidbody = character.GetComponent<Rigidbody2D>();
+        var stateMachine = character.GetComponent<CharacterStateMachine>();
+        var animator = character.GetComponent<Animator>();
+        var rigidbody = character.GetComponent<Rigidbody2D>();
 
         stateMachine.enabled = false;
         animator.Play(CharacterAnimations.Fall);

@@ -10,13 +10,13 @@ public class WinAnimation : MonoBehaviour
     private readonly float _imageFading = 0.7f;
     private readonly Vector2 _targetPosition = Vector2.zero;
     
-    [SerializeField] private WinEffects _effects;
+    [SerializeField] private WinEffects _effects = null;
     [SerializeField] private Image _image = null;
 
 
     private void OnEnable()
     {
-        var sequence = DOTween.Sequence();
+        Sequence sequence = DOTween.Sequence();
 
         sequence.AppendInterval(_waitTime);
         sequence.Append(transform.DOLocalMove(_targetPosition, _duration).SetEase(Ease.OutBack));

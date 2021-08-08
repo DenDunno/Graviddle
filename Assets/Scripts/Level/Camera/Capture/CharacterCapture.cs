@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 [RequireComponent(typeof(CameraBorders))]
@@ -26,7 +25,7 @@ public class CharacterCapture : MonoBehaviour
     
     private void OnCharacterGroundedChanged(bool isGrounded) 
     {
-        _captureSpeed = isGrounded ? 2f : 5f;
+        _captureSpeed = isGrounded ? 2f : 6f;
     }
 
 

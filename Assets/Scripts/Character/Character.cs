@@ -5,17 +5,16 @@ using UnityEngine;
 public class Character : MonoBehaviour , IAfterRestartComponent
 {
     [SerializeField] private CharacterTransparency _characterTransparency = null;
-    [SerializeField] private CharacterVictory _characterVictory;
-
-    private CharacterStates _characterStates;
+    [SerializeField] private CharacterVictory _characterVictory = null;
+    
     private bool _isAlive = true;
 
 
     private void Awake()
     {
-        _characterStates = new CharacterStates(this);
+        CharacterStates.Init(this);
         CharacterStates.DieState.CharacterDied += OnCharacterDied;
-
+        
         _characterTransparency.BecomeTransparentNow();
         _characterTransparency.BecomeOpaque(this);
     }
@@ -29,9 +28,9 @@ public class Character : MonoBehaviour , IAfterRestartComponent
 
     private IEnumerator OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<FinishPortal>(out var finishPortal) == true)
+        if (collision.TryGetComponent(out FinishPortal finishPortal))
         {
-            if (_isAlive == true)
+            if (_isAlive)
             {
                 _characterVictory.FinishLevel(this, finishPortal);
 
@@ -55,6 +54,3 @@ public class Character : MonoBehaviour , IAfterRestartComponent
         _isAlive = true;
     }
 }
-
-
-

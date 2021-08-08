@@ -8,7 +8,7 @@ public class CharacterStates
     public static DieState DieState { get; private set; }
     
 
-    public CharacterStates(Character character)
+    public static void Init(Character character)
     {
         IdleState = new IdleState(character);
         FallState = new FallState(character);

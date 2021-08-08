@@ -6,7 +6,6 @@ public class ScreenResolution : MonoBehaviour
 {     
     private void Start()
     {
-        Camera camera = GetComponent<Camera>();
-        camera.aspect = 1280f / 720f;
+        GetComponent<Camera>().aspect = 1280f / 720f;
     }
 }

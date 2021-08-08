@@ -7,8 +7,8 @@ public class ClosedPathMotionCalculator
 {
     [SerializeField] private ClosedPathMotionConfig _motionConfig = null;
 
-    private float _period = 0;
-    private float _time = 0;    
+    private float _period;
+    private float _time;    
 
 
     public void Init()

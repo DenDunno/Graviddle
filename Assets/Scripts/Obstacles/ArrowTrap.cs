@@ -24,6 +24,11 @@ public class ArrowTrap : MonoBehaviour , IRestartableComponent, IObstacle
 
     private IEnumerator SpawnArrow()
     {
+        if (_arrow != null)
+        {
+            Destroy(_arrow);
+        }
+
         yield return new WaitForSeconds(_startWaitTime);
         _arrow = Instantiate(_arrow, _arrowPosition, transform.rotation);
 

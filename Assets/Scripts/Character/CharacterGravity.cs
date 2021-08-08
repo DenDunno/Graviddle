@@ -41,8 +41,3 @@ public class CharacterGravity : MonoBehaviour , IAfterRestartComponent
         OnGravityChanged(GravityDirection.Down);
     }
 }
-
-
-
-
-

@@ -6,7 +6,7 @@ public abstract class CharacterState
     protected readonly Animator _animator;
 
 
-    public CharacterState(Character character)
+    protected CharacterState(Character character)
     {
         _animator = character.GetComponent<Animator>();
     }
