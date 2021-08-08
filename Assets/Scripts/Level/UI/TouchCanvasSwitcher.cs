@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 
 
-public class SwipeHandlerSwitcher : MonoBehaviour , IAfterRestartComponent
+public class TouchCanvasSwitcher : MonoBehaviour , IAfterRestartComponent
 {
+    [SerializeField] private CameraTouchControllingSwitcher _cameraTouchControllingSwitcher = null;
+
+
     private void OnEnable()
     {
         CharacterStates.DieState.CharacterDied += OnCharacterDied;
@@ -23,6 +26,7 @@ public class SwipeHandlerSwitcher : MonoBehaviour , IAfterRestartComponent
 
     void IAfterRestartComponent.Restart()
     {
+        _cameraTouchControllingSwitcher.ToggleCameraTouchControlling(false);
         gameObject.SetActive(true);
     }
 }

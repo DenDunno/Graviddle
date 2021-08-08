@@ -4,13 +4,13 @@
 public class Pause : MonoBehaviour
 {
     [SerializeField] private SceneTransit _sceneTransit = null;
-    [SerializeField] private GameObject _touchCanvas = null;
+    [SerializeField] private Canvas _touchCanvas = null;
 
 
     public void SwitchPauseMenu(bool active)
     {
         gameObject.SetActive(active);
-        _touchCanvas.SetActive(!active);
+        _touchCanvas.gameObject.SetActive(!active);
 
         Time.timeScale = active ? 0 : 1;
     }

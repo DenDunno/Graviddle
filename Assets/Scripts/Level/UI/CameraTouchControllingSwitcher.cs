@@ -5,7 +5,7 @@ public class CameraTouchControllingSwitcher : MonoBehaviour
 {
     [SerializeField] private GameObject _mainCamera = null;
     [SerializeField] private GameObject _touchPanel = null;
-    [SerializeField] private GameObject _cameraPanel = null;
+    [SerializeField] private GameObject _pointerToNormalUI = null;
 
     private CameraTouchControlling _cameraTouchControlling;
     private CharacterCapture _characterCapture;    
@@ -21,7 +21,7 @@ public class CameraTouchControllingSwitcher : MonoBehaviour
     public void ToggleCameraTouchControlling(bool cameraTouchControllingEnabled)
     {
         _touchPanel.SetActive(!cameraTouchControllingEnabled);
-        _cameraPanel.SetActive(cameraTouchControllingEnabled);
+        _pointerToNormalUI.SetActive(cameraTouchControllingEnabled);
 
         _characterCapture.enabled = !cameraTouchControllingEnabled;
         _cameraTouchControlling.enabled = cameraTouchControllingEnabled;

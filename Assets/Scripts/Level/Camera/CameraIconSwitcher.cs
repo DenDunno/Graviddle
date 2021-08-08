@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CameraIconSwitcher : MonoBehaviour
 {
     [SerializeField] private Button _cameraIcon = null;
+
     private CameraBorders _cameraBorders = null;
     private readonly float _epsilon = 0.3f;
 
@@ -14,7 +15,7 @@ public class CameraIconSwitcher : MonoBehaviour
     {
         _cameraBorders = GetComponent<CameraBorders>();
     }
-
+    
 
     private void FixedUpdate()
     {

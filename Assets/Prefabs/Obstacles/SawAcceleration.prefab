@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _motionCalculator:
     _motionConfig: {fileID: 3560607041193200546}
-  _targetTrasnform: {fileID: 4340357530348636659}
+  _targetTransform: {fileID: 4340357530348636659}
 --- !u!114 &8112973255570541900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +168,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

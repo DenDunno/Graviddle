@@ -46,6 +46,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -177,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _motionCalculator:
     _motionConfig: {fileID: 2155039122101872158}
-  _targetTrasnform: {fileID: 5473596711069576044}
+  _targetTransform: {fileID: 5473596711069576044}
 --- !u!114 &3407693209307695787
 MonoBehaviour:
   m_ObjectHideFlags: 0

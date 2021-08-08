@@ -9,9 +9,9 @@ public class CharacterVictory
 {
     private readonly PortalDisappearance _portalDisappearance = new PortalDisappearance(0.5f);
 
-    [SerializeField] private GameObject _winCanvas = null;
-    [SerializeField] private GameObject _touchCanvas = null;
-    [SerializeField] private GameObject _gameplayCanvas = null;
+    [SerializeField] private Canvas _winCanvas = null;
+    [SerializeField] private Canvas _touchCanvas = null;
+    [SerializeField] private Canvas _gameplayCanvas = null;
 
 
     public void FinishLevel(Character character , FinishPortal finishPortal)
@@ -24,9 +24,9 @@ public class CharacterVictory
 
     private void ToggleWinUI()
     {
-        _touchCanvas.SetActive(false);
-        _gameplayCanvas.SetActive(false);
-        _winCanvas.SetActive(true);
+        _touchCanvas.gameObject.SetActive(false);
+        _gameplayCanvas.gameObject.SetActive(false);
+        _winCanvas.gameObject.SetActive(true);
     }
 
 

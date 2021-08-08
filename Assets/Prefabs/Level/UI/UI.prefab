@@ -65,7 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 0}
   _touchPanel: {fileID: 2996258198431035306}
-  _cameraPanel: {fileID: 2592018218766545809}
+  _pointerToNormalUI: {fileID: 5341167930673184996}
 --- !u!1001 &411235787678854264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -641,6 +641,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraIcon
       objectReference: {fileID: 0}
+    - target: {fileID: 1284653479542165581, guid: c7cd34435d73d7647af45c7d1dadf191,
+        type: 3}
+      propertyPath: _cameraTouchControllingSwitcher
+      value: 
+      objectReference: {fileID: 5310250217595848280}
     - target: {fileID: 1989172336959653364, guid: c7cd34435d73d7647af45c7d1dadf191,
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1114,9 +1119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e3a1e3faa2fe84f96a3521358eeab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2592018218766545809 stripped
+--- !u!1 &5341167930673184996 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7428937227931690829, guid: c7cd34435d73d7647af45c7d1dadf191,
+  m_CorrespondingSourceObject: {fileID: 1080848746718909496, guid: c7cd34435d73d7647af45c7d1dadf191,
     type: 3}
   m_PrefabInstance: {fileID: 4963056787405182172}
   m_PrefabAsset: {fileID: 0}

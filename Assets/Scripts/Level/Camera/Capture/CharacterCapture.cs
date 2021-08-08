@@ -2,7 +2,7 @@
 
 
 [RequireComponent(typeof(CameraBorders))]
-public class CharacterCapture : MonoBehaviour
+public class CharacterCapture : MonoBehaviour 
 {
     [SerializeField] private Character _character = null;        
 

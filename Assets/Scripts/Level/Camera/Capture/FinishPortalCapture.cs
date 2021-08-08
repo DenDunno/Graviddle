@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 
-public class FinishPortalCapture : MonoBehaviour
+public class FinishPortalCapture : MonoBehaviour , IRestartableComponent
 {
     [SerializeField] private FinishPortal _finishPortal = null;
-    [SerializeField] private GameObject _touchPanel = null;
+    [SerializeField] private Image _touchPanel = null;
     [SerializeField] private CharacterCapture _characterCapture = null;
 
     private readonly float _epsilon = 0.4f;
@@ -30,7 +31,7 @@ public class FinishPortalCapture : MonoBehaviour
     {
         enabled = finishCaptureEnabled;
         _characterCapture.enabled = !finishCaptureEnabled;
-        _touchPanel.SetActive(!finishCaptureEnabled);
+        _touchPanel.gameObject.SetActive(!finishCaptureEnabled);
     }
 
 
@@ -38,6 +39,12 @@ public class FinishPortalCapture : MonoBehaviour
     {
         yield return new WaitForSeconds(_waitTime);
 
+        ToggleFinishPortalCapture(false);
+    }
+
+
+    void IRestartableComponent.Restart()
+    {
         ToggleFinishPortalCapture(false);
     }
 }

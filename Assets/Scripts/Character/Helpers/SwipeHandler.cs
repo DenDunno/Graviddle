@@ -35,12 +35,12 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler , IRe
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Vector2 swipeInput = new Vector2(eventData.delta.x, eventData.delta.y);
+        var swipeInput = new Vector2(eventData.delta.x, eventData.delta.y);
 
         if (swipeInput.magnitude > _swipeSensitivity && _characterMovement.MoveDirection == Vector2.zero)
         {
             DefineTurn(ref swipeInput);
-            TryInvokeGravityEvent();
+            TryChangeGravity();
         }
     }
 
@@ -61,7 +61,7 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler , IRe
     }
 
 
-    private void TryInvokeGravityEvent()
+    private void TryChangeGravity()
     {
         if (_lastDirection != _newDirection)
         {
@@ -76,7 +76,7 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler , IRe
         enabled = true;
         _newDirection = GravityDirection.Down;
 
-        TryInvokeGravityEvent();
+        TryChangeGravity();
     }
 
 

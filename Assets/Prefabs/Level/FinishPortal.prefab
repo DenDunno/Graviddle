@@ -87,7 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _motionCalculator:
     _motionConfig: {fileID: 5645702229817293577}
-  _targetTrasnform: {fileID: 6782441718296676567}
+  _targetTransform: {fileID: 6782441718296676567}
 --- !u!114 &5645702229817293577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,7 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07b1334ab529f44b8617c232f575132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _winPanel: {fileID: 0}
 --- !u!1 &205806456063144930
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +173,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
