@@ -1,55 +1,47 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 
 public class WinEffects : MonoBehaviour
 {
-    [SerializeField] private Button[] _buttons = null;
-    [SerializeField] private ParticleSystem[] _stars = null;
+    [SerializeField] private ParticleSystem[] _starsParticles = null;
     [SerializeField] private ParticleSystem _sunEffect = null;
     [SerializeField] private ParticleSystem _confetti = null;
+    [SerializeField] private Reward _reward = null;
 
-    private float _delayBetweenStars = 0;
+    private float _starsCoolDown = 0;
 
 
     private void Start()
     {
-        float delay = 0.5f;
-        _delayBetweenStars = _stars[0].main.duration + delay;
+        const float coolDown = 0.5f;
+        _starsCoolDown = _starsParticles[0].main.duration + coolDown;
     }
+    
 
-
-    public void ActivateEffects()
+    public IEnumerator ActivateEffects()
     {
-        foreach (Button button in _buttons)
-        {
-            button.interactable = true;
-        }
+        int stars = _reward.GetStars();
 
-        StartCoroutine(ActivateParticles());
-    }
-        
-
-    private IEnumerator ActivateParticles()
-    {
-        int stars = 0;
-        
-        _stars[0].gameObject.SetActive(true);
-
-        yield return new WaitForSeconds(_delayBetweenStars);
+        yield return StartCoroutine(ActivateStar(0));
 
         _sunEffect.gameObject.SetActive(true);
 
-        for (int i = 1; i < stars; ++i)
+        for (int starIndex = 1; starIndex < stars; ++starIndex)
         {
-            _stars[i].gameObject.SetActive(true);
-            yield return new WaitForSeconds(_delayBetweenStars);
+            yield return StartCoroutine(ActivateStar(starIndex));
         }
 
         if (stars == 3)
         {
             _confetti.gameObject.SetActive(true);
         }
+    }
+
+
+    private IEnumerator ActivateStar(int starIndex)
+    {
+        _starsParticles[starIndex].gameObject.SetActive(true);
+        yield return new WaitForSeconds(_starsCoolDown);
     }
 }

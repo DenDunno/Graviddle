@@ -21,6 +21,6 @@ public class ButtonAnimation : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
     private void MoveButton(int sign)
     {
-        transform.position = transform.position + sign * _verticalOffset * transform.up;
+        transform.position += sign * _verticalOffset * transform.up;
     }
 }

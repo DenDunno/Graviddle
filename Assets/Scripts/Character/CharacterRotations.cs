@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
 
-public class CharacterRotationsPresenter : MonoBehaviour , IAfterRestartComponent
+public class CharacterRotations : MonoBehaviour , IAfterRestartComponent
 {
-    [SerializeField] private SwipeHandler _swipeHandler = null;
+    public int Rotations { get; private set; } = 0;
 
-    public int CharacterRotations { get; private set; } = 0;
+    [SerializeField] private SwipeHandler _swipeHandler = null;
 
 
     private void OnEnable()
@@ -22,12 +22,12 @@ public class CharacterRotationsPresenter : MonoBehaviour , IAfterRestartComponen
 
     private void OnGravityChanged(GravityDirection gravityDirection)
     {
-        ++CharacterRotations;
+        ++Rotations;
     }
 
 
     void IAfterRestartComponent.Restart()
     {
-        CharacterRotations = 0;
+        Rotations = 0;
     }
 }
