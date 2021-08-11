@@ -1,17 +1,10 @@
 ﻿using UnityEngine;
 
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class Axe : MonoBehaviour , IRestartableComponent, IObstacle
 {
-    private Rigidbody2D _rigidbody;
-
-
-    private void Start()
-    {
-        _rigidbody = GetComponent<Rigidbody2D>();
-    }
-
+    [SerializeField] private Rigidbody2D _rigidbody = null;
+    
 
     void IRestartableComponent.Restart()
     { 
@@ -19,5 +12,3 @@ public class Axe : MonoBehaviour , IRestartableComponent, IObstacle
         _rigidbody.velocity = Vector2.zero;
     }
 }
-
-

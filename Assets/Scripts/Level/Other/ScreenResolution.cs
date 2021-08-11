@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 
 
-[RequireComponent(typeof(Camera))]
 public class ScreenResolution : MonoBehaviour
-{     
+{
+    [SerializeField] private Camera _mainCamera = null;
+
+
     private void Start()
     {
-        GetComponent<Camera>().aspect = 1280f / 720f;
+        _mainCamera.aspect = 1280f / 720f;
     }
 }

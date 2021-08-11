@@ -15,13 +15,13 @@ public class CharacterVictory
 
     public void FinishLevel(Character character , FinishPortal finishPortal)
     {
-        ToggleWinUI();
+        ShowWinUI();
         TurnOffCharacterLogic(character);
         character.StartCoroutine(PullCharacterToThePortal(character.transform, finishPortal.transform));
     }
 
 
-    private void ToggleWinUI()
+    private void ShowWinUI()
     {
         _touchCanvas.gameObject.SetActive(false);
         _gameplayCanvas.gameObject.SetActive(false);

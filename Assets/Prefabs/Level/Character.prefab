@@ -127,6 +127,7 @@ MonoBehaviour:
     _imageFading:
       _fadingSpeed: 1
       _brightenSpeed: 1
+  _characterRigidbody: {fileID: 2684562039941863180}
 --- !u!114 &7487653251083431281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec4be2d723423d4f905179fc7731577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 2684562040544259668}
+  _characterGravity: {fileID: 7487653251083431281}
 --- !u!114 &5784128724696574754
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,18 +1,15 @@
 ﻿using UnityEngine;
 
 
-[RequireComponent(typeof(CameraBorders))]
 public class CharacterCapture : MonoBehaviour 
 {
-    [SerializeField] private Character _character = null;        
-
+    [SerializeField] private Character _character = null;
+    [SerializeField] private CameraBorders _cameraBorders = null;
     private float _captureSpeed = 2f;
-    private CameraBorders _cameraBorders;
 
 
     private void Start()
     {
-        _cameraBorders = GetComponent<CameraBorders>();
         CharacterStates.FallState.CharacterGroundedChanged += OnCharacterGroundedChanged;
     }
 

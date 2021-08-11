@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-[RequireComponent(typeof(Backstage))]
 public class SceneTransit : MonoBehaviour
 {
     [SerializeField] private Image _menuTransitionImage = null;
@@ -52,4 +51,3 @@ public class SceneTransit : MonoBehaviour
         yield return new WaitWhile(() => sceneLoadingOperation.isDone == false);        
     }
 }
-
