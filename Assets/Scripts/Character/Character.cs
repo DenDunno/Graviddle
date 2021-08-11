@@ -8,6 +8,7 @@ public class Character : MonoBehaviour , IAfterRestartComponent
     [SerializeField] private CharacterVictory _characterVictory = null;
     
     private bool _isAlive = true;
+    private bool _isPlaying = true;
 
 
     private void Awake()
@@ -30,8 +31,9 @@ public class Character : MonoBehaviour , IAfterRestartComponent
     {
         if (collision.TryGetComponent(out FinishPortal finishPortal))
         {
-            if (_isAlive)
+            if (_isAlive && _isPlaying)
             {
+                _isPlaying = false;
                 _characterVictory.FinishLevel(this, finishPortal);
 
                 float timeBeforeDisappearance = 1f;

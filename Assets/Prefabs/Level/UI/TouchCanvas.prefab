@@ -120,9 +120,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UISwitcher, Assembly-CSharp
-        m_MethodName: SwitchCameraPanel
+      - m_Target: {fileID: 4616561510542260940}
+        m_TargetAssemblyTypeName: CameraTouchControllingSwitcher, Assembly-CSharp
+        m_MethodName: ToggleCameraTouchControlling
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -252,9 +252,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UISwitcher, Assembly-CSharp
-        m_MethodName: SwitchCameraPanel
+      - m_Target: {fileID: 4616561510542260940}
+        m_TargetAssemblyTypeName: CameraTouchControllingSwitcher, Assembly-CSharp
+        m_MethodName: ToggleCameraTouchControlling
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

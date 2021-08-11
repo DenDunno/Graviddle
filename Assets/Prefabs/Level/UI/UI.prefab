@@ -218,7 +218,7 @@ PrefabInstance:
     - target: {fileID: 196417182811896704, guid: f2ef5b37d9835fe4c85eb389af70d07c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3338993636883174935, guid: f2ef5b37d9835fe4c85eb389af70d07c,
         type: 3}
@@ -294,6 +294,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834365185550485945, guid: f2ef5b37d9835fe4c85eb389af70d07c,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.12641507
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834365185550485945, guid: f2ef5b37d9835fe4c85eb389af70d07c,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.6238732
       objectReference: {fileID: 0}
     - target: {fileID: 9067779692714204738, guid: f2ef5b37d9835fe4c85eb389af70d07c,
         type: 3}
@@ -625,7 +635,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 356070113578593808}
     - target: {fileID: 1080848746773401816, guid: c7cd34435d73d7647af45c7d1dadf191,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
@@ -704,7 +714,7 @@ PrefabInstance:
     - target: {fileID: 1080848746773401816, guid: c7cd34435d73d7647af45c7d1dadf191,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UISwitcher, Assembly-CSharp
+      value: CameraTouchControllingSwitcher, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1080848746773401816, guid: c7cd34435d73d7647af45c7d1dadf191,
         type: 3}
@@ -770,7 +780,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _cameraTouchControllingSwitcher
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 356070113578593808}
     - target: {fileID: 1989172336959653364, guid: c7cd34435d73d7647af45c7d1dadf191,
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -950,7 +960,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 356070113578593808}
     - target: {fileID: 5539594151224967479, guid: c7cd34435d73d7647af45c7d1dadf191,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
@@ -1009,7 +1019,7 @@ PrefabInstance:
     - target: {fileID: 5539594151224967479, guid: c7cd34435d73d7647af45c7d1dadf191,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UISwitcher, Assembly-CSharp
+      value: CameraTouchControllingSwitcher, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5539594151224967479, guid: c7cd34435d73d7647af45c7d1dadf191,
         type: 3}
@@ -1226,6 +1236,18 @@ Canvas:
     type: 3}
   m_PrefabInstance: {fileID: 4963056787405182172}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &356070113578593808 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4616561510542260940, guid: c7cd34435d73d7647af45c7d1dadf191,
+    type: 3}
+  m_PrefabInstance: {fileID: 4963056787405182172}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a790c5b1d6a4d4ea03c310f825be7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2996258198431035306 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7887079680941357942, guid: c7cd34435d73d7647af45c7d1dadf191,
