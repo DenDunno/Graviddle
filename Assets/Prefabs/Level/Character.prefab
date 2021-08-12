@@ -182,12 +182,10 @@ MonoBehaviour:
   _characterTransparency:
     _spriteRenderer: {fileID: 2684562040544259668}
     _imageFading:
-      _fadingSpeed: 1
-      _brightenSpeed: 0.5
+      _fadingSpeed: 0.5
+      _brightenSpeed: 1
   _characterVictory:
-    _winCanvas: {fileID: 0}
-    _touchCanvas: {fileID: 0}
-    _gameplayCanvas: {fileID: 0}
+    _victoryState: {fileID: 0}
 --- !u!114 &5905746848208922842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b8eeb741585d240b9718327ee2c97e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rotationsUI: {fileID: 0}
   _swipeHandler: {fileID: 0}
 --- !u!1 &2684562040544259670
 GameObject:

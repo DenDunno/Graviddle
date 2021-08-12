@@ -7,7 +7,7 @@ public class CameraControllingSwitcher : MonoBehaviour
     [SerializeField] private CharacterCapture _characterCapture = null;    
     
 
-    public void ToggleCameraTouchControlling(bool cameraControllingEnabled)
+    public void ToggleCameraControlling(bool cameraControllingEnabled)
     {
         _cameraControlling.enabled = cameraControllingEnabled;
         _characterCapture.enabled = !cameraControllingEnabled;

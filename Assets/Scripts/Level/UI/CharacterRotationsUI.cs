@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-public class CharacterRotationsUI : MonoBehaviour , IRestartableComponent
+public class CharacterRotationsUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _characterRotationsText = null;
 
@@ -10,10 +10,5 @@ public class CharacterRotationsUI : MonoBehaviour , IRestartableComponent
     public void UpdateValue(int rotations)
     {
         _characterRotationsText.text = rotations.ToString();
-    }
-
-
-    void IRestartableComponent.Restart()
-    {
     }
 }

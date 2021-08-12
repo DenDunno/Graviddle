@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 
 public class FinishPortalCapture : MonoBehaviour , IRestartableComponent
 {
     [SerializeField] private FinishPortal _finishPortal = null;
-    [SerializeField] private Image _touchPanel = null;
     [SerializeField] private CharacterCapture _characterCapture = null;
+    [SerializeField] private UIState _gameplayState = null;
 
     private readonly float _epsilon = 0.4f;
     private readonly float _waitTime = 1f;
@@ -27,11 +26,15 @@ public class FinishPortalCapture : MonoBehaviour , IRestartableComponent
     }
 
 
-    public void ToggleFinishPortalCapture(bool finishCaptureEnabled) // called by finish button
+    public void ToggleFinishPortalCapture(bool finishCaptureEnabled) // called by finish icon
     {
         enabled = finishCaptureEnabled;
         _characterCapture.enabled = !finishCaptureEnabled;
-        _touchPanel.gameObject.SetActive(!finishCaptureEnabled);
+
+        if (finishCaptureEnabled == false)
+        {
+            _gameplayState.ActivateState();
+        }
     }
 
 
