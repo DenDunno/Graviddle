@@ -6,26 +6,15 @@ using UnityEngine;
 [System.Serializable]
 public class CharacterVictory
 {
+    [SerializeField] private UIState _victoryState = null;
     private readonly PortalDisappearance _portalDisappearance = new PortalDisappearance(0.5f);
-
-    [SerializeField] private Canvas _winCanvas = null;
-    [SerializeField] private Canvas _touchCanvas = null;
-    [SerializeField] private Canvas _gameplayCanvas = null;
 
 
     public void FinishLevel(Character character , FinishPortal finishPortal)
     {
-        ShowWinUI();
+        _victoryState.ActivateState();
         TurnOffCharacterLogic(character);
         character.StartCoroutine(PullCharacterToThePortal(character.transform, finishPortal.transform));
-    }
-
-
-    private void ShowWinUI()
-    {
-        _touchCanvas.gameObject.SetActive(false);
-        _gameplayCanvas.gameObject.SetActive(false);
-        _winCanvas.gameObject.SetActive(true);
     }
 
 

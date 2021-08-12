@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 
 
-public class TouchCanvasSwitcher : MonoBehaviour , IAfterRestartComponent
+public class UIRestart : MonoBehaviour , IAfterRestartComponent
 {
-    [SerializeField] private CameraTouchControllingSwitcher _cameraTouchControllingSwitcher = null;
+    [SerializeField] private UISwitcher _uiSwitcher = null;
+    [SerializeField] private UIState _initialUIState = null;
 
 
     private void OnEnable()
@@ -20,13 +21,12 @@ public class TouchCanvasSwitcher : MonoBehaviour , IAfterRestartComponent
 
     private void OnCharacterDied()
     {
-        gameObject.SetActive(false);
+        _uiSwitcher.DeactivateAllStates();
     }
 
 
     void IAfterRestartComponent.Restart()
     {
-        _cameraTouchControllingSwitcher.ToggleCameraTouchControlling(false);
-        gameObject.SetActive(true);
+        _initialUIState.ActivateState();
     }
 }

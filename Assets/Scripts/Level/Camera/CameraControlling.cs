@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class CameraTouchControlling : MonoBehaviour
+public class CameraControlling : MonoBehaviour
 {
     [SerializeField] private CameraBorders _cameraBorders = null;
     private readonly float _movingSpeed = 1f;
