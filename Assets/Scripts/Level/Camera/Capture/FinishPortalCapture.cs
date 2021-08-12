@@ -30,11 +30,6 @@ public class FinishPortalCapture : MonoBehaviour , IRestartableComponent
     {
         enabled = finishCaptureEnabled;
         _characterCapture.enabled = !finishCaptureEnabled;
-
-        if (finishCaptureEnabled == false)
-        {
-            _gameplayState.ActivateState();
-        }
     }
 
 
@@ -43,6 +38,7 @@ public class FinishPortalCapture : MonoBehaviour , IRestartableComponent
         yield return new WaitForSeconds(_waitTime);
 
         ToggleFinishPortalCapture(false);
+        _gameplayState.ActivateState();
     }
 
 

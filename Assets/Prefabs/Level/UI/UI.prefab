@@ -340,7 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _image: {fileID: 2228249119369412099}
   _imageFading:
-    _fadingSpeed: 1.5
+    _fadingSpeed: 1
     _brightenSpeed: 1
 --- !u!114 &2301689859242448210
 MonoBehaviour:

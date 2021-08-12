@@ -21,15 +21,21 @@ public class CharacterRotations : MonoBehaviour , IAfterRestartComponent
     }
 
 
+    private void UpdateValue(int rotations)
+    {
+        Rotations = rotations;
+        _rotationsUI.UpdateUI(Rotations);
+    }
+
+
     private void OnGravityChanged(GravityDirection gravityDirection)
     {
-        ++Rotations;
-        _rotationsUI.UpdateValue(Rotations);
+        UpdateValue(Rotations + 1);
     }
 
 
     void IAfterRestartComponent.Restart()
     {
-        Rotations = 0;
+        UpdateValue(0);
     }
 }

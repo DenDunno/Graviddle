@@ -7,7 +7,7 @@ public class CharacterRotationsUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _characterRotationsText = null;
 
 
-    public void UpdateValue(int rotations)
+    public void UpdateUI(int rotations)
     {
         _characterRotationsText.text = rotations.ToString();
     }
