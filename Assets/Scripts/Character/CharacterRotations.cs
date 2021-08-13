@@ -24,7 +24,7 @@ public class CharacterRotations : MonoBehaviour , IAfterRestartComponent
     private void UpdateValue(int rotations)
     {
         Rotations = rotations;
-        _rotationsUI.UpdateUI(Rotations);
+        _rotationsUI.UpdateRotationsUI(Rotations);
     }
 
 

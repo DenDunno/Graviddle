@@ -732,7 +732,14 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Analytics: 1
+    Build: 0
+    Collab: 0
+    Game Performance: 0
+    Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -746,11 +753,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 5cb7deb7-2de9-482a-b11f-69b4af23a724
+  cloudProjectId: 81ab2731-1421-4c54-8536-329ffd5213e9
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Graviddle
-  organizationId: dunno_official
+  organizationId: denisbondarbarbar
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   virtualTexturingSupportEnabled: 0
