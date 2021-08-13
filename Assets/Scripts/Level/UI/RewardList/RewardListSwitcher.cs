@@ -38,10 +38,23 @@ public class RewardListSwitcher : MonoBehaviour
 
         if (_rewardListUi.gameObject.activeInHierarchy)
         {
-            uiToBeActivated = _characterRotationsPopUpAnimation;
-            uiToBeDeactivated = _rewardListPopUpAnimation;
+            Algorithms.Swap(uiToBeDeactivated , uiToBeActivated);;
         }
 
+        PlayAnimation(uiToBeActivated , uiToBeDeactivated);
+    }
+
+
+    private void PlayAnimation(PopUpAnimation uiToBeActivated, PopUpAnimation uiToBeDeactivated)
+    {
         _switchButton.interactable = false;
+
+        uiToBeDeactivated.HideUI().onComplete += () =>
+        {
+            uiToBeActivated.ShowUI().onComplete += () =>
+            {
+                _switchButton.interactable = true;
+            };
+        };
     }
 }
