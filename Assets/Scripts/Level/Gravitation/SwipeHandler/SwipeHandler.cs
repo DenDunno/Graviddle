@@ -8,29 +8,12 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler , IRe
     public event Action<GravityDirection> GravityChanged;
 
     [SerializeField] private CharacterMovement _characterMovement = null;
+    [SerializeField] private bool _isCameraRotating = true;
 
     private readonly int _numOfDirections = 4;
     private GravityDirection _newDirection;
     private GravityDirection _lastDirection;
     private float _swipeSensitivity = 1.0f;
-
-
-    private void Start()
-    {
-        CharacterStates.FallState.CharacterGroundedChanged += OnCharacterGroundedChanged;
-    }
-
-    
-    private void OnDestroy()
-    {
-        CharacterStates.FallState.CharacterGroundedChanged -= OnCharacterGroundedChanged;
-    }
-
-
-    private void OnCharacterGroundedChanged(bool isGrounded)
-    {
-        enabled = isGrounded;
-    }
 
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -57,7 +40,10 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler , IRe
             _newDirection = delta.y < 0 ? GravityDirection.Down : GravityDirection.Up;
         }
 
-        _newDirection = (GravityDirection)(((int)_newDirection + (int)_lastDirection) % _numOfDirections);        
+        if (_isCameraRotating)
+        {
+            _newDirection = (GravityDirection)(((int)_newDirection + (int)_lastDirection) % _numOfDirections);
+        }
     }
 
 
