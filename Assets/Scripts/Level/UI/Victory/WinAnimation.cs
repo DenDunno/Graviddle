@@ -9,7 +9,7 @@ public class WinAnimation : MonoBehaviour
 {
     private readonly float _animationDuration = 2f;
     private readonly float _startWaitTime = 0.5f;
-    private readonly float _imageFading = 0.7f;
+    private readonly float _targetFadingAlpha = 0.7f;
     private readonly Vector2 _targetPosition = Vector2.zero;
     
     [SerializeField] private WinEffects _effects = null;
@@ -24,7 +24,7 @@ public class WinAnimation : MonoBehaviour
 
         sequence.AppendInterval(_startWaitTime);
         sequence.Append(_levelScore.transform.DOLocalMove(_targetPosition, _animationDuration).SetEase(Ease.OutBack));
-        sequence.Join(_winPanel.DOFade(_imageFading, _animationDuration));
+        sequence.Join(_winPanel.DOFade(_targetFadingAlpha, _animationDuration));
 
         sequence.onComplete = ()=>
         {
