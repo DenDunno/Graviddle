@@ -4,19 +4,9 @@ using UnityEngine.UI;
 
 public class RewardListSwitcher : MonoBehaviour
 {
-    [SerializeField] private RewardListUI _rewardListUi = null;
-    [SerializeField] private CharacterRotationsUI _characterRotationsUi = null;
+    [SerializeField] private PopUpAnimation _rewardListPopUpAnimation = null;
+    [SerializeField] private PopUpAnimation _characterRotationsPopUpAnimation = null;
     [SerializeField] private Button _switchButton = null;
-
-    private PopUpAnimation _rewardListPopUpAnimation;
-    private PopUpAnimation _characterRotationsPopUpAnimation;
-
-
-    private void Start()
-    {
-        _rewardListPopUpAnimation = new PopUpAnimation(_rewardListUi.transform);
-        _characterRotationsPopUpAnimation = new PopUpAnimation(_characterRotationsUi.transform);
-    }
 
 
     private void OnEnable()
@@ -31,17 +21,17 @@ public class RewardListSwitcher : MonoBehaviour
     }
 
 
-    private void OnSwitchButtonClicked()
+    public void OnSwitchButtonClicked()
     {
         PopUpAnimation uiToBeActivated = _rewardListPopUpAnimation;
         PopUpAnimation uiToBeDeactivated = _characterRotationsPopUpAnimation;
 
-        if (_rewardListUi.gameObject.activeInHierarchy)
+        if (_rewardListPopUpAnimation.GameObj.activeInHierarchy)
         {
-            Algorithms.Swap(uiToBeDeactivated , uiToBeActivated);;
+            Algorithms.Swap(ref uiToBeDeactivated, ref uiToBeActivated);
         }
 
-        PlayAnimation(uiToBeActivated , uiToBeDeactivated);
+        PlayAnimation(uiToBeActivated, uiToBeDeactivated);
     }
 
 
@@ -51,6 +41,9 @@ public class RewardListSwitcher : MonoBehaviour
 
         uiToBeDeactivated.HideUI().onComplete += () =>
         {
+            uiToBeDeactivated.GameObj.SetActive(false);
+            uiToBeActivated.GameObj.SetActive(true);
+
             uiToBeActivated.ShowUI().onComplete += () =>
             {
                 _switchButton.interactable = true;

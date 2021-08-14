@@ -2,28 +2,24 @@
 using UnityEngine;
 
 
+[System.Serializable]
 public class PopUpAnimation
 {
-    private readonly float _animationDuration = 2f;
-    private readonly Transform _transform = null;
-    private readonly Vector3 _startScale;
+    public GameObject GameObj => _gameObject;
+
+    [SerializeField] private GameObject _gameObject = null;
+    private readonly float _animationDuration = 1f;
+    private readonly Vector3 _startScale = new Vector3(1 , 1, 1);
     
-
-    public PopUpAnimation(Transform transform)
-    {
-        _transform = transform;
-        _startScale = transform.localScale;
-    }
-
 
     public Tween ShowUI()
     {
-        return _transform.DOScale(Vector3.zero, _animationDuration);
+        return _gameObject.transform.DOScale(_startScale, _animationDuration).SetEase(Ease.OutBack);
     }
 
 
     public Tween HideUI()
     {
-        return _transform.DOScale(_startScale, _animationDuration);
+        return _gameObject.transform.DOScale(Vector3.zero, _animationDuration).SetEase(Ease.InBack);
     }
 }
