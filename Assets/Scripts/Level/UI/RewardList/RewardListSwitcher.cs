@@ -1,27 +1,16 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 using UnityEngine.UI;
 
 
-public class RewardListSwitcher : MonoBehaviour
+public class RewardListSwitcher : MonoBehaviour , IRestartableComponent
 {
     [SerializeField] private PopUpAnimation _rewardListPopUpAnimation = null;
     [SerializeField] private PopUpAnimation _characterRotationsPopUpAnimation = null;
     [SerializeField] private Button _switchButton = null;
+    
 
-
-    private void OnEnable()
-    {
-        _switchButton.onClick.AddListener(OnSwitchButtonClicked);
-    }
-
-
-    private void OnDisable()
-    {
-        _switchButton.onClick.RemoveListener(OnSwitchButtonClicked);
-    }
-
-
-    public void OnSwitchButtonClicked()
+    public void ToggleRewardListUI()
     {
         PopUpAnimation uiToBeActivated = _rewardListPopUpAnimation;
         PopUpAnimation uiToBeDeactivated = _characterRotationsPopUpAnimation;
@@ -49,5 +38,22 @@ public class RewardListSwitcher : MonoBehaviour
                 _switchButton.interactable = true;
             };
         };
+    }
+
+
+    void IRestartableComponent.Restart()
+    {
+        ResetUI(_rewardListPopUpAnimation.GameObj, true);
+        ResetUI(_characterRotationsPopUpAnimation.GameObj , false);
+    }
+
+
+    private void ResetUI(GameObject ui , bool becomeActive)
+    {
+        Vector3 scale = becomeActive ? new Vector3(1, 1, 1) : Vector3.zero;
+
+        DOTween.Kill(ui);
+        ui.SetActive(becomeActive);
+        ui.transform.localScale = scale;
     }
 }

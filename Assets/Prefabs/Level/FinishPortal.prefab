@@ -32,7 +32,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 205806456063144931}
-  - {fileID: 6782441718296676567}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -96,6 +95,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07b1334ab529f44b8617c232f575132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _motionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.2968428
+      outSlope: 0.2968428
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.21150163
+    - serializedVersion: 3
+      time: 0.7465096
+      value: 0.15
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1.4930192
+      value: 0
+      inSlope: -0.2197564
+      outSlope: -0.2197564
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.19857323
+      outWeight: 0.15814495
+    - serializedVersion: 3
+      time: 2.239529
+      value: -0.15
+      inSlope: 0.0006925954
+      outSlope: 0.0006925954
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.37169242
+    - serializedVersion: 3
+      time: 2.9860384
+      value: 0
+      inSlope: 0.24443582
+      outSlope: 0.24443582
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.26705733
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &205806456063144930
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,33 +248,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &3730555631170722149
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6782441718296676567}
-  m_Layer: 0
-  m_Name: TargetTransform
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6782441718296676567
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3730555631170722149}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.22, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 205806455587547125}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
