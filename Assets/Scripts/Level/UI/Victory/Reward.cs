@@ -8,9 +8,18 @@ public class Reward : MonoBehaviour
     [SerializeField] private CharacterRotations _characterRotations = null;
 
 
+    private void Start()
+    {
+        if (_characterRotations == null)
+        {
+            Debug.Log("<color=orange>No character rotations. Rotations set to 0. </color>" + gameObject);
+        }
+    }
+
+
     public int GetStars()
     {
-        int rotations = _characterRotations.Rotations;
+        int rotations = _characterRotations?.Rotations ?? 0;
 
         if (rotations <= _gold)
         {

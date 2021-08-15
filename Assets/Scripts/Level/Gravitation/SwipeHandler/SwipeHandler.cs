@@ -11,9 +11,9 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler , IRe
     [SerializeField] private bool _isCameraRotating = true;
 
     private readonly int _numOfDirections = 4;
+    private readonly float _swipeSensitivity = 1.0f;
     private GravityDirection _newDirection;
     private GravityDirection _lastDirection;
-    private float _swipeSensitivity = 1.0f;
 
 
     public void OnBeginDrag(PointerEventData eventData)

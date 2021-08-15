@@ -5,7 +5,7 @@ using UnityEngine;
 public class SwipeCoolDown : MonoBehaviour
 {
     [SerializeField] private SwipeHandler _swipeHandler = null;
-    private readonly float _coolDown = 0.5f;
+    private readonly float _coolDown = 0.1f;
 
 
     private void OnEnable()
@@ -22,6 +22,7 @@ public class SwipeCoolDown : MonoBehaviour
 
     private void OnGravityChanged(GravityDirection gravityDirection)
     {
+        StartCoroutine(FreezeSwipeHandler());
     }
 
 
@@ -29,6 +30,12 @@ public class SwipeCoolDown : MonoBehaviour
     {
         _swipeHandler.enabled = false;
 
+        yield return new WaitWhile(() => _swipeHandler.enabled == false);
+
+        _swipeHandler.enabled = false;
+
         yield return new WaitForSeconds(_coolDown);
+
+        _swipeHandler.enabled = true;
     }
 }

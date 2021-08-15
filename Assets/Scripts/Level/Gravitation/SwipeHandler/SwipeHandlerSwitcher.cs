@@ -6,17 +6,17 @@ public class SwipeHandlerSwitcher : MonoBehaviour
     [SerializeField] private SwipeHandler _swipeHandler = null;
 
 
-    private void Start()
+    private void OnEnable()
     {
         CharacterStates.FallState.CharacterGroundedChanged += OnCharacterGroundedChanged;
     }
 
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         CharacterStates.FallState.CharacterGroundedChanged -= OnCharacterGroundedChanged;
     }
-
+    
 
     private void OnCharacterGroundedChanged(bool isGrounded)
     {

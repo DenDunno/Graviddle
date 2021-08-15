@@ -1356,7 +1356,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _swipeHandler
       value: 
-      objectReference: {fileID: 1299024790}
+      objectReference: {fileID: 0}
     - target: {fileID: 4455638962972475283, guid: 9fb5dbd51a9c2474c9f3343113ac254b,
         type: 3}
       propertyPath: m_Enabled
@@ -1481,7 +1481,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _swipeHandler
       value: 
-      objectReference: {fileID: 1299024790}
+      objectReference: {fileID: 0}
     - target: {fileID: 6186545344261283279, guid: 9fb5dbd51a9c2474c9f3343113ac254b,
         type: 3}
       propertyPath: m_Depth
@@ -4038,18 +4038,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 246008837}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1176635625 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6123401419049283085, guid: a0ca5d21826335e4dae61dcad8de1703,
-    type: 3}
-  m_PrefabInstance: {fileID: 1845821367}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4b8eeb741585d240b9718327ee2c97e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1210777672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4147,18 +4135,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8de5a3b80fcfd4a4a841ae2271a87ec3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1299024790 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8477775359838157073, guid: 541cefc2686fbf447be6be187ea3ca43,
-    type: 3}
-  m_PrefabInstance: {fileID: 1594080694}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e3a1e3faa2fe84f96a3521358eeab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1307443120 stripped
@@ -4760,7 +4736,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _characterRotations
       value: 
-      objectReference: {fileID: 1176635625}
+      objectReference: {fileID: 0}
     - target: {fileID: 4963056786713715714, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: m_RootOrder
@@ -4851,6 +4827,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5714502975529462405, guid: 541cefc2686fbf447be6be187ea3ca43,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5970120494288531795, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: m_RootOrder
@@ -4901,7 +4882,8 @@ PrefabInstance:
       propertyPath: _characterMovement
       value: 
       objectReference: {fileID: 1307443122}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8477775359838157073, guid: 541cefc2686fbf447be6be187ea3ca43, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 541cefc2686fbf447be6be187ea3ca43, type: 3}
 --- !u!20 &1594080695 stripped
 Camera:
@@ -5588,7 +5570,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _swipeHandler
       value: 
-      objectReference: {fileID: 1299024790}
+      objectReference: {fileID: 0}
     - target: {fileID: 6123401419049283085, guid: a0ca5d21826335e4dae61dcad8de1703,
         type: 3}
       propertyPath: _rotationsUI
@@ -5598,13 +5580,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _swipeHandler
       value: 
-      objectReference: {fileID: 1299024790}
+      objectReference: {fileID: 0}
     - target: {fileID: 7487653251083431281, guid: a0ca5d21826335e4dae61dcad8de1703,
         type: 3}
       propertyPath: _swipeHandler
       value: 
-      objectReference: {fileID: 1299024790}
-    m_RemovedComponents: []
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6123401419049283085, guid: a0ca5d21826335e4dae61dcad8de1703, type: 3}
+    - {fileID: 5905746848208922842, guid: a0ca5d21826335e4dae61dcad8de1703, type: 3}
+    - {fileID: 7487653251083431281, guid: a0ca5d21826335e4dae61dcad8de1703, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a0ca5d21826335e4dae61dcad8de1703, type: 3}
 --- !u!4 &1847577018 stripped
 Transform:
@@ -5723,9 +5708,10 @@ PrefabInstance:
         type: 3}
       propertyPath: _swipeHandler
       value: 
-      objectReference: {fileID: 1299024790}
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3027613055251044414, guid: 3814a69fc0e128c4380f1914f44a9b0e, type: 3}
+    - {fileID: 1676370641203529913, guid: 3814a69fc0e128c4380f1914f44a9b0e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3814a69fc0e128c4380f1914f44a9b0e, type: 3}
 --- !u!114 &1888321516 stripped
 MonoBehaviour:
