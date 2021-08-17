@@ -2,31 +2,31 @@
 using UnityEngine.EventSystems;
 
 
-public class MovementButton : MonoBehaviour , IBeginDragHandler , IDragHandler , IEndDragHandler
+public class MovementButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler , IBeginDragHandler 
 {
     [SerializeField] private Movement _movement = Movement.Stop;
     [SerializeField] private CharacterMovement _characterMovement = null;
 
 
-    public void OnBeginDrag(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
         _characterMovement.MoveCharacter(_movement);
     }
 
 
-    public void OnEndDrag(PointerEventData eventData)
+    public void OnPointerUp(PointerEventData eventData)
     {
         _characterMovement.StopCharacter();
-    }
-
-
-    public void OnDrag(PointerEventData eventData)
-    {
     }
 
 
     private void OnDisable()
     {
         _characterMovement.StopCharacter();
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        _characterMovement.MoveCharacter(_movement);
     }
 }

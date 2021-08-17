@@ -2,7 +2,7 @@
 using UnityEngine.EventSystems;
 
 
-public class ButtonAnimation : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class ButtonAnimation : MonoBehaviour, IPointerDownHandler, IPointerUpHandler , IDragHandler
 {
     private float _verticalOffset = 8f;
     
@@ -22,5 +22,10 @@ public class ButtonAnimation : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     private void MoveButton(int sign)
     {
         transform.position += sign * _verticalOffset * transform.up;
+    }
+
+
+    public void OnDrag(PointerEventData eventData)
+    {
     }
 }
