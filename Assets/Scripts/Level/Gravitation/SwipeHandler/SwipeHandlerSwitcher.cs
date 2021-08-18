@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 
-public class SwipeHandlerSwitcher : MonoBehaviour
+public class SwipeHandlerSwitcher : MonoBehaviour , IDragHandler
 {
     [SerializeField] private SwipeHandler _swipeHandler = null;
 
@@ -21,5 +22,9 @@ public class SwipeHandlerSwitcher : MonoBehaviour
     private void OnCharacterGroundedChanged(bool isGrounded)
     {
         _swipeHandler.enabled = isGrounded;
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
     }
 }
