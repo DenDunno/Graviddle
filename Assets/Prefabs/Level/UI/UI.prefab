@@ -204,8 +204,7 @@ MonoBehaviour:
   _gold: 2
   _silver: 5
   _characterRotations: {fileID: 0}
-  _goldUI: {fileID: 1368300273828239104}
-  _silverUI: {fileID: 1783121901625435826}
+  _rewardListUi: {fileID: 2712108098420162777}
 --- !u!1 &376532211229108592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,6 +1140,8 @@ MonoBehaviour:
   _characterMovement: {fileID: 0}
   _rewardListSwitcher: {fileID: 930720265548718101}
   _rewardListTransform: {fileID: 5972411627920432005}
+  _goldUI: {fileID: 1368300273828239104}
+  _silverUI: {fileID: 1783121901625435826}
 --- !u!114 &2795595162934715670
 MonoBehaviour:
   m_ObjectHideFlags: 0

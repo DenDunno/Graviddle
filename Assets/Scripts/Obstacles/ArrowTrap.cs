@@ -1,48 +1,9 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 
-public class ArrowTrap : MonoBehaviour , IRestartableComponent, IObstacle
+public class ArrowTrap : MonoBehaviour , IRestartableComponent
 {
-    [SerializeField] private float _coolDownTime = 2f;
-    [SerializeField] private float _startWaitTime = 2f;
-
-    private Arrow _arrow;
-    private Vector2 _arrowPosition;
-
-    private Coroutine _arrowSpawn;
-
-
-    private void Start()
-    {
-        _arrow = Resources.Load<Arrow>("Prefabs/Obstacles/Arrow");
-        _arrowPosition = transform.position - transform.up;
-
-        _arrowSpawn = StartCoroutine(SpawnArrow());
-    }
-
-
-    private IEnumerator SpawnArrow()
-    {
-        if (_arrow != null)
-        {
-            Destroy(_arrow);
-        }
-
-        yield return new WaitForSeconds(_startWaitTime);
-        _arrow = Instantiate(_arrow, _arrowPosition, transform.rotation);
-
-        while (true)
-        {
-            yield return new WaitForSeconds(_coolDownTime);
-            _arrow.transform.position = _arrowPosition;
-        }
-    }
-
-
     void IRestartableComponent.Restart()
     {
-        StopCoroutine(_arrowSpawn);
-        _arrowSpawn = StartCoroutine(SpawnArrow());
     }
 }

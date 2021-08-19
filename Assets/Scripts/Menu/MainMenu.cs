@@ -3,12 +3,14 @@
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private AudioSource _music = null;
+
+
     private void Start() 
     {
         if (FindObjectOfType<AudioSource>() == null) 
         {
-            Object music = Resources.Load("Music");
-            DontDestroyOnLoad(Instantiate(music));
+            DontDestroyOnLoad(Instantiate(_music));
         }
     }
 

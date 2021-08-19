@@ -1,5 +1,4 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class Reward : MonoBehaviour
@@ -7,15 +6,12 @@ public class Reward : MonoBehaviour
     [SerializeField] private int _gold = 2;
     [SerializeField] private int _silver = 5;
     [SerializeField] private CharacterRotations _characterRotations = null;
-
-    [SerializeField] private TMP_Text _goldUI = null;
-    [SerializeField] private TMP_Text _silverUI = null;
+    [SerializeField] private RewardListUI _rewardListUi = null;
 
 
     private void Start()
     {
-        _goldUI.text = _gold.ToString();
-        _silverUI.text = _silver.ToString();
+        _rewardListUi.SetRewardListUI(_gold, _silver);
 
         if (_characterRotations == null)
         {
