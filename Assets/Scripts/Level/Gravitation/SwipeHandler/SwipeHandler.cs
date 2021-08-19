@@ -16,7 +16,7 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler , IRestartableCompo
     private GravityDirection _lastDirection;
 
 
-    private void OnEnable() { }
+    private void OnEnable() { } // switching from inspector
 
 
     public void OnBeginDrag(PointerEventData eventData)

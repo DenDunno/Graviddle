@@ -6,15 +6,8 @@ public class IconsTutorial : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _tutorialPanels = null;
     [SerializeField] private GameObject _cameraIcon = null;
-    [SerializeField] private SwipeHandler _swipeHandler = null;
     private int _currentTutorialPanel = 0;
-
-
-    private void Start()
-    {
-        _swipeHandler.enabled = false;
-    }
-
+    
 
     public void ShowNextTutorialInfo()
     {

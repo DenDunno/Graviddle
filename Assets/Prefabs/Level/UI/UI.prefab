@@ -204,6 +204,8 @@ MonoBehaviour:
   _gold: 2
   _silver: 5
   _characterRotations: {fileID: 0}
+  _goldUI: {fileID: 1368300273828239104}
+  _silverUI: {fileID: 1783121901625435826}
 --- !u!1 &376532211229108592
 GameObject:
   m_ObjectHideFlags: 0
