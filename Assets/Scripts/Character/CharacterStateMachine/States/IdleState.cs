@@ -1,23 +1,16 @@
-﻿
+﻿using UnityEngine;
 
-using UnityEngine;
 
 public class IdleState : CharacterState
 {
     private readonly CharacterMovement _characterMovement;
 
 
-    public IdleState(Character character) : base(character)
+    public IdleState(Character character) : base(character , AnimatorCharacterController.States.Idle)
     {
         _characterMovement = character.GetComponent<CharacterMovement>();
     }
-
-
-    public override void EnterState()
-    {
-        _animator.Play(CharacterAnimations.Idle);
-    }
-
+    
 
     public override CharacterState Update()
     {

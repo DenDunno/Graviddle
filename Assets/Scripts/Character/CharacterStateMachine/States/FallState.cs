@@ -11,7 +11,7 @@ public class FallState : CharacterState
     private readonly float _movementSpeed = 3f;
     
 
-    public FallState(Character character) : base(character)
+    public FallState(Character character) : base(character , AnimatorCharacterController.States.Fall)
     {
         _characterMovement = character.GetComponent<CharacterMovement>();
         _transform = character.transform;
@@ -20,8 +20,8 @@ public class FallState : CharacterState
 
     public override void EnterState()
     {
+        base.EnterState();
         CharacterGroundedChanged?.Invoke(false);
-        _animator.Play(CharacterAnimations.Fall);
     }
 
 

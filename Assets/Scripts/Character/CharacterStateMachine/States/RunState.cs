@@ -8,16 +8,10 @@ public class RunState : CharacterState
     private readonly float _movementSpeed = 3f;
 
 
-    public RunState(Character character) : base(character)
+    public RunState(Character character) : base(character , AnimatorCharacterController.States.Run)
     {
         _characterMovement = character.GetComponent<CharacterMovement>();
         _transform = character.transform;
-    }
-
-
-    public override void EnterState()
-    {
-        _animator.Play(CharacterAnimations.Run);
     }
 
 

@@ -3,16 +3,22 @@
 
 public abstract class CharacterState
 {
-    protected readonly Animator _animator;
+    private readonly Animator _animator;
+    private readonly string _animationStateName;
 
 
-    protected CharacterState(Character character)
+    protected CharacterState(Character character , string animationStateName)
     {
         _animator = character.GetComponent<Animator>();
+        _animationStateName = animationStateName;
+    }
+    
+
+    public virtual void EnterState()
+    {
+        _animator.Play(_animationStateName);
     }
 
-
-    public abstract void EnterState();
     public abstract CharacterState Update();
 }
 

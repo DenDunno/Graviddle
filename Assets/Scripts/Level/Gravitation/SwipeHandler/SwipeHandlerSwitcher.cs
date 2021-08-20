@@ -24,6 +24,7 @@ public class SwipeHandlerSwitcher : MonoBehaviour , IDragHandler
         _swipeHandler.enabled = isGrounded;
     }
 
+
     public void OnDrag(PointerEventData eventData)
     {
     }

@@ -25,7 +25,7 @@ public class CharacterVictory
         var rigidbody = character.GetComponent<Rigidbody2D>();
 
         stateMachine.enabled = false;
-        animator.Play(CharacterAnimations.Fall);
+        animator.Play(AnimatorCharacterController.States.Fall);
 
         rigidbody.isKinematic = true;
         rigidbody.velocity = new Vector2(0, 0);

@@ -1,6 +1,6 @@
 ﻿
 
-public class CharacterStates 
+public static class CharacterStates 
 { 
     public static IdleState IdleState { get; private set; }
     public static FallState FallState { get; private set; }
