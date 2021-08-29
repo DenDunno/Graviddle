@@ -3,12 +3,15 @@
 
 public class CharacterStateMachine : MonoBehaviour , IRestartableComponent
 {
+    [SerializeField] private CameraBorders _cameraBorders = null;
     private CharacterState _state;
+    private CharacterStatesTransitions _characterStatesTransitions;
 
 
     private void Start()
     {
         _state = CharacterStates.IdleState;
+        _characterStatesTransitions = new CharacterStatesTransitions(_state, SwitchState , _cameraBorders);
     }
 
 
@@ -32,32 +35,20 @@ public class CharacterStateMachine : MonoBehaviour , IRestartableComponent
 
     private void FixedUpdate()
     {
-        if (_state != CharacterStates.FallState && _state != CharacterStates.DieState)
-        {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.15f);
-
-            if (colliders.Length < 2)
-            {
-                SwitchState(CharacterStates.FallState);
-            }
-        }
+        _characterStatesTransitions.TryFall(transform);
+        _characterStatesTransitions.TryDieByLevelBorders(transform);
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<IObstacle>() != null)
-        {
-            if (_state != CharacterStates.DieState)
-            {
-                SwitchState(CharacterStates.DieState);
-            }
-        }
+        _characterStatesTransitions.TryDieByObstacle(collision);
     }
 
 
     void IRestartableComponent.Restart()
     {
+        enabled = true;
         SwitchState(CharacterStates.IdleState);
     }
 }
