@@ -1,6 +1,6 @@
 ﻿
 
-public class CharacterStates
+public class CharacterStatesPresenter
 {
     public readonly IdleState IdleState;
     public readonly FallState FallState;
@@ -8,7 +8,7 @@ public class CharacterStates
     public readonly DieState DieState;
     
 
-    public CharacterStates(Character character)
+    public CharacterStatesPresenter(Character character)
     {
         IdleState = new IdleState(character);
         FallState = new FallState(character);

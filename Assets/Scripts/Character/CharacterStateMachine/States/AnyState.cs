@@ -5,7 +5,7 @@ using Zenject;
 
 public class AnyState
 {
-    [Inject] private readonly CharacterStates _characterStates = null;
+    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
     private readonly CameraBorders _cameraBorders = null;
     public Action<CharacterState> StateChanged;
 
@@ -21,7 +21,7 @@ public class AnyState
 
     public void TryDie(Collider2D collision)
     {
-        TryChangeState(collision.GetComponent<IObstacle>() != null, _characterStates.DieState);
+        TryChangeState(collision.GetComponent<IObstacle>() != null, _characterStatesPresenter.DieState);
     }
 
 
@@ -33,7 +33,7 @@ public class AnyState
 
         _cameraBorders.ClampCamera(ref clampedPosition);
 
-        TryChangeState(Vector3.Distance(position, clampedPosition) >= levelDeathDistance, _characterStates.DieState);
+        TryChangeState(Vector3.Distance(position, clampedPosition) >= levelDeathDistance, _characterStatesPresenter.DieState);
     }
 
 
@@ -41,6 +41,6 @@ public class AnyState
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.15f);
 
-        TryChangeState(colliders.Length < 2 , _characterStates.FallState);
+        TryChangeState(colliders.Length < 2 , _characterStatesPresenter.FallState);
     }
 }

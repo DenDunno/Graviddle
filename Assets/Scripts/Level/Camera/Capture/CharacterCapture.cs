@@ -6,20 +6,20 @@ public class CharacterCapture : MonoBehaviour
 {
     [SerializeField] private Character _character = null;
     [SerializeField] private CameraBorders _cameraBorders = null;
-    [Inject] private readonly CharacterStates _characterStates = null;
+    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
     
     private float _captureSpeed = 2f;
 
 
     private void Start()
     {
-        _characterStates.FallState.CharacterGroundedChanged += OnCharacterGroundedChanged;
+        _characterStatesPresenter.FallState.CharacterGroundedChanged += OnCharacterGroundedChanged;
     }
 
 
     private void OnDestroy()
     {
-        _characterStates.FallState.CharacterGroundedChanged -= OnCharacterGroundedChanged;
+        _characterStatesPresenter.FallState.CharacterGroundedChanged -= OnCharacterGroundedChanged;
     }
 
     

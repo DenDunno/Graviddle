@@ -9,8 +9,8 @@ public class CharacterInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
-        var characterStates = new CharacterStates(_character);
+        var characterStates = new CharacterStatesPresenter(_character);
 
-        Container.Bind<CharacterStates>().FromInstance(characterStates).AsSingle();
+        Container.Bind<CharacterStatesPresenter>().FromInstance(characterStates).AsSingle();
     }
 }

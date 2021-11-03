@@ -6,18 +6,18 @@ using Zenject;
 public class SwipeHandlerSwitcher : MonoBehaviour , IDragHandler
 {
     [SerializeField] private SwipeHandler _swipeHandler = null;
-    [Inject] private readonly CharacterStates _characterStates = null;
+    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
 
 
     private void OnEnable()
     {
-        _characterStates.FallState.CharacterGroundedChanged += OnCharacterGroundedChanged;
+        _characterStatesPresenter.FallState.CharacterGroundedChanged += OnCharacterGroundedChanged;
     }
 
 
     private void OnDisable()
     {
-        _characterStates.FallState.CharacterGroundedChanged -= OnCharacterGroundedChanged;
+        _characterStatesPresenter.FallState.CharacterGroundedChanged -= OnCharacterGroundedChanged;
     }
     
 

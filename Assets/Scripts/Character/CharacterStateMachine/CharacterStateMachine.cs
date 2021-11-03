@@ -4,15 +4,14 @@ using Zenject;
 
 public class CharacterStateMachine : MonoBehaviour , IRestartableComponent
 {
-    [Inject] private readonly CharacterStates _characterStates = null;
-    private TransitionsPresenter _transitionsPresenter;
+    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
+    [Inject] private TransitionsPresenter _transitionsPresenter;
     private CharacterState _state;
 
 
     private void Start()
     {
-        _transitionsPresenter = new TransitionsPresenter();
-        _state = _characterStates.IdleState;
+        _state = _characterStatesPresenter.IdleState;
     }
     
 
@@ -38,6 +37,6 @@ public class CharacterStateMachine : MonoBehaviour , IRestartableComponent
 
     void IRestartableComponent.Restart()
     {
-        SwitchState(_characterStates.IdleState);
+        SwitchState(_characterStatesPresenter.IdleState);
     }
 }

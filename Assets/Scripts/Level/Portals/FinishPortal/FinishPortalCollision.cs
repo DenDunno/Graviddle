@@ -5,7 +5,7 @@ using Zenject;
 [RequireComponent(typeof(Collider2D))]
 public class FinishPortalCollision : MonoBehaviour , IRestartableComponent
 {
-    [Inject] private readonly CharacterStates _characterStates = null;
+    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
     private Collider2D _collider;
 
 
@@ -17,13 +17,13 @@ public class FinishPortalCollision : MonoBehaviour , IRestartableComponent
 
     private void OnEnable()
     {
-        _characterStates.DieState.CharacterDied += OnCharacterDied;
+        _characterStatesPresenter.DieState.CharacterDied += OnCharacterDied;
     }
 
 
     private void OnDisable()
     {
-        _characterStates.DieState.CharacterDied -= OnCharacterDied;
+        _characterStatesPresenter.DieState.CharacterDied -= OnCharacterDied;
     }
 
 

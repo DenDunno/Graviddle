@@ -8,7 +8,7 @@ using Zenject;
 [RequireComponent(typeof(Backstage))]
 public class Restart : MonoBehaviour
 {
-    [Inject] private readonly CharacterStates _characterStates = null;
+    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
     private readonly float _restartTime = 0.7f;
     private Backstage _backstage = null;
 
@@ -27,13 +27,13 @@ public class Restart : MonoBehaviour
 
     private void OnEnable()
     {
-        _characterStates.DieState.CharacterDied += OnCharacterDied;
+        _characterStatesPresenter.DieState.CharacterDied += OnCharacterDied;
     }
 
 
     private void OnDisable()
     {
-        _characterStates.DieState.CharacterDied -= OnCharacterDied;
+        _characterStatesPresenter.DieState.CharacterDied -= OnCharacterDied;
     }
 
 
