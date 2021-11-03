@@ -2,11 +2,17 @@
 using Zenject;
 
 
-public class UIRestart : MonoBehaviour , IAfterRestartComponent
+[RequireComponent(typeof(Collider2D))]
+public class FinishPortalCollision : MonoBehaviour , IRestartableComponent
 {
-    [SerializeField] private UISwitcher _uiSwitcher = null;
-    [SerializeField] private UIState _initialUIState = null;
     [Inject] private readonly CharacterStates _characterStates = null;
+    private Collider2D _collider;
+
+
+    private void Start()
+    {
+        _collider = GetComponent<Collider2D>();
+    }
 
 
     private void OnEnable()
@@ -23,12 +29,12 @@ public class UIRestart : MonoBehaviour , IAfterRestartComponent
 
     private void OnCharacterDied()
     {
-        _uiSwitcher.DeactivateAllStates();
+        _collider.enabled = false;
     }
 
 
-    void IAfterRestartComponent.Restart()
+    void IRestartableComponent.Restart()
     {
-        _initialUIState.ActivateState();
+        _collider.enabled = true;
     }
 }

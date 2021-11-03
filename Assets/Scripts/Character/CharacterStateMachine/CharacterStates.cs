@@ -1,14 +1,14 @@
 ﻿
 
-public static class CharacterStates 
-{ 
-    public static IdleState IdleState { get; private set; }
-    public static FallState FallState { get; private set; }
-    public static RunState RunState { get; private set; }
-    public static DieState DieState { get; private set; }
+public class CharacterStates
+{
+    public readonly IdleState IdleState;
+    public readonly FallState FallState;
+    public readonly RunState RunState;
+    public readonly DieState DieState;
     
 
-    public static void Init(Character character)
+    public CharacterStates(Character character)
     {
         IdleState = new IdleState(character);
         FallState = new FallState(character);

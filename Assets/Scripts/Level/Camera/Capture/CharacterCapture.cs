@@ -1,22 +1,25 @@
 ﻿using UnityEngine;
+using Zenject;
 
 
-public class CharacterCapture : MonoBehaviour 
+public class CharacterCapture : MonoBehaviour
 {
     [SerializeField] private Character _character = null;
     [SerializeField] private CameraBorders _cameraBorders = null;
+    [Inject] private readonly CharacterStates _characterStates = null;
+    
     private float _captureSpeed = 2f;
 
 
     private void Start()
     {
-        CharacterStates.FallState.CharacterGroundedChanged += OnCharacterGroundedChanged;
+        _characterStates.FallState.CharacterGroundedChanged += OnCharacterGroundedChanged;
     }
 
 
     private void OnDestroy()
     {
-        CharacterStates.FallState.CharacterGroundedChanged -= OnCharacterGroundedChanged;
+        _characterStates.FallState.CharacterGroundedChanged -= OnCharacterGroundedChanged;
     }
 
     

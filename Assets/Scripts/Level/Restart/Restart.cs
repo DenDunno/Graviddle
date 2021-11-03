@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Zenject;
 
 
 [RequireComponent(typeof(Backstage))]
 public class Restart : MonoBehaviour
 {
-    private Backstage _backstage = null;
+    [Inject] private readonly CharacterStates _characterStates = null;
     private readonly float _restartTime = 0.7f;
+    private Backstage _backstage = null;
 
     private IEnumerable<IRestartableComponent> _restartableComponents = null;
     private IEnumerable<IAfterRestartComponent> _afterRestartComponents = null;
@@ -25,13 +27,13 @@ public class Restart : MonoBehaviour
 
     private void OnEnable()
     {
-        CharacterStates.DieState.CharacterDied += OnCharacterDied;
+        _characterStates.DieState.CharacterDied += OnCharacterDied;
     }
 
 
     private void OnDisable()
     {
-        CharacterStates.DieState.CharacterDied -= OnCharacterDied;
+        _characterStates.DieState.CharacterDied -= OnCharacterDied;
     }
 
 

@@ -1,21 +1,23 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using Zenject;
 
 
 public class SwipeHandlerSwitcher : MonoBehaviour , IDragHandler
 {
     [SerializeField] private SwipeHandler _swipeHandler = null;
+    [Inject] private readonly CharacterStates _characterStates = null;
 
 
     private void OnEnable()
     {
-        CharacterStates.FallState.CharacterGroundedChanged += OnCharacterGroundedChanged;
+        _characterStates.FallState.CharacterGroundedChanged += OnCharacterGroundedChanged;
     }
 
 
     private void OnDisable()
     {
-        CharacterStates.FallState.CharacterGroundedChanged -= OnCharacterGroundedChanged;
+        _characterStates.FallState.CharacterGroundedChanged -= OnCharacterGroundedChanged;
     }
     
 

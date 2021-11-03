@@ -2,28 +2,16 @@
 using UnityEngine;
 
 
-public class Character : MonoBehaviour , IAfterRestartComponent
+public class Character : MonoBehaviour
 {
     [SerializeField] private CharacterTransparency _characterTransparency = null;
     [SerializeField] private CharacterVictory _characterVictory = null;
-    
-    private bool _isAlive = true;
-    private bool _isPlaying = true;
 
 
-    private void Awake()
+    private void Start()
     {
-        CharacterStates.Init(this);
-        CharacterStates.DieState.CharacterDied += OnCharacterDied;
-        
         _characterTransparency.BecomeTransparentNow();
         _characterTransparency.BecomeOpaque(this);
-    }
-
-
-    private void OnDestroy()
-    {
-        CharacterStates.DieState.CharacterDied -= OnCharacterDied;
     }
 
 
@@ -31,28 +19,12 @@ public class Character : MonoBehaviour , IAfterRestartComponent
     {
         if (collision.TryGetComponent(out FinishPortal finishPortal))
         {
-            if (_isAlive && _isPlaying)
-            {
-                _isPlaying = false;
-                _characterVictory.FinishLevel(this, finishPortal);
+            _characterVictory.FinishLevel(this, finishPortal);
 
-                float timeBeforeDisappearance = 1f;
-                yield return new WaitForSeconds(timeBeforeDisappearance);
+            float timeBeforeDisappearance = 1f;
+            yield return new WaitForSeconds(timeBeforeDisappearance);
 
-                _characterTransparency.BecomeTransparent(this);
-            }
+            _characterTransparency.BecomeTransparent(this);
         }
-    }
-
-
-    private void OnCharacterDied()
-    {
-        _isAlive = false;
-    }
-
-
-    void IAfterRestartComponent.Restart()
-    {
-        _isAlive = true;
     }
 }

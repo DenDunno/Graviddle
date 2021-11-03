@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
+using Zenject;
 
 
 public class CharacterStateMachine : MonoBehaviour , IRestartableComponent
 {
+    [Inject] private readonly CharacterStates _characterStates = null;
     private TransitionsPresenter _transitionsPresenter;
     private CharacterState _state;
 
@@ -10,7 +12,7 @@ public class CharacterStateMachine : MonoBehaviour , IRestartableComponent
     private void Start()
     {
         _transitionsPresenter = new TransitionsPresenter();
-        _state = CharacterStates.IdleState;
+        _state = _characterStates.IdleState;
     }
     
 
@@ -36,6 +38,6 @@ public class CharacterStateMachine : MonoBehaviour , IRestartableComponent
 
     void IRestartableComponent.Restart()
     {
-        SwitchState(CharacterStates.IdleState);
+        SwitchState(_characterStates.IdleState);
     }
 }
