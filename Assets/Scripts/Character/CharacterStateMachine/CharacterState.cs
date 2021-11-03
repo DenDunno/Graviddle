@@ -5,14 +5,12 @@ public abstract class CharacterState
 {
     private readonly Animator _animator;
     private readonly string _animationName;
-    private readonly StateTransitions _stateTransitions;
 
 
-    protected CharacterState(Character character , string animationName , StateTransitions stateTransitions)
+    protected CharacterState(Character character , string animationName)
     {
         _animator = character.GetComponent<Animator>();
         _animationName = animationName;
-        _stateTransitions = stateTransitions;
     }
     
 
@@ -23,13 +21,7 @@ public abstract class CharacterState
         OnEnterState();
     }
 
-    public CharacterState Update()
-    {
-        OnUpdateState();
 
-        return _stateTransitions.TryGetNewState();
-    }
-
+    public virtual void Update() { }
     protected virtual void OnEnterState() { }
-    protected virtual void OnUpdateState() { }
 }

@@ -15,7 +15,7 @@ public class RunState : CharacterState
     }
 
 
-    protected override void OnUpdateState()
+    public override void Update()
     {
         Vector2 direction = (Vector2)_transform.position + _characterMovement.MoveDirection;
         _transform.position = Vector3.MoveTowards(_transform.position, direction, _movementSpeed * Time.deltaTime);

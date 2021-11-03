@@ -1,13 +1,17 @@
 ﻿using System;
 
+
 public class Transition
 {
-    public readonly Func<bool> CheckTransition;
-    public readonly CharacterState ResultState;
+    public readonly int Priority;
+    public readonly Func<bool> TransitionCondition;
+    public readonly CharacterState StateTo;
 
-    public Transition(Func<bool> checkTransition, CharacterState resultState)
+
+    public Transition(Func<bool> transitionCondition, CharacterState to , int priority)
     {
-        CheckTransition = checkTransition;
-        ResultState = resultState;
+        TransitionCondition = transitionCondition;
+        StateTo = to;
+        Priority = priority;
     }
 }

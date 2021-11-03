@@ -3,11 +3,13 @@
 
 public class CharacterStateMachine : MonoBehaviour , IRestartableComponent
 {
+    private TransitionsPresenter _transitionsPresenter;
     private CharacterState _state;
 
 
     private void Start()
     {
+        _transitionsPresenter = new TransitionsPresenter();
         _state = CharacterStates.IdleState;
     }
     
@@ -21,7 +23,9 @@ public class CharacterStateMachine : MonoBehaviour , IRestartableComponent
 
     private void Update()
     {
-        CharacterState newState = _state.Update();
+        _state.Update();
+
+        CharacterState newState = _transitionsPresenter.TryTransit(_state);
 
         if (newState != _state)
         {

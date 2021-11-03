@@ -1,28 +1,39 @@
-﻿
+﻿using System.Collections.Generic;
+using System.Linq;
 
-using System.Collections.Generic;
 
 public class TransitionsPresenter
 {
-    public static StateTransitions IdleTransitions;
-    public static StateTransitions RunTransitions;
-    public static StateTransitions FallTransitions;
+    private readonly Dictionary<CharacterState, List<Transition>> _transitions = 
+        new Dictionary<CharacterState, List<Transition>>();
 
-    public TransitionsPresenter()
+
+    public void AddTransition(CharacterState from , Transition transition)
     {
-        IdleTransitions = new StateTransitions(CharacterStates.IdleState, new List<Transition>()
+        if (_transitions.ContainsKey(from) == false)
         {
+            _transitions[from] = new List<Transition>();
+        }
 
-        });
+        _transitions[from].Add(transition);
+    }
 
-        IdleTransitions = new StateTransitions(CharacterStates.RunState, new List<Transition>()
+
+    public CharacterState TryTransit(CharacterState transitFrom)
+    {
+        CharacterState answer = transitFrom;
+
+        IOrderedEnumerable<Transition> transitionsForState = _transitions[transitFrom].OrderBy(transition => transition.Priority);
+
+        foreach (Transition transition in transitionsForState)
         {
+            if (transition.TransitionCondition())
+            {
+                answer = transition.StateTo;
+                break;
+            }
+        }
 
-        });
-
-        IdleTransitions = new StateTransitions(CharacterStates.FallState, new List<Transition>()
-        {
-
-        });
+        return answer;
     }
 }
