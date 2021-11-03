@@ -4,9 +4,10 @@ using System.Linq;
 using UnityEngine;
 
 
+[RequireComponent(typeof(Backstage))]
 public class Restart : MonoBehaviour
 {
-    [SerializeField] private Backstage _backstage = null;
+    private Backstage _backstage = null;
     private readonly float _restartTime = 0.7f;
 
     private IEnumerable<IRestartableComponent> _restartableComponents = null;
@@ -15,6 +16,8 @@ public class Restart : MonoBehaviour
 
     private void Start()
     {
+        _backstage = GetComponent<Backstage>();
+
         _restartableComponents = FindObjectsOfType<MonoBehaviour>().OfType<IRestartableComponent>();
         _afterRestartComponents = FindObjectsOfType<MonoBehaviour>().OfType<IAfterRestartComponent>();
     }

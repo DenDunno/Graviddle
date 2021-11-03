@@ -16,9 +16,6 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler , IRestartableCompo
     private GravityDirection _lastDirection;
 
 
-    private void OnEnable() { } // switching from inspector
-
-
     public void OnBeginDrag(PointerEventData eventData)
     {
         var swipeInput = new Vector2(eventData.delta.x, eventData.delta.y);
