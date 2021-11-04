@@ -5,28 +5,28 @@ using UnityEngine.EventSystems;
 public class MovementButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler , IBeginDragHandler 
 {
     [SerializeField] private Movement _movement = Movement.Stop;
-    [SerializeField] private CharacterMovement _characterMovement = null;
+    [SerializeField] private MovementDirection _movementDirection = null;
 
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        _characterMovement.MoveCharacter(_movement);
+        _movementDirection.MoveCharacter(_movement);
     }
 
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        _characterMovement.StopCharacter();
+        _movementDirection.StopCharacter();
     }
 
 
     private void OnDisable()
     {
-        _characterMovement.StopCharacter();
+        _movementDirection.StopCharacter();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        _characterMovement.MoveCharacter(_movement);
+        _movementDirection.MoveCharacter(_movement);
     }
 }

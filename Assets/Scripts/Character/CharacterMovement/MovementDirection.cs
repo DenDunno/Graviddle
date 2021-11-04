@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class CharacterMovement : MonoBehaviour , IAfterRestartComponent
+public class MovementDirection : MonoBehaviour , IAfterRestartComponent
 {
     public Vector2 MoveDirection { get; private set; }
 
@@ -12,7 +12,7 @@ public class CharacterMovement : MonoBehaviour , IAfterRestartComponent
 
     private void Update()
     {
-        //inversion when character upside
+        // inversion when character upside
         int sign = (int)_movement * _characterGravity.MovementInversion;
         var actualMovement = (Movement)sign;
         

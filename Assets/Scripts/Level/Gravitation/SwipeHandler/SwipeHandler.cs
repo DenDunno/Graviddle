@@ -7,7 +7,7 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler , IRestartableCompo
 {
     public event Action<GravityDirection> GravityChanged;
 
-    [SerializeField] private CharacterMovement _characterMovement = null;
+    [SerializeField] private MovementDirection _movementDirection = null;
     [SerializeField] private bool _isCameraRotating = true;
 
     private readonly int _numOfDirections = 4;
@@ -20,7 +20,7 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler , IRestartableCompo
     {
         var swipeInput = new Vector2(eventData.delta.x, eventData.delta.y);
 
-        if (swipeInput.magnitude > _swipeSensitivity && _characterMovement.MoveDirection == Vector2.zero)
+        if (swipeInput.magnitude > _swipeSensitivity && _movementDirection.MoveDirection == Vector2.zero)
         {
             DefineTurn(ref swipeInput);
             TryChangeGravity();

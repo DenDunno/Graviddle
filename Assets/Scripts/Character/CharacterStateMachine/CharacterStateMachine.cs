@@ -26,9 +26,7 @@ public class CharacterStateMachine : MonoBehaviour , IRestartableComponent
     {
         _state.Update();
 
-        CharacterState newState = _transitionsPresenter.TryTransit(_state);
-
-        if (newState != _state)
+        if (_transitionsPresenter.TryTransit(_state, out CharacterState newState))
         {
             SwitchState(newState);
         }

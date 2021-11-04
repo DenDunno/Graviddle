@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using System.Collections.Generic;
 
 
 public class TransitionsPresenter
@@ -8,8 +8,10 @@ public class TransitionsPresenter
         new Dictionary<CharacterState, List<Transition>>();
 
 
-    public void AddTransition(CharacterState from , Transition transition)
+    public void AddTransition(CharacterState from , Func<bool> condition , CharacterState to)
     {
+        var transition = new Transition(condition, to);
+
         if (_transitions.ContainsKey(from) == false)
         {
             _transitions[from] = new List<Transition>();
@@ -19,21 +21,19 @@ public class TransitionsPresenter
     }
 
 
-    public CharacterState TryTransit(CharacterState transitFrom)
+    public bool TryTransit(CharacterState currentState , out CharacterState newState)
     {
-        CharacterState answer = transitFrom;
+        newState = currentState;
 
-        IOrderedEnumerable<Transition> transitionsForState = _transitions[transitFrom].OrderBy(transition => transition.Priority);
-
-        foreach (Transition transition in transitionsForState)
+        foreach (Transition transition in _transitions[currentState])
         {
             if (transition.TransitionCondition())
             {
-                answer = transition.StateTo;
+                newState = transition.StateTo;
                 break;
             }
         }
 
-        return answer;
+        return currentState != newState;
     }
 }
