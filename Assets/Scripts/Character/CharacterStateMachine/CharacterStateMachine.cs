@@ -5,7 +5,7 @@ using Zenject;
 public class CharacterStateMachine : MonoBehaviour , IRestartableComponent
 {
     [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
-    [Inject] private TransitionsPresenter _transitionsPresenter;
+    [Inject] private readonly TransitionsPresenter _transitionsPresenter = null;
     private CharacterState _state;
 
 

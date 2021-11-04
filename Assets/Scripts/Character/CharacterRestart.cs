@@ -1,21 +1,30 @@
 ﻿using UnityEngine;
 
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(CharacterTransparency))]
 public class CharacterRestart : MonoBehaviour, IRestartableComponent , IAfterRestartComponent
 {
-    [SerializeField] private CharacterTransparency _characterTransparency = null;
-    [SerializeField] private Rigidbody2D _characterRigidbody = null;
+    private Rigidbody2D _characterRigidbody;
+    private CharacterTransparency _characterTransparency;
+
+
+    private void Start()
+    {
+        _characterRigidbody = GetComponent<Rigidbody2D>();
+        _characterTransparency = GetComponent<CharacterTransparency>();
+    }
 
 
     void IRestartableComponent.Restart()
     {
-        _characterRigidbody.velocity = new Vector2(0, 0);
+        _characterRigidbody.velocity = Vector2.zero;
         _characterTransparency.BecomeTransparentNow();
     }
 
 
     void IAfterRestartComponent.Restart()
     {
-        _characterTransparency.BecomeOpaque(this);
+        _characterTransparency.BecomeOpaque();
     }
 }

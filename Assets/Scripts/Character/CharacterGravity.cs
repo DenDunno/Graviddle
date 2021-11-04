@@ -3,9 +3,9 @@
 
 public class CharacterGravity : MonoBehaviour , IAfterRestartComponent
 {
-    public int MovementInversion { get; private set; } = 1;
-
     [SerializeField] private SwipeHandler _swipeHandler = null;
+
+    public int MovementInversion { get; private set; } = 1;
 
 
     private void Start()

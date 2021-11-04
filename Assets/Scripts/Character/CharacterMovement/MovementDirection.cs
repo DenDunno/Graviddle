@@ -1,14 +1,21 @@
 ﻿using UnityEngine;
 
 
+[RequireComponent(typeof(CharacterGravity))]
 public class MovementDirection : MonoBehaviour , IAfterRestartComponent
 {
+    [SerializeField] private SpriteRenderer _spriteRenderer = null;
+    private CharacterGravity _characterGravity = null;
+    private Movement _movement;
+
     public Vector2 MoveDirection { get; private set; }
 
-    [SerializeField] private SpriteRenderer _spriteRenderer = null;
-    [SerializeField] private CharacterGravity _characterGravity = null;
-    private Movement _movement; 
-    
+
+    private void Start()
+    {
+        _characterGravity = GetComponent<CharacterGravity>();
+    }
+
 
     private void Update()
     {

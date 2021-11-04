@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6186545343902058749}
   - component: {fileID: 6186545343902058720}
   - component: {fileID: 6186545343902058748}
-  - component: {fileID: 3626875113414557878}
   - component: {fileID: 6186545343902058751}
   - component: {fileID: 6186545343902058721}
   - component: {fileID: 6445119915811480551}
@@ -136,19 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 842f27e6dce44b34c94b7ee14a363f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3626875113414557878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6186545343902058747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c6619ffb6b0f3940b960d4d002bd110, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mainCamera: {fileID: 6186545344261283279}
 --- !u!114 &6186545343902058751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,8 +177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _finishPortal: {fileID: 0}
-  _touchPanel: {fileID: 0}
   _characterCapture: {fileID: 4455638962972475283}
+  _gameplayState: {fileID: 0}
 --- !u!114 &4455638962972475283
 MonoBehaviour:
   m_ObjectHideFlags: 0

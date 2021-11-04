@@ -1,30 +1,39 @@
-﻿using System.Collections;
+﻿using System.Threading.Tasks;
 using UnityEngine;
+using Zenject;
 
 
+[RequireComponent(typeof(CharacterTransparency))]
 public class Character : MonoBehaviour
 {
-    [SerializeField] private CharacterTransparency _characterTransparency = null;
-    [SerializeField] private CharacterVictory _characterVictory = null;
+    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
+    private CharacterTransparency _characterTransparency;
 
 
     private void Start()
     {
-        _characterTransparency.BecomeTransparentNow();
-        _characterTransparency.BecomeOpaque(this);
+        _characterTransparency = GetComponent<CharacterTransparency>();
     }
 
 
-    private IEnumerator OnTriggerEnter2D(Collider2D collision)
+    private void OnEnable()
     {
-        if (collision.TryGetComponent(out FinishPortal finishPortal))
-        {
-            _characterVictory.FinishLevel(this, finishPortal);
+        _characterStatesPresenter.WinState.CharacterWon += OnCharacterWon;
+    }
 
-            float timeBeforeDisappearance = 1f;
-            yield return new WaitForSeconds(timeBeforeDisappearance);
 
-            _characterTransparency.BecomeTransparent(this);
-        }
+    private void OnDisable()
+    {
+        _characterStatesPresenter.WinState.CharacterWon -= OnCharacterWon;
+    }
+
+
+    private async void OnCharacterWon()
+    {
+        const int timeBeforeDisappearance = 1000;
+
+        await Task.Delay(timeBeforeDisappearance);
+
+        _characterTransparency.BecomeTransparent();
     }
 }

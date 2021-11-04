@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,21 +7,16 @@ using UnityEngine.UI;
 public class Backstage : MonoBehaviour
 {
     [SerializeField] private Image _image = null;
-    [SerializeField] private ImageFading _imageFading = null;
+    [SerializeField] private float _fadingSpeed = 1f;
+    [SerializeField] private float _brightenSpeed = 1f;
 
 
     public IEnumerator MakeFade(IEnumerator backstageAction)
     {
-        yield return StartCoroutine(_imageFading.ChangeAlphaChannel(true , SetImageAlphaChannel)); // dark 
+        yield return _image.DOFade(255, _fadingSpeed).WaitForCompletion(); // dark
 
         yield return StartCoroutine(backstageAction);
 
-        yield return StartCoroutine(_imageFading.ChangeAlphaChannel(false , SetImageAlphaChannel)); // transparent
-    }
-
-
-    private void SetImageAlphaChannel(float alphaChannel)
-    {
-        _image.color = new Color(255, 255, 255, alphaChannel);
+        yield return _image.DOFade(0, _brightenSpeed).WaitForCompletion(); // transparent
     }
 }
