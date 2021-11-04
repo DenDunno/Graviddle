@@ -8,15 +8,12 @@ public class UISwitcher : MonoBehaviour
 
     public void ActivateState(UIState uiStateToBeActivated)
     {
-        uiStateToBeActivated.gameObject.SetActive(true);
-
         foreach (UIState uiState in _allUIStates)
         {
-            if (uiState != uiStateToBeActivated)
-            {
-                uiState.gameObject.SetActive(false);
-            }
+            uiState.gameObject.SetActive(false);
         }
+
+        uiStateToBeActivated.gameObject.SetActive(true);
     }
 
 

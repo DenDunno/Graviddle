@@ -1,24 +1,43 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using DG.Tweening;
+using UnityEngine;
+using Zenject;
 
 
 public class FinishPortal : MonoBehaviour
 {
-    [SerializeField] private AnimationCurve _motionCurve = null;
+    [SerializeField] private Character _character = null;
+    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
+    private readonly PortalDisappearance _portalDisappearance = new PortalDisappearance(0.5f);
 
-    private Vector3 _startPosition;
 
-
-    private void Start()
+    private void OnEnable()
     {
-        _startPosition = transform.position;
-
-        _motionCurve.postWrapMode = WrapMode.Loop;
-        _motionCurve.preWrapMode = WrapMode.Loop;
+        _characterStatesPresenter.WinState.CharacterWon += OnCharacterWon;
     }
 
 
-    private void Update()
+    private void OnDisable()
     {
-        transform.position = _startPosition + transform.up * _motionCurve.Evaluate(Time.time);
+        _characterStatesPresenter.WinState.CharacterWon -= OnCharacterWon;
+    }
+
+
+    private void OnCharacterWon()
+    {
+        StartCoroutine(PullCharacterToThePortal());
+    }
+
+
+    private IEnumerator PullCharacterToThePortal()
+    {
+        const float characterPullDuration = 2f;
+        const float yOffset = 0.6f;
+
+        Vector2 targetPosition = transform.position - transform.up * yOffset;
+
+        _character.transform.DOMove(targetPosition, characterPullDuration);
+
+        yield return _portalDisappearance.Disappear(transform);
     }
 }

@@ -6,7 +6,8 @@ public class CharacterStatesPresenter
     public readonly FallState FallState;
     public readonly RunState RunState;
     public readonly DieState DieState;
-    
+    public readonly WinState WinState;
+
 
     public CharacterStatesPresenter(Character character)
     {
@@ -14,6 +15,7 @@ public class CharacterStatesPresenter
         FallState = new FallState(character);
         RunState = new RunState(character);
         DieState = new DieState(character);
+        WinState = new WinState(character);
     }
 }
  
