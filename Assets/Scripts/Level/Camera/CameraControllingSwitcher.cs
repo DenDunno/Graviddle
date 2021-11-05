@@ -3,13 +3,29 @@
 
 public class CameraControllingSwitcher : MonoBehaviour
 {
-    [SerializeField] private CameraControlling _cameraControlling = null;
-    [SerializeField] private CameraCapturePresenter _characterCapture = null;    
-    
+    private CameraControlling _cameraControlling = null;
+    private CameraCapturePresenter _capturePresenter = null;
 
-    public void ToggleCameraControlling(bool cameraControllingEnabled)
+
+    private void Start()
     {
-        _cameraControlling.enabled = cameraControllingEnabled;
-        _characterCapture.enabled = !cameraControllingEnabled;
+        Camera mainCamera = Camera.main;
+
+        _cameraControlling = mainCamera.GetComponent<CameraControlling>();
+        _capturePresenter = mainCamera.GetComponent<CameraCapturePresenter>();
+    }
+
+
+    public void ActivateCameraControlling()
+    {
+        _capturePresenter.UntieAll();
+        _cameraControlling.enabled = true;
+    }
+
+
+    public void DeactivateCameraControlling()
+    {
+        _capturePresenter.ActivateLastCapture();
+        _cameraControlling.enabled = false;
     }
 }

@@ -33,9 +33,9 @@ public class TransitionsConditions
     }
 
 
-    public bool CheckDeathByObstacle() => _colliders.Any(collider => collider.TryGetComponent(out IObstacle _));
+    public bool CheckDeathByObstacle() => TryGetComponent<IObstacle>();
 
-    public bool CheckWin() => _colliders.Any(collider => collider.TryGetComponent(out FinishPortal _));
+    public bool CheckWin() => TryGetComponent<FinishPortal>();
 
     public bool CheckIfFall() => Physics2D.OverlapCircleAll(_transform.position, 0.15f).Length < 2;
 
@@ -44,4 +44,10 @@ public class TransitionsConditions
     public bool CheckIfGrounded() => CheckIfFall() == false;
 
     public bool CheckIfIdle() => CheckIfRun() == false;
+
+
+    private bool TryGetComponent<T>()
+    {
+        return _colliders.Any(collider => collider.TryGetComponent(out T _));
+    }
 }

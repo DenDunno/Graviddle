@@ -4,15 +4,15 @@
 [RequireComponent(typeof(CameraBorders))]
 public class CameraControlling : MonoBehaviour
 {
-    private CameraBorders _cameraBorders = null;
     private readonly float _movingSpeed = 1f;
+    private CameraBorders _cameraBorders;
 
 
     private void Start()
     {
         _cameraBorders = GetComponent<CameraBorders>();
     }
-
+    
 
     private void LateUpdate()
     {

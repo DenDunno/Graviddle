@@ -4,6 +4,7 @@
 public class CameraCapturePresenter : MonoBehaviour
 {
     private CameraCapture[] _cameraCaptures;
+    private CameraCapture _targetCapture;
 
 
     private void Start()
@@ -16,12 +17,19 @@ public class CameraCapturePresenter : MonoBehaviour
     {
         UntieAll();
 
-        objectToBeCaptured.enabled = true;
+        _targetCapture = objectToBeCaptured;
+        _targetCapture.enabled = true;
     }
 
 
     public void UntieAll()
     {
         _cameraCaptures.ForEach(cameraCapture => cameraCapture.enabled = false);
+    }
+
+
+    public void ActivateLastCapture()
+    {
+        _targetCapture.enabled = true;
     }
 }
