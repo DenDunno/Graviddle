@@ -3,7 +3,7 @@
 
 public class FallState : MovableState
 {
-    public event Action<bool> CharacterGroundedChanged;
+    public event Action CharacterFalling;
 
 
     public FallState(Character character) : base(character , AnimationsName.Fall)
@@ -13,6 +13,6 @@ public class FallState : MovableState
 
     protected override void OnEnterState()
     {
-        CharacterGroundedChanged?.Invoke(false);
+        CharacterFalling?.Invoke();
     }
 }

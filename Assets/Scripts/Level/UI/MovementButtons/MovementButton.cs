@@ -8,6 +8,12 @@ public class MovementButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     [SerializeField] private MovementDirection _movementDirection = null;
 
 
+    private void OnDisable()
+    {
+        _movementDirection.StopCharacter();
+    }
+
+
     public void OnPointerDown(PointerEventData eventData)
     {
         _movementDirection.MoveCharacter(_movement);
@@ -19,11 +25,6 @@ public class MovementButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         _movementDirection.StopCharacter();
     }
 
-
-    private void OnDisable()
-    {
-        _movementDirection.StopCharacter();
-    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {

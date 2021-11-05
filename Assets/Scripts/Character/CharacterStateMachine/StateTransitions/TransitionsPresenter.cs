@@ -25,12 +25,15 @@ public class TransitionsPresenter
     {
         newState = currentState;
 
-        foreach (Transition transition in _transitions[currentState])
+        if (_transitions.ContainsKey(currentState))
         {
-            if (transition.TransitionCondition())
+            foreach (Transition transition in _transitions[currentState])
             {
-                newState = transition.StateTo;
-                break;
+                if (transition.TransitionCondition())
+                {
+                    newState = transition.StateTo;
+                    break;
+                }
             }
         }
 

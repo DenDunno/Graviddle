@@ -11,10 +11,10 @@ public class Restart : MonoBehaviour
     [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
     private readonly float _restartTime = 0.7f;
     private Backstage _backstage;
-
+    
     private IEnumerable<IRestartableComponent> _restartableComponents = null;
     private IEnumerable<IAfterRestartComponent> _afterRestartComponents = null;
-    
+
 
     private void Start()
     {
@@ -45,7 +45,7 @@ public class Restart : MonoBehaviour
 
     private IEnumerator MakeRestart()
     {
-        yield return _backstage.MakeFade(RestartObjects());
+        yield return StartCoroutine(_backstage.MakeFade(RestartObjects()));
 
         _afterRestartComponents.ForEach(component => component.Restart());
     }

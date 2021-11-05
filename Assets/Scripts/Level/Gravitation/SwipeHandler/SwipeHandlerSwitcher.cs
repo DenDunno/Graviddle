@@ -3,29 +3,44 @@ using UnityEngine.EventSystems;
 using Zenject;
 
 
+[RequireComponent(typeof(SwipeHandler))]
 public class SwipeHandlerSwitcher : MonoBehaviour , IDragHandler
 {
-    [SerializeField] private SwipeHandler _swipeHandler = null;
     [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
+    private SwipeHandler _swipeHandler;
+
+
+    private void Start()
+    {
+        _swipeHandler = GetComponent<SwipeHandler>();
+    }
 
 
     private void OnEnable()
     {
-        _characterStatesPresenter.FallState.CharacterGroundedChanged += OnCharacterGroundedChanged;
+        _characterStatesPresenter.FallState.CharacterFalling += OnCharacterFalling;
+        _characterStatesPresenter.IdleState.CharacterGrounded += OnCharacterGrounded;
     }
 
 
     private void OnDisable()
     {
-        _characterStatesPresenter.FallState.CharacterGroundedChanged -= OnCharacterGroundedChanged;
+        _characterStatesPresenter.FallState.CharacterFalling -= OnCharacterFalling;
+        _characterStatesPresenter.IdleState.CharacterGrounded -= OnCharacterGrounded;
+    }
+
+
+    private void OnCharacterFalling()
+    {
+        _swipeHandler.enabled = false;
+    }
+
+
+    private void OnCharacterGrounded()
+    {
+        _swipeHandler.enabled = true;
     }
     
-
-    private void OnCharacterGroundedChanged(bool isGrounded)
-    {
-        _swipeHandler.enabled = isGrounded;
-    }
-
 
     public void OnDrag(PointerEventData eventData)
     {

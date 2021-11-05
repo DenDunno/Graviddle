@@ -13,19 +13,18 @@ public class CharacterCapture : MonoBehaviour
 
     private void Start()
     {
-        _characterStatesPresenter.FallState.CharacterGroundedChanged += OnCharacterGroundedChanged;
+        _characterStatesPresenter.FallState.CharacterFalling += OnCharacterFalling;
     }
 
 
     private void OnDestroy()
     {
-        _characterStatesPresenter.FallState.CharacterGroundedChanged -= OnCharacterGroundedChanged;
+        _characterStatesPresenter.FallState.CharacterFalling -= OnCharacterFalling;
     }
 
     
-    private void OnCharacterGroundedChanged(bool isGrounded) 
+    private void OnCharacterFalling() 
     {
-        _captureSpeed = isGrounded ? 2f : 6f;
     }
 
 

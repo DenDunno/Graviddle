@@ -13,10 +13,10 @@ public class Backstage : MonoBehaviour
 
     public IEnumerator MakeFade(IEnumerator backstageAction)
     {
-        yield return _image.DOFade(255, _fadingSpeed).WaitForCompletion(); // dark
+        yield return _image.DOFade(1, _fadingSpeed).WaitForCompletion();
 
         yield return StartCoroutine(backstageAction);
 
-        yield return _image.DOFade(0, _brightenSpeed).WaitForCompletion(); // transparent
+        yield return _image.DOFade(0, _brightenSpeed).WaitForCompletion();
     }
 }

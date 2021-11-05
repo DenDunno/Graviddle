@@ -2,11 +2,18 @@
 using Zenject;
 
 
+[RequireComponent(typeof(UISwitcher))]
 public class UIRestart : MonoBehaviour , IAfterRestartComponent
 {
-    [SerializeField] private UISwitcher _uiSwitcher = null;
     [SerializeField] private UIState _initialUIState = null;
     [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
+    private UISwitcher _uiSwitcher = null;
+
+
+    private void Start()
+    {
+        _uiSwitcher = GetComponent<UISwitcher>();
+    }
 
 
     private void OnEnable()
@@ -23,7 +30,7 @@ public class UIRestart : MonoBehaviour , IAfterRestartComponent
 
     private void OnCharacterDied()
     {
-        _uiSwitcher.DeactivateAllStates();
+        _uiSwitcher.DeactivateStates();
     }
 
 

@@ -3,21 +3,24 @@ using UnityEngine;
 
 public class UISwitcher : MonoBehaviour
 {
-    [SerializeField] private UIState[] _allUIStates = null;
-    
+    private UIState[] _allUIStates = null;
+
+
+    private void Start()
+    {
+        _allUIStates = GetComponentsInChildren<UIState>(true);
+    }
+
 
     public void ActivateState(UIState uiStateToBeActivated)
     {
-        foreach (UIState uiState in _allUIStates)
-        {
-            uiState.gameObject.SetActive(false);
-        }
+        DeactivateStates();
 
         uiStateToBeActivated.gameObject.SetActive(true);
     }
 
 
-    public void DeactivateAllStates()
+    public void DeactivateStates()
     {
         foreach (UIState uiState in _allUIStates)
         {
