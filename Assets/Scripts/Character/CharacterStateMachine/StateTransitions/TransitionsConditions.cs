@@ -33,7 +33,9 @@ public class TransitionsConditions
     }
 
 
-    public bool CheckDeathByObstacle() => _colliders.Any(collider => collider.GetComponents<IObstacle>() != null);
+    public bool CheckDeathByObstacle() => _colliders.Any(collider => collider.TryGetComponent(out IObstacle _));
+
+    public bool CheckWin() => _colliders.Any(collider => collider.TryGetComponent(out FinishPortal _));
 
     public bool CheckIfFall() => Physics2D.OverlapCircleAll(_transform.position, 0.15f).Length < 2;
 

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class CharacterGravity : MonoBehaviour , IAfterRestartComponent
+public class CharacterGravity : MonoBehaviour , IRestartableComponent
 {
     [SerializeField] private SwipeHandler _swipeHandler = null;
 
@@ -36,7 +36,7 @@ public class CharacterGravity : MonoBehaviour , IAfterRestartComponent
     }
 
 
-    void IAfterRestartComponent.Restart()
+    void IRestartableComponent.Restart()
     {
         OnGravityChanged(GravityDirection.Down);
     }

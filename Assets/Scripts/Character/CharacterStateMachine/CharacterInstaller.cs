@@ -31,9 +31,11 @@ public class CharacterInstaller : MonoInstaller
         transitionsPresenter.AddTransition(states.RunState, _conditions.CheckDeathByObstacle, states.DieState);
         transitionsPresenter.AddTransition(states.RunState, _conditions.CheckIfFall , states.FallState);
         transitionsPresenter.AddTransition(states.RunState, _conditions.CheckIfIdle , states.IdleState);
+        transitionsPresenter.AddTransition(states.RunState, _conditions.CheckWin, states.WinState);
 
         transitionsPresenter.AddTransition(states.FallState, _conditions.CheckDeathByObstacle, states.DieState);
         transitionsPresenter.AddTransition(states.FallState, _conditions.CheckDeathByLevelBorders , states.DieState);
         transitionsPresenter.AddTransition(states.FallState, _conditions.CheckIfGrounded , states.IdleState);
+        transitionsPresenter.AddTransition(states.FallState, _conditions.CheckWin, states.WinState);
     }
 }

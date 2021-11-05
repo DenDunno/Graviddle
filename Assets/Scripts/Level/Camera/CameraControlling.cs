@@ -1,10 +1,17 @@
 ﻿using UnityEngine;
 
 
+[RequireComponent(typeof(CameraBorders))]
 public class CameraControlling : MonoBehaviour
 {
-    [SerializeField] private CameraBorders _cameraBorders = null;
+    private CameraBorders _cameraBorders = null;
     private readonly float _movingSpeed = 1f;
+
+
+    private void Start()
+    {
+        _cameraBorders = GetComponent<CameraBorders>();
+    }
 
 
     private void LateUpdate()

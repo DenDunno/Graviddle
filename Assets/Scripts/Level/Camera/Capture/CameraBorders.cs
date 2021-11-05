@@ -28,8 +28,8 @@ public class CameraBorders : MonoBehaviour
     {
         float horizontalOffset = _isHorizontalClamping ? 0 : _horizontalOffset;
 
-        cameraPosition.x = Mathf.Clamp(cameraPosition.x, 0 - horizontalOffset, _levelWidth + horizontalOffset);
-        cameraPosition.y = Mathf.Clamp(cameraPosition.y, 0 + horizontalOffset, _levelHeight - horizontalOffset);
+        cameraPosition.x = Mathf.Clamp(cameraPosition.x, -0.5f - horizontalOffset, _levelWidth + horizontalOffset);
+        cameraPosition.y = Mathf.Clamp(cameraPosition.y, -0.5f + horizontalOffset, _levelHeight - horizontalOffset);
     }
 
 

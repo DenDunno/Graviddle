@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1676370641203529913}
   - component: {fileID: 176760460917412522}
   - component: {fileID: 8330912486358253217}
+  - component: {fileID: 6645885976490443849}
+  - component: {fileID: 4723280765245148840}
   m_Layer: 0
   m_Name: FinishPortal
   m_TagString: Untagged
@@ -160,6 +162,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _character: {fileID: 0}
+--- !u!114 &6645885976490443849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205806455587547127}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 365543492fa7e9b45977e967e29a0b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 0}
+--- !u!114 &4723280765245148840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205806455587547127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1324cbff0001748b7185436659d68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _finishPortal: {fileID: 0}
+  _characterCapture: {fileID: 0}
+  _gameplayState: {fileID: 0}
 --- !u!1 &205806456063144930
 GameObject:
   m_ObjectHideFlags: 0
