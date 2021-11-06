@@ -3,38 +3,26 @@
 
 public class CameraBorders : MonoBehaviour
 {
-    [SerializeField] private SwipeHandler _swipeHandler = null;
+    [SerializeField] private int _levelHeight = 0;
+    [SerializeField] private int _leftTile = 0;
+    [SerializeField] private int _rightTile = 0;
 
-    [SerializeField] private float _levelWidth = 10;
-    [SerializeField] private float _levelHeight = 10;
-
-    private readonly float _horizontalOffset = 4.11f;
-    private bool _isHorizontalClamping = true;
+    private readonly float _tileOffset = 0.5f;
+    private float _rightCorner;
 
 
-    private void OnEnable()
+    private void Start()
     {
-        _swipeHandler.GravityChanged += OnGravityChanged;
+        float height = Camera.main.orthographicSize * 2.0f;
+        float width = height * Camera.main.aspect;
+
+        _rightCorner = width / 2 + _leftTile - _tileOffset - 0.25f;
     }
-
-
-    private void OnDisable()
-    {
-        _swipeHandler.GravityChanged -= OnGravityChanged;
-    }    
 
 
     public void ClampCamera(ref Vector3 cameraPosition)
     {
-        float horizontalOffset = _isHorizontalClamping ? 0 : _horizontalOffset;
-
-        cameraPosition.x = Mathf.Clamp(cameraPosition.x, -0.5f - horizontalOffset, _levelWidth + horizontalOffset);
-        cameraPosition.y = Mathf.Clamp(cameraPosition.y, -0.5f + horizontalOffset, _levelHeight - horizontalOffset);
-    }
-
-
-    private void OnGravityChanged(GravityDirection gravityDirection)
-    {
-        _isHorizontalClamping = (int)gravityDirection % 2 == 0;
+        cameraPosition.x = Mathf.Clamp(cameraPosition.x, _rightCorner,  100);
+        cameraPosition.y = Mathf.Clamp(cameraPosition.y, -_tileOffset, _levelHeight + _tileOffset);
     }
 }

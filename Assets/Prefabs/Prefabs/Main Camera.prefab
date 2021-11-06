@@ -66,11 +66,11 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.2971234
-  m_Depth: -1
+  orthographic size: 6
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 311
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -106,7 +106,8 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_Cameras: []
+  m_Cameras:
+  - {fileID: 0}
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
@@ -146,10 +147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ce9166c45b0c444a58f5cc73f58e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _swipeHandler: {fileID: 2193011851720177200, guid: 85bbc6cf07021704eb8f8c0a82859b01,
-    type: 3}
-  _levelWidth: 11.8
-  _levelHeight: 21.4
+  _levelHeight: 21
+  _leftTile: 0
+  _rightTile: 0
 --- !u!114 &6186545343902058721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,3 +200,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 396b506846848754ba0015f114b381f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _targetCapture: {fileID: 0}

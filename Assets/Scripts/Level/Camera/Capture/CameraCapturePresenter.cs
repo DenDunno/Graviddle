@@ -3,8 +3,8 @@
 
 public class CameraCapturePresenter : MonoBehaviour
 {
+    [SerializeField] private CameraCapture _targetCapture;
     private CameraCapture[] _cameraCaptures;
-    private CameraCapture _targetCapture;
 
 
     private void Start()
