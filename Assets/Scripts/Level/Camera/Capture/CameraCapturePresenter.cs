@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class CameraCapturePresenter : MonoBehaviour
+public class CameraCapturePresenter : MonoBehaviour , IRestartableComponent
 {
     [SerializeField] private CameraCapture _targetCapture;
     private CameraCapture[] _cameraCaptures;
@@ -31,5 +31,11 @@ public class CameraCapturePresenter : MonoBehaviour
     public void ActivateLastCapture()
     {
         _targetCapture.enabled = true;
+    }
+
+
+    void IRestartableComponent.Restart()
+    {
+        _targetCapture.ResetCameraTransform();
     }
 }
