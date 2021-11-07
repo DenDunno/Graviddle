@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial/Tutor score.unity
     guid: ded6437513d4f0247addebbbafc90fb2
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level X.unity
+    guid: 8279e539295ac334b8798ba981ac7bd9
   m_configObjects: {}

@@ -3480,13 +3480,14 @@ GameObject:
   - component: {fileID: 6891503042830970289}
   - component: {fileID: 7029877457704770691}
   - component: {fileID: 6725604453867194703}
+  - component: {fileID: 8013462305427848425}
   m_Layer: 6
   m_Name: WinPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6891503042830970290
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3562,7 +3563,6 @@ MonoBehaviour:
   - {fileID: 6891503042681577834}
   - {fileID: 6891503042004876703}
   - {fileID: 6891503042026673923}
-  _winPanel: {fileID: 6891503042830970289}
   _levelScore: {fileID: 6891503043413075974}
 --- !u!114 &6725604453867194703
 MonoBehaviour:
@@ -3577,6 +3577,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiSwitcher: {fileID: 6848271586011493877}
+--- !u!114 &8013462305427848425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6891503042830970291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d97696ab1c875554faaae9ec95334d53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6891503043413075994
 GameObject:
   m_ObjectHideFlags: 0

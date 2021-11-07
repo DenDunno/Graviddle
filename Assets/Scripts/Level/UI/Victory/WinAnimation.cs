@@ -5,6 +5,7 @@ using DG.Tweening;
 using UnityEngine.UI;
 
 
+[RequireComponent(typeof(Image))]
 public class WinAnimation : MonoBehaviour
 {
     private readonly float _animationDuration = 2f;
@@ -14,11 +15,17 @@ public class WinAnimation : MonoBehaviour
     
     [SerializeField] private WinEffects _effects = null;
     [SerializeField] private List<Button> _buttons = null;
-    [SerializeField] private Image _winPanel = null;
     [SerializeField] private Image _levelScore = null;
+    private Image _winPanel = null;
 
 
     private void Start()
+    {
+        _winPanel = GetComponent<Image>();
+    }
+
+
+    public void ShowWinPanel()
     {
         Sequence sequence = DOTween.Sequence();
 
