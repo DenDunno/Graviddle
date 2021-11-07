@@ -1,26 +1,28 @@
 ﻿using UnityEngine;
 
 
+[System.Serializable]
 public class CameraSizeSettings
 {
+    [SerializeField] private Camera _camera = null;
+    private readonly float _tileOffset = 0.75f;
+    private readonly float _targetAspect = 1920 / 1080f;
+
     public float WidthHeightDifference { get; private set; }
     public float HeightOffset { get; private set; }
     public float WidthOffset { get; private set; }
     public float Width { get; private set; }
 
-    private readonly Camera _camera;
-    private readonly float _tileOffset = 0.75f;
 
-
-    public CameraSizeSettings(Camera camera)
+    public void EvaluateCameraSizeSettings()
     {
-        _camera = camera;
-        EvaluateCameraSizeSettings();
-    }
+        float sizeFitter = _targetAspect / _camera.aspect;
 
+        if (sizeFitter < 1)
+        {
+            _camera.orthographicSize *= sizeFitter;
+        }
 
-    private void EvaluateCameraSizeSettings()
-    {
         HeightOffset = _camera.orthographicSize;
         WidthOffset = HeightOffset * _camera.aspect;
 
@@ -29,11 +31,5 @@ public class CameraSizeSettings
 
         HeightOffset -= _tileOffset;
         WidthOffset -= _tileOffset;
-    }
-
-
-    public bool CheckIfGreaterLevelWidth(float rightBorder , float leftBorder)
-    {
-        return Width > (rightBorder - leftBorder + 2 * _tileOffset);
     }
 }

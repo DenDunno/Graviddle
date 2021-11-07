@@ -101,9 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
+  m_RenderShadows: 0
+  m_RequiresDepthTextureOption: 0
+  m_RequiresOpaqueTextureOption: 0
   m_CameraType: 0
   m_Cameras:
   - {fileID: 0}
@@ -135,10 +135,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _swipeHandler: {fileID: 0}
-  _topBorder: 0
-  _downBorder: 0
-  _leftBorder: 0
-  _rightBorder: 0
+  _levelSizeSettings:
+    _topBorder: 15
+    _downBorder: -5
+    _leftBorder: -9
+    _rightBorder: 16
+    _cameraSizeSettings:
+      _camera: {fileID: 6186545344261283279}
 --- !u!114 &6186545343902058721
 MonoBehaviour:
   m_ObjectHideFlags: 0
