@@ -6,7 +6,7 @@ public class CameraCapture : MonoBehaviour
     private CameraCapturePresenter _capturePresenter;
     private CameraBorders _cameraBorders;
     private Transform _mainCamera;
-    private float _captureSpeed = 2f;
+    private float _captureSpeed = 3f;
 
 
     private void Start()
@@ -19,11 +19,16 @@ public class CameraCapture : MonoBehaviour
 
     public void CaptureMe()
     {
+        if (_capturePresenter == null)
+        {
+            Start();
+        }
+            
         _capturePresenter.CaptureObject(this);
     }
 
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         _mainCamera.position = Vector3.Lerp(_mainCamera.position, GetNewPosition(), _captureSpeed * Time.deltaTime);
     }
