@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8330912486358253217}
   - component: {fileID: 6645885976490443849}
   - component: {fileID: 4723280765245148840}
+  - component: {fileID: 8595755858497841902}
   m_Layer: 0
   m_Name: FinishPortal
   m_TagString: Untagged
@@ -238,3 +239,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameplayUI: {fileID: 0}
+--- !u!114 &8595755858497841902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205806455587547127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d1cfc647092bdc4599ce1f3a725ffe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _finishIcon: {fileID: 0}

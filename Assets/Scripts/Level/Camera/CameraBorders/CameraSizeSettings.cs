@@ -32,4 +32,10 @@ public class CameraSizeSettings
         HeightOffset -= _tileOffset;
         WidthOffset -= _tileOffset;
     }
+
+
+    public bool CheckIfBorderGreaterLevelBorder(float firstBorder, float secondBorder)
+    {
+        return Width > (Mathf.Abs(firstBorder - secondBorder) + 2 * _tileOffset);
+    }
 }
