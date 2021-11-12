@@ -5,13 +5,12 @@ using UnityEngine.EventSystems;
 
 public class SwipeHandler : MonoBehaviour, IBeginDragHandler , IRestartableComponent
 {
-    public event Action<GravityDirection> GravityChanged;
-    [SerializeField] private bool _isCameraRotating = true;
-
     private readonly int _numOfDirections = 4;
     private readonly float _swipeSensitivity = 1.0f;
     private GravityDirection _newDirection;
     private GravityDirection _lastDirection;
+
+    public event Action<GravityDirection> GravityChanged;
 
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -38,10 +37,7 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler , IRestartableCompo
             _newDirection = delta.y < 0 ? GravityDirection.Down : GravityDirection.Up;
         }
 
-        if (_isCameraRotating)
-        {
-            _newDirection = (GravityDirection)(((int)_newDirection + (int)_lastDirection) % _numOfDirections);
-        }
+        _newDirection = (GravityDirection)(((int)_newDirection + (int)_lastDirection) % _numOfDirections);
     }
 
 

@@ -24,13 +24,13 @@ public class LevelSizeSettings
         _isCameraWidthGreaterLevelWidth = _cameraSizeSettings.CheckIfBorderGreaterLevelBorder(_rightBorder , _leftBorder);
         _isCameraWidthGreaterLevelHeight = _cameraSizeSettings.CheckIfBorderGreaterLevelBorder(_topBorder, _downBorder);
 
+        _horizontalLevelCenter = (_rightBorder + _leftBorder) / 2f;
+        _verticalLevelCenter = (_topBorder + _downBorder) / 2f;
+
         _topBorder -= _cameraSizeSettings.HeightOffset;
         _downBorder += _cameraSizeSettings.HeightOffset;
         _leftBorder += _cameraSizeSettings.WidthOffset;
         _rightBorder -= _cameraSizeSettings.WidthOffset;
-
-        _horizontalLevelCenter = (_rightBorder + _leftBorder) / 2f;
-        _verticalLevelCenter = (_topBorder + _downBorder) / 2f;
     }
 
 
