@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class SwipeHandler : MonoBehaviour, IBeginDragHandler , IRestartableComponent
 {
+    [SerializeField] private bool _isActive = true;
     private readonly int _numOfDirections = 4;
     private readonly float _swipeSensitivity = 1.0f;
     private GravityDirection _newDirection;
@@ -17,7 +18,7 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler , IRestartableCompo
     {
         var swipeInput = new Vector2(eventData.delta.x, eventData.delta.y);
 
-        if (swipeInput.magnitude > _swipeSensitivity)
+        if (swipeInput.magnitude > _swipeSensitivity && _isActive)
         {
             DefineTurn(ref swipeInput);
             TryChangeGravity();
