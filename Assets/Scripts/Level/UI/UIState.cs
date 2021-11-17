@@ -3,11 +3,11 @@
 
 public class UIState : MonoBehaviour
 {
-    [SerializeField] private UISwitcher _uiSwitcher = null;
+    [SerializeField] private UIStatesSwitcher _uiStatesSwitcher = null;
 
 
     public void ActivateState()
     {
-        _uiSwitcher.ActivateState(this);
+        _uiStatesSwitcher.ActivateState(this);
     }
 }

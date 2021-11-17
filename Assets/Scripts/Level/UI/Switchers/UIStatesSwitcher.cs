@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class UISwitcher : MonoBehaviour
+public class UIStatesSwitcher : MonoBehaviour
 {
     private UIState[] _allUIStates = null;
 

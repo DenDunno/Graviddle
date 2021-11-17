@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5649786685365309434}
   - component: {fileID: 3134429687764315370}
   - component: {fileID: 5363265090564427489}
+  - component: {fileID: 143038821610850396}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -193,3 +194,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetCapture: {fileID: 0}
+--- !u!114 &143038821610850396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186545343902058747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ee01e66702087b4798e633ca34c7956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxUpdateRate: Infinity
+  preview: 0
+  blurAlgorithmSelection: 0
+  blurConfig: {fileID: 11400000, guid: 0c32db76616ab764e8ef4f6d946be474, type: 2}
+  downsample: 0
+  blurRegion:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
