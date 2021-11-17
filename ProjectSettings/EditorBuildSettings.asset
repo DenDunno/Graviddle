@@ -15,21 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/Settings.unity
     guid: dfdf9db19a4a9df47b1a5f4516b04e44
   - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutor buttons.unity
-    guid: e6a28e75073d6614dafac24bcb67516b
-  - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutor swipe.unity
-    guid: bb67592cf9442264db85abc2708c3b1e
-  - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutor swipe 2.unity
-    guid: a8f97940c681f5c40906106eb1e487e5
-  - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutor icons.unity
-    guid: 69ad856ea438c40479cebec7b4dd5816
-  - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutor score.unity
-    guid: ded6437513d4f0247addebbbafc90fb2
-  - enabled: 1
-    path: Assets/Scenes/Levels/Level X.unity
-    guid: 8279e539295ac334b8798ba981ac7bd9
+    path: Assets/Scenes/Tutorial/Tutorial buttons.unity
+    guid: ea727f8a92b4d654081e4123fac9cd10
   m_configObjects: {}
