@@ -38,7 +38,7 @@ public class SceneTransit : MonoBehaviour
         Image transitionImage = (scene >= 0 && scene <= 2) ? _menuTransitionImage : _levelTransitionImage;
         _backstage = transitionImage.GetComponent<Backstage>();
 
-        yield return StartCoroutine(_backstage.MakeFade(WaitWhileSceneLoading()));
+        yield return StartCoroutine(_backstage.MakeTransition(WaitWhileSceneLoading()));
 
         Destroy(gameObject);
     }

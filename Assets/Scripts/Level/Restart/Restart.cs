@@ -45,7 +45,7 @@ public class Restart : MonoBehaviour
 
     private IEnumerator MakeRestart()
     {
-        yield return StartCoroutine(_backstage.MakeFade(RestartObjects()));
+        yield return StartCoroutine(_backstage.MakeTransition(RestartObjects()));
 
         _afterRestartComponents.ForEach(component => component.Restart());
     }

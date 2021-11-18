@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Coffee.UIEffects;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,17 +7,30 @@ using UnityEngine.UI;
 
 public class Backstage : MonoBehaviour
 {
+    [SerializeField] private bool _useDissolve = false;
     [SerializeField] private Image _image = null;
+    [SerializeField] private UIDissolve _dissolveImage = null;
     [SerializeField] private float _fadingTime = 1f;
-    [SerializeField] private float _brightenTime = 1f;
 
 
-    public IEnumerator MakeFade(IEnumerator backstageAction)
+    public IEnumerator MakeTransition(IEnumerator backstageAction)
     {
-        yield return _image.DOFade(1, _fadingTime).WaitForCompletion();
+        yield return (_useDissolve ? MakeDissolve(1, 0) : MakeFade(1)).WaitForCompletion();
 
         yield return StartCoroutine(backstageAction);
 
-        yield return _image.DOFade(0, _brightenTime).WaitForCompletion();
+        yield return (_useDissolve ? MakeDissolve(0, 1) : MakeFade(0)).WaitForCompletion();
+    }
+
+
+    private Tween MakeDissolve(float fromEffectFactor, float toEffectFactor)
+    {
+        return DOTween.To(x => _dissolveImage.effectFactor = x, fromEffectFactor, toEffectFactor, _fadingTime);
+    }
+
+
+    public Tween MakeFade(float targetAlpha)
+    {
+        return _image.DOFade(targetAlpha, _fadingTime);
     }
 }

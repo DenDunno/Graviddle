@@ -3,12 +3,12 @@
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private AudioSource _music = null;
+    [SerializeField] private MainMusic _music = null;
 
 
     private void Start() 
     {
-        if (FindObjectOfType<AudioSource>() == null) 
+        if (FindObjectOfType<MainMusic>() == null) 
         {
             DontDestroyOnLoad(Instantiate(_music));
         }
