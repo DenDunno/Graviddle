@@ -20,9 +20,11 @@ public class MenuCharacterAnimation : MonoBehaviour
 
         _transform.anchoredPosition = _animationsPoints[0].StartPosition;
 
-        for (int currentAnimation = 0; currentAnimation < 4; ++currentAnimation)
+        const int numOfBorders = 4;
+
+        for (int currentAnimation = 0; currentAnimation < numOfBorders; ++currentAnimation)
         {
-            int nextAnimation = (currentAnimation == 3) ? 0 : currentAnimation + 1;
+            int nextAnimation = (currentAnimation == numOfBorders - 1) ? 0 : currentAnimation + 1;
 
             Vector2 targetPosition = _animationsPoints[currentAnimation].EndPosition;
             Vector2 resetPosition = _animationsPoints[nextAnimation].StartPosition;
