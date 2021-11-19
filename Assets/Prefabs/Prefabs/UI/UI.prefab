@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 5310841063774154847}
   - component: {fileID: 5326538439498126036}
   - component: {fileID: 4710138297989803409}
+  - component: {fileID: 8179605942755609089}
   m_Layer: 0
   m_Name: WinningEffects
   m_TagString: Untagged
@@ -205,6 +206,19 @@ MonoBehaviour:
   _silver: 5
   _characterRotations: {fileID: 0}
   _rewardListUi: {fileID: 2712108098420162777}
+--- !u!114 &8179605942755609089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172737385911186217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0743415f9298e0d43bb303f0f5c36c60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reward: {fileID: 0}
 --- !u!1 &376532211229108592
 GameObject:
   m_ObjectHideFlags: 0
@@ -3205,6 +3219,7 @@ GameObject:
   - component: {fileID: 328684586451209785}
   - component: {fileID: 6598216224234686828}
   - component: {fileID: 4966576720311639621}
+  - component: {fileID: 8727500073091994562}
   m_Layer: 6
   m_Name: VictoryCanvas
   m_TagString: Untagged
@@ -3307,6 +3322,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _uiState: {fileID: 6725604453867194703}
   _winAnimation: {fileID: 7029877457704770691}
+--- !u!114 &8727500073091994562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6322899550606161253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0743415f9298e0d43bb303f0f5c36c60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reward: {fileID: 4710138297989803409}
 --- !u!1 &6537497432672973243
 GameObject:
   m_ObjectHideFlags: 0

@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _swipeHandler: {fileID: 0}
   _levelSizeSettings:
-    _topBorder: -4
+    _topBorder: -5
     _downBorder: -16
     _leftBorder: -8
     _rightBorder: 17
