@@ -17,7 +17,7 @@ public class LevelResultsLoading : MonoBehaviour
 
         if (TryCreateDirectory(savePath) == false) // save exists
         {
-            Dictionary<int,int> saves = LoadSaves(savePath);
+            var saves = JsonConvert.DeserializeObject<Dictionary<int, int>>(File.ReadAllText(savePath));
 
         }
     }
@@ -34,13 +34,5 @@ public class LevelResultsLoading : MonoBehaviour
         }
 
         return noDirectory;
-    }
-
-
-    private Dictionary<int, int> LoadSaves(string savePath)
-    {
-        string json = File.ReadAllText(savePath);
-
-        return JsonConvert.DeserializeObject<Dictionary<int, int>>(json);
     }
 }
