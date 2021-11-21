@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
 
+
 public class LevelResultSave : MonoBehaviour
 {
     [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
@@ -25,10 +26,12 @@ public class LevelResultSave : MonoBehaviour
 
     private void SaveLevelResult()
     {
-        string savePath = Application.persistentDataPath + "Save.json";
+        string savePath = Application.persistentDataPath + "/Save.json";
         string json = File.ReadAllText(savePath);
 
         var save = JsonConvert.DeserializeObject<Dictionary<int, int>>(json);
+
+        save ??= new Dictionary<int, int>();
 
         save[SceneManager.GetActiveScene().buildIndex] = _reward.GetStars();
 

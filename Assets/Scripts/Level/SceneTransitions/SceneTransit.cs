@@ -34,11 +34,17 @@ public class SceneTransit : MonoBehaviour
     private IEnumerator MakeTransition(int scene)
     {
         _scene = scene;
+        bool transitionToLevel = scene > 2;
 
-        Image transitionImage = (scene >= 0 && scene <= 2) ? _menuTransitionImage : _levelTransitionImage;
+        Image transitionImage = transitionToLevel ? _levelTransitionImage : _menuTransitionImage;
         _backstage = transitionImage.GetComponent<Backstage>();
 
         yield return StartCoroutine(_backstage.MakeTransition(WaitWhileSceneLoading()));
+
+        if (transitionToLevel)
+        {
+            FindObjectOfType<UIStatesSwitcher>(true).gameObject.SetActive(true);
+        }
 
         Destroy(gameObject);
     }

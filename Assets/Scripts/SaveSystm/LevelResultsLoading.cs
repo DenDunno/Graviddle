@@ -13,26 +13,22 @@ public class LevelResultsLoading : MonoBehaviour
 
     private void Start()
     {
-        string savePath = Application.persistentDataPath + "Save.json";
-
-        if (TryCreateDirectory(savePath) == false) // save exists
-        {
-            var saves = JsonConvert.DeserializeObject<Dictionary<int, int>>(File.ReadAllText(savePath));
-
-        }
-    }
-
-
-    private bool TryCreateDirectory(string savePath)
-    {
-        bool noDirectory = false;
+        string savePath = Application.persistentDataPath + "/Save.json";
 
         if (File.Exists(savePath) == false)
         {
-            File.Create(savePath);
-            noDirectory = true;
+            var fileStream = new FileStream(savePath, FileMode.Create);
+            fileStream.Dispose();
         }
 
-        return noDirectory;
+        else
+        {
+            PaintLevelButtons(savePath);
+        }
+    }
+
+    private void PaintLevelButtons(string savePath)
+    {
+        var saves = JsonConvert.DeserializeObject<Dictionary<int, int>>(File.ReadAllText(savePath));
     }
 }
