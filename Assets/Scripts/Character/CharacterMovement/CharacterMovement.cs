@@ -5,7 +5,7 @@ public class CharacterMovement
 {
     private readonly Transform _transform;
     private readonly MovementDirection _movementDirection;
-    private readonly float _movementSpeed = 3f;
+    private readonly float _movementSpeed = 2.75f;
 
 
     public CharacterMovement(Character character)
