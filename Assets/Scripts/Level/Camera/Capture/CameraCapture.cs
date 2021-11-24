@@ -18,17 +18,6 @@ public class CameraCapture : MonoBehaviour
     }
 
 
-    public void CaptureMe()
-    {
-        if (_capturePresenter == null)
-        {
-            Start();
-        }
-
-        _capturePresenter.CaptureObject(this);
-    }
-
-
     private void LateUpdate()
     {
         _mainCamera.position = Vector3.SmoothDamp(_mainCamera.position, GetNewPosition(), ref _velocity ,_captureTime);

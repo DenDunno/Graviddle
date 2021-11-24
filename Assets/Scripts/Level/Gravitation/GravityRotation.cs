@@ -21,7 +21,7 @@ public class GravityRotation : MonoBehaviour
     }
 
 
-    private void LateUpdate()
+    private void Update()
     {
         transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, _rotationSpeed * Time.deltaTime);
     }

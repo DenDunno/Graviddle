@@ -11,7 +11,6 @@ public class CameraSizeSettings
     public float WidthHeightDifference { get; private set; }
     public float HeightOffset { get; private set; }
     public float WidthOffset { get; private set; }
-    public float Width { get; private set; }
 
 
     public void EvaluateCameraSizeSettings()
@@ -27,7 +26,6 @@ public class CameraSizeSettings
         WidthOffset = HeightOffset * _camera.aspect;
 
         WidthHeightDifference = WidthOffset - HeightOffset;
-        Width = WidthOffset * 2f;
 
         HeightOffset -= _tileOffset;
         WidthOffset -= _tileOffset;
@@ -36,6 +34,6 @@ public class CameraSizeSettings
 
     public bool CheckIfBorderGreaterLevelBorder(float firstBorder, float secondBorder)
     {
-        return Width > (Mathf.Abs(firstBorder - secondBorder) + 2 * _tileOffset);
+        return WidthOffset * 2f > (Mathf.Abs(firstBorder - secondBorder) + 2 * _tileOffset);
     }
 }

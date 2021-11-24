@@ -1,0 +1,14 @@
+using UnityEngine;
+
+
+public class CameraRotation : MonoBehaviour
+{
+    [SerializeField] private Character _character = null;
+    private readonly float _speed = 7f;
+
+
+    private void LateUpdate()
+    {
+        transform.rotation = Quaternion.Lerp(transform.rotation , _character.transform.rotation , _speed * Time.deltaTime);
+    }
+}
