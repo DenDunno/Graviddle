@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class TransitionsConditions
@@ -8,14 +6,14 @@ public class TransitionsConditions
     private readonly Transform _transform;
     private readonly CameraBorders _cameraBorders;
     private readonly MovementDirection _movementDirection;
-    private readonly IReadOnlyList<Collider2D> _colliders;
+    private readonly CollisionsList _collisionsList;
 
 
     public TransitionsConditions(Character character, CameraBorders cameraBorders)
     {
         _transform = character.transform;
         _movementDirection = character.GetComponent<MovementDirection>();
-        _colliders = character.GetComponent<CollisionsList>().Colliders;
+        _collisionsList = character.GetComponent<CollisionsList>();
 
         _cameraBorders = cameraBorders;
     }
@@ -33,21 +31,15 @@ public class TransitionsConditions
     }
 
 
-    public bool CheckDeathByObstacle() => TryGetComponent<IObstacle>();
+    public bool CheckDeathByObstacle() => _collisionsList.CheckComponent<IObstacle>();
 
-    public bool CheckWin() => TryGetComponent<FinishPortal>();
+    public bool CheckWin() => _collisionsList.CheckComponent<FinishPortal>();
 
-    public bool CheckIfFall() => Physics2D.OverlapCircleAll(_transform.position, 0.15f).Length < 2;
+    public bool CheckIfGrounded() => _collisionsList.CheckComponent<Ground>();
 
     public bool CheckIfRun() => _movementDirection.MoveDirection != Vector2.zero;
 
-    public bool CheckIfGrounded() => CheckIfFall() == false;
+    public bool CheckIfFall() => CheckIfGrounded() == false;
 
     public bool CheckIfIdle() => CheckIfRun() == false;
-
-
-    private bool TryGetComponent<T>()
-    {
-        return _colliders.Any(collider => collider.TryGetComponent(out T _));
-    }
 }

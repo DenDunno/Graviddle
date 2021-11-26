@@ -31,7 +31,7 @@ public class CharacterStateMachine : MonoBehaviour , IRestartableComponent
             SwitchState(newState);
         }
     }
-    
+
 
     void IRestartableComponent.Restart()
     {
