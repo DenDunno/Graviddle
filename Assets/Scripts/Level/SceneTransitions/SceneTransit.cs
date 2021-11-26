@@ -9,8 +9,7 @@ public class SceneTransit : MonoBehaviour
     [SerializeField] private Image _menuTransitionImage = null;
     [SerializeField] private Image _levelTransitionImage = null;
 
-    private Backstage _backstage;
-    private int _scene;
+    private readonly int _menuScenesCount = 2;
 
 
     private void Start()
@@ -33,13 +32,12 @@ public class SceneTransit : MonoBehaviour
 
     private IEnumerator MakeTransition(int scene)
     {
-        _scene = scene;
-        bool transitionToLevel = scene > 2;
+        bool transitionToLevel = scene > _menuScenesCount;
 
         Image transitionImage = transitionToLevel ? _levelTransitionImage : _menuTransitionImage;
-        _backstage = transitionImage.GetComponent<Backstage>();
+        var backstage = transitionImage.GetComponent<Backstage>();
 
-        yield return StartCoroutine(_backstage.MakeTransition(WaitWhileSceneLoading()));
+        yield return StartCoroutine(backstage.MakeTransition(WaitWhileSceneLoading(scene)));
 
         if (transitionToLevel)
         {
@@ -50,9 +48,9 @@ public class SceneTransit : MonoBehaviour
     }
 
 
-    private IEnumerator WaitWhileSceneLoading()
+    private IEnumerator WaitWhileSceneLoading(int scene)
     {
-        AsyncOperation sceneLoadingOperation = SceneManager.LoadSceneAsync(_scene);
+        AsyncOperation sceneLoadingOperation = SceneManager.LoadSceneAsync(scene);
         
         yield return new WaitWhile(() => sceneLoadingOperation.isDone == false);        
     }

@@ -1,15 +1,13 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 using UnityEngine;
-using UnityEngine.UI;
 
 
-public class LevelButtonsStars : MonoBehaviour
+public class LevelButtonsUnlocker : MonoBehaviour
 {
-    [SerializeField] private GridLayoutGroup _levels = null;
-    private Button[] _allButtons;
+    [SerializeField] private LevelButton[] _allButtons = null;
     private readonly string _saves = "Saves";
-
+    private readonly int _menuScenesCount = 3;
 
     private void Start()
     {
@@ -23,5 +21,11 @@ public class LevelButtonsStars : MonoBehaviour
     private void SetStarsForLevels()
     {
         var saves = JsonConvert.DeserializeObject<Dictionary<int, int>>(PlayerPrefs.GetString(_saves));
+
+        for (int i = 0; i < saves.Count; i++)
+        {
+            _allButtons[i].SetStars(saves[i + _menuScenesCount]);
+            _allButtons[i].UnlockLevel();
+        }
     }
 }

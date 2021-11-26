@@ -7,13 +7,7 @@ using Zenject;
 public class SwipeHandlerSwitcher : MonoBehaviour , IDragHandler
 {
     [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
-    private SwipeHandler _swipeHandler;
-
-
-    private void Start()
-    {
-        _swipeHandler = GetComponent<SwipeHandler>();
-    }
+    [SerializeField] private SwipeHandler _swipeHandler = null;
 
 
     private void OnEnable()

@@ -1802,7 +1802,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1103893546}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 819a35fa2e83a474499b59e3b0f7f2cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b59ceafd75f2964ebf83f285b91b0c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _music: {fileID: -4962204472795951528, guid: 57c24b4c76a7e0e41ad9719cfaea905c, type: 3}
@@ -2188,7 +2188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parallaxPart: 0
-  _speed: 40
+  _speed: 30
 --- !u!114 &1694450541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2406,7 +2406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parallaxPart: 1
-  _speed: 40
+  _speed: 30
 --- !u!114 &1866031893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2496,7 +2496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parallaxPart: 2
-  _speed: 40
+  _speed: 30
 --- !u!114 &1976677886
 MonoBehaviour:
   m_ObjectHideFlags: 0
