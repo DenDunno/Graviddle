@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.IO;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +9,7 @@ public class LevelResultSave : MonoBehaviour
 {
     [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
     [SerializeField] private Reward _reward = null;
+    private string _saves = "Save";
 
 
     public void OnEnable()
@@ -26,17 +26,20 @@ public class LevelResultSave : MonoBehaviour
 
     private void SaveLevelResult()
     {
-        string savePath = Application.persistentDataPath + "/Save.json";
-        string json = File.ReadAllText(savePath);
+        Dictionary<int , int> saves;
 
-        var save = JsonConvert.DeserializeObject<Dictionary<int, int>>(json);
+        if (PlayerPrefs.HasKey(_saves))
+        {
+            saves = JsonConvert.DeserializeObject<Dictionary<int, int>>(PlayerPrefs.GetString(_saves));
 
-        save ??= new Dictionary<int, int>();
+            saves[SceneManager.GetActiveScene().buildIndex] = _reward.GetStars();
+        }
 
-        save[SceneManager.GetActiveScene().buildIndex] = _reward.GetStars();
+        else
+        {
+            saves = new Dictionary<int, int>();
+        }
 
-        json = JsonConvert.SerializeObject(save);
-
-        File.WriteAllText(savePath , json);
+        PlayerPrefs.SetString(_saves, JsonConvert.SerializeObject(saves));
     }
 }
