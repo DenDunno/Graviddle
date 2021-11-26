@@ -31,13 +31,14 @@ public class LevelResultSave : MonoBehaviour
         if (PlayerPrefs.HasKey(_saves))
         {
             saves = JsonConvert.DeserializeObject<Dictionary<int, int>>(PlayerPrefs.GetString(_saves));
-            saves[SceneManager.GetActiveScene().buildIndex] = _reward.GetStars();
         }
 
         else
         {
             saves = new Dictionary<int, int>();
         }
+
+        saves[SceneManager.GetActiveScene().buildIndex] = _reward.GetStars();
 
         PlayerPrefs.SetString(_saves, JsonConvert.SerializeObject(saves));
     }

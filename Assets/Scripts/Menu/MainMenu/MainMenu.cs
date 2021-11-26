@@ -8,8 +8,6 @@ public class MainMenu : MonoBehaviour
 
     private void Start() 
     {
-        //PlayerPrefs.DeleteAll();
-
         if (FindObjectOfType<MainMusic>() == null) 
         {
             DontDestroyOnLoad(Instantiate(_music));
@@ -20,5 +18,11 @@ public class MainMenu : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+
+
+    public void DeleteSaves()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }

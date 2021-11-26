@@ -9,16 +9,22 @@ public class LevelButtonsUnlocker : MonoBehaviour
     private readonly string _saves = "Saves";
     private readonly int _menuScenesCount = 3;
 
+
     private void Start()
     {
         if (PlayerPrefs.HasKey(_saves))
         {
-            SetStarsForLevels();
+            UnlockLevels();
+        }
+
+        else
+        {
+            _allButtons[0].UnlockLevel();
         }
     }
 
 
-    private void SetStarsForLevels()
+    private void UnlockLevels()
     {
         var saves = JsonConvert.DeserializeObject<Dictionary<int, int>>(PlayerPrefs.GetString(_saves));
 
@@ -27,5 +33,7 @@ public class LevelButtonsUnlocker : MonoBehaviour
             _allButtons[i].SetStars(saves[i + _menuScenesCount]);
             _allButtons[i].UnlockLevel();
         }
+
+        _allButtons[saves.Count].UnlockLevel();
     }
 }
