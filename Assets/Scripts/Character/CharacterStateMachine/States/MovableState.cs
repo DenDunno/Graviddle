@@ -9,7 +9,6 @@ public abstract class MovableState : CharacterState
         _characterMovement = new CharacterMovement(character);
     }
 
-
     public override void Update()
     {
         _characterMovement.Update();

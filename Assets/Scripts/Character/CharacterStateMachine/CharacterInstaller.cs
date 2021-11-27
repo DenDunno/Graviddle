@@ -14,11 +14,13 @@ public class CharacterInstaller : MonoInstaller
         _conditions = new TransitionsConditions(_character, _cameraBorders);
         var characterStatesPresenter = new CharacterStatesPresenter(_character);
         var transitionsPresenter = new TransitionsPresenter();
+        var transitionEventsPresenter = new TransitionEventsPresenter(characterStatesPresenter);
 
         FillTransitionsPresenter(transitionsPresenter, characterStatesPresenter);
 
         Container.Bind<CharacterStatesPresenter>().FromInstance(characterStatesPresenter).AsSingle();
         Container.Bind<TransitionsPresenter>().FromInstance(transitionsPresenter).AsSingle();
+        Container.Bind<TransitionEventsPresenter>().FromInstance(transitionEventsPresenter).AsSingle();
     }
 
 
