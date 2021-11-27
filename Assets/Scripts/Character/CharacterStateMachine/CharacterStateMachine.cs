@@ -1,20 +1,22 @@
 ﻿using UnityEngine;
-using Zenject;
 
 
 public class CharacterStateMachine : MonoBehaviour, IRestartableComponent
 {
-    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
-    [Inject] private readonly TransitionsPresenter _transitionsPresenter = null;
-    [Inject] private readonly TransitionEventsPresenter _transitionEventsPresenter = null;
+    private TransitionsPresenter _transitionsPresenter;
+    private TransitionEventsPresenter _transitionEventsPresenter;
     private CharacterState _state;
+    private CharacterState _initialState;
 
 
-    private void Start()
+    public void Init(CharacterState initialState, TransitionsPresenter transitions, TransitionEventsPresenter events)
     {
-        _state = _characterStatesPresenter.IdleState;
+        _initialState = initialState;
+        _state = initialState;
+        _transitionsPresenter = transitions;
+        _transitionEventsPresenter = events;
     }
-
+    
 
     private void SwitchState(CharacterState newState)
     {
@@ -37,6 +39,6 @@ public class CharacterStateMachine : MonoBehaviour, IRestartableComponent
 
     void IRestartableComponent.Restart()
     {
-        SwitchState(_characterStatesPresenter.IdleState);
+        SwitchState(_initialState);
     }
 }

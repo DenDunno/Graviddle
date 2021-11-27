@@ -6,6 +6,7 @@ public class CharacterInstaller : MonoInstaller
 {
     [SerializeField] private Character _character = null;
     [SerializeField] private CameraBorders _cameraBorders = null;
+    [SerializeField] private CharacterStateMachine _stateMachine = null;
     private TransitionsConditions _conditions;
 
 
@@ -17,6 +18,8 @@ public class CharacterInstaller : MonoInstaller
         var transitionEventsPresenter = new TransitionEventsPresenter(characterStatesPresenter);
 
         FillTransitionsPresenter(transitionsPresenter, characterStatesPresenter);
+
+        _stateMachine.Init(characterStatesPresenter.IdleState , transitionsPresenter , transitionEventsPresenter);
 
         Container.Bind<CharacterStatesPresenter>().FromInstance(characterStatesPresenter).AsSingle();
         Container.Bind<TransitionsPresenter>().FromInstance(transitionsPresenter).AsSingle();
