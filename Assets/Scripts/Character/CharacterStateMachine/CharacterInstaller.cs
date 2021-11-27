@@ -19,6 +19,7 @@ public class CharacterInstaller : MonoInstaller
 
         Container.Bind<CharacterStatesPresenter>().FromInstance(characterStatesPresenter).AsSingle();
         Container.Bind<TransitionsPresenter>().FromInstance(transitionsPresenter).AsSingle();
+        Container.Bind<TransitionEvent>().AsCached();
     }
 
 

@@ -4,27 +4,25 @@ using Zenject;
 
 public class CharacterVFX : MonoBehaviour
 {
-    [Inject] private readonly TransitionsPresenter _transitionsPresenter = null;
     [Inject] private readonly CharacterStatesPresenter _states = null;
-    private Transition _fallToIdleTransition;
+    [Inject] private readonly TransitionEvent _transitionEvent = null;
+    [SerializeField] private ParticleSystem _dust = null;
 
 
     private void OnEnable()
     {
-        _fallToIdleTransition ??= _transitionsPresenter.GetTransition(_states.FallState, _states.IdleState);
-
-        _fallToIdleTransition.TransitionHappened += OnCharacterFell;
+        _transitionEvent.Subscribe(_states.FallState , _states.IdleState , OnCharacterFell);
     }
 
 
     private void OnDisable()
     {
-        _fallToIdleTransition.TransitionHappened -= OnCharacterFell;
+        _transitionEvent.UnSubscribe(OnCharacterFell);
     }
 
 
     private void OnCharacterFell()
     {
-        Debug.Log("Fell");
+        _dust.Play();
     }
 }
