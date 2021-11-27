@@ -1,23 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 
 public class TransitionsPresenter
 {
-    private readonly Dictionary<CharacterState, List<Transition>> _transitions = 
+    private readonly Dictionary<CharacterState, List<Transition>> _transitionsForState =
         new Dictionary<CharacterState, List<Transition>>();
 
 
     public void AddTransition(CharacterState from , Func<bool> condition , CharacterState to)
     {
-        var transition = new Transition(condition, to);
+        if (_transitionsForState.ContainsKey(from) == false)
+            _transitionsForState.Add(from , new List<Transition>());
+        
+        _transitionsForState[from].Add(new Transition(from, condition, to));
+    }
 
-        if (_transitions.ContainsKey(from) == false)
-        {
-            _transitions[from] = new List<Transition>();
-        }
 
-        _transitions[from].Add(transition);
+    public Transition GetTransition(CharacterState from , CharacterState to)
+    {
+        return _transitionsForState[from].FirstOrDefault(transition => transition.StateTo == to);
     }
 
 
@@ -25,11 +28,11 @@ public class TransitionsPresenter
     {
         newState = currentState;
 
-        if (_transitions.ContainsKey(currentState))
+        if (_transitionsForState.ContainsKey(currentState))
         {
-            foreach (Transition transition in _transitions[currentState])
+            foreach (Transition transition in _transitionsForState[currentState])
             {
-                if (transition.TransitionCondition())
+                if (transition.CheckCondition())
                 {
                     newState = transition.StateTo;
                     break;

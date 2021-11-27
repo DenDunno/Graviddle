@@ -2,7 +2,6 @@
 
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(CharacterTransparency))]
 public class CharacterPhysicsRestart : MonoBehaviour, IRestartableComponent 
 {
     private Rigidbody2D _characterRigidbody;
