@@ -1,27 +1,31 @@
-﻿using System.Collections;
-using Coffee.UIEffects;
+﻿using Coffee.UIEffects;
+using DG.Tweening;
 using UnityEngine;
+
 
 public class WoodPointer : MonoBehaviour
 {
-    private readonly float _dissolvingSpeed = 0.5f;
     [SerializeField] private UIDissolve _dissolveImage = null;
-    
 
-    public void ShowImage(int delayInMilliseconds)
+
+    private void OnTriggerEnter2D(Collider2D collider2d)
     {
-        StartCoroutine(ShowImageSmoothly(delayInMilliseconds));
+        if (collider2d.TryGetComponent(out Character character))
+        {
+            ShowImage();
+        }
     }
 
 
-    private IEnumerator ShowImageSmoothly(int delayInMilliseconds)
+    private void ShowImage()
     {
-        yield return new WaitForSeconds(delayInMilliseconds / 1000f);
+        const float duration = 2f;
+        const float fromFactor = 0;
+        const float toFactor = 1f;
 
-        while (_dissolveImage.effectFactor >= 0)
+        DOTween.To(x => _dissolveImage.effectFactor = x, fromFactor, toFactor, duration).onComplete += ()=>
         {
-            _dissolveImage.effectFactor -= _dissolvingSpeed * Time.deltaTime;
-            yield return new WaitForFixedUpdate();
-        }
+            _dissolveImage.gameObject.SetActive(false);
+        };
     }
 }
