@@ -3,8 +3,8 @@
 
 public class CameraCapture : MonoBehaviour
 {
-    private readonly float _captureTime = 0.3f;
-    private CameraCapturePresenter _capturePresenter;
+    private readonly float _startCaptureTime = 0.3f;
+    [SerializeField] private Rigidbody2D _targetRigidbody = null;
     private CameraBorders _cameraBorders;
     private Transform _mainCamera;
     private Vector3 _velocity;
@@ -12,15 +12,27 @@ public class CameraCapture : MonoBehaviour
 
     private void Start()
     {
-        _capturePresenter = Camera.main.GetComponent<CameraCapturePresenter>();
-        _cameraBorders = _capturePresenter.GetComponent<CameraBorders>();
-        _mainCamera = _capturePresenter.transform;
+        _cameraBorders = Camera.main.GetComponent<CameraBorders>();
+        _mainCamera = _cameraBorders.transform;
     }
 
 
     private void LateUpdate()
     {
-        _mainCamera.position = Vector3.SmoothDamp(_mainCamera.position, GetNewPosition(), ref _velocity ,_captureTime);
+        float captureTime = _startCaptureTime;
+
+        if (_targetRigidbody != null)
+        {
+            captureTime = EvaluateCaptureTimeFunction(_targetRigidbody.velocity.magnitude);
+        }
+
+        _mainCamera.position = Vector3.SmoothDamp(_mainCamera.position, GetNewPosition(), ref _velocity, captureTime);
+    }
+
+
+    private float EvaluateCaptureTimeFunction(float x)
+    {
+        return 1 / (0.15f * x  + 3.33f);
     }
 
 
