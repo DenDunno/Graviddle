@@ -3,8 +3,8 @@
 
 public class CameraCapture : MonoBehaviour
 {
-    private readonly float _startCaptureTime = 0.3f;
     [SerializeField] private Rigidbody2D _targetRigidbody = null;
+    private readonly float _startCaptureTime = 0.3f;
     private CameraBorders _cameraBorders;
     private Transform _mainCamera;
     private Vector3 _velocity;

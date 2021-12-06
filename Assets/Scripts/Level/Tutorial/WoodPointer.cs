@@ -6,7 +6,7 @@ using UnityEngine;
 public class WoodPointer : MonoBehaviour
 {
     [SerializeField] private UIDissolve _dissolveImage = null;
-
+    [SerializeField] private float _waitTime = 0;
 
     private void OnTriggerEnter2D(Collider2D collider2d)
     {
@@ -22,8 +22,12 @@ public class WoodPointer : MonoBehaviour
         const float duration = 2f;
         const float fromFactor = 0;
         const float toFactor = 1f;
+        Sequence sequence = DOTween.Sequence();
 
-        DOTween.To(x => _dissolveImage.effectFactor = x, fromFactor, toFactor, duration).onComplete += ()=>
+        sequence.AppendInterval(_waitTime);
+        sequence.Append(DOTween.To(x => _dissolveImage.effectFactor = x, fromFactor, toFactor, duration));
+            
+        sequence.onComplete += ()=>
         {
             _dissolveImage.gameObject.SetActive(false);
         };

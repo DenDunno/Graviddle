@@ -2,7 +2,7 @@
 
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class CharacterPhysicsRestart : MonoBehaviour, IRestartableComponent 
+public class CharacterRestart : MonoBehaviour, IRestartableComponent 
 {
     private Rigidbody2D _characterRigidbody;
 
@@ -15,6 +15,7 @@ public class CharacterPhysicsRestart : MonoBehaviour, IRestartableComponent
 
     void IRestartableComponent.Restart()
     {
+        transform.SetParent(null);
         _characterRigidbody.velocity = Vector2.zero;
     }
 }
