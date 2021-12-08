@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-public class FallState : MovableState
+public class FallState : CharacterState
 {
     public event Action CharacterFalling;
 

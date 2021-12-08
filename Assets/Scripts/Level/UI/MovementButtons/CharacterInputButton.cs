@@ -2,21 +2,17 @@
 using UnityEngine.EventSystems;
 
 
-public class MovementButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler , IBeginDragHandler 
+public class CharacterInputButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler , IBeginDragHandler 
 {
     [SerializeField] private Movement _movement = Movement.Stop;
     [SerializeField] private MovementDirection _movementDirection = null;
-
-
-    private void OnDisable()
-    {
-        _movementDirection.StopCharacter();
-    }
+    [SerializeField] private CharacterSpriteFlipping _spriteFlipping = null;
 
 
     public void OnPointerDown(PointerEventData eventData)
     {
         _movementDirection.MoveCharacter(_movement);
+        _spriteFlipping.FlipCharacter(_movement);
     }
 
 
@@ -28,6 +24,12 @@ public class MovementButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        _movementDirection.MoveCharacter(_movement);
+        OnPointerDown(eventData);
+    }
+
+
+    private void OnDisable()
+    {
+        _movementDirection?.StopCharacter();
     }
 }

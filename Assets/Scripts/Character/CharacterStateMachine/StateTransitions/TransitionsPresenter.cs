@@ -12,8 +12,10 @@ public class TransitionsPresenter
     public void AddTransition(CharacterState from , Func<bool> condition , CharacterState to)
     {
         if (_transitionsForState.ContainsKey(from) == false)
-            _transitionsForState.Add(from , new List<Transition>());
-        
+        {
+            _transitionsForState.Add(from, new List<Transition>());
+        }
+
         _transitionsForState[from].Add(new Transition(from, condition, to));
     }
 

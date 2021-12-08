@@ -5,8 +5,6 @@ public class CharacterGravity : MonoBehaviour , IRestartableComponent
 {
     [SerializeField] private SwipeHandler _swipeHandler = null;
 
-    public int MovementInversion { get; private set; } = 1;
-
 
     private void Start()
     {
@@ -31,8 +29,6 @@ public class CharacterGravity : MonoBehaviour , IRestartableComponent
         GravityData gravityData = GravityDataPresenter.GravityData[(int)gravityDirection];
 
         Physics2D.gravity = gravityData.GravityVector;
-
-        MovementInversion = (gravityDirection == GravityDirection.Up ? -1 : 1);
     }
 
 
