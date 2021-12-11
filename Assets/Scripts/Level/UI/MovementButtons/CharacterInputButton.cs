@@ -5,20 +5,20 @@ using UnityEngine.EventSystems;
 public class CharacterInputButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler , IBeginDragHandler 
 {
     [SerializeField] private Movement _movement = Movement.Stop;
-    [SerializeField] private MovementDirection _movementDirection = null;
+    [SerializeField] private MoveDirection _moveDirection = null;
     [SerializeField] private CharacterSpriteFlipping _spriteFlipping = null;
 
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        _movementDirection.MoveCharacter(_movement);
+        _moveDirection.MoveCharacter(_movement);
         _spriteFlipping.FlipCharacter(_movement);
     }
 
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        _movementDirection.StopCharacter();
+        _moveDirection.StopCharacter();
     }
 
 
@@ -30,6 +30,6 @@ public class CharacterInputButton : MonoBehaviour, IPointerDownHandler, IPointer
 
     private void OnDisable()
     {
-        _movementDirection?.StopCharacter();
+        _moveDirection.StopCharacter();
     }
 }

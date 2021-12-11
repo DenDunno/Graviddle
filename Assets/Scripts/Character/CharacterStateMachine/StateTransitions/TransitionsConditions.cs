@@ -5,14 +5,14 @@ public class TransitionsConditions
 {
     private readonly Transform _transform;
     private readonly CameraBorders _cameraBorders;
-    private readonly MovementDirection _movementDirection;
+    private readonly MoveDirection _moveDirection;
     private readonly CollisionsList _collisionsList;
 
 
     public TransitionsConditions(Character character, CameraBorders cameraBorders)
     {
         _transform = character.transform;
-        _movementDirection = character.GetComponent<MovementDirection>();
+        _moveDirection = character.GetComponent<MoveDirection>();
         _collisionsList = character.GetComponent<CollisionsList>();
 
         _cameraBorders = cameraBorders;
@@ -37,7 +37,7 @@ public class TransitionsConditions
 
     public bool CheckIfGrounded() => _collisionsList.CheckComponent<Ground>();
 
-    public bool CheckIfRun() => _movementDirection.MoveDirection != Vector2.zero;
+    public bool CheckIfRun() => _moveDirection.Direction != Vector2.zero;
 
     public bool CheckIfFall() => CheckIfGrounded() == false;
 
