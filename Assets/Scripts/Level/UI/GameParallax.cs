@@ -1,28 +1,86 @@
+using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 
+[RequireComponent(typeof(RectTransform))]
 public class GameParallax : MonoBehaviour
 {
     [SerializeField] private Camera _mainCamera = null;
-    [SerializeField] private RectTransform _layer = null;
     [SerializeField] [Range(0, 1)] private float _parallaxEffect = 0;
+    [SerializeField] private SwipeHandler _swipeHandler = null;
 
-    private float _layerWidth;
-    private float _startPosition;
+    private RectTransform _layer = null;
+    private float _anchor;
+    private float _imageWidth;
+    private readonly float _parallaxSpeed = 100f;
+    private GravityDirection _gravityDirection = GravityDirection.Down;
 
 
     private void Start()
     {
-        _layerWidth = _layer.rect.width;
-        _startPosition = _layer.anchoredPosition.x;
+        _layer = GetComponent<RectTransform>();
+        _anchor = _layer.anchoredPosition.x;
+        _imageWidth = _layer.rect.width;
+    }
+
+
+    private void OnEnable()
+    {
+        _swipeHandler.GravityChanged += OnGravityChanged;
+    }
+
+
+    private void OnDisable()
+    {
+        _swipeHandler.GravityChanged -= OnGravityChanged;
     }
 
 
     private void Update()
     {
-        float distance = _mainCamera.transform.position.x * _parallaxEffect * 100;
+        float parallaxDistance = GetParallaxDistance();
+        MoveLayer(parallaxDistance);
+        TryChangeAnchor(parallaxDistance);
+    }
 
-        _layer.anchoredPosition = new Vector2(_startPosition - distance, _layer.anchoredPosition.y);
+
+    private float GetParallaxDistance()
+    {
+        float cameraPosition = _gravityDirection switch
+        {
+            GravityDirection.Down => _mainCamera.transform.position.x,
+            GravityDirection.Up => -_mainCamera.transform.position.x,
+            GravityDirection.Right => _mainCamera.transform.position.y,
+            GravityDirection.Left => -_mainCamera.transform.position.y,
+            _ => throw new ArgumentOutOfRangeException()
+        };
+
+        return cameraPosition * _parallaxEffect * _parallaxSpeed;
+    }
+
+
+    private void MoveLayer(float parallaxDistance)
+    {
+        _layer.anchoredPosition = new Vector3(_anchor - parallaxDistance, _layer.anchoredPosition.y);
+    }
+
+
+    private void TryChangeAnchor(float parallaxDistance)
+    {
+        if (parallaxDistance > _anchor + _imageWidth)
+        {
+            _anchor += _imageWidth;
+        }
+
+        else if (parallaxDistance < _anchor - _imageWidth)
+        {
+            _anchor -= _imageWidth;
+        }
+    }
+
+
+    private void OnGravityChanged(GravityDirection gravityDirection)
+    {
+        _gravityDirection = gravityDirection;
     }
 }

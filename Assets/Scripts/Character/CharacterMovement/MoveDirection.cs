@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class MoveDirection : MonoBehaviour , IAfterRestartComponent
@@ -9,15 +8,7 @@ public class MoveDirection : MonoBehaviour , IAfterRestartComponent
 
     private void SetMoveDirection(Movement movement)
     {
-        try
-        {
-            Direction = transform.right * (int)movement;
-        }
-        catch (Exception e)
-        {
-            Debug.Log(e.Message);
-            throw;
-        }
+        Direction = transform.right * (int)movement;
     }
 
 

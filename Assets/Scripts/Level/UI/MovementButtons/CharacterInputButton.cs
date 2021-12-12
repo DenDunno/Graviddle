@@ -18,7 +18,7 @@ public class CharacterInputButton : MonoBehaviour, IPointerDownHandler, IPointer
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        _moveDirection.StopCharacter();
+        OnDisable();
     }
 
 
@@ -30,6 +30,9 @@ public class CharacterInputButton : MonoBehaviour, IPointerDownHandler, IPointer
 
     private void OnDisable()
     {
-        _moveDirection.StopCharacter();
+        if (_moveDirection != null)
+        {
+            _moveDirection.StopCharacter();
+        }
     }
 }

@@ -1,6 +1,14 @@
 ﻿using UnityEngine;
 
 
+public enum Part
+{
+    Left = -1,
+    Centre = 0,
+    Right = 1
+}
+
+
 [RequireComponent(typeof(RectTransform))]
 public class MenuParallaxLayer : MonoBehaviour
 {
@@ -10,12 +18,6 @@ public class MenuParallaxLayer : MonoBehaviour
     private float _leftBorder;
     private float _rightBorder;
 
-    private enum Part
-    {
-        Left,
-        Centre,
-        Right
-    }
 
     private void Start()
     {
@@ -26,7 +28,7 @@ public class MenuParallaxLayer : MonoBehaviour
 
         if (_parallaxPart != Part.Centre)
         {
-            float xPosition = (_parallaxPart == Part.Left ? _leftBorder : _rightBorder);
+            float xPosition = (int)_parallaxPart * _transform.rect.width;
 
             _transform.anchoredPosition = new Vector2(xPosition , _transform.anchoredPosition.y);
         }
