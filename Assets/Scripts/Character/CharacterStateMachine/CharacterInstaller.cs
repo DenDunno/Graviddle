@@ -5,13 +5,13 @@ using Zenject;
 public class CharacterInstaller : MonoInstaller
 {
     [SerializeField] private Character _character = null;
-    [SerializeField] private CameraBorders _cameraBorders = null;
+    [SerializeField] private CameraClamping _cameraClamping = null;
     private TransitionsConditions _conditions;
 
 
     public override void InstallBindings()
     {
-        _conditions = new TransitionsConditions(_character, _cameraBorders);
+        _conditions = new TransitionsConditions(_character, _cameraClamping);
         var characterStatesPresenter = new CharacterStatesPresenter(_character);
         var transitionsPresenter = new TransitionsPresenter();
 

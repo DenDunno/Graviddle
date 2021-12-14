@@ -1,21 +1,23 @@
-﻿using UnityEngine;
-
-
-[RequireComponent(typeof(Camera))]
-public class CameraBorders : MonoBehaviour
+﻿
+public class CameraBorders
 {
-    [SerializeField] private LevelSizeSettings _levelSizeSettings = null;
-    [SerializeField] private GravityDirectionPresenter _gravityDirectionPresenter = null;
+    public readonly float Top;
+    public readonly float Down;
+    public readonly float Left;
+    public readonly float Right;
+
+    public readonly float HorizontalCentre;
+    public readonly float VerticalCentre;
 
 
-    private void Start()
+    public CameraBorders(float topBorder, float downBorder, float leftBorder, float rightBorder)
     {
-        _levelSizeSettings.EvaluateLevelSettings();
-    }
+        Top = topBorder;
+        Down = downBorder;
+        Left = leftBorder;
+        Right = rightBorder;
 
-
-    public void ClampCamera(ref Vector3 cameraPosition)
-    {
-        _levelSizeSettings.ClampCamera(ref cameraPosition , _gravityDirectionPresenter.IsHorizontalClamping);
+        HorizontalCentre = (leftBorder + rightBorder) / 2f;
+        VerticalCentre = (topBorder + downBorder) / 2f;
     }
 }

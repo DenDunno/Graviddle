@@ -7,15 +7,15 @@ public class CharacterTransparency : MonoBehaviour , IRestartableComponent , IAf
 {
     [SerializeField] private SpriteRenderer _spriteRenderer = null;
     [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
-    private TransparencyInterface _transparencyInterface;
+    private SpriteTransparencyPresenter _spriteTransparencyPresenter;
 
 
     private void Start()
     {
-        _transparencyInterface = new TransparencyInterface(_spriteRenderer);
+        _spriteTransparencyPresenter = new SpriteTransparencyPresenter(_spriteRenderer);
 
-        _transparencyInterface.BecomeTransparentNow();
-        _transparencyInterface.BecomeOpaque();
+        _spriteTransparencyPresenter.BecomeTransparentNow();
+        _spriteTransparencyPresenter.BecomeOpaque();
     }
 
 
@@ -36,19 +36,19 @@ public class CharacterTransparency : MonoBehaviour , IRestartableComponent , IAf
         const int timeBeforeDisappearance = 1000;
         await Task.Delay(timeBeforeDisappearance);
 
-        _transparencyInterface.BecomeTransparent();
+        _spriteTransparencyPresenter.BecomeTransparent();
     }
 
 
     void IRestartableComponent.Restart()
     {
-        _transparencyInterface.StopAnimation();
-        _transparencyInterface.BecomeTransparentNow();
+        _spriteTransparencyPresenter.StopAnimation();
+        _spriteTransparencyPresenter.BecomeTransparentNow();
     }
 
 
     void IAfterRestartComponent.Restart()
     {
-        _transparencyInterface.BecomeOpaque();
+        _spriteTransparencyPresenter.BecomeOpaque();
     }
 }

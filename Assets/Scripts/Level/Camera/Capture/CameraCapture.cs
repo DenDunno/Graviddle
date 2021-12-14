@@ -5,15 +5,15 @@ public class CameraCapture : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _targetRigidbody = null;
     private readonly float _startCaptureTime = 0.3f;
-    private CameraBorders _cameraBorders;
+    private CameraClamping _cameraClamping;
     private Transform _mainCamera;
     private Vector3 _velocity;
 
 
     private void Start()
     {
-        _cameraBorders = Camera.main.GetComponent<CameraBorders>();
-        _mainCamera = _cameraBorders.transform;
+        _cameraClamping = Camera.main.GetComponent<CameraClamping>();
+        _mainCamera = _cameraClamping.transform;
     }
 
 
@@ -41,7 +41,7 @@ public class CameraCapture : MonoBehaviour
         Vector3 newCameraPosition = transform.position;
         newCameraPosition.z = _mainCamera.transform.position.z;
 
-        _cameraBorders.ClampCamera(ref newCameraPosition);
+        _cameraClamping.ClampCamera(ref newCameraPosition);
 
         return newCameraPosition;
     }

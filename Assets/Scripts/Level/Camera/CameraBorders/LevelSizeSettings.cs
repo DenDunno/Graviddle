@@ -5,11 +5,7 @@ using System;
 [Serializable]
 public class LevelSizeSettings
 {
-    [SerializeField] private float _topBorder = 0;
-    [SerializeField] private float _downBorder = 0;
-    [SerializeField] private float _leftBorder = 0;
-    [SerializeField] private float _rightBorder = 0;
-    [SerializeField] private CameraSizeSettings _cameraSizeSettings = null;
+    
 
     private bool _isCameraWidthGreaterLevelWidth;
     private bool _isCameraWidthGreaterLevelHeight;
@@ -21,7 +17,7 @@ public class LevelSizeSettings
     {
         _cameraSizeSettings.EvaluateCameraSizeSettings();
 
-        _isCameraWidthGreaterLevelWidth = _cameraSizeSettings.CheckIfBorderGreaterLevelBorder(_rightBorder , _leftBorder);
+        _isCameraWidthGreaterLevelWidth = _cameraSizeSettings.CheckIfBorderGreaterLevelBorder(_rightBorder, _leftBorder);
         _isCameraWidthGreaterLevelHeight = _cameraSizeSettings.CheckIfBorderGreaterLevelBorder(_topBorder, _downBorder);
 
         _horizontalLevelCenter = (_rightBorder + _leftBorder) / 2f;

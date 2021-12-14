@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 
 
-[RequireComponent(typeof(CameraBorders))]
+[RequireComponent(typeof(CameraClamping))]
 public class CameraControlling : MonoBehaviour
 {
     private readonly float _movingSpeed = 1f;
-    private CameraBorders _cameraBorders;
+    private CameraClamping _cameraClamping;
 
 
     private void Start()
     {
-        _cameraBorders = GetComponent<CameraBorders>();
+        _cameraClamping = GetComponent<CameraClamping>();
     }
     
 
@@ -40,7 +40,7 @@ public class CameraControlling : MonoBehaviour
         newCameraPosition = transform.position + newCameraPosition;
         newCameraPosition.z = transform.position.z;
 
-        _cameraBorders.ClampCamera(ref newCameraPosition);
+        _cameraClamping.ClampCamera(ref newCameraPosition);
         transform.position = newCameraPosition;
     }
 }

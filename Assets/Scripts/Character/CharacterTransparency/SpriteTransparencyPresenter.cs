@@ -2,12 +2,12 @@
 using UnityEngine;
 
 
-public class TransparencyInterface
+public class SpriteTransparencyPresenter
 {
     private readonly SpriteRenderer _spriteRenderer;
 
 
-    public TransparencyInterface(SpriteRenderer spriteRenderer)
+    public SpriteTransparencyPresenter(SpriteRenderer spriteRenderer)
     {
         _spriteRenderer = spriteRenderer;
     }

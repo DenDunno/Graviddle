@@ -4,18 +4,18 @@
 public class TransitionsConditions
 {
     private readonly Transform _transform;
-    private readonly CameraBorders _cameraBorders;
+    private readonly CameraClamping _cameraClamping;
     private readonly MoveDirection _moveDirection;
     private readonly CollisionsList _collisionsList;
 
 
-    public TransitionsConditions(Character character, CameraBorders cameraBorders)
+    public TransitionsConditions(Character character, CameraClamping cameraClamping)
     {
         _transform = character.transform;
         _moveDirection = character.GetComponent<MoveDirection>();
         _collisionsList = character.GetComponent<CollisionsList>();
 
-        _cameraBorders = cameraBorders;
+        _cameraClamping = cameraClamping;
     }
 
 
@@ -25,7 +25,7 @@ public class TransitionsConditions
         Vector3 position = _transform.position;
         Vector3 clampedPosition = position;
 
-        _cameraBorders.ClampCamera(ref clampedPosition);
+        _cameraClamping.ClampCamera(ref clampedPosition);
 
         return Vector3.Distance(position, clampedPosition) >= levelDeathDistance;
     }
