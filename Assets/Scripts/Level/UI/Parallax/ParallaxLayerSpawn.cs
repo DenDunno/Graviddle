@@ -2,10 +2,17 @@
 
 
 [RequireComponent(typeof(RectTransform))]
-public class ParallaxPartSpawn : MonoBehaviour
+public class ParallaxLayerSpawn : MonoBehaviour
 {
-    [SerializeField] private Part _parallaxSide = Part.Left;
+    [SerializeField] private ParallaxSide _parallaxSide = ParallaxSide.Left;
     [SerializeField] private float _offset = 0;
+
+
+    private enum ParallaxSide
+    {
+        Left = -1,
+        Right = 1
+    }
 
 
     private void Start()

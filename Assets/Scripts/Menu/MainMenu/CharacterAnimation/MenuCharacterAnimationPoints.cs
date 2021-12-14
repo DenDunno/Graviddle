@@ -4,12 +4,13 @@ using UnityEngine;
 
 public static class MenuCharacterAnimationPoints 
 {
-    public static List<AnimationPath> GetAnimationPoints(RectTransform canvas , float offset)
+    public static List<AnimationPath> GetAnimationPoints(RectTransform rectTransform)
     {
-        float widthOffset = canvas.rect.width / offset;
+        const float offset = 9;
+        float widthOffset = rectTransform.rect.width / offset;
 
-        float height = canvas.rect.height;
-        float width = canvas.rect.width;
+        float height = rectTransform.rect.height;
+        float width = rectTransform.rect.width;
 
         return new List<AnimationPath>()
         {

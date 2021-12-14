@@ -4,9 +4,8 @@
 [RequireComponent(typeof(Camera))]
 public class CameraBorders : MonoBehaviour
 {
-    [SerializeField] private SwipeHandler _swipeHandler = null;
     [SerializeField] private LevelSizeSettings _levelSizeSettings = null;
-    private bool _isHorizontalClamping = true;
+    [SerializeField] private GravityDirectionPresenter _gravityDirectionPresenter = null;
 
 
     private void Start()
@@ -15,26 +14,8 @@ public class CameraBorders : MonoBehaviour
     }
 
 
-    private void OnEnable()
-    {
-        _swipeHandler.GravityChanged += OnGravityChanged;
-    }
-
-
-    private void OnDisable()
-    {
-        _swipeHandler.GravityChanged -= OnGravityChanged;
-    }
-
-
     public void ClampCamera(ref Vector3 cameraPosition)
     {
-        _levelSizeSettings.ClampCamera(ref cameraPosition , _isHorizontalClamping);
-    }
-
-
-    private void OnGravityChanged(GravityDirection gravityDirection)
-    {
-        _isHorizontalClamping = (int)gravityDirection % 2 == 0;
+        _levelSizeSettings.ClampCamera(ref cameraPosition , _gravityDirectionPresenter.IsHorizontalClamping);
     }
 }

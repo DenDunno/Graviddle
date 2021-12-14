@@ -3,14 +3,14 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(RectTransform))]
-public class GameParallax : MonoBehaviour
+public class GameParallaxLayer : MonoBehaviour
 {
     [SerializeField] private Camera _mainCamera = null;
     [SerializeField] [Range(0, 1)] private float _parallaxEffect = 0;
     [SerializeField] private SwipeHandler _swipeHandler = null;
 
     private RectTransform _layer = null;
-    private float _anchor;
+    private float _anchor = 0;
     private float _imageWidth;
     private readonly float _parallaxSpeed = 100f;
     private GravityDirection _gravityDirection = GravityDirection.Down;
@@ -19,7 +19,6 @@ public class GameParallax : MonoBehaviour
     private void Start()
     {
         _layer = GetComponent<RectTransform>();
-        _anchor = _layer.anchoredPosition.x;
         _imageWidth = _layer.rect.width;
     }
 
