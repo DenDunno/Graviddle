@@ -16,7 +16,7 @@ public class CameraClampingMediator : MonoBehaviour
 
         cameraSizeFitter.FitCameraSize(mainCamera);
 
-        var clampingSettings = CameraClampingSettingsFactory.CreateClampingSettings(_levelBorders, mainCamera);
-        borders.Init(clampingSettings);
+        CameraClampingSettings settings = CameraClampingSettingsFactory.CreateClampingSettings(_levelBorders, mainCamera);
+        borders.Init(settings);
     }
 }

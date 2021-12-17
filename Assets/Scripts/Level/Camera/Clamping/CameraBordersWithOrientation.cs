@@ -4,20 +4,18 @@
 public class CameraBordersWithOrientation : MonoBehaviour
 {
     [SerializeField] private SwipeHandler _swipeHandler = null;
-    private CameraBorders _cameraBorders;
+    private CameraClampingSettings _cameraClampingSettings;
     private float _orientationOffset;
-    private float _cameraWidthHeightDifference;
 
-    public float Top => _cameraBorders.Top - _orientationOffset;
-    public float Down => _cameraBorders.Down + _orientationOffset;
-    public float Left => _cameraBorders.Left + _orientationOffset;
-    public float Right => _cameraBorders.Right - _orientationOffset;
+    public float Top => _cameraClampingSettings.CameraBorders.Top - _orientationOffset;
+    public float Down => _cameraClampingSettings.CameraBorders.Down + _orientationOffset;
+    public float Left => _cameraClampingSettings.CameraBorders.Left - _orientationOffset;
+    public float Right => _cameraClampingSettings.CameraBorders.Right + _orientationOffset;
 
 
     public void Init(CameraClampingSettings clampingSettings)
     {
-        _cameraBorders = clampingSettings.CameraBorders;
-        _cameraWidthHeightDifference = clampingSettings.CameraWidthHeightDifference;
+        _cameraClampingSettings = clampingSettings;
     }
 
 
@@ -38,6 +36,6 @@ public class CameraBordersWithOrientation : MonoBehaviour
         bool isHorizontalOrientation = gravityDirection == GravityDirection.Down || 
                                        gravityDirection == GravityDirection.Up;
 
-        _orientationOffset = isHorizontalOrientation ? _cameraWidthHeightDifference : 0;
+        _orientationOffset = isHorizontalOrientation ? 0 : _cameraClampingSettings.OrientationOffset;
     }
 }

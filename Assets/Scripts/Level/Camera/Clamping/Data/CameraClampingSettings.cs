@@ -2,12 +2,12 @@
 public class CameraClampingSettings
 {
     public readonly CameraBorders CameraBorders;
-    public readonly float CameraWidthHeightDifference;
+    public readonly float OrientationOffset;
 
 
-    public CameraClampingSettings(CameraBorders cameraBorders, float cameraWidthHeightDifference)
+    public CameraClampingSettings(CameraBorders cameraBorders, float orientationOffset)
     {
         CameraBorders = cameraBorders;
-        CameraWidthHeightDifference = cameraWidthHeightDifference;
+        OrientationOffset = orientationOffset;
     }
 }
