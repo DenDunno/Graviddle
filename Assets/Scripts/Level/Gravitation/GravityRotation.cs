@@ -29,6 +29,7 @@ public class GravityRotation : MonoBehaviour
 
     private void OnGravityChanged(GravityDirection gravityDirection)
     {
-        _targetRotation = GravityDataPresenter.GravityData[(int)gravityDirection].Rotation;
+        float targetZRotation = GravityDataPresenter.GravityData[gravityDirection].ZRotation;
+        _targetRotation = Quaternion.Euler(0, 0, targetZRotation);
     }
 }

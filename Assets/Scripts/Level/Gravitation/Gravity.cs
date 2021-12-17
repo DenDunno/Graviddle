@@ -26,7 +26,7 @@ public class Gravity : MonoBehaviour , IRestartableComponent
 
     private void OnGravityChanged(GravityDirection gravityDirection)
     {
-        GravityData gravityData = GravityDataPresenter.GravityData[(int)gravityDirection];
+        GravityData gravityData = GravityDataPresenter.GravityData[gravityDirection];
 
         Physics2D.gravity = gravityData.GravityVector;
     }
