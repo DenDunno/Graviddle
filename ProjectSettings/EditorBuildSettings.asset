@@ -30,6 +30,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level_1.unity
     guid: abf3806dfda424c4d841e557aa2ff531
   - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial buttons 1.unity
+    path: Assets/Scenes/Buffer/Buffer.unity
     guid: b30681a8386842442a2db4503cebfddd
   m_configObjects: {}

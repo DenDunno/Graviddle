@@ -36,6 +36,8 @@ public class CharacterRotationImpulse : MonoBehaviour
         {
             _rigidbody.AddForce(transform.up, ForceMode2D.Impulse);
         }
+
+        _currentZRotation = newZRotation;
     }
 
 
