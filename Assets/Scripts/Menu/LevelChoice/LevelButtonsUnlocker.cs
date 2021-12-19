@@ -34,6 +34,11 @@ public class LevelButtonsUnlocker : MonoBehaviour
             _allButtons[i].UnlockLevel();
         }
 
-        _allButtons[saves.Count].UnlockLevel();
+        int levelToBeUnlocked = saves.Count;
+
+        if (levelToBeUnlocked < _allButtons.Length)
+        {
+            _allButtons[levelToBeUnlocked].UnlockLevel();
+        }
     }
 }
