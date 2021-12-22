@@ -27,6 +27,7 @@ public class CharacterInstaller : MonoInstaller
         transitionsPresenter.AddTransition(states.IdleState, _conditions.CheckDeathByObstacle, states.DieState);
         transitionsPresenter.AddTransition(states.IdleState, _conditions.CheckIfFall , states.FallState);
         transitionsPresenter.AddTransition(states.IdleState, _conditions.CheckIfRun , states.RunState);
+        transitionsPresenter.AddTransition(states.IdleState, _conditions.CheckWin, states.WinState);
 
         transitionsPresenter.AddTransition(states.RunState, _conditions.CheckDeathByObstacle, states.DieState);
         transitionsPresenter.AddTransition(states.RunState, _conditions.CheckIfFall , states.FallState);
