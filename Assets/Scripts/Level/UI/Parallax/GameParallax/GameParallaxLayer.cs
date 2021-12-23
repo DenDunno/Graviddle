@@ -28,22 +28,23 @@ public class GameParallaxLayer : MonoBehaviour
     {
         float newCameraPosition = _parallaxCameraPosition.GetCameraPosition(_gravityDirection);
 
-        _layer.anchoredPosition = new Vector2(GetParallaxLayerPosition(newCameraPosition), _layer.anchoredPosition.y);
+        _layer.anchoredPosition = GetParallaxLayerPosition(newCameraPosition);
 
         _lastCameraPosition = newCameraPosition;
     }
 
 
-    private float GetParallaxLayerPosition(float newCameraPosition)
+    private Vector2 GetParallaxLayerPosition(float newCameraPosition)
     {
-        const float parallaxSpeed = 600;
+        const float parallaxSpeed = 3.5f;
 
-        float targetPosition = (newCameraPosition - _lastCameraPosition) * _parallaxCameraPosition.CameraMagnitude;
-        targetPosition = _layer.anchoredPosition.x - targetPosition * Time.deltaTime * parallaxSpeed * _parallaxEffect;
+        float cameraDiffPosition = newCameraPosition - _lastCameraPosition;
+        float targetXParallaxPosition = cameraDiffPosition * _parallaxCameraPosition.CameraMagnitude * _parallaxEffect * parallaxSpeed;
+        targetXParallaxPosition = _layer.anchoredPosition.x - targetXParallaxPosition;
 
-        _parallaxLayerClamping.ClampParallaxLayerPosition(ref targetPosition);
+        _parallaxLayerClamping.ClampParallaxLayerPosition(ref targetXParallaxPosition);
 
-        return targetPosition;
+        return new Vector2(targetXParallaxPosition, _layer.anchoredPosition.y);
     }
     
 
