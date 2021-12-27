@@ -18,4 +18,3 @@ public class RotatingBlade : MonoBehaviour , IObstacle
         transform.rotation *= _rotationTo;
     }
 }
-

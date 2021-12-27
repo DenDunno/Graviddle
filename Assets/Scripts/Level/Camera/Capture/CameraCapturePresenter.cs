@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class CameraCapturePresenter : MonoBehaviour , IRestartableComponent
+public class CameraCapturePresenter : MonoBehaviour, IRestartableComponent
 {
     [SerializeField] private CameraCapture _targetCapture;
     private CameraCapture[] _cameraCaptures;

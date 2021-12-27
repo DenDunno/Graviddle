@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class Gravity : MonoBehaviour , IRestartableComponent
+public class Gravity : MonoBehaviour, IRestartableComponent
 {
     [SerializeField] private SwipeHandler _swipeHandler = null;
 

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class CharacterRotations : MonoBehaviour , IAfterRestartComponent
+public class CharacterRotations : MonoBehaviour, IAfterRestartComponent
 {
     [SerializeField] private CharacterRotationsUI _rotationsUI = null;
     [SerializeField] private SwipeHandler _swipeHandler = null;

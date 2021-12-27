@@ -3,7 +3,7 @@ using Zenject;
 
 
 [RequireComponent(typeof(UIStatesSwitcher))]
-public class UIRestart : MonoBehaviour , IAfterRestartComponent
+public class UIRestart : MonoBehaviour, IAfterRestartComponent
 {
     [SerializeField] private UIState _initialUIState = null;
     [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;

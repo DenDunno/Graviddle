@@ -3,7 +3,7 @@ using UnityEngine;
 using Zenject;
 
 
-public class CharacterTransparency : MonoBehaviour , IRestartableComponent , IAfterRestartComponent
+public class CharacterTransparency : MonoBehaviour, IRestartableComponent, IAfterRestartComponent
 {
     [SerializeField] private SpriteRenderer _spriteRenderer = null;
     [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;

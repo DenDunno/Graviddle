@@ -9,7 +9,7 @@ public class TransitionsPresenter
         new Dictionary<CharacterState, List<Transition>>();
 
 
-    public void AddTransition(CharacterState from , Func<bool> condition , CharacterState to)
+    public void AddTransition(CharacterState from, Func<bool> condition, CharacterState to)
     {
         if (_transitionsForState.ContainsKey(from) == false)
         {
@@ -20,13 +20,20 @@ public class TransitionsPresenter
     }
 
 
-    public Transition GetTransition(CharacterState from , CharacterState to)
+    public Transition GetTransition(CharacterState from, CharacterState to)
     {
-        return _transitionsForState[from].FirstOrDefault(transition => transition.StateTo == to);
+        Transition answer = _transitionsForState[from].FirstOrDefault(transition => transition.StateTo == to);
+
+        if (answer == null)
+        {
+            throw new ArgumentException();
+        }
+
+        return answer;
     }
 
 
-    public bool TryTransit(CharacterState currentState , out CharacterState newState)
+    public bool TryTransit(CharacterState currentState, out CharacterState newState)
     {
         newState = currentState;
 

@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-public class SwipeHandler : MonoBehaviour, IBeginDragHandler , IRestartableComponent
+public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IRestartableComponent
 {
     [SerializeField] private bool _isActive = true;
     private readonly int _numOfDirections = 4;

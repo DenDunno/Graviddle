@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-public class StartPortal : MonoBehaviour, IRestartableComponent
+public class StartPortal : MonoBehaviour, IRestartableComponent, IAfterRestartComponent
 {   
     private readonly PortalDisappearance _portalDisappearance = new PortalDisappearance(1);
     private Coroutine _restartCoroutine;
@@ -22,7 +22,11 @@ public class StartPortal : MonoBehaviour, IRestartableComponent
 
         gameObject.SetActive(true);
         transform.localScale = new Vector3(1, 1, 1);
+    }
 
+
+    void IAfterRestartComponent.Restart()
+    {
         _restartCoroutine = StartCoroutine(Start());
     }
 }

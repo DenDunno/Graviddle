@@ -1,35 +1,21 @@
 using UnityEngine;
-using Zenject;
 
 
-public class CharacterVFX : MonoBehaviour
+public class CharacterVFX : CharacterFallingEventsHandler
 {
-    [Inject] private readonly TransitionsPresenter _transitionsPresenter = null;
-    [Inject] private readonly CharacterStatesPresenter _states = null;
     [SerializeField] private ParticleSystem _dust = null;
-    private Transition _transition;
+    [SerializeField] private TrailRenderer _trailRenderer = null;
 
 
-    private void Awake()
+    protected override void OnCharacterStartFalling()
     {
-        _transition = _transitionsPresenter.GetTransition(_states.FallState, _states.IdleState);
-    }
-    
-
-    private void OnEnable()
-    {
-        _transition.TransitionHappened += OnCharacterFell;
+        _trailRenderer.emitting = true;
     }
 
 
-    private void OnDisable()
-    {
-        _transition.TransitionHappened -= OnCharacterFell;
-    }
-
-
-    private void OnCharacterFell()
+    protected override void OnCharacterEndFalling()
     {
         _dust.Play();
+        _trailRenderer.emitting = false;
     }
 }
