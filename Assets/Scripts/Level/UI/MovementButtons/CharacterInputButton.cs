@@ -2,7 +2,7 @@
 using UnityEngine.EventSystems;
 
 
-public class CharacterInputButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler , IBeginDragHandler 
+public class CharacterInputButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IBeginDragHandler 
 {
     [SerializeField] private Movement _movement = Movement.Stop;
     [SerializeField] private MoveDirection _moveDirection = null;

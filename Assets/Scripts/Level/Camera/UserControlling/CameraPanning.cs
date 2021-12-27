@@ -3,7 +3,7 @@
 
 [RequireComponent(typeof(CameraClamping))]
 [RequireComponent(typeof(CameraClamping))]
-public class CameraControlling : MonoBehaviour
+public class CameraPanning : MonoBehaviour
 {
     private CameraClamping _cameraClamping;
     private Camera _mainCamera;

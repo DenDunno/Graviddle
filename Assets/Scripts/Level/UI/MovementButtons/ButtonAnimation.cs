@@ -2,7 +2,7 @@
 using UnityEngine.EventSystems;
 
 
-public class ButtonAnimation : MonoBehaviour, IPointerDownHandler, IPointerUpHandler , IDragHandler
+public class ButtonAnimation : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
     private float _verticalOffset = 8f;
     
