@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class MainMenu : MonoBehaviour
+public class MainMusicSpawner : MonoBehaviour
 {
     [SerializeField] private MainMusic _music = null;
 
@@ -12,17 +12,5 @@ public class MainMenu : MonoBehaviour
         {
             DontDestroyOnLoad(Instantiate(_music));
         }
-    }
-
-
-    public void Exit()
-    {
-        Application.Quit();
-    }
-
-
-    public void DeleteSaves()
-    {
-        PlayerPrefs.DeleteAll();
     }
 }

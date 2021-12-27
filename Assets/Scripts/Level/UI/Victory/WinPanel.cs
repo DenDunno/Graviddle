@@ -23,7 +23,7 @@ public class WinPanel : MonoBehaviour
 
     private void OnCharacterWon()
     {
-        _winAnimation.ShowWinPanel();
+        _winAnimation.Play();
         _uiState.ActivateState();
     }
 }

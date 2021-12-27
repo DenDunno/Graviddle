@@ -1,32 +1,26 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class StartPortal : MonoBehaviour, IRestartableComponent, IAfterRestartComponent
-{   
-    private readonly PortalDisappearance _portalDisappearance = new PortalDisappearance(1);
-    private Coroutine _restartCoroutine;
+{
+    private PortalDisappearance _portalDisappearance;
 
 
-    private IEnumerator Start()
+    private void Start()
     {
-        yield return _restartCoroutine = StartCoroutine(_portalDisappearance.Disappear(transform));
-        
-        gameObject.SetActive(false);
+        _portalDisappearance = new PortalDisappearance(2.5f, this);
+        _portalDisappearance.Disappear();
     }
 
 
     void IRestartableComponent.Restart()
     {
-        StopCoroutine(_restartCoroutine);
-
-        gameObject.SetActive(true);
-        transform.localScale = new Vector3(1, 1, 1);
+        _portalDisappearance.StopAndResetAnimation();
     }
 
 
     void IAfterRestartComponent.Restart()
     {
-        _restartCoroutine = StartCoroutine(Start());
+        _portalDisappearance.Disappear();
     }
 }

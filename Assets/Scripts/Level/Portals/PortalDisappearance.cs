@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
 using UnityEngine;
 
 
@@ -6,25 +6,43 @@ public class PortalDisappearance
 {
     private readonly float _timeBeforeDisappearance = 1.3f;
     private readonly float _disappearingSpeed;
+    private readonly MonoBehaviour _context;
+    private Tween _currentAnimation;
 
 
-    public PortalDisappearance(float disappearingSpeed)
+    public PortalDisappearance(float disappearingSpeed, MonoBehaviour context)
     {
+        _context = context;
         _disappearingSpeed = disappearingSpeed;
     }
 
 
-    public IEnumerator Disappear(Transform transform)
+    public void Disappear()
     {
-        yield return new WaitForSeconds(_timeBeforeDisappearance);
+        Sequence sequence = DOTween.Sequence();
 
-        while (transform.localScale.x >= 0)
+        sequence.AppendInterval(_timeBeforeDisappearance);
+        sequence.Append(ScalePortal()).AppendCallback(() =>
         {
-            float temp = _disappearingSpeed * Time.deltaTime;
-            Vector3 disappearVector = new Vector2(temp, temp);
+            _context.gameObject.SetActive(false);
+        });
 
-            transform.localScale -= disappearVector;
-            yield return new WaitForFixedUpdate();
-        }        
+        _currentAnimation = sequence;
+    }
+
+
+    private Tween ScalePortal()
+    {
+        return _context.transform.DOScale(Vector3.zero, _disappearingSpeed).SetEase(Ease.OutQuint);
+
+    }
+
+
+    public void StopAndResetAnimation()
+    {
+        _currentAnimation?.Kill();
+
+        _context.gameObject.SetActive(true);
+        _context.transform.localScale = Vector3.one;
     }
 }

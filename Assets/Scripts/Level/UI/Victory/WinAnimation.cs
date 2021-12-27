@@ -20,7 +20,7 @@ public class WinAnimation : MonoBehaviour
     private readonly Vector2 _targetPosition = Vector2.zero;
 
 
-    public void ShowWinPanel()
+    public void Play()
     {
         Sequence sequence = DOTween.Sequence();
 
@@ -31,12 +31,12 @@ public class WinAnimation : MonoBehaviour
 
         sequence.onComplete = ()=>
         {
-            StartCoroutine(ActivateEffects());
+            StartCoroutine(ActivateStarEffects());
         };
     }
 
 
-    private IEnumerator ActivateEffects()
+    private IEnumerator ActivateStarEffects()
     {
         yield return StartCoroutine(_effects.ActivateEffects());
 

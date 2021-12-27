@@ -165,7 +165,6 @@ GameObject:
   - component: {fileID: 28804968566517129}
   - component: {fileID: 5893385115663150129}
   - component: {fileID: 1227438087}
-  - component: {fileID: 8603694968067530365}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -390,6 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a13f897438fd7ef4ca2070650cff90f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _swipeHandler: {fileID: 0}
 --- !u!114 &3482078419771039115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,6 +416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dust: {fileID: 4261842988577696831}
+  _trailRenderer: {fileID: 1101657790}
 --- !u!114 &5893385115663150129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,19 +443,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _swipeHandler: {fileID: 0}
---- !u!114 &8603694968067530365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2684562039941863183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64be41641856f594c8128a5df6c12c6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _trailRenderer: {fileID: 1101657790}
 --- !u!1 &2684562040544259670
 GameObject:
   m_ObjectHideFlags: 0

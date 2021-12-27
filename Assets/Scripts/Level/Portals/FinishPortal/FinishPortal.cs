@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
 using Zenject;
 
@@ -8,7 +7,13 @@ public class FinishPortal : MonoBehaviour
 {
     [SerializeField] private Character _character = null;
     [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
-    private readonly PortalDisappearance _portalDisappearance = new PortalDisappearance(0.5f);
+    private PortalDisappearance _portalDisappearance;
+
+
+    private void Start()
+    {
+        _portalDisappearance = new PortalDisappearance(5f, this);
+    }
 
 
     private void OnEnable()
@@ -21,15 +26,9 @@ public class FinishPortal : MonoBehaviour
     {
         _characterStatesPresenter.WinState.CharacterWon -= OnCharacterWon;
     }
-
+    
 
     private void OnCharacterWon()
-    {
-        StartCoroutine(PullCharacterToThePortal());
-    }
-
-
-    private IEnumerator PullCharacterToThePortal()
     {
         const float characterPullDuration = 2f;
         const float yOffset = 0.6f;
@@ -38,6 +37,6 @@ public class FinishPortal : MonoBehaviour
 
         _character.transform.DOMove(targetPosition, characterPullDuration);
 
-        yield return _portalDisappearance.Disappear(transform);
+        _portalDisappearance.Disappear();
     }
 }
