@@ -26,7 +26,7 @@ public class CameraCapture : MonoBehaviour
             captureTime = EvaluateCaptureTimeFunction(_targetRigidbody.velocity.magnitude);
         }
 
-        _mainCamera.position = Vector3.SmoothDamp(_mainCamera.position, GetNewPosition(), ref _velocity, captureTime);
+        _mainCamera.position = Vector3.SmoothDamp(_mainCamera.position, GetClampedPosition(), ref _velocity, captureTime);
     }
 
 
@@ -36,20 +36,18 @@ public class CameraCapture : MonoBehaviour
     }
 
 
-    private Vector3 GetNewPosition()
+    private Vector3 GetClampedPosition()
     {
-        Vector3 newCameraPosition = transform.position;
-        newCameraPosition.z = _mainCamera.transform.position.z;
-
-        _cameraClamping.ClampCamera(ref newCameraPosition);
-
-        return newCameraPosition;
+        Vector3 clampedPosition = _cameraClamping.Clamp(transform.position);
+        clampedPosition.z = _mainCamera.transform.position.z;
+        
+        return clampedPosition;
     }
 
 
     public void ResetCameraTransform()
     {
-        _mainCamera.position = GetNewPosition();
+        _mainCamera.position = GetClampedPosition();
         _mainCamera.rotation = transform.rotation;
     }
 }

@@ -11,7 +11,6 @@ public class CharacterStateMachine : MonoBehaviour, IRestartableComponent
 
     private void Start()
     {
-        Application.targetFrameRate = 150;
         _state = _characterStatesPresenter.IdleState;
     }
     

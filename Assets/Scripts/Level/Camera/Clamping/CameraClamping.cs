@@ -13,13 +13,15 @@ public class CameraClamping : MonoBehaviour
     }
 
 
-    public void ClampCamera(ref Vector3 position)
+    public Vector3 Clamp(Vector3 position)
     {
         position.x = Mathf.Clamp(position.x, _borders.Left, _borders.Right);
         position.y = Mathf.Clamp(position.y, _borders.Down, _borders.Top);
 
         TryCentreCameraAxis(_borders.Right, _borders.Left, ref position.x);
         TryCentreCameraAxis(_borders.Top, _borders.Down, ref position.y);
+
+        return position;
     }
 
 

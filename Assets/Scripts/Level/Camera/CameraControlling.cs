@@ -2,45 +2,33 @@
 
 
 [RequireComponent(typeof(CameraClamping))]
+[RequireComponent(typeof(CameraClamping))]
 public class CameraControlling : MonoBehaviour
 {
-    private readonly float _movingSpeed = 1f;
     private CameraClamping _cameraClamping;
+    private Camera _mainCamera;
+    private Vector3 _touchStartPosition;
 
 
     private void Start()
     {
+        _mainCamera = GetComponent<Camera>();
         _cameraClamping = GetComponent<CameraClamping>();
     }
     
 
-    private void LateUpdate()
+    private void Update()
     {
-        #if UNITY_EDITOR
         if (Input.GetMouseButton(0))
         {
-            Vector3 newCameraPosition = new Vector2(Input.GetAxis("Mouse X") , Input.GetAxis("Mouse Y")) * -100;
-            MoveCamera(ref newCameraPosition);
+            Vector3 worldTouchPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                _touchStartPosition = worldTouchPosition;
+            }
+
+            transform.position = _cameraClamping.Clamp(transform.position + (_touchStartPosition - worldTouchPosition));
         }
-
-        #else
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
-        {
-            Vector3 newCameraPosition = -Input.GetTouch(0).deltaPosition;
-            MoveCamera(ref newCameraPosition);
-        }
-        #endif  
-    }
-
-
-    private void MoveCamera(ref Vector3 newCameraPosition)
-    {
-        newCameraPosition *= _movingSpeed * Time.deltaTime;
-        newCameraPosition = transform.rotation * newCameraPosition;
-        newCameraPosition = transform.position + newCameraPosition;
-        newCameraPosition.z = transform.position.z;
-
-        _cameraClamping.ClampCamera(ref newCameraPosition);
-        transform.position = newCameraPosition;
     }
 }

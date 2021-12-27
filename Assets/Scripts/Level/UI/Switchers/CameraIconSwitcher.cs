@@ -18,9 +18,7 @@ public class CameraIconSwitcher : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 targetCameraPosition = transform.position;
-
-        _cameraClamping.ClampCamera(ref targetCameraPosition);
-        _cameraIcon.interactable = (targetCameraPosition - transform.position).magnitude <= _epsilon;
+        Vector3 clampedPosition = _cameraClamping.Clamp(transform.position);
+        _cameraIcon.interactable = (clampedPosition - transform.position).magnitude <= _epsilon;
     }
 }

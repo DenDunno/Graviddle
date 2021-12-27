@@ -22,12 +22,11 @@ public class TransitionsConditions
     public bool CheckDeathByLevelBorders()
     {
         const float levelDeathDistance = 20;
-        Vector3 position = _transform.position;
-        Vector3 clampedPosition = position;
 
-        _cameraClamping.ClampCamera(ref clampedPosition);
+        Vector3 currentPosition = _transform.position;
+        Vector3 clampedPosition = _cameraClamping.Clamp(currentPosition);
 
-        return Vector3.Distance(position, clampedPosition) >= levelDeathDistance;
+        return Vector3.Distance(currentPosition, clampedPosition) >= levelDeathDistance;
     }
 
 
