@@ -34,7 +34,6 @@ public class PortalDisappearance
     private Tween ScalePortal()
     {
         return _context.transform.DOScale(Vector3.zero, _disappearingSpeed).SetEase(Ease.OutQuint);
-
     }
 
 
