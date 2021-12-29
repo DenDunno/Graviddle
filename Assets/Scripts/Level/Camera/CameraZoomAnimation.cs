@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class CameraZoomAnimation : MonoBehaviour
 {
-    private readonly float _duration = 1f;
+    private readonly float _zoomOutDuration = 1f;
+    private readonly float _zoomInDuration = 0.75f;
 
-    private CameraBordersWithOrientation _borders;
     private Camera _camera;
-    private float _startCameraSize;
+    private CameraZoomPoints _zoomPoints;
+    private float _horizontalLevelCentre;
+    private float _verticalLevelCentre;
     
-    private float _horizontalLevelCentre => (_borders.Right + _borders.Left) / 2;
-    private float _verticalLevelCentre => (_borders.Top + _borders.Down) / 2;
 
-
-    public void Init(CameraBordersWithOrientation borders, Camera mainCamera)
+    public void Init(Camera mainCamera, CameraZoomPoints zoomPoints, LevelBorders borders)
     {
-        _borders = borders;
         _camera = mainCamera;
-        _startCameraSize = _camera.orthographicSize;
+        _zoomPoints = zoomPoints;
+        _horizontalLevelCentre = (borders.Right + borders.Left) / 2f;
+        _verticalLevelCentre = (borders.Top + borders.Down) / 2f;
     }
 
 
@@ -26,13 +26,9 @@ public class CameraZoomAnimation : MonoBehaviour
     {
         Sequence sequence = DOTween.Sequence();
 
-        const float cameraZoom = 1.5f;
-        float zoomFrom = _camera.orthographicSize;
-        float zoomTo = _camera.orthographicSize * cameraZoom;
-
-        sequence.Join(transform.DOMoveX(_horizontalLevelCentre, _duration));
-        sequence.Join(transform.DOMoveY(_verticalLevelCentre, _duration));
-        sequence.Join(ZoomCamera(zoomFrom, zoomTo));
+        sequence.Join(transform.DOMoveX(_horizontalLevelCentre, _zoomOutDuration));
+        sequence.Join(transform.DOMoveY(_verticalLevelCentre, _zoomOutDuration));
+        sequence.Join(ZoomCamera(_zoomPoints.GetCharacterZoom(), _zoomPoints.GetLevelZoom(), _zoomOutDuration));
 
         return sequence;
     }
@@ -40,12 +36,12 @@ public class CameraZoomAnimation : MonoBehaviour
 
     public Tween ZoomIn()
     {
-        return ZoomCamera(_camera.orthographicSize, _startCameraSize);
+        return ZoomCamera(_camera.orthographicSize, _zoomPoints.GetCharacterZoom(), _zoomInDuration);
     }
 
 
-    private Tween ZoomCamera(float zoomFrom, float zoomTo)
+    private Tween ZoomCamera(float zoomFrom, float zoomTo, float duration)
     {
-        return DOTween.To(x => _camera.orthographicSize = x, zoomFrom, zoomTo, _duration);
+        return DOTween.To(x => _camera.orthographicSize = x, zoomFrom, zoomTo, duration);
     }
 } 

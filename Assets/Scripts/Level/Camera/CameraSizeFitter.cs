@@ -4,15 +4,22 @@
 public class CameraSizeFitter
 {
     private readonly float _targetAspect = 1920 / 1080f;
+    private readonly Camera _mainCamera;
 
 
-    public void FitCameraSize(Camera camera)
+    public CameraSizeFitter(Camera mainCamera)
     {
-        float sizeFitter = _targetAspect / camera.aspect;
+        _mainCamera = mainCamera;
+    }
+
+
+    public void FitCameraSize()
+    {
+        float sizeFitter = _targetAspect / _mainCamera.aspect;
 
         if (sizeFitter < 1)
         {
-            camera.orthographicSize *= sizeFitter;
+            _mainCamera.orthographicSize *= sizeFitter;
         }
     }
 }

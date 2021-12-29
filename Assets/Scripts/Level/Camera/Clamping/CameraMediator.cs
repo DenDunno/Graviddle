@@ -7,20 +7,23 @@
 public class CameraMediator : MonoBehaviour
 {
     [SerializeField] private LevelBorders _levelBorders = null;
+    [SerializeField] private CameraZoom _cameraZoom = null;
 
 
     private void Start()
     {
-        var cameraSizeFitter = new CameraSizeFitter();
-        var borders = GetComponent<CameraBordersWithOrientation>();
+        var bordersWithOrientation = GetComponent<CameraBordersWithOrientation>();
         var mainCamera = GetComponent<Camera>();
         var cameraZoomAnimation = GetComponent<CameraZoomAnimation>();
+        var cameraZoomPoints = GetComponent<CameraZoomPoints>();
+        var cameraSizeFitter = new CameraSizeFitter(mainCamera);
 
-        cameraSizeFitter.FitCameraSize(mainCamera);
-
+        cameraSizeFitter.FitCameraSize();
         CameraClampingSettings settings = CameraClampingSettingsFactory.CreateClampingSettings(_levelBorders, mainCamera);
 
-        borders.Init(settings);
-        cameraZoomAnimation.Init(borders, mainCamera);
+        bordersWithOrientation.Init(settings);
+        cameraZoomAnimation.Init(mainCamera, cameraZoomPoints, _levelBorders);
+        cameraZoomPoints.Init(mainCamera, _levelBorders);
+        _cameraZoom.Init(mainCamera, cameraZoomPoints);
     }
 }

@@ -12,17 +12,13 @@ public abstract class CharacterFallingEventsHandler : MonoBehaviour
     private void Awake()
     {
         _transition = _transitionsPresenter.GetTransition(_states.FallState, _states.IdleState);
-    }
 
-
-    private void OnEnable()
-    {
         _states.FallState.CharacterFalling += OnCharacterStartFalling;
         _transition.TransitionHappened += OnCharacterEndFalling;
     }
 
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         _states.FallState.CharacterFalling -= OnCharacterStartFalling;
         _transition.TransitionHappened -= OnCharacterEndFalling;

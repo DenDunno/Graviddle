@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
 
 
-[RequireComponent(typeof(Camera))]
 public class CameraZoom : MonoBehaviour
 {
-    private Camera _mainCamera;
-    private readonly float _zoomSpeed = 2f;
+    private Camera _camera;
+    private CameraZoomPoints _zoomPoints;
+    private readonly float _zoomSpeed = 0.25f;
 
 
-    private void Start()
+    public void Init(Camera mainCamera, CameraZoomPoints zoomPoints)
     {
-        _mainCamera = GetComponent<Camera>();
+        _camera = mainCamera;
+        _zoomPoints = zoomPoints;
     }
 
 
@@ -47,7 +48,10 @@ public class CameraZoom : MonoBehaviour
 
     private void ZoomCamera(float zoomCoefficient)
     {
-        _mainCamera.orthographicSize += zoomCoefficient * _zoomSpeed * Time.deltaTime;
-        _mainCamera.orthographicSize = Mathf.Max(_mainCamera.orthographicSize, 1);
+        float characterZoom = _zoomPoints.GetCharacterZoom();
+        float levelZoom = _zoomPoints.GetCharacterZoom();
+
+        _camera.orthographicSize += zoomCoefficient * _zoomSpeed * Time.deltaTime;
+        _camera.orthographicSize = Mathf.Clamp(_camera.orthographicSize, characterZoom, levelZoom);
     }
 }

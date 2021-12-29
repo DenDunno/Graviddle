@@ -1,21 +1,13 @@
 ﻿using UnityEngine;
 
 
-[RequireComponent(typeof(CameraClamping))]
-[RequireComponent(typeof(CameraClamping))]
 public class CameraPanning : MonoBehaviour
 {
-    private CameraClamping _cameraClamping;
-    private Camera _mainCamera;
+    [SerializeField] private Camera _mainCamera = null;
+    [SerializeField] private CameraClamping _cameraClamping = null;
+
     private Vector3 _touchStartPosition;
 
-
-    private void Start()
-    {
-        _mainCamera = GetComponent<Camera>();
-        _cameraClamping = GetComponent<CameraClamping>();
-    }
-    
 
     private void Update()
     {
@@ -28,7 +20,10 @@ public class CameraPanning : MonoBehaviour
                 _touchStartPosition = worldTouchPosition;
             }
 
-            transform.position = _cameraClamping.Clamp(transform.position + (_touchStartPosition - worldTouchPosition));
+            Vector3 targetPosition = _mainCamera.transform.position + (_touchStartPosition - worldTouchPosition);
+            targetPosition.z = _mainCamera.transform.position.z;
+
+            _mainCamera.transform.position = _cameraClamping.Clamp(targetPosition);
         }
     }
 }
