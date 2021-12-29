@@ -49,7 +49,7 @@ public class CameraZoom : MonoBehaviour
     private void ZoomCamera(float zoomCoefficient)
     {
         float characterZoom = _zoomPoints.GetCharacterZoom();
-        float levelZoom = _zoomPoints.GetCharacterZoom();
+        float levelZoom = _zoomPoints.GetLevelZoom();
 
         _camera.orthographicSize += zoomCoefficient * _zoomSpeed * Time.deltaTime;
         _camera.orthographicSize = Mathf.Clamp(_camera.orthographicSize, characterZoom, levelZoom);

@@ -19,8 +19,8 @@ GameObject:
   - component: {fileID: 5363265090564427489}
   - component: {fileID: 3838364083597375495}
   - component: {fileID: 1271010650569364451}
-  - component: {fileID: 7574396224643408112}
   - component: {fileID: 2907073762294158516}
+  - component: {fileID: 7574396224643408112}
   - component: {fileID: 8578594374611672333}
   - component: {fileID: 9060857224600224795}
   m_Layer: 8
@@ -227,6 +227,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _swipeHandler: {fileID: 0}
+--- !u!114 &2907073762294158516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186545343902058747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 569e7eee347979443bb7350d804f5f67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _swipeHandler: {fileID: 0}
 --- !u!114 &7574396224643408112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,19 +258,6 @@ MonoBehaviour:
     _left: 0
     _right: 0
   _cameraZoom: {fileID: 0}
---- !u!114 &2907073762294158516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6186545343902058747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 569e7eee347979443bb7350d804f5f67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _swipeHandler: {fileID: 0}
 --- !u!114 &8578594374611672333
 MonoBehaviour:
   m_ObjectHideFlags: 0

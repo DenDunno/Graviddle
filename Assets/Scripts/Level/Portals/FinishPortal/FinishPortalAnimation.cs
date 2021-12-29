@@ -4,13 +4,12 @@
 public class FinishPortalAnimation : MonoBehaviour
 {
     [SerializeField] private AnimationCurve _motionCurve = null;
-
     private Vector3 _startPosition;
 
 
     private void Start()
     {
-        _startPosition = transform.position;
+        _startPosition = transform.localPosition;
 
         _motionCurve.postWrapMode = WrapMode.Loop;
         _motionCurve.preWrapMode = WrapMode.Loop;
@@ -19,6 +18,13 @@ public class FinishPortalAnimation : MonoBehaviour
 
     private void Update()
     {
-        transform.position = _startPosition + transform.up * _motionCurve.Evaluate(Time.time);
+        Vector3 offset = transform.up * _motionCurve.Evaluate(Time.time);
+
+        if (transform != transform.root)
+        {
+            offset = transform.root.rotation * offset;
+        }
+
+        transform.localPosition = _startPosition + offset;
     }
 }

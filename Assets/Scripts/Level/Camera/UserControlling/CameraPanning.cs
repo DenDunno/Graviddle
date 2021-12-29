@@ -7,23 +7,37 @@ public class CameraPanning : MonoBehaviour
     [SerializeField] private CameraClamping _cameraClamping = null;
 
     private Vector3 _touchStartPosition;
+    private bool _isUserZooming = false;
 
 
     private void Update()
     {
+        if (Input.touchCount > 1)
+        {
+            _isUserZooming = true;
+            return;
+        }
+
         if (Input.GetMouseButton(0))
         {
-            Vector3 worldTouchPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                _touchStartPosition = worldTouchPosition;
-            }
-
-            Vector3 targetPosition = _mainCamera.transform.position + (_touchStartPosition - worldTouchPosition);
-            targetPosition.z = _mainCamera.transform.position.z;
-
-            _mainCamera.transform.position = _cameraClamping.Clamp(targetPosition);
+            MoveCamera();
         }
+    }
+
+
+    private void MoveCamera()
+    {
+        Vector3 worldTouchPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+
+        if (Input.GetMouseButtonDown(0) || _isUserZooming)
+        {
+            _isUserZooming = false;
+            _touchStartPosition = worldTouchPosition;
+        }
+
+        Vector3 targetPosition = _mainCamera.transform.position + (_touchStartPosition - worldTouchPosition);
+        targetPosition.z = _mainCamera.transform.position.z;
+
+        _mainCamera.transform.position = _cameraClamping.Clamp(targetPosition);
     }
 }
