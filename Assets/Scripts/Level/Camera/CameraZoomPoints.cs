@@ -52,6 +52,14 @@ public class CameraZoomPoints : MonoBehaviour
             Algorithms.Swap(ref levelWidth, ref levelHeight);
         }
 
-        return levelHeight / 2f;
+        float levelZoom = levelHeight;
+        float predictedCameraWidth = levelZoom * _mainCamera.aspect;
+
+        if (levelWidth > predictedCameraWidth)
+        {
+            levelZoom = levelWidth / _mainCamera.aspect;
+        }
+
+        return levelZoom / 2f;
     }
 }
