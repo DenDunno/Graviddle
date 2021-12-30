@@ -15,7 +15,7 @@ public class CameraMediator : MonoBehaviour
         var bordersWithOrientation = GetComponent<CameraBordersWithOrientation>();
         var mainCamera = GetComponent<Camera>();
         var cameraZoomAnimation = GetComponent<CameraZoomAnimation>();
-        var cameraZoomPoints = GetComponent<CameraZoomPoints>();
+        var cameraZoomPoints = GetComponent<LevelZoomCalculator>();
         var cameraSizeFitter = new CameraSizeFitter(mainCamera);
 
         cameraSizeFitter.FitCameraSize();

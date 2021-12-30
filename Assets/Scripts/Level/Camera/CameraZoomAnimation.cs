@@ -5,20 +5,22 @@ using UnityEngine;
 public class CameraZoomAnimation : MonoBehaviour
 {
     private readonly float _zoomOutDuration = 1f;
-    private readonly float _zoomInDuration = 0.75f;
+    private readonly float _zoomInDuration = 0.5f;
 
     private Camera _camera;
-    private CameraZoomPoints _zoomPoints;
+    private LevelZoomCalculator _zoomCalculator;
     private float _horizontalLevelCentre;
     private float _verticalLevelCentre;
-    
+    private float _characterZoom;
 
-    public void Init(Camera mainCamera, CameraZoomPoints zoomPoints, LevelBorders borders)
+
+    public void Init(Camera mainCamera, LevelZoomCalculator zoomCalculator, LevelBorders borders)
     {
         _camera = mainCamera;
-        _zoomPoints = zoomPoints;
+        _zoomCalculator = zoomCalculator;
         _horizontalLevelCentre = (borders.Right + borders.Left) / 2f;
         _verticalLevelCentre = (borders.Top + borders.Down) / 2f;
+        _characterZoom = mainCamera.orthographicSize;
     }
 
 
@@ -28,7 +30,7 @@ public class CameraZoomAnimation : MonoBehaviour
 
         sequence.Join(transform.DOMoveX(_horizontalLevelCentre, _zoomOutDuration));
         sequence.Join(transform.DOMoveY(_verticalLevelCentre, _zoomOutDuration));
-        sequence.Join(ZoomCamera(_zoomPoints.GetCharacterZoom(), _zoomPoints.GetLevelZoom(), _zoomOutDuration));
+        sequence.Join(ZoomCamera(_characterZoom, _zoomCalculator.GetLevelZoom(), _zoomOutDuration));
 
         return sequence;
     }
@@ -36,7 +38,7 @@ public class CameraZoomAnimation : MonoBehaviour
 
     public Tween ZoomIn()
     {
-        return ZoomCamera(_camera.orthographicSize, _zoomPoints.GetCharacterZoom(), _zoomInDuration);
+        return ZoomCamera(_camera.orthographicSize, _characterZoom, _zoomInDuration);
     }
 
 

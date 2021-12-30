@@ -4,14 +4,16 @@
 public class CameraZoom : MonoBehaviour
 {
     private Camera _camera;
-    private CameraZoomPoints _zoomPoints;
+    private LevelZoomCalculator _levelZoomCalculator;
+    private float _characterZoom;
     private readonly float _zoomSpeed = 0.25f;
 
 
-    public void Init(Camera mainCamera, CameraZoomPoints zoomPoints)
+    public void Init(Camera mainCamera, LevelZoomCalculator zoomCalculator)
     {
         _camera = mainCamera;
-        _zoomPoints = zoomPoints;
+        _levelZoomCalculator = zoomCalculator;
+        _characterZoom = mainCamera.orthographicSize;
     }
 
 
@@ -48,10 +50,9 @@ public class CameraZoom : MonoBehaviour
 
     private void ZoomCamera(float zoomCoefficient)
     {
-        float characterZoom = _zoomPoints.GetCharacterZoom();
-        float levelZoom = _zoomPoints.GetLevelZoom();
+        float levelZoom = _levelZoomCalculator.GetLevelZoom();
 
         _camera.orthographicSize += zoomCoefficient * _zoomSpeed * Time.deltaTime;
-        _camera.orthographicSize = Mathf.Clamp(_camera.orthographicSize, characterZoom, levelZoom);
+        _camera.orthographicSize = Mathf.Clamp(_camera.orthographicSize, _characterZoom, levelZoom);
     }
 }

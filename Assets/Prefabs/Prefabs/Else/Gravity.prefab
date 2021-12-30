@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1060489503999396021}
   - component: {fileID: 6991333080862517845}
+  - component: {fileID: 6679627077589863444}
   m_Layer: 0
   m_Name: Gravity
   m_TagString: Untagged
@@ -44,3 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _swipeHandler: {fileID: 0}
+--- !u!114 &6679627077589863444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3367436769910571645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec7c11978bf16b146a038b824db931a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
