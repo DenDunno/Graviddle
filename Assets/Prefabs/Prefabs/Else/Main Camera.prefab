@@ -75,7 +75,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 823
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -239,7 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569e7eee347979443bb7350d804f5f67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _swipeHandler: {fileID: 0}
+  _gravityDirectionPresenter: {fileID: 0}
+  _isLevelWithFrame: 0
 --- !u!114 &7574396224643408112
 MonoBehaviour:
   m_ObjectHideFlags: 0

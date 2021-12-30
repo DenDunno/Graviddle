@@ -775,7 +775,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 25
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4599,7 +4599,6 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e7d7171d7afaa0e40bd862f322df4117, type: 2}
   - {fileID: 2100000, guid: e7d7171d7afaa0e40bd862f322df4117, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -9308,7 +9307,6 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3045710cfa63df4479db66c81a6b758c, type: 2}
   - {fileID: 2100000, guid: 3045710cfa63df4479db66c81a6b758c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -14066,7 +14064,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e7d7171d7afaa0e40bd862f322df4117, type: 2}
-  - {fileID: 2100000, guid: e7d7171d7afaa0e40bd862f322df4117, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18774,7 +18771,6 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3045710cfa63df4479db66c81a6b758c, type: 2}
   - {fileID: 2100000, guid: 3045710cfa63df4479db66c81a6b758c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
