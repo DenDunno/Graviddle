@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using System;
 
 
-[System.Serializable]
+[Serializable]
 public class ClosedPathMotionCalculator 
 {
     [SerializeField] private ClosedPathMotionConfig _motionConfig = null;

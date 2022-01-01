@@ -16,7 +16,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   showEditorMainBehavior:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   showEditorBloomBehavior:
     m_OverrideState: 1
     m_Value: 1
@@ -46,7 +46,7 @@ MonoBehaviour:
     m_Value: 0
   quality:
     m_OverrideState: 1
-    m_Value: 8
+    m_Value: 4
   antiFlickerMode:
     m_OverrideState: 1
     m_Value: 0
@@ -76,16 +76,16 @@ MonoBehaviour:
   bloomThreshold:
     m_OverrideState: 1
     m_Value:
-      minValue: 0.24844217
-      maxValue: 4.7696385
+      minValue: 1.1577811
+      maxValue: 9.455166
   bloomScattering:
     m_OverrideState: 1
-    m_Value: 7
+    m_Value: 10
     min: 1
     max: 10
   bloomIntensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 44.18
   allowLensSurface:
     m_OverrideState: 1
     m_Value: 0
@@ -289,15 +289,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   threshold:
     m_OverrideState: 1
-    m_Value: 0.9
+    m_Value: 2.26
     min: 0
   intensity:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 0.03
     min: 0
   scatter:
     m_OverrideState: 0

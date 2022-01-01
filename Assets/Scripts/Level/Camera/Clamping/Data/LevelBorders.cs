@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using System;
 
 
-[System.Serializable]
+[Serializable]
 public class LevelBorders
 {
     [SerializeField] private int _top = 0;
