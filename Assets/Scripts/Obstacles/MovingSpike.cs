@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 
-public class MovingSpike : MonoBehaviour, IObstacle
+public class MovingSpike : MonoBehaviour
 {
     [SerializeField] private float _coolDown = 2f;
     [SerializeField] private float _waitingTimeOnAwake = 0;

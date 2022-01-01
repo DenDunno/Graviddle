@@ -1,5 +1,6 @@
-﻿
+﻿using UnityEngine;
 
-public interface IObstacle
-{     
+
+public class Obstacle : MonoBehaviour
+{ 
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class Axe : MonoBehaviour, IRestartableComponent, IObstacle
+public class Axe : MonoBehaviour, IRestartableComponent
 {
     [SerializeField] private Rigidbody2D _rigidbody = null;
     

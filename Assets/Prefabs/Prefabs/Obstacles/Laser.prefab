@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -167,8 +167,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startSpeed:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 6
+      minMaxState: 0
+      scalar: 2
       minScalar: 3
       maxCurve:
         serializedVersion: 2
@@ -284,7 +284,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -660,7 +660,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 17
+    angle: 11.8
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -4830,7 +4830,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481856983}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.00799942, y: -0.27499962, z: -14.579156}
+  m_LocalPosition: {x: -0.00799942, y: -0.27499962, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5256950845343969605}
@@ -9582,7 +9582,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_RenderMode: 1
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -9867,6 +9867,7 @@ GameObject:
   - component: {fileID: 5256950845343969605}
   - component: {fileID: 5256950845343969606}
   - component: {fileID: 774627052018649667}
+  - component: {fileID: 6364685878723113891}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -9905,6 +9906,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843c7f7b0d99ddf4493b8e1975eee46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startWaitTime: 3
+  _workTime: 3
+  _coolDownTime: 3
+  _laserSwitcher:
+    _laserDistortion:
+      _lineRenderer: {fileID: 472431230735109204}
 --- !u!61 &774627052018649667
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9931,6 +9938,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.37, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &6364685878723113891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5256950845343969604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6c9161460d66245982cd251daa89fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7023235122408307177
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -32,7 +32,7 @@ public class TransitionsConditions
     }
 
 
-    public bool CheckDeathByObstacle() => _collisionsList.CheckComponent<IObstacle>();
+    public bool CheckDeathByObstacle() => _collisionsList.CheckComponent<Obstacle>();
 
     public bool CheckWin() => _collisionsList.CheckComponent<FinishPortal>();
 
