@@ -1,6 +1,6 @@
 ﻿
 
-public class LaserData
+public class LaserDistortionData
 {
     private readonly float MaxDistortion = 1f;
     private readonly float MinDistortion = 0.25f;
@@ -8,7 +8,7 @@ public class LaserData
     private readonly float MinDistortionSpeed = 1f;
 
 
-    public float GetNoiseDistortion(bool activate)
+    public float GetDistortion(bool activate)
     {
         return activate ? MinDistortion : MaxDistortion;
     }

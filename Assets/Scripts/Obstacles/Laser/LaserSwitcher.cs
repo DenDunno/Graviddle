@@ -8,21 +8,25 @@ using System;
 public class LaserSwitcher
 {
     [SerializeField] private LaserDistortion _laserDistortion = null;
-    private LaserData _laserData = new LaserData();
+    [SerializeField] private LaserParticlesSwitcher _laserParticlesSwitcher = null;
+    private LaserDistortionData _distortionData = new LaserDistortionData();
 
 
     public void Init(bool startOnAwake)
     {
         _laserDistortion.Init();
-        _laserDistortion.SetDistortion(_laserData.GetNoiseDistortion(startOnAwake));
+        _laserDistortion.SetDistortion(_distortionData.GetDistortion(startOnAwake));
+        _laserParticlesSwitcher.ToggleParticlesNow(startOnAwake);
     }
 
 
     public IEnumerator ToggleLaser(bool activateLaser)
     {
-        float targetDistortion = _laserData.GetNoiseDistortion(activateLaser);
-        float startDistortion = _laserData.GetNoiseDistortion(activateLaser == false);
-        float duration = _laserData.GetDistortionSpeed(activateLaser);
+        float targetDistortion = _distortionData.GetDistortion(activateLaser);
+        float startDistortion = _distortionData.GetDistortion(activateLaser == false);
+        float duration = _distortionData.GetDistortionSpeed(activateLaser);
+
+        _laserParticlesSwitcher.ToggleParticlesWithDelay(activateLaser);
 
         yield return DOTween.To(x => _laserDistortion.SetDistortion(x), startDistortion, targetDistortion, duration);
     }

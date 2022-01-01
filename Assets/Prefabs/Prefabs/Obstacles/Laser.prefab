@@ -9912,6 +9912,14 @@ MonoBehaviour:
   _laserSwitcher:
     _laserDistortion:
       _lineRenderer: {fileID: 472431230735109204}
+    _laserParticlesSwitcher:
+      _particles:
+      - {fileID: 7185288785305468085}
+      - {fileID: 7184879290051225557}
+      - {fileID: 7184889732066959577}
+      - {fileID: 7184991591347166461}
+      - {fileID: 53320991}
+      - {fileID: 481856985}
 --- !u!61 &774627052018649667
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10036,6 +10044,24 @@ Transform:
 --- !u!198 &7185288785305468085 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 198384018327815516, guid: dc10d8de8491f5643bc2f3dff05b8575,
+    type: 3}
+  m_PrefabInstance: {fileID: 7023235122408307177}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7184879290051225557 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198820872522423868, guid: dc10d8de8491f5643bc2f3dff05b8575,
+    type: 3}
+  m_PrefabInstance: {fileID: 7023235122408307177}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7184889732066959577 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198809324334766384, guid: dc10d8de8491f5643bc2f3dff05b8575,
+    type: 3}
+  m_PrefabInstance: {fileID: 7023235122408307177}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7184991591347166461 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198647575167575316, guid: dc10d8de8491f5643bc2f3dff05b8575,
     type: 3}
   m_PrefabInstance: {fileID: 7023235122408307177}
   m_PrefabAsset: {fileID: 0}
