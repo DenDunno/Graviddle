@@ -9978,7 +9978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843c7f7b0d99ddf4493b8e1975eee46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startWaitTime: 3
+  _startWaitTime: 0
   _workTime: 3
   _coolDownTime: 2
   _laserSwitcher: {fileID: 1498028666038171776}
@@ -9994,8 +9994,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9bbcf9641499d14cbca5e36bd46d785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _laserDistortion:
-    _lineRenderer: {fileID: 472431230735109204}
   _laserParticlesSwitcher:
     _particles:
     - {fileID: 7185288785305468085}
@@ -10004,6 +10002,9 @@ MonoBehaviour:
     - {fileID: 7184991591347166461}
     - {fileID: 53320991}
     - {fileID: 481856985}
+  _laserLineSwitcher:
+    _laserDistortion:
+      _lineRenderer: {fileID: 472431230735109204}
 --- !u!114 &561856248
 MonoBehaviour:
   m_ObjectHideFlags: 0
