@@ -38,6 +38,6 @@ public class LaserParticlesSwitcher
 
     private float GetDelayTime(bool activate)
     {
-        return activate ? 0.2f : 0.6f;
+        return activate ? 0.7f : 1f;
     } 
 }

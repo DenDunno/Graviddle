@@ -8,7 +8,7 @@ public class LaserRaycast : MonoBehaviour
     private readonly float _raycastDistance = 100f;
 
 
-    private void Start()
+    private void Update()
     {
         if (TryRaycast(out Vector2 hitPoint))
         {

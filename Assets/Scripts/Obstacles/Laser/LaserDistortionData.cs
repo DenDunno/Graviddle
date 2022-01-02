@@ -2,20 +2,20 @@
 
 public class LaserDistortionData
 {
-    private readonly float MaxDistortion = 1f;
-    private readonly float MinDistortion = 0.25f;
-    private readonly float MaxDistortionSpeed = 2f;
-    private readonly float MinDistortionSpeed = 1f;
+    private readonly float _maxDistortion = 1f;
+    private readonly float _minDistortion = 0.25f;
+    private readonly float _switchingOffDuration = 4f;
+    private readonly float _switchingOnDuration = 2f;
 
 
     public float GetDistortion(bool activate)
     {
-        return activate ? MinDistortion : MaxDistortion;
+        return activate ? _minDistortion : _maxDistortion;
     }
 
 
-    public float GetDistortionSpeed(bool activate)
+    public float GetDistortionDuration(bool activate)
     {
-        return activate ? MinDistortionSpeed : MaxDistortionSpeed;
+        return activate ? _switchingOnDuration : _switchingOffDuration;
     }
 }

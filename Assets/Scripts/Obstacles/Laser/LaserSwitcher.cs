@@ -4,12 +4,13 @@ using UnityEngine;
 using System;
 
 
-[Serializable]
-public class LaserSwitcher
+public class LaserSwitcher : MonoBehaviour
 {
     [SerializeField] private LaserDistortion _laserDistortion = null;
     [SerializeField] private LaserParticlesSwitcher _laserParticlesSwitcher = null;
     private LaserDistortionData _distortionData = new LaserDistortionData();
+
+    public event Action<bool> LaserToggled;
 
 
     public void Init(bool startOnAwake)
@@ -24,10 +25,13 @@ public class LaserSwitcher
     {
         float targetDistortion = _distortionData.GetDistortion(activateLaser);
         float startDistortion = _distortionData.GetDistortion(activateLaser == false);
-        float duration = _distortionData.GetDistortionSpeed(activateLaser);
+        float duration = _distortionData.GetDistortionDuration(activateLaser);
 
         _laserParticlesSwitcher.ToggleParticlesWithDelay(activateLaser);
 
-        yield return DOTween.To(x => _laserDistortion.SetDistortion(x), startDistortion, targetDistortion, duration);
+        yield return DOTween.To(x => _laserDistortion.SetDistortion(x), startDistortion, targetDistortion, duration)
+                            .WaitForCompletion();
+
+        LaserToggled?.Invoke(activateLaser);
     }
 }
