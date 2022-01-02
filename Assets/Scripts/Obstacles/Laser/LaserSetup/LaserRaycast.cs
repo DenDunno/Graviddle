@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class LaserRaycast : MonoBehaviour
 {
+    [SerializeField] private bool _updateRaycast = false;
     [SerializeField] private LaserSetup _laserSetup = null;
     [SerializeField] private LayerMask _layerMask = default;
     private readonly float _raycastDistance = 100f;
@@ -13,6 +14,7 @@ public class LaserRaycast : MonoBehaviour
         if (TryRaycast(out Vector2 hitPoint))
         {
             _laserSetup.Setup(hitPoint);
+            enabled = _updateRaycast;
         }
     }
 

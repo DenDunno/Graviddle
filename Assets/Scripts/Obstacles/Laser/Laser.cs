@@ -7,13 +7,18 @@ public class Laser : MonoBehaviour, IRestartableComponent
     [SerializeField] private float _startWaitTime = 0f;
     [SerializeField] private float _workTime = 3f;
     [SerializeField] private float _coolDownTime = 2f;
+    [SerializeField] private bool _infiniteWorking = false;
     [SerializeField] private LaserSwitcher _laserSwitcher = null;
     
 
     private void Start()
     {
         _laserSwitcher.Init(_startWaitTime == 0);
-        StartCoroutine(LaunchLaser());
+
+        if (_infiniteWorking == false)
+        {
+            StartCoroutine(LaunchLaser());
+        }
     }
 
 
@@ -38,8 +43,11 @@ public class Laser : MonoBehaviour, IRestartableComponent
 
     void IRestartableComponent.Restart()
     {
-        StopAllCoroutines();
-        _laserSwitcher.Restart(_startWaitTime == 0);
-        StartCoroutine(LaunchLaser());
+        if (_infiniteWorking == false)
+        {
+            StopAllCoroutines();
+            _laserSwitcher.Restart(_startWaitTime == 0);
+            StartCoroutine(LaunchLaser());
+        }
     }
 }

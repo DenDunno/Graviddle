@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1710841828302265979}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Centre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1710841828947799547}
   - component: {fileID: 1710841828947799548}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1710841829077471933}
   - component: {fileID: 1710841829077471934}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1710841829412895019}
   - component: {fileID: 1710841829412895020}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 1710841829445578974}
   - component: {fileID: 1710841829445578973}
   - component: {fileID: 1710841829445578961}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MovingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.012269855, y: 0.45705295}
+  m_Offset: {x: 0.009287119, y: 0.100970626}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -368,7 +368,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.8711512, y: 0.23313284}
+  m_Size: {x: 4.0028796, y: 0.8989409}
   m_EdgeRadius: 0
 --- !u!114 &1710841829445578972
 MonoBehaviour:
@@ -432,7 +432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1710841829781877439}
   - component: {fileID: 1710841829781877424}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -513,7 +513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1710841830010896997}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
