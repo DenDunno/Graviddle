@@ -9617,10 +9617,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7050641512576040390}
+  - component: {fileID: 247489892727479524}
   - component: {fileID: 472431230735109204}
   - component: {fileID: 2653063896201575155}
   - component: {fileID: 4118254482476650773}
-  - component: {fileID: 247489892727479524}
+  - component: {fileID: 8157628231166003007}
+  - component: {fileID: 5251285938987613177}
   m_Layer: 8
   m_Name: LaserBeam
   m_TagString: Untagged
@@ -9642,6 +9644,32 @@ Transform:
   m_Father: {fileID: 5256950845343969605}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &247489892727479524
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3026388363794124211}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.052031457, y: 2.9110875}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.39, y: 6.151828}
+  m_EdgeRadius: 0
 --- !u!120 &472431230735109204
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -9752,14 +9780,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e34857324df6764a89903a3e9199cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _laserDistance:
+  _laserLine:
     _lineRenderer: {fileID: 472431230735109204}
-    _boxCollider: {fileID: 247489892727479524}
-    _hitEffect: {fileID: 7185288785305468085}
-    _laserLightBulb: {fileID: 2618829533096775015}
   _effectsAdjuster:
     _sourceFlame: {fileID: 481856985}
     _sourceSparks: {fileID: 53320991}
+  _laserCollider: {fileID: 8157628231166003007}
+  _laserLightBulb: {fileID: 2618829533096775015}
+  _hitEffect: {fileID: 7185288785305468085}
 --- !u!114 &4118254482476650773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9776,32 +9804,32 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 512
---- !u!61 &247489892727479524
-BoxCollider2D:
+--- !u!114 &8157628231166003007
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3026388363794124211}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.052031457, y: 2.9110875}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.39, y: 6.151828}
-  m_EdgeRadius: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ece8a1a4f868045b194c5a5c59be9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boxCollider: {fileID: 247489892727479524}
+  _laserSwitcher: {fileID: 1498028666038171776}
+--- !u!114 &5251285938987613177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3026388363794124211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6c9161460d66245982cd251daa89fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5256950844646854724
 GameObject:
   m_ObjectHideFlags: 0
@@ -9896,7 +9924,6 @@ GameObject:
   - component: {fileID: 561856247}
   - component: {fileID: 5256950845343969606}
   - component: {fileID: 1498028666038171776}
-  - component: {fileID: 6364685878723113891}
   - component: {fileID: 561856248}
   m_Layer: 0
   m_Name: Laser
@@ -9977,18 +10004,6 @@ MonoBehaviour:
     - {fileID: 7184991591347166461}
     - {fileID: 53320991}
     - {fileID: 481856985}
---- !u!114 &6364685878723113891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5256950845343969604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec6c9161460d66245982cd251daa89fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &561856248
 MonoBehaviour:
   m_ObjectHideFlags: 0
