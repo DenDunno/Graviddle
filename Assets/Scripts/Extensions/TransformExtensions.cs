@@ -8,4 +8,11 @@ public static class TransformExtensions
         transform.position = position;
         transform.localPosition += (Vector3)offset;
     }
+
+
+    public static void SetPositionAndRotation(this Transform transform, Transform targetTransform)
+    {
+        transform.position = targetTransform.position;
+        transform.rotation = targetTransform.rotation;
+    }
 }

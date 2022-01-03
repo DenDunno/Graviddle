@@ -4,33 +4,24 @@
 public class TransitionsConditions
 {
     private readonly Transform _transform;
-    private readonly CameraClamping _cameraClamping;
+    private readonly LevelBorders _levelBorders;
     private readonly MoveDirection _moveDirection;
     private readonly CollisionsList _collisionsList;
     private readonly CharacterFeet _characterFeet;
 
 
-    public TransitionsConditions(Character character, CameraClamping cameraClamping)
+    public TransitionsConditions(Character character, LevelBorders levelBorders)
     {
         _transform = character.transform;
         _moveDirection = character.GetComponent<MoveDirection>();
         _collisionsList = character.GetComponent<CollisionsList>();
         _characterFeet = character.GetComponentInChildren<CharacterFeet>();
 
-        _cameraClamping = cameraClamping;
+        _levelBorders = levelBorders;
     }
 
 
-    public bool CheckDeathByLevelBorders()
-    {
-        const float levelDeathDistance = 20;
-
-        Vector3 currentPosition = _transform.position;
-        Vector3 clampedPosition = _cameraClamping.Clamp(currentPosition);
-
-        return Vector3.Distance(currentPosition, clampedPosition) >= levelDeathDistance;
-    }
-
+    public bool CheckDeathByLevelBorders() => _levelBorders.CheckIfPositionNotWithinTheLevel(_transform.position);
 
     public bool CheckDeathByObstacle() => _collisionsList.CheckComponent<Obstacle>();
 

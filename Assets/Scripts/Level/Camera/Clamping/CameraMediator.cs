@@ -15,15 +15,15 @@ public class CameraMediator : MonoBehaviour
         var bordersWithOrientation = GetComponent<CameraBordersWithOrientation>();
         var mainCamera = GetComponent<Camera>();
         var cameraZoomAnimation = GetComponent<CameraZoomAnimation>();
-        var cameraZoomPoints = GetComponent<LevelZoomCalculator>();
+        var levelZoomCalculator = GetComponent<LevelZoomCalculator>();
         var cameraSizeFitter = new CameraSizeFitter(mainCamera);
 
         cameraSizeFitter.FitCameraSize();
         CameraClampingSettings settings = CameraClampingSettingsFactory.CreateClampingSettings(_levelBorders, mainCamera);
 
         bordersWithOrientation.Init(settings);
-        cameraZoomAnimation.Init(mainCamera, cameraZoomPoints, _levelBorders);
-        cameraZoomPoints.Init(mainCamera, _levelBorders);
-        _cameraZoom.Init(mainCamera, cameraZoomPoints);
+        cameraZoomAnimation.Init(mainCamera, levelZoomCalculator, _levelBorders);
+        levelZoomCalculator.Init(mainCamera, _levelBorders);
+        _cameraZoom.Init(mainCamera, levelZoomCalculator);
     }
 }
