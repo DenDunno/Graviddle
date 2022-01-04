@@ -1744,7 +1744,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6474684939279548117
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2658,8 +2658,6 @@ MonoBehaviour:
   _viewPanel: {fileID: 7703816547368844523}
   _gameplayPanel: {fileID: 2923090187393191981}
   _activateCameraControlling: 1
-  _cameraPanning: {fileID: 7187854555643911181}
-  _cameraZoom: {fileID: 3127592106181637923}
   _zoomAnimation: {fileID: 0}
 --- !u!114 &6734755139209710088
 MonoBehaviour:
@@ -2677,8 +2675,6 @@ MonoBehaviour:
   _viewPanel: {fileID: 7703816547368844523}
   _gameplayPanel: {fileID: 2923090187393191981}
   _activateCameraControlling: 0
-  _cameraPanning: {fileID: 7187854555643911181}
-  _cameraZoom: {fileID: 3127592106181637923}
   _zoomAnimation: {fileID: 0}
 --- !u!1 &4963056787706363131
 GameObject:
