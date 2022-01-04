@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
 
-public class ArrowMovement : MonoBehaviour
+public class Arrow : MonoBehaviour
 {
-    private readonly float _speed = 15f;
+    private readonly float _speed = 10f;
 
 
     private void Update()

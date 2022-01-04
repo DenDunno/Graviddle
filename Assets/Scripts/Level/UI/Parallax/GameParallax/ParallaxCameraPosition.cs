@@ -7,8 +7,6 @@ public class ParallaxCameraPosition
 {
     [SerializeField] private Camera _mainCamera = null;
 
-    public float CameraMagnitude => _mainCamera.transform.position.magnitude;
-
 
     public float GetCameraPosition(GravityDirection gravityDirection)
     {

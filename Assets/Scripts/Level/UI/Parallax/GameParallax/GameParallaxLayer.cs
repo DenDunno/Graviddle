@@ -14,6 +14,7 @@ public class GameParallaxLayer : MonoBehaviour
 
     private void OnEnable()
     {
+        Application.targetFrameRate = 160;
         _swipeHandler.GravityChanged += OnGravityChanged;
     }
 
@@ -36,10 +37,9 @@ public class GameParallaxLayer : MonoBehaviour
 
     private Vector2 GetParallaxLayerPosition(float newCameraPosition)
     {
-        const float parallaxSpeed = 3.5f;
-
+        const float parallaxSpeed = 60f;
         float cameraDiffPosition = newCameraPosition - _lastCameraPosition;
-        float targetXParallaxPosition = cameraDiffPosition * _parallaxCameraPosition.CameraMagnitude * _parallaxEffect * parallaxSpeed;
+        float targetXParallaxPosition = cameraDiffPosition * _parallaxEffect * parallaxSpeed;
         targetXParallaxPosition = _layer.anchoredPosition.x - targetXParallaxPosition;
 
         _parallaxLayerClamping.ClampParallaxLayerPosition(ref targetXParallaxPosition);

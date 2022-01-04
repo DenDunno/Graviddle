@@ -17,7 +17,6 @@ public class ArrowSpawner : MonoBehaviour
         Arrow arrow = SpawnOrPopArrow();
         arrow.transform.SetPositionAndRotation(_spawnTransform);
         _updatingArrows.Enqueue(arrow);
-        arrow.Trail.ActivateTrail();
     }
 
 
@@ -27,9 +26,7 @@ public class ArrowSpawner : MonoBehaviour
         {
             if (_levelBorders.CheckIfPositionNotWithinTheLevel(_updatingArrows.Peek().transform.position))
             {
-                Arrow arrowToBePulled = _updatingArrows.Dequeue();
-                _arrowsPull.Push(arrowToBePulled);
-                arrowToBePulled.Trail.DeactivateTrail();
+                _arrowsPull.Push(_updatingArrows.Dequeue());
             }
         }
     }
@@ -37,6 +34,6 @@ public class ArrowSpawner : MonoBehaviour
 
     private Arrow SpawnOrPopArrow()
     {
-        return _arrowsPull.IsEmpty() ? Instantiate(_arrowPrefab) : _arrowsPull.Pop();
+        return _arrowsPull.IsEmpty() ? Instantiate(_arrowPrefab, transform) : _arrowsPull.Pop();
     }
 }

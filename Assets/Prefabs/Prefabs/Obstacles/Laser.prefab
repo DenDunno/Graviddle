@@ -9786,8 +9786,10 @@ MonoBehaviour:
     _sourceFlame: {fileID: 481856985}
     _sourceSparks: {fileID: 53320991}
   _laserCollider: {fileID: 8157628231166003007}
-  _laserLightBulb: {fileID: 2618829533096775015}
-  _hitEffect: {fileID: 7185288785305468085}
+  _laserHitObjectsPositions:
+    _laserLightBulb: {fileID: 2618829533096775015}
+    _hitEffect: {fileID: 7185288785305468085}
+    _isLightBulbInRight: 1
 --- !u!114 &4118254482476650773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9800,7 +9802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00a681bcae9aa64ab3f468968594060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _updateRaycast: 1
+  _updateRaycast: 0
   _laserSetup: {fileID: 2653063896201575155}
   _layerMask:
     serializedVersion: 2
@@ -9901,7 +9903,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: bb3a842e7073f774394a5234fac8364c, type: 3}
   m_Color: {r: 1, g: 0.07556346, b: 0, a: 1}
   m_FlipX: 0
@@ -9982,7 +9984,7 @@ MonoBehaviour:
   _startWaitTime: 0
   _workTime: 3
   _coolDownTime: 2
-  _infiniteWorking: 1
+  _infiniteWorking: 0
   _laserSwitcher: {fileID: 1498028666038171776}
 --- !u!114 &1498028666038171776
 MonoBehaviour:
