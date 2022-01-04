@@ -19,9 +19,10 @@ public class Restart : MonoBehaviour
     private void Start()
     {
         _backstage = GetComponent<Backstage>();
+        MonoBehaviour[] allComponents = FindObjectsOfType<MonoBehaviour>(true);
 
-        _restartableComponents = FindObjectsOfType<MonoBehaviour>().OfType<IRestartableComponent>();
-        _afterRestartComponents = FindObjectsOfType<MonoBehaviour>().OfType<IAfterRestartComponent>();
+        _restartableComponents = allComponents.OfType<IRestartableComponent>();
+        _afterRestartComponents = allComponents.OfType<IAfterRestartComponent>();
     }
 
 

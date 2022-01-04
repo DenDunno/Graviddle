@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class CameraZoom : MonoBehaviour
+public class CameraZoom : MonoBehaviour, IRestartableComponent
 {
     private Camera _camera;
     private LevelZoomCalculator _levelZoomCalculator;
@@ -54,5 +54,11 @@ public class CameraZoom : MonoBehaviour
 
         _camera.orthographicSize += zoomCoefficient * _zoomSpeed * Time.deltaTime;
         _camera.orthographicSize = Mathf.Clamp(_camera.orthographicSize, _characterZoom, levelZoom);
+    }
+
+
+    void IRestartableComponent.Restart()
+    {
+        _camera.orthographicSize = _characterZoom;
     }
 }

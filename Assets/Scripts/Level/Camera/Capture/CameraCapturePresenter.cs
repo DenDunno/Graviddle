@@ -31,5 +31,6 @@ public class CameraCapturePresenter : MonoBehaviour, IRestartableComponent
     void IRestartableComponent.Restart()
     {
         _targetCapture.ResetCameraTransform();
+        _targetCapture.enabled = true;
     }
 }

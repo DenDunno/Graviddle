@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class UIStatesSwitcher : MonoBehaviour
+public class UIStatesSwitcher : MonoBehaviour, IRestartableComponent
 {
     private UIState[] _allUIStates = null;
 
@@ -26,5 +26,11 @@ public class UIStatesSwitcher : MonoBehaviour
         {
             uiState.gameObject.SetActive(false);
         }
+    }
+
+    
+    void IRestartableComponent.Restart()
+    {
+        DeactivateStates();
     }
 }
