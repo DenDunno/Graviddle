@@ -1,52 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 
 
-public class TransitionsPresenter
+public class TransitionsPresenter : TransitionsPresenterBase
 {
-    private readonly Dictionary<CharacterState, List<Transition>> _transitionsForState =
-        new Dictionary<CharacterState, List<Transition>>();
+    private readonly UpdateTransitions _updateTransitions;
+    private readonly EventTransitions _eventTransitions;
 
 
-    public void AddTransition(CharacterState from, Func<bool> condition, CharacterState to)
+    public TransitionsPresenter(UpdateTransitions updateTransitions, EventTransitions eventTransitions)
     {
-        if (_transitionsForState.ContainsKey(from) == false)
-        {
-            _transitionsForState.Add(from, new List<Transition>());
-        }
-
-        _transitionsForState[from].Add(new Transition(from, condition, to));
+        _updateTransitions = updateTransitions;
+        _eventTransitions = eventTransitions;
     }
 
 
     public Transition GetTransition(CharacterState from, CharacterState to)
     {
-        Transition answer = _transitionsForState[from].FirstOrDefault(transition => transition.StateTo == to);
-
-        if (answer == null)
-        {
-            throw new ArgumentException();
-        }
-
-        return answer;
+        return _transitionsForState[from].FirstOrDefault(transition => transition.StateTo == to);
     }
 
 
     public bool TryTransit(CharacterState currentState, out CharacterState newState)
     {
-        newState = currentState;
-        
-        if (_transitionsForState.ContainsKey(currentState))
+        if (_updateTransitions.TryTransit(currentState, out newState))
         {
-            foreach (Transition transition in _transitionsForState[currentState])
-            {
-                if (transition.CheckCondition())
-                {
-                    newState = transition.StateTo;
-                    break;
-                }
-            }
+
         }
 
         return currentState != newState;
