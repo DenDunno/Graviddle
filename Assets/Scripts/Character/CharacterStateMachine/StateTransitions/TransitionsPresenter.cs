@@ -36,7 +36,7 @@ public class TransitionsPresenter
     public bool TryTransit(CharacterState currentState, out CharacterState newState)
     {
         newState = currentState;
-
+        
         if (_transitionsForState.ContainsKey(currentState))
         {
             foreach (Transition transition in _transitionsForState[currentState])

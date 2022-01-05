@@ -51,6 +51,7 @@ public class SceneTransit : MonoBehaviour
     private IEnumerator WaitWhileSceneLoading(int scene)
     {
         AsyncOperation sceneLoadingOperation = SceneManager.LoadSceneAsync(scene);
+        sceneLoadingOperation.allowSceneActivation = true;
         
         yield return new WaitWhile(() => sceneLoadingOperation.isDone == false);        
     }

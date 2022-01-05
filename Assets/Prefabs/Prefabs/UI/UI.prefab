@@ -665,7 +665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8778142729065809795
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2613,11 +2613,10 @@ GameObject:
   - component: {fileID: 2273698732136585216}
   - component: {fileID: 6719350920432864582}
   - component: {fileID: 3338124016982481123}
-  - component: {fileID: 4081839993368269570}
   - component: {fileID: 4131943435676740980}
-  - component: {fileID: 7859961782835689654}
   - component: {fileID: 4507998909532707473}
   - component: {fileID: 6734755139209710088}
+  - component: {fileID: 2263355505681809630}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -2766,21 +2765,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 5341167930685670404}
   _cameraCapturePresenter: {fileID: 0}
---- !u!114 &4081839993368269570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4963056786713715717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2701853068359fe4bbe874bf58205a24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _button: {fileID: 6604417598869749404}
-  _cameraCapturePresenter: {fileID: 0}
-  _capture: {fileID: 0}
 --- !u!114 &4131943435676740980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2796,21 +2780,6 @@ MonoBehaviour:
   _button: {fileID: 576678857234978283}
   _cameraCapturePresenter: {fileID: 0}
   _capture: {fileID: 0}
---- !u!114 &7859961782835689654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4963056786713715717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2701853068359fe4bbe874bf58205a24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _button: {fileID: 7805627283321026296}
-  _cameraCapturePresenter: {fileID: 0}
-  _capture: {fileID: 0}
 --- !u!114 &4507998909532707473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2824,8 +2793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 5341167930685670404}
-  _viewPanel: {fileID: 7703816547368844523}
-  _gameplayPanel: {fileID: 2923090187393191981}
+  _targetUI: {fileID: 7703816547368844523}
   _activateCameraControlling: 1
   _zoomAnimation: {fileID: 0}
 --- !u!114 &6734755139209710088
@@ -2841,10 +2809,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 576678857234978283}
-  _viewPanel: {fileID: 7703816547368844523}
-  _gameplayPanel: {fileID: 2923090187393191981}
+  _targetUI: {fileID: 2923090187393191981}
   _activateCameraControlling: 0
   _zoomAnimation: {fileID: 0}
+--- !u!114 &2263355505681809630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4963056786713715717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b5136f5f163634aa0c19edbd71782a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deathCollider: {fileID: 0}
 --- !u!1 &4963056787706363131
 GameObject:
   m_ObjectHideFlags: 0
@@ -5495,10 +5475,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _blurConfig: {fileID: 11400000, guid: 0c32db76616ab764e8ef4f6d946be474, type: 2}
   _effects: {fileID: 5326538439498126036}
-  _buttons:
-  - {fileID: 6891503042681577834}
-  - {fileID: 6891503042004876703}
-  - {fileID: 6891503042026673923}
   _levelScore: {fileID: 6891503043413075974}
   _translucentImage: {fileID: 4643044635907180206}
 --- !u!114 &6725604453867194703

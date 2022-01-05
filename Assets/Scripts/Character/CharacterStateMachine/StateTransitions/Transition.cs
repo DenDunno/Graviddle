@@ -5,7 +5,7 @@ public class Transition
 {
     public readonly CharacterState StateFrom;
     public readonly CharacterState StateTo;
-    private readonly Func<bool> TransitionCondition;
+    private readonly Func<bool> _transitionCondition;
 
     public event Action TransitionHappened;
 
@@ -13,14 +13,14 @@ public class Transition
     public Transition(CharacterState stateFrom, Func<bool> transitionCondition, CharacterState stateTo)
     {
         StateFrom = stateFrom;
-        TransitionCondition = transitionCondition;
         StateTo = stateTo;
+        _transitionCondition = transitionCondition;
     }
 
 
     public bool CheckCondition()
     {
-        bool transitionHappened = TransitionCondition();
+        bool transitionHappened = _transitionCondition();
 
         if (transitionHappened)
         {

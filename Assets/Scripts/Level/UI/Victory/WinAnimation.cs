@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using LeTai.Asset.TranslucentImage;
@@ -10,7 +8,6 @@ public class WinAnimation : MonoBehaviour
 {
     [SerializeField] private ScalableBlurConfig _blurConfig = null;
     [SerializeField] private WinEffects _effects = null;
-    [SerializeField] private List<Button> _buttons = null;
     [SerializeField] private Image _levelScore = null;
     [SerializeField] private TranslucentImage _translucentImage = null;
 
@@ -31,15 +28,7 @@ public class WinAnimation : MonoBehaviour
 
         sequence.onComplete = ()=>
         {
-            StartCoroutine(ActivateStarEffects());
+            StartCoroutine(_effects.ActivateEffects());
         };
-    }
-
-
-    private IEnumerator ActivateStarEffects()
-    {
-        yield return StartCoroutine(_effects.ActivateEffects());
-
-        _buttons.ForEach(button => button.interactable = true);
     }
 }
