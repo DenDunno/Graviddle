@@ -1,26 +1,24 @@
 ﻿using System;
 
 
-public class Transition
+public abstract class Transition
 {
     public readonly CharacterState StateFrom;
     public readonly CharacterState StateTo;
-    private readonly Func<bool> _transitionCondition;
 
     public event Action TransitionHappened;
 
 
-    public Transition(CharacterState stateFrom, Func<bool> transitionCondition, CharacterState stateTo)
+    protected Transition(CharacterState stateFrom, CharacterState stateTo)
     {
         StateFrom = stateFrom;
         StateTo = stateTo;
-        _transitionCondition = transitionCondition;
     }
 
 
-    public bool CheckCondition()
+    public virtual bool CheckIfTransitionHappened()
     {
-        bool transitionHappened = _transitionCondition();
+        bool transitionHappened = OnCheckTransition();
 
         if (transitionHappened)
         {
@@ -29,4 +27,8 @@ public class Transition
 
         return transitionHappened;
     }
+
+
+    public virtual void Clear() {}
+    protected abstract bool OnCheckTransition();
 }

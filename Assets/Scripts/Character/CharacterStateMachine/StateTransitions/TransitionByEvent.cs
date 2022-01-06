@@ -2,10 +2,21 @@
 using UnityEngine.Events;
 
 
-public class TransitionByEvent
+public class TransitionByEvent : Transition
 {
     private readonly List<UnityAction> _observableEvents = new List<UnityAction>();
     public bool EventHappened { get; private set; }
+
+
+    public TransitionByEvent(CharacterState stateFrom, CharacterState stateTo) : base(stateFrom, stateTo)
+    {
+    }
+
+
+    ~TransitionByEvent()
+    {
+        _observableEvents.ForEach(observableEvent => observableEvent -= SetEventFlag);
+    }
 
 
     public void AddEvent(UnityAction observableEvent)
@@ -15,20 +26,9 @@ public class TransitionByEvent
     }
 
 
-    private void SetEventFlag()
-    {
-        EventHappened = true;
-    }
+    private void SetEventFlag() => EventHappened = true;
 
+    public override void Clear() => EventHappened = false;
 
-    public void Clear()
-    {
-        EventHappened = false;
-    }
-
-
-    ~TransitionByEvent()
-    {
-        _observableEvents.ForEach(observableEvent => observableEvent -= SetEventFlag);
-    }
+    protected override bool OnCheckTransition() => EventHappened;
 }

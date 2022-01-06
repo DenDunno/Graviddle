@@ -1,32 +1,40 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
 
 
-public class TransitionsPresenter : TransitionsPresenterBase
+public class TransitionsPresenter
 {
-    private readonly UpdateTransitions _updateTransitions;
-    private readonly EventTransitions _eventTransitions;
+    private readonly Dictionary<CharacterState, List<Transition>> _transitionsForState = 
+        new Dictionary<CharacterState, List<Transition>>();
 
 
-    public TransitionsPresenter(UpdateTransitions updateTransitions, EventTransitions eventTransitions)
+    public void AddTransition(Transition transition)
     {
-        _updateTransitions = updateTransitions;
-        _eventTransitions = eventTransitions;
-    }
-
-
-    public Transition GetTransition(CharacterState from, CharacterState to)
-    {
-        return _transitionsForState[from].FirstOrDefault(transition => transition.StateTo == to);
-    }
-
-
-    public bool TryTransit(CharacterState currentState, out CharacterState newState)
-    {
-        if (_updateTransitions.TryTransit(currentState, out newState))
+        if (_transitionsForState.ContainsKey(transition.StateFrom) == false)
         {
-
+            _transitionsForState[transition.StateFrom] = new List<Transition>();
         }
 
-        return currentState != newState;
+        _transitionsForState[transition.StateFrom].Add(transition);
+    }
+
+
+    public TransitionResult Transit(CharacterState currentState)
+    {
+        var transitionResult = new TransitionResult();
+
+        if (_transitionsForState.ContainsKey(currentState))
+        {
+            foreach (Transition transition in _transitionsForState[currentState])
+            {
+                if (transition.CheckIfTransitionHappened())
+                {
+                    transitionResult = new TransitionResult(transition.StateTo);
+                    transition.Clear();
+                    break;
+                }
+            }
+        }
+
+        return transitionResult;
     }
 }

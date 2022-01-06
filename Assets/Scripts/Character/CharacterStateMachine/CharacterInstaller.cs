@@ -6,37 +6,21 @@ public class CharacterInstaller : MonoInstaller
 {
     [SerializeField] private Character _character = null;
     [SerializeField] private LevelBorders _levelBorders = null;
-    private TransitionsConditions _conditions;
 
 
     public override void InstallBindings()
     {
-        _conditions = new TransitionsConditions(_character, _levelBorders);
-        var characterStatesPresenter = new CharacterStatesPresenter(_character);
-        var transitionsPresenter = new TransitionsPresenter();
+        var conditions = new TransitionsConditions(_character, _levelBorders);
+        var characterStates = new CharacterStatesPresenter(_character);
 
-        FillTransitionsPresenter(transitionsPresenter, characterStatesPresenter);
+        TransitionsPresenter updateTransitions = UpdateTransitionsFactory.Create(conditions, characterStates);
+        TransitionsPresenter eventTransitions = UpdateTransitionsFactory.Create(conditions, characterStates);
 
-        Container.Bind<CharacterStatesPresenter>().FromInstance(characterStatesPresenter).AsSingle();
-        Container.Bind<TransitionsPresenter>().FromInstance(transitionsPresenter).AsSingle();
-    }
+        TransitionsPresenter[] transitionsPresenters = { eventTransitions, updateTransitions };
 
+        var transitionCheck = new TransitionCheck(transitionsPresenters);
 
-    private void FillTransitionsPresenter(TransitionsPresenter transitionsPresenter, CharacterStatesPresenter states)
-    {
-        transitionsPresenter.AddTransition(states.IdleState, _conditions.CheckDeathByObstacle, states.DieState);
-        transitionsPresenter.AddTransition(states.IdleState, _conditions.CheckIfRun, states.RunState);
-        transitionsPresenter.AddTransition(states.IdleState, _conditions.CheckIfFall, states.FallState);
-        transitionsPresenter.AddTransition(states.IdleState, _conditions.CheckWin, states.WinState);
-
-        transitionsPresenter.AddTransition(states.RunState, _conditions.CheckDeathByObstacle, states.DieState);
-        transitionsPresenter.AddTransition(states.RunState, _conditions.CheckIfFall, states.FallState);
-        transitionsPresenter.AddTransition(states.RunState, _conditions.CheckIfIdle, states.IdleState);
-        transitionsPresenter.AddTransition(states.RunState, _conditions.CheckWin, states.WinState);
-
-        transitionsPresenter.AddTransition(states.FallState, _conditions.CheckDeathByObstacle, states.DieState);
-        transitionsPresenter.AddTransition(states.FallState, _conditions.CheckDeathByLevelBorders, states.DieState);
-        transitionsPresenter.AddTransition(states.FallState, _conditions.CheckIfGrounded, states.IdleState);
-        transitionsPresenter.AddTransition(states.FallState, _conditions.CheckWin, states.WinState);
+        Container.Bind<CharacterStatesPresenter>().FromInstance(characterStates).AsSingle();
+        Container.Bind<TransitionCheck>().FromInstance(transitionCheck).AsSingle();
     }
 }

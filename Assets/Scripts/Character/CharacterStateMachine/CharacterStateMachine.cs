@@ -4,7 +4,7 @@ using Zenject;
 
 public class CharacterStateMachine : MonoBehaviour, IRestartableComponent
 {
-    [Inject] private TransitionsPresenter _transitionsPresenter = null;
+    [Inject] private TransitionCheck _transitionCheck = null;
     [Inject] private CharacterStatesPresenter _characterStatesPresenter = null;
     private CharacterState _state;
 
@@ -25,10 +25,17 @@ public class CharacterStateMachine : MonoBehaviour, IRestartableComponent
     private void Update()
     {
         _state.Update();
+        TryTransit();
+    }
 
-        if (_transitionsPresenter.TryTransit(_state, out CharacterState newState))
+
+    private void TryTransit()
+    {
+        TransitionResult transitionResult = _transitionCheck.Transit(_state);
+
+        if (transitionResult.TransitionHappened)
         {
-            SwitchState(newState);
+            SwitchState(transitionResult.NewState);
         }
     }
 
