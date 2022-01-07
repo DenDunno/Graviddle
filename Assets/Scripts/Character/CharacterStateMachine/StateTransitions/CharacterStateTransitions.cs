@@ -1,14 +1,25 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 
 public class CharacterStateTransitions
 {
     private readonly TransitionPresenter[] _transitionPresenters;
+    private ReadOnlyDictionary<CharacterState, List<Transition>> _allTransitions;
 
 
-    public CharacterStateTransitions(TransitionPresenter eventTransitionsPresenter, TransitionPresenter updateTransitionsPresenter)
+    public CharacterStateTransitions(TransitionPresenter eventTransitions, TransitionPresenter updateTransitions)
     {
-        _transitionPresenters = new[] { eventTransitionsPresenter, updateTransitionsPresenter };
+        _transitionPresenters = new[] { eventTransitions, updateTransitions };
+        var allTransitions = eventTransitions.Transitions.Merge(updateTransitions.Transitions);
+        _allTransitions = new ReadOnlyDictionary<CharacterState, List<Transition>>(allTransitions);
+    }
+
+
+    public Transition GetTransition(CharacterState stateFrom, CharacterState stateTo)
+    {
+        return _allTransitions[stateFrom].FirstOrDefault(transition => transition.StateTo == stateTo);
     }
 
 

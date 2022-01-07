@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 28804968566517129}
   - component: {fileID: 5893385115663150129}
   - component: {fileID: 1227438087}
+  - component: {fileID: 7708779537909998222}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -460,6 +461,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _swipeHandler: {fileID: 0}
+--- !u!114 &7708779537909998222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2684562039941863183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d1b5e7d817d74468b563d3cb6c1da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObstacleEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  FinishEntered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2684562040544259670
 GameObject:
   m_ObjectHideFlags: 0

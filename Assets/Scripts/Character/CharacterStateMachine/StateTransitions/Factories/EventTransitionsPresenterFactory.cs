@@ -1,38 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 
 [Serializable]
-public class EventTransitionsPresenterFactory
+public class EventTransitionsPresenterFactory : TransitionsPresenterFactory
 {
-    [SerializeField] private Button _restartButton = null;
-    private CharacterStatesPresenter _states;
+    [SerializeField] private TransitionsEvents _transitionsEvents = null;
 
 
-    public void Init(CharacterStatesPresenter states)
+    protected override List<Transition> GetTransitions()
     {
-        _states = states;
-    }
-
-
-    public TransitionPresenter Create()
-    {
-        var eventTransitionsForState = new TransitionPresenter();
-        var eventTransitions = new List<EventTransition>()
+        return new List<Transition>()
         {
-            new EventTransition(_states.IdleState, _states.DieState),
-            new EventTransition(_states.RunState, _states.DieState),
-            new EventTransition(_states.FallState, _states.DieState)
+            new EventTransition(_states.IdleState, _states.DieState, _transitionsEvents.Restart),
+            new EventTransition(_states.RunState, _states.DieState, _transitionsEvents.Restart),
+            new EventTransition(_states.FallState, _states.DieState, _transitionsEvents.Restart),
+
+            new EventTransition(_states.IdleState, _states.DieState, _transitionsEvents.ObstacleEntered),
+            new EventTransition(_states.RunState, _states.DieState, _transitionsEvents.ObstacleEntered),
+            new EventTransition(_states.FallState, _states.DieState, _transitionsEvents.ObstacleEntered),
+
+            new EventTransition(_states.IdleState, _states.WinState, _transitionsEvents.FinishEntered),
+            new EventTransition(_states.RunState, _states.WinState, _transitionsEvents.FinishEntered),
+            new EventTransition(_states.FallState, _states.WinState, _transitionsEvents.FinishEntered)
         };
-
-        foreach (EventTransition eventTransition in eventTransitions)
-        {
-            eventTransition.AddEvent(_restartButton.onClick);
-            eventTransitionsForState.AddTransition(eventTransition);
-        }
-
-        return eventTransitionsForState;
     }
 }

@@ -3,18 +3,20 @@
 
 public class TransitionPresenter
 {
-    private readonly Dictionary<CharacterState, List<Transition>> _transitionsForState =
+    private readonly Dictionary<CharacterState, List<Transition>> _transitions =
         new Dictionary<CharacterState, List<Transition>>();
+
+    public IReadOnlyDictionary<CharacterState, List<Transition>> Transitions => _transitions;
 
 
     public void AddTransition(Transition transition)
     {
-        if (_transitionsForState.ContainsKey(transition.StateFrom) == false)
+        if (_transitions.ContainsKey(transition.StateFrom) == false)
         {
-            _transitionsForState.Add(transition.StateFrom, new List<Transition>());
+            _transitions.Add(transition.StateFrom, new List<Transition>());
         }
 
-        _transitionsForState[transition.StateFrom].Add(transition);
+        _transitions[transition.StateFrom].Add(transition);
     }
 
 
@@ -22,9 +24,9 @@ public class TransitionPresenter
     {
         var transitionResult = new TransitionResult();
 
-        if (_transitionsForState.ContainsKey(currentState))
+        if (_transitions.ContainsKey(currentState))
         {
-            foreach (Transition transition in _transitionsForState[currentState])
+            foreach (Transition transition in _transitions[currentState])
             {
                 if (transition.CheckIfTransitionHappened(currentState))
                 {

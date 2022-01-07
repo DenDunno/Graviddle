@@ -14,9 +14,9 @@ public class CharacterInstaller : MonoInstaller
 
         _characterStatesTransitionsFactory.Init(_character, characterStates);
 
-        var transitionsPresenter = _characterStatesTransitionsFactory.Create();
+        CharacterStateTransitions characterStateTransitions = _characterStatesTransitionsFactory.Create();
 
         Container.Bind<CharacterStatesPresenter>().FromInstance(characterStates).AsSingle();
-        Container.Bind<CharacterStateTransitions>().FromInstance(transitionsPresenter).AsSingle();
+        Container.Bind<CharacterStateTransitions>().FromInstance(characterStateTransitions).AsSingle();
     }
 }

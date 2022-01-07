@@ -11,8 +11,9 @@ public class CharacterStatesTransitionsFactory
 
     public void Init(Character character, CharacterStatesPresenter states)
     {
-        _eventTransitionsPresenterFactory.Init(states);
-        _updateTransitionsPresenterFactory.Init(character, states);
+        _eventTransitionsPresenterFactory.SetStates(states);
+        _updateTransitionsPresenterFactory.SetStates(states);
+        _updateTransitionsPresenterFactory.CreateConditions(character);
     }
 
 
