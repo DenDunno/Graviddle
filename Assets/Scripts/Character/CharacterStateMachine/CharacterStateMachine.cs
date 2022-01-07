@@ -4,8 +4,8 @@ using Zenject;
 
 public class CharacterStateMachine : MonoBehaviour, IRestartableComponent
 {
-    [Inject] private TransitionCheck _transitionCheck = null;
-    [Inject] private CharacterStatesPresenter _characterStatesPresenter = null;
+    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
+    [Inject] private readonly CharacterStateTransitions _characterStateTransitions = null;
     private CharacterState _state;
 
 
@@ -31,7 +31,7 @@ public class CharacterStateMachine : MonoBehaviour, IRestartableComponent
 
     private void TryTransit()
     {
-        TransitionResult transitionResult = _transitionCheck.Transit(_state);
+        TransitionResult transitionResult = _characterStateTransitions.Transit(_state);
 
         if (transitionResult.TransitionHappened)
         {

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class TransitionsConditions
+public class UpdateTransitionsConditions
 {
     private readonly Transform _transform;
     private readonly LevelBorders _levelBorders;
@@ -10,7 +10,7 @@ public class TransitionsConditions
     private readonly CharacterFeet _characterFeet;
 
 
-    public TransitionsConditions(Character character, LevelBorders levelBorders)
+    public UpdateTransitionsConditions(Character character, LevelBorders levelBorders)
     {
         _transform = character.transform;
         _moveDirection = character.GetComponent<MoveDirection>();

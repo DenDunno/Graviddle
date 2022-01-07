@@ -18,7 +18,7 @@ public abstract class Transition
 
     public virtual bool CheckIfTransitionHappened()
     {
-        bool transitionHappened = OnCheckTransition();
+        bool transitionHappened = CheckTransition();
 
         if (transitionHappened)
         {
@@ -29,6 +29,5 @@ public abstract class Transition
     }
 
 
-    public virtual void Clear() {}
-    protected abstract bool OnCheckTransition();
+    protected abstract bool CheckTransition();
 }

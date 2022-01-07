@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 
 
-public class TransitionsPresenter
+public class TransitionPresenter
 {
-    private readonly Dictionary<CharacterState, List<Transition>> _transitionsForState = 
+    private readonly Dictionary<CharacterState, List<Transition>> _transitionsForState =
         new Dictionary<CharacterState, List<Transition>>();
 
 
@@ -11,7 +11,7 @@ public class TransitionsPresenter
     {
         if (_transitionsForState.ContainsKey(transition.StateFrom) == false)
         {
-            _transitionsForState[transition.StateFrom] = new List<Transition>();
+            _transitionsForState.Add(transition.StateFrom, new List<Transition>());
         }
 
         _transitionsForState[transition.StateFrom].Add(transition);
@@ -29,7 +29,6 @@ public class TransitionsPresenter
                 if (transition.CheckIfTransitionHappened())
                 {
                     transitionResult = new TransitionResult(transition.StateTo);
-                    transition.Clear();
                     break;
                 }
             }

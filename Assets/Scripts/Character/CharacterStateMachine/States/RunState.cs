@@ -8,7 +8,7 @@ public class RunState : CharacterState
     private readonly float _movementSpeed = 3f;
 
 
-    public RunState(Character character) : base(character , AnimationsName.Run)
+    public RunState(Character character) : base(character, AnimationsName.Run)
     {
         _transform = character.transform;
         _moveDirection = character.GetComponent<MoveDirection>();

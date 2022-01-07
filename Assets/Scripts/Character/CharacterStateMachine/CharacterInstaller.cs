@@ -5,22 +5,18 @@ using Zenject;
 public class CharacterInstaller : MonoInstaller
 {
     [SerializeField] private Character _character = null;
-    [SerializeField] private LevelBorders _levelBorders = null;
-
+    [SerializeField] private CharacterStatesTransitionsFactory _characterStatesTransitionsFactory = null;
+    
 
     public override void InstallBindings()
     {
-        var conditions = new TransitionsConditions(_character, _levelBorders);
         var characterStates = new CharacterStatesPresenter(_character);
 
-        TransitionsPresenter updateTransitions = UpdateTransitionsFactory.Create(conditions, characterStates);
-        TransitionsPresenter eventTransitions = UpdateTransitionsFactory.Create(conditions, characterStates);
+        _characterStatesTransitionsFactory.Init(_character, characterStates);
 
-        TransitionsPresenter[] transitionsPresenters = { eventTransitions, updateTransitions };
-
-        var transitionCheck = new TransitionCheck(transitionsPresenters);
+        var transitionsPresenter = _characterStatesTransitionsFactory.Create();
 
         Container.Bind<CharacterStatesPresenter>().FromInstance(characterStates).AsSingle();
-        Container.Bind<TransitionCheck>().FromInstance(transitionCheck).AsSingle();
+        Container.Bind<CharacterStateTransitions>().FromInstance(transitionsPresenter).AsSingle();
     }
 }

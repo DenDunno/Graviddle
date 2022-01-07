@@ -5,23 +5,24 @@ using UnityEngine.EventSystems;
 public class ButtonAnimation : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
     private float _verticalOffset = 8f;
+    private Vector2 _startPosition;
+
+
+    private void Start()
+    {
+        _startPosition = transform.position;
+    }
     
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        MoveButton(1);
+        transform.position +=  _verticalOffset * transform.up;
     }
 
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        MoveButton(-1);
-    }
-
-
-    private void MoveButton(int sign)
-    {
-        transform.position += sign * _verticalOffset * transform.up;
+        transform.position = _startPosition;
     }
 
 

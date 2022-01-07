@@ -6,7 +6,7 @@ public class DieState : CharacterState
     public event Action CharacterDied;
 
 
-    public DieState(Character character) : base(character , AnimationsName.Die)
+    public DieState(Character character) : base(character, AnimationsName.Die)
     {
     }
 

@@ -7,12 +7,12 @@ public abstract class CharacterState
     private readonly string _animationName;
 
 
-    protected CharacterState(Character character , string animationName)
+    protected CharacterState(Character character, string animationName)
     {
         _animator = character.GetComponent<Animator>();
         _animationName = animationName;
     }
-    
+
 
     public void Enter()
     {

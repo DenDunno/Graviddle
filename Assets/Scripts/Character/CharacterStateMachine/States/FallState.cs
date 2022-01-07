@@ -6,7 +6,7 @@ public class FallState : CharacterState
     public event Action CharacterFalling;
 
 
-    public FallState(Character character) : base(character , AnimationsName.Fall)
+    public FallState(Character character) : base(character, AnimationsName.Fall)
     {
     }
 
