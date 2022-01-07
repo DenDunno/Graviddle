@@ -1,10 +1,11 @@
 ﻿using UnityEngine.Events;
+using Zenject;
 
 
 public class EventTransition : Transition
 {
     private bool _eventHappened;
-    private static CharacterState _currentState;
+    [Inject] private CharacterState _currentState;
 
 
     public EventTransition(CharacterState stateFrom, CharacterState stateTo, UnityEvent unityEvent) 
@@ -23,9 +24,8 @@ public class EventTransition : Transition
     }
     
 
-    protected override bool CheckTransition(CharacterState currentState)
+    protected override bool CheckTransition()
     {
-        _currentState = currentState;
         bool eventHappened = _eventHappened;
 
         _eventHappened = false;

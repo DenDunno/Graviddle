@@ -9,6 +9,12 @@ public class TransitionPresenter
     public IReadOnlyDictionary<CharacterState, List<Transition>> Transitions => _transitions;
 
 
+    public void Init(CharacterStateMachine characterStateMachine)
+    {
+
+    }
+
+
     public void AddTransition(Transition transition)
     {
         if (_transitions.ContainsKey(transition.StateFrom) == false)
@@ -28,7 +34,7 @@ public class TransitionPresenter
         {
             foreach (Transition transition in _transitions[currentState])
             {
-                if (transition.CheckIfTransitionHappened(currentState))
+                if (transition.CheckIfTransitionHappened())
                 {
                     transitionResult = new TransitionResult(transition.StateTo);
                     break;

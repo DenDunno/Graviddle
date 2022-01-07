@@ -29,8 +29,8 @@ public class IconAnimation : MonoBehaviour, IPointerClickHandler
 
         for (int i = 0; i < _rotations; ++i)
         {
-            _sequence.Append(iconTransform.DOLocalRotate(-_rotationVector, _duration));
-            _sequence.Append(iconTransform.DOLocalRotate(_rotationVector, _duration));
+            _sequence.Append(iconTransform.DOLocalRotate(-_rotationVector, _duration)).SetRelative(true);
+            _sequence.Append(iconTransform.DOLocalRotate(_rotationVector, _duration)).SetRelative(true);
         }
 
         _sequence.Append(iconTransform.DOLocalRotate(Vector3.zero, _duration));

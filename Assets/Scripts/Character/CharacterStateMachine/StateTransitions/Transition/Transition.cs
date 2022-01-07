@@ -7,7 +7,7 @@ public abstract class Transition
     public readonly CharacterState StateTo;
 
     public event Action TransitionHappened;
-
+    
 
     protected Transition(CharacterState stateFrom, CharacterState stateTo)
     {
@@ -16,9 +16,9 @@ public abstract class Transition
     }
 
 
-    public virtual bool CheckIfTransitionHappened(CharacterState currentState)
+    public bool CheckIfTransitionHappened()
     {
-        bool transitionHappened = CheckTransition(currentState);
+        bool transitionHappened = CheckTransition();
 
         if (transitionHappened)
         {
@@ -29,5 +29,5 @@ public abstract class Transition
     }
 
 
-    protected abstract bool CheckTransition(CharacterState currentState);
+    protected abstract bool CheckTransition();
 }
