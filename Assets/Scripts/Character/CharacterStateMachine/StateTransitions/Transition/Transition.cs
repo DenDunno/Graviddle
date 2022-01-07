@@ -16,9 +16,9 @@ public abstract class Transition
     }
 
 
-    public virtual bool CheckIfTransitionHappened()
+    public virtual bool CheckIfTransitionHappened(CharacterState currentState)
     {
-        bool transitionHappened = CheckTransition();
+        bool transitionHappened = CheckTransition(currentState);
 
         if (transitionHappened)
         {
@@ -29,5 +29,5 @@ public abstract class Transition
     }
 
 
-    protected abstract bool CheckTransition();
+    protected abstract bool CheckTransition(CharacterState currentState);
 }

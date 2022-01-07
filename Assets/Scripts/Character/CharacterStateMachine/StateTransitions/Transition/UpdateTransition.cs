@@ -12,7 +12,7 @@ public class UpdateTransition : Transition
     }
 
 
-    protected override bool CheckTransition()
+    protected override bool CheckTransition(CharacterState currentState)
     {
         return _transitionCondition();
     }

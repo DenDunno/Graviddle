@@ -26,7 +26,7 @@ public class TransitionPresenter
         {
             foreach (Transition transition in _transitionsForState[currentState])
             {
-                if (transition.CheckIfTransitionHappened())
+                if (transition.CheckIfTransitionHappened(currentState))
                 {
                     transitionResult = new TransitionResult(transition.StateTo);
                     break;

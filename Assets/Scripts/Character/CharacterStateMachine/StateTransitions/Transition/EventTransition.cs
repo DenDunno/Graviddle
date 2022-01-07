@@ -4,6 +4,7 @@
 public class EventTransition : Transition
 {
     private bool _eventHappened;
+    private static CharacterState _currentState;
 
 
     public EventTransition(CharacterState stateFrom, CharacterState stateTo) : base(stateFrom, stateTo)
@@ -19,12 +20,16 @@ public class EventTransition : Transition
 
     private void TrySetEventFlag()
     {
-        _eventHappened = false;
+        if (_currentState == StateFrom)
+        {
+            _eventHappened = true;
+        }
     }
     
 
-    protected override bool CheckTransition()
+    protected override bool CheckTransition(CharacterState currentState)
     {
+        _currentState = currentState;
         bool eventHappened = _eventHappened;
 
         _eventHappened = false;
