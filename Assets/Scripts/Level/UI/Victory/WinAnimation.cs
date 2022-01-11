@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class WinAnimation : MonoBehaviour
 {
-    [SerializeField] private ScalableBlurConfig _blurConfig = null;
-    [SerializeField] private WinEffects _effects = null;
-    [SerializeField] private Image _levelScore = null;
-    [SerializeField] private TranslucentImage _translucentImage = null;
+    [SerializeField] private ScalableBlurConfig _blurConfig;
+    [SerializeField] private WinEffects _effects;
+    [SerializeField] private Image _levelScore;
+    [SerializeField] private TranslucentImage _translucentImage;
 
     private readonly float _animationDuration = 2f;
     private readonly float _startWaitTime = 0.5f;

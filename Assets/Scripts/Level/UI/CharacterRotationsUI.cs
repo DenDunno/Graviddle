@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterRotationsUI : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _characterRotationsText = null;
+    [SerializeField] private TextMeshProUGUI _characterRotationsText;
 
 
     public void UpdateRotationsUI(int rotations)

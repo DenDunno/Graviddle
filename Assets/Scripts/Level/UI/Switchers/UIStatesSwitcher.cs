@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class UIStatesSwitcher : MonoBehaviour, IRestartableComponent
 {
-    private UIState[] _allUIStates = null;
+    private UIState[] _allUIStates;
 
 
     private void Start()

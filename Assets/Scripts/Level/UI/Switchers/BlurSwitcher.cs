@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlurSwitcher : MonoBehaviour
 {
-    [SerializeField] private ScalableBlurConfig _blurConfig = null;
+    [SerializeField] private ScalableBlurConfig _blurConfig;
     private readonly float _targetBlur = 12f;
 
 

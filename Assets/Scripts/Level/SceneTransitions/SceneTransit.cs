@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class SceneTransit : MonoBehaviour
 {
-    [SerializeField] private Image _menuTransitionImage = null;
-    [SerializeField] private Image _levelTransitionImage = null;
+    [SerializeField] private Image _menuTransitionImage;
+    [SerializeField] private Image _levelTransitionImage;
 
     private readonly int _menuScenesCount = 2;
 

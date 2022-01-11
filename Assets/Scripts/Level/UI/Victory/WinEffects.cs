@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class WinEffects : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem[] _starsParticles = null;
-    [SerializeField] private ParticleSystem _sunEffect = null;
-    [SerializeField] private ParticleSystem _confetti = null;
-    [SerializeField] private Reward _reward = null;
+    [SerializeField] private ParticleSystem[] _starsParticles;
+    [SerializeField] private ParticleSystem _sunEffect;
+    [SerializeField] private ParticleSystem _confetti;
+    [SerializeField] private Reward _reward;
 
-    private float _starsCoolDown = 0;
+    private float _starsCoolDown;
 
 
     private void Start()

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(CameraClamping))]
 public class CameraIconSwitcher : MonoBehaviour
 {
-    [SerializeField] private Button _cameraIcon = null;
-    private CameraClamping _cameraClamping = null;
+    [SerializeField] private Button _cameraIcon;
+    private CameraClamping _cameraClamping;
     private readonly float _epsilon = 0.3f;
 
 

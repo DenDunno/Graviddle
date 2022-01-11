@@ -4,9 +4,9 @@ using Zenject;
 
 public class WinPanel : MonoBehaviour
 {
-    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
-    [SerializeField] private UIState _uiState = null;
-    [SerializeField] private WinAnimation _winAnimation = null;
+    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter;
+    [SerializeField] private UIState _uiState;
+    [SerializeField] private WinAnimation _winAnimation;
 
 
     private void OnEnable()

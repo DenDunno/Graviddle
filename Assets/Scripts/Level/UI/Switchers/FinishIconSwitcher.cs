@@ -4,7 +4,7 @@
 [RequireComponent(typeof(SpriteRenderer))]
 public class FinishIconSwitcher : MonoBehaviour
 {
-    [SerializeField] private GameObject _finishIcon = null;
+    [SerializeField] private GameObject _finishIcon;
     private SpriteRenderer _finishPortal;
 
 

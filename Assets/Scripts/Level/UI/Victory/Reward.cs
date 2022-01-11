@@ -5,8 +5,8 @@ public class Reward : MonoBehaviour
 {
     [SerializeField] private int _gold = 2;
     [SerializeField] private int _silver = 5;
-    [SerializeField] private CharacterRotations _characterRotations = null;
-    [SerializeField] private RewardListUI _rewardListUi = null;
+    [SerializeField] private CharacterRotations _characterRotations;
+    [SerializeField] private RewardListUI _rewardListUi;
 
 
     private void Start()
@@ -22,7 +22,7 @@ public class Reward : MonoBehaviour
 
     public int GetStars()
     {
-        int rotations = _characterRotations?.Rotations ?? 0;
+        int rotations = 2;
 
         if (rotations <= _gold)
         {

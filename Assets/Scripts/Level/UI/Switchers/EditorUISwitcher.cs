@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EditorUISwitcher : MonoBehaviour
 {
-    [SerializeField] private UIStatesSwitcher _uiStatesSwitcher = null;
+    [SerializeField] private UIStatesSwitcher _uiStatesSwitcher;
 
 
     private void Start()

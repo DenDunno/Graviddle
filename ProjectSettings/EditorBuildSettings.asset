@@ -8,34 +8,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu/Menu.unity
     guid: a488e42a5678dda4592bfd70170edb9c
-  - enabled: 1
-    path: "Assets/Scenes/Menu/Level\u0421hoice.unity"
-    guid: 2c12ce0a024f6b94e9c2613288813f0b
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Menu/Settings.unity
     guid: dfdf9db19a4a9df47b1a5f4516b04e44
-  - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial buttons.unity
-    guid: 62fcc9943cebfdf4a8f32618f09f58cd
-  - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial swipe.unity
-    guid: ed9044903848f6d4892126ec81247be0
-  - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial icons.unity
-    guid: ea727f8a92b4d654081e4123fac9cd10
-  - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial score.unity
-    guid: f8498c88be1e1e44cb1795ec5de8d2a5
-  - enabled: 1
-    path: Assets/Scenes/Levels/Level_1.unity
-    guid: 7ad1b59dba7c6ae47ad6a7ca8c14395d
-  - enabled: 1
-    path: Assets/Scenes/Levels/Level_X.unity
-    guid: abf3806dfda424c4d841e557aa2ff531
-  - enabled: 1
-    path: Assets/Scenes/Levels/Level_2.unity
-    guid: 465f6e6a99fc67a4c9292a5dc1d4d30f
-  - enabled: 1
-    path: Assets/Scenes/Levels/Level_3.unity
-    guid: 9876787b39fe04547a50d1648d8acb3c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

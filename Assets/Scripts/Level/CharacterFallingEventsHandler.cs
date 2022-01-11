@@ -4,8 +4,8 @@ using Zenject;
 
 public abstract class CharacterFallingEventsHandler : MonoBehaviour
 {
-    [Inject] private readonly CharacterStateTransitions _statesTransitions = null;
-    [Inject] private readonly CharacterStatesPresenter _states = null;
+    [Inject] private readonly CharacterStateTransitions _statesTransitions;
+    [Inject] private readonly CharacterStatesPresenter _states;
     private Transition _transition;
 
 

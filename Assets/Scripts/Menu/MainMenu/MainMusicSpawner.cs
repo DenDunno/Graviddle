@@ -3,7 +3,7 @@
 
 public class MainMusicSpawner : MonoBehaviour
 {
-    [SerializeField] private MainMusic _music = null;
+    [SerializeField] private MainMusic _music;
 
 
     private void Start() 
