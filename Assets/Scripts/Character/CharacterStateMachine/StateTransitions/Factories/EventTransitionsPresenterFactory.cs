@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public class EventTransitionsPresenterFactory : TransitionsPresenterFactory
 {
-    [SerializeField] private TransitionsEvents _transitionsEvents = null;
+    [SerializeField] private TransitionsEvents _transitionsEvents;
 
 
     protected override List<Transition> GetTransitions()

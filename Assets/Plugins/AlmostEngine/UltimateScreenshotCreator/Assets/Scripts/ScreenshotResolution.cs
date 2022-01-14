@@ -38,10 +38,10 @@ namespace AlmostEngine.Screenshot
 
 
 
-        public int m_PPI = 0;
+        public int m_PPI;
         [Tooltip("If the Screen.dpi device value returned by Unity is not equals to the real device screen dpi, " +
         "you can set this value to render the device content like it will be it on the device.")]
-        public int m_ForcedUnityPPI = 0;
+        public int m_ForcedUnityPPI;
 
         public Canvas m_DeviceCanvas;
 
@@ -60,7 +60,7 @@ namespace AlmostEngine.Screenshot
 
 
         [HideInInspector]
-        public bool m_IgnoreOrientation = false;
+        public bool m_IgnoreOrientation;
 
         public Rect m_SafeAreaPortrait;
         public Rect m_SafeAreaLandscapeLeft;

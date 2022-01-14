@@ -5,8 +5,8 @@ using System;
 
 public class LaserSwitcher : MonoBehaviour
 {
-    [SerializeField] private LaserParticlesSwitcher _laserParticlesSwitcher = null;
-    [SerializeField] private LaserLineSwitcher _laserLineSwitcher = null;
+    [SerializeField] private LaserParticlesSwitcher _laserParticlesSwitcher;
+    [SerializeField] private LaserLineSwitcher _laserLineSwitcher;
     private InvocationWithDelay _particlesTogglingWithDelay;
     private InvocationWithDelay _laserTogglingEventWithDelay;
 

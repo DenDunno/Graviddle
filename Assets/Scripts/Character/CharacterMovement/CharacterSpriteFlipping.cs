@@ -3,7 +3,7 @@
 
 public class CharacterSpriteFlipping : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer _spriteRenderer = null;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
 
 
     public void FlipCharacter(Movement movement)

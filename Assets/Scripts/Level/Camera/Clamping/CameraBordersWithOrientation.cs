@@ -3,7 +3,7 @@
 
 public class CameraBordersWithOrientation : MonoBehaviour
 {
-    [SerializeField] private SwipeHandler _swipeHandler = null;
+    [SerializeField] private SwipeHandler _swipeHandler;
     private CameraClampingSettings _cameraClampingSettings;
     private float _orientationOffset;
 

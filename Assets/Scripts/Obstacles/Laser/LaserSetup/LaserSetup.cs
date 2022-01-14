@@ -3,10 +3,10 @@
 
 public class LaserSetup : MonoBehaviour
 {
-    [SerializeField] private LaserLine _laserLine = null;
-    [SerializeField] private LaserSourceEffectsAdjuster _effectsAdjuster = null;
-    [SerializeField] private LaserCollider _laserCollider = null;
-    [SerializeField] private LaserHitObjectsPositions _laserHitObjectsPositions = null;
+    [SerializeField] private LaserLine _laserLine;
+    [SerializeField] private LaserSourceEffectsAdjuster _effectsAdjuster;
+    [SerializeField] private LaserCollider _laserCollider;
+    [SerializeField] private LaserHitObjectsPositions _laserHitObjectsPositions;
 
 
     public void Setup(Vector2 hitPoint)

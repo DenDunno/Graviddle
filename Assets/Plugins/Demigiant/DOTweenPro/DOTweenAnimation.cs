@@ -65,7 +65,7 @@ namespace DG.Tweening
         #endregion
 
         public bool targetIsSelf = true; // If FALSE allows to set the target manually
-        public GameObject targetGO = null; // Used in case targetIsSelf is FALSE
+        public GameObject targetGO; // Used in case targetIsSelf is FALSE
         // If TRUE always uses the GO containing this DOTweenAnimation (and not the one containing the target) as DOTween's SetTarget target
         public bool tweenTargetIsTargetGO = true;
 
@@ -78,7 +78,7 @@ namespace DG.Tweening
         public string id = "";
         public bool isRelative;
         public bool isFrom;
-        public bool isIndependentUpdate = false;
+        public bool isIndependentUpdate;
         public bool autoKill = true;
 
         public bool isActive = true;

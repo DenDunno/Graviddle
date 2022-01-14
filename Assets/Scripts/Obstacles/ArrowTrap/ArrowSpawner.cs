@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class ArrowSpawner : MonoBehaviour
 {
-    [SerializeField] private Arrow _arrowPrefab = null;
-    [SerializeField] private Transform _spawnTransform = null;
-    [SerializeField] private LevelBorders _levelBorders = null;
+    [SerializeField] private Arrow _arrowPrefab;
+    [SerializeField] private Transform _spawnTransform;
+    [SerializeField] private LevelBorders _levelBorders;
     private readonly Stack<Arrow> _arrowsPull = new Stack<Arrow>();
     private readonly Queue<Arrow> _updatingArrows = new Queue<Arrow>();
 

@@ -3,8 +3,8 @@
 
 public class LevelZoomCalculator : MonoBehaviour
 {
-    [SerializeField] private GravityDirectionPresenter _gravityDirectionPresenter = null;
-    [SerializeField] private bool _isLevelWithFrame = false;
+    [SerializeField] private GravityDirectionPresenter _gravityDirectionPresenter;
+    [SerializeField] private bool _isLevelWithFrame;
     private Camera _mainCamera;
     private LevelBorders _levelBorders;
 

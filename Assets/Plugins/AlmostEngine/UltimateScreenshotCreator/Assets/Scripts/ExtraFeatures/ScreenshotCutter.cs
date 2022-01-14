@@ -13,7 +13,7 @@ namespace AlmostEngine.Screenshot.Extra
     {
 
         public RectTransform m_SelectionArea;
-        public bool m_HideSelectionAreaDuringCapture = false;
+        public bool m_HideSelectionAreaDuringCapture;
         public int m_CropBorder = 1;
 
         void OnEnable()

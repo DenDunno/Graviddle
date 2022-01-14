@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CameraRotation : MonoBehaviour
 {
-    [SerializeField] private Character _character = null;
+    [SerializeField] private Character _character;
     private readonly float _speed = 7f;
 
 

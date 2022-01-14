@@ -11,7 +11,7 @@ namespace AlmostEngine.ExcludeFromBuildTool
     [System.Serializable]
     public class ExcludeFromBuildConfigAsset : ScriptableObject
     {
-        public bool m_AutoExclusionFromBuildEnabled = false;        
+        public bool m_AutoExclusionFromBuildEnabled;        
 
         public List<Object> m_ObjectsToExclude = new List<Object>();
         public List<string> m_FoldersToExclude = new List<string>();
@@ -21,7 +21,7 @@ namespace AlmostEngine.ExcludeFromBuildTool
         
         [HideInInspector]
         // Track the exclusion process to detect a non restored exclusion and restore the folders
-        public bool m_ExclusionProcessStarted = false;
+        public bool m_ExclusionProcessStarted;
     }
 }
 

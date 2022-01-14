@@ -3,7 +3,7 @@ namespace Zenject
     public abstract class InstallerBase : IInstaller
     {
         [Inject]
-        DiContainer _container = null;
+        DiContainer _container;
 
         protected DiContainer Container
         {

@@ -320,7 +320,7 @@ namespace AlmostEngine.Preview
         #region SIMULATION LOGIC
 
         [System.NonSerialized]
-        public bool m_IsSimulatingDevice = false;
+        public bool m_IsSimulatingDevice;
 
         void OnEnable()
         {

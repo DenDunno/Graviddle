@@ -7,7 +7,7 @@ using UnityEngine;
 [Serializable]
 public class BoolArray 
 {
-    [SerializeField] private List<bool> _boolArray = null;
+    [SerializeField] private List<bool> _boolArray;
 
     public bool this[int index] => _boolArray[index];
 }
@@ -16,7 +16,7 @@ public class BoolArray
 [Serializable]
 public class BoolMatrix : IEnumerable<BoolArray>
 {
-    [SerializeField] private List<BoolArray> _boolMatrix = null;
+    [SerializeField] private List<BoolArray> _boolMatrix;
 
 
     public IEnumerator<BoolArray> GetEnumerator()

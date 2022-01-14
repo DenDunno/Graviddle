@@ -27,8 +27,8 @@ namespace AlmostEngine.Screenshot
 
         #region CAPTURE PROCESS
 
-        public bool m_IsBurstActive = false;
-        public bool m_IsCapturing = false;
+        public bool m_IsBurstActive;
+        public bool m_IsCapturing;
 
         #endregion
 
@@ -411,12 +411,12 @@ namespace AlmostEngine.Screenshot
             m_IsBurstActive = false;
         }
 
-        ScreenshotComposer m_CurrentComposerInstance = null;
+        ScreenshotComposer m_CurrentComposerInstance;
 
 
 
 
-        public ScreenshotBatch m_CurrentBatch = null;
+        public ScreenshotBatch m_CurrentBatch;
         public string m_CurrentBatchName = "";
         protected IEnumerator UpdateCoroutine(List<ScreenshotResolution> resolutions, List<ScreenshotCamera> cameras, List<ScreenshotOverlay> overlays, bool export = true, bool playSoundMask = true, bool isPreview = false)
         {

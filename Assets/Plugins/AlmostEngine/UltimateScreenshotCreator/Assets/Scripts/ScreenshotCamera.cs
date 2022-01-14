@@ -18,7 +18,7 @@ namespace AlmostEngine.Screenshot
 
 		// Camera
 		public bool m_Active = true;
-		public Camera m_Camera = null;
+		public Camera m_Camera;
 
 		// Clear
 		public CustomSettings m_ClearSettings;

@@ -3,7 +3,7 @@
 
 public class Axe : MonoBehaviour, IRestartableComponent
 {
-    [SerializeField] private Rigidbody2D _rigidbody = null;
+    [SerializeField] private Rigidbody2D _rigidbody;
     
 
     void IRestartableComponent.Restart()

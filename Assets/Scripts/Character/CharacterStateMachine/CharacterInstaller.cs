@@ -4,8 +4,8 @@ using Zenject;
 
 public class CharacterInstaller : MonoInstaller
 {
-    [SerializeField] private Character _character = null;
-    [SerializeField] private CharacterStatesTransitionsFactory _characterStatesTransitionsFactory = null;
+    [SerializeField] private Character _character;
+    [SerializeField] private CharacterStatesTransitionsFactory _characterStatesTransitionsFactory;
     
 
     public override void InstallBindings()

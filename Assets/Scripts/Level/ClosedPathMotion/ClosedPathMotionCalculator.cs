@@ -5,7 +5,7 @@ using System;
 [Serializable]
 public class ClosedPathMotionCalculator 
 {
-    [SerializeField] private ClosedPathMotionConfig _motionConfig = null;
+    [SerializeField] private ClosedPathMotionConfig _motionConfig;
 
     private float _period;
     private float _time;    

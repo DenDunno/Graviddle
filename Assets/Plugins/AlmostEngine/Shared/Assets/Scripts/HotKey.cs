@@ -12,9 +12,9 @@ namespace AlmostEngine
 		/// </summary>
 		public class HotKey
 		{
-				public bool m_Shift = false;
-				public bool m_Control = false;
-				public bool m_Alt = false;
+				public bool m_Shift;
+				public bool m_Control;
+				public bool m_Alt;
 #if ENABLE_INPUT_SYSTEM && USC_INPUT_SYSTEM
 		public UnityEngine.InputSystem.Key m_NewInputKey = UnityEngine.InputSystem.Key.None;
 #endif

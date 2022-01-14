@@ -4,9 +4,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class CharacterRotationImpulse : MonoBehaviour
 {
-    [SerializeField] private SwipeHandler _swipeHandler = null;
+    [SerializeField] private SwipeHandler _swipeHandler;
     private Rigidbody2D _rigidbody;
-    private int _currentZRotation = 0;
+    private int _currentZRotation;
     private readonly int _straightAngle = 180;
     
 

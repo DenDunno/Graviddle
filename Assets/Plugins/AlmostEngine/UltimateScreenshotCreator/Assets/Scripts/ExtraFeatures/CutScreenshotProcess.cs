@@ -10,7 +10,7 @@ namespace AlmostEngine.Screenshot.Extra
     {
 
         public RectTransform m_SelectionArea;
-        public int m_Border = 0;
+        public int m_Border;
 
         public override void Process(ScreenshotResolution res)
         {

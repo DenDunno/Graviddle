@@ -13,7 +13,7 @@ namespace AlmostEngine.SimpleLocalization
 		#region Data
 
 		[HideInInspector]
-		public Texture m_OriginalTexture = null;
+		public Texture m_OriginalTexture;
 
 		[System.Serializable]
 		public class Localization :  SerializableDictionary<string, Texture>

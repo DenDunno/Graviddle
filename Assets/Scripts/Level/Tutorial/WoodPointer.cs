@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class WoodPointer : MonoBehaviour
 {
-    [SerializeField] private UIDissolve _dissolveImage = null;
-    [SerializeField] private float _waitTime = 0;
+    [SerializeField] private UIDissolve _dissolveImage;
+    [SerializeField] private float _waitTime;
 
     private void OnTriggerEnter2D(Collider2D collider2d)
     {

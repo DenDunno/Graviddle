@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(RectTransform))]
 public class MenuCharacterAnimation : MonoBehaviour
 {
-    [SerializeField] private RectTransform _canvas = null;
+    [SerializeField] private RectTransform _canvas;
     private RectTransform _transform;
     private readonly float _animationDuration = 2.625f;
     private readonly float _intervalBetweenAnimations = 0.7f;

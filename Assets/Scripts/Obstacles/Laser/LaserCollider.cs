@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class LaserCollider : MonoBehaviour
 {
-    [SerializeField] private BoxCollider2D _boxCollider = null;
-    [SerializeField] private LaserSwitcher _laserSwitcher = null;
+    [SerializeField] private BoxCollider2D _boxCollider;
+    [SerializeField] private LaserSwitcher _laserSwitcher;
 
 
     public void SetupColliderDistance(float laserDistance)

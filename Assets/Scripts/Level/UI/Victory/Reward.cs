@@ -22,7 +22,7 @@ public class Reward : MonoBehaviour
 
     public int GetStars()
     {
-        int rotations = 2;
+        int rotations = _characterRotations?.Rotations ?? 0;
 
         if (rotations <= _gold)
         {

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LevelButtonsUnlocker : MonoBehaviour
 {
-    [SerializeField] private LevelButton[] _allButtons = null;
+    [SerializeField] private LevelButton[] _allButtons;
     private readonly string _saves = "Saves";
     private readonly int _menuScenesCount = 3;
 

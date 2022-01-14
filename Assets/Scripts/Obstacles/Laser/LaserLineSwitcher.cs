@@ -7,7 +7,7 @@ using System;
 [Serializable]
 public class LaserLineSwitcher
 {
-    [SerializeField] private LaserDistortion _laserDistortion = null;
+    [SerializeField] private LaserDistortion _laserDistortion;
     private LaserDistortionData _distortionData = new LaserDistortionData();
     private Tween _switchingTween;
 

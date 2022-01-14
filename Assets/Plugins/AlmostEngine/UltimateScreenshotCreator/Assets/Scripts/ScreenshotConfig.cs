@@ -37,7 +37,7 @@ namespace AlmostEngine.Screenshot
         public string m_FileName = "{width}x{height}-screenshot";
 
         [Tooltip("Overwrite files or increment automatically the filenames.")]
-        public bool m_OverwriteFiles = false;
+        public bool m_OverwriteFiles;
 
         [Tooltip("Use PNG to create screenshots with a transparent background.")]
         public TextureExporter.ImageFileFormat m_FileFormat;
@@ -73,7 +73,7 @@ namespace AlmostEngine.Screenshot
 
         [Tooltip("Force alpha layer to be recomputed. This is a costly process. " +
         "Use only if you have alpha problems in RGBA mode.")]
-        public bool m_RecomputeAlphaLayer = false;
+        public bool m_RecomputeAlphaLayer;
 
         public enum ShotMode
         {
@@ -104,7 +104,7 @@ namespace AlmostEngine.Screenshot
 
 
         [Tooltip("When enabled, one screenshot is taken for each camera, to be used as independent layers for compositing.")]
-        public bool m_ExportToDifferentLayers = false;
+        public bool m_ExportToDifferentLayers;
 
         public List<ScreenshotCamera> m_Cameras = new List<ScreenshotCamera>();
 
@@ -328,7 +328,7 @@ namespace AlmostEngine.Screenshot
         [Tooltip("Capture or not the active UI Canvas.")]
         public bool m_CaptureActiveUICanvas = true;
         [Tooltip("When true, Canvas and UI elements that are not in any culling layers of the capture cameras will be disabled. Only work in custom camera mode.")]
-        public bool m_ForceUICullingLayer = false;
+        public bool m_ForceUICullingLayer;
         public List<ScreenshotOverlay> m_Overlays = new List<ScreenshotOverlay>();
 
         #endregion
@@ -406,14 +406,14 @@ namespace AlmostEngine.Screenshot
 
         #region PREVIEW
 
-        public bool m_ShowGuidesInPreview = false;
+        public bool m_ShowGuidesInPreview;
         public Canvas m_GuideCanvas;
         public Color m_GuidesColor = Color.white;
         public bool m_ShowPreview = true;
         public float m_PreviewSize = 1f;
 
         [Tooltip("If set to true, the camera and overlay settings will be applied when the application starts playing.")]
-        public bool m_PreviewInGameViewWhilePlaying = false;
+        public bool m_PreviewInGameViewWhilePlaying;
 
         #endregion
 

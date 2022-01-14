@@ -8,7 +8,7 @@ namespace NativeShareNamespace
 		public NativeShare.ShareResultCallback callback;
 
 		private NativeShare.ShareResult result = NativeShare.ShareResult.Unknown;
-		private string shareTarget = null;
+		private string shareTarget;
 
 		private bool resultReceived;
 

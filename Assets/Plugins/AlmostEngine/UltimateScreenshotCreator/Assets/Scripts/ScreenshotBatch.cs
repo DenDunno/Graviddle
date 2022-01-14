@@ -23,10 +23,10 @@ namespace AlmostEngine.Screenshot
             public int m_Id = -1;
         }
 
-        public bool m_OverrideActiveResolutions = false;
+        public bool m_OverrideActiveResolutions;
         public List<ActiveItem> m_ActiveResolutions = new List<ActiveItem>();
 
-        public bool m_OverrideActiveComposer = false;
+        public bool m_OverrideActiveComposer;
         public List<ActiveItem> m_ActiveCompositions = new List<ActiveItem>();
 
 

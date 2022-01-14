@@ -3,7 +3,7 @@
 
 public class GravityRotation : MonoBehaviour 
 {
-    [SerializeField] private SwipeHandler _swipeHandler = null;
+    [SerializeField] private SwipeHandler _swipeHandler;
 
     private readonly float _rotationSpeed = 3f;
     private Quaternion _targetRotation;

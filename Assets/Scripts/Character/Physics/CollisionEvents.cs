@@ -4,8 +4,8 @@ using UnityEngine.Events;
 
 public class CollisionEvents : MonoBehaviour
 {
-    public UnityEvent ObstacleEntered;
-    public UnityEvent FinishEntered;
+    [HideInInspector] public UnityEvent ObstacleEntered;
+    [HideInInspector] public UnityEvent FinishEntered;
 
 
     private void OnTriggerEnter2D(Collider2D collider2d)

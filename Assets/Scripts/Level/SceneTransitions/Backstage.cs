@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 public class Backstage : MonoBehaviour
 {
-    [SerializeField] private bool _useDissolve = false;
-    [SerializeField] private Image _image = null;
-    [SerializeField] private UIDissolve _dissolveImage = null;
+    [SerializeField] private bool _useDissolve;
+    [SerializeField] private Image _image;
+    [SerializeField] private UIDissolve _dissolveImage;
     [SerializeField] private float _fadingTime = 1f;
 
 

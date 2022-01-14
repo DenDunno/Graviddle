@@ -4,7 +4,7 @@
 [RequireComponent(typeof(RectTransform))]
 public class MenuParallaxLayer : MonoBehaviour
 {
-    [SerializeField] private float _speed = 0;
+    [SerializeField] private float _speed;
     private RectTransform _transform;
 
 

@@ -25,7 +25,7 @@ namespace AlmostEngine.Preview
         protected GUIStyle m_NameStyle;
         protected Vector2 m_ScrollviewPos;
         protected int m_WindowWidth;
-        public bool m_IsUpdating = false;
+        public bool m_IsUpdating;
 
 
         public static UnityAction onUpdateBeginDelegate = () =>
@@ -182,7 +182,7 @@ namespace AlmostEngine.Preview
             DeviceInfo.m_IsLivePreview = m_ConfigAsset.m_AutoRefresh;
         }
 
-        DateTime m_LastEditorUpdate = new DateTime();
+        DateTime m_LastEditorUpdate;
 
         void AutoRefresh()
         {
@@ -701,8 +701,8 @@ namespace AlmostEngine.Preview
 
         #region Serialize temp screenshots
 
-        protected bool m_Loading = false;
-        protected bool m_NeedsBackup = false;
+        protected bool m_Loading;
+        protected bool m_NeedsBackup;
 
         string m_TempFolder = "Temp_DevicePreview";
 

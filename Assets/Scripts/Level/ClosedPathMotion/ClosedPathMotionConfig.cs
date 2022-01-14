@@ -3,7 +3,7 @@
 
 public abstract class ClosedPathMotionConfig : MonoBehaviour
 {
-    [SerializeField] private float _inspectorSpeed = 0;
+    [SerializeField] private float _inspectorSpeed;
     protected float _speed => _inspectorSpeed;
 
 

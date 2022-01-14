@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ZoomClick : ButtonClick
 {
-    [SerializeField] private UIState _targetUI = null;
-    [SerializeField] private bool _activateCameraControlling = false;
-    [SerializeField] private CameraZoomAnimation _zoomAnimation = null;
+    [SerializeField] private UIState _targetUI;
+    [SerializeField] private bool _activateCameraControlling;
+    [SerializeField] private CameraZoomAnimation _zoomAnimation;
     
 
     protected override void OnButtonClick()
@@ -17,6 +17,6 @@ public class ZoomClick : ButtonClick
 
     private Tween PlayZoomAnimation()
     {
-        return _activateCameraControlling ? _zoomAnimation.ZoomOutAndMoveToCentre() : _zoomAnimation.ZoomIn();
+        return _activateCameraControlling ? _zoomAnimation.ZoomOut() : _zoomAnimation.ZoomIn();
     }
 }

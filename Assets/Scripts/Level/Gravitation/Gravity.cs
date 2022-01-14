@@ -3,7 +3,7 @@
 
 public class Gravity : MonoBehaviour, IRestartableComponent
 {
-    [SerializeField] private SwipeHandler _swipeHandler = null;
+    [SerializeField] private SwipeHandler _swipeHandler;
 
 
     private void Start()

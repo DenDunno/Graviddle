@@ -5,7 +5,7 @@ using System;
 [Serializable]
 public class LaserLine
 {
-    [SerializeField] private LineRenderer _lineRenderer = null;
+    [SerializeField] private LineRenderer _lineRenderer;
 
 
     public void SetupLineDistance(Vector2 startPosition, Vector2 hitPoint)

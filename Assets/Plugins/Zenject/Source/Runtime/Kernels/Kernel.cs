@@ -7,13 +7,13 @@ namespace Zenject
     public class Kernel : IInitializable, IDisposable, ITickable, ILateTickable, IFixedTickable, ILateDisposable
     {
         [InjectLocal]
-        TickableManager _tickableManager = null;
+        TickableManager _tickableManager;
 
         [InjectLocal]
-        InitializableManager _initializableManager = null;
+        InitializableManager _initializableManager;
 
         [InjectLocal]
-        DisposableManager _disposablesManager = null;
+        DisposableManager _disposablesManager;
 
         public virtual void Initialize()
         {

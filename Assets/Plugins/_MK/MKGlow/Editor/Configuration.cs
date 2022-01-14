@@ -35,44 +35,44 @@ namespace MK.Glow.Editor.InstallWizard
         internal bool showInstallerOnReload = true;
 
         [SerializeField][Space]
-        private Texture2D _titleImage = null;
+        private Texture2D _titleImage;
 
         [SerializeField][Space]
-        private Object _readMe = null;
+        private Object _readMe;
 
         [SerializeField][Space]
-        private Object _basePackageBuiltin = null;
+        private Object _basePackageBuiltin;
         [SerializeField]
-        private Object _basePackageLWRP = null;
+        private Object _basePackageLWRP;
         [SerializeField]
-        private Object _basePackageURP = null;
+        private Object _basePackageURP;
         [SerializeField]
-        private Object _basePackageHDRP = null;
+        private Object _basePackageHDRP;
 
         [SerializeField][Space]
-        private Object _examplesPackageInc = null;
+        private Object _examplesPackageInc;
         [SerializeField]
-        private Object _examplesPackageBuiltin = null;
+        private Object _examplesPackageBuiltin;
         [SerializeField]
-        private Object _examplesPackageLWRP = null;
+        private Object _examplesPackageLWRP;
         [SerializeField]
-        private Object _examplesPackageURP = null;
+        private Object _examplesPackageURP;
         [SerializeField]
-        private Object _examplesPackageHDRP = null;
+        private Object _examplesPackageHDRP;
         [SerializeField]
-        private Object _examplesPackageHDRP_2020_2_and_newer = null;
+        private Object _examplesPackageHDRP_2020_2_and_newer;
         [SerializeField]
-        private Object _examplesPackageHDRP_2021_2_and_newer = null;
+        private Object _examplesPackageHDRP_2021_2_and_newer;
 
         [SerializeField][Space]
-        private ExampleContainer[] _examples = null;
+        private ExampleContainer[] _examples;
 
         private static void LogAssetNotFoundError()
         {
             Debug.LogError("Could not find Install Wizard Configuration Asset, please try to import the package again.");
         }
 
-        private static Configuration _instance = null;
+        private static Configuration _instance;
         
         internal static Configuration TryGetInstance()
         {

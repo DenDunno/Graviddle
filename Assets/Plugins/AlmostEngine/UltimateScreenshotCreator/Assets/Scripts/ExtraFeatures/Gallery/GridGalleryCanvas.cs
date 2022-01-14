@@ -20,7 +20,7 @@ namespace AlmostEngine.Screenshot.Extra
 		#endregion
 
 		[HideInInspector]
-		public int m_CurrentPage = 0;
+		public int m_CurrentPage;
 
 		public virtual int MaxPages ()
 		{

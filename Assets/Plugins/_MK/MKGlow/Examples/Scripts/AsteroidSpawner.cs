@@ -15,14 +15,14 @@ namespace MK.Glow.Example
     {
         private static readonly float _spawnTime = 0.125f;
         [SerializeField]
-        private GameObject _asteroidObject = null;
+        private GameObject _asteroidObject;
 
         [SerializeField]
-        private int _maxObjects = 0;
+        private int _maxObjects;
 
-        private int _spawnedObjects = 0;
+        private int _spawnedObjects;
 
-        private float _time = 0;
+        private float _time;
 
         private void Update()
         {

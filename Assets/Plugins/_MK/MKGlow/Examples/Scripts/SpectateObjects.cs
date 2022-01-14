@@ -15,7 +15,7 @@ namespace MK.Glow.Example
     {
         [SerializeField]
         private GameObject[] _gameObjects = new GameObject[1];
-        private int _currentObject = 0;
+        private int _currentObject;
 
         public void SwitchObject()
         {

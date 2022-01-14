@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public abstract class ButtonClick : MonoBehaviour
 {
-    [SerializeField] private Button _button = null;
+    [SerializeField] private Button _button;
 
 
     public void OnEnable()

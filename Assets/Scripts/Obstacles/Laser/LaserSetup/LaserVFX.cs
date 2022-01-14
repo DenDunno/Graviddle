@@ -5,8 +5,8 @@ using System;
 [Serializable]
 public class LaserSourceEffectsAdjuster
 {
-    [SerializeField] private ParticleSystem _sourceFlame = null;
-    [SerializeField] private ParticleSystem _sourceSparks = null;
+    [SerializeField] private ParticleSystem _sourceFlame;
+    [SerializeField] private ParticleSystem _sourceSparks;
 
 
     public void ConfigureSourceEffects(float laserDistance)

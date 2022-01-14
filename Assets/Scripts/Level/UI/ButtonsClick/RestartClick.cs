@@ -3,7 +3,7 @@
 
 public class RestartClick : ButtonClick
 {
-    [SerializeField] private DeathCollider _deathCollider = null;
+    [SerializeField] private DeathCollider _deathCollider;
 
 
     protected override void OnButtonClick()

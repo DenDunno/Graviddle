@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour, IRestartableComponent
 {
-    [SerializeField] private float _startWaitTime = 0f;
+    [SerializeField] private float _startWaitTime;
     [SerializeField] private float _workTime = 3f;
     [SerializeField] private float _coolDownTime = 2f;
-    [SerializeField] private bool _infiniteWorking = false;
+    [SerializeField] private bool _infiniteWorking;
     [SerializeField] private bool _startOnAwake = true;
-    [SerializeField] private LaserSwitcher _laserSwitcher = null;
+    [SerializeField] private LaserSwitcher _laserSwitcher;
     
 
     private void Start()

@@ -9,19 +9,19 @@ namespace Zenject.ReflectionBaking
         bool _isEnabledInBuilds = true;
 
         [SerializeField]
-        bool _isEnabledInEditor = false;
+        bool _isEnabledInEditor;
 
         [SerializeField]
         bool _allGeneratedAssemblies = true;
 
         [SerializeField]
-        List<string> _includeAssemblies = null;
+        List<string> _includeAssemblies;
 
         [SerializeField]
-        List<string> _excludeAssemblies = null;
+        List<string> _excludeAssemblies;
 
         [SerializeField]
-        List<string> _namespacePatterns = null;
+        List<string> _namespacePatterns;
 
         public List<string> NamespacePatterns
         {

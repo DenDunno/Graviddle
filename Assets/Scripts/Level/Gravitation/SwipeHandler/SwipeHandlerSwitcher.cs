@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class SwipeHandlerSwitcher : CharacterFallingEventsHandler, IDragHandler
 {
-    [SerializeField] private SwipeHandler _swipeHandler = null;
+    [SerializeField] private SwipeHandler _swipeHandler;
 
 
     protected override void OnCharacterStartFalling()

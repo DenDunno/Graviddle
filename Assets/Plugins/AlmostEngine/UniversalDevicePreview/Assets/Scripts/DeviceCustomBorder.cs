@@ -24,7 +24,7 @@ namespace AlmostEngine.Examples.Preview
         };		
 		
 		[Tooltip ("When NOT is enabled, the constraints will be applied to every devices except those listed in the device list.")]
-        public bool m_NOT = false;
+        public bool m_NOT;
 		
 
         void Update()

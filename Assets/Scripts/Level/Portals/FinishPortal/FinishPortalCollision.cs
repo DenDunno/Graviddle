@@ -5,7 +5,7 @@ using Zenject;
 [RequireComponent(typeof(Collider2D))]
 public class FinishPortalCollision : MonoBehaviour, IRestartableComponent
 {
-    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
+    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter;
     private Collider2D _collider;
 
 

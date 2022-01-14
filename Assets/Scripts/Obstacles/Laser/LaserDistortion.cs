@@ -5,7 +5,7 @@ using System;
 [Serializable]
 public class LaserDistortion
 {
-    [SerializeField] private LineRenderer _lineRenderer = null;
+    [SerializeField] private LineRenderer _lineRenderer;
     private MaterialPropertyBlock _propertyBlock;
     private readonly string _noiseDistortionName = "_NoiseAmount";
     private readonly string _noisePowerName = "_NoisePower";

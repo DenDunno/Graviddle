@@ -31,14 +31,14 @@ namespace MPUIKIT {
         [SerializeField] private bool m_FlipHorizontal;
         [SerializeField] private bool m_FlipVertical;
 
-        [SerializeField] private Triangle m_Triangle = new Triangle();
-        [SerializeField] private Rectangle m_Rectangle = new Rectangle();
-        [SerializeField] private Circle m_Circle = new Circle();
-        [SerializeField] private Pentagon m_Pentagon = new Pentagon();
-        [SerializeField] private Hexagon m_Hexagon = new Hexagon();
-        [SerializeField] private NStarPolygon m_NStarPolygon = new NStarPolygon();
+        [SerializeField] private Triangle m_Triangle;
+        [SerializeField] private Rectangle m_Rectangle;
+        [SerializeField] private Circle m_Circle;
+        [SerializeField] private Pentagon m_Pentagon;
+        [SerializeField] private Hexagon m_Hexagon;
+        [SerializeField] private NStarPolygon m_NStarPolygon;
 
-        [SerializeField] private GradientEffect m_GradientEffect = new GradientEffect();
+        [SerializeField] private GradientEffect m_GradientEffect;
 
         #endregion
 

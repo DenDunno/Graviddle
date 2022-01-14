@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public class UpdateTransitionsPresenterFactory : TransitionsPresenterFactory
 {
-    [SerializeField] private LevelBorders _levelBorders = null;
+    [SerializeField] private LevelBorders _levelBorders;
     private UpdateTransitionsConditions _conditions;
 
 

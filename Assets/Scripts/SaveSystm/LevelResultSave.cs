@@ -7,8 +7,8 @@ using Zenject;
 
 public class LevelResultSave : MonoBehaviour
 {
-    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
-    [SerializeField] private Reward _reward = null;
+    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter;
+    [SerializeField] private Reward _reward;
     private string _saves = "Saves";
 
 

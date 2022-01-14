@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneChoice : MonoBehaviour
 {
-    [SerializeField] private SceneTransit _sceneTransit = null;
+    [SerializeField] private SceneTransit _sceneTransit;
 
 
     public void RestartLevel()

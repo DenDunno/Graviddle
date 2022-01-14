@@ -2576,8 +2576,6 @@ GameObject:
   - component: {fileID: 4963056786713715714}
   - component: {fileID: 2273698732136585216}
   - component: {fileID: 6719350920432864582}
-  - component: {fileID: 3338124016982481123}
-  - component: {fileID: 4131943435676740980}
   - component: {fileID: 4507998909532707473}
   - component: {fileID: 6734755139209710088}
   m_Layer: 0
@@ -2714,35 +2712,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiStatesSwitcher: {fileID: 6848271586011493877}
---- !u!114 &3338124016982481123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4963056786713715717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b19b5da2f4c0cb4ab4bfe9c50432f0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _button: {fileID: 5341167930685670404}
-  _cameraCapturePresenter: {fileID: 0}
---- !u!114 &4131943435676740980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4963056786713715717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2701853068359fe4bbe874bf58205a24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _button: {fileID: 576678857234978283}
-  _cameraCapturePresenter: {fileID: 0}
-  _capture: {fileID: 0}
 --- !u!114 &4507998909532707473
 MonoBehaviour:
   m_ObjectHideFlags: 0

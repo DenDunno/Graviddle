@@ -32,7 +32,7 @@ namespace Zenject.Tests.BindFeatures
         class TestImpl2
         {
             [Inject]
-            public List<Test1> tests = null;
+            public List<Test1> tests;
         }
 
         [Test]

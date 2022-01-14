@@ -14,7 +14,7 @@ namespace MPUIKIT.Editor
         private bool _softMAskSupport;
         private string _softMaskCgincLocation;
 
-        private GUIStyle boxStyle = null;
+        private GUIStyle boxStyle;
         private bool _error;
         private string _errorMessage;
 

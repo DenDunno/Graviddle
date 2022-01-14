@@ -5,7 +5,7 @@ using UnityEngine;
 [Serializable]
 public class ParallaxLayerClamping
 {
-    [SerializeField] private RectTransform _rectTransform = null;
+    [SerializeField] private RectTransform _rectTransform;
     private float _imageWidth => _rectTransform.rect.width;
 
 

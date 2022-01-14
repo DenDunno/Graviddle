@@ -13,7 +13,7 @@ namespace AlmostEngine.Screenshot
 	{
 
 		Texture2D m_TargetTexture;
-		bool m_DoCopy = false;
+		bool m_DoCopy;
 
 
 		public void CaptureCamera (Texture2D targetTexture)

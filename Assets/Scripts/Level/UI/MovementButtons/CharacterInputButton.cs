@@ -5,8 +5,8 @@ using UnityEngine.EventSystems;
 public class CharacterInputButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IBeginDragHandler 
 {
     [SerializeField] private Movement _movement = Movement.Stop;
-    [SerializeField] private MoveDirection _moveDirection = null;
-    [SerializeField] private CharacterSpriteFlipping _spriteFlipping = null;
+    [SerializeField] private MoveDirection _moveDirection;
+    [SerializeField] private CharacterSpriteFlipping _spriteFlipping;
 
 
     public void OnPointerDown(PointerEventData eventData)

@@ -4,8 +4,8 @@ using Zenject;
 
 public class FinishPortal : MonoBehaviour
 {
-    [SerializeField] private Character _character = null;
-    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
+    [SerializeField] private Character _character;
+    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter;
     private PortalDisappearance _portalDisappearance;
     private CharacterToPortalPulling _pullingAnimation;
 

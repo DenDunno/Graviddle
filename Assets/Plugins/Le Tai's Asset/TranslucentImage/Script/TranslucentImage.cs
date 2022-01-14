@@ -25,7 +25,7 @@ public partial class TranslucentImage : Image, IMeshModifier
     /// Brighten/darken them image
     /// </summary>
     [Tooltip("Brighten/darken them image")] [Range(-1, 1)]
-    public float brightness = 0;
+    public float brightness;
 
     /// <summary>
     /// Flatten the color behind to help keep contrast on varying background

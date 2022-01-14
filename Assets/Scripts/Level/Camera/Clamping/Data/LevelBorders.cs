@@ -3,10 +3,10 @@
 
 public class LevelBorders : MonoBehaviour
 {
-    [SerializeField] private int _top = 0;
-    [SerializeField] private int _down = 0;
-    [SerializeField] private int _left = 0;
-    [SerializeField] private int _right = 0;
+    [SerializeField] private int _top;
+    [SerializeField] private int _down;
+    [SerializeField] private int _left;
+    [SerializeField] private int _right;
 
     public int Top => _top;
     public int Down => _down;

@@ -3,7 +3,7 @@
 
 public class CameraSizeFitter
 {
-    private readonly float _targetAspect = 1920 / 1080f;
+    private const float _targetAspect = 1920 / 1080f;
     private readonly Camera _mainCamera;
 
 

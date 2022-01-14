@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class LaserLightBulb : MonoBehaviour
 {
-    [SerializeField] private LaserSwitcher _laserSwitcher = null;
-    [SerializeField] private Animator _animator = null;
+    [SerializeField] private LaserSwitcher _laserSwitcher;
+    [SerializeField] private Animator _animator;
     private readonly string _switchingOnAnimationName = "SwitchingOn";
     private readonly string _switchingOffAnimationName = "SwitchingOff";
 

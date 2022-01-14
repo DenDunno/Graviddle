@@ -52,7 +52,7 @@ namespace Zenject
 
         [FormerlySerializedAs("SceneName")]
         [SerializeField]
-        string _decoratedContractName = null;
+        string _decoratedContractName;
 
         DiContainer _container;
         readonly List<MonoBehaviour> _injectableMonoBehaviours = new List<MonoBehaviour>();

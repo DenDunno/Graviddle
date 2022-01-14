@@ -3,10 +3,10 @@
 
 public class CharacterRotations : MonoBehaviour, IAfterRestartComponent
 {
-    [SerializeField] private CharacterRotationsUI _rotationsUI = null;
-    [SerializeField] private SwipeHandler _swipeHandler = null;
+    [SerializeField] private CharacterRotationsUI _rotationsUI;
+    [SerializeField] private SwipeHandler _swipeHandler;
 
-    public int Rotations { get; private set; } = 0;
+    public int Rotations { get; private set; }
 
 
     private void OnEnable()

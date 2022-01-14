@@ -20,7 +20,7 @@ namespace MK.Glow.Example
         [SerializeField]
         private float _verticalSpeed = 5;
         [SerializeField]
-        private Transform _centerTransform = null;
+        private Transform _centerTransform;
 
         private void Update()
         {

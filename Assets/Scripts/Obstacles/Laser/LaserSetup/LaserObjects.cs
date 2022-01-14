@@ -5,8 +5,8 @@ using UnityEngine;
 [Serializable]
 public class LaserHitObjectsPositions
 {
-    [SerializeField] private LaserLightBulb _laserLightBulb = null;
-    [SerializeField] private ParticleSystem _hitEffect = null;
+    [SerializeField] private LaserLightBulb _laserLightBulb;
+    [SerializeField] private ParticleSystem _hitEffect;
     [SerializeField] private bool _isLightBulbInRight = true;
 
     private readonly Vector2 _hitEffectOffset = new Vector2(0.05f, -0.05f);

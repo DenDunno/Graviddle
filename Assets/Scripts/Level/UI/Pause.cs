@@ -3,7 +3,7 @@
 
 public class Pause : MonoBehaviour
 {
-    [SerializeField] private SceneTransit _sceneTransit = null;
+    [SerializeField] private SceneTransit _sceneTransit;
 
 
     public void ToggleTimeScale(bool active)

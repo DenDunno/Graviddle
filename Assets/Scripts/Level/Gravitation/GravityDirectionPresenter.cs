@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GravityDirectionPresenter : MonoBehaviour
 {
-    [SerializeField] private SwipeHandler _swipeHandler = null;
+    [SerializeField] private SwipeHandler _swipeHandler;
 
     public GravityDirection GravityDirection { get; private set; }
 

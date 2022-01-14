@@ -33,7 +33,7 @@ namespace Zenject
         ReflectionBakingCoverageModes _buildsReflectionBakingCoverageMode = ReflectionBakingCoverageModes.FallbackToDirectReflection;
 
         [SerializeField]
-        ZenjectSettings _settings = null;
+        ZenjectSettings _settings;
 
         DiContainer _container;
 

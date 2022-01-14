@@ -31,7 +31,7 @@ namespace AlmostEngine.ExcludeFromBuildTool
     {
         #region EXCLUSION METHODS
 
-        static ExcludeFromBuildConfigAsset config = null;
+        static ExcludeFromBuildConfigAsset config;
 
 
 

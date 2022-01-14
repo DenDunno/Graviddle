@@ -9,19 +9,19 @@ namespace Zenject.Tests.Signals
         static int CallCount;
 
         [Inject]
-        SignalBus _signalBus = null;
+        SignalBus _signalBus;
 
         [Inject]
-        Receiver1 _receiver1 = null;
+        Receiver1 _receiver1;
 
         [Inject]
-        Receiver2 _receiver2 = null;
+        Receiver2 _receiver2;
 
         [Inject]
-        TickableManager _tickManager = null;
+        TickableManager _tickManager;
 
         [InjectOptional]
-        Foo _foo = null;
+        Foo _foo;
 
         public override void Setup()
         {

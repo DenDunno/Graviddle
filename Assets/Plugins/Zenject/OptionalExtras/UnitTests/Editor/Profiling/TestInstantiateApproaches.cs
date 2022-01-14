@@ -61,13 +61,13 @@ namespace Zenject.Tests.Injection
         abstract class FooBaseBaked
         {
             [Inject]
-            public Test0 BaseFieldPublic = null;
+            public Test0 BaseFieldPublic;
 
             [Inject]
-            Test0 BaseFieldPrivate = null;
+            Test0 BaseFieldPrivate;
 
             [Inject]
-            protected Test0 BaseFieldProtected = null;
+            protected Test0 BaseFieldProtected;
 
             [Inject]
             public Test0 BasePropertyPublic
@@ -156,7 +156,7 @@ namespace Zenject.Tests.Injection
         [NoReflectionBaking]
         class FooDerivedBaked : FooBaseBaked
         {
-            public Test0 ConstructorParam = null;
+            public Test0 ConstructorParam;
 
             // Instance
             public FooDerivedBaked(Test0 param)
@@ -170,13 +170,13 @@ namespace Zenject.Tests.Injection
             }
 
             [Inject]
-            public Test0 DerivedFieldPublic = null;
+            public Test0 DerivedFieldPublic;
 
             [Inject]
-            Test0 DerivedFieldPrivate = null;
+            Test0 DerivedFieldPrivate;
 
             [Inject]
-            protected Test0 DerivedFieldProtected = null;
+            protected Test0 DerivedFieldProtected;
 
             [Inject]
             public Test0 DerivedPropertyPublic
@@ -263,13 +263,13 @@ namespace Zenject.Tests.Injection
         abstract class FooBaseNoBaking
         {
             [Inject]
-            public Test0 BaseFieldPublic = null;
+            public Test0 BaseFieldPublic;
 
             [Inject]
-            Test0 BaseFieldPrivate = null;
+            Test0 BaseFieldPrivate;
 
             [Inject]
-            protected Test0 BaseFieldProtected = null;
+            protected Test0 BaseFieldProtected;
 
             [Inject]
             public Test0 BasePropertyPublic
@@ -306,7 +306,7 @@ namespace Zenject.Tests.Injection
         [NoReflectionBaking]
         class FooDerivedNoBaking : FooBaseNoBaking
         {
-            public Test0 ConstructorParam = null;
+            public Test0 ConstructorParam;
 
             // Instance
             public FooDerivedNoBaking(Test0 param)
@@ -320,13 +320,13 @@ namespace Zenject.Tests.Injection
             }
 
             [Inject]
-            public Test0 DerivedFieldPublic = null;
+            public Test0 DerivedFieldPublic;
 
             [Inject]
-            Test0 DerivedFieldPrivate = null;
+            Test0 DerivedFieldPrivate;
 
             [Inject]
-            protected Test0 DerivedFieldProtected = null;
+            protected Test0 DerivedFieldProtected;
 
             [Inject]
             public Test0 DerivedPropertyPublic

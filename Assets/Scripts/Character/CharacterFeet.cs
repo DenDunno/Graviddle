@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CharacterFeet : MonoBehaviour
 {
-    [SerializeField] private CollisionsList _centralFeetPart = null;
-    [SerializeField] private CollisionsList[] _sideFeetParts = null;
+    [SerializeField] private CollisionsList _centralFeetPart;
+    [SerializeField] private CollisionsList[] _sideFeetParts;
 
 
     public bool CheckIfGrounded()

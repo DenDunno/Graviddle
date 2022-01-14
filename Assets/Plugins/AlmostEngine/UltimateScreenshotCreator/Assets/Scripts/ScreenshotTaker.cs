@@ -67,7 +67,7 @@ namespace AlmostEngine.Screenshot
 #endif
 
         [HideInInspector]
-        public static bool m_IsRunning = false;
+        public static bool m_IsRunning;
         List<ScreenshotCamera> m_Cameras = new List<ScreenshotCamera>();
         List<ScreenshotCamera> m_SceneCameras = new List<ScreenshotCamera>();
         List<ScreenshotOverlay> m_Overlays = new List<ScreenshotOverlay>();

@@ -5,8 +5,8 @@ using UnityEngine;
 [Serializable]
 public class CharacterStatesTransitionsFactory
 {
-    [SerializeField] private EventTransitionsPresenterFactory _eventTransitionsPresenterFactory = null;
-    [SerializeField] private UpdateTransitionsPresenterFactory _updateTransitionsPresenterFactory = null;
+    [SerializeField] private EventTransitionsPresenterFactory _eventTransitionsPresenterFactory;
+    [SerializeField] private UpdateTransitionsPresenterFactory _updateTransitionsPresenterFactory;
 
 
     public void Init(Character character, CharacterStatesPresenter states)

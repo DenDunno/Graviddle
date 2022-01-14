@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class GameParallaxLayer : MonoBehaviour
 {
-    [SerializeField] private ParallaxCameraPosition _parallaxCameraPosition = null;
-    [SerializeField] private ParallaxLayerClamping _parallaxLayerClamping = null;
-    [SerializeField] [Range(0, 1)] private float _parallaxEffect = 0;
-    [SerializeField] private SwipeHandler _swipeHandler = null;
-    [SerializeField] private RectTransform _layer = null;
+    [SerializeField] private ParallaxCameraPosition _parallaxCameraPosition;
+    [SerializeField] private ParallaxLayerClamping _parallaxLayerClamping;
+    [SerializeField] [Range(0, 1)] private float _parallaxEffect;
+    [SerializeField] private SwipeHandler _swipeHandler;
+    [SerializeField] private RectTransform _layer;
     private GravityDirection _gravityDirection;
     private float _lastCameraPosition;
 

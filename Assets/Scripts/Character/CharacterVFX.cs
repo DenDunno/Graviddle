@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class CharacterVFX : CharacterFallingEventsHandler, IRestartableComponent
 {
-    [SerializeField] private ParticleSystem _dust = null;
-    [SerializeField] private TrailRenderer _trailRenderer = null;
+    [SerializeField] private ParticleSystem _dust;
+    [SerializeField] private TrailRenderer _trailRenderer;
 
 
     protected override void OnCharacterStartFalling()

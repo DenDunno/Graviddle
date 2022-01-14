@@ -26,7 +26,7 @@ namespace Zenject.Tests.Other
             }
 
             [Inject]
-            public Test0 _testC = null;
+            public Test0 _testC;
 
             public Test1(Test0 test1, Test0 test2, Test0 test3, Test0 test4)
             {
@@ -51,7 +51,7 @@ namespace Zenject.Tests.Other
             }
 
             [Inject]
-            public Test1 _testC = null;
+            public Test1 _testC;
 
             public Test2(Test1 test1, Test1 test2, Test1 test3, Test1 test4)
             {

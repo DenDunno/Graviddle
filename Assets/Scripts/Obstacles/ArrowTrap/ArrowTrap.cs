@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArrowTrap : ArrowTrapBase
 {
-    [SerializeField] private ArrowSpawner _arrowSpawner = null;
+    [SerializeField] private ArrowSpawner _arrowSpawner;
 
 
     protected override IEnumerator OnShoot()

@@ -68,7 +68,7 @@ namespace LeTai.Asset.TranslucentImage.Demo
         public float rotationLerpTime = 0.01f;
 
         [Tooltip("Whether or not to invert our Y axis for mouse input to rotation.")]
-        public bool invertY = false;
+        public bool invertY;
 
         void OnEnable()
         {

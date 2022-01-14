@@ -5,8 +5,8 @@ using Zenject;
 
 public class CharacterTransparency : MonoBehaviour, IRestartableComponent, IAfterRestartComponent
 {
-    [SerializeField] private SpriteRenderer _spriteRenderer = null;
-    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter;
     private SpriteTransparencyPresenter _spriteTransparencyPresenter;
 
 

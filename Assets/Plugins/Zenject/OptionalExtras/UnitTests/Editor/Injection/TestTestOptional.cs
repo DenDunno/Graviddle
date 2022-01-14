@@ -13,13 +13,13 @@ namespace Zenject.Tests.Injection
         class Test2
         {
             [Inject]
-            public Test1 val1 = null;
+            public Test1 val1;
         }
 
         class Test3
         {
             [InjectOptional]
-            public Test1 val1 = null;
+            public Test1 val1;
         }
 
         class Test0

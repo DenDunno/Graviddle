@@ -14,13 +14,13 @@
     public class DecoratableMonoKernel : IDecoratableMonoKernel
     {
         [InjectLocal] 
-        public TickableManager TickableManager { get; protected set; } = null;
+        public TickableManager TickableManager { get; protected set; }
 
         [InjectLocal]
-        public InitializableManager InitializableManager { get; protected set; } = null;
+        public InitializableManager InitializableManager { get; protected set; }
 
         [InjectLocal]
-        public DisposableManager DisposablesManager { get; protected set; } = null;
+        public DisposableManager DisposablesManager { get; protected set; }
         
         
         public virtual bool ShouldInitializeOnStart() => true;

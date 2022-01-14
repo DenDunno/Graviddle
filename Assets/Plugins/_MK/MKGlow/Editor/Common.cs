@@ -22,8 +22,8 @@ namespace MK.Glow.Editor.InstallWizard
     public class ExampleContainer
     {
         public string name = "";
-        public UnityEngine.Object scene = null;
-        public UnityEngine.Texture2D icon = null;
+        public UnityEngine.Object scene;
+        public UnityEngine.Texture2D icon;
 
         public void DrawEditorButton()
         {

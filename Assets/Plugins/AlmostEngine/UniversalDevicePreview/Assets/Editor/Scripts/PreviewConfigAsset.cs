@@ -46,7 +46,7 @@ namespace AlmostEngine.Preview
 		[Tooltip ("When auto refresh is enabled, the gallery and preview windows are updated permanently." +
 		"The refresh can be done while editing the scene, while playing the game, or always.")]
 		public AutoRefreshMode m_RefreshMode;
-		public bool m_AutoRefresh = false;
+		public bool m_AutoRefresh;
 		public float m_RefreshDelay = 4f;
 
 		public enum GalleryDisplayMode
@@ -75,7 +75,7 @@ namespace AlmostEngine.Preview
 		public Camera m_DeviceRendererCamera;
 		public Canvas m_DefaultDeviceCanvas;
 
-		public bool m_TransparentDeviceBackground = false;
+		public bool m_TransparentDeviceBackground;
 
 		#endregion
 
@@ -90,11 +90,11 @@ namespace AlmostEngine.Preview
 		#region UI
 
 		public bool m_ShowGallery = true;
-		public bool m_ExpandDevices = false;
+		public bool m_ExpandDevices;
 
-		public bool m_ShowResolution = false;
-		public bool m_ShowPPI = false;
-		public bool m_ShowRatio = false;
+		public bool m_ShowResolution;
+		public bool m_ShowPPI;
+		public bool m_ShowRatio;
 
 		#endregion
 

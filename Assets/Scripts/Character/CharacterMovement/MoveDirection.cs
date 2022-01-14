@@ -3,7 +3,7 @@
 
 public class MoveDirection : MonoBehaviour, IAfterRestartComponent
 {
-    [SerializeField] private SwipeHandler _swipeHandler = null;
+    [SerializeField] private SwipeHandler _swipeHandler;
     private Quaternion _gravityRotation;
     public Vector2 Direction { get; private set; }
 

@@ -3,7 +3,7 @@
 
 public class FinishPortalAnimation : MonoBehaviour
 {
-    [SerializeField] private AnimationCurve _motionCurve = null;
+    [SerializeField] private AnimationCurve _motionCurve;
     private Vector3 _startPosition;
 
 

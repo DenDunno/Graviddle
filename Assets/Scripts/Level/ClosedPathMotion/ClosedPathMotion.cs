@@ -3,8 +3,8 @@
 
 public class ClosedPathMotion : MonoBehaviour
 {
-    [SerializeField] private ClosedPathMotionCalculator _motionCalculator = null;
-    [SerializeField] private Transform _targetTransform = null;
+    [SerializeField] private ClosedPathMotionCalculator _motionCalculator;
+    [SerializeField] private Transform _targetTransform;
 
     private Vector2 _startPosition = Vector2.zero;
     private Vector2 _targetPosition = Vector2.zero;

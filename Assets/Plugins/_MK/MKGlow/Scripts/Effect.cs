@@ -122,7 +122,7 @@ namespace MK.Glow
         //Direct compute dependent
         private float[] _cArgArray = new float[_cArgBufferSize];
         private ComputeBuffer _cArgsComputeBuffer;
-        private RenderDimension _computeThreadGroups = new RenderDimension();
+        private RenderDimension _computeThreadGroups;
 
         //Settings
         private Settings _settings;

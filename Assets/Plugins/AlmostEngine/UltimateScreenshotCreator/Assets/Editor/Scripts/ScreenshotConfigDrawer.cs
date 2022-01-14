@@ -1265,7 +1265,7 @@ namespace AlmostEngine.Screenshot
 
 
         // bool permissionChecked = false;
-        PhotoUsageDescription usage = null;
+        PhotoUsageDescription usage;
 
         public void DrawUsage()
         {

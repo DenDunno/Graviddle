@@ -3,11 +3,11 @@
 
 public class CameraPanning : MonoBehaviour
 {
-    [SerializeField] private Camera _mainCamera = null;
-    [SerializeField] private CameraClamping _cameraClamping = null;
+    [SerializeField] private Camera _mainCamera;
+    [SerializeField] private CameraClamping _cameraClamping;
 
     private Vector3 _touchStartPosition;
-    private bool _isUserZooming = false;
+    private bool _isUserZooming;
 
 
     private void Update()

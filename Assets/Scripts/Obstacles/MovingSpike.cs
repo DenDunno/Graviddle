@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovingSpike : MonoBehaviour
 {
     [SerializeField] private float _coolDown = 2f;
-    [SerializeField] private float _waitingTimeOnAwake = 0;
+    [SerializeField] private float _waitingTimeOnAwake;
     private readonly string _animationName = "Idle";
     private Animator _animator;
 

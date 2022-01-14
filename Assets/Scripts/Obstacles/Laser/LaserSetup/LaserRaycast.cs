@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class LaserRaycast : MonoBehaviour
 {
-    [SerializeField] private bool _updateRaycast = false;
-    [SerializeField] private LaserSetup _laserSetup = null;
-    [SerializeField] private LayerMask _layerMask = default;
+    [SerializeField] private bool _updateRaycast;
+    [SerializeField] private LaserSetup _laserSetup;
+    [SerializeField] private LayerMask _layerMask;
     private readonly float _raycastDistance = 100f;
 
 

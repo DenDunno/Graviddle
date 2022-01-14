@@ -24,7 +24,7 @@ namespace Zenject.MemoryPoolMonitor
         };
 
         int _controlID;
-        int _sortColumn = 0;
+        int _sortColumn;
         float _scrollPosition;
         bool _poolListDirty;
         bool _sortDescending;

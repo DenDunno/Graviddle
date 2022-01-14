@@ -22,7 +22,7 @@ namespace AlmostEngine.Screenshot
         List<string> categories = new List<string>();
         List<string> ratios = new List<string>();
 
-        public bool m_ShowDetailedDevice = false;
+        public bool m_ShowDetailedDevice;
 
 
 
@@ -32,18 +32,18 @@ namespace AlmostEngine.Screenshot
         [Header("Filter")]
         public string m_TextFilter = "";
         string m_CategoryFilter = "";
-        PresetCollectionAsset m_SelectedCollection = null;
-        PopularityPresetAsset m_SelectedPopularityCollection = null;
+        PresetCollectionAsset m_SelectedCollection;
+        PopularityPresetAsset m_SelectedPopularityCollection;
         string m_RatioFilter = "";
         string m_TagFilter = "";
         public string m_ResolutionFilter = "";
         public string m_PPIFilter = "";
-        bool m_HasSafeAreaOnly = false;
-        bool m_HasImageOnly = false;
+        bool m_HasSafeAreaOnly;
+        bool m_HasImageOnly;
 
 
         [Header("UI")]
-        int currentPage = 0;
+        int currentPage;
 
 
 
@@ -256,7 +256,7 @@ namespace AlmostEngine.Screenshot
         Vector2 scrollPos;
 
 
-        bool m_TogglePresets = false;
+        bool m_TogglePresets;
 
         public void OnGUI()
         {
@@ -477,7 +477,7 @@ namespace AlmostEngine.Screenshot
         }
 
 
-        int categoryId = 0;
+        int categoryId;
         void DrawCategoryPopup()
         {
             int selectedId = EditorGUILayout.Popup("Category", categoryId, categories.ToArray());
@@ -519,7 +519,7 @@ namespace AlmostEngine.Screenshot
 
         }
 
-        int ratiosId = 0;
+        int ratiosId;
         void DrawRatiosPopup()
         {
             int selectedRatio = EditorGUILayout.Popup("Ratio", ratiosId, ratios.ToArray());//, GUILayout.MaxWidth(100));
@@ -538,7 +538,7 @@ namespace AlmostEngine.Screenshot
             }
         }
 
-        int tagsId = 0;
+        int tagsId;
         List<string> tags = new List<string>();
         void DrawTagsPopup()
         {

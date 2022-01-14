@@ -5,9 +5,9 @@ using Zenject;
 
 public abstract class ArrowTrapBase : MonoBehaviour, IRestartableComponent
 {
-    [SerializeField] private float _startWaitTime = 0;
+    [SerializeField] private float _startWaitTime;
     [SerializeField] private float _coolDown = 2;
-    [Inject] private CharacterStatesPresenter _states = null;
+    [Inject] private CharacterStatesPresenter _states;
 
 
     private void Start()

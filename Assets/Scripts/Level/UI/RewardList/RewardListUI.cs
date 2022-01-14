@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RewardListUI : MonoBehaviour
 {
-    [SerializeField] private TMP_Text _goldUI = null;
-    [SerializeField] private TMP_Text _silverUI = null;
+    [SerializeField] private TMP_Text _goldUI;
+    [SerializeField] private TMP_Text _silverUI;
 
 
     public void SetRewardListUI(int gold , int silver)

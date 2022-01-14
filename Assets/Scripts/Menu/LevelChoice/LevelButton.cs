@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class LevelButton : MonoBehaviour
 {
-    [SerializeField] private Image[] _stars = null;
-    [SerializeField] private MPImage _lockImage = null;
+    [SerializeField] private Image[] _stars;
+    [SerializeField] private MPImage _lockImage;
 
 
     public void SetStars(int stars)

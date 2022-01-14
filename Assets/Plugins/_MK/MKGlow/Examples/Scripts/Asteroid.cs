@@ -23,18 +23,18 @@ namespace MK.Glow.Example
         private readonly MinMaxRange _colorChangeTime = new MinMaxRange(2f, 6f);
         private readonly MinMaxRange _colorIntensityChangeTime = new MinMaxRange(2f, 6f);
 
-        private float _nextColorChangeTime = 0f;
-        private float _nextColorIntensityChangeTime = 0f;
-        private int _nextColorIndex = 0;
+        private float _nextColorChangeTime;
+        private float _nextColorIntensityChangeTime;
+        private int _nextColorIndex;
         private float _nextColorIntensity;
         
         [SerializeField]
         private Color[] _colors = new Color[1];
-        private Color _currentColor = new Color();
+        private Color _currentColor;
         private float _currentColorIntensity = 1;
 
         [SerializeField]
-        private Material _baseMaterial = null;
+        private Material _baseMaterial;
         private Material _usedMaterial;
 
         private Rigidbody _rigidBody;

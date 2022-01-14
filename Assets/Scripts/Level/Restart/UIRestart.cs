@@ -5,9 +5,9 @@ using Zenject;
 [RequireComponent(typeof(UIStatesSwitcher))]
 public class UIRestart : MonoBehaviour, IAfterRestartComponent
 {
-    [SerializeField] private UIState _initialUIState = null;
-    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter = null;
-    private UIStatesSwitcher _uiStatesSwitcher = null;
+    [SerializeField] private UIState _initialUIState;
+    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter;
+    private UIStatesSwitcher _uiStatesSwitcher;
 
 
     private void Start()

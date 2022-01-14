@@ -1,29 +1,40 @@
 ﻿using UnityEngine;
 
 
-public static class CameraClampingSettingsFactory
+public class CameraClampingSettingsFactory
 {
-    public static CameraClampingSettings CreateClampingSettings(LevelBorders levelBorders, Camera camera)
-    {
-        float cameraHalfHeight = camera.orthographicSize;
-        float cameraHalfWidth = cameraHalfHeight * camera.aspect;
+    private readonly LevelBorders _levelBorders;
+    private readonly Camera _camera;
 
-        CameraBorders cameraBorders = CreateCameraBorders(levelBorders, cameraHalfWidth, cameraHalfHeight);
+    
+    public CameraClampingSettingsFactory(LevelBorders levelBorders, Camera camera)
+    {
+        _levelBorders = levelBorders;
+        _camera = camera;
+    }
+    
+    
+    public CameraClampingSettings Create()
+    {
+        float cameraHalfHeight = _camera.orthographicSize;
+        float cameraHalfWidth = cameraHalfHeight * _camera.aspect;
+
+        CameraBorders cameraBorders = CreateCameraBorders(cameraHalfWidth, cameraHalfHeight);
 
         return new CameraClampingSettings(cameraBorders, cameraHalfWidth - cameraHalfHeight);
     }
 
 
-    private static CameraBorders CreateCameraBorders(LevelBorders levelBorders, float cameraHalfWidth, float cameraHalfHeight)
+    private CameraBorders CreateCameraBorders(float cameraHalfWidth, float cameraHalfHeight)
     {
         const float tileOffset = 0.75f;
         float widthOffset = cameraHalfWidth - tileOffset;
         float heightOffset = cameraHalfHeight - tileOffset;
 
-        float cameraTopBorder = levelBorders.Top - heightOffset;
-        float cameraDownBorder = levelBorders.Down + heightOffset;
-        float cameraLeftBorder = levelBorders.Left + widthOffset;
-        float cameraRightBorder = levelBorders.Right - widthOffset;
+        float cameraTopBorder = _levelBorders.Top - heightOffset;
+        float cameraDownBorder = _levelBorders.Down + heightOffset;
+        float cameraLeftBorder = _levelBorders.Left + widthOffset;
+        float cameraRightBorder = _levelBorders.Right - widthOffset;
 
         return new CameraBorders(cameraTopBorder, cameraDownBorder, cameraLeftBorder, cameraRightBorder);
     }

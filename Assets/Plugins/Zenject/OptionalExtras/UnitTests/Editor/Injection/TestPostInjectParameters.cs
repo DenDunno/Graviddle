@@ -25,7 +25,7 @@ namespace Zenject.Tests.Injection
             public Test0 test0;
 
             [Inject]
-            public Test1 test1 = null;
+            public Test1 test1;
 
             [Inject]
             public void Init(
