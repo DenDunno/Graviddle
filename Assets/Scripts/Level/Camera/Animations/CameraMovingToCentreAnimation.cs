@@ -1,25 +1,28 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using UnityEngine;
 
+
+[Serializable]
 public class CameraMovingToCentreAnimation
 {
-    private const float _duration = 1f;
+    [SerializeField] private LevelBorders _levelBorders;
+    [SerializeField] private Camera _mainCamera;
     private float _horizontalLevelCentre;
     private float _verticalLevelCentre;
-    private Transform _mainCamera;
+    private const float _duration = 1f;    
     
 
-    public void Init(LevelBorders borders, Transform mainCamera)
+    public void Init()
     {
-        _mainCamera = mainCamera;
-        _horizontalLevelCentre = (borders.Right + borders.Left) / 2f;
-        _verticalLevelCentre = (borders.Top + borders.Down) / 2f;
+        _horizontalLevelCentre = (_levelBorders.Right + _levelBorders.Left) / 2f;
+        _verticalLevelCentre = (_levelBorders.Top + _levelBorders.Down) / 2f;
     }
     
     
     public Tween Move()
     {
-        _mainCamera.DOMoveX(_horizontalLevelCentre, _duration);
-        return _mainCamera.DOMoveY(_verticalLevelCentre, _duration);
+        _mainCamera.transform.DOMoveX(_horizontalLevelCentre, _duration);
+        return _mainCamera.transform.DOMoveY(_verticalLevelCentre, _duration);
     }
 }

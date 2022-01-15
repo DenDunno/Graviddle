@@ -1,22 +1,22 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using UnityEngine;
 
 
+[Serializable]
 public class CameraZoomAnimation
 {
     private const float _zoomOutDuration = 1f;
     private const float _zoomInDuration = 0.5f;
 
-    private Camera _camera;
-    private LevelZoomCalculator _zoomCalculator;
+    [SerializeField] private Camera _mainCamera;
+    [SerializeField] private LevelZoomCalculator _zoomCalculator;
     private float _characterZoom;
 
 
-    public void Init(Camera mainCamera, LevelZoomCalculator zoomCalculator)
+    public void Init()
     {
-        _camera = mainCamera;
-        _zoomCalculator = zoomCalculator;
-        _characterZoom = mainCamera.orthographicSize;
+        _characterZoom = _mainCamera.orthographicSize;
     }
 
 
@@ -28,12 +28,12 @@ public class CameraZoomAnimation
 
     public Tween ZoomIn()
     {
-        return ZoomCamera(_camera.orthographicSize, _characterZoom, _zoomInDuration);
+        return ZoomCamera(_mainCamera.orthographicSize, _characterZoom, _zoomInDuration);
     }
 
 
     private Tween ZoomCamera(float zoomFrom, float zoomTo, float duration)
     {
-        return DOTween.To(x => _camera.orthographicSize = x, zoomFrom, zoomTo, duration);
+        return DOTween.To(x => _mainCamera.orthographicSize = x, zoomFrom, zoomTo, duration);
     }
 } 

@@ -4,19 +4,29 @@ using UnityEngine;
 
 public class ZoomClick : ButtonClick
 {
+    [SerializeField] private UIStatesSwitcher _uiSwitcher;
     [SerializeField] private UIState _targetUI;
     [SerializeField] private bool _activateCameraControlling;
-    [SerializeField] private CameraZoomAnimation _zoomAnimation;
+    [SerializeField] private CameraAnimation _cameraAnimation;
+    [SerializeField] private CharacterCapture _characterCapture;
     
 
     protected override void OnButtonClick()
     {
-        PlayZoomAnimation().OnComplete(_targetUI.ActivateState);
+        _uiSwitcher.DeactivateStates();
+        ToggleCharacterCapture();
+        PlayAnimation().OnComplete(_targetUI.ActivateState);
+    }
+    
+
+    private void ToggleCharacterCapture()
+    {
+        _characterCapture.enabled = _activateCameraControlling == false;
     }
 
 
-    private Tween PlayZoomAnimation()
+    private Tween PlayAnimation()
     {
-        return _activateCameraControlling ? _zoomAnimation.ZoomOut() : _zoomAnimation.ZoomIn();
+        return _activateCameraControlling ? _cameraAnimation.ZoomOutAndMoveToCentre() : _cameraAnimation.ZoomIn();
     }
 }

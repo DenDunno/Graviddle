@@ -7,6 +7,7 @@ public class LevelZoomCalculator : MonoBehaviour
     [SerializeField] private bool _isLevelWithFrame;
     private Camera _mainCamera;
     private LevelBorders _levelBorders;
+    private const float _frameOffset = 2;
 
 
     public void Init(Camera mainCamera, LevelBorders levelBorders)
@@ -25,14 +26,13 @@ public class LevelZoomCalculator : MonoBehaviour
 
     private (float, float) GetLevelWidthAndHeight()
     {
-        const int frameOffset = 2;
         float levelHeight = _levelBorders.Top - _levelBorders.Down;
         float levelWidth = _levelBorders.Right - _levelBorders.Left;
 
         if (_isLevelWithFrame)
         {
-            levelHeight += frameOffset;
-            levelWidth += frameOffset;
+            levelHeight += _frameOffset;
+            levelWidth += _frameOffset;
         }
 
         if (IsVerticalZoom())
