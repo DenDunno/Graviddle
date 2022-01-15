@@ -6,33 +6,33 @@ public class CharacterStateMachine : MonoBehaviour, IRestartableComponent
 {
     [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter;
     [Inject] private readonly CharacterStateTransitions _characterStateTransitions;
-    public CharacterState State { get; private set; }
+    private CharacterState _state;
 
 
     private void Start()
     {
-        State = _characterStatesPresenter.IdleState;
-        _characterStateTransitions.Init(this);
+        _state = _characterStatesPresenter.IdleState;
     }
     
 
     private void SwitchState(CharacterState newState)
     {
-        State = newState;
-        State.Enter();
+        _state = newState;
+        _state.Enter();
     }
 
 
     private void Update()
     {
-        State.Update();
+        _state.Update();
         TryTransit();
+        EventTransition.SetCurrentState(_state);
     }
 
 
     private void TryTransit()
     {
-        TransitionResult transitionResult = _characterStateTransitions.Transit(State);
+        TransitionResult transitionResult = _characterStateTransitions.Transit(_state);
 
         if (transitionResult.TransitionHappened)
         {
