@@ -8,7 +8,7 @@ public class CameraAnimation : MonoBehaviour
     [SerializeField] private CameraMovingToCentreAnimation _movingToCentreAnimation;
     
     
-    private void Start()
+    public void Init()
     {
         _zoomAnimation.Init();
         _movingToCentreAnimation.Init();

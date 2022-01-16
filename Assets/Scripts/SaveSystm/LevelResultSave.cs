@@ -38,7 +38,7 @@ public class LevelResultSave : MonoBehaviour
             saves = new Dictionary<int, int>();
         }
 
-        saves[SceneManager.GetActiveScene().buildIndex] = _reward.GetStars();
+        saves[SceneManager.GetActiveScene().buildIndex] = _reward.CollectedStars;
 
         PlayerPrefs.SetString(_saves, JsonConvert.SerializeObject(saves));
     }

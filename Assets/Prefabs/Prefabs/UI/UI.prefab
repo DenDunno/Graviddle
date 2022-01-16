@@ -246,6 +246,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 543781edf9576874bb0452ba6d55a057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _levelStars:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &279549409225600897
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +345,7 @@ MonoBehaviour:
   _parallaxLayerClamping:
     _rectTransform: {fileID: 8609852666210281280}
   _parallaxEffect: 0.6
-  _swipeHandler: {fileID: 0}
+  _swipeHandler: {fileID: 8477775359838157073}
   _layer: {fileID: 8609852666210281280}
 --- !u!1 &615704386911774741
 GameObject:
@@ -660,7 +664,7 @@ MonoBehaviour:
   _parallaxLayerClamping:
     _rectTransform: {fileID: 3642045555588918271}
   _parallaxEffect: 0.15
-  _swipeHandler: {fileID: 0}
+  _swipeHandler: {fileID: 8477775359838157073}
   _layer: {fileID: 3642045555588918271}
 --- !u!1 &900681987355764815
 GameObject:
@@ -1112,7 +1116,7 @@ MonoBehaviour:
   _parallaxLayerClamping:
     _rectTransform: {fileID: 1438225358980362179}
   _parallaxEffect: 0.3
-  _swipeHandler: {fileID: 0}
+  _swipeHandler: {fileID: 8477775359838157073}
   _layer: {fileID: 1438225358980362179}
 --- !u!1 &2228249119369412101
 GameObject:
@@ -1709,6 +1713,7 @@ GameObject:
   - component: {fileID: 4963056786713715714}
   - component: {fileID: 2273698732136585216}
   - component: {fileID: 6719350920432864582}
+  - component: {fileID: 8889427051974698330}
   - component: {fileID: 4507998909532707473}
   - component: {fileID: 6734755139209710088}
   m_Layer: 0
@@ -1845,6 +1850,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiStatesSwitcher: {fileID: 6848271586011493877}
+  _inputButtons:
+  - {fileID: 7289557721080291226}
+  - {fileID: 1291520376445137339}
+--- !u!114 &8889427051974698330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4963056786713715717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d19c8fd1d507b645ab60700906a6f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4507998909532707473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1862,6 +1882,7 @@ MonoBehaviour:
   _targetUI: {fileID: 7703816547368844523}
   _activateCameraControlling: 1
   _cameraAnimation: {fileID: 0}
+  _characterCapture: {fileID: 0}
 --- !u!114 &6734755139209710088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1879,6 +1900,7 @@ MonoBehaviour:
   _targetUI: {fileID: 2923090187393191981}
   _activateCameraControlling: 0
   _cameraAnimation: {fileID: 0}
+  _characterCapture: {fileID: 0}
 --- !u!1 &4963056787706363131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2994,9 +3016,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30, y: -15}
+  m_AnchoredPosition: {x: 98, y: -83.00006}
   m_SizeDelta: {x: 136, y: 136}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5341167930685670402
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3339,7 +3361,7 @@ MonoBehaviour:
   _parallaxLayerClamping:
     _rectTransform: {fileID: 101477054521587575}
   _parallaxEffect: 0.75
-  _swipeHandler: {fileID: 0}
+  _swipeHandler: {fileID: 8477775359838157073}
   _layer: {fileID: 101477054521587575}
 --- !u!1 &6322899550606161253
 GameObject:
@@ -4521,7 +4543,7 @@ MonoBehaviour:
   _parallaxLayerClamping:
     _rectTransform: {fileID: 9082254830131254312}
   _parallaxEffect: 0.45
-  _swipeHandler: {fileID: 0}
+  _swipeHandler: {fileID: 8477775359838157073}
   _layer: {fileID: 9082254830131254312}
 --- !u!1 &8129243315503718118
 GameObject:

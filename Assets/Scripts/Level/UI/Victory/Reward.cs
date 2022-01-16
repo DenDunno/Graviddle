@@ -1,10 +1,32 @@
 ﻿using UnityEngine;
 
 
-public class Reward : MonoBehaviour
+public class Reward : MonoBehaviour, IRestartableComponent
 {
-    public int GetStars()
+    [SerializeField] private LevelStar[] _levelStars;
+    public int CollectedStars { get; private set; }
+    
+
+    private void OnEnable()
     {
-        return 3;
+        _levelStars.ForEach(levelStar => levelStar.StarCollected += OnStarCollected);
+    }
+
+
+    private void OnDisable()
+    {
+        _levelStars.ForEach(levelStar => levelStar.StarCollected -= OnStarCollected);
+    }
+
+
+    private void OnStarCollected()
+    {
+        ++CollectedStars;
+    }
+
+    
+    void IRestartableComponent.Restart()
+    {
+        CollectedStars = 0;
     }
 }

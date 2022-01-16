@@ -21,13 +21,9 @@ public class WinEffects : MonoBehaviour
 
     public IEnumerator ActivateEffects()
     {
-        int stars = _reward.GetStars();
+        int stars = _reward.CollectedStars;
 
-        yield return StartCoroutine(ActivateStar(0));
-
-        _sunEffect.gameObject.SetActive(true);
-
-        for (int starIndex = 1; starIndex < stars; ++starIndex)
+        for (var starIndex = 0; starIndex < stars; ++starIndex)
         {
             yield return StartCoroutine(ActivateStar(starIndex));
         }
@@ -43,5 +39,6 @@ public class WinEffects : MonoBehaviour
     {
         _starsParticles[starIndex].gameObject.SetActive(true);
         yield return new WaitForSeconds(_starsCoolDown);
+        _sunEffect.gameObject.SetActive(true);
     }
 }

@@ -28,26 +28,14 @@ public class MoveDirection : MonoBehaviour, IAfterRestartComponent
     }
 
 
-    private void SetMoveDirection(Movement movement)
+    public void MoveCharacter(Movement movement)
     {
         Direction = _gravityRotation * (Vector2.right * (int) movement);
     }
 
 
-    public void MoveCharacter(Movement movement)
-    {
-        SetMoveDirection(movement);
-    }
-
-
-    public void StopCharacter() 
-    {
-        SetMoveDirection(Movement.Stop);
-    }
-
-
     void IAfterRestartComponent.Restart()
     {
-        StopCharacter();
+        MoveCharacter(Movement.Stop);
     }
 }

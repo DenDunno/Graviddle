@@ -32,7 +32,7 @@ public class CharacterInputButton : MonoBehaviour, IPointerDownHandler, IPointer
     {
         if (_moveDirection != null)
         {
-            _moveDirection.StopCharacter();
+            _moveDirection.MoveCharacter(Movement.Stop);
         }
     }
 }

@@ -2,10 +2,10 @@
 
 public class LaserDistortionData
 {
-    private readonly float _maxDistortion = 1f;
-    private readonly float _minDistortion = 0.25f;
-    private readonly float _switchingOffDuration = 4f;
-    private readonly float _switchingOnDuration = 2f;
+    private const float _maxDistortion = 1f;
+    private const float _minDistortion = 0.25f;
+    private const float _switchingOffDuration = 4f;
+    private const float _switchingOnDuration = 2f;
 
 
     public float GetDistortion(bool activate)

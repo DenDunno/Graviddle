@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class FinishPortalAnimation : MonoBehaviour
+public class CurveAnimation : MonoBehaviour
 {
     [SerializeField] private AnimationCurve _motionCurve;
     private Vector3 _startPosition;
