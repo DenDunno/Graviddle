@@ -4,17 +4,22 @@ using UnityEngine;
 public class GameParallaxLayer : MonoBehaviour
 {
     [SerializeField] private ParallaxCameraPosition _parallaxCameraPosition;
-    [SerializeField] private ParallaxLayerClamping _parallaxLayerClamping;
     [SerializeField] [Range(0, 1)] private float _parallaxEffect;
     [SerializeField] private SwipeHandler _swipeHandler;
     [SerializeField] private RectTransform _layer;
+    private ParallaxLayerClamping _parallaxLayerClamping;
     private GravityDirection _gravityDirection;
     private float _lastCameraPosition;
 
 
+    private void Start()
+    {
+        _parallaxLayerClamping = new ParallaxLayerClamping();
+    }
+
+    
     private void OnEnable()
     {
-        Application.targetFrameRate = 160;
         _swipeHandler.GravityChanged += OnGravityChanged;
     }
 

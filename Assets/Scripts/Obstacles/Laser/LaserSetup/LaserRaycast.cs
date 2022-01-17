@@ -6,7 +6,7 @@ public class LaserRaycast : MonoBehaviour
     [SerializeField] private bool _updateRaycast;
     [SerializeField] private LaserSetup _laserSetup;
     [SerializeField] private LayerMask _layerMask;
-    private readonly float _raycastDistance = 100f;
+    private const float _raycastDistance = 100f;
 
 
     private void Update()

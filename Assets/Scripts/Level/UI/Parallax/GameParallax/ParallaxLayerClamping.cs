@@ -1,24 +1,28 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 
-[Serializable]
 public class ParallaxLayerClamping
 {
-    [SerializeField] private RectTransform _rectTransform;
-    private float _imageWidth => _rectTransform.rect.width;
+    private readonly float _screenWidth;
 
-
+    
+    public ParallaxLayerClamping()
+    {
+        _screenWidth = Screen.width;
+    }
+    
+    
     public void ClampParallaxLayerPosition(ref float targetParallaxLayerPosition)
     {
-        if (targetParallaxLayerPosition > _imageWidth)
+        Debug.Log($"Image width {_screenWidth}, real = {targetParallaxLayerPosition}");
+        if (targetParallaxLayerPosition > _screenWidth)
         {
-            targetParallaxLayerPosition -= _imageWidth;
+            targetParallaxLayerPosition -= _screenWidth;
         }
 
-        else if (targetParallaxLayerPosition < -_imageWidth)
+        else if (targetParallaxLayerPosition < -_screenWidth)
         {
-            targetParallaxLayerPosition += _imageWidth;
+            targetParallaxLayerPosition += _screenWidth;
         }
     }
 }
