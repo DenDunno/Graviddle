@@ -13,17 +13,19 @@ public class EventTransitionsPresenterFactory : TransitionsPresenterFactory
     {
         return new List<Transition>()
         {
-            new EventTransition(_states.IdleState, _states.DieState, _transitionsEvents.Restart),
-            new EventTransition(_states.RunState, _states.DieState, _transitionsEvents.Restart),
-            new EventTransition(_states.FallState, _states.DieState, _transitionsEvents.Restart),
+            new EventTransition(States.IdleState, States.DieState, _transitionsEvents.Restart),
+            new EventTransition(States.RunState, States.DieState, _transitionsEvents.Restart),
+            new EventTransition(States.FallState, States.DieState, _transitionsEvents.Restart),
 
-            new EventTransition(_states.IdleState, _states.DieState, _transitionsEvents.ObstacleEntered),
-            new EventTransition(_states.RunState, _states.DieState, _transitionsEvents.ObstacleEntered),
-            new EventTransition(_states.FallState, _states.DieState, _transitionsEvents.ObstacleEntered),
+            new EventTransition(States.IdleState, States.DieState, _transitionsEvents.ObstacleEntered),
+            new EventTransition(States.RunState, States.DieState, _transitionsEvents.ObstacleEntered),
+            new EventTransition(States.FallState, States.DieState, _transitionsEvents.ObstacleEntered),
 
-            new EventTransition(_states.IdleState, _states.WinState, _transitionsEvents.FinishEntered),
-            new EventTransition(_states.RunState, _states.WinState, _transitionsEvents.FinishEntered),
-            new EventTransition(_states.FallState, _states.WinState, _transitionsEvents.FinishEntered)
+            new EventTransition(States.IdleState, States.WinState, _transitionsEvents.FinishEntered),
+            new EventTransition(States.RunState, States.WinState, _transitionsEvents.FinishEntered),
+            new EventTransition(States.FallState, States.WinState, _transitionsEvents.FinishEntered),
+            
+            new EventTransition(States.DieState, States.IdleState, _transitionsEvents.CharacterRestarted)
         };
     }
 }

@@ -20,14 +20,14 @@ public class UpdateTransitionsPresenterFactory : TransitionsPresenterFactory
     {
         return new List<Transition>()
         {
-            new UpdateTransition(_states.IdleState, _states.RunState, _conditions.CheckIfRun),
-            new UpdateTransition(_states.IdleState, _states.FallState, _conditions.CheckIfFall),
+            new UpdateTransition(States.IdleState, States.RunState, _conditions.CheckIfRun),
+            new UpdateTransition(States.IdleState, States.FallState, _conditions.CheckIfFall),
 
-            new UpdateTransition(_states.RunState, _states.FallState, _conditions.CheckIfFall),
-            new UpdateTransition(_states.RunState, _states.IdleState, _conditions.CheckIfNotRun),
+            new UpdateTransition(States.RunState, States.FallState, _conditions.CheckIfFall),
+            new UpdateTransition(States.RunState, States.IdleState, _conditions.CheckIfNotRun),
 
-            new UpdateTransition(_states.FallState, _states.DieState, _conditions.CheckDeathByLevelBorders),
-            new UpdateTransition(_states.FallState, _states.IdleState, _conditions.CheckIfGrounded)
+            new UpdateTransition(States.FallState, States.DieState, _conditions.CheckDeathByLevelBorders),
+            new UpdateTransition(States.FallState, States.IdleState, _conditions.CheckIfGrounded)
         };
     }
 }

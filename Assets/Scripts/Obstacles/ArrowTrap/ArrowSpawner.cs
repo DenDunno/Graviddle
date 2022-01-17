@@ -34,6 +34,6 @@ public class ArrowSpawner : MonoBehaviour
 
     private Arrow SpawnOrPopArrow()
     {
-        return _arrowsPull.IsEmpty() ? Instantiate(_arrowPrefab, transform) : _arrowsPull.Pop();
+        return _arrowsPull.IsEmpty() ? Instantiate(_arrowPrefab) : _arrowsPull.Pop();
     }
 }

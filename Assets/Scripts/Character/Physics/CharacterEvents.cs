@@ -2,12 +2,13 @@
 using UnityEngine.Events;
 
 
-public class CollisionEvents : MonoBehaviour
+public class CharacterEvents : MonoBehaviour, IRestartableComponent
 {
     [HideInInspector] public UnityEvent ObstacleEntered;
     [HideInInspector] public UnityEvent FinishEntered;
+    [HideInInspector] public UnityEvent CharacterRestarted;
 
-
+    
     private void OnTriggerEnter2D(Collider2D collider2d)
     {
         TryInvokeCollisionEvent<Obstacle>(collider2d, ObstacleEntered);
@@ -21,5 +22,11 @@ public class CollisionEvents : MonoBehaviour
         {
             unityEvent?.Invoke();
         }
+    }
+    
+
+    void IRestartableComponent.Restart()
+    {
+        CharacterRestarted?.Invoke();
     }
 }

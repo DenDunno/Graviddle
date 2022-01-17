@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 53320989}
   - component: {fileID: 53320991}
   - component: {fileID: 53320990}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: SourceSparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4815,7 +4815,7 @@ GameObject:
   - component: {fileID: 481856986}
   - component: {fileID: 481856985}
   - component: {fileID: 481856984}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: SourceFlame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9623,7 +9623,7 @@ GameObject:
   - component: {fileID: 4118254482476650773}
   - component: {fileID: 8157628231166003007}
   - component: {fileID: 5251285938987613177}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: LaserBeam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9806,7 +9806,7 @@ MonoBehaviour:
   _laserSetup: {fileID: 2653063896201575155}
   _layerMask:
     serializedVersion: 2
-    m_Bits: 887
+    m_Bits: 1024
 --- !u!114 &8157628231166003007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9843,7 +9843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5256950844646854725}
   - component: {fileID: 5256950844646854726}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9928,7 +9928,7 @@ GameObject:
   - component: {fileID: 1498028666038171776}
   - component: {fileID: 561856248}
   - component: {fileID: 5161447840581673056}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10102,7 +10102,7 @@ PrefabInstance:
     - target: {fileID: 7094665787252272134, guid: ee0b474f55a89e74c8f69d9d15d0be68,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7094665787252272134, guid: ee0b474f55a89e74c8f69d9d15d0be68,
         type: 3}
@@ -10138,11 +10138,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1155051084078962, guid: dc10d8de8491f5643bc2f3dff05b8575, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1285158934424356, guid: dc10d8de8491f5643bc2f3dff05b8575, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1461783087031780, guid: dc10d8de8491f5643bc2f3dff05b8575, type: 3}
       propertyPath: m_Name
@@ -10150,11 +10150,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1461783087031780, guid: dc10d8de8491f5643bc2f3dff05b8575, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1658740865369092, guid: dc10d8de8491f5643bc2f3dff05b8575, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4815243918191540, guid: dc10d8de8491f5643bc2f3dff05b8575, type: 3}
       propertyPath: m_RootOrder
@@ -10327,7 +10327,7 @@ PrefabInstance:
     - target: {fileID: 7094665787252272134, guid: ee0b474f55a89e74c8f69d9d15d0be68,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7094665787252272134, guid: ee0b474f55a89e74c8f69d9d15d0be68,
         type: 3}

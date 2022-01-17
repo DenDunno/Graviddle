@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
 
-public class MotionWithDelayConfig : ClosedPathMotionConfig
+public class MotionWithDelay : ClosedPathMotionType
 {
-    public override float Period => (1 + _speed * _waitTime) / _speed * 2;
+    public override float Period => (1 + Speed * _waitTime) / Speed * 2;
 
     [SerializeField] private float _waitTime = 2f;
     private float _leftLimit;
@@ -12,14 +12,14 @@ public class MotionWithDelayConfig : ClosedPathMotionConfig
 
     private void Start()
     {
-        _leftLimit = (1 + _speed * _waitTime) / _speed;
+        _leftLimit = (1 + Speed * _waitTime) / Speed;
         float x = _leftLimit + _waitTime;
 
-        _offset = 1 + _speed * x;
+        _offset = 1 + Speed * x;
     }
 
 
-    public override float EvaluateMathFunction(float time)
+    public override float EvaluateMotionFunction(float time)
     {
         if (time >= 0 && time <= _waitTime)
         {
@@ -28,7 +28,7 @@ public class MotionWithDelayConfig : ClosedPathMotionConfig
 
         if (time >= _waitTime && time <= _leftLimit)
         {
-            return _speed * (time - _waitTime);
+            return Speed * (time - _waitTime);
         }
 
         if (time >= _leftLimit && time <= _leftLimit + _waitTime)
@@ -36,6 +36,6 @@ public class MotionWithDelayConfig : ClosedPathMotionConfig
             return 1;
         }
 
-        return -_speed * time + _offset;
+        return -Speed * time + _offset;
     }
 }

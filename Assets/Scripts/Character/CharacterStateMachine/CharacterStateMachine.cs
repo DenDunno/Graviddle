@@ -2,7 +2,7 @@
 using Zenject;
 
 
-public class CharacterStateMachine : MonoBehaviour, IRestartableComponent
+public class CharacterStateMachine : MonoBehaviour
 {
     [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter;
     [Inject] private readonly CharacterStateTransitions _characterStateTransitions;
@@ -38,11 +38,5 @@ public class CharacterStateMachine : MonoBehaviour, IRestartableComponent
         {
             SwitchState(transitionResult.NewState);
         }
-    }
-
-
-    void IRestartableComponent.Restart()
-    {
-        SwitchState(_characterStatesPresenter.IdleState);
     }
 }

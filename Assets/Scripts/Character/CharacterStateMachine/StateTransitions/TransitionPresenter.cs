@@ -9,12 +9,6 @@ public class TransitionPresenter
     public IReadOnlyDictionary<CharacterState, List<Transition>> Transitions => _transitions;
 
 
-    public void Init(CharacterStateMachine characterStateMachine)
-    {
-
-    }
-
-
     public void AddTransition(Transition transition)
     {
         if (_transitions.ContainsKey(transition.StateFrom) == false)

@@ -3,9 +3,9 @@
 
 public static class DictionaryExtensions
 {
-    public static Dictionary<T, List<Y>> Merge<T,Y>(this IReadOnlyDictionary<T, List<Y>> first , IReadOnlyDictionary<T, List<Y>> second)
+    public static Dictionary<T, List<TY>> Merge<T,TY>(this IReadOnlyDictionary<T, List<TY>> first , IReadOnlyDictionary<T, List<TY>> second)
     {
-        var merge = new Dictionary<T, List<Y>>();
+        var merge = new Dictionary<T, List<TY>>();
 
         FillDictionary(merge, first);
         FillDictionary(merge, second);
@@ -14,15 +14,15 @@ public static class DictionaryExtensions
     }
 
 
-    private static void FillDictionary<T, Y>(Dictionary<T, List<Y>> container, IReadOnlyDictionary<T, List<Y>> source)
+    private static void FillDictionary<T, TY>(Dictionary<T, List<TY>> container, IReadOnlyDictionary<T, List<TY>> source)
     {
-        foreach (KeyValuePair<T, List<Y>> keyValuePair in source)
+        foreach (KeyValuePair<T, List<TY>> keyValuePair in source)
         {
-            foreach (Y y in keyValuePair.Value)
+            foreach (TY y in keyValuePair.Value)
             {
                 if (container.ContainsKey(keyValuePair.Key) == false)
                 {
-                    container[keyValuePair.Key] = new List<Y>();
+                    container[keyValuePair.Key] = new List<TY>();
                 }
 
                 container[keyValuePair.Key].Add(y);

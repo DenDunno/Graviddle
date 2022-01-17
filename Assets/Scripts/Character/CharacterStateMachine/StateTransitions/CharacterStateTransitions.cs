@@ -6,7 +6,7 @@ using System.Linq;
 public class CharacterStateTransitions
 {
     private readonly TransitionPresenter[] _transitionPresenters;
-    private ReadOnlyDictionary<CharacterState, List<Transition>> _allTransitions;
+    private readonly ReadOnlyDictionary<CharacterState, List<Transition>> _allTransitions;
 
 
     public CharacterStateTransitions(TransitionPresenter eventTransitions, TransitionPresenter updateTransitions)
@@ -25,7 +25,8 @@ public class CharacterStateTransitions
     
     public TransitionResult Transit(CharacterState currentState)
     {
-        return _transitionPresenters.Select(transitionPresenter => transitionPresenter.Transit(currentState))
-                                    .FirstOrDefault(result => result.TransitionHappened);
+        var transitionResults = _transitionPresenters.Select(presenter => presenter.Transit(currentState));
+        
+        return transitionResults.FirstOrDefault(result => result.TransitionHappened);
     }
 }

@@ -3,12 +3,12 @@
 
 public abstract class TransitionsPresenterFactory
 {
-    protected CharacterStatesPresenter _states;
+    protected CharacterStatesPresenter States;
 
 
     public void SetStates(CharacterStatesPresenter states)
     {
-        _states = states;
+        States = states;
     }
 
 

@@ -8,9 +8,10 @@ using UnityEngine.UI;
 public class TransitionsEvents
 {
     [SerializeField] private Button _restartButton;
-    [SerializeField] private CollisionEvents _collisionEvents;
+    [SerializeField] private CharacterEvents _characterEvents;
 
     public UnityEvent Restart => _restartButton.onClick;
-    public UnityEvent ObstacleEntered => _collisionEvents.ObstacleEntered;
-    public UnityEvent FinishEntered => _collisionEvents.FinishEntered;
+    public UnityEvent ObstacleEntered => _characterEvents.ObstacleEntered;
+    public UnityEvent FinishEntered => _characterEvents.FinishEntered;
+    public UnityEvent CharacterRestarted => _characterEvents.CharacterRestarted;
 }

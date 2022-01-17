@@ -14,7 +14,6 @@ public class ParallaxLayerClamping
     
     public void ClampParallaxLayerPosition(ref float targetParallaxLayerPosition)
     {
-        Debug.Log($"Image width {_screenWidth}, real = {targetParallaxLayerPosition}");
         if (targetParallaxLayerPosition > _screenWidth)
         {
             targetParallaxLayerPosition -= _screenWidth;

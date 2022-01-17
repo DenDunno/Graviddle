@@ -31,7 +31,7 @@ public class LaserRaycast : MonoBehaviour
 
         else
         {
-            Debug.LogError($"Laser with name \"{gameObject.name}\" cannot raycast");
+            Debug.LogError($"Laser cannot raycast");
         }
 
         return hit.collider != null;

@@ -5,7 +5,7 @@ using System;
 [Serializable]
 public class ClosedPathMotionCalculator 
 {
-    [SerializeField] private ClosedPathMotionConfig _motionConfig;
+    [SerializeField] private ClosedPathMotionType _motionType;
 
     private float _period;
     private float _time;    
@@ -13,7 +13,7 @@ public class ClosedPathMotionCalculator
 
     public void Init()
     {
-        _period = _motionConfig.Period;
+        _period = _motionType.Period;
     }
 
 
@@ -26,6 +26,6 @@ public class ClosedPathMotionCalculator
             _time = 0;
         }
 
-        return _motionConfig.EvaluateMathFunction(_time);
+        return _motionType.EvaluateMotionFunction(_time);
     }
 }
