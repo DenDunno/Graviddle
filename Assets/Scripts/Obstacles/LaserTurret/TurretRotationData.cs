@@ -10,5 +10,5 @@ public class TurretRotationData
 
     public Transform Character => _character.transform;
     public Transform TransformToBeRotated => _transformToBeRotated;
-    public readonly float RotationSpeed = 0.25f;
+    public readonly float RotationSpeed = 0.2f;
 }
