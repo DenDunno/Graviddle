@@ -702,7 +702,7 @@ MonoBehaviour:
     _eventTransitionsPresenterFactory:
       _transitionsEvents:
         _restartButton: {fileID: 1083510546}
-        _collisionEvents: {fileID: 1521523605}
+        _characterEvents: {fileID: 1521523605}
     _updateTransitionsPresenterFactory:
       _levelBorders: {fileID: 1012865410}
 --- !u!1001 &531593640
@@ -141030,7 +141030,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _deathCollider
       value: 
-      objectReference: {fileID: 2117880853}
+      objectReference: {fileID: 0}
     - target: {fileID: 2871217239955891582, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: _mainCamera
@@ -142377,18 +142377,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69c3d3640147a1c4ea4047d8bd4b6f11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2117880853 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1238519048169952123, guid: a0ca5d21826335e4dae61dcad8de1703,
-    type: 3}
-  m_PrefabInstance: {fileID: 2117880851}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cf6f018a81419b448de9e2d39c4a074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &220453703978894823
