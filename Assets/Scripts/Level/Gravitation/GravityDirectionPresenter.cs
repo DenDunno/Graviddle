@@ -6,7 +6,7 @@ public class GravityDirectionPresenter : MonoBehaviour
     [SerializeField] private SwipeHandler _swipeHandler;
 
     public GravityDirection GravityDirection { get; private set; }
-    public float ZRotation => GravityDataPresenter.GravityData[GravityDirection].ZRotation;
+    public GravityData GravityData => GravityDataPresenter.GravityData[GravityDirection];
     
 
     private void OnEnable()

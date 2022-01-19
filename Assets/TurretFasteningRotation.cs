@@ -4,18 +4,22 @@ using UnityEngine;
 public class TurretFasteningRotation : MonoBehaviour
 {
     [SerializeField] private TurretRotationData _data;
+    [SerializeField] private GravityDirectionPresenter _gravityDirectionPresenter;
+    private const float _rightAngle = 90;
 
 
     public void Update()
     {
-        Vector2 difference = _data.TransformToBeRotated.position - _data.Character.position;
-        float sinus = difference.x / difference.y;
-        sinus = Mathf.Pow(sinus, Mathf.Sign(1 - Mathf.Abs(sinus)));
+        GravityData currentGravityData = _gravityDirectionPresenter.GravityData;
+        Vector2 normal = currentGravityData.GravityVector;
+        float zOffset = currentGravityData.ZRotation;
         
-        float targetZRotation = Mathf.Asin(sinus) * Mathf.Rad2Deg - 90 * Mathf.Sign(difference.y)  + 90 * Mathf.Sign(difference.x);
+        Vector2 characterInLaserSpace = transform.InverseTransformPoint(_data.Character.position);
+        float crossProduct = normal.x * (normal.y - characterInLaserSpace.y) - normal.y * (normal.x - characterInLaserSpace.x);
 
+        float targetZRotation = (_rightAngle - Vector3.SignedAngle(normal, characterInLaserSpace, Vector3.up)) * Mathf.Sign(crossProduct) + zOffset;
         Quaternion targetRotation = Quaternion.Euler(0, 0, targetZRotation);
-        
-        _data.TransformToBeRotated.rotation = Quaternion.Lerp(_data.TransformToBeRotated.rotation, targetRotation, Time.deltaTime);
+
+        _data.TransformToBeRotated.rotation = Quaternion.Lerp(_data.TransformToBeRotated.rotation, targetRotation, _data.RotationSpeed * Time.deltaTime);
     }
 }

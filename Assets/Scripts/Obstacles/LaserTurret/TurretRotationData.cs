@@ -5,10 +5,11 @@ using UnityEngine;
 [Serializable]
 public class TurretRotationData
 {
-    [SerializeField] private Character _character;
+    [SerializeField] private CharacterHead _character;
     [SerializeField] private Transform _transformToBeRotated;
-
+    [SerializeField] private float _rotationSpeed = 2f;
+    
     public Transform Character => _character.transform;
     public Transform TransformToBeRotated => _transformToBeRotated;
-    public readonly float RotationSpeed = 0.2f;
+    public float RotationSpeed => _rotationSpeed;
 }
