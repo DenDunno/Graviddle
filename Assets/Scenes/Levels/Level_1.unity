@@ -377,7 +377,7 @@ MonoBehaviour:
     _eventTransitionsPresenterFactory:
       _transitionsEvents:
         _restartButton: {fileID: 714462356}
-        _collisionEvents: {fileID: 578482697}
+        _characterEvents: {fileID: 578482697}
     _updateTransitionsPresenterFactory:
       _levelBorders: {fileID: 442389392}
 --- !u!114 &578482697 stripped

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 
@@ -15,7 +16,7 @@ public class WinEffects : MonoBehaviour
     private void Start()
     {
         const float coolDown = 0.5f;
-        _starsCoolDown = _starsParticles[0].main.duration + coolDown;
+        _starsCoolDown = _starsParticles.First().main.duration + coolDown;
     }
     
 
@@ -30,8 +31,14 @@ public class WinEffects : MonoBehaviour
 
         if (stars == 3)
         {
-            _confetti.gameObject.SetActive(true);
+            PlaySpecialEffects();
         }
+    }
+
+
+    private void PlaySpecialEffects()
+    {
+        _confetti.gameObject.SetActive(true);
     }
 
 

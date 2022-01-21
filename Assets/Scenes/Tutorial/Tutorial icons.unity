@@ -738,7 +738,7 @@ MonoBehaviour:
     _eventTransitionsPresenterFactory:
       _transitionsEvents:
         _restartButton: {fileID: 516729770}
-        _collisionEvents: {fileID: 2036998001}
+        _characterEvents: {fileID: 2036998001}
     _updateTransitionsPresenterFactory:
       _levelBorders: {fileID: 2081138184}
 --- !u!1001 &509508983
@@ -1065,6 +1065,11 @@ PrefabInstance:
       propertyPath: _starImpact
       value: 
       objectReference: {fileID: 1950967583}
+    - target: {fileID: 8550718928693556227, guid: 1ee95f3f600c527418c5c1bc1940d203,
+        type: 3}
+      propertyPath: _levelStarImpact
+      value: 
+      objectReference: {fileID: 1950967584}
     - target: {fileID: 8550718928693556249, guid: 1ee95f3f600c527418c5c1bc1940d203,
         type: 3}
       propertyPath: m_Name
@@ -2178,6 +2183,18 @@ ParticleSystem:
     type: 3}
   m_PrefabInstance: {fileID: 1950967582}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1950967584 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1704661945660841930, guid: 59532e2bf74ff9444892fd215cb6d0c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1950967582}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35754fe842c64904bdc6b63cb34da40b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2036998001 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7708779537909998222, guid: a0ca5d21826335e4dae61dcad8de1703,
@@ -2409,6 +2426,11 @@ PrefabInstance:
       propertyPath: _starImpact
       value: 
       objectReference: {fileID: 1950967583}
+    - target: {fileID: 8550718928693556227, guid: 1ee95f3f600c527418c5c1bc1940d203,
+        type: 3}
+      propertyPath: _levelStarImpact
+      value: 
+      objectReference: {fileID: 1950967584}
     - target: {fileID: 8550718928693556249, guid: 1ee95f3f600c527418c5c1bc1940d203,
         type: 3}
       propertyPath: m_Name
@@ -2500,6 +2522,11 @@ PrefabInstance:
       propertyPath: _starImpact
       value: 
       objectReference: {fileID: 1950967583}
+    - target: {fileID: 8550718928693556227, guid: 1ee95f3f600c527418c5c1bc1940d203,
+        type: 3}
+      propertyPath: _levelStarImpact
+      value: 
+      objectReference: {fileID: 1950967584}
     - target: {fileID: 8550718928693556249, guid: 1ee95f3f600c527418c5c1bc1940d203,
         type: 3}
       propertyPath: m_Name

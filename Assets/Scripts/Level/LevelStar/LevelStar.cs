@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class LevelStar : MonoBehaviour, IRestartableComponent
 {
-    [SerializeField] private ParticleSystem _starImpact;
+    [SerializeField] private LevelStarImpact _levelStarImpact;
+
     public event Action StarCollected;
     
     
@@ -13,19 +14,13 @@ public class LevelStar : MonoBehaviour, IRestartableComponent
         if (collider2d.GetComponent<Character>() != null)
         {
             gameObject.SetActive(false);
-            PlayFx();
+            _levelStarImpact.Activate(transform.position);
+            
             StarCollected?.Invoke();
         }
     }
 
 
-    private void PlayFx()
-    {
-        _starImpact.transform.position = transform.position;
-        _starImpact.Play();
-    }
-    
-    
     void IRestartableComponent.Restart()
     {
         gameObject.SetActive(true);
