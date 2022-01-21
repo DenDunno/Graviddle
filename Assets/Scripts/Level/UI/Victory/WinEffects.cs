@@ -9,6 +9,7 @@ public class WinEffects : MonoBehaviour
     [SerializeField] private ParticleSystem _sunEffect;
     [SerializeField] private ParticleSystem _confetti;
     [SerializeField] private Reward _reward;
+    [SerializeField] private AudioSource _victoryMusic;
 
     private float _starsCoolDown;
 
@@ -22,14 +23,14 @@ public class WinEffects : MonoBehaviour
 
     public IEnumerator ActivateEffects()
     {
-        int stars = _reward.CollectedStars;
+        int collectedStars = _reward.CollectedStars;
 
-        for (var starIndex = 0; starIndex < stars; ++starIndex)
+        for (var starIndex = 0; starIndex < collectedStars; ++starIndex)
         {
             yield return StartCoroutine(ActivateStar(starIndex));
         }
 
-        if (stars == 3)
+        if (collectedStars == _reward.MaxStars)
         {
             PlaySpecialEffects();
         }
@@ -39,6 +40,7 @@ public class WinEffects : MonoBehaviour
     private void PlaySpecialEffects()
     {
         _confetti.gameObject.SetActive(true);
+        _victoryMusic.Play();
     }
 
 
