@@ -80,12 +80,12 @@ MonoBehaviour:
       maxValue: 9.217258
   bloomScattering:
     m_OverrideState: 1
-    m_Value: 3.35
+    m_Value: 3.5
     min: 1
     max: 10
   bloomIntensity:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 5
   allowLensSurface:
     m_OverrideState: 1
     m_Value: 0

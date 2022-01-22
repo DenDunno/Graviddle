@@ -11,9 +11,9 @@ public class WinAnimation : MonoBehaviour
     [SerializeField] private Image _levelScore;
     [SerializeField] private TranslucentImage _translucentImage;
 
-    private readonly float _animationDuration = 2f;
-    private readonly float _startWaitTime = 0.5f;
-    private readonly float _targetBlur = 15f;
+    private const float _animationDuration = 2f;
+    private const float _startWaitTime = 0.5f;
+    private const float _targetBlur = 15f;
     private readonly Vector2 _targetPosition = Vector2.zero;
 
 

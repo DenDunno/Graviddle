@@ -9,7 +9,7 @@ public class LevelResultSave : MonoBehaviour
 {
     [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter;
     [SerializeField] private Reward _reward;
-    private string _saves = "Saves";
+    private const string _saves = "Saves";
 
 
     public void OnEnable()
@@ -26,16 +26,11 @@ public class LevelResultSave : MonoBehaviour
 
     private void SaveLevelResult()
     {
-        Dictionary<int, int> saves;
+        var saves = new Dictionary<int, int>();
 
         if (PlayerPrefs.HasKey(_saves))
         {
             saves = JsonConvert.DeserializeObject<Dictionary<int, int>>(PlayerPrefs.GetString(_saves));
-        }
-
-        else
-        {
-            saves = new Dictionary<int, int>();
         }
 
         saves[SceneManager.GetActiveScene().buildIndex] = _reward.CollectedStars;
