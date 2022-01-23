@@ -8,7 +8,7 @@ public abstract class CharacterFallingEventsHandler : MonoBehaviour
     private Transition _transition;
 
 
-    private void Awake()
+    private void Start()
     {
         _transition = _statesTransitions.GetTransition(_states.FallState, _states.IdleState);
 

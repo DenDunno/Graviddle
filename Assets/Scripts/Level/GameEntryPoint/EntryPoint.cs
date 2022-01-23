@@ -11,8 +11,8 @@ public class EntryPoint : MonoBehaviour
     private readonly List<object> _instances = new List<object>();
 
     
-    private void Start()
-    {
+    private void Awake()
+    {        
         ConstructInstances();
         RegisterTypes();
         _diContainer.ResolveDependencies();

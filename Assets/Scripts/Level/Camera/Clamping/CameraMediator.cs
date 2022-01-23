@@ -11,7 +11,7 @@ public class CameraMediator : MonoBehaviour, IMediator
     [SerializeField] private CameraAnimation _cameraAnimation;
     
 
-    public void Initialize()
+    private void Start()
     {
         var cameraClampingSettingsFactory = new CameraClampingSettingsFactory(_levelBorders, _mainCamera);
         
@@ -21,5 +21,11 @@ public class CameraMediator : MonoBehaviour, IMediator
         _bordersWithOrientation.Init(settings);
         _levelZoomCalculator.Init(_mainCamera, _levelBorders);
         _cameraZoom.Init(_mainCamera, _levelZoomCalculator);
+    }
+
+    
+    public void Initialize()
+    {
+        throw new System.NotImplementedException();
     }
 }

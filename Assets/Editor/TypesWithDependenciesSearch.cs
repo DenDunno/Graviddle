@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
@@ -13,28 +11,21 @@ public class TypesWithDependenciesSearch : Editor
     {
         if (GUILayout.Button("Fill DI container"))
         {
-            var dependencies = new List<Dependency>();
             MonoBehaviour[] monoBehaviours = FindObjectsOfType<MonoBehaviour>(true);
             var diContainer = FindObjectOfType<LightweightDiContainer>();
-
-            foreach (MonoBehaviour monoBehaviour in monoBehaviours)
-            {
-                IEnumerable<FieldInfo> fieldsWithDependencies = GetFieldsWithDependencies(monoBehaviour.GetType());
-
-                foreach (FieldInfo fieldInfo in fieldsWithDependencies)
-                {
-                    dependencies.Add(new Dependency(fieldInfo, monoBehaviour));
-                }
-            }
             
-            diContainer.SetDependencies(dependencies);
+            var objectsWithDependencies = monoBehaviours.Where(CheckIfHasDependency).ToList();
+
+            diContainer.SetObjectsWithDependencies(objectsWithDependencies);
         }
     }
     
 
-    private IEnumerable<FieldInfo> GetFieldsWithDependencies(Type type)
+    private bool CheckIfHasDependency(MonoBehaviour behaviour)
     {
-        FieldInfo[] fields = type.GetFields(BindingFlags.Instance | BindingFlags.NonPublic);
-        return fields.Where(field => field.GetCustomAttribute<LightweightInjectAttribute>() != null);
+        FieldInfo[] fields = behaviour.GetType().GetFields(BindingFlags.Instance | BindingFlags.NonPublic);
+        var dependencies = fields.Where(field => field.GetCustomAttribute<LightweightInjectAttribute>() != null);
+        
+        return dependencies.Count() != 0;
     }
 }
