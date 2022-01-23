@@ -1,23 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 
 public class LightweightDiContainer : MonoBehaviour
 {
     private readonly Dictionary<Type, object> _instances = new Dictionary<Type, object>();
-    private Dictionary<Type, List<ObjectWithDependency>> _dependencies;
-
+    [SerializeField] private List<Dependency> _dependencies;
 
     public void ResolveDependencies()
     {
-        foreach (KeyValuePair<Type, List<ObjectWithDependency>> dependency in _dependencies)
+        foreach (Dependency dependency in _dependencies)
         {
-            foreach (ObjectWithDependency objectWithDependency in dependency.Value)
-            {
-                TypedReference typedReference = __makeref(objectWithDependency.Object);
-                objectWithDependency.Field.SetValueDirect(typedReference, _instances[dependency.Key]);
-            }
+            dependency.Field.SetValue(null, _instances[dependency.Field.FieldType]);
         }
     }
     
@@ -28,8 +24,10 @@ public class LightweightDiContainer : MonoBehaviour
     }
 
 
-    public void SetDependencies(Dictionary<Type, List<ObjectWithDependency>> dependencies)
+    public void SetDependencies(List<Dependency> dependencies)
     {
         _dependencies = dependencies;
+        EditorUtility.SetDirty(this);
+        Debug.Log("DI container was filled");
     }
 }
