@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-using Zenject;
 
 
 public class WinPanel : MonoBehaviour
 {
-    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter;
+    [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
     [SerializeField] private UIState _uiState;
     [SerializeField] private WinAnimation _winAnimation;
 

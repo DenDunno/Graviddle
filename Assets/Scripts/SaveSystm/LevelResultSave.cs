@@ -2,12 +2,11 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Zenject;
 
 
 public class LevelResultSave : MonoBehaviour
 {
-    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter;
+    [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
     [SerializeField] private Reward _reward;
     private const string _saves = "Saves";
 

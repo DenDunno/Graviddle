@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
-using Zenject;
 
 
 public class CharacterStateMachine : MonoBehaviour
 {
-    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter;
-    [Inject] private readonly CharacterStateTransitions _characterStateTransitions;
+    [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
+    [LightweightInject] private readonly CharacterStateTransitions _characterStateTransitions;
     private CharacterState _state;
 
 

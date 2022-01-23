@@ -2,24 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using Zenject;
 
 
-[RequireComponent(typeof(Backstage))]
 public class Restart : MonoBehaviour
 {
-    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter;
-    private readonly float _restartTime = 0.7f;
-    private Backstage _backstage;
-    
+    [SerializeField] private Backstage _backstage;
+    [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
+    private const float _restartTime = 0.7f;
+
     private IEnumerable<IRestartableComponent> _restartableComponents;
     private IEnumerable<IAfterRestartComponent> _afterRestartComponents;
 
 
     private void Start()
     {
-        _backstage = GetComponent<Backstage>();
-        MonoBehaviour[] allComponents = FindObjectsOfType<MonoBehaviour>(true);
+        var allComponents = FindObjectsOfType<MonoBehaviour>(true);
 
         _restartableComponents = allComponents.OfType<IRestartableComponent>();
         _afterRestartComponents = allComponents.OfType<IAfterRestartComponent>();

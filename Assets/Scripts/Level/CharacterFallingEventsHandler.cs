@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
-using Zenject;
 
 
 public abstract class CharacterFallingEventsHandler : MonoBehaviour
 {
-    [Inject] private readonly CharacterStateTransitions _statesTransitions;
-    [Inject] private readonly CharacterStatesPresenter _states;
+    [LightweightInject] private readonly CharacterStateTransitions _statesTransitions;
+    [LightweightInject] private readonly CharacterStatesPresenter _states;
     private Transition _transition;
 
 

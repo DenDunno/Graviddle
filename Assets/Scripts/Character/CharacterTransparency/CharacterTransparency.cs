@@ -1,12 +1,11 @@
 ﻿using System.Threading.Tasks;
 using UnityEngine;
-using Zenject;
 
 
 public class CharacterTransparency : MonoBehaviour, IRestartableComponent, IAfterRestartComponent
 {
     [SerializeField] private SpriteRenderer _spriteRenderer;
-    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter;
+    [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
     private SpriteTransparencyPresenter _spriteTransparencyPresenter;
 
 

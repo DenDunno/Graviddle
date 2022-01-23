@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
-using Zenject;
 
 
 public class FinishPortal : MonoBehaviour
 {
     [SerializeField] private Character _character;
-    [Inject] private readonly CharacterStatesPresenter _characterStatesPresenter;
+    [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
     private PortalDisappearance _portalDisappearance;
     private CharacterToPortalPulling _pullingAnimation;
 

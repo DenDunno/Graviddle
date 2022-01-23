@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
-using Zenject;
 
 
 public abstract class ArrowTrapBase : MonoBehaviour, IRestartableComponent
 {
     [SerializeField] private float _startWaitTime;
     [SerializeField] private float _coolDown = 2;
-    [Inject] private CharacterStatesPresenter _states;
+    [LightweightInject] private CharacterStatesPresenter _states;
 
 
     private void Start()

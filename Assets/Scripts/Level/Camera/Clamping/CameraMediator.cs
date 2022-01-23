@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class CameraMediator : MonoBehaviour
+public class CameraMediator : MonoBehaviour, IMediator
 {
     [SerializeField] private LevelBorders _levelBorders;
     [SerializeField] private CameraZoom _cameraZoom;
@@ -11,9 +11,8 @@ public class CameraMediator : MonoBehaviour
     [SerializeField] private CameraAnimation _cameraAnimation;
     
 
-    private void Start()
+    public void Initialize()
     {
-        var cameraSizeFitter = new CameraSizeFitter(_mainCamera);
         var cameraClampingSettingsFactory = new CameraClampingSettingsFactory(_levelBorders, _mainCamera);
         
         CameraClampingSettings settings = cameraClampingSettingsFactory.Create();

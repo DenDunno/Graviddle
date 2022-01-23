@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 
-public static class EnumerableExtensions
+public static class CollectionsExtensions
 {
     public static void ForEach<T>(this IEnumerable<T> collection, Action<T> action)
     {
@@ -10,5 +10,17 @@ public static class EnumerableExtensions
         {
             action(element);
         }
+    }
+    
+    
+    public static bool IsEmpty<T>(this Stack<T> stack)
+    {
+        return stack.Count == 0;
+    }
+    
+    
+    public static bool IsEmpty<T>(this Queue<T> queue)
+    {
+        return queue.Count == 0;
     }
 }
