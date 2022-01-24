@@ -235,7 +235,6 @@ MonoBehaviour:
   _sunEffect: {fileID: 5691745142482626468}
   _confetti: {fileID: 3754034204125003905}
   _reward: {fileID: 4710138297989803409}
-  _victoryMusic: {fileID: 7274384789656143904}
 --- !u!114 &4710138297989803409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1102,6 +1101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 175d0e00b8cc3fe4b810016495d2fa4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _backstage: {fileID: 2433422824762356592}
 --- !u!114 &1864414427427503118
 MonoBehaviour:
   m_ObjectHideFlags: 0
