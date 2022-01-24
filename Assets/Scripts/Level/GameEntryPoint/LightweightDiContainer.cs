@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
@@ -16,7 +15,7 @@ public class LightweightDiContainer : MonoBehaviour
     {
         foreach (MonoBehaviour monoBehaviour in _objectsWithDependency)
         {
-            foreach (FieldInfo fieldToInject in GetFieldsToInject(monoBehaviour))
+            foreach (FieldInfo fieldToInject in monoBehaviour.GetType().GetFieldsToInject())
             {
                 fieldToInject.SetValue(monoBehaviour, _instances[fieldToInject.FieldType]);
             }
@@ -24,16 +23,9 @@ public class LightweightDiContainer : MonoBehaviour
     }
 
 
-    private IEnumerable<FieldInfo> GetFieldsToInject(MonoBehaviour monoBehaviour)
+    public void RegisterTypeWithInstance(object instance)
     {
-        FieldInfo[] fields = monoBehaviour.GetType().GetFields(BindingFlags.Instance | BindingFlags.NonPublic);
-        return fields.Where(field => field.GetCustomAttribute<LightweightInjectAttribute>() != null);
-    }
-
-
-    public void RegisterTypeWithInstance(object component)
-    {
-        _instances[component.GetType()] = component;
+        _instances[instance.GetType()] = instance;
     }
 
 
@@ -41,6 +33,6 @@ public class LightweightDiContainer : MonoBehaviour
     {
         _objectsWithDependency = objectsWithDependency;
         EditorUtility.SetDirty(this);
-        Debug.Log("DI container was filled");
+        Logger.PrintWithGreen("DI container was filled");
     }
 }

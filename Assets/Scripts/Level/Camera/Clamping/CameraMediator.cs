@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class CameraMediator : MonoBehaviour, IMediator
+public class CameraMediator : MonoBehaviour
 {
     [SerializeField] private LevelBorders _levelBorders;
     [SerializeField] private CameraZoom _cameraZoom;
@@ -21,11 +21,5 @@ public class CameraMediator : MonoBehaviour, IMediator
         _bordersWithOrientation.Init(settings);
         _levelZoomCalculator.Init(_mainCamera, _levelBorders);
         _cameraZoom.Init(_mainCamera, _levelZoomCalculator);
-    }
-
-    
-    public void Initialize()
-    {
-        throw new System.NotImplementedException();
     }
 }

@@ -19,8 +19,8 @@ GameObject:
   - component: {fileID: 2907073762294158516}
   - component: {fileID: 4599026585472759060}
   - component: {fileID: 957595173566817432}
-  - component: {fileID: 7574396224643408112}
   - component: {fileID: 2071492005582517391}
+  - component: {fileID: 2385801051265026153}
   - component: {fileID: 8578594374611672333}
   - component: {fileID: 9060857224600224795}
   m_Layer: 8
@@ -237,7 +237,21 @@ MonoBehaviour:
   _movingToCentreAnimation:
     _levelBorders: {fileID: 4599026585472759060}
     _mainCamera: {fileID: 6186545344261283279}
---- !u!114 &7574396224643408112
+--- !u!114 &2071492005582517391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186545343902058747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 365543492fa7e9b45977e967e29a0b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _character: {fileID: 0}
+  _cameraClamping: {fileID: 6186545343902058751}
+--- !u!114 &2385801051265026153
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -255,20 +269,6 @@ MonoBehaviour:
   _bordersWithOrientation: {fileID: 1271010650569364451}
   _levelZoomCalculator: {fileID: 2907073762294158516}
   _cameraAnimation: {fileID: 957595173566817432}
---- !u!114 &2071492005582517391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6186545343902058747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 365543492fa7e9b45977e967e29a0b7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _character: {fileID: 0}
-  _cameraClamping: {fileID: 6186545343902058751}
 --- !u!114 &8578594374611672333
 MonoBehaviour:
   m_ObjectHideFlags: 0
