@@ -1,5 +1,5 @@
 ﻿
 public interface IMediator
 {
-    void Initialize();
+    void Resolve();
 }

@@ -5,8 +5,8 @@ using UnityEngine;
 public class MovingSpike : MonoBehaviour
 {
     [SerializeField] private float _coolDown = 2f;
-    [SerializeField] private float _waitingTimeOnAwake;
-    private readonly string _animationName = "Idle";
+    [SerializeField] private float _startWaitTime;
+    private const string _animationName = "Idle";
     private Animator _animator;
 
 
@@ -20,7 +20,7 @@ public class MovingSpike : MonoBehaviour
 
     private IEnumerator AnimateSpike()
     {
-        yield return new WaitForSeconds(_waitingTimeOnAwake);
+        yield return new WaitForSeconds(_startWaitTime);
 
         while (true)
         {

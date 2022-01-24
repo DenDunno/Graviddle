@@ -7,7 +7,7 @@ public class LaserSetup : MonoBehaviour
     [SerializeField] private LaserSourceEffectsAdjuster _effectsAdjuster;
     [SerializeField] private LaserCollider _laserCollider;
     [SerializeField] private LaserHitObjectsPositions _laserHitObjectsPositions;
-    private const float _hitPointLineOffset = 0.5f;
+    private const float _hitPointLineOffset = 0f;
 
     public void Setup(Vector2 hitPoint)
     {

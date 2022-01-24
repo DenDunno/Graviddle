@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -8,17 +9,19 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private LightweightDiContainer _diContainer;
     [SerializeField] private Character _character;
     [SerializeField] private CharacterStatesTransitionsFactory _characterStatesTransitionsFactory;
+    private IEnumerable<IMediator> _mediators;
     private readonly List<object> _instances = new List<object>();
 
-    
+
     private void Awake()
     {        
         ConstructInstances();
         RegisterTypes();
         _diContainer.ResolveDependencies();
+        InitializeMediators();
     }
 
-    
+
     private void ConstructInstances()
     {
         var characterStates = new CharacterStatesPresenter(_character);
@@ -28,13 +31,20 @@ public class EntryPoint : MonoBehaviour
         _instances.Add(characterStates);
         _instances.Add(characterStateTransitions);
     }
-    
-    
+
+
     private void RegisterTypes()
     {
         foreach (object instance in _instances)
         {
             _diContainer.RegisterTypeWithInstance(instance);
         }
+    }
+
+    
+    private void InitializeMediators()
+    {
+        _mediators = FindObjectsOfType<MonoBehaviour>(true).OfType<IMediator>();
+        _mediators.ForEach(mediator => mediator.Resolve());
     }
 }
