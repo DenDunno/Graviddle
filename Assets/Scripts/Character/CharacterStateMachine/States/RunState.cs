@@ -5,7 +5,7 @@ public class RunState : CharacterState
 {
     private readonly Transform _transform;
     private readonly MoveDirection _moveDirection;
-    private readonly float _movementSpeed = 3f;
+    private const float _movementSpeed = 3f;
 
 
     public RunState(Character character) : base(character, AnimationsName.Run)
