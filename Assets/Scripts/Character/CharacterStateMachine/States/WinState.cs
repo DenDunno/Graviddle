@@ -5,7 +5,7 @@ using UnityEngine;
 public class WinState : CharacterState
 {
     private readonly Rigidbody2D _rigidbody;
-    public Action CharacterWon;
+    public event Action CharacterWon;
 
 
     public WinState(Character character) : base(character, AnimationsName.Fall)

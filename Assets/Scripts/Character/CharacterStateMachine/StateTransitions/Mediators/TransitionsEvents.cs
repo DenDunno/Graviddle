@@ -13,5 +13,5 @@ public class TransitionsEvents
     public UnityEvent Restart => _restartButton.onClick;
     public UnityEvent ObstacleEntered => _characterEvents.ObstacleEntered;
     public UnityEvent FinishEntered => _characterEvents.FinishEntered;
-    public UnityEvent CharacterRestarted => _characterEvents.CharacterRestarted;
+    public UnityEvent CharacterResurrected => _characterEvents.CharacterRestarted;
 }

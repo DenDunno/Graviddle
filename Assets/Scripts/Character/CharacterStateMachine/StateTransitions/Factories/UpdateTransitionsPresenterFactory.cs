@@ -27,7 +27,13 @@ public class UpdateTransitionsPresenterFactory : TransitionsPresenterFactory
             new UpdateTransition(States.RunState, States.IdleState, _conditions.CheckIfNotRun),
 
             new UpdateTransition(States.FallState, States.DieState, _conditions.CheckDeathByLevelBorders),
-            new UpdateTransition(States.FallState, States.IdleState, _conditions.CheckIfGrounded)
+            new UpdateTransition(States.FallState, States.IdleState, _conditions.CheckIfGrounded),
+            
+            new UpdateTransition(States.BoxIdle, States.BoxPushingState, _conditions.CheckIfRunRight),
+            new UpdateTransition(States.BoxIdle, States.BoxPullingState, _conditions.CheckIfRunLeft),
+            
+            new UpdateTransition(States.BoxPushingState, States.BoxIdle, _conditions.CheckIfNotRun),
+            new UpdateTransition(States.BoxPullingState, States.BoxIdle, _conditions.CheckIfNotRun),
         };
     }
 }

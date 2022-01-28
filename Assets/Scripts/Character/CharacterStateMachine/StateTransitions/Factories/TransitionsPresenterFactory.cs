@@ -4,7 +4,7 @@
 public abstract class TransitionsPresenterFactory
 {
     protected CharacterStatesPresenter States;
-
+    
 
     public void SetStates(CharacterStatesPresenter states)
     {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 [Serializable]
@@ -11,21 +12,26 @@ public class EventTransitionsPresenterFactory : TransitionsPresenterFactory
 
     protected override List<Transition> GetTransitions()
     {
-        return new List<Transition>()
+        var eventTransitions = new List<Transition>();
+        
+        eventTransitions.AddRange(GetAllTransitionsWithState(States.DieState, _transitionsEvents.Restart));
+        eventTransitions.AddRange(GetAllTransitionsWithState(States.DieState, _transitionsEvents.ObstacleEntered));
+        eventTransitions.AddRange(GetAllTransitionsWithState(States.WinState, _transitionsEvents.FinishEntered));
+        eventTransitions.Add(new EventTransition(States.DieState, States.IdleState, _transitionsEvents.CharacterResurrected));
+
+        return eventTransitions;
+    }
+
+
+    private List<Transition> GetAllTransitionsWithState(CharacterState targetState, UnityEvent condition)
+    {
+        var transitions = new List<Transition>();
+
+        foreach (CharacterState characterState in States.GameActiveStates)
         {
-            new EventTransition(States.IdleState, States.DieState, _transitionsEvents.Restart),
-            new EventTransition(States.RunState, States.DieState, _transitionsEvents.Restart),
-            new EventTransition(States.FallState, States.DieState, _transitionsEvents.Restart),
+            transitions.Add(new EventTransition(characterState, targetState, condition));
+        }
 
-            new EventTransition(States.IdleState, States.DieState, _transitionsEvents.ObstacleEntered),
-            new EventTransition(States.RunState, States.DieState, _transitionsEvents.ObstacleEntered),
-            new EventTransition(States.FallState, States.DieState, _transitionsEvents.ObstacleEntered),
-
-            new EventTransition(States.IdleState, States.WinState, _transitionsEvents.FinishEntered),
-            new EventTransition(States.RunState, States.WinState, _transitionsEvents.FinishEntered),
-            new EventTransition(States.FallState, States.WinState, _transitionsEvents.FinishEntered),
-            
-            new EventTransition(States.DieState, States.IdleState, _transitionsEvents.CharacterRestarted)
-        };
+        return transitions;
     }
 }

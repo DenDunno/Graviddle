@@ -21,9 +21,9 @@ public class CharacterMovementInEditor : MonoBehaviour
 
     private void Update()
     {
-        var movement = (Movement)Input.GetAxisRaw("Horizontal");
+        var movement = (MovementState)Input.GetAxisRaw("Horizontal");
         
-        _moveDirection.MoveCharacter(movement);
+        _moveDirection.SetMovementState(movement);
         _spriteFlipping.FlipCharacter(movement);
     }
 }

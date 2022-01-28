@@ -23,9 +23,13 @@ public class UpdateTransitionsConditions
 
     public bool CheckIfGrounded() => _characterFeet.CheckIfGrounded();
 
-    public bool CheckIfRun() => _moveDirection.Direction != Vector2.zero;
-
     public bool CheckIfFall() => CheckIfGrounded() == false;
+    
+    public bool CheckIfRun() => _moveDirection.State != MovementState.Stop;
+    
+    public bool CheckIfRunLeft() => _moveDirection.State == MovementState.Left;
 
-    public bool CheckIfNotRun() => CheckIfRun() == false;
+    public bool CheckIfRunRight() => _moveDirection.State == MovementState.Right;
+
+    public bool CheckIfNotRun() => _moveDirection.State == MovementState.Stop;
 }

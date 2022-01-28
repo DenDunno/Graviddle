@@ -6,8 +6,8 @@ public class CharacterSpriteFlipping : MonoBehaviour
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
 
-    public void FlipCharacter(Movement movement)
+    public void FlipCharacter(MovementState movementState)
     {
-        _spriteRenderer.flipX = (movement == Movement.Left);
+        _spriteRenderer.flipX = (movementState == MovementState.Left);
     }
 }
