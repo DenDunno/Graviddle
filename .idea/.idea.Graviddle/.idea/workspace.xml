@@ -3,28 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="236f7ca0-e3d5-42cf-8bd1-4f65d9112fc7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Configs/Post processing/GlobalVolume.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Configs/Post processing/GlobalVolume.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Materials/SpriteBlooming.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Materials/SpriteBlooming.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Buffer/Level_2 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Buffer/Level_2 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_4.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterMovement/CharacterMovementInEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterMovement/CharacterMovementInEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterMovement/CharacterSpriteFlipping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterMovement/CharacterSpriteFlipping.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterMovement/MoveDirection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterMovement/MoveDirection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/CharacterStatesPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/CharacterStatesPresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/StateTransitions/Factories/EventTransitionsPresenterFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/StateTransitions/Factories/EventTransitionsPresenterFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/StateTransitions/Factories/TransitionsPresenterFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/StateTransitions/Factories/TransitionsPresenterFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/StateTransitions/Factories/UpdateTransitionsPresenterFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/StateTransitions/Factories/UpdateTransitionsPresenterFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/StateTransitions/Mediators/TransitionsEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/StateTransitions/Mediators/TransitionsEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/StateTransitions/Mediators/UpdateTransitionsConditions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/StateTransitions/Mediators/UpdateTransitionsConditions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/States/IdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/States/IdleState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/States/RunState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/States/MovableState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/States/RunState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/States/MovableState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/States/WinState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/States/WinState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Helpers/CharacterEnums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Helpers/CharacterEnums.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/UI/MovementButtons/CharacterInputButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/UI/MovementButtons/CharacterInputButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obstacles/Laser/LaserSetup/LaserLine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obstacles/Laser/LaserSetup/LaserLine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obstacles/Laser/LaserSetup/LaserSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obstacles/Laser/LaserSetup/LaserSetup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +85,7 @@
       <workItem from="1643011403678" duration="5792000" />
       <workItem from="1643098155979" duration="2922000" />
       <workItem from="1643218118745" duration="595000" />
-      <workItem from="1643377225710" duration="6198000" />
+      <workItem from="1643377225710" duration="7788000" />
     </task>
     <servers />
   </component>

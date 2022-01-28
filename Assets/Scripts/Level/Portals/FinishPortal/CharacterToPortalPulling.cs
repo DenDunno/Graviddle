@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CharacterToPortalPulling
 {
-    private readonly float _duration = 3f;
-    private readonly float _smoothingTime = 0.5f;
-    private readonly float _offset = 0.6f;
+    private const float _duration = 3f;
+    private const float _smoothingTime = 0.5f;
+    private const float _offset = 0.6f;
     private readonly Transform _finishPortal;
     private readonly Transform _character;
     private Vector2 _velocity;
