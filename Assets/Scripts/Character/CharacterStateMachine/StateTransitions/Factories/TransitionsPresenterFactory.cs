@@ -12,9 +12,9 @@ public abstract class TransitionsPresenterFactory
     }
 
 
-    public TransitionPresenter Create()
+    public TransitionsPresenter Create()
     {
-        var transitionPresenter = new TransitionPresenter();
+        var transitionPresenter = new TransitionsPresenter();
 
         foreach (Transition transition in GetTransitions())
         {

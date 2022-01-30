@@ -12,15 +12,14 @@ public class CharacterStatesTransitionsFactory
     public void Init(Character character, CharacterStatesPresenter states)
     {
         _eventTransitionsPresenterFactory.SetStates(states);
-        _updateTransitionsPresenterFactory.SetStates(states);
-        _updateTransitionsPresenterFactory.CreateConditions(character);
+        _updateTransitionsPresenterFactory.Init(character, states);
     }
 
 
     public CharacterStateTransitions Create()
     {
-        TransitionPresenter eventTransitionsPresenter = _eventTransitionsPresenterFactory.Create();
-        TransitionPresenter updateTransitionsPresenter = _updateTransitionsPresenterFactory.Create();
+        TransitionsPresenter eventTransitionsPresenter = _eventTransitionsPresenterFactory.Create();
+        TransitionsPresenter updateTransitionsPresenter = _updateTransitionsPresenterFactory.Create();
 
         return new CharacterStateTransitions(eventTransitionsPresenter, updateTransitionsPresenter);
     }

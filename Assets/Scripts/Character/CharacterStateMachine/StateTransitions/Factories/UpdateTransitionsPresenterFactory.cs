@@ -10,8 +10,9 @@ public class UpdateTransitionsPresenterFactory : TransitionsPresenterFactory
     private UpdateTransitionsConditions _conditions;
 
 
-    public void CreateConditions(Character character)
+    public void Init(Character character, CharacterStatesPresenter states)
     {
+        SetStates(states);
         _conditions = new UpdateTransitionsConditions(character, _levelBorders);
     }
 

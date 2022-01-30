@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 
-public class TransitionPresenter
+public class TransitionsPresenter
 {
     private readonly Dictionary<CharacterState, List<Transition>> _transitions =
         new Dictionary<CharacterState, List<Transition>>();
