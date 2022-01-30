@@ -3,7 +3,7 @@
 
 public class GravityRotation : MonoBehaviour 
 {
-    [SerializeField] private SwipeHandler _swipeHandler;
+    [SerializeField] private GravityDirectionHandler _gravityDirectionHandler;
 
     private readonly float _rotationSpeed = 3f;
     private Quaternion _targetRotation;
@@ -11,13 +11,13 @@ public class GravityRotation : MonoBehaviour
 
     private void OnEnable()
     {
-        _swipeHandler.GravityChanged += OnGravityChanged;
+        _gravityDirectionHandler.GravityChanged += OnGravityChanged;
     }
 
 
     private void OnDisable()
     {
-        _swipeHandler.GravityChanged -= OnGravityChanged;
+        _gravityDirectionHandler.GravityChanged -= OnGravityChanged;
     }
 
 

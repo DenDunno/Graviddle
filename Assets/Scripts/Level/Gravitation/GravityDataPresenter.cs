@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-public class GravityDataPresenter
+public static class GravityDataPresenter
 {
     public static readonly IReadOnlyDictionary<GravityDirection, GravityData> GravityData 
         = new Dictionary<GravityDirection, GravityData>()

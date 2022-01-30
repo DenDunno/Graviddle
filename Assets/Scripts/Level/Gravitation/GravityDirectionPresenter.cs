@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GravityDirectionPresenter : MonoBehaviour
 {
-    [SerializeField] private SwipeHandler _swipeHandler;
+    [SerializeField] private GravityDirectionHandler _gravityDirectionHandler;
 
     public GravityDirection GravityDirection { get; private set; }
     public GravityData GravityData => GravityDataPresenter.GravityData[GravityDirection];
@@ -11,13 +11,13 @@ public class GravityDirectionPresenter : MonoBehaviour
 
     private void OnEnable()
     {
-        _swipeHandler.GravityChanged += OnGravityChanged;
+        _gravityDirectionHandler.GravityChanged += OnGravityChanged;
     }
 
 
     private void OnDisable()
     {
-        _swipeHandler.GravityChanged -= OnGravityChanged;
+        _gravityDirectionHandler.GravityChanged -= OnGravityChanged;
     }
 
 

@@ -3,7 +3,7 @@
 
 public class Gravity : MonoBehaviour, IRestartableComponent
 {
-    [SerializeField] private SwipeHandler _swipeHandler;
+    [SerializeField] private GravityDirectionHandler _gravityDirectionHandler;
 
 
     private void Start()
@@ -14,13 +14,13 @@ public class Gravity : MonoBehaviour, IRestartableComponent
 
     private void OnEnable()
     {
-        _swipeHandler.GravityChanged += OnGravityChanged;
+        _gravityDirectionHandler.GravityChanged += OnGravityChanged;
     }
 
 
     private void OnDisable()
     {
-        _swipeHandler.GravityChanged -= OnGravityChanged;
+        _gravityDirectionHandler.GravityChanged -= OnGravityChanged;
     }
 
 

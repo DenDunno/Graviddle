@@ -12,11 +12,12 @@ public class ParallaxCameraPosition
     {
         return gravityDirection switch
         {
+            GravityDirection.None => _mainCamera.transform.position.x,
             GravityDirection.Down => _mainCamera.transform.position.x,
             GravityDirection.Up => -_mainCamera.transform.position.x,
             GravityDirection.Left => -_mainCamera.transform.position.y,
             GravityDirection.Right => _mainCamera.transform.position.y,
-            _ => throw new ArgumentOutOfRangeException()
+            _ => throw new ArgumentOutOfRangeException(nameof(gravityDirection), gravityDirection, null)
         };
     }
 }

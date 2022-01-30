@@ -5,7 +5,7 @@ public class GameParallaxLayer : MonoBehaviour
 {
     [SerializeField] private ParallaxCameraPosition _parallaxCameraPosition;
     [SerializeField] [Range(0, 1)] private float _parallaxEffect;
-    [SerializeField] private SwipeHandler _swipeHandler;
+    [SerializeField] private GravityDirectionHandler _gravityDirectionHandler;
     [SerializeField] private RectTransform _layer;
     private ParallaxLayerClamping _parallaxLayerClamping;
     private GravityDirection _gravityDirection;
@@ -20,13 +20,13 @@ public class GameParallaxLayer : MonoBehaviour
     
     private void OnEnable()
     {
-        _swipeHandler.GravityChanged += OnGravityChanged;
+        _gravityDirectionHandler.GravityChanged += OnGravityChanged;
     }
 
 
     private void OnDisable()
     {
-        _swipeHandler.GravityChanged -= OnGravityChanged;
+        _gravityDirectionHandler.GravityChanged -= OnGravityChanged;
     }
 
 

@@ -3,7 +3,7 @@
 
 public class CameraBordersWithOrientation : MonoBehaviour
 {
-    [SerializeField] private SwipeHandler _swipeHandler;
+    [SerializeField] private GravityDirectionHandler _gravityDirectionHandler;
     private CameraClampingSettings _cameraClampingSettings;
     private float _orientationOffset;
 
@@ -21,13 +21,13 @@ public class CameraBordersWithOrientation : MonoBehaviour
 
     private void OnEnable()
     {
-        _swipeHandler.GravityChanged += OnGravityChanged;
+        _gravityDirectionHandler.GravityChanged += OnGravityChanged;
     }
 
 
     private void OnDisable()
     {
-        _swipeHandler.GravityChanged -= OnGravityChanged;
+        _gravityDirectionHandler.GravityChanged -= OnGravityChanged;
     }
 
 

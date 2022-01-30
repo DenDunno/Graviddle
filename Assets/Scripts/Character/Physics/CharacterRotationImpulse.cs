@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class CharacterRotationImpulse : MonoBehaviour
 {
-    [SerializeField] private SwipeHandler _swipeHandler;
+    [SerializeField] private GravityDirectionHandler _gravityDirectionHandler;
     private Rigidbody2D _rigidbody;
     private int _currentZRotation;
     private readonly int _straightAngle = 180;
@@ -18,13 +18,13 @@ public class CharacterRotationImpulse : MonoBehaviour
 
     private void OnEnable()
     {
-        _swipeHandler.GravityChanged += TryImpulseCharacter;
+        _gravityDirectionHandler.GravityChanged += TryImpulseCharacter;
     }
 
 
     private void OnDisable()
     {
-        _swipeHandler.GravityChanged -= TryImpulseCharacter;
+        _gravityDirectionHandler.GravityChanged -= TryImpulseCharacter;
     }
 
 
