@@ -1644,7 +1644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c1991ac0a4c3940bfd0ba42b581406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movement: 1
+  _movementState: 1
   _moveDirection: {fileID: 0}
   _spriteFlipping: {fileID: 0}
 --- !u!114 &4876280883689768151
@@ -4735,7 +4735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c1991ac0a4c3940bfd0ba42b581406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movement: -1
+  _movementState: -1
   _moveDirection: {fileID: 0}
   _spriteFlipping: {fileID: 0}
 --- !u!114 &3878353755648546079

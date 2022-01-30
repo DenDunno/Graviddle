@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 62825001620940680}
   - component: {fileID: 7859739332548944796}
   - component: {fileID: 6245550510935138673}
-  - component: {fileID: 86488996630343292}
+  - component: {fileID: 4306326483111866257}
   m_Layer: 0
   m_Name: SawDelay
   m_TagString: Untagged
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _motionCalculator:
-    _motionConfig: {fileID: 86488996630343292}
+    _motionType: {fileID: 4306326483111866257}
   _targetTransform: {fileID: 4657148271471368276}
 --- !u!114 &6245550510935138673
 MonoBehaviour:
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6c9161460d66245982cd251daa89fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &86488996630343292
+--- !u!114 &4306326483111866257
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6a897dbaca1b2a4ba21c05192b412e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedReadOnly: 2
+  _inspectorSpeed: 1
   _waitTime: 2
 --- !u!1 &1870321902628827309
 GameObject:

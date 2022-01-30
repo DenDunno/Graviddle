@@ -1,20 +1,16 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using UnityEngine;
 
 
+[Serializable]
 public class PortalDisappearance 
 {
-    private readonly float _timeBeforeDisappearance = 1.3f;
-    private readonly float _disappearingSpeed;
-    private readonly MonoBehaviour _context;
+    [SerializeField] private ParticleSystem _disappearFX;
+    [SerializeField] private float _disappearingSpeed;
+    [SerializeField] private MonoBehaviour _context;
+    private const float _timeBeforeDisappearance = 1.3f;
     private Tween _currentAnimation;
-
-
-    public PortalDisappearance(float disappearingSpeed, MonoBehaviour context)
-    {
-        _context = context;
-        _disappearingSpeed = disappearingSpeed;
-    }
 
 
     public void Disappear()
@@ -22,11 +18,10 @@ public class PortalDisappearance
         Sequence sequence = DOTween.Sequence();
 
         sequence.AppendInterval(_timeBeforeDisappearance);
-        sequence.Append(ScalePortal()).AppendCallback(() =>
-        {
-            _context.gameObject.SetActive(false);
-        });
-
+        sequence.Append(ScalePortal()).AppendCallback(PlayDustAnimation);
+        sequence.AppendInterval(_timeBeforeDisappearance);
+        sequence.OnComplete(()=> _context.gameObject.SetActive(false));
+        
         _currentAnimation = sequence;
     }
 
@@ -35,9 +30,15 @@ public class PortalDisappearance
     {
         return _context.transform.DOScale(Vector3.zero, _disappearingSpeed).SetEase(Ease.OutQuint);
     }
+    
+    
+    private void PlayDustAnimation()
+    {
+        _disappearFX.Play();
+    }
 
 
-    public void StopAndResetAnimation()
+    public void ResetAnimation()
     {
         _currentAnimation?.Kill();
 

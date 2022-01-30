@@ -932,6 +932,11 @@ PrefabInstance:
       propertyPath: _character
       value: 
       objectReference: {fileID: 573293661}
+    - target: {fileID: 8330912486358253217, guid: 3814a69fc0e128c4380f1914f44a9b0e,
+        type: 3}
+      propertyPath: _pullingAnimation._character
+      value: 
+      objectReference: {fileID: 573293661}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3814a69fc0e128c4380f1914f44a9b0e, type: 3}
 --- !u!1 &497499983

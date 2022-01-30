@@ -301,6 +301,11 @@ PrefabInstance:
       propertyPath: _character
       value: 
       objectReference: {fileID: 365114991}
+    - target: {fileID: 8330912486358253217, guid: 3814a69fc0e128c4380f1914f44a9b0e,
+        type: 3}
+      propertyPath: _pullingAnimation._character
+      value: 
+      objectReference: {fileID: 365114991}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3814a69fc0e128c4380f1914f44a9b0e, type: 3}
 --- !u!114 &106943250 stripped
@@ -151286,6 +151291,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1291520376445137339, guid: 541cefc2686fbf447be6be187ea3ca43,
+        type: 3}
+      propertyPath: _moveDirection
+      value: 
+      objectReference: {fileID: 1449451555}
+    - target: {fileID: 1291520376445137339, guid: 541cefc2686fbf447be6be187ea3ca43,
+        type: 3}
+      propertyPath: _spriteFlipping
+      value: 
+      objectReference: {fileID: 1449451554}
     - target: {fileID: 1307281600567959537, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: m_IsActive
@@ -151411,6 +151426,16 @@ PrefabInstance:
       propertyPath: _cameraClamping
       value: 
       objectReference: {fileID: 1086923631}
+    - target: {fileID: 7289557721080291226, guid: 541cefc2686fbf447be6be187ea3ca43,
+        type: 3}
+      propertyPath: _moveDirection
+      value: 
+      objectReference: {fileID: 1449451555}
+    - target: {fileID: 7289557721080291226, guid: 541cefc2686fbf447be6be187ea3ca43,
+        type: 3}
+      propertyPath: _spriteFlipping
+      value: 
+      objectReference: {fileID: 1449451554}
     - target: {fileID: 8126365410716632504, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: _parallaxCameraPosition._mainCamera
@@ -151749,6 +151774,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1449451554 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5893385115663150129, guid: a0ca5d21826335e4dae61dcad8de1703,
+    type: 3}
+  m_PrefabInstance: {fileID: 2117880851}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c3d3640147a1c4ea4047d8bd4b6f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1449451555 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6571905973629665504, guid: a0ca5d21826335e4dae61dcad8de1703,
+    type: 3}
+  m_PrefabInstance: {fileID: 2117880851}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a13f897438fd7ef4ca2070650cff90f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1487575599

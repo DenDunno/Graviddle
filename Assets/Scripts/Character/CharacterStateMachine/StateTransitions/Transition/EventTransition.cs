@@ -7,10 +7,10 @@ public class EventTransition : Transition
     private static CharacterState _currentState;
 
 
-    public EventTransition(CharacterState stateFrom, CharacterState stateTo, UnityEvent unityEvent) 
+    public EventTransition(CharacterState stateFrom, CharacterState stateTo, UnityEvent condition) 
         : base(stateFrom, stateTo)
     {
-        unityEvent.AddListener(TrySetEventFlag);
+        condition.AddListener(TrySetEventFlag);
     }
 
     

@@ -3,17 +3,9 @@
 
 public class FinishPortal : MonoBehaviour
 {
-    [SerializeField] private Character _character;
+    [SerializeField] private PortalDisappearance _portalDisappearance;
+    [SerializeField] private CharacterToPortalPulling _pullingAnimation;
     [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
-    private PortalDisappearance _portalDisappearance;
-    private CharacterToPortalPulling _pullingAnimation;
-
-
-    private void Start()
-    {
-        _portalDisappearance = new PortalDisappearance(5f, this);
-        _pullingAnimation = new CharacterToPortalPulling(this, _character);
-    }
 
 
     private void OnEnable()

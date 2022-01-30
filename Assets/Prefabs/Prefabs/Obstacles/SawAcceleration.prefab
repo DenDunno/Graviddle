@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _motionCalculator:
-    _motionConfig: {fileID: 3560607041193200546}
+    _motionType: {fileID: 3560607041193200546}
   _targetTransform: {fileID: 4340357530348636659}
 --- !u!114 &8112973255570541900
 MonoBehaviour:
