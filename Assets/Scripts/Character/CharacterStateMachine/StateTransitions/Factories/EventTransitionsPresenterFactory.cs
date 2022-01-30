@@ -19,6 +19,11 @@ public class EventTransitionsPresenterFactory : TransitionsPresenterFactory
         eventTransitions.AddRange(GetAllTransitionsWithState(States.WinState, _transitionsEvents.FinishEntered));
         eventTransitions.Add(new EventTransition(States.DieState, States.IdleState, _transitionsEvents.CharacterResurrected));
 
+        foreach (UnityEvent boxGrabbedEvent in _transitionsEvents.BoxGrabbed)
+        {
+            eventTransitions.Add(new EventTransition(States.IdleState, States.BoxIdle, boxGrabbedEvent));
+        }
+        
         return eventTransitions;
     }
 
