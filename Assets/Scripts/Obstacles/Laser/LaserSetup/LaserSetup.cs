@@ -12,7 +12,7 @@ public class LaserSetup : MonoBehaviour
     public void Setup(Vector2 hitPoint)
     {
         float laserDistance = Vector2.Distance(transform.position, hitPoint);
-
+        
         _laserCollider.SetupColliderDistance(laserDistance);
         _laserLine.SetupLineDistance(transform.position, hitPoint);
         _effectsAdjuster.ConfigureSourceEffects(laserDistance);
