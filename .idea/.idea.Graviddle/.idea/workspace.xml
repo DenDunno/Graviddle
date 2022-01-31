@@ -3,15 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="236f7ca0-e3d5-42cf-8bd1-4f65d9112fc7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sprites/Else/GravityBox/GravityBox.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Sprites/Else/GravityBox/GravityBox.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sprites/Else/GravityBox/GravityBox.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Sprites/Else/GravityBox/GravityBox.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Buffer/Level_2 1.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Buffer/Level_2 1.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu/LevelСhoice.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu/LevelСhoice.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/StateTransitions/Factories/EventTransitionsPresenterFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/StateTransitions/Factories/EventTransitionsPresenterFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/StateTransitions/Mediators/TransitionsEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/StateTransitions/Mediators/TransitionsEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/UniversalRP support.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/_MK/MKGlow/Components/HDRP_Component.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/_MK/MKGlow/Components/LWRP_And_PPSV2_Component.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/_MK/MKGlow/Components/Legacy_Component.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/_MK/MKGlow/Components/URP_Component.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/_MK/MKGlow/ExamplesBuiltinLegacy.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/_MK/MKGlow/ExamplesHDRP.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/_MK/MKGlow/ExamplesHDRP_2020_2_and_newer.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/_MK/MKGlow/ExamplesHDRP_2021_2_and_newer.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/_MK/MKGlow/ExamplesInc.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/_MK/MKGlow/ExamplesPostprocessingStackV2.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/_MK/MKGlow/ExamplesURP.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/_MK/MKGlow/Shaders/VariantsSelective/SelectiveParticleStandard_2017_3_Or_Higher.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Configs/Post processing/LaserTurret.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Configs/Post processing/LaserTurret.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_4.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obstacles/LaserTurret/TurretRotation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obstacles/LaserTurret/TurretRotation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,11 +35,9 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obstacles/LaserTurret/TurretRotation.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695d1cc93cca45069c528c15c9fdd7493e2800/b9/2583d81d/List`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Level/LevelStar/LevelStar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Level/UI/Victory/WinPanel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../Dev tools/Unity/UnityEditor/2020.3.9f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Level/LevelStar/LevelStar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obstacles/LaserTurret/TurretRotation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Level/LevelStar/LevelStarImpact.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -67,10 +72,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="17864">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="17864" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -97,6 +102,7 @@
       <workItem from="1643098155979" duration="2922000" />
       <workItem from="1643218118745" duration="595000" />
       <workItem from="1643377225710" duration="19692000" />
+      <workItem from="1643636969084" duration="1119000" />
     </task>
     <servers />
   </component>
@@ -132,14 +138,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/StateTransitions/Factories/TransitionsPresenterFactory.cs</url>
           <line>23</line>
-          <properties documentPath="D:\Business\Graviddle\Assets\Scripts\Character\CharacterStateMachine\StateTransitions\Factories\TransitionsPresenterFactory.cs" initialLine="23" containingFunctionPresentation="method 'Create'">
-            <startOffsets>
-              <option value="497" />
-            </startOffsets>
-            <endOffsets>
-              <option value="524" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\Business\Graviddle\Assets\Scripts\Character\CharacterStateMachine\StateTransitions\Factories\TransitionsPresenterFactory.cs" initialLine="23" containingFunctionPresentation="method 'Create'" />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
