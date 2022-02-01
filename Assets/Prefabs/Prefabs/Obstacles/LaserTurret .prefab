@@ -208,12 +208,12 @@ MonoBehaviour:
   _effectsAdjuster:
     _sourceFlame: {fileID: 2802246902834650874}
     _sourceSparks: {fileID: 2802246902636533160}
-    _applyEffectsAdjustment: 0
   _laserCollider: {fileID: 2802246902599032775}
   _laserHitObjectsPositions:
     _laserLightBulb: {fileID: 4942353453937636663}
     _hitEffect: {fileID: 2604023418661911228}
     _isLightBulbInRight: 1
+  _applyEffectsAdjustment: 0
 --- !u!114 &2802246902599032824
 MonoBehaviour:
   m_ObjectHideFlags: 0

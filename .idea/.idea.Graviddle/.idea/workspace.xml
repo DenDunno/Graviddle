@@ -3,10 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="236f7ca0-e3d5-42cf-8bd1-4f65d9112fc7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/LevelStar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/LevelStar.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Obstacles/LaserTurret .prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Obstacles/LaserTurret .prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_2.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_4.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obstacles/Laser/LaserCollider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obstacles/Laser/LaserCollider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_6.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_6.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_6.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_6.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/ClosedPathMotion/ClosedPathMotion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/ClosedPathMotion/ClosedPathMotion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/ClosedPathMotion/ClosedPathMotionCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/ClosedPathMotion/ClosedPathMotionCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Gravitation/GravityRotation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Gravitation/GravityRotation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obstacles/Laser/LaserSetup/LaserSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obstacles/Laser/LaserSetup/LaserSetup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obstacles/Laser/LaserSetup/LaserVFX.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obstacles/Laser/LaserSetup/LaserVFX.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +100,7 @@
       <workItem from="1643218118745" duration="595000" />
       <workItem from="1643377225710" duration="19692000" />
       <workItem from="1643636969084" duration="6043000" />
-      <workItem from="1643717802625" duration="1809000" />
+      <workItem from="1643717802625" duration="6602000" />
     </task>
     <servers />
   </component>

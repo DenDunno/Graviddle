@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class ClosedPathMotion : MonoBehaviour
+public class ClosedPathMotion : MonoBehaviour, IRestartableComponent
 {
     [SerializeField] private ClosedPathMotionCalculator _motionCalculator;
     [SerializeField] private Transform _targetTransform;
@@ -23,5 +23,11 @@ public class ClosedPathMotion : MonoBehaviour
     {
         float lerp = _motionCalculator.EvaluateLerpPosition();
         transform.position = Vector2.Lerp(_startPosition, _targetPosition, lerp);
+    }
+
+    
+    void IRestartableComponent.Restart()
+    {
+        _motionCalculator.Restart();
     }
 }

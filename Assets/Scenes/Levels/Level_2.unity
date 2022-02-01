@@ -329,7 +329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 112350727}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 135594739}
   - component: {fileID: 135594740}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: right_tile (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,6 +456,11 @@ PrefabInstance:
       propertyPath: _swipeHandler
       value: 
       objectReference: {fileID: 698458575}
+    - target: {fileID: 8550718927411112631, guid: 1ee95f3f600c527418c5c1bc1940d203,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8550718928693556226, guid: 1ee95f3f600c527418c5c1bc1940d203,
         type: 3}
       propertyPath: m_RootOrder
@@ -526,6 +531,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelStar (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8550718928693556249, guid: 1ee95f3f600c527418c5c1bc1940d203,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ee95f3f600c527418c5c1bc1940d203, type: 3}
 --- !u!114 &349025856 stripped
@@ -556,7 +566,7 @@ GameObject:
   m_Component:
   - component: {fileID: 362814167}
   - component: {fileID: 362814168}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: left_tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -655,7 +665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 424416976}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Tiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151200,6 +151210,11 @@ PrefabInstance:
       propertyPath: _swipeHandler
       value: 
       objectReference: {fileID: 698458575}
+    - target: {fileID: 8550718927411112631, guid: 1ee95f3f600c527418c5c1bc1940d203,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8550718928693556226, guid: 1ee95f3f600c527418c5c1bc1940d203,
         type: 3}
       propertyPath: m_RootOrder
@@ -151269,6 +151284,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelStar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550718928693556249, guid: 1ee95f3f600c527418c5c1bc1940d203,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ee95f3f600c527418c5c1bc1940d203, type: 3}
@@ -151658,10 +151678,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1289375041}
-  - component: {fileID: 1289375043}
   - component: {fileID: 1289375042}
-  m_Layer: 0
-  m_Name: Ground
+  m_Layer: 10
+  m_Name: LaserHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151681,19 +151700,7 @@ Transform:
   m_Father: {fileID: 1926696222}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1289375042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289375040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c0a58eb8ce0454c88b40d2714d9734, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!61 &1289375043
+--- !u!61 &1289375042
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151703,10 +151710,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.029348373, y: 0.0048913956}
+  m_Offset: {x: 0, y: 0.0048913956}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -151717,7 +151724,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1543694, y: 4.1207104}
+  m_Size: {x: 1.9978409, y: 4.0228825}
   m_EdgeRadius: 0
 --- !u!1 &1298915459
 GameObject:
@@ -151762,7 +151769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1404886341}
   - component: {fileID: 1404886342}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: right_tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151880,7 +151887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1487575600}
   - component: {fileID: 1487575601}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: outer_corner_bottom_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152036,7 +152043,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1576467905}
   - component: {fileID: 1576467906}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: outer_corner_top_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152118,7 +152125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1677749777}
   - component: {fileID: 1677749778}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: left_tile (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152212,7 +152219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1706244363}
   - component: {fileID: 1706244364}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: outer_corner_bottom_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152364,8 +152371,9 @@ GameObject:
   - component: {fileID: 1926696225}
   - component: {fileID: 1926696224}
   - component: {fileID: 1926696223}
+  - component: {fileID: 1926696226}
   - component: {fileID: 1926696227}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: BigMovingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152432,6 +152440,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8b954e35792947a7ea6f18223e955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1926696226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926696221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c0a58eb8ce0454c88b40d2714d9734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &1926696227
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -152442,10 +152462,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0048913956}
+  m_Offset: {x: -0.029348373, y: 0.0048913956}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -152456,7 +152476,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9978409, y: 4.0228825}
+  m_Size: {x: 2.1543694, y: 4.1207104}
   m_EdgeRadius: 0
 --- !u!1 &1976363376
 GameObject:
@@ -152468,7 +152488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1976363377}
   - component: {fileID: 1976363378}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: outer_corner_top_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152552,6 +152572,11 @@ PrefabInstance:
       propertyPath: _swipeHandler
       value: 
       objectReference: {fileID: 698458575}
+    - target: {fileID: 8550718927411112631, guid: 1ee95f3f600c527418c5c1bc1940d203,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8550718928693556226, guid: 1ee95f3f600c527418c5c1bc1940d203,
         type: 3}
       propertyPath: m_RootOrder
@@ -152621,6 +152646,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelStar (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550718928693556249, guid: 1ee95f3f600c527418c5c1bc1940d203,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ee95f3f600c527418c5c1bc1940d203, type: 3}

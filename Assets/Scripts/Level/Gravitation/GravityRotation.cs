@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
 
-public class GravityRotation : MonoBehaviour 
+public class GravityRotation : MonoBehaviour, IRestartableComponent
 {
     [SerializeField] private SwipeHandler _swipeHandler;
 
-    private readonly float _rotationSpeed = 3f;
+    private const float _rotationSpeed = 3f;
     private Quaternion _targetRotation;
 
 
@@ -31,5 +31,11 @@ public class GravityRotation : MonoBehaviour
     {
         float targetZRotation = GravityDataPresenter.GravityData[gravityDirection].ZRotation;
         _targetRotation = Quaternion.Euler(0, 0, targetZRotation);
+    }
+    
+
+    void IRestartableComponent.Restart()
+    {
+        _targetRotation = Quaternion.identity;
     }
 }

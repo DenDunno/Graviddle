@@ -7,21 +7,17 @@ public class LaserSourceEffectsAdjuster
 {
     [SerializeField] private ParticleSystem _sourceFlame;
     [SerializeField] private ParticleSystem _sourceSparks;
-    [SerializeField] private bool _applyEffectsAdjustment = true;
-    
+
 
     public void ConfigureSourceEffects(float laserDistance)
     {
-        if (_applyEffectsAdjustment)
-        {
-            ParticleSystem.MainModule sparksMain = _sourceSparks.main;
-            ParticleSystem.MainModule flameMain = _sourceFlame.main;
+        ParticleSystem.MainModule sparksMain = _sourceSparks.main;
+        ParticleSystem.MainModule flameMain = _sourceFlame.main;
 
-            sparksMain.startLifetime = EvaluateSparksLifeTime(laserDistance);
-            sparksMain.startSpeed = EvaluateSparksSpeed(laserDistance);
-            flameMain.startLifetime = EvaluateFlameLifeTime(laserDistance);
-            _sourceFlame.transform.localPosition = EvaluateFlamePosition(laserDistance);
-        }
+        sparksMain.startLifetime = EvaluateSparksLifeTime(laserDistance);
+        sparksMain.startSpeed = EvaluateSparksSpeed(laserDistance);
+        flameMain.startLifetime = EvaluateFlameLifeTime(laserDistance);
+        _sourceFlame.transform.localPosition = EvaluateFlamePosition(laserDistance);
     }
 
 

@@ -28,4 +28,10 @@ public class ClosedPathMotionCalculator
 
         return _motionType.EvaluateMotionFunction(_time);
     }
+
+    
+    public void Restart()
+    {
+        _time = 0;
+    }
 }
