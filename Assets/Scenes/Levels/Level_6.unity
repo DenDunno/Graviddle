@@ -221,12 +221,12 @@ PrefabInstance:
     - target: {fileID: 205806455587547125, guid: 3814a69fc0e128c4380f1914f44a9b0e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46.48
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 205806455587547125, guid: 3814a69fc0e128c4380f1914f44a9b0e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 38.42
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 205806455587547125, guid: 3814a69fc0e128c4380f1914f44a9b0e,
         type: 3}
@@ -272,11 +272,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FinishPortal
-      objectReference: {fileID: 0}
-    - target: {fileID: 205806455587547127, guid: 3814a69fc0e128c4380f1914f44a9b0e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1676370641203529913, guid: 3814a69fc0e128c4380f1914f44a9b0e,
         type: 3}
