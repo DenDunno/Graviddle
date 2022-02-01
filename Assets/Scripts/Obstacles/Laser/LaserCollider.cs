@@ -10,7 +10,7 @@ public class LaserCollider : MonoBehaviour
     public void SetupColliderDistance(float laserDistance)
     {
         float colliderOffset = 0.5f * laserDistance;
-
+        
         _boxCollider.size = new Vector2(_boxCollider.size.x, laserDistance);
         _boxCollider.offset = new Vector2(_boxCollider.offset.x, colliderOffset);
     }
