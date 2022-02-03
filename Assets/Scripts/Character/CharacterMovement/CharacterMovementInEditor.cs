@@ -23,7 +23,7 @@ public class CharacterMovementInEditor : MonoBehaviour
     {
         var movement = (MovementState)Input.GetAxisRaw("Horizontal");
         
-        _moveDirection.SetMovementState(movement);
+        _moveDirection.SetMovementDirection(movement);
         _spriteFlipping.FlipCharacter(movement);
     }
 }

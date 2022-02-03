@@ -11,7 +11,7 @@ public class CharacterInputButton : MonoBehaviour, IPointerDownHandler, IPointer
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        _moveDirection.SetMovementState(_movementState);
+        _moveDirection.SetMovementDirection(_movementState);
         _spriteFlipping.FlipCharacter(_movementState);
     }
 
@@ -32,7 +32,7 @@ public class CharacterInputButton : MonoBehaviour, IPointerDownHandler, IPointer
     {
         if (_moveDirection != null)
         {
-            _moveDirection.SetMovementState(MovementState.Stop);
+            _moveDirection.SetMovementDirection(MovementState.Stop);
         }
     }
 }

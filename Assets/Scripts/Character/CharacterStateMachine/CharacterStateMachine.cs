@@ -4,7 +4,7 @@
 public class CharacterStateMachine : MonoBehaviour
 {
     [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
-    [LightweightInject] private readonly CharacterStateTransitions _characterStateTransitions;
+    [LightweightInject] private readonly TransitionsPresenter _transitionsPresenter;
     private CharacterState _state;
 
 
@@ -12,30 +12,29 @@ public class CharacterStateMachine : MonoBehaviour
     {
         _state = _characterStatesPresenter.IdleState;
     }
-    
-
-    private void SwitchState(CharacterState newState)
-    {
-        _state = newState;
-        _state.Enter();
-    }
 
 
     private void Update()
     {
         _state.Update();
         TryTransit();
-        EventTransition.SetCurrentState(_state);
+    }
+
+    
+    private void TryTransit()
+    {
+        CharacterState newState = _transitionsPresenter.Transit(_state);
+
+        if (newState != _state)
+        {
+            SwitchState(newState);
+        }
     }
 
 
-    private void TryTransit()
+    private void SwitchState(CharacterState newState)
     {
-        TransitionResult transitionResult = _characterStateTransitions.Transit(_state);
-
-        if (transitionResult.TransitionHappened)
-        {
-            SwitchState(transitionResult.NewState);
-        }
+        _state = newState;
+        _state.Enter();
     }
 }
