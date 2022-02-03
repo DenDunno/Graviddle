@@ -34,7 +34,6 @@ public class CharacterStateMachine : MonoBehaviour
 
     private void SwitchState(CharacterState newState)
     {
-        Debug.Log(newState);
         _state = newState;
         _state.Enter();
     }

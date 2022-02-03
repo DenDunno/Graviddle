@@ -8,7 +8,14 @@ public class TransitButton : MonoBehaviour
     private readonly EventTransit _eventTransit = new EventTransit();
 
 
-    public bool CheckIfPressed() => _eventTransit.CheckIfEventHappened();
+    private void Start()
+    {
+        _button.onClick.AddListener(_eventTransit.Invoke);
+    }
+
     
-    public void OnButtonPressed() => _eventTransit.Invoke();
+    public bool CheckIfPressed()
+    {
+        return _eventTransit.CheckIfEventHappened();
+    }
 }
