@@ -20,7 +20,7 @@ public class CollisionsList : MonoBehaviour
     }
 
 
-    public bool CheckComponent<T>() 
+    public bool CheckCollision<T>() 
     {
         return _colliders.Any(collider2d => collider2d.GetComponent<T>() != null);
     }

@@ -18,4 +18,10 @@ public class EventTransit
     {
         _eventHappened = true;
     }
+    
+    
+    public void Cancel()
+    {
+        _eventHappened = false;
+    }
 }
