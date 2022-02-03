@@ -7,41 +7,30 @@ using UnityEngine;
 public class EntryPoint : MonoBehaviour
 {
     [SerializeField] private LightweightDiContainer _diContainer;
+    [SerializeField] private TransitionsConditions _transitionsConditions;
     [SerializeField] private Character _character;
-    [SerializeField] private CharacterStatesTransitionsFactory _characterStatesTransitionsFactory;
     private IEnumerable<IMediator> _mediators;
-    private readonly List<object> _instances = new List<object>();
 
 
     private void Awake()
     {        
-        ConstructInstances();
-        RegisterTypes();
+        BindInstances();
         _diContainer.ResolveDependencies();
         InitializeMediators();
     }
 
 
-    private void ConstructInstances()
+    private void BindInstances()
     {
-        var characterStates = new CharacterStatesPresenter(_character);
-        _characterStatesTransitionsFactory.Init(_character, characterStates);
-        CharacterStateTransitions characterStateTransitions = _characterStatesTransitionsFactory.Create();
+        var characterStatesPresenter = new CharacterStatesPresenter(_character);
+        var transitionsPresenterFactory = new TransitionsPresenterFactory(characterStatesPresenter, _transitionsConditions);
+        var transitionsPresenter = transitionsPresenterFactory.Create();
         
-        _instances.Add(characterStates);
-        _instances.Add(characterStateTransitions);
+        _diContainer.RegisterTypeWithInstance(characterStatesPresenter);
+        _diContainer.RegisterTypeWithInstance(transitionsPresenter);
     }
 
 
-    private void RegisterTypes()
-    {
-        foreach (object instance in _instances)
-        {
-            _diContainer.RegisterTypeWithInstance(instance);
-        }
-    }
-
-    
     private void InitializeMediators()
     {
         _mediators = FindObjectsOfType<MonoBehaviour>(true).OfType<IMediator>();

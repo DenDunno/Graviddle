@@ -1,13 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 
 public class TransitionsPresenter
 {
-    private readonly Dictionary<CharacterState, List<Transition>> _transitions =
-        new Dictionary<CharacterState, List<Transition>>();
-
-    public IReadOnlyDictionary<CharacterState, List<Transition>> Transitions => _transitions;
-
+    private readonly Dictionary<CharacterState, List<Transition>> _transitions = new Dictionary<CharacterState, List<Transition>>();
+    
 
     public void AddTransition(Transition transition)
     {
@@ -19,23 +17,29 @@ public class TransitionsPresenter
         _transitions[transition.StateFrom].Add(transition);
     }
 
-
-    public TransitionResult Transit(CharacterState currentState)
+    
+    public Transition GetTransition(CharacterState stateFrom, CharacterState stateTo)
     {
-        var transitionResult = new TransitionResult();
+        return _transitions[stateFrom].First(transition => transition.StateTo == stateTo);
+    }
+
+
+    public CharacterState Transit(CharacterState currentState)
+    {
+        CharacterState newState = currentState;
 
         if (_transitions.ContainsKey(currentState))
         {
             foreach (Transition transition in _transitions[currentState])
             {
-                if (transition.CheckIfTransitionHappened())
+                if (transition.CheckCondition())
                 {
-                    transitionResult = new TransitionResult(transition.StateTo);
+                    newState = transition.StateTo;
                     break;
                 }
             }
         }
 
-        return transitionResult;
+        return newState;
     }
 }

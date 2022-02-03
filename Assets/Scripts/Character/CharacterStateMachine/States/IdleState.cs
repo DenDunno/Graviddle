@@ -2,7 +2,7 @@
 
 public class IdleState : CharacterState
 {
-    public IdleState(Character character, string animationName) : base(character, animationName)
+    public IdleState(Character character) : base(character, AnimationsName.Idle)
     {
     }
 }
