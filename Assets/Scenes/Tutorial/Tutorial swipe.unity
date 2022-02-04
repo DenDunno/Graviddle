@@ -306,6 +306,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bea53f4c1058914995c39c08f33ab42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &230105898 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2071492005582517391, guid: 9fb5dbd51a9c2474c9f3343113ac254b,
+    type: 3}
+  m_PrefabInstance: {fileID: 230105895}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 365543492fa7e9b45977e967e29a0b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &230105900 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4599026585472759060, guid: 9fb5dbd51a9c2474c9f3343113ac254b,
@@ -17574,7 +17586,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _characterCapture
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 230105898}
     - target: {fileID: 4710138297989803409, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: _levelStars.Array.data[0]
@@ -17669,7 +17681,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _characterCapture
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 230105898}
     - target: {fileID: 7049889508726442829, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: _parallaxCameraPosition._mainCamera

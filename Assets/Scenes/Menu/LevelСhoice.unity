@@ -140,6 +140,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4612923277842062939, guid: ab12fcae217bd144faa7938fdb2148d9,
+        type: 3}
+      propertyPath: _sceneIndex
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5888818667993393571, guid: ab12fcae217bd144faa7938fdb2148d9,
         type: 3}
       propertyPath: m_text
@@ -296,6 +301,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612923277842062939, guid: ab12fcae217bd144faa7938fdb2148d9,
+        type: 3}
+      propertyPath: _sceneIndex
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5888818667993393571, guid: ab12fcae217bd144faa7938fdb2148d9,
         type: 3}
@@ -524,6 +534,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4612923277842062939, guid: ab12fcae217bd144faa7938fdb2148d9,
+        type: 3}
+      propertyPath: _sceneIndex
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5888818667993393571, guid: ab12fcae217bd144faa7938fdb2148d9,
         type: 3}
       propertyPath: m_text
@@ -659,6 +674,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1882498237}
     m_Modifications:
+    - target: {fileID: 4612923277842062939, guid: ab12fcae217bd144faa7938fdb2148d9,
+        type: 3}
+      propertyPath: _sceneIndex
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5888818668370362869, guid: ab12fcae217bd144faa7938fdb2148d9,
         type: 3}
       propertyPath: m_Name
@@ -1274,6 +1294,7 @@ GameObject:
   - component: {fileID: 1178515956}
   - component: {fileID: 1178515955}
   - component: {fileID: 1178515957}
+  - component: {fileID: 1178515958}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -1383,19 +1404,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5251755042352580536, guid: afbfc7b0fb1cc1b4886cb4438fbc94b0,
-          type: 3}
-        m_TargetAssemblyTypeName: SceneTransit, Assembly-CSharp
-        m_MethodName: SpawnTransit
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1737779730}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
@@ -1408,6 +1416,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1178515958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178515953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6f8d9f2711a4448813543d1e0620fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 1178515957}
+  _transitLoader:
+    _assetReference:
+      m_AssetGUID: a1c9bd019de36b3488b4b97851461d7b
+      m_SubObjectName: 
+      m_SubObjectType: 
+  _sceneIndex: 0
 --- !u!1001 &1216338987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1424,6 +1451,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612923277842062939, guid: ab12fcae217bd144faa7938fdb2148d9,
+        type: 3}
+      propertyPath: _sceneIndex
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5888818667993393571, guid: ab12fcae217bd144faa7938fdb2148d9,
         type: 3}
@@ -1716,6 +1748,11 @@ PrefabInstance:
     - target: {fileID: 622181481111713425, guid: ab12fcae217bd144faa7938fdb2148d9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612923277842062939, guid: ab12fcae217bd144faa7938fdb2148d9,
+        type: 3}
+      propertyPath: _sceneIndex
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5888818667993393571, guid: ab12fcae217bd144faa7938fdb2148d9,
@@ -2350,6 +2387,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4612923277842062939, guid: ab12fcae217bd144faa7938fdb2148d9,
+        type: 3}
+      propertyPath: _sceneIndex
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5888818667993393571, guid: ab12fcae217bd144faa7938fdb2148d9,
         type: 3}
       propertyPath: m_text
@@ -2488,6 +2530,11 @@ PrefabInstance:
     - target: {fileID: 622181481111713425, guid: ab12fcae217bd144faa7938fdb2148d9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612923277842062939, guid: ab12fcae217bd144faa7938fdb2148d9,
+        type: 3}
+      propertyPath: _sceneIndex
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5888818667993393571, guid: ab12fcae217bd144faa7938fdb2148d9,

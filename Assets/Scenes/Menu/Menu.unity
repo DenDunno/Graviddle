@@ -620,7 +620,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 88
+  m_fontSize: 55.5
   m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -755,7 +755,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 88
+  m_fontSize: 55.5
   m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -968,6 +968,7 @@ GameObject:
   - component: {fileID: 747405970}
   - component: {fileID: 747405969}
   - component: {fileID: 747405971}
+  - component: {fileID: 747405968}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -995,6 +996,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.50000006}
+--- !u!114 &747405968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747405966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6f8d9f2711a4448813543d1e0620fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 747405971}
+  _transitLoader:
+    _assetReference:
+      m_AssetGUID: a1c9bd019de36b3488b4b97851461d7b
+      m_SubObjectName: 
+      m_SubObjectType: 
+  _sceneIndex: 1
 --- !u!114 &747405969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1077,19 +1097,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5251755042352580536, guid: afbfc7b0fb1cc1b4886cb4438fbc94b0,
-          type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SpawnTransit
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1103893553}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
@@ -1187,7 +1194,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 88
+  m_fontSize: 55.5
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2494,6 +2501,7 @@ GameObject:
   - component: {fileID: 2089987689}
   - component: {fileID: 2089987688}
   - component: {fileID: 2089987687}
+  - component: {fileID: 2089987690}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -2565,19 +2573,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5251755042352580536, guid: afbfc7b0fb1cc1b4886cb4438fbc94b0,
-          type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SpawnTransit
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1103893553}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
@@ -2628,6 +2623,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089987685}
   m_CullTransparentMesh: 0
+--- !u!114 &2089987690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089987685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6f8d9f2711a4448813543d1e0620fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 2089987687}
+  _transitLoader:
+    _assetReference:
+      m_AssetGUID: a1c9bd019de36b3488b4b97851461d7b
+      m_SubObjectName: 
+      m_SubObjectType: 
+  _sceneIndex: 2
 --- !u!4 &8274698784749853056
 Transform:
   m_ObjectHideFlags: 0

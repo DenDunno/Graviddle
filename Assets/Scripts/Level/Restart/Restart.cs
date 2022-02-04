@@ -1,17 +1,18 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 
 public class Restart : MonoBehaviour
 {
-    [SerializeField] private Backstage _backstage;
     [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
-    private const float _restartTime = 0.7f;
+    [SerializeField] private LocalAssetLoader _levelRestartLoader;
 
     private IEnumerable<IRestartableComponent> _restartableComponents;
     private IEnumerable<IAfterRestartComponent> _afterRestartComponents;
+    private const float _restartTime = 0.7f;
 
 
     private void Start()
@@ -25,34 +26,33 @@ public class Restart : MonoBehaviour
 
     private void OnEnable()
     {
-        _characterStatesPresenter.DieState.CharacterDied += OnCharacterDied;
+        _characterStatesPresenter.DieState.CharacterDied += MakeRestart;
     }
 
 
     private void OnDisable()
     {
-        _characterStatesPresenter.DieState.CharacterDied -= OnCharacterDied;
+        _characterStatesPresenter.DieState.CharacterDied -= MakeRestart;
     }
 
 
-    private void OnCharacterDied()
+    private async void  MakeRestart()
     {
-        StartCoroutine(MakeRestart());
-    }
+        var deathScreen = await _levelRestartLoader.Load<LoadingScreen>();
+        var backstage = new Backstage(deathScreen, RestartObjects);
 
-
-    private IEnumerator MakeRestart()
-    {
-        yield return StartCoroutine(_backstage.MakeTransition(RestartObjects()));
+        await backstage.MakeTransition();
 
         _afterRestartComponents.ForEach(component => component.Restart());
+        
+        _levelRestartLoader.Unload();
     }
 
 
-    private IEnumerator RestartObjects()
+    private async UniTask RestartObjects()
     {
         _restartableComponents.ForEach(component => component.Restart());
 
-        yield return new WaitForSeconds(_restartTime);
+        await UniTask.Delay(TimeSpan.FromSeconds(_restartTime));
     }
 }

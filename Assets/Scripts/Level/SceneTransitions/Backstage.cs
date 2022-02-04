@@ -1,36 +1,27 @@
-﻿using System.Collections;
-using Coffee.UIEffects;
+﻿using System;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using UnityEngine;
-using UnityEngine.UI;
 
 
-public class Backstage : MonoBehaviour
+public class Backstage
 {
-    [SerializeField] private bool _useDissolve;
-    [SerializeField] private Image _image;
-    [SerializeField] private UIDissolve _dissolveImage;
-    [SerializeField] private float _fadingTime = 1f;
+    private readonly LoadingScreen _loadingScreen;
+    private readonly Func<UniTask> _backstageAction;
+    
 
-
-    public IEnumerator MakeTransition(IEnumerator backstageAction)
+    public Backstage(LoadingScreen loadingScreen, Func<UniTask> backstageAction)
     {
-        yield return (_useDissolve ? MakeDissolve(1, 0) : MakeFade(1)).WaitForCompletion();
-
-        yield return StartCoroutine(backstageAction);
-
-        yield return (_useDissolve ? MakeDissolve(0, 1) : MakeFade(0)).WaitForCompletion();
+        _loadingScreen = loadingScreen;
+        _backstageAction = backstageAction;
     }
-
-
-    private Tween MakeDissolve(float fromEffectFactor, float toEffectFactor)
+    
+    
+    public async UniTask MakeTransition()
     {
-        return DOTween.To(x => _dissolveImage.effectFactor = x, fromEffectFactor, toEffectFactor, _fadingTime);
-    }
+        await _loadingScreen.Appear().AsyncWaitForCompletion();
 
+        await _backstageAction();
 
-    public Tween MakeFade(float targetAlpha)
-    {
-        return _image.DOFade(targetAlpha, _fadingTime);
+        await _loadingScreen.Disappear().AsyncWaitForCompletion();
     }
 }
