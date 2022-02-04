@@ -14,22 +14,18 @@ public class SceneTransit : MonoBehaviour
     }
 
 
-    private async UniTask MakeTransition(int scene)
+    public async UniTask MakeTransition(int scene)
     {
-        UniTask sceneLoadingTask = WaitWhileSceneLoading(scene);
-        var backstage = new Backstage(_loadingScreen, sceneLoadingTask);
+        var backstage = new Backstage(_loadingScreen, ()=> LoadScene(scene));
         
         await backstage.MakeTransition();
 
-        Destroy(gameObject);
+        Destroy(_loadingScreen.gameObject);
     }
 
 
-    private async UniTask WaitWhileSceneLoading(int scene)
+    private async UniTask LoadScene(int scene)
     {
-        AsyncOperation sceneLoadingOperation = SceneManager.LoadSceneAsync(scene);
-        sceneLoadingOperation.allowSceneActivation = true;
-        
-        await UniTask.WaitWhile(() => sceneLoadingOperation.isDone == false);        
+        await SceneManager.LoadSceneAsync(scene);
     }
 }

@@ -9,13 +9,13 @@ public abstract class ButtonClick : MonoBehaviour
 
     public void OnEnable()
     {
-        _button.onClick.AddListener(OnButtonClick);
+        _button.onClick.AddListener(() => OnButtonClick());
     }
 
 
     public void OnDisable()
     {
-        _button.onClick.RemoveListener(OnButtonClick);
+        _button.onClick.RemoveListener(() => OnButtonClick());
     }
 
 

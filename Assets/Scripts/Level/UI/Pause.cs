@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using UnityEngine;
 
 
 public class Pause : MonoBehaviour
@@ -12,10 +13,10 @@ public class Pause : MonoBehaviour
     }
 
 
-    public void BackToMenu()
+    public async Task BackToMenu()
     {
         ToggleTimeScale(false);
-        _sceneTransit.SpawnTransit(0);
+        await _sceneTransit.MakeTransition(0);
     }
 }
 

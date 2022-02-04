@@ -1,14 +1,15 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 
 
 public class Backstage
 {
     private readonly LoadingScreen _loadingScreen;
-    private readonly UniTask _backstageAction;
+    private readonly Func<UniTask> _backstageAction;
     
 
-    public Backstage(LoadingScreen loadingScreen, UniTask backstageAction)
+    public Backstage(LoadingScreen loadingScreen, Func<UniTask> backstageAction)
     {
         _loadingScreen = loadingScreen;
         _backstageAction = backstageAction;
@@ -19,7 +20,7 @@ public class Backstage
     {
         await _loadingScreen.Appear().AsyncWaitForCompletion();
 
-        await _backstageAction;
+        await _backstageAction();
 
         await _loadingScreen.Disappear().AsyncWaitForCompletion();
     }
