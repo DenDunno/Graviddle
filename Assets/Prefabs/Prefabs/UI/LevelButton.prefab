@@ -951,10 +951,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 622181481111713425}
-  _assetReference:
-    m_AssetGUID: afbfc7b0fb1cc1b4886cb4438fbc94b0
-    m_SubObjectName: 
-    m_SubObjectType: 
+  _transitLoader:
+    _assetReference:
+      m_AssetGUID: afbfc7b0fb1cc1b4886cb4438fbc94b0
+      m_SubObjectName: 
+      m_SubObjectType: 
   _sceneIndex: 0
 --- !u!1 &7132646966411171750
 GameObject:

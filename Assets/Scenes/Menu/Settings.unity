@@ -336,10 +336,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 299525166}
-  _assetReference:
-    m_AssetGUID: a1c9bd019de36b3488b4b97851461d7b
-    m_SubObjectName: 
-    m_SubObjectType: 
+  _transitLoader:
+    _assetReference:
+      m_AssetGUID: a1c9bd019de36b3488b4b97851461d7b
+      m_SubObjectName: 
+      m_SubObjectType: 
   _sceneIndex: 0
 --- !u!1 &649422773
 GameObject:

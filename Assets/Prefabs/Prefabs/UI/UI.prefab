@@ -1097,10 +1097,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 175d0e00b8cc3fe4b810016495d2fa4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelRestart:
-    m_AssetGUID: a32819b84d1aaf341a2c49befbc29546
-    m_SubObjectName: 
-    m_SubObjectType: 
+  _levelRestartLoader:
+    _assetReference:
+      m_AssetGUID: a32819b84d1aaf341a2c49befbc29546
+      m_SubObjectName: 
+      m_SubObjectType: 
 --- !u!114 &1864414427427503118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2623,10 +2624,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 5057884867565639602}
-  _assetReference:
-    m_AssetGUID: a1c9bd019de36b3488b4b97851461d7b
-    m_SubObjectName: 
-    m_SubObjectType: 
+  _transitLoader:
+    _assetReference:
+      m_AssetGUID: a1c9bd019de36b3488b4b97851461d7b
+      m_SubObjectName: 
+      m_SubObjectType: 
   _sceneIndex: 0
 --- !u!1 &5057884867752357248
 GameObject:
@@ -3861,10 +3863,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 6891503042004876703}
-  _assetReference:
-    m_AssetGUID: 
-    m_SubObjectName: 
-    m_SubObjectType: 
+  _transitLoader:
+    _assetReference:
+      m_AssetGUID: a1c9bd019de36b3488b4b97851461d7b
+      m_SubObjectName: 
+      m_SubObjectType: 
   _sceneIndex: 0
 --- !u!1 &6891503042026673925
 GameObject:
@@ -4292,10 +4295,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6efdb939355d049b18ecf00de0bb15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transitToLevel:
-    m_AssetGUID: afbfc7b0fb1cc1b4886cb4438fbc94b0
-    m_SubObjectName: 
-    m_SubObjectType: 
+  _transitToLevelLoader:
+    _assetReference:
+      m_AssetGUID: afbfc7b0fb1cc1b4886cb4438fbc94b0
+      m_SubObjectName: 
+      m_SubObjectType: 
 --- !u!1 &6891503043413075994
 GameObject:
   m_ObjectHideFlags: 0

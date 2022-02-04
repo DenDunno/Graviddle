@@ -24,5 +24,6 @@ public class VictorySceneChoice : MonoBehaviour
     {
         var sceneTransit = await _transitToLevelLoader.Load<SceneTransit>();
         await sceneTransit.MakeTransition(sceneIndex);
+        _transitToLevelLoader.Unload();
     }
 }
