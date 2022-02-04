@@ -151351,11 +151351,6 @@ PrefabInstance:
       propertyPath: _spriteFlipping
       value: 
       objectReference: {fileID: 1449451554}
-    - target: {fileID: 1307281600567959537, guid: 541cefc2686fbf447be6be187ea3ca43,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1598821212322502329, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: _parallaxCameraPosition._mainCamera

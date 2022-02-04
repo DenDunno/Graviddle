@@ -19,8 +19,6 @@ public class SceneTransit : MonoBehaviour
         var backstage = new Backstage(_loadingScreen, ()=> LoadScene(scene));
         
         await backstage.MakeTransition();
-
-        Destroy(_loadingScreen.gameObject);
     }
 
 

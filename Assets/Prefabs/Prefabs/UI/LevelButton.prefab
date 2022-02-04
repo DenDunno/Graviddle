@@ -788,6 +788,7 @@ GameObject:
   - component: {fileID: 5888818668370362634}
   - component: {fileID: 4322211803293505235}
   - component: {fileID: 6639488147949668788}
+  - component: {fileID: 4612923277842062939}
   m_Layer: 5
   m_Name: LevelButton
   m_TagString: Untagged
@@ -937,6 +938,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4612923277842062939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5888818668370362869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6f8d9f2711a4448813543d1e0620fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 622181481111713425}
+  _assetReference:
+    m_AssetGUID: afbfc7b0fb1cc1b4886cb4438fbc94b0
+    m_SubObjectName: 
+    m_SubObjectType: 
+  _sceneIndex: 0
 --- !u!1 &7132646966411171750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,19 +1307,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5251755042352580536, guid: afbfc7b0fb1cc1b4886cb4438fbc94b0,
-          type: 3}
-        m_TargetAssemblyTypeName: SceneTransit, Assembly-CSharp
-        m_MethodName: SpawnTransit
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 6639488147949668788}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3191581023465188968}
   - component: {fileID: 4738636001047929339}
   - component: {fileID: 492544423477729360}
-  - component: {fileID: 5251755042352580536}
   - component: {fileID: 8694951846444095908}
   m_Layer: 5
   m_Name: LevelRestart
@@ -117,19 +116,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5251755042352580536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4448375415952588481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46031001681ca3543a1dac4d4f30fd3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _loadingScreen: {fileID: 8694951846444095908}
 --- !u!114 &8694951846444095908
 MonoBehaviour:
   m_ObjectHideFlags: 0

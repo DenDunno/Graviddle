@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class VictorySceneChoice : MonoBehaviour
 {
-    [SerializeField] private SceneTransit _sceneTransit;
-
-
+    [SerializeField] private LocalAssetLoader _transitToLevelLoader;
+    
+    
     public async void RestartLevel()
     {
         await TransitToScene(SceneManager.GetActiveScene().buildIndex);
@@ -18,16 +18,11 @@ public class VictorySceneChoice : MonoBehaviour
     {
         await TransitToScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-    
-    
-    public async void ReturnToMenu()
-    {
-        await TransitToScene(0);
-    }
 
 
     private async UniTask TransitToScene(int sceneIndex)
     {
-        await _sceneTransit.MakeTransition(sceneIndex);
+        var sceneTransit = await _transitToLevelLoader.Load<SceneTransit>();
+        await sceneTransit.MakeTransition(sceneIndex);
     }
 }

@@ -3,12 +3,16 @@ using UnityEngine;
 
 public class SceneTransitButtonClick : ButtonClick
 {
-    [SerializeField] private SceneTransit _sceneTransit;
-    [SerializeField] private int _sceneIndex = 0;
-    
-    
+    [SerializeField] private LocalAssetLoader _transitLoader;
+    [SerializeField] private int _sceneIndex;
+
+
     protected override async void OnButtonClick()
     {
-        await _sceneTransit.MakeTransition(_sceneIndex);
+        var sceneTransit = await _transitLoader.Load<SceneTransit>();
+        
+        await sceneTransit.MakeTransition(_sceneIndex);
+        
+        _transitLoader.Unload();
     }
 }

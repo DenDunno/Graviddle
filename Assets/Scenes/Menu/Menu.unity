@@ -1009,8 +1009,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 747405971}
-  _sceneTransit: {fileID: 5251755042352580536, guid: afbfc7b0fb1cc1b4886cb4438fbc94b0,
-    type: 3}
+  _assetReference:
+    m_AssetGUID: a1c9bd019de36b3488b4b97851461d7b
+    m_SubObjectName: 
+    m_SubObjectType: 
   _sceneIndex: 1
 --- !u!114 &747405969
 MonoBehaviour:
@@ -1105,7 +1107,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
 --- !u!1 &888878304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2581,7 +2583,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
 --- !u!114 &2089987688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2633,8 +2635,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 2089987687}
-  _sceneTransit: {fileID: 5251755042352580536, guid: a1c9bd019de36b3488b4b97851461d7b,
-    type: 3}
+  _assetReference:
+    m_AssetGUID: a1c9bd019de36b3488b4b97851461d7b
+    m_SubObjectName: 
+    m_SubObjectType: 
   _sceneIndex: 2
 --- !u!4 &8274698784749853056
 Transform:
