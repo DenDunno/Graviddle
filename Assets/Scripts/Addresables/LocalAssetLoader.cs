@@ -4,23 +4,13 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 
 
-[Serializable]
-public class LocalAssetLoader
+public static class LocalAssetLoader
 {
-    [SerializeField] private AssetReference _assetReference;
-    private GameObject _gameObject;
-
-
-    public async UniTask<T> Load<T>()
+    public static async UniTask<T> Load<T>(object key)
     {
-        if (_gameObject != null)
-        {
-            throw new Exception("Object has not been released");
-        }
-        
-        _gameObject = await Addressables.InstantiateAsync(_assetReference).Task;
+        GameObject gameObject = await Addressables.InstantiateAsync(key).Task;
 
-        if (_gameObject.TryGetComponent(out T component) == false)
+        if (gameObject.TryGetComponent(out T component) == false)
         {
             throw new NullReferenceException($"Failed to get {typeof(T)} from addressables");
         }
@@ -29,15 +19,9 @@ public class LocalAssetLoader
     }
     
     
-    public void Unload()
+    public static void Unload(GameObject gameObjectToBeReleased)
     {
-        if (_gameObject == null)
-        {
-            throw new Exception("Object has already been released");
-        }
-        
-        _gameObject.SetActive(false);
-        Addressables.ReleaseInstance(_gameObject);
-        _gameObject = null;
+        gameObjectToBeReleased.SetActive(false);
+        Addressables.ReleaseInstance(gameObjectToBeReleased);
     }
 }

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5251755042352580536}
   - component: {fileID: 6795166084196465529}
   - component: {fileID: 9183635337445689785}
+  - component: {fileID: 6122763875217053230}
   m_Layer: 5
   m_Name: TransitToLevel
   m_TagString: Untagged
@@ -173,3 +174,15 @@ MonoBehaviour:
     loopDelay: 0
     updateMode: 0
   m_Reverse: 0
+--- !u!114 &6122763875217053230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4448375415952588481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 293f6182b8f2d4142b0c3d2d4a5b062e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

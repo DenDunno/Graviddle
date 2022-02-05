@@ -1,18 +1,19 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 
 public class SceneTransitButtonClick : ButtonClick
 {
-    [SerializeField] private LocalAssetLoader _transitLoader;
     [SerializeField] private int _sceneIndex;
+    [SerializeField] private AssetReference _transitReference;
 
 
     protected override async void OnButtonClick()
     {
-        var sceneTransit = await _transitLoader.Load<SceneTransit>();
+        var sceneTransit = await LocalAssetLoader.Load<SceneTransit>(_transitReference);
         
         await sceneTransit.MakeTransition(_sceneIndex);
         
-        _transitLoader.Unload();
+        LocalAssetLoader.Unload(sceneTransit.gameObject);
     }
 }

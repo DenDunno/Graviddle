@@ -620,7 +620,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55.5
+  m_fontSize: 56.25
   m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -755,7 +755,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55.5
+  m_fontSize: 56.25
   m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1009,12 +1009,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 747405971}
-  _transitLoader:
-    _assetReference:
-      m_AssetGUID: a1c9bd019de36b3488b4b97851461d7b
-      m_SubObjectName: 
-      m_SubObjectType: 
   _sceneIndex: 1
+  _transitReference:
+    m_AssetGUID: a1c9bd019de36b3488b4b97851461d7b
+    m_SubObjectName: 
+    m_SubObjectType: 
 --- !u!114 &747405969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,7 +1193,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55.5
+  m_fontSize: 56.25
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1597,6 +1596,7 @@ GameObject:
   - component: {fileID: 1103893547}
   - component: {fileID: 1103893552}
   - component: {fileID: 1103893553}
+  - component: {fileID: 1103893551}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -1689,6 +1689,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1103893551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103893546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c446645233cd9734d80775c815e7139f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &1103893552
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2636,12 +2648,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 2089987687}
-  _transitLoader:
-    _assetReference:
-      m_AssetGUID: a1c9bd019de36b3488b4b97851461d7b
-      m_SubObjectName: 
-      m_SubObjectType: 
   _sceneIndex: 2
+  _transitReference:
+    m_AssetGUID: a1c9bd019de36b3488b4b97851461d7b
+    m_SubObjectName: 
+    m_SubObjectType: 
 --- !u!4 &8274698784749853056
 Transform:
   m_ObjectHideFlags: 0

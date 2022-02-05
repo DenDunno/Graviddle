@@ -8,7 +8,6 @@ using UnityEngine;
 public class Restart : MonoBehaviour
 {
     [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
-    [SerializeField] private LocalAssetLoader _levelRestartLoader;
 
     private IEnumerable<IRestartableComponent> _restartableComponents;
     private IEnumerable<IAfterRestartComponent> _afterRestartComponents;
@@ -38,14 +37,14 @@ public class Restart : MonoBehaviour
 
     private async void  MakeRestart()
     {
-        var deathScreen = await _levelRestartLoader.Load<LoadingScreen>();
+        var deathScreen = await LocalAssetLoader.Load<LoadingScreen>("LevelRestart");
         var backstage = new Backstage(deathScreen, RestartObjects);
 
         await backstage.MakeTransition();
 
         _afterRestartComponents.ForEach(component => component.Restart());
         
-        _levelRestartLoader.Unload();
+        LocalAssetLoader.Unload(deathScreen.gameObject);
     }
 
 

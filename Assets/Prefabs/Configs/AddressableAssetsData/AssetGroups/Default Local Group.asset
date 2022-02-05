@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 5d849fbed73f15d4ca9ae2ad4a5abf13
+  m_SerializeEntries:
+  - m_GUID: a32819b84d1aaf341a2c49befbc29546
+    m_Address: LevelRestart
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: afbfc7b0fb1cc1b4886cb4438fbc94b0
+    m_Address: TransitToLevel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: a1c9bd019de36b3488b4b97851461d7b
+    m_Address: TransitToMenu
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 4448375415952588481, guid: a1c9bd019de36b3488b4b97851461d7b,
+      type: 3}
+    m_TargetAsset: {fileID: 4448375415952588481, guid: a1c9bd019de36b3488b4b97851461d7b,
+      type: 3}
+  - m_GUID: 59532e2bf74ff9444892fd215cb6d0c6
+    m_Address: LevelStarImpact
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 0ae2ffd23cb29a54a884d305c1a0ebc6, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 25e1e6c282b7d9040a70a2f094e3720c, type: 2}
+    - {fileID: 11400000, guid: 46a0ab6fe8ac420458e1f188b4894f32, type: 2}
