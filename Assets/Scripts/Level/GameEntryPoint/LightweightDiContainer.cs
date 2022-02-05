@@ -28,7 +28,7 @@ public class LightweightDiContainer : MonoBehaviour
     }
 
 
-    public void RegisterTypeWithInstance(object instance)
+    public void RegisterInstance(object instance)
     {
         _instances[instance.GetType()] = instance;
     }

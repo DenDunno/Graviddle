@@ -141547,6 +141547,11 @@ PrefabInstance:
       propertyPath: _parallaxCameraPosition._mainCamera
       value: 
       objectReference: {fileID: 1012865409}
+    - target: {fileID: 8889427051974698330, guid: 541cefc2686fbf447be6be187ea3ca43,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9052984181954033204, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: _swipeHandler

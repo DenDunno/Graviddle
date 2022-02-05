@@ -26,8 +26,8 @@ public class EntryPoint : MonoBehaviour
         var transitionsPresenterFactory = new TransitionsPresenterFactory(characterStatesPresenter, _transitionsConditions);
         var transitionsPresenter = transitionsPresenterFactory.Create();
         
-        _diContainer.RegisterTypeWithInstance(characterStatesPresenter);
-        _diContainer.RegisterTypeWithInstance(transitionsPresenter);
+        _diContainer.RegisterInstance(characterStatesPresenter);
+        _diContainer.RegisterInstance(transitionsPresenter);
     }
 
 
