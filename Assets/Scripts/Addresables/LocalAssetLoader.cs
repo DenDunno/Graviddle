@@ -6,7 +6,7 @@ using UnityEngine.AddressableAssets;
 
 public static class LocalAssetLoader
 {
-    public static async UniTask<T> Load<T>(object key)
+    public static async UniTask<T> Load<T>(AssetReference key)
     {
         GameObject gameObject = await Addressables.InstantiateAsync(key).Task;
 

@@ -3,65 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="236f7ca0-e3d5-42cf-8bd1-4f65d9112fc7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AddressableAssetSettings.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AddressableAssetSettings.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AssetGroupTemplates.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AssetGroups.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AssetGroups/Built In Data.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AssetGroups/Built In Data.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AssetGroups/Default Local Group.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AssetGroups/Default Local Group.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AssetGroups/Schemas.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AssetGroups/Schemas/Built In Data_PlayerDataGroupSchema.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AssetGroups/Schemas/Built In Data_PlayerDataGroupSchema.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_BundledAssetGroupSchema.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_BundledAssetGroupSchema.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_ContentUpdateGroupSchema.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_ContentUpdateGroupSchema.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/DataBuilders.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/DataBuilders/BuildScriptFastMode.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/DataBuilders/BuildScriptFastMode.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/DataBuilders/BuildScriptPackedMode.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/DataBuilders/BuildScriptPackedMode.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/DataBuilders/BuildScriptPackedPlayMode.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/DataBuilders/BuildScriptPackedPlayMode.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/DataBuilders/BuildScriptVirtualMode.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/DataBuilders/BuildScriptVirtualMode.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/DefaultObject.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/DefaultObject.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/UI/LevelButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/UI/LevelButton.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/UI/Transitions/TransitToLevel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/UI/Transitions/TransitToLevel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/UI/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/UI/UI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/LevelStar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/LevelStar.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_4.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu/Settings.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu/Settings.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial swipe.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial swipe.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Addresables/LocalAssetLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Addresables/LocalAssetLoader.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/LevelStar/LevelStar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/LevelStar/LevelStar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/Restart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/Restart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/SceneTransitions.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneTransitions.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/SceneTransitions/Backstage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneTransitions/Backstage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/SceneTransitions/Backstage.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneTransitions/Backstage.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/SceneTransitions/DissolvingScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneTransitions/DissolvingScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/SceneTransitions/DissolvingScreen.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneTransitions/DissolvingScreen.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/SceneTransitions/FadingScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneTransitions/FadingScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/SceneTransitions/FadingScreen.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneTransitions/FadingScreen.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/SceneTransitions/LoadingScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneTransitions/LoadingScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/SceneTransitions/LoadingScreen.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneTransitions/LoadingScreen.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/SceneTransitions/SceneTransit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneTransitions/SceneTransit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/SceneTransitions/SceneTransit.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneTransitions/SceneTransit.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/SceneTransitions/VictorySceneChoice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneTransitions/VictorySceneChoice.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/SceneTransitions/VictorySceneChoice.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneTransitions/VictorySceneChoice.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/UI/ButtonsClick/SceneTransitButtonClick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/UI/ButtonsClick/SceneTransitButtonClick.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/UI/ButtonsClick/ZoomClick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/UI/ButtonsClick/ZoomClick.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/LevelStar/LevelStarImpact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/LevelStar/LevelStarImpact.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +103,7 @@
       <workItem from="1643717802625" duration="9696000" />
       <workItem from="1643969934255" duration="12751000" />
       <workItem from="1643984421918" duration="3627000" />
-      <workItem from="1644049060524" duration="7580000" />
+      <workItem from="1644049060524" duration="8494000" />
     </task>
     <servers />
   </component>

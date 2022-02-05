@@ -1,9 +1,11 @@
 using System;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 
 public class LevelStar : MonoBehaviour, IRestartableComponent
 {
+    [SerializeField] private AssetReference _starImpactReference;
     public event Action StarCollected;
     
     
@@ -13,9 +15,9 @@ public class LevelStar : MonoBehaviour, IRestartableComponent
         {
             gameObject.SetActive(false);
             
-            var levelStarImpact = await LocalAssetLoader.Load<LevelStarImpact>("LevelStarImpact");
-            levelStarImpact.Activate(transform.position);
-            
+            var levelStarImpact = await LocalAssetLoader.Load<LevelStarImpact>(_starImpactReference);
+            await levelStarImpact.Activate(transform.position);
+            LocalAssetLoader.Unload(levelStarImpact.gameObject);
             
             StarCollected?.Invoke();
         }

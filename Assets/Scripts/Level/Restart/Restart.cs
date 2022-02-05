@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 
 public class Restart : MonoBehaviour
 {
     [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
-
+    [SerializeField] private AssetReference _deathScreenReference;
+    
     private IEnumerable<IRestartableComponent> _restartableComponents;
     private IEnumerable<IAfterRestartComponent> _afterRestartComponents;
     private const float _restartTime = 0.7f;
@@ -37,7 +39,7 @@ public class Restart : MonoBehaviour
 
     private async void  MakeRestart()
     {
-        var deathScreen = await LocalAssetLoader.Load<LoadingScreen>("LevelRestart");
+        var deathScreen = await LocalAssetLoader.Load<LoadingScreen>(_deathScreenReference);
         var backstage = new Backstage(deathScreen, RestartObjects);
 
         await backstage.MakeTransition();
