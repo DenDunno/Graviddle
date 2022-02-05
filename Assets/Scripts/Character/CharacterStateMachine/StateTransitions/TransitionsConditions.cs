@@ -9,17 +9,18 @@ public class TransitionsConditions
     [SerializeField] private LevelBorders _levelBorders;
     [SerializeField] private MoveDirection _moveDirection;
     [SerializeField] private TransitButton _restartButton;
-    [SerializeField] private CollisionsList _collisionsList;
+    [SerializeField] private CollisionsList _allCollisions;
+    [SerializeField] private CollisionsList _characterFeet;
     [SerializeField] private CharacterRestart _characterRestart;
     
 
     public bool CheckDeathByLevelBorders() => _levelBorders.CheckIfPositionNotWithinTheLevel(_character.transform.position);
 
-    public bool CheckDeathFromObstacle() => _collisionsList.CheckCollision<Obstacle>();
+    public bool CheckDeathFromObstacle() => _allCollisions.CheckCollision<Obstacle>();
 
-    public bool CheckIfGrounded() => _collisionsList.CheckCollision<Ground>();
+    public bool CheckIfGrounded() => _characterFeet.CheckCollision<Ground>();
     
-    public bool CheckWin() => _collisionsList.CheckCollision<FinishPortal>();
+    public bool CheckWin() => _allCollisions.CheckCollision<FinishPortal>();
 
     public bool CheckIfResurrected() => _characterRestart.CheckIfResurrected();
     
