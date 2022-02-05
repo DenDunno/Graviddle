@@ -23,12 +23,13 @@ public class WinAnimation : MonoBehaviour
 
         sequence.AppendInterval(_startWaitTime);
         sequence.Append(_levelScore.transform.DOLocalMove(_targetPosition, _animationDuration).SetEase(Ease.OutBack));
-        sequence.Join(DOTween.To(x => _blurConfig.Strength = x, 0 , _targetBlur , _animationDuration));
+        sequence.Join(DOTween.To(x => _blurConfig.Strength = x, 0, _targetBlur, _animationDuration));
         sequence.Join(_translucentImage.DOFade(1, _animationDuration));
 
         sequence.onComplete = ()=>
         {
-            StartCoroutine(_effects.ActivateEffects());
+            _effects.Init();
+            _effects.ActivateEffects();
         };
     }
 }

@@ -189,9 +189,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5310841063774154847}
-  - component: {fileID: 5326538439498126036}
-  - component: {fileID: 4710138297989803409}
-  - component: {fileID: 7274384789656143904}
   m_Layer: 0
   m_Name: WinningEffects
   m_TagString: Untagged
@@ -216,137 +213,6 @@ Transform:
   m_Father: {fileID: 4963056788246217560}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5326538439498126036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172737385911186217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e9214d1d1cf2c940a8390934cad48bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _starsParticles:
-  - {fileID: 1793425436598558406}
-  - {fileID: 1792559097508502666}
-  - {fileID: 1792453732442269104}
-  _sunEffect: {fileID: 5691745142482626468}
-  _confetti: {fileID: 3754034204125003905}
-  _reward: {fileID: 4710138297989803409}
---- !u!114 &4710138297989803409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172737385911186217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 543781edf9576874bb0452ba6d55a057, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _levelStars:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
---- !u!82 &7274384789656143904
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172737385911186217}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a823e8fe19cd3db4481150be1e9494d0, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &279549409225600897
 GameObject:
   m_ObjectHideFlags: 0
@@ -3405,6 +3271,7 @@ GameObject:
   - component: {fileID: 6598216224234686828}
   - component: {fileID: 4966576720311639621}
   - component: {fileID: 8727500073091994562}
+  - component: {fileID: 7108053639162650602}
   m_Layer: 6
   m_Name: VictoryCanvas
   m_TagString: Untagged
@@ -3519,7 +3386,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0743415f9298e0d43bb303f0f5c36c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _reward: {fileID: 4710138297989803409}
+  _reward: {fileID: 7108053639162650602}
+--- !u!114 &7108053639162650602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6322899550606161253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543781edf9576874bb0452ba6d55a057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelStars:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &6537497432672973243
 GameObject:
   m_ObjectHideFlags: 0
@@ -4179,8 +4062,8 @@ GameObject:
   - component: {fileID: 6891503042830970288}
   - component: {fileID: 7029877457704770691}
   - component: {fileID: 6725604453867194703}
-  - component: {fileID: 4643044635907180206}
   - component: {fileID: 66332928607800894}
+  - component: {fileID: 4643044635907180206}
   m_Layer: 6
   m_Name: WinPanel
   m_TagString: Untagged
@@ -4229,7 +4112,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _blurConfig: {fileID: 11400000, guid: 0c32db76616ab764e8ef4f6d946be474, type: 2}
-  _effects: {fileID: 5326538439498126036}
+  _effects:
+    _starsParticles:
+    - {fileID: 1793425436598558406}
+    - {fileID: 1792559097508502666}
+    - {fileID: 1792453732442269104}
+    _sunEffect: {fileID: 5691745142482626468}
+    _confetti: {fileID: 3754034204125003905}
+    _reward: {fileID: 0}
   _levelScore: {fileID: 6891503043413075974}
   _translucentImage: {fileID: 4643044635907180206}
 --- !u!114 &6725604453867194703
@@ -4245,6 +4135,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiStatesSwitcher: {fileID: 6848271586011493877}
+--- !u!114 &66332928607800894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6891503042830970291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6efdb939355d049b18ecf00de0bb15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transitToLevelReference:
+    m_AssetGUID: afbfc7b0fb1cc1b4886cb4438fbc94b0
+    m_SubObjectName: 
+    m_SubObjectType: 
 --- !u!114 &4643044635907180206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4280,22 +4186,6 @@ MonoBehaviour:
   brightness: 0
   flatten: 0.15
   m_spriteBlending: 0.65
---- !u!114 &66332928607800894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6891503042830970291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6efdb939355d049b18ecf00de0bb15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transitToLevelReference:
-    m_AssetGUID: afbfc7b0fb1cc1b4886cb4438fbc94b0
-    m_SubObjectName: 
-    m_SubObjectType: 
 --- !u!1 &6891503043413075994
 GameObject:
   m_ObjectHideFlags: 0

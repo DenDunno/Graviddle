@@ -141509,6 +141509,21 @@ PrefabInstance:
       propertyPath: _parallaxCameraPosition._mainCamera
       value: 
       objectReference: {fileID: 1012865409}
+    - target: {fileID: 7108053639162650602, guid: 541cefc2686fbf447be6be187ea3ca43,
+        type: 3}
+      propertyPath: _levelStars.Array.data[0]
+      value: 
+      objectReference: {fileID: 82550109}
+    - target: {fileID: 7108053639162650602, guid: 541cefc2686fbf447be6be187ea3ca43,
+        type: 3}
+      propertyPath: _levelStars.Array.data[1]
+      value: 
+      objectReference: {fileID: 338091476}
+    - target: {fileID: 7108053639162650602, guid: 541cefc2686fbf447be6be187ea3ca43,
+        type: 3}
+      propertyPath: _levelStars.Array.data[2]
+      value: 
+      objectReference: {fileID: 2016471179}
     - target: {fileID: 7137193883711940910, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: _mainCamera

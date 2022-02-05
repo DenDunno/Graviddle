@@ -3,8 +3,9 @@
 
 public class Reward : MonoBehaviour, IRestartableComponent
 {
+    public readonly int MaxStars = 3;
     [SerializeField] private LevelStar[] _levelStars;
-    public const int MaxStars = 3;
+    
     public int CollectedStars { get; private set; }
     
     

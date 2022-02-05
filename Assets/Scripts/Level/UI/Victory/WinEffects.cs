@@ -1,9 +1,11 @@
-using System.Collections;
+using System;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 
-public class WinEffects : MonoBehaviour
+[Serializable]
+public class WinEffects 
 {
     [SerializeField] private ParticleSystem[] _starsParticles;
     [SerializeField] private ParticleSystem _sunEffect;
@@ -13,33 +15,33 @@ public class WinEffects : MonoBehaviour
     private float _starsCoolDown;
 
 
-    private void Start()
+    public void Init()
     {
         const float coolDown = 0.5f;
         _starsCoolDown = _starsParticles.First().main.duration + coolDown;
     }
     
 
-    public IEnumerator ActivateEffects()
+    public async void ActivateEffects()
     {
         int collectedStars = _reward.CollectedStars;
 
         for (var starIndex = 0; starIndex < collectedStars; ++starIndex)
         {
-            yield return StartCoroutine(ActivateStar(starIndex));
+            await ActivateStar(starIndex);
         }
 
-        if (collectedStars == Reward.MaxStars)
+        if (collectedStars == _reward.MaxStars)
         {
             _confetti.gameObject.SetActive(true);
         }
     }
 
 
-    private IEnumerator ActivateStar(int starIndex)
+    private async UniTask ActivateStar(int starIndex)
     {
         _starsParticles[starIndex].gameObject.SetActive(true);
-        yield return new WaitForSeconds(_starsCoolDown);
+        await UniTask.Delay(TimeSpan.FromSeconds(_starsCoolDown));
         _sunEffect.gameObject.SetActive(true);
     }
 }
