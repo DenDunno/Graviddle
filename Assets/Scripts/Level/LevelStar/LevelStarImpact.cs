@@ -1,6 +1,4 @@
-﻿using System;
-using Cysharp.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class LevelStarImpact : MonoBehaviour
@@ -9,12 +7,10 @@ public class LevelStarImpact : MonoBehaviour
     [SerializeField] private AudioSource _impactSound;
 
     
-    public async UniTask Activate(Vector2 impactPosition)
+    public void Activate(Vector2 impactPosition)
     {
         transform.position = impactPosition;
         _impactSound.Play();
         _impactFX.Play();
-
-        await UniTask.Delay(TimeSpan.FromSeconds(_impactFX.main.duration));
     }
 }

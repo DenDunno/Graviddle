@@ -1,12 +1,9 @@
-using System;
-using Cysharp.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 
 public class CharacterVFX : CharacterFallingEventsHandler, IRestartableComponent
 {
-    [SerializeField] private AssetReference _fallingDustReference;
+    [SerializeField] private ParticleSystem _fallingDust;
     [SerializeField] private TrailRenderer _trailRenderer;
 
 
@@ -18,7 +15,7 @@ public class CharacterVFX : CharacterFallingEventsHandler, IRestartableComponent
 
     protected override void OnCharacterEndFalling()
     {
-        ParticlesHelper.PlayAndDestroy(_fallingDustReference, transform);
+        _fallingDust.Play();
         _trailRenderer.emitting = false;
     }
 
