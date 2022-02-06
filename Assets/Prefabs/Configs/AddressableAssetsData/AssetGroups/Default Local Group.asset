@@ -33,12 +33,26 @@ MonoBehaviour:
     m_Address: TransitToMenu
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 4448375415952588481, guid: a1c9bd019de36b3488b4b97851461d7b,
-      type: 3}
-    m_TargetAsset: {fileID: 4448375415952588481, guid: a1c9bd019de36b3488b4b97851461d7b,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 59532e2bf74ff9444892fd215cb6d0c6
     m_Address: LevelStarImpact
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 6372688386525927692, guid: 59532e2bf74ff9444892fd215cb6d0c6,
+      type: 3}
+    m_TargetAsset: {fileID: 6372688386525927692, guid: 59532e2bf74ff9444892fd215cb6d0c6,
+      type: 3}
+  - m_GUID: 28ab0c71528fb1c41a6d65c8de9073a3
+    m_Address: PortalDisappearFX
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 3705230894231592615, guid: 28ab0c71528fb1c41a6d65c8de9073a3,
+      type: 3}
+    m_TargetAsset: {fileID: 3705230894231592615, guid: 28ab0c71528fb1c41a6d65c8de9073a3,
+      type: 3}
+  - m_GUID: ef68c9c5ceb17f1459cd7cbb2b0eafef
+    m_Address: FallingDust
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}

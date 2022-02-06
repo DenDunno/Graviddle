@@ -1,12 +1,14 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 
 [Serializable]
-public class PortalDisappearance 
+public class PortalDisappearance
 {
-    [SerializeField] private ParticleSystem _disappearFX;
+    [SerializeField] private AssetReference _portalDisappearFXReference;
     [SerializeField] private float _disappearingSpeed;
     [SerializeField] private MonoBehaviour _context;
     private const float _timeBeforeDisappearance = 1.3f;
@@ -34,7 +36,7 @@ public class PortalDisappearance
     
     private void PlayDustAnimation()
     {
-        _disappearFX.Play();
+        ParticlesHelper.PlayAndDestroy(_portalDisappearFXReference, _context.transform);
     }
 
 
