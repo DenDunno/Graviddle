@@ -3,10 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="236f7ca0-e3d5-42cf-8bd1-4f65d9112fc7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Android/defaultlocalgroup_assets_all_fc56408cdc19f55c4d1fbf7157f8614c.bundle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Android/local_assets_all_fc56408cdc19f55c4d1fbf7157f8614c.bundle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Android/packedassets_assets_all_fc56408cdc19f55c4d1fbf7157f8614c.bundle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Configs/AddressableAssetsData/Android/addressables_content_state.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Configs/AddressableAssetsData/Android/addressables_content_state.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/MovingPlatform.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/MovingPlatform.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/UI/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/UI/UI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/UI/Victory/Reward.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/UI/Victory/Reward.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/UI/Victory/WinAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/UI/Victory/WinAnimation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/UI/Victory/WinEffects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/UI/Victory/WinEffects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sprites/Backgrounds/BlueForest/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Sprites/Backgrounds/BlueForest/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sprites/Backgrounds/BlueForest/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Sprites/Backgrounds/BlueForest/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sprites/Backgrounds/BlueForest/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Sprites/Backgrounds/BlueForest/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sprites/Backgrounds/BlueForest/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Sprites/Backgrounds/BlueForest/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sprites/Backgrounds/BlueForest/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Sprites/Backgrounds/BlueForest/5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_6.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_6.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,6 +114,7 @@
       <workItem from="1643969934255" duration="12751000" />
       <workItem from="1643984421918" duration="3627000" />
       <workItem from="1644049060524" duration="8494000" />
+      <workItem from="1644085159921" duration="1972000" />
     </task>
     <servers />
   </component>
