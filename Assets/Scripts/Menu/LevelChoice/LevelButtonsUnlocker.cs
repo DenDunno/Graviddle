@@ -6,8 +6,8 @@ using UnityEngine;
 public class LevelButtonsUnlocker : MonoBehaviour
 {
     [SerializeField] private LevelButton[] _allButtons;
-    private readonly string _saves = "Saves";
-    private readonly int _menuScenesCount = 3;
+    private const string _saves = "Saves";
+    private const int _menuScenesCount = 3;
 
 
     private void Start()
@@ -28,7 +28,7 @@ public class LevelButtonsUnlocker : MonoBehaviour
     {
         var saves = JsonConvert.DeserializeObject<Dictionary<int, int>>(PlayerPrefs.GetString(_saves));
 
-        for (int i = 0; i < saves.Count; i++)
+        for (var i = 0; i < saves.Count; i++)
         {
             _allButtons[i].SetStars(saves[i + _menuScenesCount]);
             _allButtons[i].UnlockLevel();
