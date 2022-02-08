@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 
-public class CharacterSpriteFlipping : MonoBehaviour
+[Serializable]
+public class CharacterSpriteFlipping 
 {
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
