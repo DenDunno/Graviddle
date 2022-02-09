@@ -2,12 +2,12 @@
 using UnityEngine;
 
 
-public class SpriteTransparencyPresenter
+public class SpriteTransparency
 {
     private readonly SpriteRenderer _spriteRenderer;
 
 
-    public SpriteTransparencyPresenter(SpriteRenderer spriteRenderer)
+    public SpriteTransparency(SpriteRenderer spriteRenderer)
     {
         _spriteRenderer = spriteRenderer;
     }
@@ -33,7 +33,7 @@ public class SpriteTransparencyPresenter
 
     public void BecomeTransparentNow()
     {
-        _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 0);
+        SmoothlyChangeAlpha(0, 0);
     }
 
 

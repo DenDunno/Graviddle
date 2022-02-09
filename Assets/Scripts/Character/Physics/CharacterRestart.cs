@@ -1,29 +1,40 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class CharacterRestart : MonoBehaviour, IRestartableComponent 
+public class CharacterRestart : MonoBehaviour, IRestart, IAfterRestart 
 {
-    private Rigidbody2D _characterRigidbody;
-    private readonly EventTransit _eventTransit = new EventTransit();
+    private readonly List<IRestart> _beforeRestartComponents = new List<IRestart>();
+    private readonly List<IAfterRestart> _afterRestartComponents = new List<IAfterRestart>();
+
+
+    public void Init(List<object> dependencies)
+    {
+        foreach (object dependency in dependencies)
+        {
+            TryAddToList(dependency, _beforeRestartComponents);
+            TryAddToList(dependency, _afterRestartComponents);
+        }
+    }
+
+
+    private void TryAddToList<T>(object obj, ICollection<T> restartableComponents)
+    {
+        if (obj is T restartable)
+        {
+            restartableComponents.Add(restartable);
+        }
+    }
+    
+    
+    void IRestart.Restart()
+    {
+        _beforeRestartComponents.ForEach(beforeRestartComponent => beforeRestartComponent.Restart());
+    }
 
     
-    private void Start()
+    void IAfterRestart.Restart()
     {
-        _characterRigidbody = GetComponent<Rigidbody2D>();
-    }
-
-
-    public bool CheckIfResurrected()
-    {
-        return _eventTransit.CheckIfEventHappened();
-    }
-
-
-    void IRestartableComponent.Restart()
-    {
-        _eventTransit.Invoke();
-        transform.SetParent(null);
-        _characterRigidbody.velocity = Vector2.zero;
+        _afterRestartComponents.ForEach(afterRestartComponent => afterRestartComponent.Restart());
     }
 }

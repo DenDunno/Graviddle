@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IRestartableComponent
+public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IRestart
 {
     [SerializeField] private bool _isActive = true;
     private readonly int _numOfDirections = 4;
@@ -52,7 +52,7 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IRestartableCompon
     }
     
 
-    void IRestartableComponent.Restart()
+    void IRestart.Restart()
     {
         enabled = true;
         _newDirection = GravityDirection.Down;

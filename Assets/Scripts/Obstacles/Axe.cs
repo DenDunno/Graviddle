@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 
 
-public class Axe : MonoBehaviour, IRestartableComponent
+public class Axe : MonoBehaviour, IRestart
 {
     [SerializeField] private Rigidbody2D _rigidbody;
     
 
-    void IRestartableComponent.Restart()
+    void IRestart.Restart()
     { 
         _rigidbody.angularVelocity = 0;
         _rigidbody.velocity = Vector2.zero;

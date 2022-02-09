@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class MoveDirection : MonoBehaviour, IAfterRestartComponent
+public class MoveDirection : MonoBehaviour, IAfterRestart
 {
     [SerializeField] private SwipeHandler _swipeHandler;
     private Quaternion _gravityRotation;
@@ -34,7 +34,7 @@ public class MoveDirection : MonoBehaviour, IAfterRestartComponent
     }
 
 
-    void IAfterRestartComponent.Restart()
+    void IAfterRestart.Restart()
     {
         SetMovementDirection(MovementState.Stop);
     }

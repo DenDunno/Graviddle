@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-public abstract class ArrowTrapBase : MonoBehaviour, IRestartableComponent
+public abstract class ArrowTrapBase : MonoBehaviour, IRestart
 {
     [SerializeField] private float _startWaitTime;
     [SerializeField] private float _coolDown = 2;
@@ -45,7 +45,7 @@ public abstract class ArrowTrapBase : MonoBehaviour, IRestartableComponent
     }
 
 
-    void IRestartableComponent.Restart()
+    void IRestart.Restart()
     {
         StartCoroutine(Shoot());
     }

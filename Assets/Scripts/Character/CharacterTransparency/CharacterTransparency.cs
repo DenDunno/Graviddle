@@ -1,53 +1,39 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 
-public class CharacterTransparency : MonoBehaviour, IRestartableComponent, IAfterRestartComponent
+public class CharacterTransparency : IRestart, IAfterRestart
 {
-    [SerializeField] private SpriteRenderer _spriteRenderer;
-    [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
-    private SpriteTransparencyPresenter _spriteTransparencyPresenter;
+    private const float _timeBeforeDisappearance = 1f;
+    private readonly SpriteTransparency _spriteTransparency;
 
 
-    private void Start()
+    public CharacterTransparency(SpriteRenderer spriteRenderer)
     {
-        _spriteTransparencyPresenter = new SpriteTransparencyPresenter(_spriteRenderer);
-
-        _spriteTransparencyPresenter.BecomeTransparentNow();
-        _spriteTransparencyPresenter.BecomeOpaque();
+        _spriteTransparency = new SpriteTransparency(spriteRenderer);
+        _spriteTransparency.BecomeTransparentNow();
+        _spriteTransparency.BecomeOpaque();
     }
 
 
-    private void OnEnable()
+    public async void BecomeTransparentWithDelay()
     {
-        _characterStatesPresenter.WinState.CharacterWon += OnCharacterWon;
+        await UniTask.Delay(TimeSpan.FromSeconds(_timeBeforeDisappearance));
+
+        _spriteTransparency.BecomeTransparent();
     }
 
 
-    private void OnDisable()
+    void IRestart.Restart()
     {
-        _characterStatesPresenter.WinState.CharacterWon -= OnCharacterWon;
+        _spriteTransparency.StopAnimation();
+        _spriteTransparency.BecomeTransparentNow();
     }
 
 
-    private async void OnCharacterWon()
+    void IAfterRestart.Restart()
     {
-        const int timeBeforeDisappearance = 1000;
-        await Task.Delay(timeBeforeDisappearance);
-
-        _spriteTransparencyPresenter.BecomeTransparent();
-    }
-
-
-    void IRestartableComponent.Restart()
-    {
-        _spriteTransparencyPresenter.StopAnimation();
-        _spriteTransparencyPresenter.BecomeTransparentNow();
-    }
-
-
-    void IAfterRestartComponent.Restart()
-    {
-        _spriteTransparencyPresenter.BecomeOpaque();
+        _spriteTransparency.BecomeOpaque();
     }
 }

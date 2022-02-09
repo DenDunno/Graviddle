@@ -1,14 +1,37 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 
 public class Character : MonoBehaviour, IMediator
 {
+    [LightweightInject] private readonly CharacterStatesPresenter _states;
+    [LightweightInject] private readonly LevelRestart _levelRestart;
     [SerializeField] private SwipeHandler _swipeHandler;
     [SerializeField] private Rigidbody2D _rigidbody2D;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private CharacterRestart _characterRestart;
+    private CharacterRotationImpulse _characterRotationImpulse;
+    private CharacterTransparency _characterTransparency;
+    
 
     
-    public void Resolve()
+    void IMediator.Resolve()
     {
-        var characterRotationImpulse = new CharacterRotationImpulse(_swipeHandler, _rigidbody2D);
+        _characterTransparency = new CharacterTransparency(_spriteRenderer);
+        _characterRotationImpulse = new CharacterRotationImpulse(_rigidbody2D);
+    }
+
+
+    private void OnEnable()
+    {
+        _swipeHandler.GravityChanged += _characterRotationImpulse.TryImpulseCharacter;
+        _states.DieState.CharacterDied += _levelRestart.MakeRestart;
+    }
+
+
+    private void OnDisable()
+    {
+        _swipeHandler.GravityChanged -= _characterRotationImpulse.TryImpulseCharacter;
+        _states.DieState.CharacterDied -= _levelRestart.MakeRestart;
     }
 }

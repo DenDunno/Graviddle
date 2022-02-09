@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class CharacterVFX : CharacterFallingEventsHandler, IRestartableComponent
+public class CharacterVFX : CharacterFallingEventsHandler, IRestart
 {
     [SerializeField] private ParticleSystem _fallingDust;
     [SerializeField] private TrailRenderer _trailRenderer;
@@ -20,7 +20,7 @@ public class CharacterVFX : CharacterFallingEventsHandler, IRestartableComponent
     }
 
 
-    void IRestartableComponent.Restart()
+    void IRestart.Restart()
     {
         OnCharacterEndFalling();
     }

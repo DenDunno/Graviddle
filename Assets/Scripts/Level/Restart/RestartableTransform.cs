@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class RestartableTransform : MonoBehaviour, IRestartableComponent
+public class RestartableTransform : MonoBehaviour, IRestart
 {
     private Transform _parent;
     private Vector3 _startPosition;
@@ -16,7 +16,7 @@ public class RestartableTransform : MonoBehaviour, IRestartableComponent
     }
 
     
-    void IRestartableComponent.Restart()
+    void IRestart.Restart()
     {
         transform.SetParent(_parent);
         transform.localPosition = _startPosition;

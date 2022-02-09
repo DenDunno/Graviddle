@@ -7,18 +7,11 @@ using UnityEngine;
 public class LightweightDiContainer : MonoBehaviour
 {
     private readonly Dictionary<Type, object> _instances = new Dictionary<Type, object>();
-    [SerializeField] private List<MonoBehaviour> _objectsWithDependency;
 
 
-    public void SetObjectsWithDependencies(List<MonoBehaviour> objectsWithDependency)
+    public void ResolveDependencies(IEnumerable<MonoBehaviour> objectsWithDependencies)
     {
-        _objectsWithDependency = objectsWithDependency;
-    }
-    
-
-    public void ResolveDependencies()
-    {
-        foreach (MonoBehaviour monoBehaviour in _objectsWithDependency)
+        foreach (MonoBehaviour monoBehaviour in objectsWithDependencies)
         {
             foreach (FieldInfo fieldToInject in monoBehaviour.GetType().GetFieldsToInject())
             {

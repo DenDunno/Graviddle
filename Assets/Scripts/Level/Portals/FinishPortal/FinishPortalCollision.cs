@@ -2,7 +2,7 @@
 
 
 [RequireComponent(typeof(Collider2D))]
-public class FinishPortalCollision : MonoBehaviour, IRestartableComponent
+public class FinishPortalCollision : MonoBehaviour, IRestart
 {
     [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
     private Collider2D _collider;
@@ -32,7 +32,7 @@ public class FinishPortalCollision : MonoBehaviour, IRestartableComponent
     }
 
 
-    void IRestartableComponent.Restart()
+    void IRestart.Restart()
     {
         _collider.enabled = true;
     }

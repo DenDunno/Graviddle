@@ -3,27 +3,18 @@ using UnityEngine;
 
 public class CharacterRotationImpulse
 {
-    private readonly SwipeHandler _swipeHandler;
     private readonly Rigidbody2D _rigidbody;
-    private int _currentZRotation;
     private const int _straightAngle = 180;
+    private int _currentZRotation;
 
 
-    public CharacterRotationImpulse(SwipeHandler swipeHandler, Rigidbody2D rigidbody2D)
+    public CharacterRotationImpulse(Rigidbody2D rigidbody2D)
     {
-        _swipeHandler = swipeHandler;
         _rigidbody = rigidbody2D;
-        _swipeHandler.GravityChanged += TryImpulseCharacter;
-    }
-
-    
-    ~CharacterRotationImpulse()
-    {
-        _swipeHandler.GravityChanged -= TryImpulseCharacter;
     }
 
 
-    private void TryImpulseCharacter(GravityDirection gravityDirection)
+    public void TryImpulseCharacter(GravityDirection gravityDirection)
     {
         int newZRotation = GravityDataPresenter.GravityData[gravityDirection].ZRotation;
 

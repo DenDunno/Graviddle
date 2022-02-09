@@ -2,7 +2,7 @@
 
 
 [RequireComponent(typeof(UIStatesSwitcher))]
-public class UIRestart : MonoBehaviour, IAfterRestartComponent
+public class UIRestart : MonoBehaviour, IAfterRestart
 {
     [SerializeField] private UIState _initialUIState;
     [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
@@ -33,7 +33,7 @@ public class UIRestart : MonoBehaviour, IAfterRestartComponent
     }
 
 
-    void IAfterRestartComponent.Restart()
+    void IAfterRestart.Restart()
     {
         _initialUIState.ActivateState();
     }

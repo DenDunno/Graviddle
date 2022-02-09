@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class StartPortal : MonoBehaviour, IRestartableComponent, IAfterRestartComponent
+public class StartPortal : MonoBehaviour, IRestart, IAfterRestart
 {
     [SerializeField] private PortalDisappearance _portalDisappearance;
 
@@ -12,13 +12,13 @@ public class StartPortal : MonoBehaviour, IRestartableComponent, IAfterRestartCo
     }
 
 
-    void IRestartableComponent.Restart()
+    void IRestart.Restart()
     {
         _portalDisappearance.ResetAnimation();
     }
 
 
-    void IAfterRestartComponent.Restart()
+    void IAfterRestart.Restart()
     {
         _portalDisappearance.Disappear();
     }
