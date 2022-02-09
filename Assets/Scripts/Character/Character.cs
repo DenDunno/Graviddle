@@ -13,12 +13,13 @@ public class Character : MonoBehaviour, IMediator
     private CharacterRotationImpulse _characterRotationImpulse;
     private CharacterTransparency _characterTransparency;
     
-
     
     void IMediator.Resolve()
     {
-        _characterTransparency = new CharacterTransparency(_spriteRenderer);
-        _characterRotationImpulse = new CharacterRotationImpulse(_rigidbody2D);
+        var dependencies = new List<object>();
+        dependencies.Add(_characterTransparency = new CharacterTransparency(_spriteRenderer));
+        dependencies.Add(_characterRotationImpulse = new CharacterRotationImpulse(_rigidbody2D));
+        _characterRestart.Init(dependencies);
     }
 
 

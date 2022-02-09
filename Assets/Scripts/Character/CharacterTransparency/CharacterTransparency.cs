@@ -30,7 +30,7 @@ public class CharacterTransparency : IRestart, IAfterRestart
         _spriteTransparency.StopAnimation();
         _spriteTransparency.BecomeTransparentNow();
     }
-
+ 
 
     void IAfterRestart.Restart()
     {

@@ -12,21 +12,14 @@ public class CharacterRestart : MonoBehaviour, IRestart, IAfterRestart
     {
         foreach (object dependency in dependencies)
         {
-            TryAddToList(dependency, _beforeRestartComponents);
-            TryAddToList(dependency, _afterRestartComponents);
+            if (dependency is IRestart restart)
+            {
+                _beforeRestartComponents.Add(restart);
+            }
         }
     }
 
 
-    private void TryAddToList<T>(object obj, ICollection<T> restartableComponents)
-    {
-        if (obj is T restartable)
-        {
-            restartableComponents.Add(restartable);
-        }
-    }
-    
-    
     void IRestart.Restart()
     {
         _beforeRestartComponents.ForEach(beforeRestartComponent => beforeRestartComponent.Restart());

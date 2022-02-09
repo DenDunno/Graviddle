@@ -833,7 +833,6 @@ GameObject:
   - component: {fileID: 1307281600567959536}
   - component: {fileID: 6848271586011493877}
   - component: {fileID: 7852093884756639491}
-  - component: {fileID: 7816091138457841162}
   - component: {fileID: 1864414427427503118}
   m_Layer: 5
   m_Name: RootCanvas
@@ -951,22 +950,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _initialUIState: {fileID: 2923090187393191981}
---- !u!114 &7816091138457841162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307281600567959537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 175d0e00b8cc3fe4b810016495d2fa4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _deathScreenReference:
-    m_AssetGUID: a32819b84d1aaf341a2c49befbc29546
-    m_SubObjectName: 
-    m_SubObjectType: 
 --- !u!114 &1864414427427503118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1436,7 +1419,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementState: 1
   _moveDirection: {fileID: 0}
-  _spriteFlipping: {fileID: 0}
+  _spriteFlipping:
+    _spriteRenderer: {fileID: 0}
 --- !u!114 &4876280883689768151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4718,7 +4702,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementState: -1
   _moveDirection: {fileID: 0}
-  _spriteFlipping: {fileID: 0}
+  _spriteFlipping:
+    _spriteRenderer: {fileID: 0}
 --- !u!114 &3878353755648546079
 MonoBehaviour:
   m_ObjectHideFlags: 0

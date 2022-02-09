@@ -12,23 +12,12 @@ public class DiContainerInitialization : Editor
     {
         DrawDefaultInspector();
         
-        if (GUILayout.Button("Fill DI container"))
+        if (GUILayout.Button("Resolve scene"))
         {
-            MonoBehaviour[] monoBehaviours = FindObjectsOfType<MonoBehaviour>(true);
-            var diContainer = FindObjectOfType<LightweightDiContainer>();
+            var container = FindObjectOfType<EditorMonoBehavioursContainer>();
+            container.FillContainers();
             
-            List<MonoBehaviour> objectsWithDependencies = monoBehaviours.Where(CheckIfHasDependency).ToList();
-
-            diContainer.SetObjectsWithDependencies(objectsWithDependencies);
-            EditorUtility.SetDirty(diContainer);
-            Logger.PrintWithGreen("Di container was initialized");
+            Logger.PrintWithGreen("Scene was resolved");
         }
-    }
-    
-
-    private bool CheckIfHasDependency(MonoBehaviour monoBehaviour)
-    {
-        IEnumerable<FieldInfo> fieldsToInject = monoBehaviour.GetType().GetFieldsToInject();
-        return fieldsToInject.Count() != 0;
     }
 }
