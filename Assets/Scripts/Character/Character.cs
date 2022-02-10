@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class Character : MonoBehaviour, IMediator
+public class Character : MonoBehaviour, IMediator, IRestartableTransform
 {
     [LightweightInject] private readonly CharacterStatesPresenter _states;
     [LightweightInject] private readonly LevelRestart _levelRestart;

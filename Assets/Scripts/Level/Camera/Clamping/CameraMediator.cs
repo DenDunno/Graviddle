@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class CameraMediator : MonoBehaviour, IMediator
+public class CameraMediator : MonoBehaviour, IMediator, IRestartableTransform
 {
     [SerializeField] private LevelBorders _levelBorders;
     [SerializeField] private CameraZoom _cameraZoom;

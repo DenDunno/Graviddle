@@ -8,8 +8,9 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private TransitionsConditions _transitionsConditions;
     [SerializeField] private Character _character;
     [SerializeField] private EditorMonoBehavioursContainer _monoBehavioursContainer;
-
+    [SerializeField] private TransformsRestart _transformsRestart;
     
+
     private void Awake()
     {        
         BindInstances();
@@ -24,7 +25,8 @@ public class EntryPoint : MonoBehaviour
         var characterStatesPresenter = new CharacterStatesPresenter(_character);
         var transitionsPresenterFactory = new TransitionsPresenterFactory(characterStatesPresenter, _transitionsConditions);
         var transitionsPresenter = transitionsPresenterFactory.Create();
-
+        _transformsRestart.Init(_monoBehavioursContainer.RestartableTransforms);
+        
         _diContainer.RegisterInstance(characterStatesPresenter);
         _diContainer.RegisterInstance(transitionsPresenter);
         _diContainer.RegisterInstance(levelRestart);

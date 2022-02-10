@@ -1328,7 +1328,6 @@ GameObject:
   - component: {fileID: 3482769451832042649}
   - component: {fileID: 5651957046128339648}
   - component: {fileID: 1291520376445137339}
-  - component: {fileID: 4876280883689768151}
   m_Layer: 5
   m_Name: RightButton
   m_TagString: Untagged
@@ -1421,18 +1420,6 @@ MonoBehaviour:
   _moveDirection: {fileID: 0}
   _spriteFlipping:
     _spriteRenderer: {fileID: 0}
---- !u!114 &4876280883689768151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3726278200849127702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 842f27e6dce44b34c94b7ee14a363f62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4539580258625885527
 GameObject:
   m_ObjectHideFlags: 0
@@ -4611,7 +4598,6 @@ GameObject:
   - component: {fileID: 7802771053827012268}
   - component: {fileID: 2665459108490700184}
   - component: {fileID: 7289557721080291226}
-  - component: {fileID: 3878353755648546079}
   m_Layer: 5
   m_Name: LeftButton
   m_TagString: Untagged
@@ -4704,18 +4690,6 @@ MonoBehaviour:
   _moveDirection: {fileID: 0}
   _spriteFlipping:
     _spriteRenderer: {fileID: 0}
---- !u!114 &3878353755648546079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8129243315503718118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 842f27e6dce44b34c94b7ee14a363f62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8181460163066958269
 GameObject:
   m_ObjectHideFlags: 0
