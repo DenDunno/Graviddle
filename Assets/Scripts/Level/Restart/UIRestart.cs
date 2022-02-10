@@ -35,6 +35,6 @@ public class UIRestart : MonoBehaviour, IAfterRestart
 
     void IAfterRestart.Restart()
     {
-        _initialUIState.ActivateState();
+        _initialUIState.Activate();
     }
 }

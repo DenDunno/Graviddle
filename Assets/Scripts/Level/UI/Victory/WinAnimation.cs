@@ -1,10 +1,12 @@
+using System;
 using UnityEngine;
 using DG.Tweening;
 using LeTai.Asset.TranslucentImage;
 using UnityEngine.UI;
 
 
-public class WinAnimation : MonoBehaviour
+[Serializable]
+public class WinAnimation 
 {
     [SerializeField] private ScalableBlurConfig _blurConfig;
     [SerializeField] private WinEffects _effects;

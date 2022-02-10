@@ -15,7 +15,7 @@ public class ZoomClick : ButtonClick
     {
         _uiSwitcher.DeactivateStates();
         ToggleCharacterCapture();
-        PlayAnimation().OnComplete(_targetUI.ActivateState);
+        PlayAnimation().OnComplete(_targetUI.Activate);
     }
     
 

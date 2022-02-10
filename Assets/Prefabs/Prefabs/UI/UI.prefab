@@ -1978,7 +1978,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 591034028849787227}
         m_TargetAssemblyTypeName: UIState, Assembly-CSharp
-        m_MethodName: ActivateState
+        m_MethodName: Activate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2255,7 +2255,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2923090187393191981}
         m_TargetAssemblyTypeName: UIState, Assembly-CSharp
-        m_MethodName: ActivateState
+        m_MethodName: Activate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3368,7 +3368,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiState: {fileID: 6725604453867194703}
-  _winAnimation: {fileID: 7029877457704770691}
+  _winAnimation:
+    _blurConfig: {fileID: 11400000, guid: 0c32db76616ab764e8ef4f6d946be474, type: 2}
+    _effects:
+      _starsParticles:
+      - {fileID: 1793425436598558406}
+      - {fileID: 1792559097508502666}
+      - {fileID: 1792453732442269104}
+      _sunEffect: {fileID: 5691745142482626468}
+      _confetti: {fileID: 3754034204125003905}
+      _reward: {fileID: 7108053639162650602}
+    _levelScore: {fileID: 6891503043413075974}
+    _translucentImage: {fileID: 4643044635907180206}
 --- !u!114 &8727500073091994562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4151,7 +4162,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6891503042830970290}
   - component: {fileID: 6891503042830970288}
-  - component: {fileID: 7029877457704770691}
   - component: {fileID: 6725604453867194703}
   - component: {fileID: 66332928607800894}
   - component: {fileID: 4643044635907180206}
@@ -4190,29 +4200,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6891503042830970291}
   m_CullTransparentMesh: 0
---- !u!114 &7029877457704770691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6891503042830970291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 249d5573dc2d52c41ae8968cf81f4615, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _blurConfig: {fileID: 11400000, guid: 0c32db76616ab764e8ef4f6d946be474, type: 2}
-  _effects:
-    _starsParticles:
-    - {fileID: 1793425436598558406}
-    - {fileID: 1792559097508502666}
-    - {fileID: 1792453732442269104}
-    _sunEffect: {fileID: 5691745142482626468}
-    _confetti: {fileID: 3754034204125003905}
-    _reward: {fileID: 7108053639162650602}
-  _levelScore: {fileID: 6891503043413075974}
-  _translucentImage: {fileID: 4643044635907180206}
 --- !u!114 &6725604453867194703
 MonoBehaviour:
   m_ObjectHideFlags: 0

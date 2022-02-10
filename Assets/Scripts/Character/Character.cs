@@ -4,13 +4,19 @@
 public class Character : MonoBehaviour, IMediator, IRestartableTransform
 {
     [LightweightInject] private readonly CharacterStatesPresenter _states;
-    [LightweightInject] private readonly LevelRestart _levelRestart;
     [SerializeField] private SwipeHandler _swipeHandler;
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private CharacterRestart _characterRestart;
+    private LevelRestart _levelRestart;
     private CharacterRotationImpulse _characterRotationImpulse;
     private CharacterTransparency _characterTransparency;
+
+
+    public void Init(LevelRestart levelRestart)
+    {
+        _levelRestart = levelRestart;
+    }
     
     
     void IMediator.Resolve()

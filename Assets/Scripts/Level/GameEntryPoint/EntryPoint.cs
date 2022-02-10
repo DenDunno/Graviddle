@@ -25,10 +25,11 @@ public class EntryPoint : MonoBehaviour
         var characterStatesPresenter = new CharacterStatesPresenter(_character);
         var transitionsPresenterFactory = new TransitionsPresenterFactory(characterStatesPresenter, _transitionsConditions);
         var transitionsPresenter = transitionsPresenterFactory.Create();
+        
         _transformsRestart.Init(_monoBehavioursContainer.RestartableTransforms);
+        _character.Init(levelRestart);
         
         _diContainer.RegisterInstance(characterStatesPresenter);
         _diContainer.RegisterInstance(transitionsPresenter);
-        _diContainer.RegisterInstance(levelRestart);
     }
 }
