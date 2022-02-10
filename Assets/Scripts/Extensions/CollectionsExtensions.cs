@@ -23,22 +23,4 @@ public static class CollectionsExtensions
     {
         return queue.Count == 0;
     }
-
-
-    public static void TryAddToList<TY, T>(this ICollection<T> collection, T obj)
-    {
-        if (obj is TY)
-        {
-            collection.Add(obj);
-        }
-    }
-    
-    
-    public static void TryCastAndAdd<T>(this ICollection<T> collection, object obj)
-    {
-        if (obj is T custedObj)
-        {
-            collection.Add(custedObj);
-        }
-    }
 }

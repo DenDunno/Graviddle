@@ -4,6 +4,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
+
 // buffer between editor and playmode
 public class EditorMonoBehavioursContainer : MonoBehaviour
 {
@@ -23,25 +24,12 @@ public class EditorMonoBehavioursContainer : MonoBehaviour
     public void FillContainers()
     {
         MonoBehaviour[] allMonoBehaviours = FindObjectsOfType<MonoBehaviour>(true);
-        
-        _restartable.Clear();
-        _afterRestartable.Clear();
-        _mediators.Clear();
-        _objectsWithDependencies.Clear();
-        _restartableTransforms.Clear();
-        
-        foreach (MonoBehaviour monoBehaviour in allMonoBehaviours)
-        {
-            _afterRestartable.TryAddToList<IAfterRestart, MonoBehaviour>(monoBehaviour);
-            _restartable.TryAddToList<IRestart, MonoBehaviour>(monoBehaviour);
-            _mediators.TryAddToList<IMediator, MonoBehaviour>(monoBehaviour);
-            _restartableTransforms.TryAddToList<IRestartableTransform, MonoBehaviour>(monoBehaviour);
-            
-            if (CheckIfHasDependency(monoBehaviour))
-            {
-                _objectsWithDependencies.Add(monoBehaviour);
-            }
-        }
+
+        _objectsWithDependencies = allMonoBehaviours.Where(CheckIfHasDependency).ToList();
+        _afterRestartable = allMonoBehaviours.Where(monoBehaviour => monoBehaviour is IAfterRestart).ToList();
+        _restartable = allMonoBehaviours.Where(monoBehaviour => monoBehaviour is IRestart).ToList();
+        _mediators = allMonoBehaviours.Where(monoBehaviour => monoBehaviour is IMediator).ToList();
+        _restartableTransforms = allMonoBehaviours.Where(monoBehaviour => monoBehaviour is IRestartableTransform).ToList();
 
         EditorUtility.SetDirty(this);
     }
