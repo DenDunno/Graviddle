@@ -1,23 +1,20 @@
-﻿
+﻿using System;
+using UnityEngine;
 
-public class SwipeHandlerSwitcher : ICharacterFallingEventsHandler
+
+[Serializable]
+public class SwipeHandlerSwitcher : CharacterFallingEventsHandler
 {
-    private readonly SwipeHandler _swipeHandler;
-    
+    [SerializeField] private SwipeHandler _swipeHandler;
 
-    public SwipeHandlerSwitcher(SwipeHandler swipeHandler)
-    {
-        _swipeHandler = swipeHandler;
-    }
 
-    
-    void ICharacterFallingEventsHandler.OnCharacterStartFalling()
+    public override void OnCharacterStartFalling()
     {
         _swipeHandler.enabled = false;
     }
 
 
-    void ICharacterFallingEventsHandler.OnCharacterEndFalling()
+    public override void OnCharacterEndFalling()
     {
         _swipeHandler.enabled = true;
     }

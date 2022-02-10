@@ -22,6 +22,6 @@ public class RestartableTransform
     {
         _objectToBeRestarted.position = _position;
         _objectToBeRestarted.rotation = _rotation;
-        _objectToBeRestarted.parent = _parent;
+        _objectToBeRestarted.SetParent(_parent);
     }
 }

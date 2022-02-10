@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 
@@ -14,8 +11,9 @@ public class DiContainerInitialization : Editor
         
         if (GUILayout.Button("Resolve scene"))
         {
-            var container = FindObjectOfType<EditorMonoBehavioursContainer>();
+            var container = FindObjectOfType<EditorInterfacesContainer>();
             container.FillContainers();
+            EditorUtility.SetDirty(container);
             
             Logger.PrintWithGreen("Scene was resolved");
         }

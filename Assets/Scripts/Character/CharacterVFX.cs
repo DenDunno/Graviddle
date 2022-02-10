@@ -1,27 +1,23 @@
+using System;
 using UnityEngine;
 
 
-public class CharacterVFX : CharacterFallingEventsHandler, IRestart
+[Serializable]
+public class CharacterVFX : CharacterFallingEventsHandler
 {
     [SerializeField] private ParticleSystem _fallingDust;
     [SerializeField] private TrailRenderer _trailRenderer;
+    
 
-
-    protected override void OnCharacterStartFalling()
+    public override void OnCharacterStartFalling()
     {
         _trailRenderer.emitting = true;
     }
 
 
-    protected override void OnCharacterEndFalling()
+    public override void OnCharacterEndFalling()
     {
         _fallingDust.Play();
         _trailRenderer.emitting = false;
-    }
-
-
-    void IRestart.Restart()
-    {
-        OnCharacterEndFalling();
     }
 }

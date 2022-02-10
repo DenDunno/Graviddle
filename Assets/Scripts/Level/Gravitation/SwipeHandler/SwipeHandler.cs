@@ -24,7 +24,7 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IRes
             TryChangeGravity();
         }
     }
-
+    
 
     private void DefineTurn(ref Vector2 delta)
     {
@@ -54,11 +54,13 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IRes
 
     void IRestart.Restart()
     {
-        enabled = true;
         _newDirection = GravityDirection.Down;
 
         TryChangeGravity();
     }
 
-    public void OnDrag(PointerEventData eventData) {}
+    
+    public void OnDrag(PointerEventData eventData)
+    {
+    }
 }
