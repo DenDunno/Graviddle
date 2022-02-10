@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class Character : MonoBehaviour, IMediator
@@ -16,10 +15,11 @@ public class Character : MonoBehaviour, IMediator
     
     void IMediator.Resolve()
     {
-        var dependencies = new List<object>();
-        dependencies.Add(_characterTransparency = new CharacterTransparency(_spriteRenderer));
-        dependencies.Add(_characterRotationImpulse = new CharacterRotationImpulse(_rigidbody2D));
-        _characterRestart.Init(dependencies);
+        _characterTransparency = new CharacterTransparency(_spriteRenderer);
+        _characterRotationImpulse = new CharacterRotationImpulse(_rigidbody2D);
+
+        _characterTransparency.Init();
+        _characterRestart.Init(new []{_characterTransparency}, new []{_characterTransparency});
     }
 
 
@@ -27,6 +27,7 @@ public class Character : MonoBehaviour, IMediator
     {
         _swipeHandler.GravityChanged += _characterRotationImpulse.TryImpulseCharacter;
         _states.DieState.CharacterDied += _levelRestart.MakeRestart;
+        _states.WinState.CharacterWon += _characterTransparency.BecomeTransparentWithDelay;
     }
 
 
@@ -34,5 +35,6 @@ public class Character : MonoBehaviour, IMediator
     {
         _swipeHandler.GravityChanged -= _characterRotationImpulse.TryImpulseCharacter;
         _states.DieState.CharacterDied -= _levelRestart.MakeRestart;
+        _states.WinState.CharacterWon -= _characterTransparency.BecomeTransparentWithDelay;
     }
 }

@@ -408,9 +408,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _swipeHandler: {fileID: 0}
-  _rigidbody2D: {fileID: 0}
-  _spriteRenderer: {fileID: 0}
-  _characterRestart: {fileID: 0}
+  _rigidbody2D: {fileID: 8393151776776714314}
+  _spriteRenderer: {fileID: 2684562040544259668}
+  _characterRestart: {fileID: 4679696724441328813}
 --- !u!114 &5905746848208922842
 MonoBehaviour:
   m_ObjectHideFlags: 0

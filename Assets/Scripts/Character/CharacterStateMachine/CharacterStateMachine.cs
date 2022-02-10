@@ -24,7 +24,7 @@ public class CharacterStateMachine : MonoBehaviour
     private void TryTransit()
     {
         CharacterState newState = _transitionsPresenter.Transit(_state);
-
+        
         if (newState != _state)
         {
             SwitchState(newState);

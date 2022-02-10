@@ -22,7 +22,7 @@ public class TransitionsConditions
     
     public bool CheckWin() => _allCollisions.CheckCollision<FinishPortal>();
 
-    public bool CheckIfResurrected() => false;
+    public bool CheckIfResurrected() => _characterRestart.CheckRestart();
     
     public bool CheckIfRun() => _moveDirection.Direction != Vector2.zero;
 

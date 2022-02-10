@@ -12,6 +12,11 @@ public class CharacterTransparency : IRestart, IAfterRestart
     public CharacterTransparency(SpriteRenderer spriteRenderer)
     {
         _spriteTransparency = new SpriteTransparency(spriteRenderer);
+    }
+
+
+    public void Init()
+    {
         _spriteTransparency.BecomeTransparentNow();
         _spriteTransparency.BecomeOpaque();
     }

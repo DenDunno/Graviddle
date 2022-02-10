@@ -32,4 +32,13 @@ public static class CollectionsExtensions
             collection.Add(obj);
         }
     }
+    
+    
+    public static void TryCastAndAdd<T>(this ICollection<T> collection, object obj)
+    {
+        if (obj is T custedObj)
+        {
+            collection.Add(custedObj);
+        }
+    }
 }

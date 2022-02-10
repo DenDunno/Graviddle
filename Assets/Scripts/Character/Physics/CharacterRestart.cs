@@ -4,25 +4,28 @@ using UnityEngine;
 
 public class CharacterRestart : MonoBehaviour, IRestart, IAfterRestart 
 {
-    private readonly List<IRestart> _beforeRestartComponents = new List<IRestart>();
-    private readonly List<IAfterRestart> _afterRestartComponents = new List<IAfterRestart>();
+    private IEnumerable<IRestart> _restartComponents = new List<IRestart>();
+    private IEnumerable<IAfterRestart> _afterRestartComponents = new List<IAfterRestart>();
+    private readonly EventTransit _characterResurrected = new EventTransit();
+    
 
-
-    public void Init(List<object> dependencies)
+    public void Init(IEnumerable<IRestart> restartComponents, IEnumerable<IAfterRestart> afterRestartComponents)
     {
-        foreach (object dependency in dependencies)
-        {
-            if (dependency is IRestart restart)
-            {
-                _beforeRestartComponents.Add(restart);
-            }
-        }
+        _restartComponents = restartComponents;
+        _afterRestartComponents = afterRestartComponents;
+    }
+
+
+    public bool CheckRestart()
+    {
+        return _characterResurrected.CheckIfEventHappened();
     }
 
 
     void IRestart.Restart()
     {
-        _beforeRestartComponents.ForEach(beforeRestartComponent => beforeRestartComponent.Restart());
+        _characterResurrected.Invoke();
+        _restartComponents.ForEach(beforeRestartComponent => beforeRestartComponent.Restart());
     }
 
     
