@@ -3,11 +3,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IRestart
+public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IRestart
 {
     [SerializeField] private bool _isActive = true;
-    private readonly int _numOfDirections = 4;
-    private readonly float _swipeSensitivity = 1.0f;
+    private const int _numOfDirections = 4;
+    private const float _swipeSensitivity = 1.0f;
     private GravityDirection _newDirection;
     private GravityDirection _lastDirection;
 
@@ -59,4 +59,6 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IRestart
 
         TryChangeGravity();
     }
+
+    public void OnDrag(PointerEventData eventData) {}
 }
