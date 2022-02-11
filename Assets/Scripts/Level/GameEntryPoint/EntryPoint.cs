@@ -16,10 +16,10 @@ public class EntryPoint : MonoBehaviour
     
 
     private void Awake()
-    {        
-        var levelRestart = new LevelRestart(_interfacesContainer.RestartObjects, _interfacesContainer.AfterRestartObjects);
+    {
         var states = new CharacterStatesPresenter(_character);
         var transitionsPresenterFactory = new TransitionsPresenterFactory(states, _transitionsConditions);
+        var levelRestart = new LevelRestart(_interfacesContainer.RestartObjects, _interfacesContainer.AfterRestartObjects, states.DieState);
         var transitionsPresenter = transitionsPresenterFactory.Create();
 
         _character.Init(levelRestart, transitionsPresenter.GetTransition(states.FallState, states.IdleState), states);

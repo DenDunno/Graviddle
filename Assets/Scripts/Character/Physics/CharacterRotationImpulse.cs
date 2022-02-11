@@ -1,20 +1,33 @@
 using UnityEngine;
 
 
-public class CharacterRotationImpulse
+public class CharacterRotationImpulse : ISubscriber
 {
     private readonly Rigidbody2D _rigidbody;
+    private readonly SwipeHandler _swipeHandler;
     private const int _straightAngle = 180;
     private int _currentZRotation;
 
 
-    public CharacterRotationImpulse(Rigidbody2D rigidbody2D)
+    public CharacterRotationImpulse(Rigidbody2D rigidbody2D, SwipeHandler swipeHandler)
     {
         _rigidbody = rigidbody2D;
+        _swipeHandler = swipeHandler;
     }
 
 
-    public void TryImpulseCharacter(GravityDirection gravityDirection)
+    void ISubscriber.Subscribe()
+    {
+        _swipeHandler.GravityChanged += TryImpulseCharacter;
+    }
+
+    void ISubscriber.Unsubscribe()
+    {
+        _swipeHandler.GravityChanged -= TryImpulseCharacter;
+    }
+    
+
+    private void TryImpulseCharacter(GravityDirection gravityDirection)
     {
         int newZRotation = GravityDataPresenter.GravityData[gravityDirection].ZRotation;
 

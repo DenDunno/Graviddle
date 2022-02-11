@@ -1,10 +1,35 @@
 ﻿
 
-public abstract class CharacterFallingEventsHandler : IRestart
+public abstract class CharacterFallingEventsHandler : IRestart, ISubscriber
 {
-    public abstract void OnCharacterStartFalling();
-    public abstract void OnCharacterEndFalling();
+    private readonly Transition _fallToIdleTransition;
+    private readonly FallState _fallState;
     
+    
+    public CharacterFallingEventsHandler(Transition fallToIdleTransition, FallState fallState)
+    {
+        _fallToIdleTransition = fallToIdleTransition;
+        _fallState = fallState;
+    }
+
+
+    void ISubscriber.Subscribe()
+    {
+        _fallState.CharacterFalling += OnCharacterStartFalling;
+        _fallToIdleTransition.TransitionHappened += OnCharacterEndFalling;
+    }
+
+
+    void ISubscriber.Unsubscribe()
+    {
+        _fallState.CharacterFalling -= OnCharacterStartFalling;
+        _fallToIdleTransition.TransitionHappened -= OnCharacterEndFalling;
+    }
+
+
+    protected abstract void OnCharacterStartFalling();
+    protected abstract void OnCharacterEndFalling();
+
     
     void IRestart.Restart()
     {

@@ -3,21 +3,35 @@ using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 
 
-public class LevelRestart 
+public class LevelRestart : ISubscriber
 {
     private readonly IEnumerable<IRestart> _restartableComponents;
     private readonly IEnumerable<IAfterRestart> _afterRestartComponents;
+    private readonly DieState _dieState;
     private const float _restartTime = 0.7f;
 
 
-    public LevelRestart(IEnumerable<IRestart> restarts, IEnumerable<IAfterRestart> afterRestarts)
+    public LevelRestart(IEnumerable<IRestart> restarts, IEnumerable<IAfterRestart> afterRestarts, DieState dieState)
     {
         _restartableComponents = restarts;
         _afterRestartComponents = afterRestarts;
+        _dieState = dieState;
     }
 
 
-    public async void MakeRestart()
+    void ISubscriber.Subscribe()
+    {
+        _dieState.CharacterDied += MakeRestart;
+    }
+    
+
+    void ISubscriber.Unsubscribe()
+    {
+        _dieState.CharacterDied -= MakeRestart;
+    }
+
+
+    private async void MakeRestart()
     {
         var deathScreen = await LocalAssetLoader.Load<LoadingScreen>("LevelRestart");
         var backstage = new Backstage(deathScreen, RestartObjects);

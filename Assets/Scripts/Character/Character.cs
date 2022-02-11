@@ -1,60 +1,58 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 
-public class Character : MonoBehaviour, IRestartableTransform
+public class Character : MonoBehaviour, IRestartableTransform, IRestart, IAfterRestart
 {
     [SerializeField] private SwipeHandler _swipeHandler;
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private SpriteRenderer _spriteRenderer;
-    [SerializeField] private CharacterRestart _characterRestart;
-    [SerializeField] private CharacterVFX _characterVFX;
-    [SerializeField] private SwipeHandlerSwitcher _swipeHandlerSwitcher;
-    private CharacterFallingEventsHandler[] _fallingEventsHandlers;
-    private CharacterRotationImpulse _characterRotationImpulse;
-    private CharacterTransparency _characterTransparency;
-    private CharacterStatesPresenter _states;
-    private Transition _fallToIdleTransition;
-    private LevelRestart _levelRestart;
+    [SerializeField] private ParticleSystem _fallingDust;
+    [SerializeField] private TrailRenderer _trailRenderer;
+    private IEnumerable<IAfterRestart> _afterRestartComponents;
+    private IEnumerable<IRestart> _restartComponents;
+    private IEnumerable<ISubscriber> _subscribers;
 
 
     public void Init(LevelRestart levelRestart, Transition fallToIdleTransition, CharacterStatesPresenter states)
     {
-        _states = states;
-        _levelRestart = levelRestart;
-        _fallToIdleTransition = fallToIdleTransition;
-        _characterTransparency = new CharacterTransparency(_spriteRenderer);
-        _characterRotationImpulse = new CharacterRotationImpulse(_rigidbody2D);
-        _fallingEventsHandlers = new CharacterFallingEventsHandler[] {_characterVFX, _swipeHandlerSwitcher};
-        
-        _characterTransparency.Init();
-        _characterRestart.Init(new []{_characterTransparency}, new []{_characterTransparency});
+        object[] dependencies = 
+        {
+            levelRestart,
+            new CharacterTransparency(_spriteRenderer, states.WinState),
+            new CharacterRotationImpulse(_rigidbody2D, _swipeHandler),
+            new SwipeHandlerSwitcher(_swipeHandler, fallToIdleTransition, states.FallState),
+            new CharacterVFX(_fallingDust, _trailRenderer, fallToIdleTransition, states.FallState)
+        };
+
+        dependencies.OfType<IInitializable>().ForEach(initializable => initializable.Init());
+        _afterRestartComponents = dependencies.OfType<IAfterRestart>();
+        _restartComponents = dependencies.OfType<IRestart>();
+        _subscribers = dependencies.OfType<ISubscriber>();
     }
 
 
     private void OnEnable()
     {
-        _swipeHandler.GravityChanged += _characterRotationImpulse.TryImpulseCharacter;
-        _states.DieState.CharacterDied += _levelRestart.MakeRestart;
-        _states.WinState.CharacterWon += _characterTransparency.BecomeTransparentWithDelay;
-        
-        foreach (CharacterFallingEventsHandler characterFallingEventsHandler in _fallingEventsHandlers)
-        {
-            _states.FallState.CharacterFalling += characterFallingEventsHandler.OnCharacterStartFalling;
-            _fallToIdleTransition.TransitionHappened += characterFallingEventsHandler.OnCharacterEndFalling;
-        }
+        _subscribers.ForEach(subscriber => subscriber.Subscribe());
     }
 
 
     private void OnDisable()
     {
-        _swipeHandler.GravityChanged -= _characterRotationImpulse.TryImpulseCharacter;
-        _states.DieState.CharacterDied -= _levelRestart.MakeRestart;
-        _states.WinState.CharacterWon -= _characterTransparency.BecomeTransparentWithDelay;
-        
-        foreach (CharacterFallingEventsHandler characterFallingEventsHandler in _fallingEventsHandlers)
-        {
-            _states.FallState.CharacterFalling -= characterFallingEventsHandler.OnCharacterStartFalling;
-            _fallToIdleTransition.TransitionHappened -= characterFallingEventsHandler.OnCharacterEndFalling;
-        }
+        _subscribers.ForEach(subscriber => subscriber.Unsubscribe());
+    }
+
+    
+    void IRestart.Restart()
+    {
+        _restartComponents.ForEach(restartComponent => restartComponent.Restart());
+    }
+    
+    
+    void IAfterRestart.Restart()
+    {
+        _afterRestartComponents.ForEach(restartComponent => restartComponent.Restart());
     }
 }
