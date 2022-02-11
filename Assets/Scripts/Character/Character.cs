@@ -15,12 +15,11 @@ public class Character : MonoBehaviour, IRestartableTransform, IRestart, IAfterR
     private IEnumerable<ISubscriber> _subscribers;
 
 
-    public void Init(Transition fallToIdleTransition, CharacterStatesPresenter states, CharacterRestartEvent restartEvent, LevelRestart levelRestart)
+    public void Init(Transition fallToIdleTransition, CharacterStatesPresenter states, CharacterRestartEvent restartEvent)
     {
         object[] dependencies = 
         {
             restartEvent,
-            levelRestart,
             new CharacterPhysicsRestart(_rigidbody2D),
             new CharacterTransparency(_spriteRenderer, states.WinState),
             new CharacterRotationImpulse(_rigidbody2D, _swipeHandler),
@@ -37,24 +36,24 @@ public class Character : MonoBehaviour, IRestartableTransform, IRestart, IAfterR
 
     private void OnEnable()
     {
-        _subscribers.ForEach(subscriber => subscriber.Subscribe());
+        _subscribers.SubscribeForEach();
     }
 
 
     private void OnDisable()
     {
-        _subscribers.ForEach(subscriber => subscriber.Unsubscribe());
+        _subscribers.UnsubscribeForEach();
     }
 
     
     void IRestart.Restart()
     {
-        _restartComponents.ForEach(restartComponent => restartComponent.Restart());
+        _restartComponents.RestartForEach();
     }
     
     
     void IAfterRestart.Restart()
     {
-        _afterRestartComponents.ForEach(restartComponent => restartComponent.Restart());
+        _afterRestartComponents.RestartForEach();
     }
 }

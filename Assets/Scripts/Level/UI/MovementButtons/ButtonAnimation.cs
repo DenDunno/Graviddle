@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class ButtonAnimation : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
-    private float _verticalOffset = 8f;
+    private const float _verticalOffset = 8f;
     private Vector2 _startPosition;
 
 

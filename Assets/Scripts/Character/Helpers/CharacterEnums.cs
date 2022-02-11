@@ -11,7 +11,7 @@ public enum GravityDirection
 
 public enum MovementState
 {
-    Left = -1,
     Stop = 0,
-    Right = 1
+    Left = -1,
+    Right = 1,
 }

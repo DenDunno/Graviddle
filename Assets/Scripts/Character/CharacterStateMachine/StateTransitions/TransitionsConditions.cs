@@ -8,7 +8,7 @@ public class TransitionsConditions
     [SerializeField] private Character _character;
     [SerializeField] private LevelBorders _levelBorders;
     [SerializeField] private MoveDirection _moveDirection;
-    [SerializeField] private TransitButton _restartButton;
+    [SerializeField] private RestartButton _restartButton;
     [SerializeField] private CollisionsList _allCollisions;
     [SerializeField] private CollisionsList _characterFeet;
     private CharacterRestartEvent _characterRestartEvent;

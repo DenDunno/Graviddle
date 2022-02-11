@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 
 
-public class TransitButton : MonoBehaviour
+public class RestartButton : MonoBehaviour
 {
     [SerializeField] private Button _button;
     private readonly EventTransit _eventTransit = new EventTransit();

@@ -5,7 +5,7 @@ using Cysharp.Threading.Tasks;
 
 public class LevelRestart : ISubscriber
 {
-    private readonly IEnumerable<IRestart> _restartableComponents;
+    private readonly IEnumerable<IRestart> _restartComponents;
     private readonly IEnumerable<IAfterRestart> _afterRestartComponents;
     private readonly DieState _dieState;
     private const float _restartTime = 0.7f;
@@ -13,7 +13,7 @@ public class LevelRestart : ISubscriber
 
     public LevelRestart(IEnumerable<IRestart> restarts, IEnumerable<IAfterRestart> afterRestarts, DieState dieState)
     {
-        _restartableComponents = restarts;
+        _restartComponents = restarts;
         _afterRestartComponents = afterRestarts;
         _dieState = dieState;
     }
@@ -38,7 +38,7 @@ public class LevelRestart : ISubscriber
 
         await backstage.MakeTransition();
 
-        _afterRestartComponents.ForEach(component => component.Restart());
+        _afterRestartComponents.RestartForEach();
         
         LocalAssetLoader.Unload(deathScreen.gameObject);
     }
@@ -46,7 +46,7 @@ public class LevelRestart : ISubscriber
 
     private async UniTask RestartObjects()
     {
-        _restartableComponents.ForEach(component => component.Restart());
+        _restartComponents.RestartForEach();
 
         await UniTask.Delay(TimeSpan.FromSeconds(_restartTime));
     }

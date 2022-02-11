@@ -1,24 +1,25 @@
 ﻿using UnityEngine;
 
 
-public class Gravity : MonoBehaviour, IRestart
+public class Gravity : IRestart, ISubscriber
 {
-    [SerializeField] private SwipeHandler _swipeHandler;
+    private readonly SwipeHandler _swipeHandler;
 
 
-    private void Start()
+    public Gravity(SwipeHandler swipeHandler)
     {
+        _swipeHandler = swipeHandler;
         Physics2D.gravity = new Vector2(0, -1);
     }
 
 
-    private void OnEnable()
+    void ISubscriber.Subscribe()
     {
         _swipeHandler.GravityChanged += OnGravityChanged;
     }
+    
 
-
-    private void OnDisable()
+    void ISubscriber.Unsubscribe()
     {
         _swipeHandler.GravityChanged -= OnGravityChanged;
     }

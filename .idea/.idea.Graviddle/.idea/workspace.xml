@@ -2,23 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="236f7ca0-e3d5-42cf-8bd1-4f65d9112fc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/CharacterRestartEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/CharacterRestartEvent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Interfaces.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Level/UI/MovementButtons/InputButton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/DI/EntryPoint.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/DI/EntryPoint.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/UI/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/UI/UI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/Character.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_7.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_7.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Character.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterMovement/CharacterMovementInEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterMovement/CharacterMovementInEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterMovement/MoveDirection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterMovement/MoveDirection.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/StateTransitions/TransitionsConditions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/StateTransitions/TransitionsConditions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Physics/CharacterRestart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Physics/CharacterPhysicsRestart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Physics/CharacterRestart.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Physics/CharacterPhysicsRestart.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/CharacterFallingEventsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/CharacterFallingEventsHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/TransitButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/UI/RestartButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/TransitButton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/UI/RestartButton.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Helpers/AnimationsName.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Helpers/AnimationsName.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Helpers/CharacterEnums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Helpers/CharacterEnums.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions/CollectionsExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions/CollectionsExtensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/GameEntryPoint/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/GameEntryPoint/EntryPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/UIRestart.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/UIRestart.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/UI/Switchers/UIStatesSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/UI/Switchers/UIStatesSwitcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Gravitation/Gravity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Gravitation/Gravity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Gravitation/GravityDataPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Gravitation/GravityDataPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/IInitializable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Interfaces/IInitializable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/IInitializable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Interfaces/IInitializable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/ISubscriber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Interfaces/ISubscriber.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/ISubscriber.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Interfaces/ISubscriber.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/IAfterRestart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Interfaces/IAfterRestart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/IAfterRestart.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Interfaces/IAfterRestart.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/IRestart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Interfaces/IRestart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/IRestart.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Interfaces/IRestart.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/IRestartableTransform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Interfaces/IRestartableTransform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/IRestartableTransform.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Interfaces/IRestartableTransform.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/LevelRestart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/LevelRestart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Tutorial/WoodPointer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Tutorial/WoodPointerAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Tutorial/WoodPointer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Tutorial/WoodPointerAnimation.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/UI/MovementButtons/ButtonAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/UI/MovementButtons/ButtonAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/UI/MovementButtons/CharacterInputButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/UI/MovementButtons/CharacterInputButton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/UI/MovementButtons/InputButton.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +51,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ef667cdc82bf4a4e911d1ddea9ff581d13a800/f5/c6ff8e18/Transform.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Level/ISubscriber.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Level/Interfaces/ISubscriber.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695d1cc93cca45069c528c15c9fdd7493e2800/49/a9868b06/RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.16.19/Runtime/AssetReference.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.16.19/Runtime/ResourceManager/ResourceLocations/IResourceLocation.cs" root0="SKIP_HIGHLIGHTING" />

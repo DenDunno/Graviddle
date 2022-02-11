@@ -23,4 +23,28 @@ public static class CollectionsExtensions
     {
         return queue.Count == 0;
     }
+
+
+    public static void SubscribeForEach(this IEnumerable<ISubscriber> subscribers)
+    {
+        subscribers.ForEach(subscriber => subscriber.Subscribe());
+    }
+    
+    
+    public static void UnsubscribeForEach(this IEnumerable<ISubscriber> subscribers)
+    {
+        subscribers.ForEach(subscriber => subscriber.Unsubscribe());
+    }
+    
+    
+    public static void RestartForEach(this IEnumerable<IRestart> restartComponents)
+    {
+        restartComponents.ForEach(restartComponent => restartComponent.Restart());
+    }
+    
+    
+    public static void RestartForEach(this IEnumerable<IAfterRestart> afterRestartComponents)
+    {
+        afterRestartComponents.ForEach(afterRestartComponent => afterRestartComponent.Restart());
+    }
 }

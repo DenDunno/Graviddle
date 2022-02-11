@@ -1,6 +1,6 @@
 ﻿
 
-public class AnimationsName
+public static class AnimationsName
 {
     public static readonly string Run = nameof(Run);
     public static readonly string Idle = nameof(Idle);

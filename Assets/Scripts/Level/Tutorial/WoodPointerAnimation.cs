@@ -3,14 +3,18 @@ using DG.Tweening;
 using UnityEngine;
 
 
-public class WoodPointer : MonoBehaviour
+public class WoodPointerAnimation : MonoBehaviour
 {
     [SerializeField] private UIDissolve _dissolveImage;
     [SerializeField] private float _waitTime;
+    private const float _duration = 2f;
+    private const float _dissolveStartValue = 0;
+    private const float _dissolveTargetValue = 1;
 
+    
     private void OnTriggerEnter2D(Collider2D collider2d)
     {
-        if (collider2d.TryGetComponent(out Character character))
+        if (collider2d.GetComponent<Character>() != null)
         {
             ShowImage();
         }
@@ -19,13 +23,10 @@ public class WoodPointer : MonoBehaviour
 
     private void ShowImage()
     {
-        const float duration = 2f;
-        const float fromFactor = 0;
-        const float toFactor = 1f;
         Sequence sequence = DOTween.Sequence();
 
         sequence.AppendInterval(_waitTime);
-        sequence.Append(DOTween.To(x => _dissolveImage.effectFactor = x, fromFactor, toFactor, duration));
+        sequence.Append(DOTween.To(x => _dissolveImage.effectFactor = x, _dissolveStartValue, _dissolveTargetValue, _duration));
             
         sequence.onComplete += ()=>
         {

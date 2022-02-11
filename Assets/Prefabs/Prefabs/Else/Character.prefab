@@ -394,6 +394,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _swipeHandler: {fileID: 0}
+  _inputButtons: []
+  _characterSpriteFlipping:
+    _spriteRenderer: {fileID: 2684562040544259668}
 --- !u!114 &2295256004596452907
 MonoBehaviour:
   m_ObjectHideFlags: 0
