@@ -4,9 +4,9 @@ public abstract class CharacterFallingEventsHandler : IRestart, ISubscriber
 {
     private readonly Transition _fallToIdleTransition;
     private readonly FallState _fallState;
-    
-    
-    public CharacterFallingEventsHandler(Transition fallToIdleTransition, FallState fallState)
+
+
+    protected CharacterFallingEventsHandler(Transition fallToIdleTransition, FallState fallState)
     {
         _fallToIdleTransition = fallToIdleTransition;
         _fallState = fallState;

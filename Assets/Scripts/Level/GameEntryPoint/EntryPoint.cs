@@ -11,23 +11,26 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private CharacterStateMachine _characterStateMachine;
     [SerializeField] private CameraMediator _cameraMediator;
     [SerializeField] private LevelResultSave _levelResultSave;
-    [SerializeField] private UIRestart _uiRestart;
+    [SerializeField] private UIStatesSwitcher _uiStatesSwitcher;
     [SerializeField] private FinishPortal _finishPortal;
-    
 
+    
     private void Awake()
     {
         var states = new CharacterStatesPresenter(_character);
         var transitionsPresenterFactory = new TransitionsPresenterFactory(states, _transitionsConditions);
-        var levelRestart = new LevelRestart(_interfacesContainer.RestartObjects, _interfacesContainer.AfterRestartObjects, states.DieState);
         var transitionsPresenter = transitionsPresenterFactory.Create();
+        var characterRestartEvent = new CharacterRestartEvent();
+        var fallToIdleTransition = transitionsPresenter.GetTransition(states.FallState, states.IdleState);
+        var levelRestart = new LevelRestart(_interfacesContainer.RestartObjects, _interfacesContainer.AfterRestartObjects, states.DieState);
 
-        _character.Init(levelRestart, transitionsPresenter.GetTransition(states.FallState, states.IdleState), states);
+        _character.Init(fallToIdleTransition, states, characterRestartEvent, levelRestart);
         _transformsRestart.Init(_interfacesContainer.RestartableTransforms);
         _characterStateMachine.Init(states.IdleState, transitionsPresenter);
+        _transitionsConditions.Init(characterRestartEvent);
+        _uiStatesSwitcher.Init(states.DieState);
         _levelResultSave.Init(states.WinState);
         _finishPortal.Init(states.WinState);
-        _uiRestart.Init(states.DieState);
         _winPanel.Init(states.WinState);
         _cameraMediator.Init();
     }

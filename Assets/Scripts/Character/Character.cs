@@ -15,11 +15,13 @@ public class Character : MonoBehaviour, IRestartableTransform, IRestart, IAfterR
     private IEnumerable<ISubscriber> _subscribers;
 
 
-    public void Init(LevelRestart levelRestart, Transition fallToIdleTransition, CharacterStatesPresenter states)
+    public void Init(Transition fallToIdleTransition, CharacterStatesPresenter states, CharacterRestartEvent restartEvent, LevelRestart levelRestart)
     {
         object[] dependencies = 
         {
+            restartEvent,
             levelRestart,
+            new CharacterPhysicsRestart(_rigidbody2D),
             new CharacterTransparency(_spriteRenderer, states.WinState),
             new CharacterRotationImpulse(_rigidbody2D, _swipeHandler),
             new SwipeHandlerSwitcher(_swipeHandler, fallToIdleTransition, states.FallState),

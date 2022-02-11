@@ -1,22 +1,34 @@
 using UnityEngine;
 
 
-public class UIStatesSwitcher : MonoBehaviour, IRestart
+public class UIStatesSwitcher : MonoBehaviour, IAfterRestart
 {
-    private UIState[] _allUIStates;
+    [SerializeField] private UIState[] _allUIStates;
+    [SerializeField] private UIState _initialState;
+    private DieState _characterDieState;
 
-
-    private void Start()
+    
+    public void Init(DieState dieState)
     {
-        _allUIStates = GetComponentsInChildren<UIState>(true);
+        _characterDieState = dieState;
     }
 
 
-    public void ActivateState(UIState uiStateToBeActivated)
+    private void OnEnable()
+    {
+        _characterDieState.CharacterDied += OnCharacterDied;
+    }
+
+    
+    private void OnDisable()
+    {
+        _characterDieState.CharacterDied -= OnCharacterDied;
+    }
+
+    
+    private void OnCharacterDied()
     {
         DeactivateStates();
-
-        uiStateToBeActivated.gameObject.SetActive(true);
     }
 
 
@@ -29,8 +41,16 @@ public class UIStatesSwitcher : MonoBehaviour, IRestart
     }
 
     
-    void IRestart.Restart()
+    public void ActivateState(UIState uiStateToBeActivated)
     {
         DeactivateStates();
+
+        uiStateToBeActivated.gameObject.SetActive(true);
+    }
+
+
+    void IAfterRestart.Restart()
+    {
+        _initialState.Activate();
     }
 }

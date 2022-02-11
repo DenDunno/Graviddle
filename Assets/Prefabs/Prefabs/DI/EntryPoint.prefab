@@ -59,11 +59,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _restartable:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 5045149108189188633}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -105,7 +104,12 @@ MonoBehaviour:
     _restartButton: {fileID: 0}
     _allCollisions: {fileID: 0}
     _characterFeet: {fileID: 0}
-    _characterRestart: {fileID: 0}
   _character: {fileID: 0}
   _interfacesContainer: {fileID: 5009051321042465234}
   _transformsRestart: {fileID: 5045149108189188633}
+  _winPanel: {fileID: 0}
+  _characterStateMachine: {fileID: 0}
+  _cameraMediator: {fileID: 0}
+  _levelResultSave: {fileID: 0}
+  _uiStatesSwitcher: {fileID: 0}
+  _finishPortal: {fileID: 0}

@@ -2,23 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="236f7ca0-e3d5-42cf-8bd1-4f65d9112fc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Level/IInitializable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Level/IInitializable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Level/ISubscriber.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Level/ISubscriber.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/CharacterRestartEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/CharacterRestartEvent.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/Character.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/DI/EntryPoint.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/DI/EntryPoint.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/UI/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/UI/UI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_7.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_7.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Character.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/StateTransitions/TransitionsConditions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStateMachine/StateTransitions/TransitionsConditions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterTransparency/CharacterTransparency.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterTransparency/CharacterTransparency.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterVFX.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterVFX.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Physics/CharacterRestart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Physics/CharacterRestart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Physics/CharacterRotationImpulse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Physics/CharacterRotationImpulse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Physics/CharacterRestart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Physics/CharacterPhysicsRestart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Physics/CharacterRestart.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Physics/CharacterPhysicsRestart.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/CharacterFallingEventsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/CharacterFallingEventsHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/GameEntryPoint/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/GameEntryPoint/EntryPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Gravitation/SwipeHandler/SwipeHandlerSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Gravitation/SwipeHandler/SwipeHandlerSwitcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/LevelRestart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/LevelRestart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/UIRestart.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Restart/UIRestart.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/UI/Switchers/UIStatesSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/UI/Switchers/UIStatesSwitcher.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +35,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ef667cdc82bf4a4e911d1ddea9ff581d13a800/f5/c6ff8e18/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Level/ISubscriber.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695d1cc93cca45069c528c15c9fdd7493e2800/49/a9868b06/RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.16.19/Runtime/AssetReference.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.16.19/Runtime/ResourceManager/ResourceLocations/IResourceLocation.cs" root0="SKIP_HIGHLIGHTING" />
@@ -85,10 +85,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="2056">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="2056" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
