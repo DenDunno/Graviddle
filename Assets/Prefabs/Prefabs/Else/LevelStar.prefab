@@ -188,7 +188,6 @@ GameObject:
   - component: {fileID: 8550718928693556227}
   - component: {fileID: 8550718928693556224}
   - component: {fileID: 4786883092277394978}
-  - component: {fileID: 394146498578104889}
   - component: {fileID: 5905322518152996842}
   m_Layer: 0
   m_Name: LevelStar
@@ -225,10 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107510787b9cfdb439d79c92bb12c4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _starImpactReference:
-    m_AssetGUID: 59532e2bf74ff9444892fd215cb6d0c6
-    m_SubObjectName: 
-    m_SubObjectType: 
+  _levelStarImpact: {fileID: 0}
 --- !u!58 &8550718928693556224
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -258,18 +254,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _swipeHandler: {fileID: 0}
---- !u!114 &394146498578104889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8550718928693556249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 842f27e6dce44b34c94b7ee14a363f62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &5905322518152996842
 AudioSource:
   m_ObjectHideFlags: 0

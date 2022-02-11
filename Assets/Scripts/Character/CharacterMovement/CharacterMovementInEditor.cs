@@ -4,7 +4,6 @@ using UnityEngine;
 public class CharacterMovementInEditor : MonoBehaviour
 {
     private MoveDirection _moveDirection;
-    private CharacterSpriteFlipping _spriteFlipping;
     
     
     private void Start()
@@ -15,7 +14,6 @@ public class CharacterMovementInEditor : MonoBehaviour
         #endif
 
         _moveDirection = FindObjectOfType<MoveDirection>();
-        _spriteFlipping = _moveDirection.GetComponent<CharacterSpriteFlipping>();
     }
 
 
@@ -24,6 +22,5 @@ public class CharacterMovementInEditor : MonoBehaviour
         var movement = (MovementState)Input.GetAxisRaw("Horizontal");
         
         _moveDirection.SetMovementDirection(movement);
-        _spriteFlipping.FlipCharacter(movement);
     }
 }

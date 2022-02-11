@@ -1,53 +1,58 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 
-public class CharacterTransparency : MonoBehaviour, IRestartableComponent, IAfterRestartComponent
+public class CharacterTransparency : IRestart, IAfterRestart, ISubscriber, IInitializable
 {
-    [SerializeField] private SpriteRenderer _spriteRenderer;
-    [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
-    private SpriteTransparencyPresenter _spriteTransparencyPresenter;
+    private const float _timeBeforeDisappearance = 1f;
+    private readonly SpriteTransparency _spriteTransparency;
+    private readonly WinState _winState;
+    
 
-
-    private void Start()
+    public CharacterTransparency(SpriteRenderer spriteRenderer, WinState winState)
     {
-        _spriteTransparencyPresenter = new SpriteTransparencyPresenter(_spriteRenderer);
-
-        _spriteTransparencyPresenter.BecomeTransparentNow();
-        _spriteTransparencyPresenter.BecomeOpaque();
+        _spriteTransparency = new SpriteTransparency(spriteRenderer);
+        _winState = winState;
     }
 
 
-    private void OnEnable()
+    void IInitializable.Init()
     {
-        _characterStatesPresenter.WinState.CharacterWon += OnCharacterWon;
+        _spriteTransparency.BecomeTransparentNow();
+        _spriteTransparency.BecomeOpaque();
+    }
+    
+
+    void ISubscriber.Subscribe()
+    {
+        _winState.CharacterWon -= BecomeTransparentWithDelay;
+    }
+    
+
+    void ISubscriber.Unsubscribe()
+    {
+        _winState.CharacterWon -= BecomeTransparentWithDelay;
     }
 
 
-    private void OnDisable()
+    private async void BecomeTransparentWithDelay()
     {
-        _characterStatesPresenter.WinState.CharacterWon -= OnCharacterWon;
+        await UniTask.Delay(TimeSpan.FromSeconds(_timeBeforeDisappearance));
+
+        _spriteTransparency.BecomeTransparent();
     }
 
 
-    private async void OnCharacterWon()
+    void IRestart.Restart()
     {
-        const int timeBeforeDisappearance = 1000;
-        await Task.Delay(timeBeforeDisappearance);
-
-        _spriteTransparencyPresenter.BecomeTransparent();
+        _spriteTransparency.StopAnimation();
+        _spriteTransparency.BecomeTransparentNow();
     }
+ 
 
-
-    void IRestartableComponent.Restart()
+    void IAfterRestart.Restart()
     {
-        _spriteTransparencyPresenter.StopAnimation();
-        _spriteTransparencyPresenter.BecomeTransparentNow();
-    }
-
-
-    void IAfterRestartComponent.Restart()
-    {
-        _spriteTransparencyPresenter.BecomeOpaque();
+        _spriteTransparency.BecomeOpaque();
     }
 }

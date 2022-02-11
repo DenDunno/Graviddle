@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class Reward : MonoBehaviour, IRestartableComponent
+public class Reward : MonoBehaviour, IRestart
 {
     public readonly int MaxStars = 3;
     [SerializeField] private LevelStar[] _levelStars;
@@ -27,7 +27,7 @@ public class Reward : MonoBehaviour, IRestartableComponent
     }
 
     
-    void IRestartableComponent.Restart()
+    void IRestart.Restart()
     {
         CollectedStars = 0;
     }

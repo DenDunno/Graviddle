@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2945279117330507583}
-  - component: {fileID: 1958012564462228538}
+  - component: {fileID: 5045149108189188633}
+  - component: {fileID: 5009051321042465234}
   - component: {fileID: 7458211516614138431}
   m_Layer: 0
   m_Name: EntryPoint
@@ -32,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1958012564462228538
+--- !u!114 &5045149108189188633
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,10 +42,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 1476117705816507621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae05dbc4a54a4d3e8fd91b4671c5ecbb, type: 3}
+  m_Script: {fileID: 11500000, guid: 29af1694d4744a7bae039683fc4f9ff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectsWithDependency: []
+--- !u!114 &5009051321042465234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476117705816507621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a11b1c1f4d8ce4fb37053fb391e3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _restartable:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 5045149108189188633}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _afterRestartable:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _restartableTransforms:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &7458211516614138431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,12 +98,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f730bae106d6414a82ae428a098c1789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _diContainer: {fileID: 1958012564462228538}
+  _transitionsConditions:
+    _character: {fileID: 0}
+    _levelBorders: {fileID: 0}
+    _moveDirection: {fileID: 0}
+    _restartButton: {fileID: 0}
+    _allCollisions: {fileID: 0}
+    _characterFeet: {fileID: 0}
+    _characterRestart: {fileID: 0}
   _character: {fileID: 0}
-  _characterStatesTransitionsFactory:
-    _eventTransitionsPresenterFactory:
-      _transitionsEvents:
-        _restartButton: {fileID: 0}
-        _characterEvents: {fileID: 0}
-    _updateTransitionsPresenterFactory:
-      _levelBorders: {fileID: 0}
+  _interfacesContainer: {fileID: 5009051321042465234}
+  _transformsRestart: {fileID: 5045149108189188633}

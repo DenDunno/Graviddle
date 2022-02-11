@@ -1,29 +1,38 @@
-﻿using UnityEngine;
+﻿
 
-
-public abstract class CharacterFallingEventsHandler : MonoBehaviour
+public abstract class CharacterFallingEventsHandler : IRestart, ISubscriber
 {
-    [LightweightInject] private readonly TransitionsPresenter _transitionsPresenter;
-    [LightweightInject] private readonly CharacterStatesPresenter _states;
-    private Transition _transition;
-
-
-    private void Start()
+    private readonly Transition _fallToIdleTransition;
+    private readonly FallState _fallState;
+    
+    
+    public CharacterFallingEventsHandler(Transition fallToIdleTransition, FallState fallState)
     {
-        _transition = _transitionsPresenter.GetTransition(_states.FallState, _states.IdleState);
-
-        _states.FallState.CharacterFalling += OnCharacterStartFalling;
-        _transition.TransitionHappened += OnCharacterEndFalling;
+        _fallToIdleTransition = fallToIdleTransition;
+        _fallState = fallState;
     }
 
 
-    private void OnDestroy()
+    void ISubscriber.Subscribe()
     {
-        _states.FallState.CharacterFalling -= OnCharacterStartFalling;
-        _transition.TransitionHappened -= OnCharacterEndFalling;
+        _fallState.CharacterFalling += OnCharacterStartFalling;
+        _fallToIdleTransition.TransitionHappened += OnCharacterEndFalling;
+    }
+
+
+    void ISubscriber.Unsubscribe()
+    {
+        _fallState.CharacterFalling -= OnCharacterStartFalling;
+        _fallToIdleTransition.TransitionHappened -= OnCharacterEndFalling;
     }
 
 
     protected abstract void OnCharacterStartFalling();
     protected abstract void OnCharacterEndFalling();
+
+    
+    void IRestart.Restart()
+    {
+        OnCharacterEndFalling();
+    }
 }

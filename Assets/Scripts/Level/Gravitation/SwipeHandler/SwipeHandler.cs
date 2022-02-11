@@ -3,11 +3,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IRestartableComponent
+public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IRestart
 {
     [SerializeField] private bool _isActive = true;
-    private readonly int _numOfDirections = 4;
-    private readonly float _swipeSensitivity = 1.0f;
+    private const int _numOfDirections = 4;
+    private const float _swipeSensitivity = 1.0f;
     private GravityDirection _newDirection;
     private GravityDirection _lastDirection;
 
@@ -24,7 +24,7 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IRestartableCompon
             TryChangeGravity();
         }
     }
-
+    
 
     private void DefineTurn(ref Vector2 delta)
     {
@@ -52,11 +52,15 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IRestartableCompon
     }
     
 
-    void IRestartableComponent.Restart()
+    void IRestart.Restart()
     {
-        enabled = true;
         _newDirection = GravityDirection.Down;
 
         TryChangeGravity();
+    }
+
+    
+    public void OnDrag(PointerEventData eventData)
+    {
     }
 }

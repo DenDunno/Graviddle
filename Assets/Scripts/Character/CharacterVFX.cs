@@ -1,10 +1,18 @@
 using UnityEngine;
 
 
-public class CharacterVFX : CharacterFallingEventsHandler, IRestartableComponent
+public class CharacterVFX : CharacterFallingEventsHandler
 {
-    [SerializeField] private ParticleSystem _fallingDust;
-    [SerializeField] private TrailRenderer _trailRenderer;
+    private readonly ParticleSystem _fallingDust;
+    private readonly TrailRenderer _trailRenderer;
+
+    
+    public CharacterVFX(ParticleSystem fallingDust, TrailRenderer trailRenderer, Transition fallToIdleTransition, FallState fallState) 
+        : base(fallToIdleTransition, fallState)
+    {
+        _fallingDust = fallingDust;
+        _trailRenderer = trailRenderer;
+    }
 
 
     protected override void OnCharacterStartFalling()
@@ -17,11 +25,5 @@ public class CharacterVFX : CharacterFallingEventsHandler, IRestartableComponent
     {
         _fallingDust.Play();
         _trailRenderer.emitting = false;
-    }
-
-
-    void IRestartableComponent.Restart()
-    {
-        OnCharacterEndFalling();
     }
 }

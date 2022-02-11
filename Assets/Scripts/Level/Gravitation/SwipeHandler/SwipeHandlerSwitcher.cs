@@ -1,10 +1,15 @@
-﻿using UnityEngine;
-using UnityEngine.EventSystems;
+﻿
 
-
-public class SwipeHandlerSwitcher : CharacterFallingEventsHandler, IDragHandler
+public class SwipeHandlerSwitcher : CharacterFallingEventsHandler
 {
-    [SerializeField] private SwipeHandler _swipeHandler;
+    private readonly SwipeHandler _swipeHandler;
+
+    
+    public SwipeHandlerSwitcher(SwipeHandler swipeHandler, Transition fallToIdleTransition, FallState fallState) 
+        : base(fallToIdleTransition, fallState)
+    {
+        _swipeHandler = swipeHandler;
+    }
 
 
     protected override void OnCharacterStartFalling()
@@ -16,10 +21,5 @@ public class SwipeHandlerSwitcher : CharacterFallingEventsHandler, IDragHandler
     protected override void OnCharacterEndFalling()
     {
         _swipeHandler.enabled = true;
-    }
-
-
-    public void OnDrag(PointerEventData eventData)
-    {
     }
 }

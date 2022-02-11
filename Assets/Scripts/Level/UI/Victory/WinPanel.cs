@@ -3,26 +3,32 @@
 
 public class WinPanel : MonoBehaviour
 {
-    [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
     [SerializeField] private UIState _uiState;
     [SerializeField] private WinAnimation _winAnimation;
+    private WinState _characterWinState;
 
+
+    public void Init(WinState winState)
+    {
+        _characterWinState = winState;
+    }
+    
 
     private void OnEnable()
     {
-        _characterStatesPresenter.WinState.CharacterWon += OnCharacterWon;
+        _characterWinState.CharacterWon += OnCharacterWon;
     }
 
 
     private void OnDisable()
     {
-        _characterStatesPresenter.WinState.CharacterWon -= OnCharacterWon;
+        _characterWinState.CharacterWon -= OnCharacterWon;
     }
 
 
     private void OnCharacterWon()
     {
         _winAnimation.Play();
-        _uiState.ActivateState();
+        _uiState.Activate();
     }
 }

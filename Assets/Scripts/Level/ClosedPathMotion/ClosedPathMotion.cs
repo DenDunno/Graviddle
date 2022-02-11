@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class ClosedPathMotion : MonoBehaviour, IRestartableComponent
+public class ClosedPathMotion : MonoBehaviour, IRestart
 {
     [SerializeField] private ClosedPathMotionCalculator _motionCalculator;
     [SerializeField] private Transform _targetTransform;
@@ -26,7 +26,7 @@ public class ClosedPathMotion : MonoBehaviour, IRestartableComponent
     }
 
     
-    void IRestartableComponent.Restart()
+    void IRestart.Restart()
     {
         _motionCalculator.Restart();
     }

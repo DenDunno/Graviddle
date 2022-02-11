@@ -1,39 +1,34 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
 
-[RequireComponent(typeof(LightweightDiContainer))]
 public class EntryPoint : MonoBehaviour
 {
-    [SerializeField] private LightweightDiContainer _diContainer;
     [SerializeField] private TransitionsConditions _transitionsConditions;
     [SerializeField] private Character _character;
-    private IEnumerable<IMediator> _mediators;
-
+    [SerializeField] private EditorInterfacesContainer _interfacesContainer;
+    [SerializeField] private TransformsRestart _transformsRestart;
+    [SerializeField] private WinPanel _winPanel;
+    [SerializeField] private CharacterStateMachine _characterStateMachine;
+    [SerializeField] private CameraMediator _cameraMediator;
+    [SerializeField] private LevelResultSave _levelResultSave;
+    [SerializeField] private UIRestart _uiRestart;
+    [SerializeField] private FinishPortal _finishPortal;
+    
 
     private void Awake()
-    {        
-        BindInstances();
-        _diContainer.ResolveDependencies();
-        InitializeMediators();
-    }
-
-
-    private void BindInstances()
     {
-        var characterStatesPresenter = new CharacterStatesPresenter(_character);
-        var transitionsPresenterFactory = new TransitionsPresenterFactory(characterStatesPresenter, _transitionsConditions);
+        var states = new CharacterStatesPresenter(_character);
+        var transitionsPresenterFactory = new TransitionsPresenterFactory(states, _transitionsConditions);
+        var levelRestart = new LevelRestart(_interfacesContainer.RestartObjects, _interfacesContainer.AfterRestartObjects, states.DieState);
         var transitionsPresenter = transitionsPresenterFactory.Create();
-        
-        _diContainer.RegisterInstance(characterStatesPresenter);
-        _diContainer.RegisterInstance(transitionsPresenter);
-    }
 
-
-    private void InitializeMediators()
-    {
-        _mediators = FindObjectsOfType<MonoBehaviour>(true).OfType<IMediator>();
-        _mediators.ForEach(mediator => mediator.Resolve());
+        _character.Init(levelRestart, transitionsPresenter.GetTransition(states.FallState, states.IdleState), states);
+        _transformsRestart.Init(_interfacesContainer.RestartableTransforms);
+        _characterStateMachine.Init(states.IdleState, transitionsPresenter);
+        _levelResultSave.Init(states.WinState);
+        _finishPortal.Init(states.WinState);
+        _uiRestart.Init(states.DieState);
+        _winPanel.Init(states.WinState);
+        _cameraMediator.Init();
     }
 }

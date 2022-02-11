@@ -1,32 +1,31 @@
 using UnityEngine;
 
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class CharacterRotationImpulse : MonoBehaviour
+public class CharacterRotationImpulse : ISubscriber
 {
-    [SerializeField] private SwipeHandler _swipeHandler;
-    private Rigidbody2D _rigidbody;
+    private readonly Rigidbody2D _rigidbody;
+    private readonly SwipeHandler _swipeHandler;
+    private const int _straightAngle = 180;
     private int _currentZRotation;
-    private readonly int _straightAngle = 180;
-    
 
-    private void Start()
+
+    public CharacterRotationImpulse(Rigidbody2D rigidbody2D, SwipeHandler swipeHandler)
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody = rigidbody2D;
+        _swipeHandler = swipeHandler;
     }
 
 
-    private void OnEnable()
+    void ISubscriber.Subscribe()
     {
         _swipeHandler.GravityChanged += TryImpulseCharacter;
     }
 
-
-    private void OnDisable()
+    void ISubscriber.Unsubscribe()
     {
         _swipeHandler.GravityChanged -= TryImpulseCharacter;
     }
-
+    
 
     private void TryImpulseCharacter(GravityDirection gravityDirection)
     {
@@ -34,7 +33,7 @@ public class CharacterRotationImpulse : MonoBehaviour
 
         if (IsRightAngleRotation(newZRotation))
         {
-            _rigidbody.AddForce(transform.up, ForceMode2D.Impulse);
+            _rigidbody.AddForce(_rigidbody.transform.up, ForceMode2D.Impulse);
         }
 
         _currentZRotation = newZRotation;

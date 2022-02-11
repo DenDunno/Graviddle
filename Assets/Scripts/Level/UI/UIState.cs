@@ -6,7 +6,7 @@ public class UIState : MonoBehaviour
     [SerializeField] private UIStatesSwitcher _uiStatesSwitcher;
 
 
-    public void ActivateState()
+    public void Activate()
     {
         _uiStatesSwitcher.ActivateState(this);
     }

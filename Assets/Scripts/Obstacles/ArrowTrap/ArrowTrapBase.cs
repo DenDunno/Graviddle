@@ -2,11 +2,10 @@
 using UnityEngine;
 
 
-public abstract class ArrowTrapBase : MonoBehaviour, IRestartableComponent
+public abstract class ArrowTrapBase : MonoBehaviour, IRestart
 {
     [SerializeField] private float _startWaitTime;
     [SerializeField] private float _coolDown = 2;
-    [LightweightInject] private CharacterStatesPresenter _states;
 
 
     private void Start()
@@ -27,26 +26,9 @@ public abstract class ArrowTrapBase : MonoBehaviour, IRestartableComponent
     }
 
 
-    private void OnEnable()
-    {
-        _states.DieState.CharacterDied += StopSpawning;
-    }
-
-
-    private void OnDisable()
-    {
-        _states.DieState.CharacterDied -= StopSpawning;
-    }
-
-
-    private void StopSpawning()
+    void IRestart.Restart()
     {
         StopAllCoroutines();
-    }
-
-
-    void IRestartableComponent.Restart()
-    {
         StartCoroutine(Shoot());
     }
 

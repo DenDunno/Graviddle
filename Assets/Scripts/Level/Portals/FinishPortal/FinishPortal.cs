@@ -5,18 +5,24 @@ public class FinishPortal : MonoBehaviour
 {
     [SerializeField] private PortalDisappearance _portalDisappearance;
     [SerializeField] private CharacterToPortalPulling _pullingAnimation;
-    [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
+    private WinState _characterWinState;
+
+
+    public void Init(WinState winState)
+    {
+        _characterWinState = winState;
+    }
 
 
     private void OnEnable()
     {
-        _characterStatesPresenter.WinState.CharacterWon += OnCharacterWon;
+        _characterWinState.CharacterWon += OnCharacterWon;
     }
 
 
     private void OnDisable()
     {
-        _characterStatesPresenter.WinState.CharacterWon -= OnCharacterWon;
+        _characterWinState.CharacterWon -= OnCharacterWon;
     }
     
 

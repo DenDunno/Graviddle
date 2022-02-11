@@ -1,29 +1,24 @@
 ﻿using UnityEngine;
 
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class CharacterRestart : MonoBehaviour, IRestartableComponent 
+public class CharacterRestart : IRestart, IAfterRestart 
 {
-    private Rigidbody2D _characterRigidbody;
-    private readonly EventTransit _eventTransit = new EventTransit();
+    private readonly EventTransit _characterResurrected = new EventTransit();
+
+
+    public bool CheckRestart()
+    {
+        return _characterResurrected.CheckIfEventHappened();
+    }
+
+
+    void IRestart.Restart()
+    {
+        _characterResurrected.Invoke();
+    }
 
     
-    private void Start()
+    void IAfterRestart.Restart()
     {
-        _characterRigidbody = GetComponent<Rigidbody2D>();
-    }
-
-
-    public bool CheckIfResurrected()
-    {
-        return _eventTransit.CheckIfEventHappened();
-    }
-
-
-    void IRestartableComponent.Restart()
-    {
-        _eventTransit.Invoke();
-        transform.SetParent(null);
-        _characterRigidbody.velocity = Vector2.zero;
     }
 }

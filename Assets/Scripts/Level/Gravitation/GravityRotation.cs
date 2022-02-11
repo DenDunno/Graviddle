@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class GravityRotation : MonoBehaviour, IRestartableComponent
+public class GravityRotation : MonoBehaviour, IRestart
 {
     [SerializeField] private SwipeHandler _swipeHandler;
 
@@ -34,7 +34,7 @@ public class GravityRotation : MonoBehaviour, IRestartableComponent
     }
     
 
-    void IRestartableComponent.Restart()
+    void IRestart.Restart()
     {
         _targetRotation = Quaternion.identity;
     }

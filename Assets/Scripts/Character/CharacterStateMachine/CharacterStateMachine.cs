@@ -3,14 +3,14 @@
 
 public class CharacterStateMachine : MonoBehaviour
 {
-    [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
-    [LightweightInject] private readonly TransitionsPresenter _transitionsPresenter;
+    private TransitionsPresenter _transitionsPresenter;
     private CharacterState _state;
 
 
-    private void Start()
+    public void Init(CharacterState initialState, TransitionsPresenter transitionsPresenter)
     {
-        _state = _characterStatesPresenter.IdleState;
+        _state = initialState;
+        _transitionsPresenter = transitionsPresenter;
     }
 
 
@@ -24,7 +24,7 @@ public class CharacterStateMachine : MonoBehaviour
     private void TryTransit()
     {
         CharacterState newState = _transitionsPresenter.Transit(_state);
-
+        
         if (newState != _state)
         {
             SwitchState(newState);

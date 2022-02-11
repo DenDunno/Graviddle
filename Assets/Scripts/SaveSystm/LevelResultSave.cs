@@ -6,20 +6,26 @@ using UnityEngine.SceneManagement;
 
 public class LevelResultSave : MonoBehaviour
 {
-    [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
     [SerializeField] private Reward _reward;
     private const string _saves = "Saves";
+    private WinState _characterWinState;
+
+
+    public void Init(WinState winState)
+    {
+        _characterWinState = winState;
+    }
 
 
     public void OnEnable()
     {
-        _characterStatesPresenter.WinState.CharacterWon += SaveLevelResult;
+        _characterWinState.CharacterWon += SaveLevelResult;
     }
 
 
     public void OnDisable()
     {
-        _characterStatesPresenter.WinState.CharacterWon -= SaveLevelResult;
+        _characterWinState.CharacterWon -= SaveLevelResult;
     }
 
 

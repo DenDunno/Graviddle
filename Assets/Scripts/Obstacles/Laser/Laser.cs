@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-public class Laser : MonoBehaviour, IRestartableComponent
+public class Laser : MonoBehaviour, IRestart
 {
     [SerializeField] private float _startWaitTime;
     [SerializeField] private float _workTime = 3f;
@@ -43,7 +43,7 @@ public class Laser : MonoBehaviour, IRestartableComponent
     }
 
 
-    void IRestartableComponent.Restart()
+    void IRestart.Restart()
     {
         if (_infiniteWorking == false)
         {

@@ -1,29 +1,28 @@
 ﻿using UnityEngine;
 
 
-[RequireComponent(typeof(UIStatesSwitcher))]
-public class UIRestart : MonoBehaviour, IAfterRestartComponent
+public class UIRestart : MonoBehaviour, IAfterRestart
 {
     [SerializeField] private UIState _initialUIState;
-    [LightweightInject] private readonly CharacterStatesPresenter _characterStatesPresenter;
-    private UIStatesSwitcher _uiStatesSwitcher;
+    [SerializeField] private UIStatesSwitcher _uiStatesSwitcher;
+    private DieState _characterDieState;
 
-
-    private void Start()
+    
+    public void Init(DieState dieState)
     {
-        _uiStatesSwitcher = GetComponent<UIStatesSwitcher>();
+        _characterDieState = dieState;
     }
 
 
     private void OnEnable()
     {
-        _characterStatesPresenter.DieState.CharacterDied += OnCharacterDied;
+        _characterDieState.CharacterDied += OnCharacterDied;
     }
 
 
     private void OnDisable()
     {
-        _characterStatesPresenter.DieState.CharacterDied -= OnCharacterDied;
+        _characterDieState.CharacterDied -= OnCharacterDied;
     }
 
 
@@ -33,8 +32,8 @@ public class UIRestart : MonoBehaviour, IAfterRestartComponent
     }
 
 
-    void IAfterRestartComponent.Restart()
+    void IAfterRestart.Restart()
     {
-        _initialUIState.ActivateState();
+        _initialUIState.Activate();
     }
 }
