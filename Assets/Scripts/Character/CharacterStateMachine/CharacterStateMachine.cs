@@ -1,20 +1,19 @@
-﻿using UnityEngine;
+﻿
 
-
-public class CharacterStateMachine : MonoBehaviour
+public class CharacterStateMachine : IUpdatable
 {
-    private TransitionsPresenter _transitionsPresenter;
+    private readonly TransitionsPresenter _transitionsPresenter;
     private CharacterState _state;
 
 
-    public void Init(CharacterState initialState, TransitionsPresenter transitionsPresenter)
+    public CharacterStateMachine(TransitionsPresenter transitionsPresenter, CharacterState initialState)
     {
-        _state = initialState;
         _transitionsPresenter = transitionsPresenter;
+        _state = initialState;
     }
 
 
-    private void Update()
+    void IUpdatable.Update()
     {
         _state.Update();
         TryTransit();

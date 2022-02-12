@@ -26,7 +26,7 @@ public class CharacterTransparency : IRestart, IAfterRestart, ISubscriber, IInit
 
     void ISubscriber.Subscribe()
     {
-        _winState.CharacterWon -= BecomeTransparentWithDelay;
+        _winState.CharacterWon += BecomeTransparentWithDelay;
     }
     
 

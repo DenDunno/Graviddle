@@ -13,13 +13,17 @@ public class Character : MonoBehaviour, IRestartableTransform, IRestart, IAfterR
     private IEnumerable<IAfterRestart> _afterRestartComponents;
     private IEnumerable<IRestart> _restartComponents;
     private IEnumerable<ISubscriber> _subscribers;
+    private IEnumerable<IUpdatable> _updatables;
 
 
-    public void Init(Transition fallToIdleTransition, CharacterStatesPresenter states, CharacterRestartEvent restartEvent)
+    public void Init(TransitionsPresenter transitionsPresenter, CharacterStatesPresenter states, CharacterRestartEvent restartEvent)
     {
+        Transition fallToIdleTransition = transitionsPresenter.GetTransition(states.FallState, states.IdleState);
+        
         object[] dependencies = 
         {
             restartEvent,
+            new CharacterStateMachine(transitionsPresenter, states.IdleState),
             new CharacterPhysicsRestart(_rigidbody2D),
             new CharacterTransparency(_spriteRenderer, states.WinState),
             new CharacterRotationImpulse(_rigidbody2D, _swipeHandler),
@@ -31,6 +35,7 @@ public class Character : MonoBehaviour, IRestartableTransform, IRestart, IAfterR
         _afterRestartComponents = dependencies.OfType<IAfterRestart>();
         _restartComponents = dependencies.OfType<IRestart>();
         _subscribers = dependencies.OfType<ISubscriber>();
+        _updatables = dependencies.OfType<IUpdatable>();
     }
 
 
@@ -45,7 +50,13 @@ public class Character : MonoBehaviour, IRestartableTransform, IRestart, IAfterR
         _subscribers.UnsubscribeForEach();
     }
 
+
+    private void Update()
+    {
+        _updatables.UpdateForEach();
+    }
     
+
     void IRestart.Restart()
     {
         _restartComponents.RestartForEach();

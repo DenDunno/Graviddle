@@ -47,4 +47,10 @@ public static class CollectionsExtensions
     {
         afterRestartComponents.ForEach(afterRestartComponent => afterRestartComponent.Restart());
     }
+    
+    
+    public static void UpdateForEach(this IEnumerable<IUpdatable> updatables)
+    {
+        updatables.ForEach(updatable => updatable.Update());
+    }
 }

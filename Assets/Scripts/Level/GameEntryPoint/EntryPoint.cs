@@ -9,7 +9,6 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private EditorInterfacesContainer _interfacesContainer;
     [SerializeField] private TransformsRestart _transformsRestart;
     [SerializeField] private WinPanel _winPanel;
-    [SerializeField] private CharacterStateMachine _characterStateMachine;
     [SerializeField] private CameraMediator _cameraMediator;
     [SerializeField] private LevelResultSave _levelResultSave;
     [SerializeField] private UIStatesSwitcher _uiStatesSwitcher;
@@ -23,14 +22,13 @@ public class EntryPoint : MonoBehaviour
         var transitionsPresenterFactory = new TransitionsPresenterFactory(states, _transitionsConditions);
         var transitionsPresenter = transitionsPresenterFactory.Create();
         var characterRestartEvent = new CharacterRestartEvent();
-        var fallToIdleTransition = transitionsPresenter.GetTransition(states.FallState, states.IdleState);
         var levelRestart = new LevelRestart(_interfacesContainer.RestartObjects, _interfacesContainer.AfterRestartObjects, states.DieState);
         var gravity = new Gravity(_swipeHandler);
+        
         _subscribers = new ISubscriber[] {levelRestart, gravity};
         
-        _character.Init(fallToIdleTransition, states, characterRestartEvent);
+        _character.Init(transitionsPresenter, states, characterRestartEvent);
         _transformsRestart.Init(_interfacesContainer.RestartableTransforms);
-        _characterStateMachine.Init(states.IdleState, transitionsPresenter);
         _transitionsConditions.Init(characterRestartEvent);
         _uiStatesSwitcher.Init(states.DieState);
         _levelResultSave.Init(states.WinState);
