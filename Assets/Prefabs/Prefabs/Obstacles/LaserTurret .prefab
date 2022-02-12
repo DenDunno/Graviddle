@@ -15151,7 +15151,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2802246904683156220}
-  - component: {fileID: 2802246904683156222}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -15175,18 +15174,6 @@ Transform:
   m_Father: {fileID: 2802246903741916446}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 52.04}
---- !u!114 &2802246904683156222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2802246904683156219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 842f27e6dce44b34c94b7ee14a363f62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2802246902654926816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15298,15 +15285,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2802246902654926816}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &2603588772617429468 stripped
+--- !u!198 &2604023418661911228 stripped
 ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198820872522423868, guid: dc10d8de8491f5643bc2f3dff05b8575,
+  m_CorrespondingSourceObject: {fileID: 198384018327815516, guid: dc10d8de8491f5643bc2f3dff05b8575,
     type: 3}
   m_PrefabInstance: {fileID: 2802246902654926816}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &2603578323928688336 stripped
+--- !u!198 &2603588772617429468 stripped
 ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198809324334766384, guid: dc10d8de8491f5643bc2f3dff05b8575,
+  m_CorrespondingSourceObject: {fileID: 198820872522423868, guid: dc10d8de8491f5643bc2f3dff05b8575,
     type: 3}
   m_PrefabInstance: {fileID: 2802246902654926816}
   m_PrefabAsset: {fileID: 0}
@@ -15316,9 +15303,9 @@ ParticleSystem:
     type: 3}
   m_PrefabInstance: {fileID: 2802246902654926816}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &2604023418661911228 stripped
+--- !u!198 &2603578323928688336 stripped
 ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198384018327815516, guid: dc10d8de8491f5643bc2f3dff05b8575,
+  m_CorrespondingSourceObject: {fileID: 198809324334766384, guid: dc10d8de8491f5643bc2f3dff05b8575,
     type: 3}
   m_PrefabInstance: {fileID: 2802246902654926816}
   m_PrefabAsset: {fileID: 0}

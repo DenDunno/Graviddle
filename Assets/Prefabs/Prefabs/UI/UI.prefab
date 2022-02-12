@@ -1394,10 +1394,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c1991ac0a4c3940bfd0ba42b581406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementState: 1
-  _moveDirection: {fileID: 0}
-  _spriteFlipping:
-    _spriteRenderer: {fileID: 0}
 --- !u!1 &4539580258625885527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,7 +1540,6 @@ GameObject:
   - component: {fileID: 4963056786713715714}
   - component: {fileID: 2273698732136585216}
   - component: {fileID: 6719350920432864582}
-  - component: {fileID: 8889427051974698330}
   - component: {fileID: 4507998909532707473}
   - component: {fileID: 6734755139209710088}
   m_Layer: 0
@@ -1681,18 +1676,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiStatesSwitcher: {fileID: 6848271586011493877}
---- !u!114 &8889427051974698330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4963056786713715717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d19c8fd1d507b645ab60700906a6f03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4507998909532707473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3358,6 +3341,10 @@ MonoBehaviour:
       _reward: {fileID: 7108053639162650602}
     _levelScore: {fileID: 6891503043413075974}
     _translucentImage: {fileID: 4643044635907180206}
+    _buttons:
+    - {fileID: 6891503042004876703}
+    - {fileID: 6891503042026673923}
+    - {fileID: 6891503042681577834}
 --- !u!114 &8727500073091994562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3686,7 +3673,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 6891503042004876702}
   m_OnClick:
     m_PersistentCalls:
@@ -3872,7 +3859,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 6891503042026673922}
   m_OnClick:
     m_PersistentCalls:
@@ -4053,7 +4040,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 6891503042681577833}
   m_OnClick:
     m_PersistentCalls:
@@ -4651,10 +4638,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c1991ac0a4c3940bfd0ba42b581406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementState: -1
-  _moveDirection: {fileID: 0}
-  _spriteFlipping:
-    _spriteRenderer: {fileID: 0}
 --- !u!1 &8181460163066958269
 GameObject:
   m_ObjectHideFlags: 0
