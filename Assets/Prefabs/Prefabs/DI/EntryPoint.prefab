@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2945279117330507583}
-  - component: {fileID: 5045149108189188633}
   - component: {fileID: 5009051321042465234}
   - component: {fileID: 7458211516614138431}
   m_Layer: 0
@@ -33,18 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5045149108189188633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1476117705816507621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29af1694d4744a7bae039683fc4f9ff1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5009051321042465234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,13 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _restartable:
-  - {fileID: 0}
-  - {fileID: 5045149108189188633}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -83,8 +63,7 @@ MonoBehaviour:
   _restartableTransforms:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _gravityRotations: []
 --- !u!114 &7458211516614138431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,10 +84,9 @@ MonoBehaviour:
     _allCollisions: {fileID: 0}
     _characterFeet: {fileID: 0}
   _character: {fileID: 0}
+  _swipeHandler: {fileID: 0}
   _interfacesContainer: {fileID: 5009051321042465234}
-  _transformsRestart: {fileID: 5045149108189188633}
   _winPanel: {fileID: 0}
-  _characterStateMachine: {fileID: 0}
   _cameraMediator: {fileID: 0}
   _levelResultSave: {fileID: 0}
   _uiStatesSwitcher: {fileID: 0}

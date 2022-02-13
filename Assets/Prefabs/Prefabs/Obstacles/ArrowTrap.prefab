@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _arrowPrefab: {fileID: 7954780397028885445, guid: 90657863b7710ba4c9fc1570506597d0,
     type: 3}
-  _spawnTransform: {fileID: 451236379012642021}
+  _spawnPoint: {fileID: 451236379012642021}
   _levelBorders: {fileID: 0}
 --- !u!114 &2817541773588482456
 MonoBehaviour:
