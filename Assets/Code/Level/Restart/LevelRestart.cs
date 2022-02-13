@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 
 
@@ -44,9 +43,9 @@ public class LevelRestart : ISubscriber
 
     private async UniTask RestartObjects()
     {
-        _restartableComponents.RestartComponents.RestartForEach();
         _restartableComponents.RestartTransforms.ResetTransformForEach();
-        
+        _restartableComponents.RestartComponents.RestartForEach();
+
         await UniTask.Delay(TimeSpan.FromSeconds(_restartTime));
     }
 }

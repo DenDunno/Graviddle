@@ -17489,21 +17489,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6571905973629665504, guid: a0ca5d21826335e4dae61dcad8de1703,
         type: 3}
-      propertyPath: _swipeHandler
-      value: 
-      objectReference: {fileID: 698458575}
-    - target: {fileID: 6571905973629665504, guid: a0ca5d21826335e4dae61dcad8de1703,
-        type: 3}
-      propertyPath: _inputButtons.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6571905973629665504, guid: a0ca5d21826335e4dae61dcad8de1703,
-        type: 3}
-      propertyPath: _gravityDirectionPresenter
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6571905973629665504, guid: a0ca5d21826335e4dae61dcad8de1703,
-        type: 3}
       propertyPath: _inputButtons.Array.data[0]
       value: 
       objectReference: {fileID: 26539489}

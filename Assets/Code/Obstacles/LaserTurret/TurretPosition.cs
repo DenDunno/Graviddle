@@ -1,13 +1,19 @@
 using UnityEngine;
 
 
-public class TurretPosition : MonoBehaviour
+public class TurretPosition : IUpdatable
 {
-    [SerializeField] private Transform _turret;
-    [SerializeField] private Transform _anchor;
+    private Transform _turret;
+    private Transform _anchor;
+
+    public TurretPosition(Transform turret, Transform anchor)
+    {
+        _turret = turret;
+        _anchor = anchor;
+    }
 
 
-    public void Update()
+    void IUpdatable.Update()
     {
         _turret.position = _anchor.position;
     }

@@ -14874,11 +14874,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2802246903741916446}
-  - component: {fileID: 2802246903741916445}
-  - component: {fileID: 2802246903741916444}
-  - component: {fileID: 2802246903741916443}
   - component: {fileID: 2802246903741916447}
   - component: {fileID: 2802246903741916442}
+  - component: {fileID: 3358512072660836504}
   m_Layer: 0
   m_Name: 'LaserTurret '
   m_TagString: Untagged
@@ -14902,53 +14900,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2802246903741916445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2802246903741916441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23418d4cd60f47b4d90951426a70b212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _character: {fileID: 0}
-    _transformToBeRotated: {fileID: 2802246904683156220}
-    _rotationSpeed: 2
---- !u!114 &2802246903741916444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2802246903741916441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1ed9e3a37d989a40ba3bfde2dffaf20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _turret: {fileID: 2802246904683156220}
-  _anchor: {fileID: 2802246902573442042}
---- !u!114 &2802246903741916443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2802246903741916441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9442bf74239b984ea7473bf261a4dc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _character: {fileID: 0}
-    _transformToBeRotated: {fileID: 2802246902858530561}
-    _rotationSpeed: 1.5
-  _gravityDirectionPresenter: {fileID: 0}
 --- !u!114 &2802246903741916447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14991,6 +14942,22 @@ MonoBehaviour:
   _laserLineSwitcher:
     _laserDistortion:
       _lineRenderer: {fileID: 2802246902599032774}
+--- !u!114 &3358512072660836504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2802246903741916441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a61ea3c21a354644187a8443a288c0d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _turret: {fileID: 2802246904683156220}
+  _turretAnchor: {fileID: 2802246902573442042}
+  _fastening: {fileID: 2802246902858530561}
+  _target: {fileID: 0}
 --- !u!1 &2802246903827521037
 GameObject:
   m_ObjectHideFlags: 0

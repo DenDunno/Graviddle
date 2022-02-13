@@ -1,15 +1,15 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-
-[Serializable]
 public class TurretRotationData
 {
-    [SerializeField] private CharacterHead _character;
-    [SerializeField] private Transform _transformToBeRotated;
-    [SerializeField] private float _rotationSpeed = 2f;
-    
-    public Transform Character => _character.transform;
-    public Transform TransformToBeRotated => _transformToBeRotated;
-    public float RotationSpeed => _rotationSpeed;
+    public readonly Transform Character;
+    public readonly Transform TransformToBeRotated;
+    public readonly float RotationSpeed;
+
+    public TurretRotationData(CharacterHead character, Transform transformToBeRotated, float rotationSpeed)
+    {
+        Character = character.transform;
+        TransformToBeRotated = transformToBeRotated;
+        RotationSpeed = rotationSpeed;
+    }
 }

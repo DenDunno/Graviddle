@@ -1,9 +1,14 @@
-using UnityEngine;
 
 
-public class CurrentGravityData : MonoBehaviour
+public class CurrentGravityData : ISubscriber 
 {
-    [SerializeField] private SwipeHandler _swipeHandler;
+    private readonly SwipeHandler _swipeHandler;
+
+    public CurrentGravityData(SwipeHandler swipeHandler)
+    {
+        _swipeHandler = swipeHandler;
+        Data = GravityDataPresenter.GravityData[GravityDirection.Down];
+    }
 
     public GravityData Data { get; private set; }
 

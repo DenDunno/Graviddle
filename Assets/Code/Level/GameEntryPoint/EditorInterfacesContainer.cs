@@ -29,8 +29,12 @@ public class EditorInterfacesContainer : MonoBehaviour
     {
         IEnumerable<IRestart> restartComponents = _restartable.Cast<IRestart>();
         IEnumerable<IAfterRestart> afterRestartComponents = _afterRestartable.Cast<IAfterRestart>();
-        IEnumerable<RestartableTransform> restartTransforms = _restartableTransforms.Select(restartableTransform =>
-            new RestartableTransform(restartableTransform.transform));
+        List<RestartableTransform> restartTransforms = new List<RestartableTransform>();
+
+        foreach (MonoBehaviour restartableTransform in _restartableTransforms)
+        {
+            restartTransforms.Add(new RestartableTransform(restartableTransform.transform));
+        }
 
         return new RestartableComponents(restartComponents, afterRestartComponents, restartTransforms);
     }

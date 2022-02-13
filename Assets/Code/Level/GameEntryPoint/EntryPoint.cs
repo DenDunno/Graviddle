@@ -14,6 +14,7 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private FinishPortal _finishPortal;
     [SerializeField] private MoveDirection _moveDirection;
     [SerializeField] private LevelZoomCalculator _levelZoomCalculator;
+    [SerializeField] private LaserTurret[] _laserTurrets;
     private ISubscriber[] _subscribers;
     private IUpdatable[] _updatables;
 
@@ -32,7 +33,8 @@ public class EntryPoint : MonoBehaviour
         
         _subscribers = new ISubscriber[] {levelRestart, gravity, currentGravityData};
         _updatables = new IUpdatable[] {gravityRotations};
-        
+
+        _laserTurrets.ForEach(laserTurret => laserTurret.Init(currentGravityData));
         _character.Init(transitionsPresenter, states, characterRestartEvent);
         _transitionsConditions.Init(characterRestartEvent);
         _levelZoomCalculator.Init(currentGravityData);

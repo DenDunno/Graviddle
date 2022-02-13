@@ -1,21 +1,46 @@
+using System.Reflection;
 using UnityEngine;
+
 
 public class CharacterMovementInEditor : MonoBehaviour
 {
     #if UNITY_EDITOR
-    [SerializeField] private MoveDirection _moveDirection;
     
+    private MoveDirection _moveDirection;
+    private PropertyInfo _direction;
+    private SwipeHandler _swipeHandler;
+    private Quaternion _targetRotation;
     
-    private void Start()
+
+    public void Init(MoveDirection moveDirection, SwipeHandler swipeHandler)
     {
-        _moveDirection.enabled = false;
+        _moveDirection = moveDirection;
+        _swipeHandler = swipeHandler;
+        _direction = typeof(MoveDirection).GetProperty("Direction");
+        _swipeHandler.GravityChanged += OnGravityChanged;
+    }
+
+
+    private void OnDestroy()
+    {
+        _swipeHandler.GravityChanged -= OnGravityChanged;
     }
 
 
     private void Update()
-    {
-        //MovementState state = (int)Input.GetAxisRaw("Horizontal");
+    { 
+        var state = (int)Input.GetAxisRaw("Horizontal");
+        
+        Vector2 direction = _targetRotation * (Vector2.right * state);
+        
+        _direction.SetValue(_moveDirection, direction);
     }
+
     
-    #endif
+    private void OnGravityChanged(GravityDirection gravityDirection)
+    {
+        _targetRotation = GravityDataPresenter.GravityData[gravityDirection].Rotation;
+    }
+
+#endif
 }
