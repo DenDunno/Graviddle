@@ -8,10 +8,14 @@ public static class ParticlesHelper
 {
     public static async void PlayAndDestroy(AssetReference reference, Transform transform)
     {
-        var particles = await LocalAssetLoader.Load<ParticleSystem>(reference);
-        particles.transform.SetPositionAndRotation(transform);
-        particles.Play();
-        await UniTask.Delay(TimeSpan.FromSeconds(particles.main.duration));
-        LocalAssetLoader.Unload(particles.gameObject);
+        try
+        {
+            var particles = await LocalAssetLoader.Load<ParticleSystem>(reference);
+            particles.transform.SetPositionAndRotation(transform);
+            particles.Play();
+            await UniTask.Delay(TimeSpan.FromSeconds(particles.main.duration));
+            LocalAssetLoader.Unload(particles.gameObject);
+        }
+        catch { /*scene transition*/}
     }
 }

@@ -2,29 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="236f7ca0-e3d5-42cf-8bd1-4f65d9112fc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Character/CharacterMovement/CharacterMovementInEditorSpawner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Character/CharacterMovement/CharacterMovementInEditorSpawner.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Character/CharacterMovement/CharacterMovementInEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Character/CharacterMovement/CharacterMovementInEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/GameEntryPoint/EditorInterfacesContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/GameEntryPoint/EditorInterfacesContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/GameEntryPoint/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/GameEntryPoint/EntryPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/CurrentGravityData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/CurrentGravityData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Restart/LevelRestart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Restart/LevelRestart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Obstacles/LaserTurret/TurretFasteningRotation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Obstacles/LaserTurret/TurretFasteningRotation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Obstacles/LaserTurret/TurretPosition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Obstacles/LaserTurret/TurretPosition.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Obstacles/LaserTurret/TurretRotation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Obstacles/LaserTurret/TurretRotation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Obstacles/LaserTurret/TurretRotationData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Obstacles/LaserTurret/TurretRotationData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/Character.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Obstacles/LaserTurret .prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Obstacles/LaserTurret .prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_4.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_5.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_5.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_6.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_6.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Extensions/CollectionsExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Extensions/CollectionsExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Extensions/ParticlesHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Extensions/ParticlesHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/LevelStar/PathFollower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/LevelStar/PathFollower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Portals/PortalDisappearance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Portals/PortalDisappearance.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/Victory/WinAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/Victory/WinAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Obstacles/MovingSpike.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Obstacles/MovingSpike.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_7.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_7.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial buttons.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial buttons.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial icons.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial icons.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial swipe.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial swipe.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +121,7 @@
       <workItem from="1644399781797" duration="13889000" />
       <workItem from="1644483160871" duration="19043000" />
       <workItem from="1644573902435" duration="3264000" />
-      <workItem from="1644746033542" duration="6135000" />
+      <workItem from="1644746033542" duration="8090000" />
     </task>
     <servers />
   </component>

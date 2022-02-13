@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial/Tutorial icons.unity
     guid: ea727f8a92b4d654081e4123fac9cd10
   - enabled: 1
+    path: Assets/Scenes/Levels/Level_7.unity
+    guid: f95c2245f59387c468b9148b0d67a87f
+  - enabled: 1
     path: Assets/Scenes/Levels/Level_3.unity
     guid: 9876787b39fe04547a50d1648d8acb3c
   - enabled: 1
@@ -38,9 +41,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level_6.unity
     guid: 192c054e736122f4e9d290b7d078becc
-  - enabled: 1
-    path: Assets/Scenes/Levels/Level_7.unity
-    guid: f95c2245f59387c468b9148b0d67a87f
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: bd351669f7107b14e866423daf730a18,
       type: 2}

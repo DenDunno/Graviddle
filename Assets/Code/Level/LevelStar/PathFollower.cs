@@ -2,7 +2,7 @@ using PathCreation;
 using UnityEngine;
 
 
-public class PathFollower : MonoBehaviour
+public class PathFollower : MonoBehaviour, IRestart
 {
     [SerializeField] private PathCreator _pathCreator;
     [SerializeField] private float _speed = 3f;
@@ -13,5 +13,11 @@ public class PathFollower : MonoBehaviour
     {
         _distance += _speed * Time.deltaTime;
         transform.position = (Vector2)_pathCreator.path.GetPointAtDistance(_distance);
+    }
+
+    
+    void IRestart.Restart()
+    {
+        _distance = 0;
     }
 }
