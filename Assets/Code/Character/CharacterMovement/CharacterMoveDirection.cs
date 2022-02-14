@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 
-public class MoveDirection : MonoBehaviour
+[Serializable]
+public class CharacterMoveDirection : IUpdatable
 {
-    [SerializeField] private CharacterSpriteFlipping _characterSpriteFlipping;
     [SerializeField] private InputButton[] _inputButtons;
+    [SerializeField] private CharacterSpriteFlipping _characterSpriteFlipping;
     private CurrentGravityData _currentGravityData;
 
     public Vector2 Direction { get; private set; }
@@ -16,7 +18,7 @@ public class MoveDirection : MonoBehaviour
     }
     
     
-    private void Update()
+    void IUpdatable.Update()
     {
         var state = MovementState.Stop;
         

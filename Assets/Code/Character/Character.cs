@@ -16,13 +16,12 @@ public class Character : MonoBehaviour, IRestartableTransform, IGravityRotation,
     private IEnumerable<IUpdatable> _updatables;
 
 
-    public void Init(TransitionsPresenter transitionsPresenter, CharacterStatesPresenter states, CharacterRestartEvent restartEvent)
+    public void Init(TransitionsPresenter transitionsPresenter, CharacterStatesPresenter states)
     {
         Transition fallToIdleTransition = transitionsPresenter.GetTransition(states.FallState, states.IdleState);
         
         object[] dependencies = 
         {
-            restartEvent,
             new CharacterStateMachine(transitionsPresenter, states.IdleState),
             new CharacterPhysicsRestart(_rigidbody2D),
             new CharacterTransparency(_spriteRenderer, states.WinState),

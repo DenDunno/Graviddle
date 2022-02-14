@@ -140375,7 +140375,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5, y: 3.75}
+  m_Size: {x: 4.8, y: 2.704}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -141902,7 +141902,6 @@ GameObject:
   - component: {fileID: 2684562040441789201}
   - component: {fileID: 8393151774861210713}
   - component: {fileID: 6631546475446628333}
-  - component: {fileID: 6571905972586581235}
   - component: {fileID: 2295256003290169912}
   m_Layer: 0
   m_Name: Character
@@ -149966,23 +149965,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &6571905972586581235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2684562040441789212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a13f897438fd7ef4ca2070650cff90f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterSpriteFlipping:
-    _spriteRenderer: {fileID: 2684562039839334983}
-  _inputButtons:
-  - {fileID: 7289557722144919691}
-  - {fileID: 1291520377526550186}
 --- !u!114 &6598216223151834749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151065,7 +151047,6 @@ MonoBehaviour:
   _transitionsConditions:
     _character: {fileID: 2295256003290169912}
     _levelBorders: {fileID: 4599026585946909844}
-    _moveDirection: {fileID: 6571905972586581235}
     _restartButton: {fileID: 801327263246532929}
     _allCollisions: {fileID: 7143281697528457728}
     _characterFeet: {fileID: 2482419740466483256}
@@ -151077,9 +151058,12 @@ MonoBehaviour:
   _levelResultSave: {fileID: 8727500074156629203}
   _uiStatesSwitcher: {fileID: 6848271584927988452}
   _finishPortal: {fileID: 8330912486326807984}
-  _moveDirection: {fileID: 6571905972586581235}
   _levelZoomCalculator: {fileID: 2907073761418792244}
   _laserTurrets: []
+  _characterMoveDirection:
+    _inputButtons: []
+    _characterSpriteFlipping:
+      _spriteRenderer: {fileID: 0}
 --- !u!224 &7531187970315430159
 RectTransform:
   m_ObjectHideFlags: 0

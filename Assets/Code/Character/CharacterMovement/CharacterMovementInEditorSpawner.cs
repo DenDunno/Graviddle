@@ -7,13 +7,10 @@ public static class CharacterMovementInEditorSpawner
     [RuntimeInitializeOnLoadMethod]
     private static void SpawnCharacterMovementInEditor()
     {
-        var moveDirection = Object.FindObjectOfType<MoveDirection>();
+        var character = Object.FindObjectOfType<Character>();
 
-        if (moveDirection != null)
+        if (character != null)
         {
-            moveDirection.enabled = false;
-            var movementInEditor = moveDirection.gameObject.AddComponent<CharacterMovementInEditor>();
-            movementInEditor.Init(moveDirection, Object.FindObjectOfType<SwipeHandler>(true));
         }
     }
     

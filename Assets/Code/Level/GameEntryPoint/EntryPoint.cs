@@ -12,9 +12,9 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private LevelResultSave _levelResultSave;
     [SerializeField] private UIStatesSwitcher _uiStatesSwitcher;
     [SerializeField] private FinishPortal _finishPortal;
-    [SerializeField] private MoveDirection _moveDirection;
     [SerializeField] private LevelZoomCalculator _levelZoomCalculator;
     [SerializeField] private LaserTurret[] _laserTurrets;
+    [SerializeField] private CharacterMoveDirection _characterMoveDirection;
     private ISubscriber[] _subscribers;
     private IUpdatable[] _updatables;
 
@@ -22,24 +22,24 @@ public class EntryPoint : MonoBehaviour
     private void Awake()
     {
         RestartableComponents restartComponents = _interfacesContainer.GetRestartableComponents();
-        var states = new CharacterStatesPresenter(_character);
+        var states = new CharacterStatesPresenter(_character, _characterMoveDirection);
         var transitionsPresenterFactory = new TransitionsPresenterFactory(states, _transitionsConditions);
         var transitionsPresenter = transitionsPresenterFactory.Create();
-        var characterRestartEvent = new CharacterRestartEvent();
-        var levelRestart = new LevelRestart(restartComponents, states.DieState);
+        var restartEvent = new EventTransit();
         var gravity = new Gravity(_swipeHandler);
         var currentGravityData = new CurrentGravityData(_swipeHandler);
+        var levelRestart = new LevelRestart(restartComponents, restartEvent.Invoke, states.DieState);
         var gravityRotations = new GravityRotations(currentGravityData, _interfacesContainer.GravityRotations);
         
         _subscribers = new ISubscriber[] {levelRestart, gravity, currentGravityData};
-        _updatables = new IUpdatable[] {gravityRotations};
+        _updatables = new IUpdatable[] {gravityRotations, _characterMoveDirection};
 
         _laserTurrets.ForEach(laserTurret => laserTurret.Init(currentGravityData));
-        _character.Init(transitionsPresenter, states, characterRestartEvent);
-        _transitionsConditions.Init(characterRestartEvent);
+        _transitionsConditions.Init(_characterMoveDirection, restartEvent.CheckIfEventHappened);
+        _characterMoveDirection.Init(currentGravityData);
+        _character.Init(transitionsPresenter, states);
         _levelZoomCalculator.Init(currentGravityData);
         _uiStatesSwitcher.Init(states.DieState);
-        _moveDirection.Init(currentGravityData);
         _levelResultSave.Init(states.WinState);
         _finishPortal.Init(states.WinState);
         _winPanel.Init(states.WinState);

@@ -1,10 +1,10 @@
 ﻿
-public class CharacterRestartEvent : IRestart
+public class RestartEvent : IRestart
 {
     private readonly EventTransit _eventTransit = new EventTransit();
 
 
-    public bool CheckRestart()
+    public bool CheckRestart()  
     {
         return _eventTransit.CheckIfEventHappened();
     }

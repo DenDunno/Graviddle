@@ -79,7 +79,6 @@ MonoBehaviour:
   _transitionsConditions:
     _character: {fileID: 0}
     _levelBorders: {fileID: 0}
-    _moveDirection: {fileID: 0}
     _restartButton: {fileID: 0}
     _allCollisions: {fileID: 0}
     _characterFeet: {fileID: 0}
@@ -91,3 +90,11 @@ MonoBehaviour:
   _levelResultSave: {fileID: 0}
   _uiStatesSwitcher: {fileID: 0}
   _finishPortal: {fileID: 0}
+  _levelZoomCalculator: {fileID: 0}
+  _laserTurrets: []
+  _characterMoveDirection:
+    _inputButtons:
+    - {fileID: 0}
+    - {fileID: 0}
+    _characterSpriteFlipping:
+      _spriteRenderer: {fileID: 0}

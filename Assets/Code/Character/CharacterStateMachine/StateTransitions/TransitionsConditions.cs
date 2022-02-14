@@ -7,16 +7,17 @@ public class TransitionsConditions
 {
     [SerializeField] private Character _character;
     [SerializeField] private LevelBorders _levelBorders;
-    [SerializeField] private MoveDirection _moveDirection;
     [SerializeField] private RestartButton _restartButton;
     [SerializeField] private CollisionsList _allCollisions;
     [SerializeField] private CollisionsList _characterFeet;
-    private CharacterRestartEvent _characterRestartEvent;
+    private CharacterMoveDirection _characterMoveDirection;
+    private Func<bool> _restartCondition;
 
 
-    public void Init(CharacterRestartEvent characterRestartEvent)
+    public void Init(CharacterMoveDirection characterMoveDirection, Func<bool> restartCondition)
     {
-        _characterRestartEvent = characterRestartEvent;   
+        _characterMoveDirection = characterMoveDirection;
+        _restartCondition = restartCondition;   
     }
     
     public bool CheckDeathByLevelBorders() => _levelBorders.CheckIfPositionNotWithinTheLevel(_character.transform.position);
@@ -27,9 +28,9 @@ public class TransitionsConditions
     
     public bool CheckWin() => _allCollisions.CheckCollision<FinishPortal>();
 
-    public bool CheckIfResurrected() => _characterRestartEvent.CheckRestart();
+    public bool CheckIfResurrected() => _restartCondition();
     
-    public bool CheckIfRun() => _moveDirection.Direction != Vector2.zero;
+    public bool CheckIfRun() => _characterMoveDirection.Direction != Vector2.zero;
 
     public bool CheckIfRestart() => _restartButton.CheckIfPressed();
 

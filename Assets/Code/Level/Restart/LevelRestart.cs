@@ -5,13 +5,15 @@ using Cysharp.Threading.Tasks;
 public class LevelRestart : ISubscriber
 {
     private readonly RestartableComponents _restartableComponents;
+    private readonly Action _restartEvent;
     private readonly DieState _dieState;
     private const float _restartTime = 0.7f;
 
 
-    public LevelRestart(RestartableComponents restartableComponents, DieState dieState)
+    public LevelRestart(RestartableComponents restartableComponents, Action restartEvent, DieState dieState)
     {
         _restartableComponents = restartableComponents;
+        _restartEvent = restartEvent;
         _dieState = dieState;
     }
 
@@ -45,6 +47,7 @@ public class LevelRestart : ISubscriber
     {
         _restartableComponents.RestartTransforms.ResetTransformForEach();
         _restartableComponents.RestartComponents.RestartForEach();
+        _restartEvent();
 
         await UniTask.Delay(TimeSpan.FromSeconds(_restartTime));
     }

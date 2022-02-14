@@ -270,7 +270,6 @@ GameObject:
   - component: {fileID: 2684562039941863170}
   - component: {fileID: 8393151776776714314}
   - component: {fileID: 6631546475006469118}
-  - component: {fileID: 6571905973629665504}
   - component: {fileID: 2295256004596452907}
   m_Layer: 0
   m_Name: Character
@@ -354,23 +353,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.35}
   serializedVersion: 2
   m_Radius: 0.34631753
---- !u!114 &6571905973629665504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2684562039941863183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a13f897438fd7ef4ca2070650cff90f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterSpriteFlipping:
-    _spriteRenderer: {fileID: 2684562040544259668}
-  _inputButtons:
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &2295256004596452907
 MonoBehaviour:
   m_ObjectHideFlags: 0

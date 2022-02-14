@@ -501,28 +501,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
-    - target: {fileID: 5905746848208922842, guid: a0ca5d21826335e4dae61dcad8de1703,
-        type: 3}
-      propertyPath: _swipeHandler
-      value: 
-      objectReference: {fileID: 1424066683}
-    - target: {fileID: 6571905973629665504, guid: a0ca5d21826335e4dae61dcad8de1703,
-        type: 3}
-      propertyPath: _swipeHandler
-      value: 
-      objectReference: {fileID: 1424066683}
-    - target: {fileID: 6571905973629665504, guid: a0ca5d21826335e4dae61dcad8de1703,
-        type: 3}
-      propertyPath: _inputButtons.Array.data[0]
-      value: 
-      objectReference: {fileID: 1424066687}
-    - target: {fileID: 6571905973629665504, guid: a0ca5d21826335e4dae61dcad8de1703,
-        type: 3}
-      propertyPath: _inputButtons.Array.data[1]
-      value: 
-      objectReference: {fileID: 1424066682}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0ca5d21826335e4dae61dcad8de1703, type: 3}
+--- !u!212 &790790202 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2684562040544259668, guid: a0ca5d21826335e4dae61dcad8de1703,
+    type: 3}
+  m_PrefabInstance: {fileID: 790790201}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &790790203 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2295256004596452907, guid: a0ca5d21826335e4dae61dcad8de1703,
@@ -533,18 +519,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c8c51859e9378f4b9d5a84374b868f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &790790205 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6571905973629665504, guid: a0ca5d21826335e4dae61dcad8de1703,
-    type: 3}
-  m_PrefabInstance: {fileID: 790790201}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a13f897438fd7ef4ca2070650cff90f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &790790209 stripped
@@ -17543,7 +17517,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _moveDirection
       value: 
-      objectReference: {fileID: 790790205}
+      objectReference: {fileID: 0}
     - target: {fileID: 1291520376445137339, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: _spriteFlipping
@@ -17683,7 +17657,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _moveDirection
       value: 
-      objectReference: {fileID: 790790205}
+      objectReference: {fileID: 0}
     - target: {fileID: 7289557721080291226, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: _spriteFlipping
@@ -18198,7 +18172,7 @@ PrefabInstance:
     - target: {fileID: 2945279117330507583, guid: 084d960fe07b8fb4da6513550d3f768b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 2945279117330507583, guid: 084d960fe07b8fb4da6513550d3f768b,
         type: 3}
@@ -18414,7 +18388,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _moveDirection
       value: 
-      objectReference: {fileID: 790790205}
+      objectReference: {fileID: 0}
     - target: {fileID: 7458211516614138431, guid: 084d960fe07b8fb4da6513550d3f768b,
         type: 3}
       propertyPath: _cameraMediator
@@ -18459,7 +18433,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _transitionsConditions._moveDirection
       value: 
-      objectReference: {fileID: 790790205}
+      objectReference: {fileID: 0}
     - target: {fileID: 7458211516614138431, guid: 084d960fe07b8fb4da6513550d3f768b,
         type: 3}
       propertyPath: _transitionsConditions._restartButton
@@ -18475,6 +18449,21 @@ PrefabInstance:
       propertyPath: _transitionsConditions._characterRestart
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7458211516614138431, guid: 084d960fe07b8fb4da6513550d3f768b,
+        type: 3}
+      propertyPath: _characterMoveDirection._inputButtons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1424066687}
+    - target: {fileID: 7458211516614138431, guid: 084d960fe07b8fb4da6513550d3f768b,
+        type: 3}
+      propertyPath: _characterMoveDirection._inputButtons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1424066682}
+    - target: {fileID: 7458211516614138431, guid: 084d960fe07b8fb4da6513550d3f768b,
+        type: 3}
+      propertyPath: _characterMoveDirection._characterSpriteFlipping._spriteRenderer
+      value: 
+      objectReference: {fileID: 790790202}
     - target: {fileID: 7458211516614138431, guid: 084d960fe07b8fb4da6513550d3f768b,
         type: 3}
       propertyPath: _characterStatesTransitionsFactory._updateTransitionsPresenterFactory._levelBorders

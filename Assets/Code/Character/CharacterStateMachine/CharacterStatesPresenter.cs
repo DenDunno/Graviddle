@@ -12,13 +12,13 @@ public class CharacterStatesPresenter
     public readonly ReadOnlyCollection<CharacterState> GameActiveStates;
 
 
-    public CharacterStatesPresenter(Character character)
+    public CharacterStatesPresenter(Character character, CharacterMoveDirection characterMoveDirection)
     {
         FallState = new FallState(character);
         DieState = new DieState(character);
         WinState = new WinState(character);
         IdleState = new IdleState(character);
-        RunState = new RunState(character);
+        RunState = new RunState(character, characterMoveDirection);
 
         GameActiveStates = new List<CharacterState>
         {
