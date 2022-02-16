@@ -5,12 +5,14 @@ public class FinishPortal : MonoBehaviour, IGravityRotation
 {
     [SerializeField] private PortalDisappearance _portalDisappearance;
     [SerializeField] private CharacterToPortalPulling _pullingAnimation;
+    [SerializeField] private PortalView _portalView;
     private WinState _characterWinState;
 
 
     public void Init(WinState winState)
     {
         _characterWinState = winState;
+        _portalView.Init();
     }
 
 
