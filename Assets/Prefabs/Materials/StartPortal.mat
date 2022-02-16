@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-797583403198441473
+--- !u!114 &-5792249769095034901
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StarShiny
-  m_Shader: {fileID: -6465566751694194690, guid: 281910e558f78de40a6620d1e27c1323,
+  m_Name: StartPortal
+  m_Shader: {fileID: -6465566751694194690, guid: 5ee868cccd2ce6a43ac1836cf42a5a9c,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -33,12 +33,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_02002103aed246338e401c5f9e52a46c:
-        m_Texture: {fileID: 2800000, guid: 96202e2db233e0c43b701421a7634eda, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_6c00874d13f24e8eb08d4fc4587815ed:
-        m_Texture: {fileID: 2800000, guid: f8ffc1533b127dc42931cf7a66110180, type: 3}
+    - Texture2D_1bfd6f1b9226400bbf6ecc8fa8d1d870:
+        m_Texture: {fileID: 2800000, guid: 0381e13541e22d3458c0912645ada0f2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -81,6 +77,18 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_7185d686e0fa496c9eee27d723c2d1a1_Texture_1:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_ae49bbe705cb4c7ea2de2cb1cc43ab27_Texture_1:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_bc84b0325fe146629e79bc3044e276f7_Texture_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -98,8 +106,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_0f91894b574a4ebe99dccc3fd95dd5c8: -93.6
-    - Vector1_a0261d98fa284623a582e7e756fbe1eb: 0
+    - Vector1_91315c45a9f4409fafc6d9770b1160e8: 0
+    - Vector1_97cc7a2b169a4607beb24309ea91a3a6: 1
+    - Vector1_9e56b19fa0cb4a398259a8e85ae1ad5a: 1.107
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -119,7 +128,6 @@ Material:
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _ShinyFactor: 0.9424474
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -128,7 +136,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_027d5e872a734772994eec3388b15c2e: {r: 0.9433962, g: 0.46381494, b: 0.17265925,
+    - Color_bc0e4a42104542cd91f7b4692f73960d: {r: 33.89676, g: 1.0048878, b: 0, a: 0}
+    - Color_bc2f4cb004334fff85bcaf7d4a32b128: {r: 2.9960785, g: 0.35725906, b: 0,
         a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

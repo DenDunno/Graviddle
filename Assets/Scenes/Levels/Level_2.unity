@@ -303,16 +303,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FinishPortal
       objectReference: {fileID: 0}
-    - target: {fileID: 1676370641203529913, guid: 3814a69fc0e128c4380f1914f44a9b0e,
-        type: 3}
-      propertyPath: _swipeHandler
-      value: 
-      objectReference: {fileID: 698458575}
-    - target: {fileID: 8330912486358253217, guid: 3814a69fc0e128c4380f1914f44a9b0e,
-        type: 3}
-      propertyPath: _character
-      value: 
-      objectReference: {fileID: 365114991}
     - target: {fileID: 8330912486358253217, guid: 3814a69fc0e128c4380f1914f44a9b0e,
         type: 3}
       propertyPath: _pullingAnimation._character

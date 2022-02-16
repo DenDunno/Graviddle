@@ -10,10 +10,11 @@ public class PortalDisappearance
     [SerializeField] private AssetReference _portalDisappearFXReference;
     [SerializeField] private float _disappearingSpeed;
     [SerializeField] private MonoBehaviour _context;
+    private readonly Vector3 _startScale = new Vector3(1, 1.5f, 1);
     private const float _timeBeforeDisappearance = 1.3f;
     private Tween _currentAnimation;
 
-
+    
     public void Disappear()
     {
         Sequence sequence = DOTween.Sequence();
@@ -44,6 +45,6 @@ public class PortalDisappearance
         _currentAnimation?.Kill();
 
         _context.gameObject.SetActive(true);
-        _context.transform.localScale = Vector3.one;
+        _context.transform.localScale = _startScale;
     }
 }
