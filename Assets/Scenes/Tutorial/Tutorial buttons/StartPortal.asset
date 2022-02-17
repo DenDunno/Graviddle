@@ -34,10 +34,10 @@ MonoBehaviour:
     m_Value: 1
   allowGeometryShaders:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   allowComputeShaders:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   renderPriority:
     m_OverrideState: 1
     m_Value: 1
@@ -70,22 +70,22 @@ MonoBehaviour:
     max: 1
   blooming:
     m_OverrideState: 1
-    m_Value: 0.956
+    m_Value: 1
     min: 0
     max: 1
   bloomThreshold:
     m_OverrideState: 1
     m_Value:
-      minValue: 2.7950459
-      maxValue: 10
+      minValue: 1.0161388
+      maxValue: 5.616272
   bloomScattering:
     m_OverrideState: 1
-    m_Value: 7
+    m_Value: 1.5
     min: 1
     max: 10
   bloomIntensity:
     m_OverrideState: 1
-    m_Value: 12.24
+    m_Value: 15
   allowLensSurface:
     m_OverrideState: 1
     m_Value: 0

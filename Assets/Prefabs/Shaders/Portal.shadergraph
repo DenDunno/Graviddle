@@ -40,9 +40,6 @@
             "m_Id": "cc5116edf70c4c5cb0c623d004181585"
         },
         {
-            "m_Id": "837a54e4459c42608983f6cbe7ab1f89"
-        },
-        {
             "m_Id": "00c238a6888d45bf841611a150751ab9"
         },
         {
@@ -234,20 +231,6 @@
                     "m_Id": "46b26492a0cf48288e235160cad58f0d"
                 },
                 "m_SlotId": 2
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "837a54e4459c42608983f6cbe7ab1f89"
-                },
-                "m_SlotId": 1
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "481a0bee30f945cc8109f1eabe3533cb"
-                },
-                "m_SlotId": 0
             }
         },
         {
@@ -1582,41 +1565,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.SubGraphNode",
-    "m_ObjectId": "837a54e4459c42608983f6cbe7ab1f89",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "PortalVertex",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": 118.39997863769531,
-            "y": -452.0,
-            "width": 208.00003051757813,
-            "height": 277.6000061035156
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "ba5e4f0855a1448f8b009cf5c86b4bfa"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_SerializedSubGraph": "{\n    \"subGraph\": {\n        \"fileID\": -5475051401550479605,\n        \"guid\": \"9e2f37cb4cb280a4fb5987d069561e15\",\n        \"type\": 3\n    }\n}",
-    "m_PropertyGuids": [],
-    "m_PropertyIds": []
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "87c849e554644cc4a30bfd4e355a3a93",
     "m_Id": 0,
@@ -1903,29 +1851,6 @@
     "m_StageCapability": 2,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
-    "m_ObjectId": "ba5e4f0855a1448f8b009cf5c86b4bfa",
-    "m_Id": 1,
-    "m_DisplayName": "Out_Vector3",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "OutVector3",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-    },
     "m_Labels": []
 }
 
