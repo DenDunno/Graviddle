@@ -22,7 +22,7 @@ public class EntryPoint : MonoBehaviour
     private void Awake()
     {
         RestartableComponents restartComponents = _interfacesContainer.GetRestartableComponents();
-        var states = new CharacterStatesPresenter(_character, _characterMoveDirection);
+        var states = new CharacterStatesPresenter(_character.GetComponent<Animator>(), _characterMoveDirection);
         var transitionsPresenterFactory = new TransitionsPresenterFactory(states, _transitionsConditions);
         var transitionsPresenter = transitionsPresenterFactory.Create();
         var restartEvent = new EventTransit();

@@ -8,7 +8,7 @@ public class RunState : CharacterState
     private const float _movementSpeed = 3;
 
 
-    public RunState(Character character, CharacterMoveDirection characterMoveDirection) : base(character, AnimationsName.Run)
+    public RunState(Animator character, CharacterMoveDirection characterMoveDirection) : base(character, AnimationsName.Run)
     {
         _transform = character.transform;
         _characterMoveDirection = characterMoveDirection;

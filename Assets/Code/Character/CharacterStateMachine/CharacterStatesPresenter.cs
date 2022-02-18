@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using UnityEngine;
 
 
 public class CharacterStatesPresenter
@@ -12,7 +13,7 @@ public class CharacterStatesPresenter
     public readonly ReadOnlyCollection<CharacterState> GameActiveStates;
 
 
-    public CharacterStatesPresenter(Character character, CharacterMoveDirection characterMoveDirection)
+    public CharacterStatesPresenter(Animator character, CharacterMoveDirection characterMoveDirection)
     {
         FallState = new FallState(character);
         DieState = new DieState(character);

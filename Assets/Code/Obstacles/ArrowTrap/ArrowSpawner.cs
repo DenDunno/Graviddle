@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-public class ArrowSpawner : MonoBehaviour
+public class ArrowSpawner : MonoBehaviour, IRestart
 {
     [SerializeField] private Arrow _arrowPrefab;
     [SerializeField] private Transform _spawnPoint;
@@ -15,6 +15,7 @@ public class ArrowSpawner : MonoBehaviour
     {
         Arrow arrow = SpawnOrPopArrow();
         arrow.transform.SetPositionAndRotation(_spawnPoint);
+        arrow.gameObject.SetActive(true);
         _updatingArrows.Enqueue(arrow);
     }
 
@@ -34,5 +35,16 @@ public class ArrowSpawner : MonoBehaviour
     private Arrow SpawnOrPopArrow()
     {
         return _arrowsPull.IsEmpty() ? Instantiate(_arrowPrefab) : _arrowsPull.Pop();
+    }
+    
+
+    void IRestart.Restart()
+    {
+        _updatingArrows.ForEach(updatingArrow => updatingArrow.gameObject.SetActive(false));
+        
+        for (var i = 0; i < _updatingArrows.Count; ++i)
+        {
+            _arrowsPull.Push(_updatingArrows.Dequeue());
+        }
     }
 }

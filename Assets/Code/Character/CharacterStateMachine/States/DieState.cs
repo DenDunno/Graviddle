@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 
 public class DieState : CharacterState
@@ -6,7 +7,7 @@ public class DieState : CharacterState
     public event Action CharacterDied;
 
 
-    public DieState(Character character) : base(character, AnimationsName.Die)
+    public DieState(Animator character) : base(character, AnimationsName.Die)
     {
     }
 

@@ -8,7 +8,7 @@ public class WinState : CharacterState
     public event Action CharacterWon;
 
 
-    public WinState(Character character) : base(character, AnimationsName.Fall)
+    public WinState(Animator character) : base(character, AnimationsName.Fall)
     {
         _rigidbody = character.GetComponent<Rigidbody2D>();
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 
 public class FallState : CharacterState
@@ -6,7 +7,7 @@ public class FallState : CharacterState
     public event Action CharacterFalling;
 
 
-    public FallState(Character character) : base(character, AnimationsName.Fall)
+    public FallState(Animator character) : base(character, AnimationsName.Fall)
     {
     }
 

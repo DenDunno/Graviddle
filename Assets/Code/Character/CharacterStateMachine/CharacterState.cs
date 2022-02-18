@@ -7,9 +7,9 @@ public abstract class CharacterState
     private readonly string _animationName;
 
 
-    protected CharacterState(Character character, string animationName)
+    protected CharacterState(Animator animator, string animationName)
     {
-        _animator = character.GetComponent<Animator>();
+        _animator = animator;
         _animationName = animationName;
     }
 
