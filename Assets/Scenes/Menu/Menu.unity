@@ -1701,8 +1701,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c446645233cd9734d80775c815e7139f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _backgroundMusic: {fileID: -4962204472795951528, guid: 57c24b4c76a7e0e41ad9719cfaea905c,
-    type: 3}
+  _backgroundMusicSpawner:
+    _backgroundMusic: {fileID: -4962204472795951528, guid: 57c24b4c76a7e0e41ad9719cfaea905c,
+      type: 3}
+  _advertisementStartup:
+    _transitionAdvertisementCounter: {fileID: 3750475353745977396, guid: 2de6e9a2d30b4714280b10bebb0864d9,
+      type: 3}
 --- !u!222 &1103893552
 CanvasRenderer:
   m_ObjectHideFlags: 0

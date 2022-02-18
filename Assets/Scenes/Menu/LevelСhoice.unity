@@ -2446,9 +2446,10 @@ GameObject:
   - component: {fileID: 1737779724}
   - component: {fileID: 1737779729}
   - component: {fileID: 1737779728}
-  - component: {fileID: 1737779731}
   - component: {fileID: 1737779730}
+  - component: {fileID: 1737779731}
   - component: {fileID: 1737779732}
+  - component: {fileID: 1737779733}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -2709,6 +2710,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shinyMaterial: {fileID: 2100000, guid: c715d16a11bbba748863a9dd3526eec5, type: 2}
+--- !u!114 &1737779733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737779723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16cb904046a913d44b344e48a428fc28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1778991298
 PrefabInstance:
   m_ObjectHideFlags: 0

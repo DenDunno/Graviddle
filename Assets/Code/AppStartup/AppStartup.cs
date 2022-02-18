@@ -4,7 +4,8 @@ using UnityEngine.AddressableAssets;
 
 public class AppStartup : MonoBehaviour
 {
-    [SerializeField] private BackgroundMusic _backgroundMusic;
+    [SerializeField] private BackgroundMusicSpawner _backgroundMusicSpawner;
+    [SerializeField] private AdvertisementStartup _advertisementStartup;
     private static bool _appWasInited;
     
     
@@ -21,6 +22,7 @@ public class AppStartup : MonoBehaviour
     private void Initialize()
     {
         Addressables.InitializeAsync();
-        Instantiate(_backgroundMusic);
+        _backgroundMusicSpawner.Init();
+        _advertisementStartup.Init();
     }
 }
