@@ -7,7 +7,7 @@ public class LevelTransitionAdvertisementCounter : MonoBehaviour
     private readonly LevelTransitionAdvertisement _levelTransitionAdvertisement = new LevelTransitionAdvertisement(); 
     private const int _levelBeforeAdvertisement = 3;
     private const int _menuScenes = 2;
-    private static int _counter = 0;
+    private static int _counter;
 
 
     private void Start()
@@ -29,12 +29,10 @@ public class LevelTransitionAdvertisementCounter : MonoBehaviour
 
         if (activeScene > _menuScenes)
         {
-            Debug.Log(_counter);
             _counter++;
 
             if (_counter == _levelBeforeAdvertisement)
             {
-                Debug.Log("Add");
                 _counter = 0;
                 _levelTransitionAdvertisement.Show();
             }

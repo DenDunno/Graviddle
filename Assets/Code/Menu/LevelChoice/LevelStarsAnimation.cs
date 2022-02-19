@@ -1,10 +1,11 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class LevelStarsAnimation : MonoBehaviour
 {
-    [SerializeField] private Material _shinyMaterial;
+    [SerializeField] private Image _levelStar;
     private const float _duration = 1.25f;
     private const float _coolDown = 0.8f;
     private int _shinyValueId;
@@ -37,7 +38,7 @@ public class LevelStarsAnimation : MonoBehaviour
 
     private void SetShinyValue(float shinyValue)
     {
-        _shinyMaterial.SetFloat(_shinyValueId, shinyValue);
+        _levelStar.material.SetFloat(_shinyValueId, shinyValue);
     }
 
 

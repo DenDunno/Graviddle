@@ -70,22 +70,22 @@ MonoBehaviour:
     max: 1
   blooming:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.5
     min: 0
     max: 1
   bloomThreshold:
     m_OverrideState: 1
     m_Value:
-      minValue: 1.3977126
-      maxValue: 5.514224
+      minValue: 1.4516674
+      maxValue: 5.5681787
   bloomScattering:
     m_OverrideState: 1
-    m_Value: 1.5
+    m_Value: 1
     min: 1
     max: 10
   bloomIntensity:
     m_OverrideState: 1
-    m_Value: 15
+    m_Value: 3
   allowLensSurface:
     m_OverrideState: 1
     m_Value: 0

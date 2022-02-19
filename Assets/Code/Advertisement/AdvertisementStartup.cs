@@ -24,7 +24,7 @@ public class AdvertisementStartup
         if (Advertisement.isSupported)
         {
             Advertisement.Initialize(gameId, _testMode);
-            Object.Instantiate(_transitionAdvertisementCounter);
+            //Object.Instantiate(_transitionAdvertisementCounter);
         }
     }
 }
