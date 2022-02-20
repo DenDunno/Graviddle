@@ -1,22 +1,20 @@
 using System;
 using UnityEngine;
 using DG.Tweening;
-using LeTai.Asset.TranslucentImage;
 using UnityEngine.UI;
 
 
 [Serializable]
-public class WinAnimation 
+public class WinAnimation
 {
-    [SerializeField] private ScalableBlurConfig _blurConfig;
+    [SerializeField] private Image _image;
     [SerializeField] private WinEffects _effects;
     [SerializeField] private Image _levelScore;
-    [SerializeField] private TranslucentImage _translucentImage;
     [SerializeField] private Button[] _buttons;
     
     private const float _animationDuration = 2f;
     private const float _startWaitTime = 0.5f;
-    private const float _targetBlur = 15f;
+    private const float _targetFade = 0.6f;
     private readonly Vector2 _targetPosition = Vector2.zero;
 
 
@@ -26,8 +24,7 @@ public class WinAnimation
 
         sequence.AppendInterval(_startWaitTime);
         sequence.Append(_levelScore.transform.DOLocalMove(_targetPosition, _animationDuration).SetEase(Ease.OutBack));
-        sequence.Join(DOTween.To(x => _blurConfig.Strength = x, 0, _targetBlur, _animationDuration));
-        sequence.Join(_translucentImage.DOFade(1, _animationDuration));
+        sequence.Join(_image.DOFade(_targetFade, _animationDuration));
         sequence.OnComplete(ActivateEffects);
     }
 

@@ -3330,7 +3330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _uiState: {fileID: 6725604453867194703}
   _winAnimation:
-    _blurConfig: {fileID: 11400000, guid: 0c32db76616ab764e8ef4f6d946be474, type: 2}
+    _image: {fileID: 6067475302508320102}
     _effects:
       _starsParticles:
       - {fileID: 1793425436598558406}
@@ -3340,7 +3340,6 @@ MonoBehaviour:
       _confetti: {fileID: 3754034204125003905}
       _reward: {fileID: 7108053639162650602}
     _levelScore: {fileID: 6891503043413075974}
-    _translucentImage: {fileID: 4643044635907180206}
     _buttons:
     - {fileID: 6891503042004876703}
     - {fileID: 6891503042026673923}
@@ -4129,7 +4128,7 @@ GameObject:
   - component: {fileID: 6891503042830970288}
   - component: {fileID: 6725604453867194703}
   - component: {fileID: 66332928607800894}
-  - component: {fileID: 4643044635907180206}
+  - component: {fileID: 6067475302508320102}
   m_Layer: 6
   m_Name: WinPanel
   m_TagString: Untagged
@@ -4194,7 +4193,7 @@ MonoBehaviour:
     m_AssetGUID: afbfc7b0fb1cc1b4886cb4438fbc94b0
     m_SubObjectName: 
     m_SubObjectType: 
---- !u!114 &4643044635907180206
+--- !u!114 &6067475302508320102
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4203,11 +4202,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6891503042830970291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 196bb08d6c2d3c9499c04e1281fd4ad3, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 96c5704d0681e35408630c488fc0c234, type: 2}
-  m_Color: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 0}
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4224,11 +4223,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-  source: {fileID: 0}
-  vibrancy: 1.8
-  brightness: 0
-  flatten: 0.15
-  m_spriteBlending: 0.65
 --- !u!1 &6891503043413075994
 GameObject:
   m_ObjectHideFlags: 0
