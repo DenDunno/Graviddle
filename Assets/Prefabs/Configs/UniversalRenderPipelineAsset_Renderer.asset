@@ -27,8 +27,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RendererFeatures:
   - {fileID: -1596128331816372710}
-  - {fileID: 663993441474263707}
-  m_RendererFeatureMap: 1af62526bd69d9e99b3a435c84fa3609
+  m_RendererFeatureMap: 1af62526bd69d9e9
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
   shaders:

@@ -6,6 +6,7 @@ public class AppStartup : MonoBehaviour
 {
     [SerializeField] private BackgroundMusicSpawner _backgroundMusicSpawner;
     [SerializeField] private AdvertisementStartup _advertisementStartup;
+    private readonly MusicVolume _musicVolume = new MusicVolume();
     private static bool _appWasInited;
     
     
@@ -24,5 +25,6 @@ public class AppStartup : MonoBehaviour
         Addressables.InitializeAsync();
         _backgroundMusicSpawner.Init();
         _advertisementStartup.Init();
+        _musicVolume.Init();
     }
 }
