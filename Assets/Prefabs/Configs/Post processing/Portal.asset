@@ -33,13 +33,13 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   allowGeometryShaders:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   allowComputeShaders:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   renderPriority:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   debugView:
     m_OverrideState: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 4
   antiFlickerMode:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   workflow:
     m_OverrideState: 1
@@ -76,8 +76,8 @@ MonoBehaviour:
   bloomThreshold:
     m_OverrideState: 1
     m_Value:
-      minValue: 1.4516674
-      maxValue: 5.5681787
+      minValue: 1.9524415
+      maxValue: 6.0689545
   bloomScattering:
     m_OverrideState: 1
     m_Value: 1
