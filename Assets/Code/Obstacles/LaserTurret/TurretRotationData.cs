@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+
 public class TurretRotationData
 {
     public readonly Transform Character;
