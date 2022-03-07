@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class FinishPortal : MonoBehaviour, IGravityRotation
+public class FinishPortal : MonoBehaviour
 {
     [SerializeField] private PortalDisappearance _portalDisappearance;
     [SerializeField] private CharacterToPortalPulling _pullingAnimation;

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 
-public class LevelStar : MonoBehaviour, IRestart, IGravityRotation
+public class LevelStar : MonoBehaviour, IRestart
 {
     [SerializeField] private LevelStarImpact _levelStarImpact;
     public event Action StarCollected;

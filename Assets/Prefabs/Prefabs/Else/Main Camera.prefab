@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 4599026585472759060}
   - component: {fileID: 957595173566817432}
   - component: {fileID: 2071492005582517391}
+  - component: {fileID: 6604153382712734554}
   - component: {fileID: 2385801051265026153}
   - component: {fileID: 8578594374611672333}
   - component: {fileID: 9060857224600224795}
@@ -202,7 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569e7eee347979443bb7350d804f5f67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gravityDirectionPresenter: {fileID: 0}
   _isLevelWithFrame: 0
 --- !u!114 &4599026585472759060
 MonoBehaviour:
@@ -252,6 +252,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _character: {fileID: 0}
   _cameraClamping: {fileID: 6186545343902058751}
+--- !u!114 &6604153382712734554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186545343902058747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab10d0996b64e6ca755c67687e37165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2385801051265026153
 MonoBehaviour:
   m_ObjectHideFlags: 0

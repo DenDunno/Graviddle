@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 
 
-public class Character : MonoBehaviour, IRestartableTransform, IGravityRotation, IRestart, IAfterRestart
+public class Character : MonoBehaviour, IRestart, IAfterRestart
 {
     [SerializeField] private SwipeHandler _swipeHandler;
     [SerializeField] private Rigidbody2D _rigidbody2D;

@@ -29,7 +29,7 @@ public class EntryPoint : MonoBehaviour
         var gravity = new Gravity(_swipeHandler);
         var currentGravityData = new CurrentGravityData(_swipeHandler);
         var levelRestart = new LevelRestart(restartComponents, restartEvent.Invoke, states.DieState);
-        var gravityRotations = new GravityRotations(currentGravityData, _interfacesContainer.GravityRotations);
+        var gravityRotations = new GravityRotation(currentGravityData, _interfacesContainer.GetTransformsWithGravityRotation());
         
         _subscribers = new ISubscriber[] {levelRestart, gravity, currentGravityData};
         _updatables = new IUpdatable[] {gravityRotations, _characterMoveDirection};

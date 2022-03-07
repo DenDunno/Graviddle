@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 
 
-public class RestartableTransform
+public class RestartableTransform : MonoBehaviour
 {
-    private readonly Transform _objectToBeRestarted;
-    private readonly Vector3 _position;
-    private readonly Quaternion _rotation;
-    private readonly Transform _parent;
+    private Transform _objectToBeRestarted;
+    private Vector3 _position;
+    private Quaternion _rotation;
+    private Transform _parent;
 
-        
-    public RestartableTransform(Transform transform)
+
+    private void Start()
     {
         _objectToBeRestarted = transform;
         _position = transform.position;
