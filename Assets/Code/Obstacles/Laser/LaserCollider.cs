@@ -18,13 +18,13 @@ public class LaserCollider : MonoBehaviour
 
     private void OnEnable()
     {
-        _laserSwitcher.LaserToggled += ToggleCollider;
+        _laserSwitcher.Toggled += ToggleCollider;
     }
 
 
     private void OnDisable()
     {
-        _laserSwitcher.LaserToggled -= ToggleCollider;
+        _laserSwitcher.Toggled -= ToggleCollider;
     }
 
 

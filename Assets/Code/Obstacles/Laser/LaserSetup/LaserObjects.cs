@@ -5,7 +5,7 @@ using UnityEngine;
 [Serializable]
 public class LaserHitObjectsPositions
 {
-    [SerializeField] private LaserLightBulb _laserLightBulb;
+    [SerializeField] private LightBulb _lightBulb;
     [SerializeField] private ParticleSystem _hitEffect;
     [SerializeField] private bool _isLightBulbInRight = true;
 
@@ -20,7 +20,7 @@ public class LaserHitObjectsPositions
         Vector2 lightBulbOffset = _lightBulbOffset;
         lightBulbOffset.x = _isLightBulbInRight ? _rightLightBulbSideOffset : _leftLightBulbSideOffset;
 
-        _laserLightBulb.transform.SetPositionWithLocalOffset(hitPoint, lightBulbOffset);
+        _lightBulb.transform.SetPositionWithLocalOffset(hitPoint, lightBulbOffset);
         _hitEffect.transform.SetPositionWithLocalOffset(hitPoint, _hitEffectOffset);
     }
 }

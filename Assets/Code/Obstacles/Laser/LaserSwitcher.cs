@@ -3,19 +3,20 @@ using UnityEngine;
 using System;
 
 
-public class LaserSwitcher : MonoBehaviour
+public class LaserSwitcher : MonoBehaviour, ISwitcher
 {
     [SerializeField] private LaserParticlesSwitcher _laserParticlesSwitcher;
     [SerializeField] private LaserLineSwitcher _laserLineSwitcher;
     private InvocationWithDelay _particlesTogglingWithDelay;
     private InvocationWithDelay _laserTogglingEventWithDelay;
+    
+    public event Action<bool> Toggled;
 
-    public event Action<bool> LaserToggled;
 
 
     public void Init(bool startOnAwake)
     {
-        _laserTogglingEventWithDelay = new InvocationWithDelay(0.5f, 2f, activate => LaserToggled?.Invoke(activate));
+        _laserTogglingEventWithDelay = new InvocationWithDelay(0.5f, 2f, activate => Toggled?.Invoke(activate));
         _particlesTogglingWithDelay = new InvocationWithDelay(0.7f, 1f, _laserParticlesSwitcher.ToggleParticles);
 
         _laserLineSwitcher.Init();
@@ -34,7 +35,7 @@ public class LaserSwitcher : MonoBehaviour
     public void Restart(bool startOnAwake)
     {
         StopAllCoroutines();
-        LaserToggled?.Invoke(startOnAwake);
+        Toggled?.Invoke(startOnAwake);
         _laserLineSwitcher.Restart(startOnAwake);
         _laserParticlesSwitcher.ToggleParticles(startOnAwake);
     }

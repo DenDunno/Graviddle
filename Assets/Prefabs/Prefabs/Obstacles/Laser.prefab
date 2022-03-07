@@ -9788,7 +9788,7 @@ MonoBehaviour:
     _sourceSparks: {fileID: 53320991}
   _laserCollider: {fileID: 8157628231166003007}
   _laserHitObjectsPositions:
-    _laserLightBulb: {fileID: 2618829533096775015}
+    _lightBulb: {fileID: 2618829533096775015}
     _hitEffect: {fileID: 7185288785305468085}
     _isLightBulbInRight: 1
   _applyEffectsAdjustment: 1
@@ -9926,8 +9926,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5256950845343969605}
-  - component: {fileID: 5256950845343969606}
   - component: {fileID: 1498028666038171776}
+  - component: {fileID: 5256950845343969606}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -9956,24 +9956,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5256950845343969606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5256950845343969604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 843c7f7b0d99ddf4493b8e1975eee46a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _startWaitTime: 0
-  _workTime: 3
-  _coolDownTime: 2
-  _infiniteWorking: 0
-  _startOnAwake: 1
-  _laserSwitcher: {fileID: 1498028666038171776}
 --- !u!114 &1498028666038171776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9997,6 +9979,24 @@ MonoBehaviour:
   _laserLineSwitcher:
     _laserDistortion:
       _lineRenderer: {fileID: 472431230735109204}
+--- !u!114 &5256950845343969606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5256950845343969604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 843c7f7b0d99ddf4493b8e1975eee46a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startWaitTime: 0
+  _workTime: 3
+  _coolDownTime: 2
+  _infiniteWorking: 0
+  _startOnAwake: 1
+  _laserSwitcher: {fileID: 1498028666038171776}
 --- !u!1001 &5053781382002696549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10062,6 +10062,11 @@ PrefabInstance:
     - target: {fileID: 7094665787252272130, guid: ee0b474f55a89e74c8f69d9d15d0be68,
         type: 3}
       propertyPath: _laserSwitcher
+      value: 
+      objectReference: {fileID: 1498028666038171776}
+    - target: {fileID: 7094665787252272130, guid: ee0b474f55a89e74c8f69d9d15d0be68,
+        type: 3}
+      propertyPath: _switcherMonoBehaviour
       value: 
       objectReference: {fileID: 1498028666038171776}
     - target: {fileID: 7094665787252272134, guid: ee0b474f55a89e74c8f69d9d15d0be68,
@@ -10287,6 +10292,11 @@ PrefabInstance:
     - target: {fileID: 7094665787252272130, guid: ee0b474f55a89e74c8f69d9d15d0be68,
         type: 3}
       propertyPath: _laserSwitcher
+      value: 
+      objectReference: {fileID: 1498028666038171776}
+    - target: {fileID: 7094665787252272130, guid: ee0b474f55a89e74c8f69d9d15d0be68,
+        type: 3}
+      propertyPath: _switcherMonoBehaviour
       value: 
       objectReference: {fileID: 1498028666038171776}
     - target: {fileID: 7094665787252272134, guid: ee0b474f55a89e74c8f69d9d15d0be68,

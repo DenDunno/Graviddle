@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 3691770231806689125}
   - component: {fileID: 428524606317969257}
   - component: {fileID: 492491083252730350}
+  - component: {fileID: 1432043245931733664}
   - component: {fileID: 3691770231806689127}
   - component: {fileID: 3691770231806689129}
+  - component: {fileID: 6681531866308586836}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -145,6 +147,18 @@ ConstantForce2D:
   m_Force: {x: 0, y: 0}
   m_RelativeForce: {x: 0, y: 1}
   m_Torque: 0
+--- !u!114 &1432043245931733664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3691770231806689122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 490d6e306e084eeb815cc77aeaf8bcfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3691770231806689127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +183,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d73d28d2d913e84db130200a1668981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _constantForce: {fileID: 0}
+--- !u!114 &6681531866308586836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3691770231806689122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52876d812ff46c24ebcda452aba74ccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buttonRigidbody: {fileID: 3691770231806689125}
+  _buttonForce: {fileID: 492491083252730350}
+  _buttonPressEvent: {fileID: 1432043245931733664}
 --- !u!1 &3691770232579522153
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +230,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3691770231806689123}
+  - {fileID: 178582414462652462}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
@@ -244,7 +273,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5dd6859a607ffe9499155844ff87a432, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -324,3 +353,98 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c0a58eb8ce0454c88b40d2714d9734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &6921789855322373167
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3691770232579522155}
+    m_Modifications:
+    - target: {fileID: 7094665787252272128, guid: ee0b474f55a89e74c8f69d9d15d0be68,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094665787252272128, guid: ee0b474f55a89e74c8f69d9d15d0be68,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094665787252272128, guid: ee0b474f55a89e74c8f69d9d15d0be68,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094665787252272129, guid: ee0b474f55a89e74c8f69d9d15d0be68,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094665787252272129, guid: ee0b474f55a89e74c8f69d9d15d0be68,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.235
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094665787252272129, guid: ee0b474f55a89e74c8f69d9d15d0be68,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094665787252272129, guid: ee0b474f55a89e74c8f69d9d15d0be68,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094665787252272129, guid: ee0b474f55a89e74c8f69d9d15d0be68,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094665787252272129, guid: ee0b474f55a89e74c8f69d9d15d0be68,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094665787252272129, guid: ee0b474f55a89e74c8f69d9d15d0be68,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094665787252272129, guid: ee0b474f55a89e74c8f69d9d15d0be68,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094665787252272129, guid: ee0b474f55a89e74c8f69d9d15d0be68,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094665787252272129, guid: ee0b474f55a89e74c8f69d9d15d0be68,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094665787252272129, guid: ee0b474f55a89e74c8f69d9d15d0be68,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094665787252272130, guid: ee0b474f55a89e74c8f69d9d15d0be68,
+        type: 3}
+      propertyPath: _switcherMonoBehaviour
+      value: 
+      objectReference: {fileID: 1432043245931733664}
+    - target: {fileID: 7094665787252272134, guid: ee0b474f55a89e74c8f69d9d15d0be68,
+        type: 3}
+      propertyPath: m_Name
+      value: LightBulb
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ee0b474f55a89e74c8f69d9d15d0be68, type: 3}
+--- !u!4 &178582414462652462 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7094665787252272129, guid: ee0b474f55a89e74c8f69d9d15d0be68,
+    type: 3}
+  m_PrefabInstance: {fileID: 6921789855322373167}
+  m_PrefabAsset: {fileID: 0}
