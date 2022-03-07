@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="236f7ca0-e3d5-42cf-8bd1-4f65d9112fc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/LightBulb.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/LightBulb/ISwitcher.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/LightBulb/ISwitcher.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/LightBulb/LightBulb.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityBox/ButtonPressEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityBox/ButtonPressEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Obstacles/Laser/LaserCollider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Obstacles/Laser/LaserCollider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Obstacles/Laser/LaserLightBulb.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Obstacles/Laser/LaserLightBulb.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/LightBulb/LightBulb.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Obstacles/Laser/LaserSetup/LaserObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Obstacles/Laser/LaserSetup/LaserObjects.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Obstacles/Laser/LaserSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Obstacles/Laser/LaserSwitcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityBox/ButtonForceSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityBox/ButtonForceSwitcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityBox/ButtonPressEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityBox/ButtonPressing.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityBox/ButtonPressEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityBox/ButtonPressing.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/GravityBoxButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/GravityBoxButton.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Obstacles/Laser.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Obstacles/Laser.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Obstacles/LaserTurret .prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Obstacles/LaserTurret .prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Buffer/Level_10 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Buffer/Level_10 1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +127,7 @@
       <workItem from="1645448346448" duration="3325000" />
       <workItem from="1645551517501" duration="595000" />
       <workItem from="1646472137804" duration="2311000" />
-      <workItem from="1646645423803" duration="15284000" />
+      <workItem from="1646645423803" duration="16376000" />
     </task>
     <servers />
   </component>

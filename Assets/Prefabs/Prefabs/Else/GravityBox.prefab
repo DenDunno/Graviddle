@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7312556478064159863}
   - component: {fileID: 7312556478064159860}
   - component: {fileID: 7312556478064159861}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 7312556479469279460}
   - component: {fileID: 7312556479469279466}
   - component: {fileID: 7312556479469279465}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GravityBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

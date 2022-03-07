@@ -5,18 +5,18 @@ public class ButtonForceSwitcher : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _buttonRigidbody;
     [SerializeField] private ConstantForce2D _buttonForce;
-    [SerializeField] private ButtonPressEvent _buttonPressEvent;
+    [SerializeField] private ButtonPressing _buttonPressing;
 
 
     private void OnEnable()
     {
-        _buttonPressEvent.Toggled += OnButtonToggled;
+        _buttonPressing.Toggled += OnButtonToggled;
     }
     
     
     private void OnDisable()
     {
-        _buttonPressEvent.Toggled -= OnButtonToggled;
+        _buttonPressing.Toggled -= OnButtonToggled;
     }
 
     
