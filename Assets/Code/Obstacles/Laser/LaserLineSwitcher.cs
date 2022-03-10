@@ -32,7 +32,13 @@ public class LaserLineSwitcher
 
     public void Restart(bool startOnAwake)
     {
-        _switchingTween?.Kill();
+        StopAnimation();
         _laserDistortion.SetDistortion(_distortionData.GetDistortion(startOnAwake));
+    }
+
+
+    public void StopAnimation()
+    {
+        _switchingTween?.Kill();
     }
 }

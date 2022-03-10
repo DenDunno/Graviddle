@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3691770231806689124}
   - component: {fileID: 3691770231806689125}
   - component: {fileID: 428524606317969257}
-  - component: {fileID: 492491083252730350}
   - component: {fileID: 1432043245931733664}
   - component: {fileID: 3691770231806689127}
   - component: {fileID: 3691770231806689129}
@@ -108,7 +107,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 6
 --- !u!61 &428524606317969257
 BoxCollider2D:
@@ -136,17 +135,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3333334, y: 0.48666668}
   m_EdgeRadius: 0
---- !u!247 &492491083252730350
-ConstantForce2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3691770231806689122}
-  m_Enabled: 0
-  m_Force: {x: 0, y: 0}
-  m_RelativeForce: {x: 0, y: 1}
-  m_Torque: 0
 --- !u!114 &1432043245931733664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buttonRigidbody: {fileID: 3691770231806689125}
-  _buttonForce: {fileID: 492491083252730350}
+  _buttonForce: {fileID: 0}
   _buttonPressing: {fileID: 1432043245931733664}
 --- !u!1 &3691770232579522153
 GameObject:

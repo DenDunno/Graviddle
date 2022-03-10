@@ -39,4 +39,11 @@ public class LaserSwitcher : MonoBehaviour, ISwitcher
         _laserLineSwitcher.Restart(startOnAwake);
         _laserParticlesSwitcher.ToggleParticles(startOnAwake);
     }
+
+
+    public void StopAnimation()
+    {
+        StopAllCoroutines();
+        _laserLineSwitcher.StopAnimation();
+    }
 }

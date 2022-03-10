@@ -12,17 +12,18 @@ public class LightBulb : MonoBehaviour
 
     private void OnValidate()
     {
-        if (_switcherMonoBehaviour is ISwitcher switcher)
-        {
-            _switcher = switcher;
-        }
-
-        else
+        if (_switcherMonoBehaviour is ISwitcher == false)
         {
             _switcherMonoBehaviour = null;
         }
     }
-    
+
+
+    private void Awake()
+    {
+        _switcher = _switcherMonoBehaviour as ISwitcher;
+    }
+
 
     private void OnEnable()
     {

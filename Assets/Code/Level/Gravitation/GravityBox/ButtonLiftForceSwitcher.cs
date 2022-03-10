@@ -1,10 +1,10 @@
 using UnityEngine;
 
 
-public class ButtonForceSwitcher : MonoBehaviour
+public class ButtonLiftForceSwitcher : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _buttonRigidbody;
-    [SerializeField] private ConstantForce2D _buttonForce;
+    [SerializeField] private ButtonLiftForce _buttonForce;
     [SerializeField] private ButtonPressing _buttonPressing;
 
 

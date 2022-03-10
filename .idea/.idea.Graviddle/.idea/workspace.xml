@@ -3,11 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="236f7ca0-e3d5-42cf-8bd1-4f65d9112fc7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Character/CharacterStateMachine/States/RunState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Character/CharacterStateMachine/States/RunState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityBox/ButtonForceSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityBox/ButtonForceSwitcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityBox/ButtonPressEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityBox/ButtonPressing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityBox/ButtonPressEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityBox/ButtonPressing.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/LightBulb/LightBulb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/LightBulb/LightBulb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Obstacles/Laser/LaserLineSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Obstacles/Laser/LaserLineSwitcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Obstacles/Laser/LaserSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Obstacles/Laser/LaserSwitcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Obstacles/Laser/LaserWithEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Obstacles/Laser/ButtonLaser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Obstacles/Laser/LaserWithEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Obstacles/Laser/ButtonLaser.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Configs/AddressableAssetsData/Android/addressables_content_state.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Configs/AddressableAssetsData/Android/addressables_content_state.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Materials/LevelStarShiny.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Materials/LevelStarShiny.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/GravityBoxButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/GravityBoxButton.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Buffer/Level_10 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Buffer/Level_10 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Obstacles/LaserWithEvent.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Obstacles/LaserWithEvent.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_11.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_11.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +34,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Code/Obstacles/LaserTurret/TurretRotation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.scriptablebuildpipeline@1.15.2/Editor/Tasks/BuildPlayerScripts.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ef667cdc82bf4a4e911d1ddea9ff581d13a800/28/09a994bc/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@10.5.0/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.16.19/Runtime/ResourceManager/ResourceLocations/IResourceLocation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.16.19/Runtime/Addressables.cs" root0="SKIP_HIGHLIGHTING" />
@@ -35,6 +45,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.16.19/Runtime/AddressablesImpl.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.16.19/Runtime/ResourceManager/ResourceManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Level/LevelStar/LevelStarImpact.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ButtonLiftForce.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Level/LevelStar/LevelStar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5bde9d33a1534315a115721d3abe8cadd800/65/16323ce0/BannerPosition.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ef667cdc82bf4a4e911d1ddea9ff581d13a800/c1/3acade57/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
@@ -127,7 +138,8 @@
       <workItem from="1645448346448" duration="3325000" />
       <workItem from="1645551517501" duration="595000" />
       <workItem from="1646472137804" duration="2311000" />
-      <workItem from="1646645423803" duration="16376000" />
+      <workItem from="1646645423803" duration="17103000" />
+      <workItem from="1646735537828" duration="12390000" />
     </task>
     <servers />
   </component>

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class LaserWithEvent : MonoBehaviour
+public class ButtonLaser : MonoBehaviour
 {
     [SerializeField] private LaserSwitcher _laserSwitcher;
     [SerializeField] private ButtonPressing _buttonPressing;
@@ -28,6 +28,7 @@ public class LaserWithEvent : MonoBehaviour
     private void ToggleLaser(bool isButtonPressed)
     {
         StopAllCoroutines();
+        _laserSwitcher.StopAnimation();
         StartCoroutine(_laserSwitcher.ToggleLaser(isButtonPressed == false));
     }
 }
