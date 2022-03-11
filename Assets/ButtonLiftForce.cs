@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class ButtonLiftForce : MonoBehaviour
+public class ButtonLiftForce : MonoBehaviour, IRestart
 {
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private float _speed = 0.05f;
@@ -18,5 +18,12 @@ public class ButtonLiftForce : MonoBehaviour
     private void Update()
     {
         _rigidbody.velocity += _forceDirection * (_speed * Time.deltaTime);
+    }
+
+    
+    void IRestart.Restart()
+    {
+        enabled = false;
+        _rigidbody.velocity = Vector2.zero;
     }
 }
