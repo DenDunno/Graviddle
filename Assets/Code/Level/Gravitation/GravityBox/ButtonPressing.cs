@@ -5,7 +5,7 @@ using UnityEngine;
 public class ButtonPressing : MonoBehaviour, ISwitcher
 {
     private const float _downExtremePoint = 0.06f;
-    private const float _topExtremePoint = 0.3f;
+    private const float _topExtremePoint = 0.35f;
     private bool _isButtonTurnedOn;
 
     public event Action<bool> Toggled;

@@ -29,12 +29,12 @@ Transform:
   m_GameObject: {fileID: 6281889084598707212}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 2.68, y: 3.94, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 6281889084883049310}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!95 &6281889084598707208
 Animator:
   serializedVersion: 3
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coolDown: 2
-  _waitingTimeOnAwake: 0
+  _startWaitTime: 0
 --- !u!114 &137111917432322706
 MonoBehaviour:
   m_ObjectHideFlags: 0
