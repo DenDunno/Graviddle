@@ -10,7 +10,7 @@ public class PortalDisappearance
     [SerializeField] private AssetReference _portalDisappearFXReference;
     [SerializeField] private float _disappearingSpeed;
     [SerializeField] private MonoBehaviour _context;
-    private readonly Vector3 _startScale = new Vector3(1, 1.5f, 1);
+    private readonly Vector3 _startScale = new Vector3(1.35f, 2, 1.35f);
     private const float _timeBeforeDisappearance = 1.3f;
     private Tween _currentAnimation;
 

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3691770231806689129}
   - component: {fileID: 6681531866308586836}
   - component: {fileID: 6600295679496343041}
+  - component: {fileID: 645324216}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -109,7 +110,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 6
+  m_Constraints: 5
 --- !u!61 &428524606317969257
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -123,7 +124,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.01731588}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -134,7 +135,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3333334, y: 0.48666668}
+  m_Size: {x: 1.3333334, y: 0.45203492}
   m_EdgeRadius: 0
 --- !u!114 &1432043245931733664
 MonoBehaviour:
@@ -185,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buttonRigidbody: {fileID: 3691770231806689125}
-  _buttonForce: {fileID: 0}
+  _buttonForce: {fileID: 645324216}
   _buttonPressing: {fileID: 1432043245931733664}
 --- !u!114 &6600295679496343041
 MonoBehaviour:
@@ -199,6 +200,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ab10d0996b64e6ca755c67687e37165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &645324216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3691770231806689122}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01af76d1cb404d4bbc0159fb9fb2858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 3691770231806689125}
+  _speed: 0.3
 --- !u!1 &3691770232579522153
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,15 +241,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3691770232579522153}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 28.23, y: 19.03, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 3691770231806689123}
   - {fileID: 178582414462652462}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!212 &3691770232579522154
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -311,9 +326,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.7305878, y: -0.23848861}
-      - {x: 0.8429647, y: -0.23848695}
-      - {x: 0.7305878, y: 0.19289234}
+    - - {x: 0.74161536, y: -0.19437851}
+      - {x: 0.84572047, y: -0.19437684}
+      - {x: 0.6901916, y: 0.22251579}
 --- !u!60 &5211957058060593582
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -339,9 +354,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.7425812, y: -0.21256031}
-      - {x: -0.83892554, y: -0.2125968}
-      - {x: -0.74186224, y: 0.22479829}
+    - - {x: -0.75224614, y: -0.18016285}
+      - {x: -0.82514226, y: -0.17951575}
+      - {x: -0.7207289, y: 0.21235022}
 --- !u!114 &3235487102238164495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,7 +399,7 @@ PrefabInstance:
     - target: {fileID: 7094665787252272129, guid: ee0b474f55a89e74c8f69d9d15d0be68,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.235
+      value: 1.235
       objectReference: {fileID: 0}
     - target: {fileID: 7094665787252272129, guid: ee0b474f55a89e74c8f69d9d15d0be68,
         type: 3}
