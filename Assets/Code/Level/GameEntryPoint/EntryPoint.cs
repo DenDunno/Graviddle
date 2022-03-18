@@ -16,7 +16,7 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private LaserTurret[] _laserTurrets;
     [SerializeField] private CharacterMoveDirection _characterMoveDirection;
     private ISubscriber[] _subscribers;
-    private IUpdatable[] _updatables;
+    private IUpdate[] _updatables;
 
     
     private void Awake()
@@ -32,7 +32,7 @@ public class EntryPoint : MonoBehaviour
         var gravityRotations = new GravityRotation(currentGravityData, _interfacesContainer.GetTransformsWithGravityRotation());
         
         _subscribers = new ISubscriber[] {levelRestart, gravity, currentGravityData};
-        _updatables = new IUpdatable[] {gravityRotations, _characterMoveDirection};
+        _updatables = new IUpdate[] {gravityRotations, _characterMoveDirection};
 
         _laserTurrets.ForEach(laserTurret => laserTurret.Init(currentGravityData));
         _transitionsConditions.Init(_characterMoveDirection, restartEvent.CheckIfEventHappened);

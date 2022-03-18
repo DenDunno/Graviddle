@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class TurretFasteningRotation : IUpdatable
+public class TurretFasteningRotation : IUpdate
 {
     private readonly TurretRotationData _data;
     private readonly CurrentGravityData _currentGravityData;
@@ -16,7 +16,7 @@ public class TurretFasteningRotation : IUpdatable
     }
 
 
-    void IUpdatable.Update()
+    void IUpdate.Update()
     {
         Vector2 normal = _currentGravityData.Data.GravityVector;
         float zOffset = _currentGravityData.Data.ZRotation;

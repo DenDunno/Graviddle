@@ -13,7 +13,7 @@ public class Character : MonoBehaviour, IRestart, IAfterRestart
     private IEnumerable<IAfterRestart> _afterRestartComponents;
     private IEnumerable<IRestart> _restartComponents;
     private IEnumerable<ISubscriber> _subscribers;
-    private IEnumerable<IUpdatable> _updatables;
+    private IEnumerable<IFixedUpdate> _updatables;
 
 
     public void Init(TransitionsPresenter transitionsPresenter, CharacterStatesPresenter states)
@@ -34,7 +34,7 @@ public class Character : MonoBehaviour, IRestart, IAfterRestart
         _afterRestartComponents = dependencies.OfType<IAfterRestart>();
         _restartComponents = dependencies.OfType<IRestart>();
         _subscribers = dependencies.OfType<ISubscriber>();
-        _updatables = dependencies.OfType<IUpdatable>();
+        _updatables = dependencies.OfType<IFixedUpdate>();
     }
 
 
@@ -50,9 +50,9 @@ public class Character : MonoBehaviour, IRestart, IAfterRestart
     }
 
 
-    private void Update()
+    private void FixedUpdate()
     {
-        _updatables.UpdateForEach();
+        _updatables.FixedUpdateForEach();
     }
     
 

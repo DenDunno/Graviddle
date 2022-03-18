@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-public class GravityRotation : IUpdatable
+public class GravityRotation : IUpdate
 {
     private readonly CurrentGravityData _currentGravityData;
     private readonly IEnumerable<TransformWithGravityRotation> _transformsToBeRotated;
@@ -16,7 +16,7 @@ public class GravityRotation : IUpdatable
     }
 
 
-    void IUpdatable.Update()
+    void IUpdate.Update()
     {
         Quaternion targetRotation = _currentGravityData.Data.Rotation;
 

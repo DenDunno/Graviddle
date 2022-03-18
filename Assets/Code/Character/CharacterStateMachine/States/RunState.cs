@@ -5,7 +5,7 @@ public class RunState : CharacterState
 {
     private readonly Rigidbody2D _rigidbody;
     private readonly CharacterMoveDirection _characterMoveDirection;
-    private const float _movementSpeed = 4;
+    private const float _movementSpeed = 3.75f;
     
 
     public RunState(Animator character, CharacterMoveDirection characterMoveDirection) : base(character, AnimationsName.Run)

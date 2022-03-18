@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class TurretPosition : IUpdatable
+public class TurretPosition : IUpdate
 {
     private Transform _turret;
     private Transform _anchor;
@@ -13,7 +13,7 @@ public class TurretPosition : IUpdatable
     }
 
 
-    void IUpdatable.Update()
+    void IUpdate.Update()
     {
         _turret.position = _anchor.position;
     }

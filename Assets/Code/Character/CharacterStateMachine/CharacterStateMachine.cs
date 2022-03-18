@@ -1,6 +1,6 @@
 ﻿
 
-public class CharacterStateMachine : IUpdatable
+public class CharacterStateMachine : IFixedUpdate
 {
     private readonly TransitionsPresenter _transitionsPresenter;
     private CharacterState _state;
@@ -13,7 +13,7 @@ public class CharacterStateMachine : IUpdatable
     }
 
 
-    void IUpdatable.Update()
+    void IFixedUpdate.Update()
     {
         _state.Update();
         TryTransit();

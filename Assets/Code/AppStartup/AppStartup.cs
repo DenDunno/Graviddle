@@ -22,6 +22,8 @@ public class AppStartup : MonoBehaviour
 
     private void Initialize()
     {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 160;
         Addressables.InitializeAsync();
         _backgroundMusicSpawner.Init();
         _advertisementStartup.Init();

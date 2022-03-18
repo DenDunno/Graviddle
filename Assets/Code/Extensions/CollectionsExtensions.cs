@@ -49,9 +49,15 @@ public static class CollectionsExtensions
     }
     
     
-    public static void UpdateForEach(this IEnumerable<IUpdatable> updatables)
+    public static void UpdateForEach(this IEnumerable<IUpdate> updatables)
     {
         updatables.ForEach(updatable => updatable.Update());
+    }
+    
+    
+    public static void FixedUpdateForEach(this IEnumerable<IFixedUpdate> fixedUpdates)
+    {
+        fixedUpdates.ForEach(updatable => updatable.Update());
     }
     
     

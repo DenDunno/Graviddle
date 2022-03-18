@@ -3,7 +3,7 @@ using UnityEngine;
 
 
 [Serializable]
-public class CharacterMoveDirection : IUpdatable
+public class CharacterMoveDirection : IUpdate
 {
     [SerializeField] private InputButton[] _inputButtons;
     [SerializeField] private CharacterSpriteFlipping _characterSpriteFlipping;
@@ -18,7 +18,7 @@ public class CharacterMoveDirection : IUpdatable
     }
     
     
-    void IUpdatable.Update()
+    void IUpdate.Update()
     {
         var state = MovementState.Stop;
         
