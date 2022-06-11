@@ -15,7 +15,7 @@ public class CharacterStatesPresenter
 
     public CharacterStatesPresenter(Animator character, CharacterMoveDirection characterMoveDirection)
     {
-        FallState = new FallState(character);
+        FallState = new FallState(character, characterMoveDirection);
         DieState = new DieState(character);
         WinState = new WinState(character);
         IdleState = new IdleState(character);
