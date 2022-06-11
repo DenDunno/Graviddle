@@ -30,10 +30,12 @@ public class EntryPoint : MonoBehaviour
         var currentGravityData = new CurrentGravityData(_swipeHandler);
         var levelRestart = new LevelRestart(restartComponents, restartEvent.Invoke, states.DieState);
         var gravityRotations = new GravityRotation(currentGravityData, _interfacesContainer.GetTransformsWithGravityRotation());
+        var analytics = new Analytics(states.WinState);
         
-        _subscribers = new ISubscriber[] {levelRestart, gravity, currentGravityData};
+        _subscribers = new ISubscriber[] {levelRestart, gravity, currentGravityData, analytics};
         _updatables = new IUpdate[] {gravityRotations, _characterMoveDirection};
 
+        analytics.Init();
         _laserTurrets.ForEach(laserTurret => laserTurret.Init(currentGravityData));
         _transitionsConditions.Init(_characterMoveDirection, restartEvent.CheckIfEventHappened);
         _characterMoveDirection.Init(currentGravityData);

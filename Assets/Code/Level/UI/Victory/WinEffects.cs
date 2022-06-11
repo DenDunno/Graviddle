@@ -31,7 +31,7 @@ public class WinEffects
             await ActivateStar(starIndex);
         }
 
-        if (collectedStars == _reward.MaxStars)
+        if (_reward.IsMaxStars)
         {
             _confetti.gameObject.SetActive(true);
         }
