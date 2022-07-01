@@ -18,7 +18,8 @@ public class FallState : CharacterState
 
     
     protected override void OnEnterState()
-    {
+    { 
+        _rigidbody.velocity = Vector2.zero;;
         CharacterFalling?.Invoke();
     }
     
