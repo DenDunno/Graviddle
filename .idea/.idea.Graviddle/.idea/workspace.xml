@@ -3,44 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="236f7ca0-e3d5-42cf-8bd1-4f65d9112fc7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Character/CharacterStateMachine/CharacterStatesPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Character/CharacterStateMachine/CharacterStatesPresenter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Character/CharacterStateMachine/States/FallState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Character/CharacterStateMachine/States/FallState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Lab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Lab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/bottom_left_edge.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/bottom_left_edge.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/bottom_right_edge.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/bottom_right_edge.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/bottom_tile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/bottom_tile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/color.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/color.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/inner_corner_bottom_left.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/inner_corner_bottom_left.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/inner_corner_bottom_right.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/inner_corner_bottom_right.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/inner_corner_top_left.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/inner_corner_top_left.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/inner_corner_top_right.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/inner_corner_top_right.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/left_edge_repeating.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/left_edge_repeating.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/left_tile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/left_tile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/outer_corner_bottom_left.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/outer_corner_bottom_left.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/outer_corner_bottom_right.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/outer_corner_bottom_right.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/outer_corner_top_left.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/outer_corner_top_left.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/outer_corner_top_right.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/outer_corner_top_right.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/platform_inner_repeating.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/platform_inner_repeating.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/platform_left_edge.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/platform_left_edge.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/platform_right_edge.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/platform_right_edge.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/platform_single.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/platform_single.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/right_edge_repeating.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/right_edge_repeating.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/right_tile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/right_tile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/shallow_slope_left_01.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/shallow_slope_left_01.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/shallow_slope_left_02.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/shallow_slope_left_02.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/shallow_slope_left_03.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/shallow_slope_left_03.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/shallow_slope_right_01.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/shallow_slope_right_01.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/shallow_slope_right_02.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/shallow_slope_right_02.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/shallow_slope_right_03.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/shallow_slope_right_03.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/steep_slope_left_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/steep_slope_left_1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/steep_slope_left_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/steep_slope_left_2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/steep_slope_right_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/steep_slope_right_1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/steep_slope_right_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/steep_slope_right_2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/top_left_edge.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/top_left_edge.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/top_right_edge.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/top_right_edge.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/top_tile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Tiles/top_tile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Buffer.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial icons.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial icons.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Character/Physics/CharacterRotationImpulse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Character/Physics/CharacterRotationImpulse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Animations/Character/Character.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Animations/Character/Character.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial swipe.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial swipe.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,10 +83,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="16500">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="16500" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
