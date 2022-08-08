@@ -20,6 +20,7 @@ public class CharacterRotationImpulse : ISubscriber
     {
         _swipeHandler.GravityChanged += TryImpulseCharacter;
     }
+    
 
     void ISubscriber.Unsubscribe()
     {

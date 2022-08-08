@@ -11,7 +11,7 @@ public class FallState : CharacterState
     {
     }
 
-
+    
     protected override void OnEnterState()
     {
         CharacterFalling?.Invoke();
