@@ -6,13 +6,12 @@ using UnityEngine;
 [Serializable]
 public class CharacterToPortalPulling
 {
-    [SerializeField] private Transform _finishPortal;
+    [SerializeField] private Transform _pullingPoint;
     [SerializeField] private Character _character;
     private Vector2 _velocity;
     private const float _duration = 3f;
     private const float _smoothingTime = 0.5f;
-    private const float _offset = 0.6f;
-
+    private const float _rotationSpeed = 2f;
 
     public IEnumerator PullCharacterToPortal()
     {
@@ -21,8 +20,8 @@ public class CharacterToPortalPulling
         
         while (clock + _duration > Time.time)
         {
-            Vector2 targetPosition = _finishPortal.position - _finishPortal.transform.up * _offset;
-            character.position = Vector2.SmoothDamp(character.position, targetPosition, ref _velocity, _smoothingTime);
+            character.position = Vector2.SmoothDamp(character.position, _pullingPoint.position, ref _velocity, _smoothingTime);
+            character.rotation = Quaternion.Lerp(character.rotation, _pullingPoint.rotation, _rotationSpeed * Time.deltaTime);
 
             yield return null;
         }

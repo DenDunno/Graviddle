@@ -117,7 +117,7 @@ Material:
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Shiny: 1
+    - _Shiny: -0.8207934
     - _ShinyFactor: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0

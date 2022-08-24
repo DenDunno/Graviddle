@@ -2,8 +2,7 @@
 
 
 public class FinishPortal : MonoBehaviour
-{
-    [SerializeField] private PortalDisappearance _portalDisappearance;
+{    
     [SerializeField] private CharacterToPortalPulling _pullingAnimation;
     private WinState _characterWinState;
 
@@ -29,6 +28,5 @@ public class FinishPortal : MonoBehaviour
     private void OnCharacterWon()
     {
         StartCoroutine(_pullingAnimation.PullCharacterToPortal());
-        _portalDisappearance.Disappear();
     }
 }
