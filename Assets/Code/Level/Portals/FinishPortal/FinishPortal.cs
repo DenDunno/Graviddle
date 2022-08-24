@@ -15,18 +15,12 @@ public class FinishPortal : MonoBehaviour
 
     private void OnEnable()
     {
-        _characterWinState.CharacterWon += OnCharacterWon;
+        _characterWinState.CharacterWon += _pullingAnimation.Execute;
     }
 
 
     private void OnDisable()
     {
-        _characterWinState.CharacterWon -= OnCharacterWon;
-    }
-    
-
-    private void OnCharacterWon()
-    {
-        StartCoroutine(_pullingAnimation.PullCharacterToPortal());
+        _characterWinState.CharacterWon -= _pullingAnimation.Execute;
     }
 }

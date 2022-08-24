@@ -59,10 +59,4 @@ public static class CollectionsExtensions
     {
         fixedUpdates.ForEach(updatable => updatable.Update());
     }
-    
-    
-    public static void ResetTransformForEach(this IEnumerable<RestartableTransform> restartTransforms)
-    {
-        restartTransforms.ForEach(restartTransform => restartTransform.Restart());
-    }
 }

@@ -90,7 +90,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.39, y: 6.151828}
+  m_Size: {x: 0.5, y: 6.151828}
   m_EdgeRadius: 0
 --- !u!120 &2802246902599032774
 LineRenderer:
@@ -131,7 +131,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Positions:
   - {x: 38.64106, y: 29.914038, z: 0}
   - {x: 48.266857, y: 24.97276, z: 0}
@@ -15194,7 +15194,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199088793711686380, guid: dc10d8de8491f5643bc2f3dff05b8575,
         type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199088793711686380, guid: dc10d8de8491f5643bc2f3dff05b8575,
+        type: 3}
       propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199327645484659632, guid: dc10d8de8491f5643bc2f3dff05b8575,
+        type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 199327645484659632, guid: dc10d8de8491f5643bc2f3dff05b8575,
@@ -15204,7 +15214,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199437097891568598, guid: dc10d8de8491f5643bc2f3dff05b8575,
         type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199437097891568598, guid: dc10d8de8491f5643bc2f3dff05b8575,
+        type: 3}
       propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199582337989127298, guid: dc10d8de8491f5643bc2f3dff05b8575,
+        type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 199582337989127298, guid: dc10d8de8491f5643bc2f3dff05b8575,

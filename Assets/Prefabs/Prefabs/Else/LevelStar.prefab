@@ -198,9 +198,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8550718928693556226}
-  - component: {fileID: 8325999786893882081}
-  - component: {fileID: 8550718928693556227}
   - component: {fileID: 8550718928693556224}
+  - component: {fileID: 831309877186732299}
+  - component: {fileID: 8550718928693556227}
   - component: {fileID: 5905322518152996842}
   m_Layer: 0
   m_Name: LevelStar
@@ -225,31 +225,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8325999786893882081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8550718928693556249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2bc5e5e34a4bf5864867dc078a7fa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8550718928693556227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8550718928693556249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 107510787b9cfdb439d79c92bb12c4ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _levelStarImpact: {fileID: 0}
 --- !u!58 &8550718928693556224
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -266,6 +241,31 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.36571428
+--- !u!114 &831309877186732299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8550718928693556249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5744c1f06be22ae4aaab20f52121692d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8550718928693556227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8550718928693556249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107510787b9cfdb439d79c92bb12c4ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelStarImpact: {fileID: 0}
 --- !u!82 &5905322518152996842
 AudioSource:
   m_ObjectHideFlags: 0

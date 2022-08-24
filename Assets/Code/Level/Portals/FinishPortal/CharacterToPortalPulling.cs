@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 
@@ -8,22 +8,14 @@ public class CharacterToPortalPulling
 {
     [SerializeField] private Transform _pullingPoint;
     [SerializeField] private Character _character;
-    private Vector2 _velocity;
-    private const float _duration = 3f;
-    private const float _smoothingTime = 0.5f;
-    private const float _rotationSpeed = 2f;
+    private const float _animationDuration = 1.25f;
 
-    public IEnumerator PullCharacterToPortal()
+    public void Execute()
     {
-        float clock = Time.time;
-        Transform character = _character.transform;
+        var gravityRotation = _character.GetComponent<GravityRotation>();
+        gravityRotation.enabled = false;
         
-        while (clock + _duration > Time.time)
-        {
-            character.position = Vector2.SmoothDamp(character.position, _pullingPoint.position, ref _velocity, _smoothingTime);
-            character.rotation = Quaternion.Lerp(character.rotation, _pullingPoint.rotation, _rotationSpeed * Time.deltaTime);
-
-            yield return null;
-        }
+        _character.transform.DOMove(_pullingPoint.transform.position, _animationDuration);
+        _character.transform.DORotate(_pullingPoint.transform.eulerAngles, _animationDuration);
     }
 }

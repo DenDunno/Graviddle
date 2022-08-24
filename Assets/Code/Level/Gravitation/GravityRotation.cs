@@ -1,29 +1,18 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
-public class GravityRotation : IUpdate
+public class GravityRotation : MonoBehaviour
 {
-    private readonly CurrentGravityData _currentGravityData;
-    private readonly IEnumerable<TransformWithGravityRotation> _transformsToBeRotated;
+    private CurrentGravityData _currentGravityData;
     private const float _rotationSpeed = 3f;
 
-
-    public GravityRotation(CurrentGravityData currentGravityData, IEnumerable<TransformWithGravityRotation> transformsToBeRotated)
+    public void Init(CurrentGravityData currentGravityData)
     {
         _currentGravityData = currentGravityData;
-        _transformsToBeRotated = transformsToBeRotated;
     }
 
-
-    void IUpdate.Update()
+    private void Update()
     {
-        Quaternion targetRotation = _currentGravityData.Data.Rotation;
-
-        foreach (TransformWithGravityRotation transformWithGravityRotation in _transformsToBeRotated)
-        {
-            Transform transform = transformWithGravityRotation.transform;
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
-        }
+        transform.rotation = Quaternion.Lerp(transform.rotation, _currentGravityData.Data.Rotation, _rotationSpeed * Time.deltaTime);
     }
 }

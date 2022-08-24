@@ -1,27 +1,25 @@
 ﻿using UnityEngine;
 
 
-public class RestartableTransform : MonoBehaviour
+public class RestartableTransform : MonoBehaviour, IRestart
 {
-    private Transform _objectToBeRestarted;
-    private Vector3 _position;
-    private Quaternion _rotation;
+    private Vector3 _startPosition;
+    private Quaternion _startRotation;
     private Transform _parent;
 
 
     private void Start()
     {
-        _objectToBeRestarted = transform;
-        _position = transform.position;
-        _rotation = transform.rotation;
+        _startPosition = transform.position;
+        _startRotation = transform.rotation;
         _parent = transform.parent;
     }
 
 
-    public void Restart()
+    void IRestart.Restart()
     {
-        _objectToBeRestarted.position = _position;
-        _objectToBeRestarted.rotation = _rotation;
-        _objectToBeRestarted.SetParent(_parent);
+        transform.position = _startPosition;
+        transform.rotation = _startRotation;
+        transform.SetParent(_parent);
     }
 }
