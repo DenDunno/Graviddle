@@ -3,27 +3,299 @@
   <component name="ChangeListManager">
     <list default="true" id="236f7ca0-e3d5-42cf-8bd1-4f65d9112fc7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/AppStartup/AppStartup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/AppStartup/AppStartup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/FPSCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/LeFPSCounter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/FPSCounter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/LeFPSCounter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/Switchers/BlurSwitcher.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/Switchers/BlurSwitcher.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/Switchers/UIStatesSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/Switchers/UIStatesSwitcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPSCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/FPSCounter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FPSCounter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/FPSCounter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/CHANGELOG.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/CHANGELOG.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Animations.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Animations/AC.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Animations/AC.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Animations/close.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Animations/close.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Animations/open.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Animations/open.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Animations/start.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Animations/start.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Configs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Configs/Demo UI Cam Blur Config.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Configs/Demo UI Cam Blur Config.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Configs/Demo World Cam Blur Config.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Configs/Demo World Cam Blur Config.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Configs/Fullscreen FX Blur Config.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Configs/Fullscreen FX Blur Config.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Configs/Minimal Scene Blur Config.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Configs/Minimal Scene Blur Config.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/DroidSansMono.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/DroidSansMono.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/FONT LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/FONT LICENSE.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-Black.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-BlackItalic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-Bold.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-BoldItalic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-Italic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-Light.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-LightItalic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-Medium.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-MediumItalic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-Regular.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-Thin.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-ThinItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Fonts/Roboto-ThinItalic.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Materials/Blue.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Materials/Blue.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Materials/Floor.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Materials/Floor.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Materials/Green.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Materials/Green.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Materials/Red.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Materials/Red.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Materials/Sample Translucent Image Material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Materials/Sample Translucent Image Material.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Materials/TI_Blood.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Materials/TI_Blood.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Materials/TI_Bottom Sheet.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Materials/TI_Bottom Sheet.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Materials/TI_Gray.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Materials/TI_Gray.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Materials/TI_Steam.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Materials/TI_Steam.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Prefabs/Size Slider.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Prefabs/Size Slider.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/AutoMoveAndRotate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/AutoMoveAndRotate.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/ChangeBlurConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/ChangeBlurConfig.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/ColorSchemeManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/ColorSchemeManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/ControlCenter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/ControlCenter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/LeFPSCounter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/LeFPSCounter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/LeTai.TranslucentImage.Demo.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/LeTai.TranslucentImage.Demo.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/PlatformPreset.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/PlatformPreset.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/SetText.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/SetText.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/SimpleCameraController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/SimpleCameraController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/SliderChangeOnStart.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/SliderChangeOnStart.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/ToggleSecondBlurLayer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/ToggleSecondBlurLayer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/UnrestrictFramerate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/UnrestrictFramerate.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/WorldSpaceSetup.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Scripts/WorldSpaceSetup.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Shader/MobileVertexLitColor.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Shader/MobileVertexLitColor.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Example Photo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Example Photo/PHOTO LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Example Photo/PHOTO LICENSE.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Example Photo/coffee.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Example Photo/coffee.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Example Photo/mountain.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Example Photo/mountain.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Example Photo/rose.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Example Photo/rose.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Knob-Shadow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Knob-Shadow.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Knob.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Knob.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Knob.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Knob.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Rounded Rect Left small.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Rounded Rect Left small.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Rounded Rect Left small.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Rounded Rect Left small.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Rounded Rect small.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Rounded Rect small.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Rounded Rect small.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Rounded Rect small.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Rounded Rect.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Rounded Rect.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Rounded Shadow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Rounded Shadow.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Shadow.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Shadow.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Steam.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Steam.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Tai Icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/Tai Icon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/settings.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/settings.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/vignette.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/Textures/vignette.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Configs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Configs/Demo Forward Renderer.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Configs/Demo Forward Renderer.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Configs/Demo UniversalRenderPipelineAsset.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Configs/Demo UniversalRenderPipelineAsset.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Configs/Overlay Blur Config.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Configs/Overlay Blur Config.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Configs/Particle Blur Config.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Configs/Particle Blur Config.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Material.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Material/Overlay Translucent Image.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Material/Overlay Translucent Image.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Material/Particle UI.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Material/Particle UI.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Material/Particle.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Material/Particle.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Prefab/Control.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Prefab/Control.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Prefab/FPS.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Prefab/FPS.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Prefab/LightToggle.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/Prefab/LightToggle.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/UniversalRP Demo UI Blur.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/UniversalRP Demo UI Blur.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/UniversalRP Demo.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/UniversalRP/UniversalRP Demo.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/_Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/_Scenes/Demo.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/_Scenes/Demo.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/_Scenes/Fullscreen FX.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/_Scenes/Fullscreen FX.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/_Scenes/Minimal.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/_Scenes/Minimal.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/_Scenes/World Space UI.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Demo/_Scenes/World Space UI.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/LeTai.TranslucentImage.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/LeTai.TranslucentImage.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Material.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Material/Default-Translucent.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Offline Documentation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Offline Documentation.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Online Documentation (recommended).txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Online Documentation (recommended).txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Resources/EfficientBlur.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Resources/EfficientBlur.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Resources/FillCrop.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Resources/FillCrop.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Resources/TranslucentImage.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Resources/TranslucentImage.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Resources/UniversalRP.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Resources/UniversalRP/EfficientBlur_UniversalRP.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Resources/UniversalRP/EfficientBlur_UniversalRP.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Resources/UniversalRP/FillCrop_UniversalRP.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Resources/UniversalRP/FillCrop_UniversalRP.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Resources/UniversalRP/lib.hlsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Resources/UniversalRP/lib.hlsl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Resources/lib.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Resources/lib.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/BlurAlgorithm.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/BlurAlgorithm/BlurConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/BlurAlgorithm/BlurConfig.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/BlurAlgorithm/IBlurAlgorithm.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/BlurAlgorithm/IBlurAlgorithm.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/BlurAlgorithm/ScalableBlur.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/BlurAlgorithm/ScalableBlur.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/BlurAlgorithm/ScalableBlurConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/BlurAlgorithm/ScalableBlurConfig.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/LeTai.TranslucentImage.Editor.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/LeTai.TranslucentImage.Editor.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/MenuIntegration.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/MenuIntegration.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/Resources/BlurConfig Icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/Resources/BlurConfig Icon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/Resources/BlurSource Icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/Resources/BlurSource Icon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/Resources/TranslucentImage Icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/Resources/TranslucentImage Icon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/ScalableBlurConfigEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/ScalableBlurConfigEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/ScenceGizmoAutoDisable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/ScenceGizmoAutoDisable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/TranslucentImageEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/TranslucentImageEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/TranslucentImageSourceEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/TranslucentImageSourceEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/UnityShaderBugHack.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Editor/UnityShaderBugHack.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/TranslucentImage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/TranslucentImage.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/TranslucentImageEditorEnhancement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/TranslucentImageEditorEnhancement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/TranslucentImageMeshEffect.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/TranslucentImageMeshEffect.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/TranslucentImageSource.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/TranslucentImageSource.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP/BlurAlgorithm.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP/BlurAlgorithm/IBlurAlgorithm.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP/BlurAlgorithm/IBlurAlgorithm.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP/BlurAlgorithm/ScalableBlur.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP/BlurAlgorithm/ScalableBlur.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP/LeTai.TranslucentImage.UniversalRP.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP/LeTai.TranslucentImage.UniversalRP.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP/Render Pass.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP/Render Pass/TranslucentImageBlurRenderPass.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP/Render Pass/TranslucentImageBlurRenderPass.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP/Render Pass/TranslucentImageBlurSource.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP/Render Pass/TranslucentImageBlurSource.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP/Utilities.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP/Utilities/Extensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP/Utilities/Extensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP/Utilities/ShaderId.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP/Utilities/ShaderId.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP/Utilities/Utilities.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/UniversalRP/Utilities/Utilities.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Utilities.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Utilities/Extensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Utilities/Extensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Utilities/ResizableScreenRect.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Utilities/ResizableScreenRect.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Utilities/ShaderId.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/Script/Utilities/ShaderId.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/UniversalRP README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Le Tai's Asset/TranslucentImage/UniversalRP README.txt.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Configs/AddressableAssetsData/Android/addressables_content_state.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Configs/AddressableAssetsData/Android/addressables_content_state.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Materials/LevelStarShiny.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Materials/LevelStarShiny.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Lab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pallete/Lab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/GravityBox.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/GravityBox.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Portals/FinishPortal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Portals/FinishPortal.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Portals/StartPortal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Portals/StartPortal.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Configs/AddressableAssetsData/AssetGroups/Default Local Group.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Configs/AddressableAssetsData/AssetGroups/Default Local Group.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Configs/Post processing/GlobalVolume.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Configs/Post processing/GlobalVolume.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Configs/Tutorial buttons Main Camera Blur Config.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Configs/Tutorial buttons Main Camera Blur Config.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Configs/UniversalRenderPipelineAsset_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Configs/UniversalRenderPipelineAsset_Renderer.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/DI/EntryPoint.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/DI/EntryPoint.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/GlobalVolume.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/GlobalVolume.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/LevelStar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/LevelStar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/Main Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/Main Camera.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/WoodPointer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/WoodPointer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Obstacles/Spikes.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Obstacles/Spikes.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/UI/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/UI/UI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sprites/LabTilemap/block.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sprites/LabTilemap/block.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/10.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/10.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/11.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/11.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/12.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/12.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu/LevelСhoice.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu/LevelСhoice.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu/Menu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial buttons.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial buttons.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/DeviceSimulatorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DeviceSimulatorSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial swipe.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial swipe.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +435,7 @@
       <workItem from="1654798811070" duration="12866000" />
       <workItem from="1660473041605" duration="8773000" />
       <workItem from="1660553619349" duration="2917000" />
-      <workItem from="1661336923760" duration="14462000" />
+      <workItem from="1661336923760" duration="17578000" />
     </task>
     <servers />
   </component>

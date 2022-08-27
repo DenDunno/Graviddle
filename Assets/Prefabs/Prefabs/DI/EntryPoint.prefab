@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2945279117330507583
 Transform:
@@ -60,10 +60,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  _restartableTransforms:
-  - {fileID: 0}
-  - {fileID: 0}
-  _gravityRotations: []
 --- !u!114 &7458211516614138431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,10 +87,11 @@ MonoBehaviour:
   _uiStatesSwitcher: {fileID: 0}
   _finishPortal: {fileID: 0}
   _levelZoomCalculator: {fileID: 0}
-  _laserTurrets: []
   _characterMoveDirection:
     _inputButtons:
     - {fileID: 0}
     - {fileID: 0}
     _characterSpriteFlipping:
       _spriteRenderer: {fileID: 0}
+  _laserTurrets: []
+  _gravityRotations: []

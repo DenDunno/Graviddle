@@ -27,20 +27,18 @@ MonoBehaviour:
     m_Address: TransitToLevel
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_MainAsset: {fileID: 4448375415952588481, guid: afbfc7b0fb1cc1b4886cb4438fbc94b0,
+      type: 3}
+    m_TargetAsset: {fileID: 4448375415952588481, guid: afbfc7b0fb1cc1b4886cb4438fbc94b0,
+      type: 3}
   - m_GUID: a1c9bd019de36b3488b4b97851461d7b
     m_Address: TransitToMenu
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 28ab0c71528fb1c41a6d65c8de9073a3
-    m_Address: PortalDisappearFX
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_MainAsset: {fileID: 4448375415952588481, guid: a1c9bd019de36b3488b4b97851461d7b,
+      type: 3}
+    m_TargetAsset: {fileID: 4448375415952588481, guid: a1c9bd019de36b3488b4b97851461d7b,
+      type: 3}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0ae2ffd23cb29a54a884d305c1a0ebc6, type: 2}
   m_SchemaSet:
