@@ -11,6 +11,10 @@ namespace GraviddleSocketClient
 
         public void SendDataForAnalytics(DataForAnalytics dataForAnalytics)
         {
+            #if  UNITY_EDITOR
+            return;
+            #endif
+            
             try
             {
                 string serializedData = JsonConvert.SerializeObject(dataForAnalytics);

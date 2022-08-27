@@ -13,8 +13,9 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private UIStatesSwitcher _uiStatesSwitcher;
     [SerializeField] private FinishPortal _finishPortal;
     [SerializeField] private LevelZoomCalculator _levelZoomCalculator;
-    [SerializeField] private LaserTurret[] _laserTurrets;
     [SerializeField] private CharacterMoveDirection _characterMoveDirection;
+    [SerializeField] private LaserTurret[] _laserTurrets;
+    [SerializeField] private GravityRotation[] _gravityRotations;
     private ISubscriber[] _subscribers;
     private IUpdate[] _updatables;
 
@@ -29,13 +30,13 @@ public class EntryPoint : MonoBehaviour
         var gravity = new Gravity(_swipeHandler);
         var currentGravityData = new CurrentGravityData(_swipeHandler);
         var levelRestart = new LevelRestart(restartComponents, restartEvent.Invoke, states.DieState);
-        var gravityRotations = new GravityRotation(currentGravityData, _interfacesContainer.GetTransformsWithGravityRotation());
         var analytics = new Analytics(states.WinState);
         
         _subscribers = new ISubscriber[] {levelRestart, gravity, currentGravityData, analytics};
-        _updatables = new IUpdate[] {gravityRotations, _characterMoveDirection};
+        _updatables = new IUpdate[] {_characterMoveDirection};
 
         analytics.Init();
+        _gravityRotations.ForEach(gravityRotation => gravityRotation.Init(currentGravityData));
         _laserTurrets.ForEach(laserTurret => laserTurret.Init(currentGravityData));
         _transitionsConditions.Init(_characterMoveDirection, restartEvent.CheckIfEventHappened);
         _characterMoveDirection.Init(currentGravityData);

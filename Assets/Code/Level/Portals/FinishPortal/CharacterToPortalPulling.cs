@@ -1,30 +1,21 @@
 ﻿using System;
-using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 
 [Serializable]
 public class CharacterToPortalPulling
 {
-    [SerializeField] private Transform _finishPortal;
+    [SerializeField] private Transform _pullingPoint;
     [SerializeField] private Character _character;
-    private Vector2 _velocity;
-    private const float _duration = 3f;
-    private const float _smoothingTime = 0.5f;
-    private const float _offset = 0.6f;
+    private const float _animationDuration = 1.25f;
 
-
-    public IEnumerator PullCharacterToPortal()
+    public void Execute()
     {
-        float clock = Time.time;
-        Transform character = _character.transform;
+        var gravityRotation = _character.GetComponent<GravityRotation>();
+        gravityRotation.enabled = false;
         
-        while (clock + _duration > Time.time)
-        {
-            Vector2 targetPosition = _finishPortal.position - _finishPortal.transform.up * _offset;
-            character.position = Vector2.SmoothDamp(character.position, targetPosition, ref _velocity, _smoothingTime);
-
-            yield return null;
-        }
+        _character.transform.DOMove(_pullingPoint.transform.position, _animationDuration);
+        _character.transform.DORotate(_pullingPoint.transform.eulerAngles, _animationDuration);
     }
 }

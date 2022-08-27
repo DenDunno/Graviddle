@@ -45,7 +45,6 @@ public class LevelRestart : ISubscriber
 
     private async UniTask RestartObjects()
     {
-        _restartableComponents.RestartTransforms.ResetTransformForEach();
         _restartableComponents.RestartComponents.RestartForEach();
         _restartEvent();
 
