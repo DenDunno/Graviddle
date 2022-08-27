@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7312556478064159863}
   - component: {fileID: 7312556478064159860}
-  - component: {fileID: 7312556478064159861}
+  - component: {fileID: 3839136550638641913}
   m_Layer: 10
   m_Name: Heart
   m_TagString: Untagged
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7312556478064159861
+--- !u!114 &3839136550638641913
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7312556478064159856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2bc5e5e34a4bf5864867dc078a7fa3, type: 3}
+  m_Script: {fileID: 11500000, guid: 5744c1f06be22ae4aaab20f52121692d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7312556479469279463

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 namespace LeTai.Asset.TranslucentImage.Demo
 {
     [RequireComponent(typeof(Text))]
-    public class FPSCounter : MonoBehaviour
+    public class LeFPSCounter : MonoBehaviour
     {
         const float fpsMeasurePeriod = 0.5f;
         int         m_FpsAccumulator;
