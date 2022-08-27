@@ -16,19 +16,13 @@ public class UIStatesSwitcher : MonoBehaviour, IAfterRestart
 
     private void OnEnable()
     {
-        _characterDieState.CharacterDied += OnCharacterDied;
+        _characterDieState.CharacterDied += DeactivateStates;
     }
 
     
     private void OnDisable()
     {
-        _characterDieState.CharacterDied -= OnCharacterDied;
-    }
-
-    
-    private void OnCharacterDied()
-    {
-        DeactivateStates();
+        _characterDieState.CharacterDied -= DeactivateStates;
     }
 
 
