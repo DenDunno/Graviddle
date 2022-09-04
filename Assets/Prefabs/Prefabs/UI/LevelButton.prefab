@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141109fb25f0083469e71ce8cb3e75c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 79a7f025b75c7594899d5f81c1d2e620, type: 2}
   m_Color: {r: 0.8773585, g: 0.62892574, b: 0.019864695, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
   m_DrawShape: 3
   m_ImageType: 0
-  m_MaterialMode: 0
+  m_MaterialMode: 1
   m_StrokeWidth: 0
   m_OutlineWidth: 0
   m_OutlineColor: {r: 0, g: 0, b: 0, a: 0}
@@ -310,19 +310,19 @@ MonoBehaviour:
       serializedVersion: 2
       key0: {r: 1, g: 0.38431376, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 1, g: 1, b: 0, a: 0}
-      key3: {r: 0, g: 1, b: 0, a: 0}
-      key4: {r: 0, g: 1, b: 1, a: 0}
-      key5: {r: 0, g: 0, b: 1, a: 0}
-      key6: {r: 1, g: 0, b: 1, a: 0}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
       ctime1: 65535
-      ctime2: 27525
-      ctime3: 36700
-      ctime4: 45875
-      ctime5: 55049
-      ctime6: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
       ctime7: 0
       atime0: 0
       atime1: 65535
@@ -336,10 +336,10 @@ MonoBehaviour:
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     m_CornerGradientColors:
-    - {r: 0.9433962, g: 0.493058, b: 0.493058, a: 0}
-    - {r: 0.7924528, g: 0, b: 0, a: 0}
-    - {r: 0.6320754, g: 0.33034885, b: 0.33034885, a: 0}
-    - {r: 0.3301887, g: 0.0012459705, b: 0.0012459705, a: 0}
+    - {r: 1, g: 0, b: 0, a: 1}
+    - {r: 0, g: 1, b: 0, a: 1}
+    - {r: 0, g: 0, b: 1, a: 1}
+    - {r: 0, g: 0, b: 0, a: 1}
     m_Rotation: 130.58
 --- !u!1 &4203454932326819636
 GameObject:
@@ -871,7 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141109fb25f0083469e71ce8cb3e75c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: e58d4127467b8d74eb1c48fc984c4d78, type: 2}
   m_Color: {r: 1, g: 0.47641194, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -891,7 +891,7 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
   m_DrawShape: 3
   m_ImageType: 0
-  m_MaterialMode: 0
+  m_MaterialMode: 1
   m_StrokeWidth: 4
   m_OutlineWidth: 0
   m_OutlineColor: {r: 0, g: 0, b: 0, a: 0}
@@ -959,10 +959,10 @@ MonoBehaviour:
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     m_CornerGradientColors:
-    - {r: 0, g: 0, b: 0, a: 0}
-    - {r: 0, g: 0, b: 0, a: 0}
-    - {r: 0, g: 0, b: 0, a: 0}
-    - {r: 0, g: 0, b: 0, a: 0}
+    - {r: 1, g: 0, b: 0, a: 1}
+    - {r: 0, g: 1, b: 0, a: 1}
+    - {r: 0, g: 0, b: 1, a: 1}
+    - {r: 0, g: 0, b: 0, a: 1}
     m_Rotation: 0
 --- !u!1 &5888818668370362869
 GameObject:
@@ -1421,7 +1421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141109fb25f0083469e71ce8cb3e75c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 895feff09ac95b549b8f612d643f9d16, type: 2}
   m_Color: {r: 1, g: 0.7107784, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1441,7 +1441,7 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
   m_DrawShape: 3
   m_ImageType: 0
-  m_MaterialMode: 0
+  m_MaterialMode: 1
   m_StrokeWidth: 0
   m_OutlineWidth: 0
   m_OutlineColor: {r: 0, g: 0, b: 0, a: 0}
@@ -1483,19 +1483,19 @@ MonoBehaviour:
       serializedVersion: 2
       key0: {r: 1, g: 0.39230394, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 1, g: 1, b: 0, a: 0}
-      key3: {r: 0, g: 1, b: 0, a: 0}
-      key4: {r: 0, g: 1, b: 1, a: 0}
-      key5: {r: 0, g: 0, b: 1, a: 0}
-      key6: {r: 1, g: 0, b: 1, a: 0}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
       ctime1: 65535
-      ctime2: 27525
-      ctime3: 36700
-      ctime4: 45875
-      ctime5: 55049
-      ctime6: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
       ctime7: 0
       atime0: 0
       atime1: 65535
@@ -1509,10 +1509,10 @@ MonoBehaviour:
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     m_CornerGradientColors:
-    - {r: 0.9433962, g: 0.493058, b: 0.493058, a: 0}
-    - {r: 0.7924528, g: 0, b: 0, a: 0}
-    - {r: 0.6320754, g: 0.33034885, b: 0.33034885, a: 0}
-    - {r: 0.3301887, g: 0.0012459705, b: 0.0012459705, a: 0}
+    - {r: 1, g: 0, b: 0, a: 1}
+    - {r: 0, g: 1, b: 0, a: 1}
+    - {r: 0, g: 0, b: 1, a: 1}
+    - {r: 0, g: 0, b: 0, a: 1}
     m_Rotation: 130.58
 --- !u!114 &135421775131977850
 MonoBehaviour:
@@ -1644,7 +1644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141109fb25f0083469e71ce8cb3e75c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: e58d4127467b8d74eb1c48fc984c4d78, type: 2}
   m_Color: {r: 0.9150943, g: 0.43164825, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1664,7 +1664,7 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
   m_DrawShape: 3
   m_ImageType: 0
-  m_MaterialMode: 0
+  m_MaterialMode: 1
   m_StrokeWidth: 4
   m_OutlineWidth: 0
   m_OutlineColor: {r: 0, g: 0, b: 0, a: 0}
@@ -1732,8 +1732,8 @@ MonoBehaviour:
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     m_CornerGradientColors:
-    - {r: 0, g: 0, b: 0, a: 0}
-    - {r: 0, g: 0, b: 0, a: 0}
-    - {r: 0, g: 0, b: 0, a: 0}
-    - {r: 0, g: 0, b: 0, a: 0}
+    - {r: 1, g: 0, b: 0, a: 1}
+    - {r: 0, g: 1, b: 0, a: 1}
+    - {r: 0, g: 0, b: 1, a: 1}
+    - {r: 0, g: 0, b: 0, a: 1}
     m_Rotation: 0
