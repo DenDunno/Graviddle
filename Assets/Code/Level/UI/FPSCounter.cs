@@ -9,7 +9,10 @@ public class FPSCounter : MonoBehaviour
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        if (FindObjectsOfType<FPSCounter>().Length == 1)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     private void Update()
