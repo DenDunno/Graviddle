@@ -7,22 +7,22 @@ public class MenuCharacterAnimation : MonoBehaviour
 {
     [SerializeField] private RectTransform _canvas;
     private RectTransform _transform;
-    private readonly float _animationDuration = 2.625f;
-    private readonly float _intervalBetweenAnimations = 0.7f;
-
-
+    private const float _animationDuration = 2.625f;
+    private const float _intervalBetweenAnimations = 0.7f;
+    private Sequence _animation;
+    
     private void Start()
     {
         _transform = GetComponent<RectTransform>();
-        Sequence sequence = DOTween.Sequence();
+        _animation = DOTween.Sequence();
 
         foreach (AnimationPath animationPath in MenuCharacterAnimationPoints.GetAnimationPoints(_canvas))
         {
-            sequence.Append(AnimateCharacter(animationPath.StartPosition, animationPath.EndPosition));
-            sequence.AppendInterval(_intervalBetweenAnimations);
+            _animation.Append(AnimateCharacter(animationPath.StartPosition, animationPath.EndPosition));
+            _animation.AppendInterval(_intervalBetweenAnimations);
         }
 
-        sequence.SetLoops(-1);
+        _animation.SetLoops(-1);
     }
 
 
@@ -38,5 +38,11 @@ public class MenuCharacterAnimation : MonoBehaviour
         };
 
         return characterAnimation;
+    }
+
+
+    private void OnDestroy()
+    {
+        _animation.Kill();
     }
 }
