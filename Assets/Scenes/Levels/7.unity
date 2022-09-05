@@ -774,7 +774,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _starImpact
       value: 
-      objectReference: {fileID: 1150102843}
+      objectReference: {fileID: 0}
     - target: {fileID: 8550718928693556227, guid: 1ee95f3f600c527418c5c1bc1940d203,
         type: 3}
       propertyPath: _levelStarImpact
@@ -1109,7 +1109,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _starImpact
       value: 
-      objectReference: {fileID: 1150102843}
+      objectReference: {fileID: 0}
     - target: {fileID: 8550718928693556227, guid: 1ee95f3f600c527418c5c1bc1940d203,
         type: 3}
       propertyPath: _levelStarImpact
@@ -141351,12 +141351,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59532e2bf74ff9444892fd215cb6d0c6, type: 3}
---- !u!198 &1150102843 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6372688386525927690, guid: 59532e2bf74ff9444892fd215cb6d0c6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1150102842}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1150102844 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1704661945660841930, guid: 59532e2bf74ff9444892fd215cb6d0c6,
@@ -142423,7 +142417,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _starImpact
       value: 
-      objectReference: {fileID: 1150102843}
+      objectReference: {fileID: 0}
     - target: {fileID: 8550718928693556227, guid: 1ee95f3f600c527418c5c1bc1940d203,
         type: 3}
       propertyPath: _levelStarImpact

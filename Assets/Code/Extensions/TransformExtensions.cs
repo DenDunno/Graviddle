@@ -15,4 +15,22 @@ public static class TransformExtensions
         transform.position = targetTransform.position;
         transform.rotation = targetTransform.rotation;
     }
+
+
+    public static void SetYScale(this Transform transform, float value)
+    {
+        transform.localScale = new Vector3(transform.localScale.x, value, transform.localScale.z);
+    }
+
+
+    public static void SetXScale(this Transform transform, float value)
+    {
+        transform.localScale = new Vector3(value, transform.localScale.y, transform.localScale.z);
+    }
+    
+
+    public static void SetYLocalPosition(this Transform transform, float value)
+    {
+        transform.localPosition = new Vector3(transform.localPosition.x, value, transform.localPosition.z);
+    }
 }
