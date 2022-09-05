@@ -6,10 +6,12 @@ public class GravityRotation : MonoBehaviour
     private CurrentGravityData _currentGravityData;
     private const float _rotationSpeed = 3f;
 
+    
     public void Init(CurrentGravityData currentGravityData)
     {
         _currentGravityData = currentGravityData;
     }
+    
 
     private void Update()
     {

@@ -57,6 +57,6 @@ public static class CollectionsExtensions
     
     public static void FixedUpdateForEach(this IEnumerable<IFixedUpdate> fixedUpdates)
     {
-        fixedUpdates.ForEach(updatable => updatable.Update());
+        fixedUpdates.ForEach(updatable => updatable.FixedUpdate());
     }
 }
