@@ -13,7 +13,7 @@ public class CharacterStateMachine : IFixedUpdate
     }
 
 
-    void IFixedUpdate.Update()
+    void IFixedUpdate.FixedUpdate()
     {
         _state.Update();
         TryTransit();

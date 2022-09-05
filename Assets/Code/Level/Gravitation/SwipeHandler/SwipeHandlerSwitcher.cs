@@ -12,13 +12,13 @@ public class SwipeHandlerSwitcher : CharacterFallingEventsHandler
     }
 
 
-    protected override void OnCharacterStartFalling()
+    protected override void OnStartFalling()
     {
         _swipeHandler.enabled = false;
     }
 
 
-    protected override void OnCharacterEndFalling()
+    protected override void OnEndFalling()
     {
         _swipeHandler.enabled = true;
     }

@@ -1,5 +1,5 @@
 ﻿
 public interface IFixedUpdate
 {
-    void Update();
+    void FixedUpdate();
 }

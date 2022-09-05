@@ -5,6 +5,7 @@ public class TurretRotation : IUpdate
 {
     private readonly TurretRotationData _data;
 
+    
     public TurretRotation(TurretRotationData data)
     {
         _data = data;
