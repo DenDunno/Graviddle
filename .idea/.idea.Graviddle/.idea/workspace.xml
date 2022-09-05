@@ -2,29 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="236f7ca0-e3d5-42cf-8bd1-4f65d9112fc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Character/SquashStretchAnimation.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Character/SquashStretchAnimation/Squash.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Character/SquashStretchAnimation/Squash.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Utils/EaseFunctions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Utils/EaseFunctions.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Extensions/InvocationWithDelay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Utils/InvocationWithDelay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Extensions/InvocationWithDelay.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Utils/InvocationWithDelay.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Extensions/Logger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Utils/Logger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Extensions/Logger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Utils/Logger.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Extensions/ParticlesHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Extensions/ParticlesHelper.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Extensions/TransformExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Extensions/TransformExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Portals/PortalDisappearance.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Portals/PortalDisappearance.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Portals/PortalView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Portals/PortalView.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Materials/LevelStarShiny.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Materials/LevelStarShiny.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/Character.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/VFX/FallingDust.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/VFX/FallingDust.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/7.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/7.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial icons.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial icons.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Character/SquashStretchAnimation/StretchAnimation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Character/SquashStretchAnimation/StretchAnimation.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Character/SquashStretchAnimation/Squash.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Character/SquashStretchAnimation/SquashAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Character/SquashStretchAnimation/Squash.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Character/SquashStretchAnimation/SquashAnimation.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Character/SquashStretchAnimation/SquashStretchAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Character/SquashStretchAnimation/SquashStretchAnimation.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
