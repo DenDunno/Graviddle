@@ -8,6 +8,7 @@ public class TurretFasteningRotation : IUpdate
     private readonly Transform _transform;
     private const float _rightAngle = 90;
 
+    
     public TurretFasteningRotation(TurretRotationData data, CurrentGravityData currentGravityData, Transform transform)
     {
         _data = data;

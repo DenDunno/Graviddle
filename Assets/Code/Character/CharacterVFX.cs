@@ -15,13 +15,13 @@ public class CharacterVFX : CharacterFallingEventsHandler
     }
 
 
-    protected override void OnCharacterStartFalling()
+    protected override void OnStartFalling()
     {
         _trailRenderer.emitting = true;
     }
 
 
-    protected override void OnCharacterEndFalling()
+    protected override void OnEndFalling()
     {
         _fallingDust.Play();
         _trailRenderer.emitting = false;

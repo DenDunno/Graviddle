@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="236f7ca0-e3d5-42cf-8bd1-4f65d9112fc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/UnityCallbackWrappers/MonoBehaviourWrapper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/UnityCallbackWrappers/MonoBehaviourWrapper.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Character/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Character/Character.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Character/CharacterStateMachine/CharacterStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Character/CharacterStateMachine/CharacterStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Extensions/CollectionsExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Extensions/CollectionsExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UnityCallbackWrappers/IFixedUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UnityCallbackWrappers/IFixedUpdate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Character/CharacterVFX.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Character/CharacterVFX.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Character/SquashStretchAnimation/SquashStretchAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Character/SquashStretchAnimation/SquashStretchAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/CharacterFallingEventsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/CharacterFallingEventsHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/SwipeHandler/SwipeHandlerSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/SwipeHandler/SwipeHandlerSwitcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Obstacles/LaserTurret/TurretFasteningRotation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Obstacles/LaserTurret/TurretFasteningRotation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Obstacles/LaserTurret/TurretRotation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Obstacles/LaserTurret/TurretRotation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Obstacles/LaserTurret/TurretRotationData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Obstacles/LaserTurret/TurretRotationData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Materials/LevelStarShiny.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Materials/LevelStarShiny.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefabs/Else/Character.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/7.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/7.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

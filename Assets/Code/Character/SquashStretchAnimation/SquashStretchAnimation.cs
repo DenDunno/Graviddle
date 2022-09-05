@@ -1,38 +1,35 @@
 using UnityEngine;
 
 
-public class SquashStretchAnimation : MonoBehaviour
+public class SquashStretchAnimation : CharacterFallingEventsHandler, IFixedUpdate 
 {
-    [SerializeField] private Rigidbody2D _rigidbody;
-    [SerializeField] private CollisionsList _characterFeet;
-    private Squash _squash;
-    private Stretch _stretch;
-    private bool _isFalling;
+    private readonly Rigidbody2D _rigidbody;
+    private readonly Squash _squash;
+    private readonly Stretch _stretch;
     private float _velocity;
 
-
-    private void Start()
-    {
-        _squash = new Squash(transform);
-        _stretch = new Stretch(transform);
-    }
-
     
-    private void Update()
+    public SquashStretchAnimation(Rigidbody2D rigidbody, SpriteRenderer sprite, Transition fallToIdleTransition, FallState fallState) 
+        : base(fallToIdleTransition, fallState)
     {
-        if (_characterFeet.CheckCollision<Ground>() == false)
+        _rigidbody = rigidbody;
+        _squash = new Squash(sprite.transform);
+        _stretch = new Stretch(sprite.transform);
+    }
+    
+
+    void IFixedUpdate.FixedUpdate()
+    {
+        if (IsFalling)
         {
-            _isFalling = true;
             _velocity = _rigidbody.velocity.magnitude;
             _stretch.SetStretch(_velocity);
         }
-        else
-        {
-            if (_isFalling)
-            {
-                _isFalling = false;
-                _squash.Play(_velocity);
-            }
-        }
+    }
+
+
+    protected override void OnEndFalling()
+    {
+        _squash.Play(_velocity);
     }
 }

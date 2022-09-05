@@ -142526,7 +142526,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4604852757865503134, guid: a0ca5d21826335e4dae61dcad8de1703, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a0ca5d21826335e4dae61dcad8de1703, type: 3}
 --- !u!212 &2117880852 stripped
 SpriteRenderer:

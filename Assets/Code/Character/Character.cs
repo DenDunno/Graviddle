@@ -21,7 +21,8 @@ public class Character : MonoBehaviourWrapper
             new CharacterTransparency(_spriteRenderer, states.WinState),
             new CharacterRotationImpulse(_rigidbody2D, _swipeHandler),
             new SwipeHandlerSwitcher(_swipeHandler, fallToIdleTransition, states.FallState),
-            new CharacterVFX(_fallingDust, _trailRenderer, fallToIdleTransition, states.FallState)
+            new CharacterVFX(_fallingDust, _trailRenderer, fallToIdleTransition, states.FallState),
+            new SquashStretchAnimation(_rigidbody2D, _spriteRenderer, fallToIdleTransition, states.FallState)
         });
     }
 }
