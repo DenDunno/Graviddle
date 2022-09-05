@@ -292,6 +292,7 @@ GameObject:
   - component: {fileID: 299525167}
   - component: {fileID: 299525166}
   - component: {fileID: 299525169}
+  - component: {fileID: 299525170}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -316,7 +317,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 40, y: 40}
+  m_AnchoredPosition: {x: 40, y: -130}
   m_SizeDelta: {x: 148, y: 72}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &299525166
@@ -431,6 +432,54 @@ MonoBehaviour:
     m_AssetGUID: a1c9bd019de36b3488b4b97851461d7b
     m_SubObjectName: 
     m_SubObjectType: 
+--- !u!114 &299525170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299525164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d14caaf72900a4428ece34a80bba718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1259944319}
+  _curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2.6957457
+      outSlope: 2.6957457
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.03548896
+    - serializedVersion: 3
+      time: 0.5053552
+      value: 1.0495162
+      inSlope: 0.9336922
+      outSlope: 0.9336922
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0.06117055
+      outSlope: -0.06117055
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13427694
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _delay: 0.2
+  _duration: 1.25
 --- !u!1 &338661040
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,6 +862,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 299525165}
+  - {fileID: 1259944319}
   - {fileID: 1285382860}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1298,6 +1348,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753285506}
   m_CullTransparentMesh: 1
+--- !u!1 &1259944318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1259944319}
+  m_Layer: 5
+  m_Name: BackButtonPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1259944319
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259944318}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 649422777}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 40, y: 40}
+  m_SizeDelta: {x: 148, y: 72}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &1285382859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,7 +1413,7 @@ RectTransform:
   - {fileID: 636229106}
   - {fileID: 57608413}
   m_Father: {fileID: 649422777}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
