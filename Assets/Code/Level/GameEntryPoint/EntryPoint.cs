@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class EntryPoint : MonoBehaviour
+public class EntryPoint : MonoBehaviourWrapper
 {
     [SerializeField] private TransitionsConditions _transitionsConditions;
     [SerializeField] private Character _character;
@@ -16,10 +16,8 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private CharacterMoveDirection _characterMoveDirection;
     [SerializeField] private LaserTurret[] _laserTurrets;
     [SerializeField] private GravityRotation[] _gravityRotations;
-    private ISubscriber[] _subscribers;
-    private IUpdate[] _updatables;
 
-    
+
     private void Awake()
     {
         RestartableComponents restartComponents = _interfacesContainer.GetRestartableComponents();
@@ -30,12 +28,7 @@ public class EntryPoint : MonoBehaviour
         var gravity = new Gravity(_swipeHandler);
         var currentGravityData = new CurrentGravityData(_swipeHandler);
         var levelRestart = new LevelRestart(restartComponents, restartEvent.Invoke, states.DieState);
-        var analytics = new Analytics(states.WinState);
         
-        _subscribers = new ISubscriber[] {levelRestart, gravity, currentGravityData, analytics};
-        _updatables = new IUpdate[] {_characterMoveDirection};
-
-        analytics.Init();
         _gravityRotations.ForEach(gravityRotation => gravityRotation.Init(currentGravityData));
         _laserTurrets.ForEach(laserTurret => laserTurret.Init(currentGravityData));
         _transitionsConditions.Init(_characterMoveDirection, restartEvent.CheckIfEventHappened);
@@ -47,23 +40,10 @@ public class EntryPoint : MonoBehaviour
         _finishPortal.Init(states.WinState);
         _winPanel.Init(states.WinState);
         _cameraMediator.Init();
-    }
-
-
-    private void OnEnable()
-    {
-        _subscribers.SubscribeForEach();
-    }
-    
-    
-    private void OnDisable()
-    {
-        _subscribers.UnsubscribeForEach();
-    }
-    
-
-    private void Update()
-    {
-        _updatables.UpdateForEach();
+        
+        SetDependencies(new object[]
+        {
+            levelRestart, gravity, currentGravityData, new Analytics(states.WinState), _characterMoveDirection
+        });
     }
 }
