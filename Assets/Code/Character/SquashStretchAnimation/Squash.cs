@@ -7,7 +7,7 @@ public class Squash
     private readonly Transform _transform;
     private float _yScaleBeforeSquashing;
     private float _velocity;
-    private const float _squashDuration = 0.3f;
+    private const float _squashDuration = 0.45f;
 
 
     public Squash(Transform transform)

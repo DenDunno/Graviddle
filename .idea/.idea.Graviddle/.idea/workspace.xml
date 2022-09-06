@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="236f7ca0-e3d5-42cf-8bd1-4f65d9112fc7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Analytics/Analytics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Analytics/Analytics.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/GameEntryPoint/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/GameEntryPoint/EntryPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Character/SquashStretchAnimation/Squash.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Character/SquashStretchAnimation/Squash.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Materials/LevelStarShiny.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Materials/LevelStarShiny.mat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,6 +150,7 @@
       <workItem from="1661336923760" duration="17578000" />
       <workItem from="1661673328831" duration="2817000" />
       <workItem from="1662287530161" duration="2890000" />
+      <workItem from="1662480027314" duration="352000" />
     </task>
     <servers />
   </component>
