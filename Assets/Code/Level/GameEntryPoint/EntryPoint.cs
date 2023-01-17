@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
 public class EntryPoint : MonoBehaviourWrapper
 {
@@ -20,7 +19,7 @@ public class EntryPoint : MonoBehaviourWrapper
     private void Awake()
     {
         RestartableComponents restartComponents = _interfacesContainer.GetRestartableComponents();
-        var states = new CharacterStatesPresenter(_character.GetComponent<Animator>(), _characterMovementDirection);
+        CharacterStatesPresenter states = new CharacterStatesPresenter(_character.GetComponent<Animator>(), _characterMovementDirection);
         var transitionsPresenterFactory = new TransitionsPresenterFactory(states, _transitionsConditions);
         var transitionsPresenter = transitionsPresenterFactory.Create();
         var restartEvent = new EventTransit();
