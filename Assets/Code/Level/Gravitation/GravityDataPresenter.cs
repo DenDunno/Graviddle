@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-
 public static class GravityDataPresenter
 {
     public static readonly IReadOnlyDictionary<GravityDirection, GravityData> GravityData 

@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 public class LaserTurret : MonoBehaviour
 {
     [SerializeField] private Transform _turret;
@@ -8,7 +7,6 @@ public class LaserTurret : MonoBehaviour
     [SerializeField] private Transform _fastening;
     [SerializeField] private CharacterHead _target;
     private IUpdate[] _updatables;
-
 
     public void Init(CurrentGravityData currentGravityData)
     {
@@ -22,7 +20,6 @@ public class LaserTurret : MonoBehaviour
             new TurretFasteningRotation(fasteningRotationData, currentGravityData, transform)
         };
     }
-
 
     private void Update()
     {

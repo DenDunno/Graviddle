@@ -1,16 +1,13 @@
 ﻿using UnityEngine;
 
-
 public class ParallaxLayerClamping
 {
     private readonly float _screenWidth;
-
     
     public ParallaxLayerClamping()
     {
         _screenWidth = Screen.width;
     }
-    
     
     public void ClampParallaxLayerPosition(ref float targetParallaxLayerPosition)
     {

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 public class MotionWithDelay : ClosedPathMotionType
 {
     public override float Period => (1 + Speed * _waitTime) / Speed * 2;
@@ -9,7 +8,6 @@ public class MotionWithDelay : ClosedPathMotionType
     private float _leftLimit;
     private float _offset; // y = speed * x + offset
 
-
     private void Start()
     {
         _leftLimit = (1 + Speed * _waitTime) / Speed;
@@ -17,7 +15,6 @@ public class MotionWithDelay : ClosedPathMotionType
 
         _offset = 1 + Speed * x;
     }
-
 
     public override float EvaluateMotionFunction(float time)
     {

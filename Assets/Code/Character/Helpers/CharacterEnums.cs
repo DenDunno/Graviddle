@@ -1,5 +1,4 @@
 ﻿
-
 public enum GravityDirection
 {
     Down,
@@ -7,7 +6,6 @@ public enum GravityDirection
     Up,
     Left
 }
-
 
 public enum MovementState
 {

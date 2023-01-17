@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 public class LevelBorders : MonoBehaviour
 {
     [SerializeField] private int _top;
@@ -12,7 +11,6 @@ public class LevelBorders : MonoBehaviour
     public int Down => _down;
     public int Left => _left;
     public int Right => _right;
-
 
     public bool CheckIfPositionNotWithinTheLevel(Vector2 position)
     {

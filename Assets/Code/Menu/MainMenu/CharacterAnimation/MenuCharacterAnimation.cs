@@ -1,7 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
 
-
 [RequireComponent(typeof(RectTransform))]
 public class MenuCharacterAnimation : MonoBehaviour
 {
@@ -25,7 +24,6 @@ public class MenuCharacterAnimation : MonoBehaviour
         _animation.SetLoops(-1);
     }
 
-
     private Tween AnimateCharacter(Vector2 startPosition , Vector2 endPosition)
     {
         Tween characterAnimation = _transform.DOAnchorPos(endPosition, _animationDuration)
@@ -39,7 +37,6 @@ public class MenuCharacterAnimation : MonoBehaviour
 
         return characterAnimation;
     }
-
 
     private void OnDestroy()
     {

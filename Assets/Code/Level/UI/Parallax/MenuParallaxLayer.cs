@@ -1,18 +1,15 @@
 ﻿using UnityEngine;
 
-
 [RequireComponent(typeof(RectTransform))]
 public class MenuParallaxLayer : MonoBehaviour
 {
     [SerializeField] private float _speed;
     private RectTransform _transform;
 
-
     private void Start()
     {
         _transform = GetComponent<RectTransform>();
     }
-
 
     public void Update()
     {

@@ -1,10 +1,8 @@
 using UnityEngine;
 
-
 public class EditorUISwitcher : MonoBehaviour
 {
-    [SerializeField] private UIStatesSwitcher _uiStatesSwitcher;
-    
+    [SerializeField] private UIStatesSwitcher _uiStatesSwitcher;    
 
     private void Start()
     {

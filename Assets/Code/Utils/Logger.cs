@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 public static class Logger
 {
     public static void PrintWithGreen(string text)

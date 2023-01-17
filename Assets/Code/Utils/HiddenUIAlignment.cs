@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-
 [RequireComponent(typeof(RectTransform))]
 public class HiddenUIAlignment : MonoBehaviour
 {
@@ -12,7 +11,6 @@ public class HiddenUIAlignment : MonoBehaviour
 
     private enum Alignment { Top, Down, Right, Left }
     
-    
     private IEnumerator Start()
     {
         yield return null;
@@ -22,18 +20,15 @@ public class HiddenUIAlignment : MonoBehaviour
         Align();
     }
 
-
     private void CopySize()
     {
         _rectTransform.sizeDelta = new Vector2(_observableRect.rect.width, _observableRect.rect.height);
     }
-
     
     private void CopyPosition()
     {
         _rectTransform.transform.position = _observableRect.transform.position;
     }
-
 
     private void Align()
     {

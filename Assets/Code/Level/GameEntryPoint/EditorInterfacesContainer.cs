@@ -2,13 +2,11 @@
 using System.Linq;
 using UnityEngine;
 
-
 // buffer between editor and playmode
 public class EditorInterfacesContainer : MonoBehaviour
 {
     [SerializeField] private List<MonoBehaviour> _restartable;
     [SerializeField] private List<MonoBehaviour> _afterRestartable;
-
 
     public void FillContainers()
     {
@@ -17,7 +15,6 @@ public class EditorInterfacesContainer : MonoBehaviour
         _afterRestartable = allMonoBehaviours.Where(monoBehaviour => monoBehaviour is IAfterRestart).ToList();
         _restartable = allMonoBehaviours.Where(monoBehaviour => monoBehaviour is IRestart).ToList();
     }
-
 
     public RestartableComponents GetRestartableComponents()
     {

@@ -3,7 +3,6 @@ using System.Linq;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-
 [Serializable]
 public class WinEffects 
 {
@@ -11,9 +10,7 @@ public class WinEffects
     [SerializeField] private ParticleSystem _sunEffect;
     [SerializeField] private ParticleSystem _confetti;
     [SerializeField] private Reward _reward;
-
     private float _starsCoolDown;
-
 
     public void Init()
     {
@@ -21,7 +18,6 @@ public class WinEffects
         _starsCoolDown = _starsParticles.First().main.duration + coolDown;
     }
     
-
     public async UniTask ActivateEffects()
     {
         int collectedStars = _reward.CollectedStars;
@@ -36,7 +32,6 @@ public class WinEffects
             _confetti.gameObject.SetActive(true);
         }
     }
-
 
     private async UniTask ActivateStar(int starIndex)
     {

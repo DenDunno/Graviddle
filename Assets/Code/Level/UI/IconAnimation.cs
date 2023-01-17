@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-
 [RequireComponent(typeof(RectTransform))]
 public class IconAnimation : MonoBehaviour, IPointerClickHandler
 {
@@ -11,7 +10,6 @@ public class IconAnimation : MonoBehaviour, IPointerClickHandler
     private const int _rotations = 2;
     private readonly Vector3 _rotationVector = new Vector3(0, 0, -25);
     private Sequence _sequence;
-    
 
     private void Start()
     {
@@ -21,7 +19,6 @@ public class IconAnimation : MonoBehaviour, IPointerClickHandler
 
         _sequence.SetLoops(-1);
     }
-
 
     private void AnimateIcon()
     {
@@ -36,7 +33,6 @@ public class IconAnimation : MonoBehaviour, IPointerClickHandler
         _sequence.Append(transform.DOLocalRotate(Vector3.zero, _duration));
         _sequence.AppendInterval(_coolDown);
     }
-
 
     public void OnPointerClick(PointerEventData eventData)
     {

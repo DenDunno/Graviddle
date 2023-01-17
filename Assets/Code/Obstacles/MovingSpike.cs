@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 
-
 [RequireComponent(typeof(Animator))]
 public class MovingSpike : MonoBehaviour
 {
@@ -10,14 +9,12 @@ public class MovingSpike : MonoBehaviour
     private const string _animationName = "Idle";
     private Animator _animator;
 
-
     private void Start()
     {
         _animator = GetComponent<Animator>();
 
         StartCoroutine(AnimateSpike());
     }
-
 
     private IEnumerator AnimateSpike()
     {

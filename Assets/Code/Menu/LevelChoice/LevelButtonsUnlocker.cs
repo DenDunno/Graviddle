@@ -2,13 +2,11 @@
 using Newtonsoft.Json;
 using UnityEngine;
 
-
 public class LevelButtonsUnlocker : MonoBehaviour
 {
     [SerializeField] private LevelButton[] _allButtons;
     private const string _saves = "Saves";
     private const int _menuScenesCount = 3;
-
 
     private void Start()
     {
@@ -22,7 +20,6 @@ public class LevelButtonsUnlocker : MonoBehaviour
             _allButtons[0].UnlockLevel();
         }
     }
-
 
     private void UnlockLevels()
     {

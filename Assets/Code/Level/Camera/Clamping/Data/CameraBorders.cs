@@ -6,7 +6,6 @@ public class CameraBorders
     public readonly float Left;
     public readonly float Right;
 
-
     public CameraBorders(float topBorder, float downBorder, float leftBorder, float rightBorder)
     {
         Top = topBorder;

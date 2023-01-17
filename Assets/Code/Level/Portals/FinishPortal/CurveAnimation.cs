@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
 
-
 public class CurveAnimation : MonoBehaviour
 {
     [SerializeField] private AnimationCurve _motionCurve;
     private Vector3 _startPosition;
-
 
     private void Start()
     {
@@ -14,7 +12,6 @@ public class CurveAnimation : MonoBehaviour
         _motionCurve.postWrapMode = WrapMode.Loop;
         _motionCurve.preWrapMode = WrapMode.Loop;
     }
-
 
     private void Update()
     {

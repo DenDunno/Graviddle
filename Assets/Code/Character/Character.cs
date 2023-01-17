@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 public class Character : MonoBehaviourWrapper
 {
     [SerializeField] private SwipeHandler _swipeHandler;
@@ -8,7 +7,6 @@ public class Character : MonoBehaviourWrapper
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private ParticleSystem _fallingDust;
     [SerializeField] private TrailRenderer _trailRenderer;
-    
     
     public void Init(TransitionsPresenter transitionsPresenter, CharacterStatesPresenter states)
     {

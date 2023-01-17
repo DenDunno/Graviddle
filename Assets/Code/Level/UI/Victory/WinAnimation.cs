@@ -3,7 +3,6 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 
-
 [Serializable]
 public class WinAnimation
 {
@@ -17,7 +16,6 @@ public class WinAnimation
     private const float _targetFade = 0.6f;
     private readonly Vector2 _targetPosition = Vector2.zero;
 
-
     public void Play()
     {
         Sequence sequence = DOTween.Sequence();
@@ -27,7 +25,6 @@ public class WinAnimation
         sequence.Join(_image.DOFade(_targetFade, _animationDuration));
         sequence.OnComplete(ActivateEffects);
     }
-
 
     private async void ActivateEffects()
     {

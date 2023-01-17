@@ -2,7 +2,6 @@
 using System.Collections.ObjectModel;
 using UnityEngine;
 
-
 public class CharacterStatesPresenter
 {
     public readonly FallState FallState;
@@ -12,14 +11,13 @@ public class CharacterStatesPresenter
     public readonly RunState RunState;
     public readonly ReadOnlyCollection<CharacterState> GameActiveStates;
 
-
-    public CharacterStatesPresenter(Animator character, CharacterMoveDirection characterMoveDirection)
+    public CharacterStatesPresenter(Animator character, CharacterMovementDirection characterMovementDirection)
     {
         FallState = new FallState(character);
         DieState = new DieState(character);
         WinState = new WinState(character);
         IdleState = new IdleState(character);
-        RunState = new RunState(character, characterMoveDirection);
+        RunState = new RunState(character, characterMovementDirection);
 
         GameActiveStates = new List<CharacterState>
         {

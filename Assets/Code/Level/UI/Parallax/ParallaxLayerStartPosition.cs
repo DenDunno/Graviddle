@@ -1,19 +1,16 @@
 ﻿using UnityEngine;
 
-
 [RequireComponent(typeof(RectTransform))]
 public class ParallaxLayerStartPosition : MonoBehaviour
 {
     [SerializeField] private ParallaxSide _parallaxSide = ParallaxSide.Left;
     [SerializeField] private float _offset;
 
-
     private enum ParallaxSide
     {
         Left = -1,
         Right = 1
     }
-
 
     private void Start()
     {

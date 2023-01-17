@@ -1,7 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
 
-
 public class StarAnimation : MonoBehaviour
 {
     private const float _scaleFrom = 0.85f;
@@ -9,7 +8,6 @@ public class StarAnimation : MonoBehaviour
     private const float _duration = 0.5f;
     private Sequence _animation;
     
-
     private void Start()
     {
         _animation = DOTween.Sequence();
@@ -20,12 +18,10 @@ public class StarAnimation : MonoBehaviour
         _animation.SetLoops(-1);
     }
 
-
     private Tween ScaleStar(float targetScale)
     {
         return transform.DOScale(Vector3.one * targetScale, _duration).SetEase(Ease.InOutSine);
     }
-
 
     private void OnDestroy()
     {

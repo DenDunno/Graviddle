@@ -1,27 +1,23 @@
 ﻿using System;
 
-
 public class Transition
 {
     public readonly CharacterState StateFrom;
     public readonly CharacterState StateTo;
-    
-    private readonly Func<bool> _transitionCondition;
-    
-    public event Action TransitionHappened;
-    
+    private readonly Func<bool> _condition;
 
     public Transition(CharacterState stateFrom, CharacterState stateTo, Func<bool> condition)
     {
         StateFrom = stateFrom;
         StateTo = stateTo;
-        _transitionCondition = condition;
+        _condition = condition;
     }
 
+    public event Action TransitionHappened;
 
     public bool CheckCondition()
     {
-        bool transitionHappened = _transitionCondition();
+        bool transitionHappened = _condition();
 
         if (transitionHappened)
         {

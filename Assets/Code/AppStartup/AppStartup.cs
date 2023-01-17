@@ -1,14 +1,12 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-
 public class AppStartup : MonoBehaviour
 {
     [SerializeField] private BackgroundMusicSpawner _backgroundMusicSpawner;
     [SerializeField] private AdvertisementStartup _advertisementStartup;
     private readonly MusicVolume _musicVolume = new MusicVolume();
     private static bool _appWasInited;
-    
     
     private void Start()
     {
@@ -18,7 +16,6 @@ public class AppStartup : MonoBehaviour
             Initialize();
         }
     }
-
 
     private void Initialize()
     {

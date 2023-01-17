@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-
 public class TransformsRestart : MonoBehaviour, IRestart
 {
     private readonly List<RestartableTransform> _restartableTransforms = new List<RestartableTransform>();
-
 
     public void Init(IEnumerable<Transform> transformsToBeRestarted)
     {
@@ -14,7 +12,6 @@ public class TransformsRestart : MonoBehaviour, IRestart
             _restartableTransforms.Add(new RestartableTransform(restartableTransform));
         }
     }
-    
     
     void IRestart.Restart()
     {

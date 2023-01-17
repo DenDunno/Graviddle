@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 public class LevelZoomCalculator : MonoBehaviour
 {
     [SerializeField] private bool _isLevelWithFrame;
@@ -9,26 +8,22 @@ public class LevelZoomCalculator : MonoBehaviour
     private LevelBorders _levelBorders;
     private const float _frameOffset = 2;
 
-
     public void Init(Camera mainCamera, LevelBorders levelBorders)
     {
         _mainCamera = mainCamera;
         _levelBorders = levelBorders;
     }
     
-    
     public void Init(CurrentGravityData currentGravityData)
     {
         _currentGravityData = currentGravityData;
     }
-
 
     public float GetLevelZoom()
     {
         (float levelWidth, float levelHeight) = GetLevelWidthAndHeight();
         return EvaluateLevelZoom(levelWidth, levelHeight) / 2f;
     }
-
 
     private (float, float) GetLevelWidthAndHeight()
     {
@@ -49,14 +44,12 @@ public class LevelZoomCalculator : MonoBehaviour
         return (levelWidth, levelHeight);
     }
 
-
     private bool IsVerticalZoom()
     {
         GravityDirection direction = _currentGravityData.Data.GravityDirection;
 
         return direction == GravityDirection.Right || direction == GravityDirection.Left;
     }
-
 
     private float EvaluateLevelZoom(float levelWidth, float  levelHeight)
     {

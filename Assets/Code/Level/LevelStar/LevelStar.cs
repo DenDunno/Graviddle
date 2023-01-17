@@ -1,12 +1,10 @@
 using System;
 using UnityEngine;
 
-
 public class LevelStar : MonoBehaviour, IRestart
 {
     [SerializeField] private LevelStarImpact _levelStarImpact;
     public event Action StarCollected;
-    
     
     private void OnTriggerEnter2D(Collider2D collider2d)
     {
@@ -19,7 +17,6 @@ public class LevelStar : MonoBehaviour, IRestart
             StarCollected?.Invoke();
         }
     }
-
 
     void IRestart.Restart()
     {

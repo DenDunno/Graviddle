@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-
 public class Laser : MonoBehaviour, IRestart
 {
     [SerializeField] private float _startWaitTime;
@@ -11,7 +10,6 @@ public class Laser : MonoBehaviour, IRestart
     [SerializeField] private bool _startOnAwake = true;
     [SerializeField] private LaserSwitcher _laserSwitcher;
     
-
     private void Start()
     {
         _laserSwitcher.Init(_startOnAwake);
@@ -21,7 +19,6 @@ public class Laser : MonoBehaviour, IRestart
             StartCoroutine(LaunchLaser());
         }
     }
-
 
     private IEnumerator LaunchLaser()
     {
@@ -41,7 +38,6 @@ public class Laser : MonoBehaviour, IRestart
             yield return StartCoroutine(_laserSwitcher.ToggleLaser(true));
         }
     }
-
 
     void IRestart.Restart()
     {

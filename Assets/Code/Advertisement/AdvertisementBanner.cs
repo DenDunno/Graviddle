@@ -2,11 +2,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
-
 public class AdvertisementBanner : MonoBehaviour
 {
     private string _bannerId;
-    
     
     private void Start()
     {
@@ -19,7 +17,6 @@ public class AdvertisementBanner : MonoBehaviour
         StartCoroutine(ShowBanner());
     }
 
-    
     private IEnumerator ShowBanner()
     {
         yield return new WaitUntil(Advertisement.IsReady);
@@ -28,7 +25,6 @@ public class AdvertisementBanner : MonoBehaviour
         Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER);
         Advertisement.Banner.Show(_bannerId);
     }
-
 
     private void OnDestroy()
     {

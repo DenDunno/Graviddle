@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 [Serializable]
 public class BoolArray 
 {
@@ -12,18 +11,15 @@ public class BoolArray
     public bool this[int index] => _boolArray[index];
 }
 
-
 [Serializable]
 public class BoolMatrix : IEnumerable<BoolArray>
 {
     [SerializeField] private List<BoolArray> _boolMatrix;
 
-
     public IEnumerator<BoolArray> GetEnumerator()
     {
         return _boolMatrix.GetEnumerator();
     }
-
 
     IEnumerator IEnumerable.GetEnumerator()
     {

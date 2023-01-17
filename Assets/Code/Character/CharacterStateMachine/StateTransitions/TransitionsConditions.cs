@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 
-
 [Serializable]
 public class TransitionsConditions
 {
@@ -10,13 +9,12 @@ public class TransitionsConditions
     [SerializeField] private RestartButton _restartButton;
     [SerializeField] private CollisionsList _allCollisions;
     [SerializeField] private CollisionsList _characterFeet;
-    private CharacterMoveDirection _characterMoveDirection;
+    private CharacterMovementDirection _characterMovementDirection;
     private Func<bool> _restartCondition;
 
-
-    public void Init(CharacterMoveDirection characterMoveDirection, Func<bool> restartCondition)
+    public void Init(CharacterMovementDirection characterMovementDirection, Func<bool> restartCondition)
     {
-        _characterMoveDirection = characterMoveDirection;
+        _characterMovementDirection = characterMovementDirection;
         _restartCondition = restartCondition;   
     }
     
@@ -30,7 +28,7 @@ public class TransitionsConditions
 
     public bool CheckIfResurrected() => _restartCondition();
     
-    public bool CheckIfRun() => _characterMoveDirection.Direction != Vector2.zero;
+    public bool CheckIfRun() => _characterMovementDirection.Direction != Vector2.zero;
 
     public bool CheckIfRestart() => _restartButton.CheckIfPressed();
 

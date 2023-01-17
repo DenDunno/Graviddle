@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-
 public class TransitionsPresenter
 {
     private readonly Dictionary<CharacterState, List<Transition>> _transitions = new Dictionary<CharacterState, List<Transition>>();
-    
 
     public void AddTransition(Transition transition)
     {
@@ -17,12 +15,10 @@ public class TransitionsPresenter
         _transitions[transition.StateFrom].Add(transition);
     }
 
-    
     public Transition GetTransition(CharacterState stateFrom, CharacterState stateTo)
     {
         return _transitions[stateFrom].First(transition => transition.StateTo == stateTo);
     }
-
 
     public CharacterState Transit(CharacterState currentState)
     {

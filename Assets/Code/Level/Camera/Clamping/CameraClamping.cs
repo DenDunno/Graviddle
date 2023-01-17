@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
 
-
 public class CameraClamping : MonoBehaviour
 {
     [SerializeField] private CameraBordersWithOrientation _borders;
     private const float _cameraZPosition = -10;
-
 
     public Vector3 Clamp(Vector3 position)
     {
@@ -18,7 +16,6 @@ public class CameraClamping : MonoBehaviour
 
         return position;
     }
-
 
     private void TryCentreCameraAxis(float upBorder, float downBorder, ref float cameraAxisPosition)
     {

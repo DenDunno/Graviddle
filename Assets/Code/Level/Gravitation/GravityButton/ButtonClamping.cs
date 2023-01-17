@@ -1,11 +1,9 @@
 using UnityEngine;
 
-
 public class ButtonClamping : MonoBehaviour
 {
     private const float _topExtremePoint = 0.36f;
     private const float _downExtremePoint = 0f;
-    
 
     public void FixedUpdate()
     {

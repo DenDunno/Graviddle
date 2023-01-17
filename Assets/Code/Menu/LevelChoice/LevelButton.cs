@@ -1,13 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class LevelButton : MonoBehaviour
 {
     [SerializeField] private Image[] _stars;
     [SerializeField] private Image[] _nonStars;
     [SerializeField] private Image _lockImage;
-
 
     public void SetStars(int stars)
     {
@@ -19,7 +17,6 @@ public class LevelButton : MonoBehaviour
             _nonStars[i].gameObject.SetActive(false);
         }
     }
-
 
     public void UnlockLevel()
     {

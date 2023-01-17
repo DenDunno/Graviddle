@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
 using System;
 
-
 [Serializable]
 public class LaserSourceEffectsAdjuster
 {
     [SerializeField] private ParticleSystem _sourceFlame;
     [SerializeField] private ParticleSystem _sourceSparks;
-
 
     public void ConfigureSourceEffects(float laserDistance)
     {
@@ -20,24 +18,20 @@ public class LaserSourceEffectsAdjuster
         _sourceFlame.transform.localPosition = EvaluateFlamePosition(laserDistance);
     }
 
-
     private float EvaluateSparksLifeTime(float laserDistance)
     {
         return 0.00362f * laserDistance + 0.28185f;
     }
-
 
     private float EvaluateSparksSpeed(float laserDistance)
     {
         return 0.14515f * laserDistance + 1.2742f;
     }
 
-
     private float EvaluateFlameLifeTime(float laserDistance)
     {
         return 0.01814f * laserDistance + 0.10927f;
     }
-
 
     private Vector3 EvaluateFlamePosition(float laserDistance)
     {

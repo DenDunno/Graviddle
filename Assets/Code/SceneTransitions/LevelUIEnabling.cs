@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 public class LevelUIEnabling : MonoBehaviour
 {
     // enable UI when level was loaded

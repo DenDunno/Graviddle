@@ -2,13 +2,11 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-
 public class CharacterTransparency : IRestart, IAfterRestart, ISubscriber, IInitializable
 {
     private const float _timeBeforeDisappearance = 1f;
     private readonly SpriteTransparency _spriteTransparency;
     private readonly WinState _winState;
-    
 
     public CharacterTransparency(SpriteRenderer spriteRenderer, WinState winState)
     {
@@ -16,25 +14,21 @@ public class CharacterTransparency : IRestart, IAfterRestart, ISubscriber, IInit
         _winState = winState;
     }
 
-
     void IInitializable.Init()
     {
         _spriteTransparency.BecomeTransparentNow();
         _spriteTransparency.BecomeOpaque();
     }
-    
 
     void ISubscriber.Subscribe()
     {
         _winState.CharacterWon += BecomeTransparentWithDelay;
     }
     
-
     void ISubscriber.Unsubscribe()
     {
         _winState.CharacterWon -= BecomeTransparentWithDelay;
     }
-
 
     private async void BecomeTransparentWithDelay()
     {
@@ -43,13 +37,11 @@ public class CharacterTransparency : IRestart, IAfterRestart, ISubscriber, IInit
         _spriteTransparency.BecomeTransparent();
     }
 
-
     void IRestart.Restart()
     {
         _spriteTransparency.StopAnimation();
         _spriteTransparency.BecomeTransparentNow();
     }
- 
 
     void IAfterRestart.Restart()
     {

@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public static class MenuCharacterAnimationPoints 
 {
     public static List<AnimationPath> GetAnimationPoints(RectTransform rectTransform)

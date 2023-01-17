@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 public class ButtonLiftForce : MonoBehaviour, IRestart
 {
     [SerializeField] private Rigidbody2D _rigidbody;
@@ -8,18 +7,15 @@ public class ButtonLiftForce : MonoBehaviour, IRestart
     [SerializeField] private ButtonPressing _buttonPressing;
     private bool _isLifting;
     
-
     private void OnEnable()
     {
         _buttonPressing.Toggled += OnButtonToggled;
     }
 
-
     private void OnDisable()
     {
         _buttonPressing.Toggled -= OnButtonToggled;
     }
-
     
     private void Update()
     {
@@ -29,19 +25,16 @@ public class ButtonLiftForce : MonoBehaviour, IRestart
         }
     }
 
-
     private void ResetLiftForce(bool enableLiftForce)
     {
         _isLifting = enableLiftForce;
         _rigidbody.velocity = Vector2.zero;
     }
     
-    
     private void OnButtonToggled(bool isButtonTurnedOn)
     {
         ResetLiftForce(isButtonTurnedOn);
     }
-
 
     void IRestart.Restart()
     {

@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 
-
 public class Arrow : MonoBehaviour
 {
     private readonly float _speed = 10f;
-
 
     private void Update()
     {

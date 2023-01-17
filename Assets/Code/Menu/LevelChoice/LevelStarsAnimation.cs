@@ -1,7 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
 
-
 public class LevelStarsAnimation : MonoBehaviour
 {
     [SerializeField] private Material _shinyMaterial;
@@ -10,13 +9,11 @@ public class LevelStarsAnimation : MonoBehaviour
     private int _shinyValueId;
     private Sequence _animation;
     
-
     private void Start()
     {
         _shinyValueId = Shader.PropertyToID("_Shiny");
         AnimateStars();
     }
-    
 
     private void AnimateStars()
     {
@@ -28,18 +25,15 @@ public class LevelStarsAnimation : MonoBehaviour
         _animation.SetLoops(-1);
     }
 
-
     private Tween TweenShinyValue(float startValue, float targetValue)
     {
         return DOTween.To(SetShinyValue, startValue, targetValue, _duration).SetEase(Ease.Linear);
     }
 
-
     private void SetShinyValue(float shinyValue)
     {
         _shinyMaterial.SetFloat(_shinyValueId, shinyValue);
     }
-
 
     private void OnDestroy()
     {

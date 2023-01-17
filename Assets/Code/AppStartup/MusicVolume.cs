@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 public class MusicVolume
 {
     private const string _musicVolume = "MusicVolume";
@@ -19,7 +18,6 @@ public class MusicVolume
             volume = 1;
             PlayerPrefs.SetFloat(_musicVolume, volume);
         }
-        
         
         AudioListener.volume = volume; 
     }

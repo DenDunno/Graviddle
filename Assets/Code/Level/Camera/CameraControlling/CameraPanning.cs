@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 public class CameraPanning : MonoBehaviour
 {
     [SerializeField] private Camera _mainCamera;
@@ -8,7 +7,6 @@ public class CameraPanning : MonoBehaviour
 
     private Vector3 _touchStartPosition;
     private bool _isUserZooming;
-
 
     private void Update()
     {
@@ -23,7 +21,6 @@ public class CameraPanning : MonoBehaviour
             MoveCamera();
         }
     }
-
 
     private void MoveCamera()
     {

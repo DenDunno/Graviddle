@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-
 public class ArrowSpawner : MonoBehaviour, IRestart
 {
     [SerializeField] private Arrow _arrowPrefab;
@@ -10,7 +9,6 @@ public class ArrowSpawner : MonoBehaviour, IRestart
     private readonly Stack<Arrow> _arrowsPull = new Stack<Arrow>();
     private readonly Queue<Arrow> _updatingArrows = new Queue<Arrow>();
 
-
     public void SpawnArrow()
     {
         Arrow arrow = SpawnOrPopArrow();
@@ -18,7 +16,6 @@ public class ArrowSpawner : MonoBehaviour, IRestart
         arrow.gameObject.SetActive(true);
         _updatingArrows.Enqueue(arrow);
     }
-
 
     private void Update()
     {
@@ -31,12 +28,10 @@ public class ArrowSpawner : MonoBehaviour, IRestart
         }
     }
 
-
     private Arrow SpawnOrPopArrow()
     {
         return _arrowsPull.IsEmpty() ? Instantiate(_arrowPrefab) : _arrowsPull.Pop();
     }
-    
 
     void IRestart.Restart()
     {

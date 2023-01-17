@@ -1,13 +1,11 @@
 using UnityEngine;
 
-
 public class LaserRaycast : MonoBehaviour
 {
     [SerializeField] private bool _updateRaycast;
     [SerializeField] private LaserSetup _laserSetup;
     [SerializeField] private LayerMask _layerMask;
     private const float _raycastDistance = 100f;
-
 
     private void Update()
     {
@@ -17,7 +15,6 @@ public class LaserRaycast : MonoBehaviour
             enabled = _updateRaycast;
         }
     }
-
 
     private bool TryRaycast(out Vector2 hitPoint)
     {

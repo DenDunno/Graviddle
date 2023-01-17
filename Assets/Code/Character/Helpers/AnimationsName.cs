@@ -1,5 +1,4 @@
 ﻿
-
 public static class AnimationsName
 {
     public static readonly string Run = nameof(Run);

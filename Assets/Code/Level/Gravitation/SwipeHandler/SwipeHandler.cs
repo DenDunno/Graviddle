@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-
 public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IRestart
 {
     [SerializeField] private bool _isActive = true;
@@ -12,7 +11,6 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IRes
     private GravityDirection _lastDirection;
 
     public event Action<GravityDirection> GravityChanged;
-
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -24,7 +22,6 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IRes
             TryChangeGravity();
         }
     }
-    
 
     private void DefineTurn(ref Vector2 delta)
     {
@@ -41,7 +38,6 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IRes
         _newDirection = (GravityDirection)(((int)_newDirection + (int)_lastDirection) % _numOfDirections);
     }
 
-
     private void TryChangeGravity()
     {
         if (_lastDirection != _newDirection)
@@ -51,7 +47,6 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IRes
         }
     }
     
-
     void IRestart.Restart()
     {
         _newDirection = GravityDirection.Down;
@@ -59,7 +54,6 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IRes
         TryChangeGravity();
     }
 
-    
     public void OnDrag(PointerEventData eventData)
     {
     }

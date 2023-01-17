@@ -2,7 +2,6 @@
 using UnityEngine;
 using System;
 
-
 public class LaserSwitcher : MonoBehaviour, ISwitcher
 {
     [SerializeField] private LaserParticlesSwitcher _laserParticlesSwitcher;
@@ -11,8 +10,6 @@ public class LaserSwitcher : MonoBehaviour, ISwitcher
     private InvocationWithDelay _laserTogglingEventWithDelay;
     
     public event Action<bool> Toggled;
-
-
 
     public void Init(bool startOnAwake)
     {
@@ -23,14 +20,12 @@ public class LaserSwitcher : MonoBehaviour, ISwitcher
        Restart(startOnAwake);
     }
 
-
     public IEnumerator ToggleLaser(bool activateLaser)
     {
         StartCoroutine(_laserTogglingEventWithDelay.Invoke(activateLaser));
         StartCoroutine(_particlesTogglingWithDelay.Invoke(activateLaser));
         yield return StartCoroutine(_laserLineSwitcher.ToggleLaserLine(activateLaser));
     }
-
 
     public void Restart(bool startOnAwake)
     {
@@ -39,7 +34,6 @@ public class LaserSwitcher : MonoBehaviour, ISwitcher
         _laserLineSwitcher.Restart(startOnAwake);
         _laserParticlesSwitcher.ToggleParticles(startOnAwake);
     }
-
 
     public void StopAnimation()
     {

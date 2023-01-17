@@ -1,9 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
-
 [Serializable]
-public class CharacterMoveDirection : IUpdate
+public class CharacterMovementDirection : IUpdate
 {
     [SerializeField] private InputButton[] _inputButtons;
     [SerializeField] private CharacterSpriteFlipping _characterSpriteFlipping;
@@ -11,12 +10,10 @@ public class CharacterMoveDirection : IUpdate
 
     public Vector2 Direction { get; private set; }
 
-
     public void Init(CurrentGravityData currentGravityData)
     {
         _currentGravityData = currentGravityData;
     }
-    
     
     void IUpdate.Update()
     {
@@ -27,7 +24,6 @@ public class CharacterMoveDirection : IUpdate
         
         Direction = _currentGravityData.Data.Rotation * (Vector2.right * (int) state);
     }
-
 
     private void TryRun(int buttonIndex, ref MovementState state, MovementState targetState)
     {

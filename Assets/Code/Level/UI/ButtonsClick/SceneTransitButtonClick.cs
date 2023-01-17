@@ -1,12 +1,10 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-
 public class SceneTransitButtonClick : ButtonClick
 {
     [SerializeField] private int _sceneIndex;
     [SerializeField] private AssetReference _transitReference;
-
 
     protected override async void OnButtonClick()
     {

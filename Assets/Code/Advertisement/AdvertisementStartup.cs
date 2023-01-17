@@ -3,13 +3,11 @@ using UnityEngine;
 using UnityEngine.Advertisements;
 using Object = UnityEngine.Object;
 
-
 [Serializable]
 public class AdvertisementStartup
 {
     [SerializeField] private LevelTransitionAdvertisementCounter _transitionAdvertisementCounter;
     private const bool _testMode = false;
-
 
     public void Init()
     {

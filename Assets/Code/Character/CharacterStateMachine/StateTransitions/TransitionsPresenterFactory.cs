@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
 public class TransitionsPresenterFactory
 {
     private readonly CharacterStatesPresenter _states;
     private readonly TransitionsConditions _transitionsConditions;
-
 
     public TransitionsPresenterFactory(CharacterStatesPresenter states, TransitionsConditions transitionsConditions)
     {
         _states = states;
         _transitionsConditions = transitionsConditions;
     }
-
 
     public TransitionsPresenter Create()
     {
@@ -26,7 +23,6 @@ public class TransitionsPresenterFactory
 
         return transitionPresenter;
     }
-
 
     private IEnumerable<Transition> GetTransitions()
     {
@@ -49,7 +45,6 @@ public class TransitionsPresenterFactory
 
         return allTransitions;
     }
-
 
     private IEnumerable<Transition> GetTransitionsWithState(CharacterState targetState, Func<bool> condition)
     {

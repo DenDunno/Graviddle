@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 public class SquashStretchAnimation : CharacterFallingEventsHandler, IFixedUpdate 
 {
     private readonly Rigidbody2D _rigidbody;
@@ -8,7 +7,6 @@ public class SquashStretchAnimation : CharacterFallingEventsHandler, IFixedUpdat
     private readonly Stretch _stretch;
     private float _velocity;
 
-    
     public SquashStretchAnimation(Rigidbody2D rigidbody, SpriteRenderer sprite, Transition fallToIdleTransition, FallState fallState) 
         : base(fallToIdleTransition, fallState)
     {
@@ -17,7 +15,6 @@ public class SquashStretchAnimation : CharacterFallingEventsHandler, IFixedUpdat
         _stretch = new Stretch(sprite.transform);
     }
     
-
     void IFixedUpdate.FixedUpdate()
     {
         if (IsFalling)
@@ -26,7 +23,6 @@ public class SquashStretchAnimation : CharacterFallingEventsHandler, IFixedUpdat
             _stretch.SetStretch(_velocity);
         }
     }
-
 
     protected override void OnEndFalling()
     {

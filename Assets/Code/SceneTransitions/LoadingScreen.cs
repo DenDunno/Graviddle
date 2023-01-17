@@ -1,6 +1,5 @@
 ﻿using DG.Tweening;using UnityEngine;
 
-
 public abstract class LoadingScreen : MonoBehaviour
 {
     [SerializeField] private float _inspectorDuration = 1f;

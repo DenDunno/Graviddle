@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 public class TimeScaleSwitcher : MonoBehaviour
 {
     public void FreezeGame()
@@ -8,12 +7,10 @@ public class TimeScaleSwitcher : MonoBehaviour
         SetTimeScale(0);
     }
 
-
     public void UnfreezeGame()
     {
         SetTimeScale(1);
     }
-
 
     private void SetTimeScale(float timeScale)
     {

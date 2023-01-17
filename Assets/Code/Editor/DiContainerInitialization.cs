@@ -1,7 +1,6 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-
 [CustomEditor(typeof(EntryPoint))]
 public class DiContainerInitialization : Editor
 {

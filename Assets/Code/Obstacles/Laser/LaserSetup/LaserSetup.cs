@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 public class LaserSetup : MonoBehaviour
 {
     [SerializeField] private LaserLine _laserLine;
@@ -8,7 +7,6 @@ public class LaserSetup : MonoBehaviour
     [SerializeField] private LaserCollider _laserCollider;
     [SerializeField] private LaserHitObjectsPositions _laserHitObjectsPositions;
     [SerializeField] private bool _applyEffectsAdjustment = true;
-    
 
     public void Setup(Vector2 hitPoint)
     {

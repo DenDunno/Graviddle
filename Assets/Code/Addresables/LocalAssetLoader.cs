@@ -3,7 +3,6 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-
 public static class LocalAssetLoader
 {
     public static async UniTask<T> Load<T>(object key)
@@ -17,7 +16,6 @@ public static class LocalAssetLoader
 
         return component;
     }
-    
     
     public static void Unload(GameObject gameObjectToBeReleased)
     {

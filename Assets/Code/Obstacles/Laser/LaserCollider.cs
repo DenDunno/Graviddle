@@ -1,11 +1,9 @@
 using UnityEngine;
 
-
 public class LaserCollider : MonoBehaviour
 {
     [SerializeField] private BoxCollider2D _boxCollider;
     [SerializeField] private LaserSwitcher _laserSwitcher;
-
 
     public void SetupColliderDistance(float laserDistance)
     {
@@ -15,18 +13,15 @@ public class LaserCollider : MonoBehaviour
         _boxCollider.offset = new Vector2(_boxCollider.offset.x, colliderOffset);
     }
 
-
     private void OnEnable()
     {
         _laserSwitcher.Toggled += ToggleCollider;
     }
 
-
     private void OnDisable()
     {
         _laserSwitcher.Toggled -= ToggleCollider;
     }
-
 
     private void ToggleCollider(bool activate)
     {

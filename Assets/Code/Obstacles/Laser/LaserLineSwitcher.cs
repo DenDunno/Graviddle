@@ -3,7 +3,6 @@ using DG.Tweening;
 using UnityEngine;
 using System;
 
-
 [Serializable]
 public class LaserLineSwitcher
 {
@@ -11,12 +10,10 @@ public class LaserLineSwitcher
     private LaserDistortionData _distortionData = new LaserDistortionData();
     private Tween _switchingTween;
 
-
     public void Init()
     {
         _laserDistortion.Init();
     }
-
 
     public IEnumerator ToggleLaserLine(bool activateLaser)
     {
@@ -29,13 +26,11 @@ public class LaserLineSwitcher
         yield return _switchingTween.WaitForCompletion();
     }
 
-
     public void Restart(bool startOnAwake)
     {
         StopAnimation();
         _laserDistortion.SetDistortion(_distortionData.GetDistortion(startOnAwake));
     }
-
 
     public void StopAnimation()
     {

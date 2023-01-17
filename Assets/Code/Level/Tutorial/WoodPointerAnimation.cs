@@ -2,7 +2,6 @@
 using DG.Tweening;
 using UnityEngine;
 
-
 public class WoodPointerAnimation : MonoBehaviour
 {
     [SerializeField] private UIDissolve _dissolveImage;
@@ -10,7 +9,6 @@ public class WoodPointerAnimation : MonoBehaviour
     private const float _duration = 2f;
     private const float _dissolveStartValue = 0;
     private const float _dissolveTargetValue = 1;
-
     
     private void OnTriggerEnter2D(Collider2D collider2d)
     {
@@ -19,7 +17,6 @@ public class WoodPointerAnimation : MonoBehaviour
             ShowImage();
         }
     }
-
 
     private void ShowImage()
     {

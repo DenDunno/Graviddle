@@ -2,17 +2,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class SceneTransit : MonoBehaviour
 {
     [SerializeField] private LoadingScreen _loadingScreen;
-
 
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
     }
-
 
     public async UniTask MakeTransition(int scene)
     {
@@ -20,7 +17,6 @@ public class SceneTransit : MonoBehaviour
         
         await backstage.MakeTransition();
     }
-
 
     private async UniTask LoadScene(int scene)
     {

@@ -1,13 +1,11 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-
 public class ArrowTrapGroup : ArrowTrapBase
 {
     [SerializeField] private ArrowSpawner[] _arrowSpawners;
     [SerializeField] private BoolMatrix _arrowsShootingMatrix;
     [SerializeField] private float _rate = 2f;
-
 
     protected override IEnumerator OnShoot()
     {

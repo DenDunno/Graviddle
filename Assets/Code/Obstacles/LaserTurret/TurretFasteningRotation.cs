@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 public class TurretFasteningRotation : IUpdate
 {
     private readonly TurretRotationData _data;
@@ -8,14 +7,12 @@ public class TurretFasteningRotation : IUpdate
     private readonly Transform _transform;
     private const float _rightAngle = 90;
 
-    
     public TurretFasteningRotation(TurretRotationData data, CurrentGravityData currentGravityData, Transform transform)
     {
         _data = data;
         _currentGravityData = currentGravityData;
         _transform = transform;
     }
-
 
     void IUpdate.Update()
     {

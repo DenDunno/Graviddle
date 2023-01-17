@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 public class LightBulb : MonoBehaviour
 {
     [SerializeField] private MonoBehaviour _switcherMonoBehaviour;
@@ -8,7 +7,6 @@ public class LightBulb : MonoBehaviour
     private ISwitcher _switcher;
     private const string _switchingOnAnimationName = "SwitchingOn";
     private const string _switchingOffAnimationName = "SwitchingOff";
-
 
     private void OnValidate()
     {
@@ -18,24 +16,20 @@ public class LightBulb : MonoBehaviour
         }
     }
 
-
     private void Awake()
     {
         _switcher = _switcherMonoBehaviour as ISwitcher;
     }
-
 
     private void OnEnable()
     {
         _switcher.Toggled += ToggleLightBulb;
     }
 
-
     private void OnDisable()
     {
         _switcher.Toggled -= ToggleLightBulb;
     }
-    
     
     private void ToggleLightBulb(bool activate)
     {

@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 
-
 [Serializable]
 public class LaserHitObjectsPositions
 {
@@ -13,7 +12,6 @@ public class LaserHitObjectsPositions
     private readonly Vector2 _lightBulbOffset = new Vector2(0, -0.25f);
     private readonly float _leftLightBulbSideOffset = -0.798f;
     private readonly float _rightLightBulbSideOffset = 0.902f;
-
 
     public void SetupPositions(Vector2 hitPoint)
     {

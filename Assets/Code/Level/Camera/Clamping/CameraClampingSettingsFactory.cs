@@ -1,18 +1,15 @@
 ﻿using UnityEngine;
 
-
 public class CameraClampingSettingsFactory
 {
     private readonly LevelBorders _levelBorders;
     private readonly Camera _camera;
 
-    
     public CameraClampingSettingsFactory(LevelBorders levelBorders, Camera camera)
     {
         _levelBorders = levelBorders;
         _camera = camera;
     }
-    
     
     public CameraClampingSettings Create()
     {
@@ -23,7 +20,6 @@ public class CameraClampingSettingsFactory
 
         return new CameraClampingSettings(cameraBorders, cameraHalfWidth - cameraHalfHeight);
     }
-
 
     private CameraBorders CreateCameraBorders(float cameraHalfWidth, float cameraHalfHeight)
     {

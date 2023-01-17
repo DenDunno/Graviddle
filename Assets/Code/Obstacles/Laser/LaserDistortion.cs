@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System;
 
-
 [Serializable]
 public class LaserDistortion
 {
@@ -10,12 +9,10 @@ public class LaserDistortion
     private readonly string _noiseDistortionName = "_NoiseAmount";
     private readonly string _noisePowerName = "_NoisePower";
 
-
     public void Init()
     {
         _propertyBlock = new MaterialPropertyBlock();
     }
-
 
     public void SetDistortion(float distortion)
     {
@@ -23,7 +20,6 @@ public class LaserDistortion
         _propertyBlock.SetFloat(_noisePowerName, EvaluateNoisePower(distortion));
         _lineRenderer.SetPropertyBlock(_propertyBlock);
     }
-
 
     private float EvaluateNoisePower(float distortion)
     {

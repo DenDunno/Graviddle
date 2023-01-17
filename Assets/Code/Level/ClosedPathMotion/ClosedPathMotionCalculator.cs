@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System;
 
-
 [Serializable]
 public class ClosedPathMotionCalculator 
 {
@@ -10,12 +9,10 @@ public class ClosedPathMotionCalculator
     private float _period;
     private float _time;    
 
-
     public void Init()
     {
         _period = _motionType.Period;
     }
-
 
     public float EvaluateLerpPosition()
     {
@@ -28,7 +25,6 @@ public class ClosedPathMotionCalculator
 
         return _motionType.EvaluateMotionFunction(_time);
     }
-
     
     public void Restart()
     {

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 public class Reward : MonoBehaviour, IRestart
 {
     [SerializeField] private LevelStar[] _levelStars;
@@ -14,18 +13,15 @@ public class Reward : MonoBehaviour, IRestart
         _levelStars.ForEach(levelStar => levelStar.StarCollected += OnStarCollected);
     }
 
-
     private void OnDisable()
     {
         _levelStars.ForEach(levelStar => levelStar.StarCollected -= OnStarCollected);
     }
 
-
     private void OnStarCollected()
     {
         ++CollectedStars;
     }
-
     
     void IRestart.Restart()
     {

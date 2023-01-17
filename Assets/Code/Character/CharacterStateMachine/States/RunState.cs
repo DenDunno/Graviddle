@@ -1,22 +1,19 @@
 ﻿using UnityEngine;
 
-
 public class RunState : CharacterState
 {
     private readonly Rigidbody2D _rigidbody;
-    private readonly CharacterMoveDirection _characterMoveDirection;
+    private readonly CharacterMovementDirection _characterMovementDirection;
     private const float _movementSpeed = 3.75f;
-    
 
-    public RunState(Animator character, CharacterMoveDirection characterMoveDirection) : base(character, AnimationsName.Run)
+    public RunState(Animator character, CharacterMovementDirection characterMovementDirection) : base(character, AnimationsName.Run)
     {
         _rigidbody = character.GetComponent<Rigidbody2D>();
-        _characterMoveDirection = characterMoveDirection;
+        _characterMovementDirection = characterMovementDirection;
     }
-
 
     public override void Update()
     {
-        _rigidbody.velocity = _characterMoveDirection.Direction * _movementSpeed;
+        _rigidbody.velocity = _characterMovementDirection.Direction * _movementSpeed;
     }
 }

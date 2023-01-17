@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 public class GameParallaxLayer : MonoBehaviour
 {
     [SerializeField] private ParallaxCameraPosition _parallaxCameraPosition;
@@ -11,24 +10,20 @@ public class GameParallaxLayer : MonoBehaviour
     private GravityDirection _gravityDirection;
     private float _lastCameraPosition;
 
-
     private void Start()
     {
         _parallaxLayerClamping = new ParallaxLayerClamping();
     }
 
-    
     private void OnEnable()
     {
         _swipeHandler.GravityChanged += OnGravityChanged;
     }
 
-
     private void OnDisable()
     {
         _swipeHandler.GravityChanged -= OnGravityChanged;
     }
-
 
     private void Update()
     {
@@ -38,7 +33,6 @@ public class GameParallaxLayer : MonoBehaviour
 
         _lastCameraPosition = newCameraPosition;
     }
-
 
     private Vector2 GetParallaxLayerPosition(float newCameraPosition)
     {
@@ -51,7 +45,6 @@ public class GameParallaxLayer : MonoBehaviour
 
         return new Vector2(targetXParallaxPosition, _layer.anchoredPosition.y);
     }
-    
 
     private void OnGravityChanged(GravityDirection gravityDirection)
     {

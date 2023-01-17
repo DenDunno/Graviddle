@@ -1,10 +1,8 @@
 ﻿using UnityEngine.Advertisements;
 
-
 public class LevelTransitionAdvertisement
 {
     private readonly string _videoId;
-
 
     public LevelTransitionAdvertisement()
     {
@@ -14,7 +12,6 @@ public class LevelTransitionAdvertisement
         _videoId = "Interstitial_iOS";
         #endif
     }
-
 
     public void Show()
     {

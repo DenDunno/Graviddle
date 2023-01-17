@@ -1,11 +1,8 @@
 ﻿
-
 public abstract class CharacterFallingEventsHandler : IRestart, ISubscriber
 {
     private readonly Transition _fallToIdleTransition;
     private readonly FallState _fallState;
-    protected bool IsFalling { get; private set; }
-
 
     protected CharacterFallingEventsHandler(Transition fallToIdleTransition, FallState fallState)
     {
@@ -13,6 +10,7 @@ public abstract class CharacterFallingEventsHandler : IRestart, ISubscriber
         _fallState = fallState;
     }
 
+    protected bool IsFalling { get; private set; }
 
     void ISubscriber.Subscribe()
     {
@@ -20,13 +18,11 @@ public abstract class CharacterFallingEventsHandler : IRestart, ISubscriber
         _fallToIdleTransition.TransitionHappened += OnCharacterFell;
     }
 
-
     void ISubscriber.Unsubscribe()
     {
         _fallState.CharacterFalling -= OnCharacterFalling;
         _fallToIdleTransition.TransitionHappened -= OnCharacterFell;
     }
-
 
     private void OnCharacterFalling()
     {
@@ -34,18 +30,15 @@ public abstract class CharacterFallingEventsHandler : IRestart, ISubscriber
         OnStartFalling();
     }
 
-
     private void OnCharacterFell()
     {
         IsFalling = false;
         OnEndFalling();
     }
 
-
     protected virtual void OnStartFalling() {}
     protected virtual void OnEndFalling() {}
 
-    
     void IRestart.Restart()
     {
         OnEndFalling();

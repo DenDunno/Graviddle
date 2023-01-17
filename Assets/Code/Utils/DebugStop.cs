@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 public class DebugStop : MonoBehaviour
 {
     private void Update()

@@ -1,12 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-
 [Serializable]
 public class ParallaxCameraPosition 
 {
     [SerializeField] private Camera _mainCamera;
-
 
     public float GetCameraPosition(GravityDirection gravityDirection)
     {

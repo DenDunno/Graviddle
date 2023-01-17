@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class LevelTransitionAdvertisementCounter : MonoBehaviour
 {
     private readonly LevelTransitionAdvertisement _levelTransitionAdvertisement = new LevelTransitionAdvertisement(); 
@@ -9,19 +8,16 @@ public class LevelTransitionAdvertisementCounter : MonoBehaviour
     private const int _menuScenes = 2;
     private static int _counter;
 
-
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
         SceneManager.activeSceneChanged += TryShowAdvertisement;
     }
 
-
     private void OnDestroy()
     {
         SceneManager.activeSceneChanged -= TryShowAdvertisement;
     }
-
     
     private void TryShowAdvertisement(Scene sceneFrom, Scene sceneTo)
     {
