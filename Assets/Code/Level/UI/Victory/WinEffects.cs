@@ -22,7 +22,7 @@ public class WinEffects
     {
         int collectedStars = _reward.CollectedStars;
 
-        for (var starIndex = 0; starIndex < collectedStars; ++starIndex)
+        for (int starIndex = 0; starIndex < collectedStars; ++starIndex)
         {
             await ActivateStar(starIndex);
         }

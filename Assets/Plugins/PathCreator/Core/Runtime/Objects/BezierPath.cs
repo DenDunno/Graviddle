@@ -404,7 +404,7 @@ namespace PathCreation {
         /// Update the bounding box of the path
         public Bounds CalculateBoundsWithTransform (Transform transform) {
             // Loop through all segments and keep track of the minmax points of all their bounding boxes
-            MinMax3D minMax = new MinMax3D ();
+            MinMax3D minMax = new();
 
             for (int i = 0; i < NumSegments; i++) {
                 Vector3[] p = GetPointsInSegment (i);
@@ -494,7 +494,7 @@ namespace PathCreation {
             }
 
             // Loop through all segments and keep track of the minmax points of all their bounding boxes
-            MinMax3D minMax = new MinMax3D ();
+            MinMax3D minMax = new();
 
             for (int i = 0; i < NumSegments; i++) {
                 Vector3[] p = GetPointsInSegment (i);

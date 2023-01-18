@@ -13,7 +13,7 @@ public class SceneTransit : MonoBehaviour
 
     public async UniTask MakeTransition(int scene)
     {
-        var backstage = new Backstage(_loadingScreen, ()=> LoadScene(scene));
+        Backstage backstage = new(_loadingScreen, ()=> LoadScene(scene));
         
         await backstage.MakeTransition();
     }

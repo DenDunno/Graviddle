@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class RestartButton : MonoBehaviour
 {
     [SerializeField] private Button _button;
-    private readonly EventTransit _eventTransit = new EventTransit();
+    private readonly EventTransit _eventTransit = new();
 
     private void Start()
     {

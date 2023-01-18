@@ -57,15 +57,15 @@ namespace MPUIKIT.Editor
 
         private static void TopBannerGUI()
         {
-            Rect headingRect = new Rect(0, 0, EditorGUIUtility.currentViewWidth, EditorGUIUtility.singleLineHeight * 5);
-            Rect backgroundTexCoords = new Rect(0, 0, headingRect.width / headingRect.height, 1);
+            Rect headingRect = new(0, 0, EditorGUIUtility.currentViewWidth, EditorGUIUtility.singleLineHeight * 5);
+            Rect backgroundTexCoords = new(0, 0, headingRect.width / headingRect.height, 1);
             Texture background = MPEditorContents.Background;
             background.wrapMode = TextureWrapMode.Repeat;
             GUI.DrawTextureWithTexCoords(headingRect, background, backgroundTexCoords);
 
             float height = headingRect.height;
             float width = headingRect.width - height - 30;
-            Rect titleRect = new Rect(headingRect.width - width - 5, 20, width, height - 30);
+            Rect titleRect = new(headingRect.width - width - 5, 20, width, height - 30);
             GUI.DrawTexture(titleRect, MPEditorContents.Title, ScaleMode.ScaleToFit);
 
 
@@ -89,7 +89,7 @@ namespace MPUIKIT.Editor
 
         private static void WelcomeGUI()
         {
-            var style = new GUIStyle(GUI.skin.label) {alignment = TextAnchor.MiddleCenter};
+            GUIStyle style = new(GUI.skin.label) {alignment = TextAnchor.MiddleCenter};
             EditorGUILayout.LabelField("Thank you for using", style, GUILayout.ExpandWidth(true));
             EditorGUILayout.LabelField("Modern Procedural UI Kit", style, GUILayout.ExpandWidth(true));
             GUILayout.Space(20);
@@ -154,7 +154,7 @@ namespace MPUIKIT.Editor
                 EditorGUILayout.BeginHorizontal();
                 {
                     EditorGUILayout.LabelField("© Copyright 2020 Scrollbie Studio", EditorStyles.miniLabel);
-                    GUIStyle style = new GUIStyle(EditorStyles.miniLabel);
+                    GUIStyle style = new(EditorStyles.miniLabel);
                     style.alignment = TextAnchor.MiddleRight;
                     GUILayout.FlexibleSpace();
                     EditorGUILayout.LabelField(_version, style, GUILayout.Width(120));

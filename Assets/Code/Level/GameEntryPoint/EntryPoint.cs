@@ -19,13 +19,13 @@ public class EntryPoint : MonoBehaviourWrapper
     private void Awake()
     {
         RestartableComponents restartComponents = _interfacesContainer.GetRestartableComponents();
-        CharacterStatesPresenter states = new CharacterStatesPresenter(_character.GetComponent<Animator>(), _characterMovementDirection);
-        var transitionsPresenterFactory = new TransitionsPresenterFactory(states, _transitionsConditions);
-        var transitionsPresenter = transitionsPresenterFactory.Create();
-        var restartEvent = new EventTransit();
-        var gravity = new Gravity(_swipeHandler);
-        var currentGravityData = new CurrentGravityData(_swipeHandler);
-        var levelRestart = new LevelRestart(restartComponents, restartEvent.Invoke, states.DieState);
+        CharacterStatesPresenter states = new(_character.GetComponent<Animator>(), _characterMovementDirection);
+        TransitionsPresenterFactory transitionsPresenterFactory = new(states, _transitionsConditions);
+        TransitionsPresenter transitionsPresenter = transitionsPresenterFactory.Create();
+        EventTransit restartEvent = new();
+        Gravity gravity = new(_swipeHandler);
+        CurrentGravityData currentGravityData = new(_swipeHandler);
+        LevelRestart levelRestart = new(restartComponents, restartEvent.Invoke, states.DieState);
         
         _gravityRotations.ForEach(gravityRotation => gravityRotation.Init(currentGravityData));
         _laserTurrets.ForEach(laserTurret => laserTurret.Init(currentGravityData));

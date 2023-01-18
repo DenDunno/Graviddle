@@ -14,7 +14,7 @@ public class SwipeHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IRes
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        var swipeInput = new Vector2(eventData.delta.x, eventData.delta.y);
+        Vector2 swipeInput = new(eventData.delta.x, eventData.delta.y);
 
         if (swipeInput.magnitude > _swipeSensitivity && _isActive)
         {

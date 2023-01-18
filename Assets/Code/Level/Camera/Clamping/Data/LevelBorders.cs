@@ -16,7 +16,7 @@ public class LevelBorders : MonoBehaviour
     {
         const float deadDistance = 5;
 
-        var clampedPosition = new Vector2 
+        Vector2 clampedPosition = new()
         {
             x = Mathf.Clamp(position.x, _left, _right),
             y = Mathf.Clamp(position.y, _down, _top)

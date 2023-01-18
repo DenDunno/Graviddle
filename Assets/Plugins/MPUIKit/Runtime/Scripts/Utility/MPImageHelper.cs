@@ -18,28 +18,28 @@ namespace UnityEngine.UI.MPUIKIT {
             vh.Clear();
 
             Vector3[] pos = {
-                new Vector3(v.x, v.y),
-                new Vector3(v.x, v.w),
-                new Vector3(v.z, v.w),
-                new Vector3(v.z, v.y),
+                new(v.x, v.y),
+                new(v.x, v.w),
+                new(v.z, v.w),
+                new(v.z, v.y),
             };
 
             Vector2[] uvs = {
-                new Vector2(uv.x, uv.y),
-                new Vector2(uv.x, uv.w),
-                new Vector2(uv.z, uv.w),
-                new Vector2(uv.z, uv.y),
+                new(uv.x, uv.y),
+                new(uv.x, uv.w),
+                new(uv.z, uv.w),
+                new(uv.z, uv.y),
             };
 
             Vector2[] uv1s =
             {
-                new Vector2(0, 0),
-                new Vector2(0, 1),
-                new Vector2(1, 1),
-                new Vector2(1, 0),
+                new(0, 0),
+                new(0, 1),
+                new(1, 1),
+                new(1, 0),
             };
 
-            Vector2 size = new Vector2(v.z - v.x, v.w - v.y);
+            Vector2 size = new(v.z - v.x, v.w - v.y);
             
             vh.AddVert(pos[0], color32, uvs[0], uv1s[0], size, Vector2.zero, Vector3.zero, Vector4.zero);
             vh.AddVert(pos[1], color32, uvs[1], uv1s[1], size, Vector2.zero, Vector3.zero, Vector4.zero);
@@ -59,7 +59,7 @@ namespace UnityEngine.UI.MPUIKIT {
                 return;
 
             Vector4 v = GetDrawingDimensions(preserveAspect, activeSprite, canvas, rectTransform);
-            Vector2 size = new Vector2(v.z - v.x, v.w - v.y);
+            Vector2 size = new(v.z - v.x, v.w - v.y);
             
             Vector4 outer = activeSprite != null
                 ? Sprites.DataUtility.GetOuterUV(activeSprite)
@@ -237,7 +237,7 @@ namespace UnityEngine.UI.MPUIKIT {
             Vector3[] quadUVs, Vector2 size) {
             int startIndex = vertexHelper.currentVertCount;
 
-            StringBuilder sr = new StringBuilder();
+            StringBuilder sr = new();
             for (int i = 0; i < 4; ++i) {
                 vertexHelper.AddVert(quadPositions[i], color, quadUVs[i], quadUVs[i], size, Vector2.zero,
                     Vector3.zero, Vector4.zero);
@@ -251,8 +251,8 @@ namespace UnityEngine.UI.MPUIKIT {
 
         private static Vector4 GetDrawingDimensions(bool shouldPreserveAspect, Sprite activeSprite, Canvas canvas,
             RectTransform rectTransform) {
-            var padding = activeSprite == null ? Vector4.zero : Sprites.DataUtility.GetPadding(activeSprite);
-            var size = activeSprite == null
+            Vector4 padding = activeSprite == null ? Vector4.zero : Sprites.DataUtility.GetPadding(activeSprite);
+            Vector2 size = activeSprite == null
                 ? new Vector2(rectTransform.rect.width, rectTransform.rect.height)
                 : new Vector2(activeSprite.rect.width, activeSprite.rect.height);
 
@@ -264,7 +264,7 @@ namespace UnityEngine.UI.MPUIKIT {
             int spriteW = Mathf.RoundToInt(size.x);
             int spriteH = Mathf.RoundToInt(size.y);
 
-            Vector4 v = new Vector4(
+            Vector4 v = new(
                 padding.x / spriteW,
                 padding.y / spriteH,
                 (spriteW - padding.z) / spriteW,

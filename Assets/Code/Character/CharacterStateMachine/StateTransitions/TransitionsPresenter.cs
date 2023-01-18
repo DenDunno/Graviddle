@@ -3,7 +3,7 @@ using System.Linq;
 
 public class TransitionsPresenter
 {
-    private readonly Dictionary<CharacterState, List<Transition>> _transitions = new Dictionary<CharacterState, List<Transition>>();
+    private readonly Dictionary<CharacterState, List<Transition>> _transitions = new();
 
     public void AddTransition(Transition transition)
     {

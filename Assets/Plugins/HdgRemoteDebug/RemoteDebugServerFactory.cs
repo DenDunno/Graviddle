@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Reflection;
+using Object = UnityEngine.Object;
 
 public class RemoteDebugServerFactory : MonoBehaviour
 {
@@ -14,14 +15,14 @@ public class RemoteDebugServerFactory : MonoBehaviour
 #if UNITY_WSA
         var serverType = typeof(Hdg.RemoteDebugServer);
 #else
-        var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+        Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
 
         Type serverType = null;
         Type settingsType = null;
 
-        for (var i = 0; i < assemblies.Length; i++)
+        for (int i = 0; i < assemblies.Length; i++)
         {
-            var asm = assemblies[i];
+            Assembly asm = assemblies[i];
             if (serverType == null)
                 serverType = asm.GetType("Hdg.RemoteDebugServer");
             if (settingsType == null)
@@ -34,7 +35,7 @@ public class RemoteDebugServerFactory : MonoBehaviour
             return;
 #endif
 
-        var server = FindObjectOfType(serverType);
+        Object server = FindObjectOfType(serverType);
         if (server == null)
         {
             // If there is no server in the scene, then create one.
@@ -49,7 +50,7 @@ public class RemoteDebugServerFactory : MonoBehaviour
                 {
                     if (ServerPort == 0)
                         ServerPort = 12000;
-                    var fieldInfo = settingsType.GetField("DEFAULT_SERVER_PORT");
+                    FieldInfo fieldInfo = settingsType.GetField("DEFAULT_SERVER_PORT");
                     if (fieldInfo != null)
                         fieldInfo.SetValue(null, ServerPort);
                     if (BroadcastPort == 0)

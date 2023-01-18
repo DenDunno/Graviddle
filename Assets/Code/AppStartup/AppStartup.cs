@@ -5,7 +5,7 @@ public class AppStartup : MonoBehaviour
 {
     [SerializeField] private BackgroundMusicSpawner _backgroundMusicSpawner;
     [SerializeField] private AdvertisementStartup _advertisementStartup;
-    private readonly MusicVolume _musicVolume = new MusicVolume();
+    private readonly MusicVolume _musicVolume = new();
     private static bool _appWasInited;
     
     private void Start()
@@ -19,7 +19,7 @@ public class AppStartup : MonoBehaviour
 
     private void Initialize()
     {
-        Application.targetFrameRate = 100;
+        Application.targetFrameRate = 80;
         Addressables.InitializeAsync();
         _backgroundMusicSpawner.Init();
         _advertisementStartup.Init();

@@ -17,7 +17,7 @@ public class CharacterMovementDirection : IUpdate
     
     void IUpdate.Update()
     {
-        var state = MovementState.Stop;
+        MovementState state = MovementState.Stop;
         
         TryRun(0, ref state, MovementState.Left);
         TryRun(1, ref state, MovementState.Right);

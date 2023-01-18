@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollisionsList : MonoBehaviour
 {
-    private readonly List<Collider2D> _colliders = new List<Collider2D>();
+    private readonly List<Collider2D> _colliders = new();
 
     private void OnTriggerEnter2D(Collider2D collider2d)
     {

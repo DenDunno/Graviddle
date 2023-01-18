@@ -8,8 +8,8 @@ public class LaserHitObjectsPositions
     [SerializeField] private ParticleSystem _hitEffect;
     [SerializeField] private bool _isLightBulbInRight = true;
 
-    private readonly Vector2 _hitEffectOffset = new Vector2(0.05f, -0.05f);
-    private readonly Vector2 _lightBulbOffset = new Vector2(0, -0.25f);
+    private readonly Vector2 _hitEffectOffset = new(0.05f, -0.05f);
+    private readonly Vector2 _lightBulbOffset = new(0, -0.25f);
     private readonly float _leftLightBulbSideOffset = -0.798f;
     private readonly float _rightLightBulbSideOffset = 0.902f;
 

@@ -10,8 +10,8 @@ public class LaserTurret : MonoBehaviour
 
     public void Init(CurrentGravityData currentGravityData)
     {
-        var turretRotationData = new TurretRotationData(_target, _turret, 1.5f);
-        var fasteningRotationData = new TurretRotationData(_target, _fastening, 2f);
+        TurretRotationData turretRotationData = new(_target, _turret, 1.5f);
+        TurretRotationData fasteningRotationData = new(_target, _fastening, 2f);
         
         _updatables = new IUpdate[]
         {

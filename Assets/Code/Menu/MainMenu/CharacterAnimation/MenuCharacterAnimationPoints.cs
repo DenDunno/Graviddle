@@ -13,10 +13,10 @@ public static class MenuCharacterAnimationPoints
 
         return new List<AnimationPath>()
         {
-            new AnimationPath(new Vector2(widthOffset, widthOffset), new Vector2(widthOffset, -height - widthOffset)),
-            new AnimationPath(new Vector2(width + widthOffset, -height + widthOffset), new Vector2(-widthOffset, -height + widthOffset)),
-            new AnimationPath(new Vector2(width - widthOffset, -height - widthOffset), new Vector2(width - widthOffset , widthOffset)),
-            new AnimationPath(new Vector2(-widthOffset, -widthOffset), new Vector2(width + widthOffset, -widthOffset)),
+            new(new Vector2(widthOffset, widthOffset), new Vector2(widthOffset, -height - widthOffset)),
+            new(new Vector2(width + widthOffset, -height + widthOffset), new Vector2(-widthOffset, -height + widthOffset)),
+            new(new Vector2(width - widthOffset, -height - widthOffset), new Vector2(width - widthOffset , widthOffset)),
+            new(new Vector2(-widthOffset, -widthOffset), new Vector2(width + widthOffset, -widthOffset)),
         };
     }
 }

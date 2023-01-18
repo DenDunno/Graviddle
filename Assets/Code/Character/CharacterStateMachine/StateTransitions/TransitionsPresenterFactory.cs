@@ -14,7 +14,7 @@ public class TransitionsPresenterFactory
 
     public TransitionsPresenter Create()
     {
-        var transitionPresenter = new TransitionsPresenter();
+        TransitionsPresenter transitionPresenter = new();
 
         foreach (Transition transition in GetTransitions())
         {
@@ -26,7 +26,7 @@ public class TransitionsPresenterFactory
 
     private IEnumerable<Transition> GetTransitions()
     {
-        var allTransitions = new List<Transition>();
+        List<Transition> allTransitions = new();
 
         allTransitions.AddRange(GetTransitionsWithState(_states.WinState, _transitionsConditions.CheckWin));
         
@@ -48,7 +48,7 @@ public class TransitionsPresenterFactory
 
     private IEnumerable<Transition> GetTransitionsWithState(CharacterState targetState, Func<bool> condition)
     {
-        var transitionsWithState = new List<Transition>();
+        List<Transition> transitionsWithState = new();
 
         foreach (CharacterState stateFrom in _states.GameActiveStates)
         {

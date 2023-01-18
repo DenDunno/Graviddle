@@ -11,7 +11,7 @@ public class CharacterToPortalPulling
 
     public void Execute()
     {
-        var gravityRotation = _character.GetComponent<GravityRotation>();
+        GravityRotation gravityRotation = _character.GetComponent<GravityRotation>();
         gravityRotation.enabled = false;
         
         _character.transform.DOMove(_pullingPoint.transform.position, _animationDuration);

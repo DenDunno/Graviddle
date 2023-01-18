@@ -11,7 +11,7 @@ public class CameraMediator : MonoBehaviour
     
     public void Init()
     {
-        var cameraClampingSettingsFactory = new CameraClampingSettingsFactory(_levelBorders, _mainCamera);
+        CameraClampingSettingsFactory cameraClampingSettingsFactory = new(_levelBorders, _mainCamera);
         
         CameraClampingSettings settings = cameraClampingSettingsFactory.Create();
 

@@ -10,7 +10,7 @@ public class DiContainerInitialization : Editor
         
         if (GUILayout.Button("Resolve scene"))
         {
-            var container = FindObjectOfType<EditorInterfacesContainer>();
+            EditorInterfacesContainer container = FindObjectOfType<EditorInterfacesContainer>();
             container.FillContainers();
             EditorUtility.SetDirty(container);
             

@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelTransitionAdvertisementCounter : MonoBehaviour
 {
-    private readonly LevelTransitionAdvertisement _levelTransitionAdvertisement = new LevelTransitionAdvertisement(); 
+    private readonly LevelTransitionAdvertisement _levelTransitionAdvertisement = new(); 
     private const int _levelBeforeAdvertisement = 3;
     private const int _menuScenes = 2;
     private static int _counter;

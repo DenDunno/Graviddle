@@ -67,12 +67,12 @@ namespace MPUIKIT {
             set {
                 m_Gradient = value;
                 if (ShouldModifySharedMat) {
-                    List<Vector4> Colors = new List<Vector4>(8);
-                    List<Vector4> Alphas = new List<Vector4>(8);
+                    List<Vector4> Colors = new(8);
+                    List<Vector4> Alphas = new(8);
                     for (int i = 0; i < 8; i++) {
                         if (i < m_Gradient.colorKeys.Length) {
                             Color col = m_Gradient.colorKeys[i].color;
-                            Vector4 data = new Vector4(col.r, col.g, col.b, 
+                            Vector4 data = new(col.r, col.g, col.b, 
                                 m_Gradient.colorKeys[i].time);
                             Colors.Add(data);
                             SharedMat.SetVector("_GradientColor"+i, data);
@@ -81,7 +81,7 @@ namespace MPUIKIT {
                             SharedMat.SetVector("_GradientColor"+i, Vector4.zero);
                         }
                         if (i < m_Gradient.alphaKeys.Length) {
-                            Vector4 data = new Vector4(m_Gradient.alphaKeys[i].alpha, m_Gradient.alphaKeys[i].time);
+                            Vector4 data = new(m_Gradient.alphaKeys[i].alpha, m_Gradient.alphaKeys[i].time);
                             Alphas.Add(data);
                             SharedMat.SetVector("_GradientAlpha"+i, data);
                         }
@@ -180,7 +180,7 @@ namespace MPUIKIT {
             m_Rotation = material.GetFloat(SpGradientRotation);
             int colorLength = material.GetInt(SpGradientColorsLength);
             int alphaLength = material.GetInt(SpGradientAlphasLength);
-            Gradient gradient = new Gradient();
+            Gradient gradient = new();
             GradientColorKey[] colorKeys = new GradientColorKey[colorLength];
             GradientAlphaKey[] alphaKeys = new GradientAlphaKey[alphaLength];
             for (int i = 0; i < colorLength; i++) {

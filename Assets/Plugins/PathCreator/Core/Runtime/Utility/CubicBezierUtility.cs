@@ -57,7 +57,7 @@ namespace PathCreation.Utility {
         }
 
         public static Bounds CalculateSegmentBounds (Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3) {
-            MinMax3D minMax = new MinMax3D ();
+            MinMax3D minMax = new();
             minMax.AddValue (p0);
             minMax.AddValue (p3);
 
@@ -98,7 +98,7 @@ namespace PathCreation.Utility {
             Vector3 b = 6 * (p0 - 2 * p1 + p2);
             Vector3 c = 3 * (p1 - p0);
 
-            List<float> times = new List<float> ();
+            List<float> times = new();
             times.AddRange (StationaryPointTimes (a.x, b.x, c.x));
             times.AddRange (StationaryPointTimes (a.y, b.y, c.y));
             times.AddRange (StationaryPointTimes (a.z, b.z, c.z));
@@ -108,7 +108,7 @@ namespace PathCreation.Utility {
         // Finds times of stationary points on curve defined by ax^2 + bx + c.
         // Only times between 0 and 1 are considered as Bezier only uses values in that range
         static IEnumerable<float> StationaryPointTimes (float a, float b, float c) {
-            List<float> times = new List<float> ();
+            List<float> times = new();
 
             // from quadratic equation: y = [-b +- sqrt(b^2 - 4ac)]/2a
             if (a != 0) {

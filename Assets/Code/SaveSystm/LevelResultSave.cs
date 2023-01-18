@@ -26,7 +26,7 @@ public class LevelResultSave : MonoBehaviour
 
     private void SaveLevelResult()
     {
-        var saves = new Dictionary<int, int>();
+        Dictionary<int, int> saves = new();
 
         if (PlayerPrefs.HasKey(_saves))
         {

@@ -200,27 +200,27 @@ namespace PathCreation {
 
         /// Gets point on path based on 'time' (where 0 is start, and 1 is end of path).
         public Vector3 GetPointAtTime (float t, EndOfPathInstruction endOfPathInstruction = EndOfPathInstruction.Loop) {
-            var data = CalculatePercentOnPathData (t, endOfPathInstruction);
+            TimeOnPathData data = CalculatePercentOnPathData (t, endOfPathInstruction);
             return Vector3.Lerp (GetPoint (data.previousIndex), GetPoint (data.nextIndex), data.percentBetweenIndices);
         }
 
         /// Gets forward direction on path based on 'time' (where 0 is start, and 1 is end of path).
         public Vector3 GetDirection (float t, EndOfPathInstruction endOfPathInstruction = EndOfPathInstruction.Loop) {
-            var data = CalculatePercentOnPathData (t, endOfPathInstruction);
+            TimeOnPathData data = CalculatePercentOnPathData (t, endOfPathInstruction);
             Vector3 dir = Vector3.Lerp (localTangents[data.previousIndex], localTangents[data.nextIndex], data.percentBetweenIndices);
             return MathUtility.TransformDirection (dir, transform, space);
         }
 
         /// Gets normal vector on path based on 'time' (where 0 is start, and 1 is end of path).
         public Vector3 GetNormal (float t, EndOfPathInstruction endOfPathInstruction = EndOfPathInstruction.Loop) {
-            var data = CalculatePercentOnPathData (t, endOfPathInstruction);
+            TimeOnPathData data = CalculatePercentOnPathData (t, endOfPathInstruction);
             Vector3 normal = Vector3.Lerp (localNormals[data.previousIndex], localNormals[data.nextIndex], data.percentBetweenIndices);
             return MathUtility.TransformDirection (normal, transform, space);
         }
 
         /// Gets a rotation that will orient an object in the direction of the path at this point, with local up point along the path's normal
         public Quaternion GetRotation (float t, EndOfPathInstruction endOfPathInstruction = EndOfPathInstruction.Loop) {
-            var data = CalculatePercentOnPathData (t, endOfPathInstruction);
+            TimeOnPathData data = CalculatePercentOnPathData (t, endOfPathInstruction);
             Vector3 direction = Vector3.Lerp (localTangents[data.previousIndex], localTangents[data.nextIndex], data.percentBetweenIndices);
             Vector3 normal = Vector3.Lerp (localNormals[data.previousIndex], localNormals[data.nextIndex], data.percentBetweenIndices);
             return Quaternion.LookRotation (MathUtility.TransformDirection (direction, transform, space), MathUtility.TransformDirection (normal, transform, space));

@@ -273,7 +273,7 @@ namespace MPUIKIT {
         }
 
         private MPVertexStream CreateVertexStream() {
-            MPVertexStream stream = new MPVertexStream();
+            MPVertexStream stream = new();
             RectTransform rectT = rectTransform;
             stream.RectTransform = rectT;
             Rect r = GetPixelAdjustedRect();
@@ -284,7 +284,7 @@ namespace MPUIKIT {
             stream.Uv3 = new Vector2(packedRotData, (float)m_CornerStyle);
 
             stream.Tangent = m_OutlineColor;
-            Vector3 normal = new Vector3();
+            Vector3 normal = new();
             normal.x = m_OutlineWidth;
 
             Vector4 data;
@@ -379,7 +379,7 @@ namespace MPUIKIT {
 
             MPVertexStream stream = CreateVertexStream();
             
-            UIVertex uiVert = new UIVertex();
+            UIVertex uiVert = new();
 
             for (int i = 0; i < toFill.currentVertCount; i++) {
                 toFill.PopulateUIVertex(ref uiVert, i);

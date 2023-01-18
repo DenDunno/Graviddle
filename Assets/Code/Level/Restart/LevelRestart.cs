@@ -28,7 +28,7 @@ public class LevelRestart : ISubscriber
     private async void MakeRestart()
     {
         var deathScreen = await LocalAssetLoader.Load<LoadingScreen>("LevelRestart");
-        var backstage = new Backstage(deathScreen, RestartObjects);
+        Backstage backstage = new(deathScreen, RestartObjects);
 
         await backstage.MakeTransition();
 

@@ -7,8 +7,8 @@ namespace MPUIKIT.Editor {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
             EditorGUI.BeginProperty(position, label, property);
             {
-                Rect LabelRect = new Rect(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
-                Rect RadiusVectorRect = new Rect(position.x, 
+                Rect LabelRect = new(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
+                Rect RadiusVectorRect = new(position.x, 
                     position.y + EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing, 
                     position.width, EditorGUIUtility.singleLineHeight);
                 

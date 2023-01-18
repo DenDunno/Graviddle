@@ -39,7 +39,7 @@ namespace PathCreationEditor {
         PathHandle.HandleColours splineAnchorColours;
         PathHandle.HandleColours splineControlColours;
         Dictionary<GlobalDisplaySettings.HandleType, Handles.CapFunction> capFunctions;
-        ArcHandle anchorAngleHandle = new ArcHandle ();
+        ArcHandle anchorAngleHandle = new();
         VertexPath normalsVertexPath;
 
         // State variables:
@@ -100,7 +100,7 @@ namespace PathCreationEditor {
         }
 
         void DrawBezierPathInspector () {
-            using (var check = new EditorGUI.ChangeCheckScope ()) {
+            using (EditorGUI.ChangeCheckScope check = new()) {
                 // Path options:
                 data.showPathOptions = EditorGUILayout.Foldout (data.showPathOptions, new GUIContent ("Bézier Path Options"), true, boldFoldoutStyle);
                 if (data.showPathOptions) {
@@ -125,17 +125,17 @@ namespace PathCreationEditor {
                         EditorGUILayout.LabelField ("Selected Point:");
 
                         using (new EditorGUI.IndentLevelScope ()) {
-                            var currentPosition = creator.bezierPath[handleIndexToDisplayAsTransform];
-                            var newPosition = EditorGUILayout.Vector3Field ("Position", currentPosition);
+                            Vector3 currentPosition = creator.bezierPath[handleIndexToDisplayAsTransform];
+                            Vector3 newPosition = EditorGUILayout.Vector3Field ("Position", currentPosition);
                             if (newPosition != currentPosition) {
                                 Undo.RecordObject (creator, "Move point");
                                 creator.bezierPath.MovePoint (handleIndexToDisplayAsTransform, newPosition);
                             }
                             // Don't draw the angle field if we aren't selecting an anchor point/not in 3d space
                             if (handleIndexToDisplayAsTransform % 3 == 0 && creator.bezierPath.Space == PathSpace.xyz) {
-                                var anchorIndex = handleIndexToDisplayAsTransform / 3;
-                                var currentAngle = creator.bezierPath.GetAnchorNormalAngle (anchorIndex);
-                                var newAngle = EditorGUILayout.FloatField ("Angle", currentAngle);
+                                int anchorIndex = handleIndexToDisplayAsTransform / 3;
+                                float currentAngle = creator.bezierPath.GetAnchorNormalAngle (anchorIndex);
+                                float newAngle = EditorGUILayout.FloatField ("Angle", currentAngle);
                                 if (newAngle != currentAngle) {
                                     Undo.RecordObject (creator, "Set Angle");
                                     creator.bezierPath.SetAnchorNormalAngle (anchorIndex, newAngle);
@@ -225,7 +225,7 @@ namespace PathCreationEditor {
 
             data.showVertexPathOptions = EditorGUILayout.Foldout (data.showVertexPathOptions, new GUIContent ("Vertex Path Options"), true, boldFoldoutStyle);
             if (data.showVertexPathOptions) {
-                using (var check = new EditorGUI.ChangeCheckScope ()) {
+                using (EditorGUI.ChangeCheckScope check = new()) {
                     data.vertexPathMaxAngleError = EditorGUILayout.Slider (new GUIContent ("Max Angle Error"), data.vertexPathMaxAngleError, 0, 45);
                     data.vertexPathMinVertexSpacing = EditorGUILayout.Slider (new GUIContent ("Min Vertex Dst"), data.vertexPathMinVertexSpacing, 0, 1);
 
@@ -240,7 +240,7 @@ namespace PathCreationEditor {
 
             data.showVertexPathDisplayOptions = EditorGUILayout.Foldout (data.showVertexPathDisplayOptions, new GUIContent ("Display Options"), true, boldFoldoutStyle);
             if (data.showVertexPathDisplayOptions) {
-                using (var check = new EditorGUI.ChangeCheckScope ()) {
+                using (EditorGUI.ChangeCheckScope check = new()) {
                     data.showNormalsInVertexMode = GUILayout.Toggle (data.showNormalsInVertexMode, new GUIContent ("Show Normals"));
                     data.showBezierPathInVertexMode = GUILayout.Toggle (data.showBezierPathInVertexMode, new GUIContent ("Show Bezier Path"));
 
@@ -254,7 +254,7 @@ namespace PathCreationEditor {
         }
 
         void DrawGlobalDisplaySettingsInspector () {
-            using (var check = new EditorGUI.ChangeCheckScope ()) {
+            using (EditorGUI.ChangeCheckScope check = new()) {
                 data.globalDisplaySettingsFoldout = EditorGUILayout.InspectorTitlebar (data.globalDisplaySettingsFoldout, globalDisplaySettings);
                 if (data.globalDisplaySettingsFoldout) {
                     CreateCachedEditor (globalDisplaySettings, null, ref globalDisplaySettingsEditor);
@@ -278,7 +278,7 @@ namespace PathCreationEditor {
 
             EventType eventType = Event.current.type;
 
-            using (var check = new EditorGUI.ChangeCheckScope ()) {
+            using (EditorGUI.ChangeCheckScope check = new()) {
                 handlesStartCol = Handles.color;
                 switch (data.tabIndex) {
                     case bezierPathTab:
@@ -513,7 +513,7 @@ namespace PathCreationEditor {
             if (i == handleIndexToDisplayAsTransform) {
                 handleColours.defaultColour = (isAnchorPoint) ? globalDisplaySettings.anchorSelected : globalDisplaySettings.controlSelected;
             }
-            var cap = capFunctions[(isAnchorPoint) ? globalDisplaySettings.anchorShape : globalDisplaySettings.controlShape];
+            Handles.CapFunction cap = capFunctions[(isAnchorPoint) ? globalDisplaySettings.anchorShape : globalDisplaySettings.controlShape];
             PathHandle.HandleInputType handleInputType;
             handlePosition = PathHandle.DrawHandle (handlePosition, bezierPath.Space, isInteractive, handleSize, cap, handleColours, out handleInputType, i);
 
@@ -651,7 +651,7 @@ namespace PathCreationEditor {
         }
 
         void UpdateGlobalDisplaySettings () {
-            var gds = globalDisplaySettings;
+            GlobalDisplaySettings gds = globalDisplaySettings;
             splineAnchorColours = new PathHandle.HandleColours (gds.anchor, gds.anchorHighlighted, gds.anchorSelected, gds.handleDisabled);
             splineControlColours = new PathHandle.HandleColours (gds.control, gds.controlHighlighted, gds.controlSelected, gds.handleDisabled);
 

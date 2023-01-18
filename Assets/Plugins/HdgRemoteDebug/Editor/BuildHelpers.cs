@@ -13,17 +13,17 @@ namespace Hdg
         /// </summary>
         public static void WriteRemoteDebugLinkXml(BuildTarget buildTarget)
         {
-            var path = FindRemoteDebugPath();
-            var dir = Path.GetDirectoryName(path);
+            string path = FindRemoteDebugPath();
+            string dir = Path.GetDirectoryName(path);
             if (!Directory.Exists(dir))
                 return;
 
-            var linkXml = Path.Combine(dir, "link.xml");
+            string linkXml = Path.Combine(dir, "link.xml");
 
             try
             {
-                var contents = @"<linker><assembly fullname=""XXX"" preserve=""all""/></linker>";
-                var dllName = GetRemoteDebugDLLName(buildTarget);
+                string contents = @"<linker><assembly fullname=""XXX"" preserve=""all""/></linker>";
+                string dllName = GetRemoteDebugDLLName(buildTarget);
                 contents = contents.Replace("XXX", dllName);
                 File.WriteAllText(linkXml, contents);
             }
@@ -40,12 +40,12 @@ namespace Hdg
         /// </summary>
         public static void RemoveRemoteDebugLinkXml()
         {
-            var path = FindRemoteDebugPath();
-            var dir = Path.GetDirectoryName(path);
+            string path = FindRemoteDebugPath();
+            string dir = Path.GetDirectoryName(path);
             if (!Directory.Exists(dir))
                 return;
 
-            var linkXml = Path.Combine(dir, "link.xml");
+            string linkXml = Path.Combine(dir, "link.xml");
             if (!File.Exists(linkXml))
                 return;
 
@@ -53,7 +53,7 @@ namespace Hdg
             {
                 // Delete the link.xml and the meta file.
                 File.Delete(linkXml);
-                var meta = linkXml + ".meta";
+                string meta = linkXml + ".meta";
                 if (File.Exists(meta))
                     File.Delete(meta);
             }
@@ -71,9 +71,9 @@ namespace Hdg
         /// <param name="buildTarget"></param>
         public static void DisableRemoteDebug(BuildTarget buildTarget)
         {
-            var importers = PluginImporter.GetAllImporters();
-            var dllName = GetRemoteDebugDLLName(buildTarget);
-            foreach (var importer in importers)
+            PluginImporter[] importers = PluginImporter.GetAllImporters();
+            string dllName = GetRemoteDebugDLLName(buildTarget);
+            foreach (PluginImporter importer in importers)
             {
                 if (importer.assetPath.IndexOf(dllName, StringComparison.OrdinalIgnoreCase) >= 0)
                 {
@@ -90,9 +90,9 @@ namespace Hdg
         /// <param name="buildTarget"></param>
         public static void EnableRemoteDebug(BuildTarget buildTarget)
         {
-            var importers = PluginImporter.GetAllImporters();
-            var dllName = GetRemoteDebugDLLName(buildTarget);
-            foreach (var importer in importers)
+            PluginImporter[] importers = PluginImporter.GetAllImporters();
+            string dllName = GetRemoteDebugDLLName(buildTarget);
+            foreach (PluginImporter importer in importers)
             {
                 if (importer.assetPath.IndexOf(dllName, StringComparison.OrdinalIgnoreCase) >= 0)
                 {
@@ -108,8 +108,8 @@ namespace Hdg
         /// <returns>Relative plugin path</returns>
         private static string FindRemoteDebugPath()
         {
-            var importers = PluginImporter.GetAllImporters();
-            foreach (var importer in importers)
+            PluginImporter[] importers = PluginImporter.GetAllImporters();
+            foreach (PluginImporter importer in importers)
             {
                 if (importer.assetPath.IndexOf("HdgRemoteDebugRuntime", StringComparison.OrdinalIgnoreCase) >= 0)
                     return importer.assetPath;

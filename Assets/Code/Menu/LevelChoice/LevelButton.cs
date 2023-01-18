@@ -11,7 +11,7 @@ public class LevelButton : MonoBehaviour
     {
         _nonStars.ForEach(nonStar => nonStar.gameObject.SetActive(true));
         
-        for (var i = 0; i < stars; i++)
+        for (int i = 0; i < stars; i++)
         {
             _stars[i].gameObject.SetActive(true);
             _nonStars[i].gameObject.SetActive(false);

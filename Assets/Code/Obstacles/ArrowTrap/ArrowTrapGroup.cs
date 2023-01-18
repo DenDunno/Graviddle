@@ -11,7 +11,7 @@ public class ArrowTrapGroup : ArrowTrapBase
     {
         foreach (BoolArray boolArray in _arrowsShootingMatrix)
         {
-            for (var i = 0 ; i < _arrowSpawners.Length; ++i)
+            for (int i = 0 ; i < _arrowSpawners.Length; ++i)
             {
                 if (boolArray[i])
                 {

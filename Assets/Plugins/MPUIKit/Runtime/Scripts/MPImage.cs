@@ -674,7 +674,7 @@ namespace MPUIKIT {
 
 #if UNITY_EDITOR
         public Material CreateMaterialAssetFromComponentSettings() {
-            Material matAsset = new Material(Shader.Find(MpShaderName));
+            Material matAsset = new(Shader.Find(MpShaderName));
             matAsset = GetModifiedMaterial(matAsset);
             string path = EditorUtility.SaveFilePanelInProject("Create Material for MPImage", 
                 "MPMaterial", "mat", "Choose location");

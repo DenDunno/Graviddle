@@ -25,22 +25,22 @@ namespace PathCreation
 
 
         [Header("Anchor Colours")]
-        public Color anchor = new Color(0.95f, 0.25f, 0.25f, 0.85f);
-        public Color anchorHighlighted = new Color(1, 0.57f, 0.4f);
+        public Color anchor = new(0.95f, 0.25f, 0.25f, 0.85f);
+        public Color anchorHighlighted = new(1, 0.57f, 0.4f);
         public Color anchorSelected = Color.white;
 
         [Header("Control Colours")]
-        public Color control = new Color(0.35f, 0.6f, 1, 0.85f);
-        public Color controlHighlighted = new Color(0.8f, 0.67f, 0.97f);
+        public Color control = new(0.35f, 0.6f, 1, 0.85f);
+        public Color controlHighlighted = new(0.8f, 0.67f, 0.97f);
         public Color controlSelected = Color.white;
-        public Color handleDisabled = new Color(1, 1, 1, 0.2f);
-        public Color controlLine = new Color(0, 0, 0, 0.35f);
+        public Color handleDisabled = new(1, 1, 1, 0.2f);
+        public Color controlLine = new(0, 0, 0, 0.35f);
 
         [Header("Bezier Path Colours")]
         public Color bezierPath = Color.green;
-        public Color highlightedPath = new Color(1, 0.6f, 0);
-        public Color bounds = new Color(1, 1, 1, .4f);
-        public Color segmentBounds = new Color(1, 1, 1, .4f);
+        public Color highlightedPath = new(1, 0.6f, 0);
+        public Color bounds = new(1, 1, 1, .4f);
+        public Color segmentBounds = new(1, 1, 1, .4f);
 
         [Header("Vertex Path Colours")]
         public Color vertexPath = Color.white;

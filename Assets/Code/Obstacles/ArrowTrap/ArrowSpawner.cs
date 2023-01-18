@@ -6,8 +6,8 @@ public class ArrowSpawner : MonoBehaviour, IRestart
     [SerializeField] private Arrow _arrowPrefab;
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private LevelBorders _levelBorders;
-    private readonly Stack<Arrow> _arrowsPull = new Stack<Arrow>();
-    private readonly Queue<Arrow> _updatingArrows = new Queue<Arrow>();
+    private readonly Stack<Arrow> _arrowsPull = new();
+    private readonly Queue<Arrow> _updatingArrows = new();
 
     public void SpawnArrow()
     {
@@ -37,7 +37,7 @@ public class ArrowSpawner : MonoBehaviour, IRestart
     {
         _updatingArrows.ForEach(updatingArrow => updatingArrow.gameObject.SetActive(false));
         
-        for (var i = 0; i < _updatingArrows.Count; ++i)
+        for (int i = 0; i < _updatingArrows.Count; ++i)
         {
             _arrowsPull.Push(_updatingArrows.Dequeue());
         }
