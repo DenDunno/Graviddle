@@ -1,16 +1,17 @@
-﻿using UnityEngine;
+﻿using Sirenix.OdinInspector;
+using UnityEngine;
 
 public class LevelBorders : MonoBehaviour
 {
-    [SerializeField] private int _top;
-    [SerializeField] private int _down;
-    [SerializeField] private int _left;
-    [SerializeField] private int _right;
+    [SerializeField] [ChildGameObjectsOnly] private Transform _left;
+    [SerializeField] [ChildGameObjectsOnly] private Transform _right;
+    [SerializeField] [ChildGameObjectsOnly] private Transform _top;
+    [SerializeField] [ChildGameObjectsOnly] private Transform _bottom;
 
-    public int Top => _top;
-    public int Down => _down;
-    public int Left => _left;
-    public int Right => _right;
+    public int Top => Mathf.RoundToInt(_top.position.y);
+    public int Bottom => Mathf.RoundToInt(_bottom.position.y);
+    public int Left => Mathf.RoundToInt(_left.position.x);
+    public int Right => Mathf.RoundToInt(_right.position.x);
 
     public bool CheckIfPositionNotWithinTheLevel(Vector2 position)
     {
@@ -18,8 +19,8 @@ public class LevelBorders : MonoBehaviour
 
         Vector2 clampedPosition = new()
         {
-            x = Mathf.Clamp(position.x, _left, _right),
-            y = Mathf.Clamp(position.y, _down, _top)
+            x = Mathf.Clamp(position.x, Left, Right),
+            y = Mathf.Clamp(position.y, Bottom, Top)
         };
 
         return Vector2.Distance(position, clampedPosition) > deadDistance;

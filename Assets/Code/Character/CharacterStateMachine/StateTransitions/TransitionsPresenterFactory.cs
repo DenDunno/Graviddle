@@ -8,8 +8,8 @@ public class TransitionsPresenterFactory
 
     public TransitionsPresenterFactory(CharacterStatesPresenter states, TransitionsConditions transitionsConditions)
     {
-        _states = states;
         _transitionsConditions = transitionsConditions;
+        _states = states;
     }
 
     public TransitionsPresenter Create()

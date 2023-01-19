@@ -2,23 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="236f7ca0-e3d5-42cf-8bd1-4f65d9112fc7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/Tutorial/StoryPart.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/Tutorial/StoryPart.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/Panels.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/Panels/GameplayPanel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/Panels/GameplayPanel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/Panels/Panel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/Switchers/EditorUtils.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/Laser.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Materials/Laser.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/Laser.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Materials/Laser.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/LaserBeam.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Materials/LaserBeam.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/LevelStarShiny.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/LevelStarShiny.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/MPMaterial.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/MPMaterial.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/MPMaterialLocked.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/MPMaterialLocked.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/Outline.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/Outline.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/SpriteBlooming.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Materials/SpriteBlooming.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Shaders/TMP_SDF-Mobile ExternalOutline.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Shaders/TMP_SDF-Mobile ExternalOutline.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Fonts/Dimbo Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Fonts/Dimbo Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/EntryPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Camera/Animations/CameraMovingToCentreAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Camera/Animations/CameraMovingToCentreAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Camera/Clamping/CameraClampingSettingsFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Camera/Clamping/CameraClampingSettingsFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Camera/Clamping/Data/LevelBorders.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Camera/Clamping/Data/LevelBorders.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Camera/LevelZoomCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Camera/LevelZoomCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Tutorial/WoodPointerAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Tutorial/WoodPointer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Tutorial/WoodPointerAnimation.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Tutorial/WoodPointer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/ButtonsClick/ButtonClick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/ButtonsClick/ButtonClick.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/ButtonsClick/ZoomClick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/ButtonsClick/ZoomClick.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/Switchers/EditorUISwitcher.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/Switchers/EditorUISwitcher.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/Switchers/EditorUtils.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/Switchers/UIStatesSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/UI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/Switchers/UIStatesSwitcher.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/UI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/UIState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/UIState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/Panels/Panel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/Victory/WinPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/Panels/WinPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/Victory/WinPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/Panels/WinPanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/SceneTransitions/LevelUIEnabling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/SceneTransitions/LevelUIEnabling.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level/Main Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level/Main Camera.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level/Walls.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level/Walls.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level/WoodPointer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level/WoodPointer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/UI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial buttons.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial buttons.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +58,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/Code/Level/LevelStar/LevelStar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Level/LevelStar/LevelStarImpact.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Level/Restart/TransformsRestart.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Code/Level/UI/Victory/WinPanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Code/Level/Tutorial/TutorialButtons.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Code/Level/UI/Panels/LevelPreviewPanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Code/Level/UI/Panels/PausePanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Code/Level/UI/Panels/WinPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Level/UnityCallbackWrappers/ISubscriber.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Menu/Settings/MusicSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Obstacles/LaserTurret/TurretRotation.cs" root0="FORCE_HIGHLIGHTING" />
@@ -99,10 +121,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="6164">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="6164" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -163,6 +185,7 @@
       <workItem from="1662287530161" duration="2890000" />
       <workItem from="1662480027314" duration="352000" />
       <workItem from="1673964950240" duration="3521000" />
+      <workItem from="1674131090231" duration="16562000" />
     </task>
     <servers />
   </component>
@@ -185,6 +208,25 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Code/Level/UI/UI.cs</url>
+          <line>10</line>
+          <properties documentPath="C:\Natalya\Denis\Graviddle\Assets\Code\Level\UI\UI.cs" initialLine="10" containingFunctionPresentation="method 'Show'">
+            <startOffsets>
+              <option value="223" />
+            </startOffsets>
+            <endOffsets>
+              <option value="233" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

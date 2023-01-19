@@ -16,12 +16,12 @@ public class LevelRestart : ISubscriber
 
     void ISubscriber.Subscribe()
     {
-        _dieState.CharacterDied += MakeRestart;
+        _dieState.Entered += MakeRestart;
     }
 
     void ISubscriber.Unsubscribe()
     {
-        _dieState.CharacterDied -= MakeRestart;
+        _dieState.Entered -= MakeRestart;
     }
 
     private async void MakeRestart()

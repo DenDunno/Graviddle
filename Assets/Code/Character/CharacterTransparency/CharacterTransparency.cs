@@ -22,12 +22,12 @@ public class CharacterTransparency : IRestart, IAfterRestart, ISubscriber, IInit
 
     void ISubscriber.Subscribe()
     {
-        _winState.CharacterWon += BecomeTransparentWithDelay;
+        _winState.Entered += BecomeTransparentWithDelay;
     }
     
     void ISubscriber.Unsubscribe()
     {
-        _winState.CharacterWon -= BecomeTransparentWithDelay;
+        _winState.Entered -= BecomeTransparentWithDelay;
     }
 
     private async void BecomeTransparentWithDelay()

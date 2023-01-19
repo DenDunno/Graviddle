@@ -1,10 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WinState : CharacterState
 {
     private readonly Rigidbody2D _rigidbody;
-    public event Action CharacterWon;
 
     public WinState(Animator character) : base(character, AnimationsName.Fall)
     {
@@ -13,8 +11,6 @@ public class WinState : CharacterState
 
     protected override void OnEnterState()
     {
-        CharacterWon?.Invoke();
-
         _rigidbody.velocity = Vector2.zero;
         _rigidbody.isKinematic = true;
     }

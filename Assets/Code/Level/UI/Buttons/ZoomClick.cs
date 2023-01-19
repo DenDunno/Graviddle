@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class ZoomClick : ButtonClick
 {
-    [SerializeField] private UIStatesSwitcher _uiSwitcher;
-    [SerializeField] private UIState _targetUI;
+    [SerializeField] private UI _uiSwitcher;
+    [SerializeField] private Panel _targetUI;
     [SerializeField] private bool _activateCameraControlling;
     [SerializeField] private CameraAnimation _cameraAnimation;
     [SerializeField] private CharacterCapture _characterCapture;
 
     protected override void OnButtonClick()
     {
-        _uiSwitcher.DeactivateStates();
+        _uiSwitcher.HideAll();
         ToggleCharacterCapture();
-        PlayAnimation().OnComplete(_targetUI.Activate);
+        //PlayAnimation().OnComplete(_targetUI.Activate);
     }
     
     private void ToggleCharacterCapture()

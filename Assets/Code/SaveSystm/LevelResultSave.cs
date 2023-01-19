@@ -16,12 +16,12 @@ public class LevelResultSave : MonoBehaviour
 
     public void OnEnable()
     {
-        _characterWinState.CharacterWon += SaveLevelResult;
+        _characterWinState.Entered += SaveLevelResult;
     }
 
     public void OnDisable()
     {
-        _characterWinState.CharacterWon -= SaveLevelResult;
+        _characterWinState.Entered -= SaveLevelResult;
     }
 
     private void SaveLevelResult()

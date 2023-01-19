@@ -28,7 +28,7 @@ public class CameraClampingSettingsFactory
         float heightOffset = cameraHalfHeight - tileOffset;
 
         float cameraTopBorder = _levelBorders.Top - heightOffset;
-        float cameraDownBorder = _levelBorders.Down + heightOffset;
+        float cameraDownBorder = _levelBorders.Bottom + heightOffset;
         float cameraLeftBorder = _levelBorders.Left + widthOffset;
         float cameraRightBorder = _levelBorders.Right - widthOffset;
 

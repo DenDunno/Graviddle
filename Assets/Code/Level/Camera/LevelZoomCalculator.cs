@@ -27,7 +27,7 @@ public class LevelZoomCalculator : MonoBehaviour
 
     private (float, float) GetLevelWidthAndHeight()
     {
-        float levelHeight = _levelBorders.Top - _levelBorders.Down;
+        float levelHeight = _levelBorders.Top - _levelBorders.Bottom;
         float levelWidth = _levelBorders.Right - _levelBorders.Left;
 
         if (_isLevelWithFrame)

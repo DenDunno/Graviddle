@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public abstract class CharacterState
 {
@@ -11,8 +12,11 @@ public abstract class CharacterState
         _animationName = animationName;
     }
 
+    public event Action Entered;
+
     public void Enter()
     {
+        Entered?.Invoke();
         _animator.Play(_animationName);
 
         OnEnterState();

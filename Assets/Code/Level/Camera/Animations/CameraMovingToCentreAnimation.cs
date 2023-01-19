@@ -14,7 +14,7 @@ public class CameraMovingToCentreAnimation
     public void Init()
     {
         _horizontalLevelCentre = (_levelBorders.Right + _levelBorders.Left) / 2f;
-        _verticalLevelCentre = (_levelBorders.Top + _levelBorders.Down) / 2f;
+        _verticalLevelCentre = (_levelBorders.Top + _levelBorders.Bottom) / 2f;
     }
     
     public Tween Move()

@@ -12,11 +12,11 @@ public class FinishPortal : MonoBehaviour
 
     private void OnEnable()
     {
-        _characterWinState.CharacterWon += _pullingAnimation.Execute;
+        _characterWinState.Entered += _pullingAnimation.Execute;
     }
 
     private void OnDisable()
     {
-        _characterWinState.CharacterWon -= _pullingAnimation.Execute;
+        _characterWinState.Entered -= _pullingAnimation.Execute;
     }
 }
