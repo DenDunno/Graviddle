@@ -38,6 +38,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -109,12 +110,14 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 0
   m_RequiresOpaqueTextureOption: 0
   m_CameraType: 0
-  m_Cameras: []
+  m_Cameras:
+  - {fileID: 0}
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1281
   m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
@@ -189,10 +192,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b29f10a24366b64d9edc0d4fcb0180f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _top: 0
-  _down: 0
-  _left: 0
-  _right: 0
+  _top: -5
+  _down: -16
+  _left: -12
+  _right: 22
 --- !u!114 &957595173566817432
 MonoBehaviour:
   m_ObjectHideFlags: 0

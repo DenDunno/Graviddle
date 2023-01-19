@@ -19,7 +19,7 @@ public class VictorySceneChoice : MonoBehaviour
 
     private async UniTask TransitToScene(int sceneIndex)
     {
-        var sceneTransit = await LocalAssetLoader.Load<SceneTransit>(_transitToLevelReference);
+        SceneTransit sceneTransit = await LocalAssetLoader.Load<SceneTransit>(_transitToLevelReference);
         await sceneTransit.MakeTransition(sceneIndex);
         LocalAssetLoader.Unload(sceneTransit.gameObject);
     }

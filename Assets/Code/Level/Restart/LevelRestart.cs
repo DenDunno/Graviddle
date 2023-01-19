@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 
 public class LevelRestart : ISubscriber
 {
-    private readonly RestartableComponents _restartableComponents = new RestartableComponents();
+    private readonly RestartableComponents _restartableComponents = new();
     private readonly Action _restartEvent;
     private readonly DieState _dieState;
     private const float _restartTime = 0.7f;
@@ -26,7 +26,7 @@ public class LevelRestart : ISubscriber
 
     private async void MakeRestart()
     {
-        var deathScreen = await LocalAssetLoader.Load<LoadingScreen>("LevelRestart");
+        LoadingScreen deathScreen = await LocalAssetLoader.Load<LoadingScreen>("LevelRestart");
         Backstage backstage = new(deathScreen, RestartObjects);
 
         await backstage.MakeTransition();

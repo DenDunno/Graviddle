@@ -25,7 +25,7 @@ public class LevelButtonsUnlocker : MonoBehaviour
 
     private void UnlockLevels()
     {
-        var saves = JsonConvert.DeserializeObject<Dictionary<int, int>>(PlayerPrefs.GetString(_saves));
+        Dictionary<int, int> saves = JsonConvert.DeserializeObject<Dictionary<int, int>>(PlayerPrefs.GetString(_saves));
 
         for (int i = 0; i < saves.Count; i++)
         {

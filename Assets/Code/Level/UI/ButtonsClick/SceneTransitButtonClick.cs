@@ -8,7 +8,7 @@ public class SceneTransitButtonClick : ButtonClick
 
     protected override async void OnButtonClick()
     {
-        var sceneTransit = await LocalAssetLoader.Load<SceneTransit>(_transitReference);
+        SceneTransit sceneTransit = await LocalAssetLoader.Load<SceneTransit>(_transitReference);
         
         await sceneTransit.MakeTransition(_sceneIndex);
         

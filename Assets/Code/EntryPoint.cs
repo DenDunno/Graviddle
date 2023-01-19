@@ -17,17 +17,17 @@ public class EntryPoint : MonoBehaviourWrapper
 
     private void Awake()
     {
+        EventTransit restartEvent = new();
         CharacterStatesPresenter states = new(_character.GetComponent<Animator>(), _characterMovementDirection);
         TransitionsPresenterFactory transitionsPresenterFactory = new(states, _transitionsConditions);
         TransitionsPresenter transitionsPresenter = transitionsPresenterFactory.Create();
-        EventTransit restartEvent = new();
-        Gravity gravity = new(_swipeHandler);
-        CurrentGravityData currentGravityData = new(_swipeHandler);
         LevelRestart levelRestart = new(restartEvent.Invoke, states.DieState);
-        
+        CurrentGravityData currentGravityData = new(_swipeHandler);
+        Gravity gravity = new(_swipeHandler);
+
+        _transitionsConditions.Init(_characterMovementDirection, restartEvent.CheckIfEventHappened);
         _gravityRotations.ForEach(gravityRotation => gravityRotation.Init(currentGravityData));
         _laserTurrets.ForEach(laserTurret => laserTurret.Init(currentGravityData));
-        _transitionsConditions.Init(_characterMovementDirection, restartEvent.CheckIfEventHappened);
         _characterMovementDirection.Init(currentGravityData);
         _character.Init(transitionsPresenter, states);
         _levelZoomCalculator.Init(currentGravityData);

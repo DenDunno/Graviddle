@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using PathCreation.Utility;
+﻿using PathCreation.Utility;
 using UnityEngine;
 
 
