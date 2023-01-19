@@ -3,14 +3,13 @@ using Cysharp.Threading.Tasks;
 
 public class LevelRestart : ISubscriber
 {
-    private readonly RestartableComponents _restartableComponents;
+    private readonly RestartableComponents _restartableComponents = new RestartableComponents();
     private readonly Action _restartEvent;
     private readonly DieState _dieState;
     private const float _restartTime = 0.7f;
 
-    public LevelRestart(RestartableComponents restartableComponents, Action restartEvent, DieState dieState)
+    public LevelRestart(Action restartEvent, DieState dieState)
     {
-        _restartableComponents = restartableComponents;
         _restartEvent = restartEvent;
         _dieState = dieState;
     }

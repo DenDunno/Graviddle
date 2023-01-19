@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class LevelButtonsUnlocker : MonoBehaviour
 {
-    [SerializeField] private LevelButton[] _allButtons;
+    private LevelButton[] _allButtons;
     private const string _saves = "Saves";
     private const int _menuScenesCount = 3;
 
     private void Start()
     {
+        _allButtons = GetComponentsInChildren<LevelButton>();
+        
         if (PlayerPrefs.HasKey(_saves))
         {
             UnlockLevels();

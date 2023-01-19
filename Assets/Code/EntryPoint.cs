@@ -2,30 +2,28 @@
 
 public class EntryPoint : MonoBehaviourWrapper
 {
-    [SerializeField] private TransitionsConditions _transitionsConditions;
-    [SerializeField] private Character _character;
-    [SerializeField] private SwipeHandler _swipeHandler;
-    [SerializeField] private EditorInterfacesContainer _interfacesContainer;
-    [SerializeField] private WinPanel _winPanel;
-    [SerializeField] private CameraMediator _cameraMediator;
-    [SerializeField] private LevelResultSave _levelResultSave;
-    [SerializeField] private UIStatesSwitcher _uiStatesSwitcher;
-    [SerializeField] private FinishPortal _finishPortal;
-    [SerializeField] private LevelZoomCalculator _levelZoomCalculator;
     [SerializeField] private CharacterMovementDirection _characterMovementDirection;
-    [SerializeField] private LaserTurret[] _laserTurrets;
+    [SerializeField] private TransitionsConditions _transitionsConditions;
+    [SerializeField] private LevelZoomCalculator _levelZoomCalculator;
     [SerializeField] private GravityRotation[] _gravityRotations;
+    [SerializeField] private UIStatesSwitcher _uiStatesSwitcher;
+    [SerializeField] private LevelResultSave _levelResultSave;
+    [SerializeField] private CameraMediator _cameraMediator;
+    [SerializeField] private LaserTurret[] _laserTurrets;
+    [SerializeField] private FinishPortal _finishPortal;
+    [SerializeField] private SwipeHandler _swipeHandler;
+    [SerializeField] private Character _character;
+    [SerializeField] private WinPanel _winPanel;
 
     private void Awake()
     {
-        RestartableComponents restartComponents = _interfacesContainer.GetRestartableComponents();
         CharacterStatesPresenter states = new(_character.GetComponent<Animator>(), _characterMovementDirection);
         TransitionsPresenterFactory transitionsPresenterFactory = new(states, _transitionsConditions);
         TransitionsPresenter transitionsPresenter = transitionsPresenterFactory.Create();
         EventTransit restartEvent = new();
         Gravity gravity = new(_swipeHandler);
         CurrentGravityData currentGravityData = new(_swipeHandler);
-        LevelRestart levelRestart = new(restartComponents, restartEvent.Invoke, states.DieState);
+        LevelRestart levelRestart = new(restartEvent.Invoke, states.DieState);
         
         _gravityRotations.ForEach(gravityRotation => gravityRotation.Init(currentGravityData));
         _laserTurrets.ForEach(laserTurret => laserTurret.Init(currentGravityData));
@@ -39,9 +37,6 @@ public class EntryPoint : MonoBehaviourWrapper
         _winPanel.Init(states.WinState);
         _cameraMediator.Init();
         
-        SetDependencies(new object[]
-        {
-            levelRestart, gravity, currentGravityData, _characterMovementDirection
-        });
+        SetDependencies(new object[] { levelRestart, gravity, currentGravityData, _characterMovementDirection});
     }
 }
