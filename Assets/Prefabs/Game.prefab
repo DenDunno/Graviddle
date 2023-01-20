@@ -148,7 +148,6 @@ MonoBehaviour:
   _finishPortal: {fileID: 4482288341644138992}
   _swipeHandler: {fileID: 4039177452382495829}
   _character: {fileID: 5941218326824543900}
-  _winPanel: {fileID: 5110505233849871907}
   _ui: {fileID: 2276014325182347911}
 --- !u!1001 &5596023509102484910
 PrefabInstance:
@@ -1011,18 +1010,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b78152ff1d74159b620959f2875ff9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5110505233849871907 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 812117795907416935, guid: 541cefc2686fbf447be6be187ea3ca43,
-    type: 3}
-  m_PrefabInstance: {fileID: 5596023510510132548}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d97696ab1c875554faaae9ec95334d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &6648851590239235327 stripped

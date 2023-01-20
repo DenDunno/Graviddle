@@ -24,6 +24,11 @@ public static class TransformExtensions
         transform.localScale = new Vector3(value, transform.localScale.y, transform.localScale.z);
     }
     
+    public static void SetScale(this Transform transform, float value)
+    {
+        transform.localScale = new Vector3(value, value, value);
+    }
+    
     public static void SetYLocalPosition(this Transform transform, float value)
     {
         transform.localPosition = new Vector3(transform.localPosition.x, value, transform.localPosition.z);

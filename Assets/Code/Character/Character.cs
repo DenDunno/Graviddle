@@ -7,6 +7,7 @@ public class Character : MonoBehaviourWrapper
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private ParticleSystem _fallingDust;
     [SerializeField] private TrailRenderer _trailRenderer;
+    [SerializeField] private AnimationCurve _fadeCurve;
     
     public void Init(TransitionsPresenter transitionsPresenter, CharacterStatesPresenter states)
     {
@@ -16,7 +17,7 @@ public class Character : MonoBehaviourWrapper
         {
             new CharacterStateMachine(transitionsPresenter, states.IdleState),
             new CharacterPhysicsRestart(_rigidbody2D),
-            new CharacterTransparency(_spriteRenderer, states.WinState),
+            new TwistingAnimation(_spriteRenderer, states.WinState, _fadeCurve),
             new CharacterRotationImpulse(_rigidbody2D, _swipeHandler),
             new SwipeHandlerSwitcher(_swipeHandler, fallToIdleTransition, states.FallState),
             new CharacterVFX(_fallingDust, _trailRenderer, fallToIdleTransition, states.FallState),

@@ -366,6 +366,39 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 2684562040544259668}
   _fallingDust: {fileID: 6422635034156707407}
   _trailRenderer: {fileID: 1101657790}
+  _fadeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.8618138
+      outSlope: 0.8618138
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.16918072
+    - serializedVersion: 3
+      time: 0.5317626
+      value: 0.50804865
+      inSlope: -3.1898446
+      outSlope: -3.1898446
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.10283844
+      outWeight: 0.07476463
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.26574513
+      outSlope: -0.26574513
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.14354649
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2684562040544259670
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +451,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cfed90d0c86552949ae0a6c8d167ac32, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
