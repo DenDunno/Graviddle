@@ -2,33 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="236f7ca0-e3d5-42cf-8bd1-4f65d9112fc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Code/MonoBehaviourWrapper/IUnityCallback.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/MonoBehaviourWrapper/IUnityCallback.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Character/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Character/Character.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/Character 1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/Character 1.mat.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Character/CharacterShaderID.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Character/CharacterShaderID.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Character/EventTransit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Character/PollingEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Character/EventTransit.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Character/PollingEvent.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Character/TwistingAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Character/TwistingAnimation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/EntryPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Extensions/CollectionsExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Extensions/CollectionsExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Extensions/CoroutineAnimations.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Extensions/CoroutineAnimations.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Restart/IAfterRestart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Restart/IAfterRestart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Restart/IRestart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Restart/IRestart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/Buttons/RestartButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/Buttons/RestartButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UnityCallbackWrappers.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehaviourWrapper.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UnityCallbackWrappers/IFixedUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehaviourWrapper/IFixedUpdate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UnityCallbackWrappers/IFixedUpdate.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehaviourWrapper/IFixedUpdate.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UnityCallbackWrappers/IInitializable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehaviourWrapper/IInitializable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UnityCallbackWrappers/IInitializable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehaviourWrapper/IInitializable.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UnityCallbackWrappers/ISubscriber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehaviourWrapper/ISubscriber.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UnityCallbackWrappers/ISubscriber.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehaviourWrapper/ISubscriber.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UnityCallbackWrappers/IUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehaviourWrapper/IUpdate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UnityCallbackWrappers/IUpdate.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehaviourWrapper/IUpdate.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UnityCallbackWrappers/MonoBehaviourWrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehaviourWrapper/MonoBehaviourWrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UnityCallbackWrappers/MonoBehaviourWrapper.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehaviourWrapper/MonoBehaviourWrapper.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial swipe.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial swipe.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

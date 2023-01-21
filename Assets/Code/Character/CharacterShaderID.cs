@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CharacterShaderID
+public static class CharacterShaderID
 {
     public static readonly int HSV = Shader.PropertyToID("_HsvShift");
     public static readonly int Rotation = Shader.PropertyToID("_RotateUvAmount");
