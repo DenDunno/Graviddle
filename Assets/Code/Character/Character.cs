@@ -13,7 +13,7 @@ public class Character : MonoBehaviourWrapper
     {
         Transition fallToIdleTransition = transitionsPresenter.GetTransition(states.FallState, states.IdleState);
 
-        SetDependencies(new object[]
+        SetDependencies(new IUnityCallback[]
         {
             new CharacterStateMachine(transitionsPresenter, states.IdleState),
             new CharacterPhysicsRestart(_rigidbody2D),

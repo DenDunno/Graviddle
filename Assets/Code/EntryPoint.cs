@@ -16,7 +16,7 @@ public class EntryPoint : MonoBehaviourWrapper
     
     private void Awake()
     {
-        EventTransit restartEvent = new();
+        PollingEvent restartEvent = new();
         CharacterStatesPresenter states = new(_character.GetComponent<Animator>(), _characterMovementDirection);
         TransitionsPresenterFactory transitionsPresenterFactory = new(states, _transitionsConditions);
         TransitionsPresenter transitionsPresenter = transitionsPresenterFactory.Create();
@@ -32,7 +32,7 @@ public class EntryPoint : MonoBehaviourWrapper
         _finishPortal.Init(states.WinState);
         _cameraMediator.Init();
         
-        SetDependencies(new object[]
+        SetDependencies(new IUnityCallback[]
         {
             new LevelRestart(restartEvent.Invoke, states.DieState), 
             new Gravity(_swipeHandler),

@@ -1,5 +1,5 @@
 ﻿
-public class EventTransit
+public class PollingEvent
 {
     private bool _eventHappened;
 

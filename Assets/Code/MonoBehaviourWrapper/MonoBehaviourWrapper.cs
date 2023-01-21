@@ -10,9 +10,9 @@ public abstract class MonoBehaviourWrapper : MonoBehaviour, IRestart, IAfterRest
     private IEnumerable<IFixedUpdate> _fixedUpdates;    
     private IEnumerable<IUpdate> _updates;
 
-    protected void SetDependencies(object[] dependencies)
+    protected void SetDependencies(IUnityCallback[] dependencies)
     {
-        dependencies.OfType<IInitializable>().ForEach(initializable => initializable.Init());
+        dependencies.OfType<IInitializable>().ForEach(initializable => initializable.Initialize());
         _afterRestartComponents = dependencies.OfType<IAfterRestart>();
         _restartComponents = dependencies.OfType<IRestart>();
         _subscribers = dependencies.OfType<ISubscriber>();

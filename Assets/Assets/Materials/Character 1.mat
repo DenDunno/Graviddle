@@ -7,15 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Character
+  m_Name: Character 1
   m_Shader: {fileID: 4800000, guid: a36b7719ff0465b42ab1407d67672c5f, type: 3}
   m_ValidKeywords:
-  - HSV_ON
   - OUTBASE8DIR_ON
   - OUTBASEPIXELPERF_ON
-  - ROTATEUV_ON
-  - ROUNDWAVEUV_ON
-  - TWISTUV_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -85,7 +81,7 @@ Material:
     - _AlphaRoundThreshold: 0.005
     - _BillboardY: 0
     - _BlurHD: 0
-    - _BlurIntensity: 10
+    - _BlurIntensity: 0
     - _Brightness: -0.04
     - _ChromAberrAlpha: 0.4
     - _ChromAberrAmount: 1
@@ -98,7 +94,7 @@ Material:
     - _ColorChangeTolerance2: 0.25
     - _ColorChangeTolerance3: 0.25
     - _ColorRampBlend: 1
-    - _ColorRampLuminosity: 0
+    - _ColorRampLuminosity: 0.05
     - _ColorRampOutline: 0
     - _ColorSwapBlend: 1
     - _ColorSwapBlueLuminosity: 0.5
@@ -106,7 +102,7 @@ Material:
     - _ColorSwapRedLuminosity: 0.5
     - _Contrast: 1
     - _CullingOption: 0
-    - _DistortAmount: 0.5
+    - _DistortAmount: 0
     - _DistortTexXSpeed: 5
     - _DistortTexYSpeed: 5
     - _EditorDrawers: 7
@@ -116,16 +112,16 @@ Material:
     - _FadeBurnWidth: 0.052
     - _FishEyeUvAmount: 0
     - _FlickerAlpha: 0
-    - _FlickerFreq: 0.2
-    - _FlickerPercent: 0.05
+    - _FlickerFreq: 5
+    - _FlickerPercent: 0.707
     - _GhostBlend: 1
     - _GhostColorBoost: 1
     - _GhostTransparency: 0
-    - _GlitchAmount: 3
-    - _GlitchSize: 1
+    - _GlitchAmount: 20
+    - _GlitchSize: 0.25
     - _Glow: 10
     - _GlowGlobal: 1
-    - _GradBlend: 1
+    - _GradBlend: 0.873
     - _GradBoostX: 1.2
     - _GradBoostY: 1.2
     - _GradIsRadial: 0
@@ -161,7 +157,7 @@ Material:
     - _MotionBlurDist: 0.16
     - _MyDstMode: 10
     - _MySrcMode: 5
-    - _NegativeAmount: 0.869
+    - _NegativeAmount: 0.09
     - _OffsetUvX: 0
     - _OffsetUvY: 0
     - _OnlyInnerOutline: 0
@@ -178,18 +174,18 @@ Material:
     - _OverlayBlend: 1
     - _OverlayGlow: 1
     - _PinchUvAmount: 0.056
-    - _PixelateSize: 512
+    - _PixelateSize: 111
     - _PosterizeGamma: 4.79
     - _PosterizeNumColors: 78.3
     - _PosterizeOutline: 0
     - _RandomSeed: 0
     - _RectSize: 1
     - _RotateUvAmount: 0
-    - _RoundWaveSpeed: 2
-    - _RoundWaveStrength: 0
-    - _ShadowAlpha: 0.5
-    - _ShadowX: 0.1
-    - _ShadowY: -0.05
+    - _RoundWaveSpeed: 1
+    - _RoundWaveStrength: 0.285
+    - _ShadowAlpha: 0.573
+    - _ShadowX: 0.26
+    - _ShadowY: 0.006
     - _ShakeUvSpeed: 2.5
     - _ShakeUvX: 1.5
     - _ShakeUvY: 1
@@ -203,7 +199,7 @@ Material:
     - _TwistUvPosX: 0.5
     - _TwistUvPosY: 0.5
     - _TwistUvRadius: 0.75
-    - _WaveAmount: 7
+    - _WaveAmount: 25
     - _WaveSpeed: 10
     - _WaveStrength: 7.5
     - _WaveX: 0

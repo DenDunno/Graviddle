@@ -1,5 +1,5 @@
 ﻿
-public interface IRestart 
+public interface IRestart : IUnityCallback
 {
     void Restart();
 }

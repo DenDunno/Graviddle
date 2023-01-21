@@ -1,5 +1,5 @@
 ﻿
-public interface IAfterRestart 
+public interface IAfterRestart : IUnityCallback
 {
     void Restart();
 }

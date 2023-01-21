@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public static class CollectionsExtensions
 {
@@ -11,14 +12,9 @@ public static class CollectionsExtensions
         }
     }
     
-    public static bool IsEmpty<T>(this Stack<T> stack)
+    public static bool IsEmpty<T>(this IEnumerable<T> collection)
     {
-        return stack.Count == 0;
-    }
-    
-    public static bool IsEmpty<T>(this Queue<T> queue)
-    {
-        return queue.Count == 0;
+        return collection.Count() == 0;
     }
 
     public static void SubscribeForEach(this IEnumerable<ISubscriber> subscribers)
