@@ -1,34 +1,32 @@
 ﻿using UnityEngine;
 
-public class Gravity : IRestart, ISubscriber
-{
-    private readonly SwipeHandler _swipeHandler;
-
-    public Gravity(SwipeHandler swipeHandler)
-    {
-        _swipeHandler = swipeHandler;
-        Physics2D.gravity = new Vector2(0, -1);
+public class Gravity : IInitializable, IRestart, IFixedUpdate
+{    
+    private readonly Rigidbody2D _rigidbody2D;
+    private Vector2 _direction = Vector2.down;
+    
+    public Gravity(Rigidbody2D rigidbody2D)
+    {        
+        _rigidbody2D = rigidbody2D;
     }
 
-    void ISubscriber.Subscribe()
+    public void Initialize()
     {
-        _swipeHandler.GravityChanged += OnGravityChanged;
+        _rigidbody2D.gravityScale = 0;
     }
 
-    void ISubscriber.Unsubscribe()
+    public void SetDirection(Vector2 direction)
     {
-        _swipeHandler.GravityChanged -= OnGravityChanged;
+        _direction = direction.normalized;
     }
-
-    private void OnGravityChanged(GravityDirection gravityDirection)
+    
+    void IFixedUpdate.FixedUpdate()
     {
-        GravityData gravityData = GravityDataPresenter.GravityData[gravityDirection];
-
-        Physics2D.gravity = gravityData.GravityVector;
+        _rigidbody2D.AddForce(_direction * _rigidbody2D.mass);
     }
 
     void IRestart.Restart()
     {
-        OnGravityChanged(GravityDirection.Down);
+        SetDirection(Vector2.down);
     }
 }

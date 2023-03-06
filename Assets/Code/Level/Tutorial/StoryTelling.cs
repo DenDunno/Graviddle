@@ -1,18 +1,25 @@
 using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(CircleCollider2D))]
 public class StoryTelling : MonoBehaviour, IRestart
 {
     [SerializeField] private StoryPart[] _storyParts;
-    private bool _isShown;
+    private CircleCollider2D _collider;
+    private bool _storyStarted;
 
     public event Action StoryEnded;
-    
+
+    private void Start()
+    {
+        _collider = GetComponent<CircleCollider2D>();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (_isShown == false && other.GetComponent<Character>() != null)
+        if (_storyStarted == false && other.GetComponent<Character>() != null)
         {
             StartCoroutine(StartStory());
         }
@@ -20,7 +27,7 @@ public class StoryTelling : MonoBehaviour, IRestart
 
     private IEnumerator StartStory()
     {
-        _isShown = true;
+        _storyStarted = true;
 
         foreach (StoryPart storyPart in _storyParts)
         {
@@ -29,7 +36,7 @@ public class StoryTelling : MonoBehaviour, IRestart
             storyPart.Pointer.ShowHint();
         }
         
-        yield return new WaitForSeconds(_storyParts[^1].Pointer.Duration);
+        yield return new WaitForSeconds(_storyParts.Last().Pointer.Duration);
 
         StoryEnded?.Invoke();
     }
@@ -37,8 +44,10 @@ public class StoryTelling : MonoBehaviour, IRestart
     void IRestart.Restart()
     {
         StopAllCoroutines();
-        _isShown = false;
         
+        _storyStarted = false;
+        _collider.ClearCollisionList();
+
         foreach (StoryPart storyPart in _storyParts)
         {
             storyPart.Pointer.ResetImage();

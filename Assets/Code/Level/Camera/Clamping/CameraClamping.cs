@@ -1,9 +1,14 @@
 ﻿using UnityEngine;
 
-public class CameraClamping : MonoBehaviour
+public class CameraClamping 
 {
-    [SerializeField] private CameraBordersWithOrientation _borders;
+    private readonly CameraBordersWithOrientation _borders;
     private const float _cameraZPosition = -10;
+
+    public CameraClamping(CameraBordersWithOrientation borders)
+    {
+        _borders = borders;
+    }
 
     public Vector3 Clamp(Vector3 position)
     {

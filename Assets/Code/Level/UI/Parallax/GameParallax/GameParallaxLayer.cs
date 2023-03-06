@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class GameParallaxLayer : MonoBehaviour
 {
-    [SerializeField] private ParallaxCameraPosition _parallaxCameraPosition;
     [SerializeField] [Range(0, 1)] private float _parallaxEffect;
     [SerializeField] private SwipeHandler _swipeHandler;
     [SerializeField] private RectTransform _layer;
+    private ParallaxCameraPosition _parallaxCameraPosition;
     private ParallaxLayerClamping _parallaxLayerClamping;
     private GravityDirection _gravityDirection;
     private float _lastCameraPosition;
@@ -13,6 +13,7 @@ public class GameParallaxLayer : MonoBehaviour
     private void Start()
     {
         _parallaxLayerClamping = new ParallaxLayerClamping();
+        _parallaxCameraPosition = new ParallaxCameraPosition(Camera.main!.transform);
     }
 
     private void OnEnable()

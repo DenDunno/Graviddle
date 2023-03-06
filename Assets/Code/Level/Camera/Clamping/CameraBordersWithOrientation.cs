@@ -1,27 +1,27 @@
-﻿using UnityEngine;
-
-public class CameraBordersWithOrientation : MonoBehaviour
+﻿
+public class CameraBordersWithOrientation : ISubscriber
 {
-    [SerializeField] private SwipeHandler _swipeHandler;
-    private CameraClampingSettings _cameraClampingSettings;
+    private readonly CameraClampingSettings _cameraClampingSettings;
+    private readonly SwipeHandler _swipeHandler;
     private float _orientationOffset;
+
+    public CameraBordersWithOrientation(CameraClampingSettings clampingSettings, SwipeHandler swipeHandler)
+    {
+        _cameraClampingSettings = clampingSettings;
+        _swipeHandler = swipeHandler;
+    }
 
     public float Top => _cameraClampingSettings.CameraBorders.Top - _orientationOffset;
     public float Down => _cameraClampingSettings.CameraBorders.Down + _orientationOffset;
     public float Left => _cameraClampingSettings.CameraBorders.Left - _orientationOffset;
     public float Right => _cameraClampingSettings.CameraBorders.Right + _orientationOffset;
 
-    public void Init(CameraClampingSettings clampingSettings)
-    {
-        _cameraClampingSettings = clampingSettings;
-    }
-
-    private void OnEnable()
+    public void Subscribe()
     {
         _swipeHandler.GravityChanged += OnGravityChanged;
     }
 
-    private void OnDisable()
+    public void Unsubscribe()
     {
         _swipeHandler.GravityChanged -= OnGravityChanged;
     }

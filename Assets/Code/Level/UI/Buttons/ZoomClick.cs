@@ -18,7 +18,7 @@ public class ZoomClick : ButtonClick
     
     private void ToggleCharacterCapture()
     {
-        _characterCapture.enabled = _activateCameraControlling == false;
+        //_characterCapture.enabled = _activateCameraControlling == false;
     }
 
     private Tween PlayAnimation()

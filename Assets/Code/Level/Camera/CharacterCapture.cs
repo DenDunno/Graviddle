@@ -1,26 +1,33 @@
 ﻿using UnityEngine;
 
-public class CharacterCapture : MonoBehaviour, IRestart
+public class CharacterCapture : ILateUpdate, IRestart
 {
-    [SerializeField] private Rigidbody2D _character;
-    [SerializeField] private CameraClamping _cameraClamping;
+    private readonly CameraClamping _cameraClamping;
+    private readonly Rigidbody2D _character;
+    private readonly Transform _transform;
     private Vector3 _velocity;
 
-    private void LateUpdate()
+    public CharacterCapture(Character character, Transform transform, CameraBordersWithOrientation borders)
+    {
+        _character = character.GetComponent<Rigidbody2D>();
+        _cameraClamping = new CameraClamping(borders);
+        _transform = transform;
+    }
+
+    void ILateUpdate.LateUpdate()
     {
         float captureTime = EvaluateCaptureTimeFunction(_character.velocity.magnitude);
         Vector3 clampedPosition = _cameraClamping.Clamp(_character.transform.position);
 
-        transform.position = Vector3.SmoothDamp(transform.position, clampedPosition, ref _velocity, captureTime);
+        _transform.position = Vector3.SmoothDamp(_transform.position, clampedPosition, ref _velocity, captureTime);
     }
 
     private float EvaluateCaptureTimeFunction(float x)
     {
         return 1 / (0.15f * x  + 3.33f);
     }
-    
+
     void IRestart.Restart()
     {
-        enabled = true;
     }
 }

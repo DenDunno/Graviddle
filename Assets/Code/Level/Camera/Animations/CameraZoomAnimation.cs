@@ -1,18 +1,18 @@
-﻿using System;
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
 
-[Serializable]
 public class CameraZoomAnimation
 {
-    [SerializeField] private Camera _mainCamera;
-    [SerializeField] private LevelZoomCalculator _zoomCalculator;
-    private const float _zoomOutDuration = 1f;
-    private const float _zoomInDuration = 0.5f;
-    private float _characterZoom;
+    private readonly float _characterZoom;
+    private readonly Camera _mainCamera;
+    private readonly LevelZoomCalculator _zoomCalculator;
+    private readonly float _zoomOutDuration = 1f;
+    private readonly float _zoomInDuration = 0.5f;
 
-    public void Init()
+    public CameraZoomAnimation(Camera mainCamera, LevelZoomCalculator zoomCalculator)
     {
+        _mainCamera = mainCamera;
+        _zoomCalculator = zoomCalculator;
         _characterZoom = _mainCamera.orthographicSize;
     }
 

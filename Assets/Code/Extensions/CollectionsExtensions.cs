@@ -14,7 +14,7 @@ public static class CollectionsExtensions
     
     public static bool IsEmpty<T>(this IEnumerable<T> collection)
     {
-        return collection.Count() == 0;
+        return !collection.Any();
     }
 
     public static void SubscribeForEach(this IEnumerable<ISubscriber> subscribers)
@@ -39,11 +39,16 @@ public static class CollectionsExtensions
     
     public static void UpdateForEach(this IEnumerable<IUpdate> updatables)
     {
-        updatables.ForEach(updatable => updatable.Update());
+        updatables.ForEach(update => update.Update());
     }
     
+    public static void LateUpdateForEach(this IEnumerable<ILateUpdate> updatables)
+    {
+        updatables.ForEach(update => update.LateUpdate());
+    }
+
     public static void FixedUpdateForEach(this IEnumerable<IFixedUpdate> fixedUpdates)
     {
-        fixedUpdates.ForEach(updatable => updatable.FixedUpdate());
+        fixedUpdates.ForEach(update => update.FixedUpdate());
     }
 }

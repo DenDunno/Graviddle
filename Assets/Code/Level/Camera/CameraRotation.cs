@@ -1,12 +1,19 @@
 using UnityEngine;
 
-public class CameraRotation : MonoBehaviour
+public class CameraRotation : ILateUpdate
 {
-    [SerializeField] private Character _character;
+    private readonly Transform _transform;
+    private readonly Character _character;
     private readonly float _speed = 6f;
 
-    private void LateUpdate()
+    public CameraRotation(Character character, Transform transform)
     {
-        transform.rotation = Quaternion.Lerp(transform.rotation , _character.transform.rotation , _speed * Time.deltaTime);
+        _character = character;
+        _transform = transform;
+    }
+
+    void ILateUpdate.LateUpdate()
+    {
+        _transform.rotation = Quaternion.Lerp(_transform.rotation , _character.transform.rotation , _speed * Time.deltaTime);
     }
 }

@@ -1,22 +1,18 @@
 ﻿using UnityEngine;
 
-public class LevelZoomCalculator : MonoBehaviour
+public class LevelZoomCalculator
 {
-    [SerializeField] private bool _isLevelWithFrame;
-    private CurrentGravityData _currentGravityData;
-    private Camera _mainCamera;
-    private LevelBorders _levelBorders;
-    private const float _frameOffset = 2;
+    private readonly CurrentGravityData _currentGravityData;
+    private readonly LevelBorders _levelBorders;
+    private readonly float _frameOffset = 2;
+    private readonly Camera _mainCamera;
+    private bool _isLevelWithFrame;
 
-    public void Init(Camera mainCamera, LevelBorders levelBorders)
-    {
-        _mainCamera = mainCamera;
-        _levelBorders = levelBorders;
-    }
-    
-    public void Init(CurrentGravityData currentGravityData)
+    public LevelZoomCalculator(Camera mainCamera, LevelBorders levelBorders, CurrentGravityData currentGravityData)
     {
         _currentGravityData = currentGravityData;
+        _levelBorders = levelBorders;
+        _mainCamera = mainCamera;
     }
 
     public float GetLevelZoom()
@@ -30,11 +26,8 @@ public class LevelZoomCalculator : MonoBehaviour
         float levelHeight = _levelBorders.Top - _levelBorders.Bottom;
         float levelWidth = _levelBorders.Right - _levelBorders.Left;
 
-        if (_isLevelWithFrame)
-        {
-            levelHeight += _frameOffset;
-            levelWidth += _frameOffset;
-        }
+        levelHeight += _frameOffset;
+        levelWidth += _frameOffset;
 
         if (IsVerticalZoom())
         {

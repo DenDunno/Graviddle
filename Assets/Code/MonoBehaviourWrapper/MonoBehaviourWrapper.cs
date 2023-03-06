@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public abstract class MonoBehaviourWrapper : MonoBehaviour, IRestart, IAfterRest
     private IEnumerable<ISubscriber> _subscribers;
     private IEnumerable<IFixedUpdate> _fixedUpdates;    
     private IEnumerable<IUpdate> _updates;
+    private IEnumerable<ILateUpdate> _lateUpdates;
 
     protected void SetDependencies(IUnityCallback[] dependencies)
     {
@@ -18,6 +20,7 @@ public abstract class MonoBehaviourWrapper : MonoBehaviour, IRestart, IAfterRest
         _subscribers = dependencies.OfType<ISubscriber>();
         _fixedUpdates = dependencies.OfType<IFixedUpdate>();
         _updates = dependencies.OfType<IUpdate>();
+        _lateUpdates = dependencies.OfType<ILateUpdate>(); 
     }
 
     private void OnEnable()
@@ -39,7 +42,12 @@ public abstract class MonoBehaviourWrapper : MonoBehaviour, IRestart, IAfterRest
     {
         _updates.UpdateForEach();
     }
-    
+
+    private void LateUpdate()
+    {
+        _lateUpdates.LateUpdateForEach();
+    }
+
     void IRestart.Restart()
     {
         _restartComponents.RestartForEach();

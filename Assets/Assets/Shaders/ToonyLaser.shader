@@ -1,26 +1,30 @@
-Shader "Unlit/ToonyLaser"
+
+Shader "Unlit/ToonyShader" 
 {
-    Properties
+    Properties 
     {
-        _Color("Main color", Color) = (.25, .5, .5, 1)
-        _LineSize ("Line size", Range(0.0, 0.5)) = 0.25 
-        _NoiseTexture ("Noise", 2d) = "" {}
+        _MainTex ("Texture2D display name", 2D) = "" {}
+        _Color ("Main Color", Color) = (1,1,1,1)
+        _Width ("Width", Range(0.001, 0.1)) = 0.01
+        _Falloff ("Falloff", Range(0.001, 1.0)) = 0.5
     }
-    SubShader
+
+    SubShader 
     {
-        Tags {"Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent"}
-        ZWrite Off
-        Blend SrcAlpha OneMinusSrcAlpha
+        Tags { "RenderType"="Opaque" }
         LOD 100
-        
-        Pass
+
+        Pass 
         {
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+            #pragma target 2.0
+            #pragma multi_compile_fog
+
             #include "UnityCG.cginc"
 
-            struct appdata
+            struct appdata_t
             {
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
@@ -28,33 +32,30 @@ Shader "Unlit/ToonyLaser"
 
             struct v2f
             {
-                float2 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
+                float2 uv : TEXCOORD0;
             };
 
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
             fixed4 _Color;
-            float _LineSize;
-            sampler2D _NoiseTexture;
+            float _Width;
+            float _Falloff;
 
-            v2f vert (appdata v)
+            v2f vert (appdata_t v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = v.uv;
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 return o;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            fixed4 frag (v2f i) : COLOR
             {
-                const fixed transparency = (i.uv.x > 0.5 - _LineSize) * (i.uv.x < 0.5 + _LineSize);
-                
-                const float noise = tex2D(_NoiseTexture, i.uv).r;
-                i.uv.x = i.uv.x + noise;
-
-
-                return _Color * transparency;
+                return _Color;
             }
             ENDCG
         }
     }
+
 }

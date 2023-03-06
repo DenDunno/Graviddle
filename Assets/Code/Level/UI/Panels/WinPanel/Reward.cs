@@ -1,12 +1,18 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Reward : MonoBehaviour, IRestart
 {
-    [SerializeField] private LevelStar[] _levelStars;
+    private IReadOnlyCollection<LevelStar> _levelStars;
     private const int _maxStars = 3;
 
     public int CollectedStars { get; private set; }
     public bool IsMaxStars => CollectedStars == _maxStars;
+
+    public void Init(IReadOnlyCollection<LevelStar> levelStars)
+    {
+        _levelStars = levelStars;
+    }
     
     private void OnEnable()
     {

@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class CameraAnimation : MonoBehaviour
 {
-    [SerializeField] private CameraZoomAnimation _zoomAnimation;
-    [SerializeField] private CameraMovingToCentreAnimation _movingToCentreAnimation;
-    
-    public void Init()
-    {
-        _zoomAnimation.Init();
-        _movingToCentreAnimation.Init();
-    }
+    private CameraZoomAnimation _zoomAnimation;
+    private CameraMovingToCentreAnimation _movingToCentreAnimation;
 
+    public void Init(CameraZoomAnimation zoomAnimation, CameraMovingToCentreAnimation movingToCentreAnimation)
+    {
+        _zoomAnimation = zoomAnimation;
+        _movingToCentreAnimation = movingToCentreAnimation;
+    }
+    
     public Tween ZoomIn()
     {
         return _zoomAnimation.ZoomIn();

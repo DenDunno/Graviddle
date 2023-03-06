@@ -3,8 +3,13 @@ using UnityEngine;
 
 public class LevelStar : MonoBehaviour, IRestart
 {
-    [SerializeField] private LevelStarImpact _levelStarImpact;
+    private StarPickupFeedback _starPickupFeedback;
     public event Action StarCollected;
+
+    public void Init(StarPickupFeedback pickupFeedback)
+    {
+        _starPickupFeedback = pickupFeedback;
+    }
     
     private void OnTriggerEnter2D(Collider2D collider2d)
     {
@@ -12,7 +17,7 @@ public class LevelStar : MonoBehaviour, IRestart
         {
             gameObject.SetActive(false);
             
-            _levelStarImpact.Activate(transform.position);
+            _starPickupFeedback.Play(transform.position);
             
             StarCollected?.Invoke();
         }

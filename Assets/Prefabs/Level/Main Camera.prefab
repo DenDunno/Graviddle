@@ -10,16 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6186545343902058750}
   - component: {fileID: 6186545344261283279}
+  - component: {fileID: 2995751992840062648}
   - component: {fileID: 6186545343902058749}
   - component: {fileID: 6186545343902058720}
-  - component: {fileID: 6186545343902058751}
-  - component: {fileID: 3838364083597375495}
-  - component: {fileID: 1271010650569364451}
-  - component: {fileID: 2907073762294158516}
   - component: {fileID: 957595173566817432}
-  - component: {fileID: 2071492005582517391}
   - component: {fileID: 6604153382712734554}
-  - component: {fileID: 2385801051265026153}
+  - component: {fileID: 5951200647800411599}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -85,6 +81,22 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &2995751992840062648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186545343902058747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56666c5a40171f54783dd416a44f42bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!81 &6186545343902058749
 AudioListener:
   m_ObjectHideFlags: 0
@@ -127,58 +139,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &6186545343902058751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6186545343902058747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4ce9166c45b0c444a58f5cc73f58e3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _borders: {fileID: 1271010650569364451}
---- !u!114 &3838364083597375495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6186545343902058747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ee16598b444db0489303f207307c1a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _character: {fileID: 0}
---- !u!114 &1271010650569364451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6186545343902058747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 654ff493a7dc9cf47ac868d80e4071fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _swipeHandler: {fileID: 0}
---- !u!114 &2907073762294158516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6186545343902058747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 569e7eee347979443bb7350d804f5f67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isLevelWithFrame: 0
 --- !u!114 &957595173566817432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,26 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bea53f4c1058914995c39c08f33ab42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _zoomAnimation:
-    _mainCamera: {fileID: 6186545344261283279}
-    _zoomCalculator: {fileID: 2907073762294158516}
-  _movingToCentreAnimation:
-    _levelBorders: {fileID: 0}
-    _mainCamera: {fileID: 6186545344261283279}
---- !u!114 &2071492005582517391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6186545343902058747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 365543492fa7e9b45977e967e29a0b7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _character: {fileID: 0}
-  _cameraClamping: {fileID: 6186545343902058751}
 --- !u!114 &6604153382712734554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ab10d0996b64e6ca755c67687e37165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2385801051265026153
+--- !u!114 &5951200647800411599
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,12 +172,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6186545343902058747}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fd5a00328a633e43a025f7e28d546f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a8c2c0d09414272ad3e316ed4878125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelBorders: {fileID: 0}
-  _cameraZoom: {fileID: 0}
-  _mainCamera: {fileID: 6186545344261283279}
-  _bordersWithOrientation: {fileID: 1271010650569364451}
-  _levelZoomCalculator: {fileID: 2907073762294158516}
   _cameraAnimation: {fileID: 957595173566817432}
+  _mainCamera: {fileID: 6186545344261283279}
