@@ -100,9 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7fe997ea2772444a654f3c37b97169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pullingAnimation:
-    _pullingPoint: {fileID: 5317752201256770380}
-    _character: {fileID: 0}
+  _pullingPoint: {fileID: 5317752201256770380}
 --- !u!95 &2587179359831865331
 Animator:
   serializedVersion: 5

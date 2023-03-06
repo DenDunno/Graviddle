@@ -9,11 +9,11 @@ public class MainCamera : MonoBehaviourWrapper
     {
         CameraClampingSettingsFactory cameraClampingSettingsFactory = new(levelBorders, _mainCamera);
         CameraClampingSettings settings = cameraClampingSettingsFactory.Create();
+        CameraBordersWithOrientation borders = new(settings, swipeHandler);
+
         LevelZoomCalculator zoomCalculator = new(_mainCamera, levelBorders, currentGravityData);
         CameraMovingToCentreAnimation movingToCentreAnimation = new(levelBorders, _mainCamera);
         CameraZoomAnimation zoomAnimation = new(_mainCamera, zoomCalculator);
-        CameraBordersWithOrientation borders = new(settings, swipeHandler);
-
         _cameraAnimation.Init(zoomAnimation, movingToCentreAnimation);
 
         SetDependencies(new IUnityCallback[]

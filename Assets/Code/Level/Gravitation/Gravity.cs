@@ -1,31 +1,27 @@
 ﻿using UnityEngine;
 
-public class Gravity : IInitializable, IRestart, IFixedUpdate
-{    
-    private readonly Rigidbody2D _rigidbody2D;
-    private Vector2 _direction = Vector2.down;
-    
-    public Gravity(Rigidbody2D rigidbody2D)
+public class Gravity : IRestart, IInitializable
+{
+    private readonly ConstantForce2D _constantForce2d;
+    private readonly float _strength;
+
+    public Gravity(ConstantForce2D constantForce2d, float strength)
     {        
-        _rigidbody2D = rigidbody2D;
+        _constantForce2d = constantForce2d;
+        _strength = strength;
     }
 
-    public void Initialize()
+    void IInitializable.Initialize()
     {
-        _rigidbody2D.gravityScale = 0;
+        Restart();
     }
 
     public void SetDirection(Vector2 direction)
     {
-        _direction = direction.normalized;
-    }
-    
-    void IFixedUpdate.FixedUpdate()
-    {
-        _rigidbody2D.AddForce(_direction * _rigidbody2D.mass);
+        _constantForce2d.force = direction.normalized * _strength;
     }
 
-    void IRestart.Restart()
+    public void Restart()
     {
         SetDirection(Vector2.down);
     }

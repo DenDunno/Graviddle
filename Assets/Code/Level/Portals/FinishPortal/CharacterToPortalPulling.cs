@@ -1,20 +1,39 @@
-﻿using System;
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
 
-[Serializable]
-public class CharacterToPortalPulling
+public class CharacterToPortalPulling : ISubscriber
 {
-    [SerializeField] private Transform _pullingPoint;
-    [SerializeField] private Character _character;
-    private const float _animationDuration = 1.25f;
+    private readonly float _animationDuration = 1.25f;
+    private readonly GravityRotation _gravityRotation;
+    private readonly CollisionsList _collisions;
+    private readonly Transform _character;
+    private readonly WinState _winState;
 
-    public void Execute()
+    public CharacterToPortalPulling(WinState winState, Transform character, CollisionsList collisions)
     {
-        GravityRotation gravityRotation = _character.GetComponent<GravityRotation>();
-        gravityRotation.enabled = false;
+        _winState = winState;
+        _character = character;
+        _collisions = collisions;
+        _gravityRotation = character.GetComponent<GravityRotation>();
+    }
+
+    public void Subscribe()
+    {
+        _winState.Entered += PullToPortal;
+    }
+
+    public void Unsubscribe()
+    {
+        _winState.Entered -= PullToPortal;
+    }
+
+    private void PullToPortal()
+    {
+        _gravityRotation.enabled = false;
+
+        FinishPortal finishPortal = _collisions.GetComponentFromList<FinishPortal>();
         
-        _character.transform.DOMove(_pullingPoint.transform.position, _animationDuration);
-        _character.transform.DORotate(_pullingPoint.transform.eulerAngles, _animationDuration);
+        _character.DOMove(finishPortal.PullingPoint.position, _animationDuration);
+        _character.DORotate(finishPortal.PullingPoint.eulerAngles, _animationDuration);
     }
 }

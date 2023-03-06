@@ -1,22 +1,8 @@
 ﻿using UnityEngine;
 
 public class FinishPortal : MonoBehaviour
-{    
-    [SerializeField] private CharacterToPortalPulling _pullingAnimation;
-    private WinState _characterWinState;
+{
+    [SerializeField] private Transform _pullingPoint;
 
-    public void Init(WinState winState)
-    {
-        _characterWinState = winState;
-    }
-
-    private void OnEnable()
-    {
-        _characterWinState.Entered += _pullingAnimation.Execute;
-    }
-
-    private void OnDisable()
-    {
-        _characterWinState.Entered -= _pullingAnimation.Execute;
-    }
+    public Transform PullingPoint => _pullingPoint;
 }

@@ -8,7 +8,6 @@ public class EntryPoint : MonoBehaviourWrapper
     [SerializeField] private GravityRotation[] _gravityRotations;
     [SerializeField] private LevelResultSave _levelResultSave;
     [SerializeField] private LaserTurret[] _laserTurrets;
-    [SerializeField] private FinishPortal _finishPortal;
     [SerializeField] private SwipeHandler _swipeHandler;
     [SerializeField] private LevelBorders _levelBorders;
     [SerializeField] private MainCamera _mainCamera;
@@ -30,7 +29,6 @@ public class EntryPoint : MonoBehaviourWrapper
         _character.Init(transitionsPresenter, states, _swipeHandler);
         _characterMovementDirection.Init(currentGravityData);
         _levelResultSave.Init(states.WinState);
-        _finishPortal.Init(states.WinState);
         _levelStarsMediator.Resolve();
 
         SetDependencies(new IUnityCallback[]

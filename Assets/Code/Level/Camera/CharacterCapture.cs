@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CharacterCapture : ILateUpdate, IRestart
+public class CharacterCapture : ILateUpdate
 {
     private readonly CameraClamping _cameraClamping;
     private readonly Rigidbody2D _character;
@@ -25,9 +25,5 @@ public class CharacterCapture : ILateUpdate, IRestart
     private float EvaluateCaptureTimeFunction(float x)
     {
         return 1 / (0.15f * x  + 3.33f);
-    }
-
-    void IRestart.Restart()
-    {
     }
 }

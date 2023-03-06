@@ -281,16 +281,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -13.3
       objectReference: {fileID: 0}
-    - target: {fileID: 7157296599401442698, guid: bf0258e73efab374aac7c0e70a8c0f39,
-        type: 3}
-      propertyPath: _gravityRotations.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7157296599401442698, guid: bf0258e73efab374aac7c0e70a8c0f39,
-        type: 3}
-      propertyPath: _gravityRotations.Array.data[4]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7559409932762398649, guid: bf0258e73efab374aac7c0e70a8c0f39,
         type: 3}
       propertyPath: m_LocalPosition.x
