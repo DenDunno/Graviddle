@@ -14,8 +14,15 @@ public class PhysicsInputTrigger : IUpdate
     }
 
     public event Action Entered;
+    public event Action Exited;
     
     public void Update()
+    {
+        TryInvokeEnterTrigger();
+        TryInvokeExitTrigger();
+    }
+
+    private void TryInvokeEnterTrigger()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -24,16 +31,19 @@ public class PhysicsInputTrigger : IUpdate
             
             if (collider2D == _targetCollider)
             {
-                Debug.Log("Enter");
+                Entered?.Invoke();
                 _isHolding = true;
             }
         }
+    }
 
+    private void TryInvokeExitTrigger()
+    {
         if (Input.GetMouseButtonUp(0))
         {
             if (_isHolding)
             {
-                Debug.Log("Exit");
+                Exited?.Invoke();
                 _isHolding = false;
             }
         }

@@ -2,15 +2,15 @@
 
 public class LevelZoomCalculator
 {
-    private readonly CurrentGravityData _currentGravityData;
+    private readonly GravityState _gravityState;
     private readonly LevelBorders _levelBorders;
     private readonly float _frameOffset = 2;
     private readonly Camera _mainCamera;
     private bool _isLevelWithFrame;
 
-    public LevelZoomCalculator(Camera mainCamera, LevelBorders levelBorders, CurrentGravityData currentGravityData)
+    public LevelZoomCalculator(Camera mainCamera, LevelBorders levelBorders, GravityState gravityState)
     {
-        _currentGravityData = currentGravityData;
+        _gravityState = gravityState;
         _levelBorders = levelBorders;
         _mainCamera = mainCamera;
     }
@@ -39,7 +39,7 @@ public class LevelZoomCalculator
 
     private bool IsVerticalZoom()
     {
-        GravityDirection direction = _currentGravityData.Data.GravityDirection;
+        GravityDirection direction = _gravityState.Data.GravityDirection;
 
         return direction == GravityDirection.Right || direction == GravityDirection.Left;
     }

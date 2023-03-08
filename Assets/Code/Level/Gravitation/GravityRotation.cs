@@ -1,17 +1,19 @@
 ﻿using UnityEngine;
 
-public class GravityRotation : MonoBehaviour
+public class GravityRotation : TogglingComponent
 {
-    private CurrentGravityData _currentGravityData;
-    private const float _rotationSpeed = 3f;
+    private readonly GravityState _state;
+    private readonly Transform _transform;
+    private readonly float _rotationSpeed = 3f;
 
-    public void Init(CurrentGravityData currentGravityData)
+    public GravityRotation(GravityState state, Transform transform)
     {
-        _currentGravityData = currentGravityData;
+        _state = state;
+        _transform = transform;
     }
-    
-    private void Update()
+
+    protected override void OnUpdate()
     {
-        transform.rotation = Quaternion.Lerp(transform.rotation, _currentGravityData.Data.Rotation, _rotationSpeed * Time.deltaTime);
+        _transform.rotation = Quaternion.Lerp(_transform.rotation, _state.Data.Rotation, _rotationSpeed * Time.deltaTime);
     }
 }

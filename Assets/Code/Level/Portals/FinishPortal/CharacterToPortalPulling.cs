@@ -9,12 +9,12 @@ public class CharacterToPortalPulling : ISubscriber
     private readonly Transform _character;
     private readonly WinState _winState;
 
-    public CharacterToPortalPulling(WinState winState, Transform character, CollisionsList collisions)
+    public CharacterToPortalPulling(WinState winState, Transform character, CollisionsList collisions, GravityRotation gravityRotation)
     {
         _winState = winState;
         _character = character;
         _collisions = collisions;
-        _gravityRotation = character.GetComponent<GravityRotation>();
+        _gravityRotation = gravityRotation;
     }
 
     public void Subscribe()
@@ -29,7 +29,7 @@ public class CharacterToPortalPulling : ISubscriber
 
     private void PullToPortal()
     {
-        _gravityRotation.enabled = false;
+        _gravityRotation.IsActive = false;
 
         FinishPortal finishPortal = _collisions.GetComponentFromList<FinishPortal>();
         

@@ -281,6 +281,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -13.3
       objectReference: {fileID: 0}
+    - target: {fileID: 7157296599401442698, guid: bf0258e73efab374aac7c0e70a8c0f39,
+        type: 3}
+      propertyPath: _gravityBoxes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157296599401442698, guid: bf0258e73efab374aac7c0e70a8c0f39,
+        type: 3}
+      propertyPath: _gravityBoxes.Array.data[0]
+      value: 
+      objectReference: {fileID: 1904450143}
     - target: {fileID: 7559409932762398649, guid: bf0258e73efab374aac7c0e70a8c0f39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1731,3 +1741,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1904450143 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3809320966340570501, guid: 075ce9d1512330b468c3ead511caf091,
+    type: 3}
+  m_PrefabInstance: {fileID: 1265907771}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8c1f35518f62e4f852b4473bbd10bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

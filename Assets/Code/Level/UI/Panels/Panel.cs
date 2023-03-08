@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class Panel : MonoBehaviour
+public abstract class Panel : MonoBehaviour, IToggleable
 {
     public void Show()
     {

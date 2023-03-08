@@ -1,30 +1,22 @@
 using System;
 using UnityEngine;
 
-public class LevelStar : MonoBehaviour, IRestart
+public class LevelStar : MonoBehaviourWrapper
 {
-    private StarPickupFeedback _starPickupFeedback;
+    [SerializeField] private PhysicsEventBroadcaster _physics;
     public event Action StarCollected;
 
-    public void Init(StarPickupFeedback pickupFeedback)
+    public void Init(StarPickupFeedback pickupFeedback, GravityState characterGravityState)
     {
-        _starPickupFeedback = pickupFeedback;
-    }
-    
-    private void OnTriggerEnter2D(Collider2D collider2d)
-    {
-        if (collider2d.GetComponent<Character>() != null)
+        SetDependencies(new IUnityCallback[]
         {
-            gameObject.SetActive(false);
-            
-            _starPickupFeedback.Play(transform.position);
-            
-            StarCollected?.Invoke();
-        }
+            new LevelStarPickup(_physics, pickupFeedback, transform, CollectStar),
+            new GravityRotation(characterGravityState, transform),
+        });
     }
 
-    void IRestart.Restart()
+    private void CollectStar()
     {
-        gameObject.SetActive(true);
+        StarCollected?.Invoke();
     }
 }

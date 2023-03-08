@@ -11,11 +11,11 @@ public class SwipeHandlerSwitcher : CharacterFallingEventsHandler
 
     protected override void OnStartFalling()
     {
-        _swipeHandler.enabled = false;
+        _swipeHandler.IsActive = false;
     }
 
     protected override void OnEndFalling()
     {
-        _swipeHandler.enabled = true;
+        _swipeHandler.IsActive = true;
     }
 }

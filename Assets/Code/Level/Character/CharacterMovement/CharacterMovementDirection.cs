@@ -6,13 +6,13 @@ public class CharacterMovementDirection : IUpdate
 {
     [SerializeField] private InputButton[] _inputButtons;
     [SerializeField] private CharacterSpriteFlipping _characterSpriteFlipping;
-    private CurrentGravityData _currentGravityData;
+    private GravityState _gravityState;
 
     public Vector2 Direction { get; private set; }
 
-    public void Init(CurrentGravityData currentGravityData)
+    public void Init(GravityState gravityState)
     {
-        _currentGravityData = currentGravityData;
+        _gravityState = gravityState;
     }
     
     void IUpdate.Update()
@@ -22,7 +22,7 @@ public class CharacterMovementDirection : IUpdate
         TryRun(0, ref state, MovementState.Left);
         TryRun(1, ref state, MovementState.Right);
         
-        Direction = _currentGravityData.Data.Rotation * (Vector2.right * (int) state);
+        Direction = _gravityState.Data.Rotation * (Vector2.right * (int) state);
     }
 
     private void TryRun(int buttonIndex, ref MovementState state, MovementState targetState)

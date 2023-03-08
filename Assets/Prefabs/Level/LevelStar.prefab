@@ -202,9 +202,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8550718928693556226}
   - component: {fileID: 8550718928693556224}
-  - component: {fileID: 831309877186732299}
   - component: {fileID: 8550718928693556227}
   - component: {fileID: 5905322518152996842}
+  - component: {fileID: 8782861809376218558}
   m_Layer: 0
   m_Name: LevelStar
   m_TagString: Untagged
@@ -245,18 +245,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.36571428
---- !u!114 &831309877186732299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8550718928693556249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5744c1f06be22ae4aaab20f52121692d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8550718928693556227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107510787b9cfdb439d79c92bb12c4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _physics: {fileID: 8782861809376218558}
 --- !u!82 &5905322518152996842
 AudioSource:
   m_ObjectHideFlags: 0
@@ -365,3 +354,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8782861809376218558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8550718928693556249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1442f1ae328b40eebe9a17b531715e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
