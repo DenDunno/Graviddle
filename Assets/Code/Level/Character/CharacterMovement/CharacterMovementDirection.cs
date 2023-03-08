@@ -6,11 +6,11 @@ public class CharacterMovementDirection : IUpdate
 {
     [SerializeField] private InputButton[] _inputButtons;
     [SerializeField] private CharacterSpriteFlipping _characterSpriteFlipping;
-    private GravityState _gravityState;
+    private IGravityState _gravityState;
 
     public Vector2 Direction { get; private set; }
 
-    public void Init(GravityState gravityState)
+    public void Init(IGravityState gravityState)
     {
         _gravityState = gravityState;
     }

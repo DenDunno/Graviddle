@@ -8,7 +8,7 @@ public class LaserTurret : MonoBehaviour
     [SerializeField] private CharacterHead _target;
     private IUpdate[] _updatables;
 
-    public void Init(GravityState gravityState)
+    public void Init(CharacterGravityState characterGravityState)
     {
         TurretRotationData turretRotationData = new(_target, _turret, 1.5f);
         TurretRotationData fasteningRotationData = new(_target, _fastening, 2f);
@@ -17,7 +17,7 @@ public class LaserTurret : MonoBehaviour
         {
             new TurretPosition(_turret, _turretAnchor),
             new TurretRotation(turretRotationData),
-            new TurretFasteningRotation(fasteningRotationData, gravityState, transform)
+            new TurretFasteningRotation(fasteningRotationData, characterGravityState, transform)
         };
     }
 

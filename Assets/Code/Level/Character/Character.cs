@@ -10,16 +10,16 @@ public class Character : MonoBehaviourWrapper
     [SerializeField] private AnimationCurve _fadeCurve;
     [SerializeField] private CollisionsList _collisions;
     
-    public void Init(TransitionsPresenter transitionsPresenter, CharacterStatesPresenter states, SwipeHandler swipeHandler, GravityState gravityState)
+    public void Init(TransitionsPresenter transitionsPresenter, CharacterStatesPresenter states, SwipeHandler swipeHandler, CharacterGravityState characterGravityState)
     {
         Transition fallToIdleTransition = transitionsPresenter.GetTransition(states.FallState, states.IdleState);
         Gravity gravity = new(_constantForce2d, 15);
-        GravityRotation gravityRotation = new(gravityState, transform);
+        GravityRotation gravityRotation = new(characterGravityState, transform);
         
         SetDependencies(new IUnityCallback[]
         {
             gravity,
-            gravityState,
+            characterGravityState,
             gravityRotation,
             new CharacterPhysicsRestart(_rigidbody2D),
             new CharacterGravity(gravity, swipeHandler),

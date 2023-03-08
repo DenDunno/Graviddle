@@ -309,17 +309,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7551939589822099800, guid: 9fb5dbd51a9c2474c9f3343113ac254b,
+        type: 3}
+      propertyPath: m_Cameras.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7551939589822099800, guid: 9fb5dbd51a9c2474c9f3343113ac254b,
+        type: 3}
+      propertyPath: m_Cameras.Array.data[0]
+      value: 
+      objectReference: {fileID: 669136807768694303}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fb5dbd51a9c2474c9f3343113ac254b, type: 3}
---- !u!4 &1761496302009652104 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6186545343902058750, guid: 9fb5dbd51a9c2474c9f3343113ac254b,
+--- !u!20 &959765368154330306 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4681725183136731060, guid: 9fb5dbd51a9c2474c9f3343113ac254b,
     type: 3}
   m_PrefabInstance: {fileID: 5596023509530844022}
   m_PrefabAsset: {fileID: 0}
---- !u!20 &1761496302368605881 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 6186545344261283279, guid: 9fb5dbd51a9c2474c9f3343113ac254b,
+--- !u!4 &1761496302009652104 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6186545343902058750, guid: 9fb5dbd51a9c2474c9f3343113ac254b,
     type: 3}
   m_PrefabInstance: {fileID: 5596023509530844022}
   m_PrefabAsset: {fileID: 0}
@@ -730,7 +740,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 1761496302368605881}
+      objectReference: {fileID: 959765368154330306}
     - target: {fileID: 4963056788246217563, guid: 541cefc2686fbf447be6be187ea3ca43,
         type: 3}
       propertyPath: m_AllowMSAA

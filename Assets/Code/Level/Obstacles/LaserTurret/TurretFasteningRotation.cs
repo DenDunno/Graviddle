@@ -3,11 +3,11 @@ using UnityEngine;
 public class TurretFasteningRotation : IUpdate
 {
     private readonly TurretRotationData _data;
-    private readonly GravityState _gravityState;
+    private readonly IGravityState _gravityState;
     private readonly Transform _transform;
     private const float _rightAngle = 90;
 
-    public TurretFasteningRotation(TurretRotationData data, GravityState gravityState, Transform transform)
+    public TurretFasteningRotation(TurretRotationData data, IGravityState gravityState, Transform transform)
     {
         _data = data;
         _gravityState = gravityState;

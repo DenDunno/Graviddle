@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-
+﻿
 public class CharacterGravity : ISubscriber
 {
     private readonly SwipeHandler _swipeHandler;
@@ -23,8 +22,6 @@ public class CharacterGravity : ISubscriber
 
     private void OnGravityChanged(GravityDirection direction)
     {
-        Vector2 gravityVector = GravityDataPresenter.GravityData[direction].GravityVector;
-        
-        _gravity.SetDirection(gravityVector);
+        _gravity.SetDirection(direction);
     }
 }

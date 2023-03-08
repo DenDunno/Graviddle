@@ -3,14 +3,16 @@
 public class BoxGravity : TogglingComponent
 {
     private readonly OrientationHandler _orientation = new(0.75f);
+    private readonly BoxGravityState _gravityState;
     private readonly Transform _transform;
     private readonly BoxGravityView _view;
     private readonly Gravity _gravity;
     private readonly Camera _camera;
     private bool _directionChanged;
     
-    public BoxGravity(Gravity gravity, Transform transform, BoxGravityView view)
+    public BoxGravity(Gravity gravity, Transform transform, BoxGravityView view, BoxGravityState gravityState)
     {
+        _gravityState = gravityState;
         _transform = transform;
         _camera = Camera.main;
         _gravity = gravity;
@@ -22,9 +24,8 @@ public class BoxGravity : TogglingComponent
     {
         if (_directionChanged)
         {
-            Vector2 gravityVector = GravityDataPresenter.GravityData[_orientation.LocalDirection].GravityVector;
-
-            _gravity.SetDirection(gravityVector);
+            _gravityState.Direction = _orientation.LocalDirection;
+            _gravity.SetDirection(_orientation.LocalDirection);
         }
     }
 
@@ -48,7 +49,16 @@ public class BoxGravity : TogglingComponent
         
         if (_directionChanged)
         {
-            _view.SelectDirection(_orientation.LocalDirection);
+            int start = (int)_gravityState.Direction;
+            int target = (int)_orientation.LocalDirection;
+            int result = target - start;
+
+            if (result < 0)
+            {
+                result = 4 + result;
+            }
+            
+            _view.SelectDirection((GravityDirection)result);
         }
     }
 }

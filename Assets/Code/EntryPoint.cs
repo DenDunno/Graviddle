@@ -19,17 +19,17 @@ public class EntryPoint : MonoBehaviourWrapper
         CharacterStatesPresenter states = new(_character.GetComponent<Animator>(), _characterMovementDirection);
         TransitionsPresenterFactory transitionsPresenterFactory = new(states, _transitionsConditions);
         TransitionsPresenter transitionsPresenter = transitionsPresenterFactory.Create();
-        GravityState characterGravityState = new(_swipeHandler);
+        CharacterGravityState characterCharacterGravityState = new(_swipeHandler);
         PollingEvent restartEvent = new();
 
         _transitionsConditions.Init(_characterMovementDirection, restartEvent.CheckIfEventHappened);
-        _character.Init(transitionsPresenter, states, _swipeHandler, characterGravityState);
-        _mainCamera.Init(characterGravityState, _swipeHandler, _levelBorders, _character);
-        _laserTurrets.ForEach(laserTurret => laserTurret.Init(characterGravityState));
+        _character.Init(transitionsPresenter, states, _swipeHandler, characterCharacterGravityState);
+        _mainCamera.Init(characterCharacterGravityState, _swipeHandler, _levelBorders, _character);
+        _laserTurrets.ForEach(laserTurret => laserTurret.Init(characterCharacterGravityState));
         _gravityBoxes.ForEach(gravityBox => gravityBox.Init(_swipeHandler));
-        _characterMovementDirection.Init(characterGravityState);
+        _characterMovementDirection.Init(characterCharacterGravityState);
         _levelResultSave.Init(states.WinState);
-        _levelStarsMediator.Resolve(characterGravityState);
+        _levelStarsMediator.Resolve(characterCharacterGravityState);
 
         SetDependencies(new IUnityCallback[]
         {

@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6186545343902058750}
-  - component: {fileID: 6186545344261283279}
-  - component: {fileID: 2995751992840062648}
+  - component: {fileID: 4681725183136731060}
+  - component: {fileID: 3359513837307918864}
   - component: {fileID: 6186545343902058749}
   - component: {fileID: 957595173566817432}
   - component: {fileID: 6604153382712734554}
   - component: {fileID: 5951200647800411599}
-  - component: {fileID: 4902546212272902864}
+  - component: {fileID: 7551939589822099800}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -38,7 +38,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &6186545344261283279
+--- !u!20 &4681725183136731060
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,7 +81,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &2995751992840062648
+--- !u!114 &3359513837307918864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,8 +142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraAnimation: {fileID: 957595173566817432}
-  _mainCamera: {fileID: 6186545344261283279}
---- !u!114 &4902546212272902864
+  _mainCamera: {fileID: 4681725183136731060}
+--- !u!114 &7551939589822099800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,8 +159,7 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_Cameras:
-  - {fileID: 0}
+  m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2

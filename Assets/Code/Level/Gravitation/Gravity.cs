@@ -16,13 +16,14 @@ public class Gravity : IRestart, IInitializable
         Restart();
     }
 
-    public void SetDirection(Vector2 direction)
+    public void SetDirection(GravityDirection direction)
     {
-        _constantForce2d.force = direction.normalized * _strength;
+        Vector2 directionVector = GravityDataPresenter.GravityData[direction].GravityVector;
+        _constantForce2d.force = directionVector.normalized * _strength;
     }
 
     public void Restart()
     {
-        SetDirection(Vector2.down);
+        SetDirection(GravityDirection.Down);
     }
 }

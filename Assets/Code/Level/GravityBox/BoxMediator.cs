@@ -1,12 +1,12 @@
 ﻿
-public class BoxInput : ISubscriber
+public class BoxMediator : ISubscriber
 {
     private readonly PhysicsInputTrigger _inputTrigger;
     private readonly SwipeHandler _swipeHandler;
     private readonly BoxGravity _boxGravity;
     private readonly IToggleable[] _popUps;
 
-    public BoxInput(PhysicsInputTrigger inputTrigger, SwipeHandler swipeHandler, BoxGravity boxGravity, IToggleable[] popUps)
+    public BoxMediator(PhysicsInputTrigger inputTrigger, SwipeHandler swipeHandler, BoxGravity boxGravity, IToggleable[] popUps)
     {
         _inputTrigger = inputTrigger;
         _swipeHandler = swipeHandler;

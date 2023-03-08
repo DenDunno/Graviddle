@@ -2,65 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="236f7ca0-e3d5-42cf-8bd1-4f65d9112fc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravity.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravityView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravityView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxInput.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxInput.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/GravityBox.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/LevelStar/LevelStarPickup.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/LevelStar/LevelStarPickup.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/OrientationHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/OrientationHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Utils/IToggleable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Utils/IToggleable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Utils/PhysicsEventBroadcaster.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Utils/PhysicsEventBroadcaster.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Utils/ScalePopup.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Utils/TogglingComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Utils/TogglingComponent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/IGravityState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/IGravityState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravityState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravityState.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/Level Choice/LevelStarShiny.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Materials/Level Choice/LevelStarShiny.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Shaders/StarShiny.shadergraph" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Shaders/StarShiny.shadergraph.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/EntryPoint.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Camera/LevelZoomCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Camera/LevelZoomCalculator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Camera/MainCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Camera/MainCamera.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Character.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterGravity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterGravity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterMovement/CharacterMovementDirection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterMovement/CharacterMovementDirection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/Physics/CollisionsList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Utils/CollisionsList.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/Physics/CollisionsList.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Utils/CollisionsList.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/CharacterFallingEventsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterFallingEventsHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/CharacterFallingEventsHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterFallingEventsHandler.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/CurrentGravityData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/CurrentGravityData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/Gravity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/Gravity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityRotation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityRotation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/SwipeHandler/SwipeHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/SwipeHandler/SwipeHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/SwipeHandler/SwipeHandlerSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/SwipeHandler/SwipeHandlerSwitcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/TransformWithGravityRotation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/TransformWithGravityRotation.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/GravityBox.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/GravityBox.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/GravityBox.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/CharacterGravityState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/GravityState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/CharacterGravityState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxMediator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxInput.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxMediator.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/GravityBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/GravityBox.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Level/LevelStar/LevelStar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/LevelStar/LevelStar.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Level/LevelStar/LevelStarsMediator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/LevelStar/LevelStarsMediator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Obstacles/LaserTurret.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Obstacles/LaserTurret.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Obstacles/LaserTurret/TurretFasteningRotation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Obstacles/LaserTurret/TurretFasteningRotation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Portals/FinishPortal/CharacterToPortalPulling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Portals/FinishPortal/CharacterToPortalPulling.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/Panels/Panel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/Panels/Panel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Utils/SpriteOutline.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Utils/SpriteOutline.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Utils/ScalePopup.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Utils/Logger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Utils/Logger.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level/Character.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level/GravityBox.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level/GravityBox.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level/LevelStar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level/LevelStar.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level/Main Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level/Main Camera.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/UI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicsInputTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PhysicsInputTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicsInputTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Utils/PhysicsInputTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PhysicsInputTrigger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Utils/PhysicsInputTrigger.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Gravity box.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Gravity box.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

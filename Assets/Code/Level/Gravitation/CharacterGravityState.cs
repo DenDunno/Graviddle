@@ -1,15 +1,14 @@
 
-public class GravityState : ISubscriber 
+public class CharacterGravityState : ISubscriber, IGravityState
 {
     private readonly SwipeHandler _swipeHandler;
 
-    public GravityState(SwipeHandler swipeHandler)
+    public CharacterGravityState(SwipeHandler swipeHandler)
     {
         _swipeHandler = swipeHandler;
-        Data = GravityDataPresenter.GravityData[GravityDirection.Down];
     }
 
-    public GravityData Data { get; private set; }
+    public GravityDirection Direction { get; private set; } = GravityDirection.Down;
 
     void ISubscriber.Subscribe()
     {
@@ -20,9 +19,9 @@ public class GravityState : ISubscriber
     {
         _swipeHandler.GravityChanged -= OnGravityChanged;
     }
-    
+
     private void OnGravityChanged(GravityDirection gravityDirection)
     {
-        Data = GravityDataPresenter.GravityData[gravityDirection];
+        Direction = gravityDirection;
     }
 }

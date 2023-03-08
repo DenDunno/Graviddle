@@ -8,11 +8,11 @@ public class LevelStarsMediator
     [SerializeField] private StarPickupFeedback _starPickupFeedback;
     [SerializeField] private Reward _reward;
     
-    public void Resolve(GravityState characterGravityState)
+    public void Resolve(CharacterGravityState characterCharacterGravityState)
     {
         foreach (LevelStar levelStar in _levelStars)
         {
-            levelStar.Init(_starPickupFeedback, characterGravityState);
+            levelStar.Init(_starPickupFeedback, characterCharacterGravityState);
         }
         
         _reward.Init(_levelStars);

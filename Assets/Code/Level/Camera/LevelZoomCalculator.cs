@@ -2,13 +2,13 @@
 
 public class LevelZoomCalculator
 {
-    private readonly GravityState _gravityState;
+    private readonly IGravityState _gravityState;
     private readonly LevelBorders _levelBorders;
     private readonly float _frameOffset = 2;
     private readonly Camera _mainCamera;
     private bool _isLevelWithFrame;
 
-    public LevelZoomCalculator(Camera mainCamera, LevelBorders levelBorders, GravityState gravityState)
+    public LevelZoomCalculator(Camera mainCamera, LevelBorders levelBorders, IGravityState gravityState)
     {
         _gravityState = gravityState;
         _levelBorders = levelBorders;
