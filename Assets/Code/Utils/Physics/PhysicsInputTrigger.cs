@@ -16,7 +16,7 @@ public class PhysicsInputTrigger : IUpdate
     public event Action Entered;
     public event Action Exited;
     
-    public void Update()
+    void IUpdate.Update()
     {
         TryInvokeEnterTrigger();
         TryInvokeExitTrigger();

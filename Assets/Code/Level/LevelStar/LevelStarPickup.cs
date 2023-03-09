@@ -16,26 +16,23 @@ public class LevelStarPickup : ISubscriber, IRestart
         _feedback = feedback;
     }
 
-    public void Subscribe()
+    void ISubscriber.Subscribe()
     {
-        _physicsEvent.Entered += OnEntered;
+        _physicsEvent.RegisterOnTriggerEnter<Character>(OnCharacterEntered);
     }
 
-    public void Unsubscribe()
+    void ISubscriber.Unsubscribe()
     {
-        _physicsEvent.Entered -= OnEntered;
+        _physicsEvent.UnRegisterOnTriggerEnter<Character>(OnCharacterEntered);
     }
 
-    private void OnEntered(Collider2D collider2d)
+    private void OnCharacterEntered(Character character)
     {
-        if (collider2d.GetComponent<Character>() != null)
-        {
-            _transform.gameObject.SetActive(false);
+        _transform.gameObject.SetActive(false);
             
-            _feedback.Play(_transform.position);
+        _feedback.Play(_transform.position);
             
-            _onStarCollected?.Invoke();
-        }
+        _onStarCollected?.Invoke();
     }
 
     void IRestart.Restart()
