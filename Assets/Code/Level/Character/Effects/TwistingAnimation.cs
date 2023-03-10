@@ -70,6 +70,7 @@ public class TwistingAnimation : ISubscriber, IInitializable, IRestart
         _animation = DOTween.Sequence();
         _animation.AppendInterval(_waitTime);
         _animation.Append(animation);
+        _animation.SetLink(_spriteRenderer.gameObject);
     }
 
     public void Restart()

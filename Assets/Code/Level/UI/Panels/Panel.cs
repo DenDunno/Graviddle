@@ -1,19 +1,36 @@
-﻿using UnityEngine;
+﻿using Cysharp.Threading.Tasks;
+using UnityEngine;
 
-public abstract class Panel : MonoBehaviour, IToggleable
+public abstract class Panel : MonoBehaviour
 {
-    public void Show()
+    public virtual async UniTask Init()
     {
-        gameObject.SetActive(true);
-        OnShow();
-    }
-
-    public void Hide()
-    {
-        OnHide();
-        gameObject.SetActive(false);
+        await UniTask.Yield();
     }
     
-    protected virtual void OnShow() {}
-    protected virtual void OnHide() {}
+    public void Enable()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void Disable()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public async UniTask Show()
+    {
+        Enable();
+        await OnShow();
+    }
+
+    public async UniTask Hide()
+    {
+        await OnHide();
+        Disable();
+    }
+
+    protected virtual async UniTask OnShow() { await UniTask.Yield(); }
+
+    protected virtual async UniTask OnHide() { await UniTask.Yield(); }
 }

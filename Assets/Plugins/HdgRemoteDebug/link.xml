@@ -1,4 +1,0 @@
-<linker>
-    <assembly fullname="HdgRemoteDebugRuntime" preserve="all" ignoreIfMissing="1" />
-    <assembly fullname="HdgRemoteDebugRuntimeUWP" preserve="all" ignoreIfMissing="1" />
-</linker>

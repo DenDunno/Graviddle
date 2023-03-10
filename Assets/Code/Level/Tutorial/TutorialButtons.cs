@@ -7,7 +7,7 @@ public class TutorialButtons : MonoBehaviour
 
     private void Start()
     {
-        _ui.HideAll();
+        _ui.DisableAll();
     }
 
     private void OnEnable()
@@ -20,8 +20,8 @@ public class TutorialButtons : MonoBehaviour
         _storyTelling.StoryEnded -= OnStoryEnded;
     }
 
-    private void OnStoryEnded()
+    private async void OnStoryEnded()
     {
-        _ui.Show<GameplayPanel>();
+        await _ui.Show<GameplayPanel>();
     }
 }

@@ -24,16 +24,16 @@ public class UIHandler : ISubscriber, IAfterRestart
 
     private void OnDied()
     {
-        _ui.HideAll();
+        _ui.DisableAll();
     }
 
-    private void OnWon()
+    private async void OnWon()
     {
-        _ui.Show<WinPanel>();
+        await _ui.Show<WinPanel>();
     }
 
-    void IAfterRestart.Restart()
+    async void IAfterRestart.Restart()
     {
-        _ui.Show<GameplayPanel>();
+        await _ui.Show<GameplayPanel>();
     }
 }

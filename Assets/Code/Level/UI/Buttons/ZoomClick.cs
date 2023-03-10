@@ -11,7 +11,7 @@ public class ZoomClick : ButtonClick
 
     protected override void OnButtonClick()
     {
-        _uiSwitcher.HideAll();
+        _uiSwitcher.DisableAll();
         ToggleCharacterCapture();
         //PlayAnimation().OnComplete(_targetUI.Activate);
     }

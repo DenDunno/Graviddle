@@ -5,24 +5,27 @@ public class AppStartup : MonoBehaviour
 {
     [SerializeField] private BackgroundMusicSpawner _backgroundMusicSpawner;
     [SerializeField] private AdvertisementStartup _advertisementStartup;
-    private readonly MusicVolume _musicVolume = new();
+    [SerializeField] private UI _ui;
     private static bool _appWasInited;
     
-    private void Start()
+    private async void Start()
+    {
+        TryInitializeGame();
+
+        await _ui.Init();
+        await _ui.Show<MainMenuPanel>();
+    }
+
+    private void TryInitializeGame()
     {
         if (_appWasInited == false)
         {
             _appWasInited = true;
-            Initialize();
+            Application.targetFrameRate = 90;
+            Addressables.InitializeAsync();
+            _backgroundMusicSpawner.Init();
+            _advertisementStartup.Init();
+            new MusicVolume().Init();
         }
-    }
-
-    private void Initialize()
-    {
-        Application.targetFrameRate = 80;
-        Addressables.InitializeAsync();
-        _backgroundMusicSpawner.Init();
-        _advertisementStartup.Init();
-        _musicVolume.Init();
     }
 }

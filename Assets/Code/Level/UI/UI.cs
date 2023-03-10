@@ -1,25 +1,46 @@
 using System;
+using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class UI : MonoBehaviour
 {
     [SerializeField] [ChildGameObjectsOnly] private Panel[] _states;
+    private Panel _current;
 
-    public void Show(Panel panel) 
+    public async UniTask Init()
     {
-        HideAll();
-        panel.Show();
+        foreach (Panel panel in _states)
+        {
+            await panel.Init();
+        }
     }
 
-    public void Show<T>() where T : Panel
+    public async void ShowSync(Panel panel) // editor button
     {
-        Show(Find<T>());
+        await Show(panel);
     }
-
-    public void HideAll()
+    
+    public async UniTask Show<T>() where T : Panel
     {
-        _states.ForEach(state => state.Hide());
+        await Show(Find<T>());
+    }
+    
+    private async UniTask Show(Panel panel)
+    {
+        if (_current != null)
+        {
+            await _current.Hide();
+        }
+        
+        await panel.Show();
+        
+        _current = panel;
+    }
+    
+    public void DisableAll()
+    {
+        _states.ForEach(state => state.Disable());
     }
 
     private T Find<T>() where T : Panel
