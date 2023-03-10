@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public abstract class MonoBehaviourWrapper : MonoBehaviour, IRestart, IAfterRest
     private IEnumerable<IFixedUpdate> _fixedUpdates;
     private IEnumerable<ISubscriber> _subscribers;
     private IEnumerable<ILateUpdate> _lateUpdates;
+    private IEnumerable<IDisposable> _disposables;
     private IEnumerable<IUpdate> _updates;
 
     protected void SetDependencies(IUnityCallback[] dependencies)
@@ -18,7 +20,8 @@ public abstract class MonoBehaviourWrapper : MonoBehaviour, IRestart, IAfterRest
         _restartComponents = dependencies.OfType<IRestart>();
         _fixedUpdates = dependencies.OfType<IFixedUpdate>();
         _subscribers = dependencies.OfType<ISubscriber>();
-        _lateUpdates = dependencies.OfType<ILateUpdate>(); 
+        _lateUpdates = dependencies.OfType<ILateUpdate>();
+        _disposables = dependencies.OfType<IDisposable>();
         _updates = dependencies.OfType<IUpdate>();
     }
 
@@ -55,5 +58,10 @@ public abstract class MonoBehaviourWrapper : MonoBehaviour, IRestart, IAfterRest
     void IAfterRestart.Restart()
     {
         _afterRestartComponents.RestartForEach();
+    }
+
+    private void OnDestroy()
+    {
+        _disposables.DisposeForEach();
     }
 }

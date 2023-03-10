@@ -130,8 +130,6 @@ MonoBehaviour:
     _characterSpriteFlipping:
       _spriteRenderer: {fileID: 7559409932291032803}
   _transitionsConditions:
-    _character: {fileID: 5941218326824543900}
-    _levelBorders: {fileID: 4488400278322594543}
     _restartButton: {fileID: 5095809087917036308}
     _allCollisions: {fileID: 7749859406398825423}
     _characterFeet: {fileID: 8059827198979699868}
@@ -145,9 +143,12 @@ MonoBehaviour:
   _levelResultSave: {fileID: 3798608887891414662}
   _laserTurrets: []
   _swipeHandler: {fileID: 4039177452382495829}
-  _levelBorders: {fileID: 4488400278322594543}
   _gravityBoxes: []
+  _cameraData:
+    _zoomInButton: {fileID: 5019780644004743343}
+    _zoomOutButton: {fileID: 555827681909446976}
   _mainCamera: {fileID: 2251791906506133177}
+  _borders: {fileID: 4488400278322594543}
   _character: {fileID: 5941218326824543900}
   _ui: {fileID: 2276014325182347911}
 --- !u!1001 &5596023509353818500
@@ -753,6 +754,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 541cefc2686fbf447be6be187ea3ca43, type: 3}
+--- !u!114 &555827681909446976 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5341167930685670404, guid: 541cefc2686fbf447be6be187ea3ca43,
+    type: 3}
+  m_PrefabInstance: {fileID: 5596023510510132548}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &669136807768694303 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 4963056788246217563, guid: 541cefc2686fbf447be6be187ea3ca43,
@@ -823,6 +836,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1d93bf934eeaf84f97e1b8d741eb44d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5019780644004743343 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 576678857234978283, guid: 541cefc2686fbf447be6be187ea3ca43,
+    type: 3}
+  m_PrefabInstance: {fileID: 5596023510510132548}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &5095809087917036308 stripped

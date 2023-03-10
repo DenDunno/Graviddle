@@ -5,16 +5,18 @@ public class TwistingAnimation : ISubscriber, IInitializable, IRestart
 {
     private readonly SpriteRenderer _spriteRenderer;
     private readonly AnimationCurve _fadeCurve;
-    private readonly float _fadeDuration = 5f;
+    private readonly TweenCallback _onRespawn;
     private readonly float _brightenDuration = 2f;
+    private readonly float _fadeDuration = 5f;
     private readonly float _waitTime = 1f;
     private readonly WinState _winState;
     private Sequence _animation;
     
-    public TwistingAnimation(SpriteRenderer spriteRenderer, WinState winState, AnimationCurve fadeCurve)
+    public TwistingAnimation(SpriteRenderer spriteRenderer, WinState winState, AnimationCurve fadeCurve, TweenCallback onRespawn)
     {
         _spriteRenderer = spriteRenderer;
         _fadeCurve = fadeCurve;
+        _onRespawn = onRespawn;
         _winState = winState;
     }
 
@@ -62,6 +64,7 @@ public class TwistingAnimation : ISubscriber, IInitializable, IRestart
         SetWave(0f, 1f);
         SetFloat(CharacterShaderID.Alpha, 0);
         PlayAnimation(BrightenAnimation);
+        _animation.OnComplete(_onRespawn);
     }
 
     private void PlayAnimation(Tween animation)

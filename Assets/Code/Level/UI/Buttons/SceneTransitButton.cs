@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-public class SceneTransitButtonClick : ButtonClick
+public class SceneTransitButton : ButtonClick
 {
     [SerializeField] private int _sceneIndex;
     [SerializeField] private AssetReference _transitReference;

@@ -18,16 +18,17 @@ public class CameraZoomAnimation
 
     public Tween ZoomOut()
     {
-        return ZoomCamera(_characterZoom, _zoomCalculator.GetLevelZoom(), _zoomOutDuration);
+        return ZoomCamera(_zoomCalculator.GetLevelZoom(), _zoomOutDuration);
     }
 
     public Tween ZoomIn()
     {
-        return ZoomCamera(_mainCamera.orthographicSize, _characterZoom, _zoomInDuration);
+        return ZoomCamera(_characterZoom, _zoomInDuration);
     }
 
-    private Tween ZoomCamera(float zoomFrom, float zoomTo, float duration)
+    private Tween ZoomCamera(float target, float duration)
     {
-        return DOTween.To(x => _mainCamera.orthographicSize = x, zoomFrom, zoomTo, duration);
+        return _mainCamera.DOOrthoSize(target, duration)
+                          .SetLink(_mainCamera.gameObject);;
     }
 } 

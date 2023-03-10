@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class TimeScaleSwitcher : MonoBehaviour
+public class TimeScale
 {
     public void FreezeGame()
     {

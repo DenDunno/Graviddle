@@ -37,6 +37,11 @@ public static class CollectionsExtensions
         afterRestartComponents.ForEach(afterRestartComponent => afterRestartComponent.Restart());
     }
     
+    public static void DisposeForEach(this IEnumerable<IDisposable> disposables)
+    {
+        disposables.ForEach(disposable => disposable.Dispose());
+    }
+    
     public static void UpdateForEach(this IEnumerable<IUpdate> updatables)
     {
         updatables.ForEach(update => update.Update());

@@ -8,9 +8,10 @@ public class EntryPoint : MonoBehaviourWrapper
     [SerializeField] private LevelResultSave _levelResultSave;
     [SerializeField] private LaserTurret[] _laserTurrets;
     [SerializeField] private SwipeHandler _swipeHandler;
-    [SerializeField] private LevelBorders _levelBorders;
     [SerializeField] private GravityBox[] _gravityBoxes;
+    [SerializeField] private CameraData _cameraData;
     [SerializeField] private MainCamera _mainCamera;
+    [SerializeField] private LevelBorders _borders;
     [SerializeField] private Character _character;
     [SerializeField] private UI _ui;
 
@@ -19,23 +20,24 @@ public class EntryPoint : MonoBehaviourWrapper
         CharacterStatesPresenter states = new(_character.GetComponent<Animator>(), _characterMovementDirection);
         TransitionsPresenterFactory transitionsPresenterFactory = new(states, _transitionsConditions);
         TransitionsPresenter transitionsPresenter = transitionsPresenterFactory.Create();
-        CharacterGravityState characterCharacterGravityState = new(_swipeHandler);
+        CharacterGravityState characterGravityState = new(_swipeHandler);
         PollingEvent restartEvent = new();
 
-        _transitionsConditions.Init(_characterMovementDirection, restartEvent.CheckIfEventHappened);
-        _character.Init(transitionsPresenter, states, _swipeHandler, characterCharacterGravityState);
-        _mainCamera.Init(characterCharacterGravityState, _swipeHandler, _levelBorders, _character);
-        _laserTurrets.ForEach(laserTurret => laserTurret.Init(characterCharacterGravityState));
+        _transitionsConditions.Init(_characterMovementDirection, _character, _borders, restartEvent.CheckIfEventHappened);
+        _character.Init(transitionsPresenter, states, _swipeHandler, characterGravityState);
+        _laserTurrets.ForEach(laserTurret => laserTurret.Init(characterGravityState));
+        _cameraData.Init(_swipeHandler, _borders, characterGravityState, _character);
         _gravityBoxes.ForEach(gravityBox => gravityBox.Init(_swipeHandler));
-        _characterMovementDirection.Init(characterCharacterGravityState);
+        _characterMovementDirection.Init(characterGravityState);
+        _levelStarsMediator.Resolve(characterGravityState);
         _levelResultSave.Init(states.WinState);
-        _levelStarsMediator.Resolve(characterCharacterGravityState);
+        _mainCamera.Init(_cameraData);
 
         SetDependencies(new IUnityCallback[]
         {
             new LevelRestart(restartEvent.Invoke, states.DieState),
             _characterMovementDirection,
-            new UIHandler(states, _ui),
+            new UIHandler(states, _character, _ui),
         });
     }
 }

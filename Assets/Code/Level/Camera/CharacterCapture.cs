@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CharacterCapture : ILateUpdate
+public class CharacterCapture : TogglingComponent
 {
     private readonly CameraClamping _cameraClamping;
     private readonly Rigidbody2D _character;
@@ -14,7 +14,7 @@ public class CharacterCapture : ILateUpdate
         _transform = transform;
     }
 
-    void ILateUpdate.LateUpdate()
+    protected override void OnLateUpdate()
     {
         float captureTime = EvaluateCaptureTimeFunction(_character.velocity.magnitude);
         Vector3 clampedPosition = _cameraClamping.Clamp(_character.transform.position);

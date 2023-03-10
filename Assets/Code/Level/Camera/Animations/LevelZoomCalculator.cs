@@ -41,7 +41,7 @@ public class LevelZoomCalculator
     {
         GravityDirection direction = _gravityState.Data.GravityDirection;
 
-        return direction == GravityDirection.Right || direction == GravityDirection.Left;
+        return direction is GravityDirection.Right or GravityDirection.Left;
     }
 
     private float EvaluateLevelZoom(float levelWidth, float  levelHeight)

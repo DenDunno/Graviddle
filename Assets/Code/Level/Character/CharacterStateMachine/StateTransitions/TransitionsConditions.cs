@@ -4,18 +4,20 @@ using UnityEngine;
 [Serializable]
 public class TransitionsConditions
 {
-    [SerializeField] private Character _character;
-    [SerializeField] private LevelBorders _levelBorders;
     [SerializeField] private RestartButton _restartButton;
     [SerializeField] private CollisionsList _allCollisions;
     [SerializeField] private CollisionsList _characterFeet;
     private CharacterMovementDirection _characterMovementDirection;
     private Func<bool> _restartCondition;
+    private LevelBorders _levelBorders;
+    private Character _character;
 
-    public void Init(CharacterMovementDirection characterMovementDirection, Func<bool> restartCondition)
+    public void Init(CharacterMovementDirection characterMovementDirection, Character character, LevelBorders borders, Func<bool> restartCondition)
     {
         _characterMovementDirection = characterMovementDirection;
-        _restartCondition = restartCondition;   
+        _restartCondition = restartCondition;
+        _levelBorders = borders;
+        _character = character;
     }
     
     public bool CheckDeathByLevelBorders() => _levelBorders.CheckIfPositionNotWithinTheLevel(_character.transform.position);

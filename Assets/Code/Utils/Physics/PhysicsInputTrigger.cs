@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class PhysicsInputTrigger : IUpdate
 {
+    private readonly Collider2D[] _results = new Collider2D[5];
     private readonly Collider2D _targetCollider;
     private readonly Camera _camera;
     private bool _isHolding;
-    
+
     public PhysicsInputTrigger(Collider2D targetCollider)
     {
         _targetCollider = targetCollider;
@@ -27,12 +28,17 @@ public class PhysicsInputTrigger : IUpdate
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-            Collider2D collider2D = Physics2D.OverlapPoint(mousePosition);
             
-            if (collider2D == _targetCollider)
+            int numColliders = Physics2D.OverlapPointNonAlloc(mousePosition, _results);
+            
+            for (int i = 0; i < numColliders; i++)
             {
-                Entered?.Invoke();
-                _isHolding = true;
+                if (_results[i] == _targetCollider)
+                {
+                    Entered?.Invoke();
+                    _isHolding = true;
+                    break;
+                }
             }
         }
     }

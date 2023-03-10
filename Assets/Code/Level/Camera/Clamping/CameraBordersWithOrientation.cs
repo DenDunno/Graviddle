@@ -16,12 +16,12 @@ public class CameraBordersWithOrientation : ISubscriber
     public float Left => _cameraClampingSettings.CameraBorders.Left - _orientationOffset;
     public float Right => _cameraClampingSettings.CameraBorders.Right + _orientationOffset;
 
-    public void Subscribe()
+    void ISubscriber.Subscribe()
     {
         _swipeHandler.GravityChanged += OnGravityChanged;
     }
 
-    public void Unsubscribe()
+    void ISubscriber.Unsubscribe()
     {
         _swipeHandler.GravityChanged -= OnGravityChanged;
     }
