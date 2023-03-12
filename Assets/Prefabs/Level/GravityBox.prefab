@@ -417,11 +417,13 @@ GameObject:
   - component: {fileID: 7312556479469279467}
   - component: {fileID: 7312556479469279460}
   - component: {fileID: 5632743673802957304}
+  - component: {fileID: 8505798692831084864}
   - component: {fileID: 7312556479469279466}
+  - component: {fileID: 7529008939543937159}
   - component: {fileID: 7312556479469279465}
   - component: {fileID: 3668659899138975844}
   - component: {fileID: 3809320966340570501}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: GravityBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,6 +506,102 @@ ConstantForce2D:
   m_Force: {x: 0, y: 0}
   m_RelativeForce: {x: 0, y: 0}
   m_Torque: 0
+--- !u!82 &8505798692831084864
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7312556479469279463}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 29ea225205376dd418931b2000740958, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.8
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &7312556479469279466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,6 +614,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c0a58eb8ce0454c88b40d2714d9734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7529008939543937159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7312556479469279463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 343d80619cc34fd438555a16e2623436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 7312556479469279467}
 --- !u!114 &7312556479469279465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,12 +663,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc8c1f35518f62e4f852b4473bbd10bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gravityDirection: 0
   _constantForce2D: {fileID: 5632743673802957304}
-  _outline: {fileID: 5385497393732423902}
-  _view:
+  _selection:
     _top: {fileID: 6477845327220697028}
     _left: {fileID: 1074074254068399222}
     _right: {fileID: 4396912344874337917}
+    _switchSound: {fileID: 8505798692831084864}
+  _outline: {fileID: 5385497393732423902}
   _arrow: {fileID: 3020810042631388745}
   _collider: {fileID: 7312556479469279460}
   _canvas: {fileID: 6149482843187544880}

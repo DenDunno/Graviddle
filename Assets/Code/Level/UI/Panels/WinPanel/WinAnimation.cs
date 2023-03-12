@@ -11,9 +11,9 @@ public class WinAnimation
     [SerializeField] private Image _levelScore;
     [SerializeField] private Button[] _buttons;
     
-    private const float _animationDuration = 2f;
-    private const float _startWaitTime = 0.5f;
-    private const float _targetFade = 0.6f;
+    private readonly float _animationDuration = 2f;
+    private readonly float _startWaitTime = 2.5f;
+    private readonly float _targetFade = 0.6f;
     private readonly Vector2 _targetPosition = Vector2.zero;
 
     public void Play()

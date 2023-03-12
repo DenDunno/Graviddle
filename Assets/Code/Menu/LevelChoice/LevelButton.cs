@@ -27,5 +27,6 @@ public class LevelButton : MonoBehaviour
     public void UnlockLevel()
     {
         _lockImage.gameObject.SetActive(false);
+        _button.interactable = true;
     }
 }

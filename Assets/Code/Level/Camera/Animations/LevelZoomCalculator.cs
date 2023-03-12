@@ -4,7 +4,7 @@ public class LevelZoomCalculator
 {
     private readonly IGravityState _gravityState;
     private readonly LevelBorders _levelBorders;
-    private readonly float _frameOffset = 2;
+    private readonly float _frameOffset = 1.5f;
     private readonly Camera _mainCamera;
     private bool _isLevelWithFrame;
 

@@ -1,16 +1,16 @@
 ﻿
 public class BoxMediator : ISubscriber
 {
+    private readonly BoxGravityHandler _boxGravityHandler;
     private readonly PhysicsInputTrigger _inputTrigger;
     private readonly SwipeHandler _swipeHandler;
-    private readonly BoxGravity _boxGravity;
     private readonly IToggleable[] _popUps;
 
-    public BoxMediator(PhysicsInputTrigger inputTrigger, SwipeHandler swipeHandler, BoxGravity boxGravity, IToggleable[] popUps)
+    public BoxMediator(PhysicsInputTrigger inputTrigger, SwipeHandler swipeHandler, BoxGravityHandler boxGravityHandler, IToggleable[] popUps)
     {
+        _boxGravityHandler = boxGravityHandler;
         _inputTrigger = inputTrigger;
         _swipeHandler = swipeHandler;
-        _boxGravity = boxGravity;
         _popUps = popUps;
     }
 
@@ -30,14 +30,15 @@ public class BoxMediator : ISubscriber
     {
         _popUps.ForEach(popUp => popUp.Show());
         _swipeHandler.IsActive = false;
-        _boxGravity.IsActive = true;
+        _boxGravityHandler.IsActive = true;
     }
 
     private void OnExit()
     {
+        _boxGravityHandler.TryChangeDirection();
+        
         _popUps.ForEach(popUp => popUp.Hide());
-        _boxGravity.TryChangeDirection();
-        _boxGravity.IsActive = false;
+        _boxGravityHandler.IsActive = false;
         _swipeHandler.IsActive = true;
     }
 }

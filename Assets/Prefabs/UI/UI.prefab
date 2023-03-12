@@ -3873,8 +3873,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 66332928607800894}
-        m_TargetAssemblyTypeName: VictorySceneChoice, Assembly-CSharp
+      - m_Target: {fileID: 812117795907416935}
+        m_TargetAssemblyTypeName: WinPanel, Assembly-CSharp
         m_MethodName: RestartLevel
         m_Mode: 1
         m_Arguments:
@@ -4055,8 +4055,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 66332928607800894}
-        m_TargetAssemblyTypeName: VictorySceneChoice, Assembly-CSharp
+      - m_Target: {fileID: 812117795907416935}
+        m_TargetAssemblyTypeName: WinPanel, Assembly-CSharp
         m_MethodName: LaunchNextLevel
         m_Mode: 1
         m_Arguments:
@@ -4126,7 +4126,6 @@ GameObject:
   - component: {fileID: 6891503042830970290}
   - component: {fileID: 6891503042830970288}
   - component: {fileID: 6067475302508320102}
-  - component: {fileID: 66332928607800894}
   - component: {fileID: 812117795907416935}
   m_Layer: 6
   m_Name: WinPanel
@@ -4194,23 +4193,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &66332928607800894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6891503042830970291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6efdb939355d049b18ecf00de0bb15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transitToLevelReference:
-    m_AssetGUID: afbfc7b0fb1cc1b4886cb4438fbc94b0
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
 --- !u!114 &812117795907416935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4223,6 +4205,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d97696ab1c875554faaae9ec95334d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _transitToLevelReference:
+    m_AssetGUID: afbfc7b0fb1cc1b4886cb4438fbc94b0
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   _winAnimation:
     _image: {fileID: 6067475302508320102}
     _effects:

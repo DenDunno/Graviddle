@@ -3,12 +3,7 @@ using UnityEngine;
 public class TutorialButtons : MonoBehaviour
 {
     [SerializeField] private StoryTelling _storyTelling;
-    [SerializeField] private UI _ui;
-
-    private void Start()
-    {
-        _ui.DisableAll();
-    }
+    [SerializeField] private Canvas _ui;
 
     private void OnEnable()
     {
@@ -20,8 +15,8 @@ public class TutorialButtons : MonoBehaviour
         _storyTelling.StoryEnded -= OnStoryEnded;
     }
 
-    private async void OnStoryEnded()
+    private void OnStoryEnded()
     {
-        await _ui.Show<GameplayPanel>();
+        _ui.gameObject.SetActive(true);
     }
 }

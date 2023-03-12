@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-public class RestartableTransform : MonoBehaviour, IRestart
+public class TransformRestart : MonoBehaviour, IRestart
 {
-    private Vector3 _startPosition;
     private Quaternion _startRotation;
+    private Vector3 _startPosition;
     private Transform _parent;
 
     private void Start()
