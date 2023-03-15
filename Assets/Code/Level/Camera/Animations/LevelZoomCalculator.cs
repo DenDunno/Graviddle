@@ -2,19 +2,23 @@
 
 public class LevelZoomCalculator
 {
-    private readonly IGravityState _gravityState;
+    private GravityDirection _gravityDirection = GravityDirection.Down;
     private readonly LevelBorders _levelBorders;
     private readonly float _frameOffset = 1.5f;
     private readonly Camera _mainCamera;
     private bool _isLevelWithFrame;
 
-    public LevelZoomCalculator(Camera mainCamera, LevelBorders levelBorders, IGravityState gravityState)
-    {
-        _gravityState = gravityState;
+    public LevelZoomCalculator(Camera mainCamera, LevelBorders levelBorders)
+    {        
         _levelBorders = levelBorders;
         _mainCamera = mainCamera;
     }
 
+    public void SetDirection(GravityDirection direction)
+    {
+        _gravityDirection = direction;
+    }
+    
     public float GetLevelZoom()
     {
         (float levelWidth, float levelHeight) = GetLevelWidthAndHeight();
@@ -39,9 +43,7 @@ public class LevelZoomCalculator
 
     private bool IsVerticalZoom()
     {
-        GravityDirection direction = _gravityState.Data.GravityDirection;
-
-        return direction is GravityDirection.Right or GravityDirection.Left;
+        return _gravityDirection is GravityDirection.Right or GravityDirection.Left;
     }
 
     private float EvaluateLevelZoom(float levelWidth, float  levelHeight)

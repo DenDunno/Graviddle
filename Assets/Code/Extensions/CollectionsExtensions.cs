@@ -17,6 +17,13 @@ public static class CollectionsExtensions
         return !collection.Any();
     }
 
+    public static T GetRandomElement<T>(this IList<T> collection)
+    {
+        int index = UnityEngine.Random.Range(0, collection.Count);
+        
+        return collection[index];
+    }
+
     public static void SubscribeForEach(this IEnumerable<ISubscriber> subscribers)
     {
         subscribers.ForEach(subscriber => subscriber.Subscribe());

@@ -10,9 +10,9 @@ public class TransitionsConditions
     private CharacterMovementDirection _characterMovementDirection;
     private Func<bool> _restartCondition;
     private LevelBorders _levelBorders;
-    private Character _character;
+    private Transform _character;
 
-    public void Init(CharacterMovementDirection characterMovementDirection, Character character, LevelBorders borders, Func<bool> restartCondition)
+    public void Init(CharacterMovementDirection characterMovementDirection, Transform character, LevelBorders borders, Func<bool> restartCondition)
     {
         _characterMovementDirection = characterMovementDirection;
         _restartCondition = restartCondition;
@@ -20,7 +20,7 @@ public class TransitionsConditions
         _character = character;
     }
     
-    public bool CheckDeathByLevelBorders() => _levelBorders.CheckIfPositionNotWithinTheLevel(_character.transform.position);
+    public bool CheckDeathByLevelBorders() => _levelBorders.CheckIfPositionNotWithinTheLevel(_character.position);
 
     public bool CheckDeathFromObstacle() => _allCollisions.CheckCollision<Obstacle>();
 

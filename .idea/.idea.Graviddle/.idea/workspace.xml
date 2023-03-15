@@ -2,62 +2,87 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="236f7ca0-e3d5-42cf-8bd1-4f65d9112fc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/TwistingAnimation.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/TwistingAnimation/TwistingAnimation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/TwistingAnimation/TwistingAnimationData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/TwistingAnimation/TwistingAnimationData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/TwistingAnimation/TwistingAnimationHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Physics/PhysicsRestart.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravityHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravityHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterAudio.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterAudio/CharacterFootstepsSound.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterAudio/CharacterFootstepsSound.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/PlayerInput.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/PlayerInput.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Utils/AnimationEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Utils/AnimationEvent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Utils/TransformCopy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Utils/TransformCopy.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graviddle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Configs/AddressableAssetsData/AssetGroups/Default Local Group.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Configs/AddressableAssetsData/AssetGroups/Default Local Group.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Fonts/Dimbo Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Fonts/Dimbo Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Animations/Character/Run.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Animations/Character/Run.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Configs/AddressableAssetsData/Android/addressables_content_state.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Configs/AddressableAssetsData/Android/addressables_content_state.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Configs/URP/UniversalRenderPipelineAsset_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Configs/URP/UniversalRenderPipelineAsset_Renderer.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/GravityBox.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/GravityBox.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/LaserBeam.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Materials/LaserBeam.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/Level Choice/LevelStarShiny.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Materials/Level Choice/LevelStarShiny.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/Level Choice/MPMaterialLocked.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/Level Choice/MPMaterialLocked.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/Level Choice/MPMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Materials/Level Choice/MPMaterial.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/Level Choice/Outline.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Materials/Level Choice/Outline.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/LevelStarTrail.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Materials/LevelStarTrail.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Shaders/LaserShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Shaders/LaserShader.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/EntryPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Extensions/CollectionsExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Extensions/CollectionsExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Camera/Animations/CameraAnimationHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Camera/Animations/CameraAnimationHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Camera/Animations/LevelZoomCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Camera/Animations/LevelZoomCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Camera/CameraRotation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Camera/CameraRotation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Camera/Clamping/CameraClamping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Camera/Clamping/CameraClamping.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Camera/Clamping/Data/LevelBorders.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Camera/Clamping/Data/LevelBorders.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Character.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/CharacterShaderID.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/CharacterShaderID.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/TwistingAnimation/TwistingAnimation.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/TwistingAnimation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/TwistingAnimation.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/TwistingAnimation/TwistingAnimationHandler.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/Physics/CharacterPhysicsRestart.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/Physics/CharacterPhysicsRestart.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Physics/PhysicsRestart.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/SquashStretchAnimation.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/SquashStretchAnimation.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/SquashStretchAnimation/Squash.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/SquashStretchAnimation/Squash.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/SquashStretchAnimation/Squash.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/SquashStretchAnimation/Squash.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/SquashStretchAnimation/SquashStretchAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/SquashStretchAnimation/SquashStretchAnimation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/SquashStretchAnimation/SquashStretchAnimation.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/SquashStretchAnimation/SquashStretchAnimation.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/SquashStretchAnimation/Stretch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/SquashStretchAnimation/Stretch.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/SquashStretchAnimation/Stretch.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/SquashStretchAnimation/Stretch.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/Gravity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Gravitation/Gravity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravity.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravity.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravityState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravityState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravityState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravityState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravityView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravitySelection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravityView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxGravitySelection.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxMediator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/BoxMediator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/GravityBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/GravityBox/GravityBox.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Restart/RestartableTransform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Restart/TransformRestart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Restart/RestartableTransform.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Restart/TransformRestart.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Tutorial/TutorialButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Tutorial/TutorialButtons.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/Panels/WinPanel/WinAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/Panels/WinPanel/WinAnimation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/Panels/WinPanel/WinPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/Panels/WinPanel/WinPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Menu/LevelChoice/LevelButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Menu/LevelChoice/LevelButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/SceneTransitions/VictorySceneChoice.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/SceneTransitions/VictorySceneChoice.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterFallingEventsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterFallingEventsHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterGravity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterGravity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterMovement/CharacterMovementDirection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterMovement/CharacterMovementDirection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterMovement/CharacterSpriteFlipping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterMovement/CharacterSpriteFlipping.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterStateMachine/CharacterState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterStateMachine/CharacterState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterStateMachine/CharacterStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterStateMachine/CharacterStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterStateMachine/StateTransitions/TransitionsConditions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterStateMachine/StateTransitions/TransitionsConditions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterStateMachine/States/DieState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterStateMachine/States/DieState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterStateMachine/States/FallState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterStateMachine/States/FallState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterStateMachine/States/RunState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterStateMachine/States/RunState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterStateMachine/States/WinState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/CharacterStateMachine/States/WinState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/SquashStretchAnimation/SquashStretchAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Effects/SquashStretchAnimation/SquashStretchAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Character/Physics/CharacterRotationImpulse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Character/Physics/CharacterRotationImpulse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/LevelStar/LevelStar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/LevelStar/LevelStar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/LevelStar/LevelStarPickup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/LevelStar/LevelStarPickup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Obstacles/Laser/LaserSetup/LaserRaycast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Obstacles/Laser/LaserSetup/LaserRaycast.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/Portals/FinishPortal/CharacterToPortalPulling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/Portals/FinishPortal/CharacterToPortalPulling.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/Panels/GameplayPanel/IconAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/Panels/GameplayPanel/IconAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/Panels/WinPanel/Reward.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/Panels/WinPanel/Reward.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/Panels/WinPanel/WinEffects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/Panels/WinPanel/WinEffects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Level/UI/UI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Level/UI/UI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Menu/LevelChoice/LevelButtonsUnlocker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Menu/LevelChoice/LevelButtonsUnlocker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/SaveSystm/LevelResultSave.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/SaveSystm/LevelResultSave.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Utils/EditorUtils.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Utils/EditorUtils/EditorUtils.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Utils/EditorUtils/EditorUtils.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Utils/EditorUtils/FPSCounter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Utils/EditorUtils/FPSCounter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level/Character.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level/GravityBox.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level/GravityBox.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level/Main Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level/Main Camera.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/LevelButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/LevelButton.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level/Walls.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level/Walls.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/LaserWithEvent.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Obstacles/LaserWithEvent.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Menu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Menu.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/UI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Gravity box.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Gravity box.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial buttons.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial buttons.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIBlocker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Menu/UIBlocker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIBlocker.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Menu/UIBlocker.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Gravity box.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Gravity box.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial buttons.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial buttons.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial icons.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial icons.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial swipe.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial swipe.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
@@ -93,18 +118,23 @@
     <setting file="file://$PROJECT_DIR$/Assets/Code/Utils/Physics/PhysicsInputTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Utils/ScalePopup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/com.unity.uiextensions/Runtime/Scripts/Effects/UIParticleSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.coffee.ui-effect@b43e40508b/Samples~/Demo/UIEffect_Demo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.coffee.ui-effect@b43e40508b/Scripts/Common/EffectPlayer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.coffee.ui-effect@b43e40508b/Scripts/UIDissolve.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.coffee.ui-effect@b43e40508b/Scripts/UIShadow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@50a67d8f41/Runtime/EnumerableAsyncExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@50a67d8f41/Runtime/External/DOTween/DOTweenAsyncExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@50a67d8f41/Runtime/External/DOTween/UniTask.DOTween.asmdef" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@50a67d8f41/Runtime/Internal/ArrayPoolUtil.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@12.1.8/Editor/Camera/UniversalRenderPipelineSerializedCamera.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@12.1.8/Runtime/UniversalAdditionalCameraData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@50a67d8f41/Runtime/_InternalVisibleTo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.31/UnityEditor.TestRunner/Api/RunState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_Dropdown.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/InputModuleTests/PointerExitCallbackCheck.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/31/f449129f/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/57/36c84f50/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/8a/b3330996/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/a4/4b3871f4/SerializeField.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/7e/ec4312ad/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/be89b0030d794d8697e5c049fc1090e21f800/0a/dfb49c5c/Physics2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/be89b0030d794d8697e5c049fc1090e21f800/55/feebfb99/CircleCollider2D.cs" root0="SKIP_HIGHLIGHTING" />
@@ -242,6 +272,8 @@
       <workItem from="1678372937915" duration="33072000" />
       <workItem from="1678533277890" duration="2768000" />
       <workItem from="1678618604769" duration="11568000" />
+      <workItem from="1678635776943" duration="23660000" />
+      <workItem from="1678814557617" duration="3962000" />
     </task>
     <servers />
   </component>

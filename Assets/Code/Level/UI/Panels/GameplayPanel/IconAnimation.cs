@@ -5,9 +5,9 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(RectTransform))]
 public class IconAnimation : MonoBehaviour, IPointerClickHandler
 {
-    private const float _duration = 0.13f;
-    private const float _coolDown = 1.2f;
-    private const int _rotations = 2;
+    private readonly float _duration = 0.13f;
+    private readonly float _coolDown = 1.2f;
+    private readonly int _rotations = 2;
     private readonly Vector3 _rotationVector = new(0, 0, -25);
     private Sequence _sequence;
 
@@ -38,5 +38,10 @@ public class IconAnimation : MonoBehaviour, IPointerClickHandler
     {
         _sequence.Kill();
         transform.rotation = Quaternion.identity;
+    }
+
+    private void OnDestroy()
+    {
+        _sequence.Kill();
     }
 }

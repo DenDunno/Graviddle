@@ -10,12 +10,11 @@ public class WinEffects
     [SerializeField] private ParticleSystem _sunEffect;
     [SerializeField] private ParticleSystem _confetti;
     [SerializeField] private Reward _reward;
-    private float _starsCoolDown;
-
+    private float _starsCoolDown = 0.5f;
+    
     public void Init()
     {
-        const float coolDown = 0.5f;
-        _starsCoolDown = _starsParticles.First().main.duration + coolDown;
+        _starsCoolDown += _starsParticles.First().main.duration;
     }
     
     public async UniTask ActivateEffects()

@@ -3,25 +3,26 @@ using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelResultSave : MonoBehaviour
+public class LevelResultSave : ISubscriber
 {
-    [SerializeField] private Reward _reward;
-    private const string _saves = "Saves";
-    private WinState _characterWinState;
+    private readonly Reward _reward;
+    private readonly WinState _winState;
+    private readonly string _saves = "Saves";
 
-    public void Init(WinState winState)
+    public LevelResultSave(Reward reward, WinState winState)
     {
-        _characterWinState = winState;
+        _reward = reward;
+        _winState = winState;
     }
 
-    public void OnEnable()
+    void ISubscriber.Subscribe()
     {
-        _characterWinState.Entered += SaveLevelResult;
+        _winState.Entered += SaveLevelResult;
     }
 
-    public void OnDisable()
+    void ISubscriber.Unsubscribe()
     {
-        _characterWinState.Entered -= SaveLevelResult;
+        _winState.Entered -= SaveLevelResult;
     }
 
     private void SaveLevelResult()

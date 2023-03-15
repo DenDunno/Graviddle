@@ -32,10 +32,10 @@ public class UI : MonoBehaviour
         {
             await _current.Hide();
         }
+
+        _current = panel;
         
         await panel.Show();
-        
-        _current = panel;
     }
     
     public void DisableAll()

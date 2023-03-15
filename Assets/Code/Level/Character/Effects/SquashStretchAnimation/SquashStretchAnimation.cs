@@ -14,7 +14,7 @@ public class SquashStretchAnimation : CharacterFallingEventsHandler, IFixedUpdat
         _squash = new Squash(sprite.transform);
         _stretch = new Stretch(sprite.transform);
     }
-    
+
     void IFixedUpdate.FixedUpdate()
     {
         if (IsFalling)

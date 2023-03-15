@@ -5,6 +5,7 @@ public class CharacterRotationImpulse : ISubscriber
     private readonly Rigidbody2D _rigidbody;
     private readonly SwipeHandler _swipeHandler;
     private const int _straightAngle = 180;
+    private readonly float _strength = 2;
     private int _currentZRotation;
 
     public CharacterRotationImpulse(Rigidbody2D rigidbody2D, SwipeHandler swipeHandler)
@@ -29,7 +30,7 @@ public class CharacterRotationImpulse : ISubscriber
 
         if (IsRightAngleRotation(newZRotation))
         {
-            _rigidbody.AddForce(_rigidbody.transform.up, ForceMode2D.Impulse);
+            _rigidbody.AddForce(_rigidbody.transform.up * _strength, ForceMode2D.Impulse);
         }
 
         _currentZRotation = newZRotation;

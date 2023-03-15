@@ -8,6 +8,9 @@ public class CharacterSpriteFlipping
 
     public void FlipCharacter(MovementState movementState)
     {
-        _spriteRenderer.flipX = (movementState == MovementState.Left);
+        if (movementState != MovementState.Stop)
+        {
+            _spriteRenderer.flipX = movementState == MovementState.Left;
+        }
     }
 }

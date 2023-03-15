@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-public class LevelBorders : MonoBehaviour
+[Serializable]
+public class LevelBorders 
 {
     [SerializeField] private Wall _left;
     [SerializeField] private Wall _right;

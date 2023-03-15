@@ -9,22 +9,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/Menu.unity
     guid: a488e42a5678dda4592bfd70170edb9c
   - enabled: 1
-    path: "Assets/Scenes/Menu/Level\u0421hoice.unity"
-    guid: 2c12ce0a024f6b94e9c2613288813f0b
-  - enabled: 1
-    path: Assets/Scenes/Menu/Settings.unity
-    guid: dfdf9db19a4a9df47b1a5f4516b04e44
-  - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial buttons.unity
+    path: Assets/Scenes/Tutorial/1.unity
     guid: 62fcc9943cebfdf4a8f32618f09f58cd
   - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial swipe.unity
+    path: Assets/Scenes/Tutorial/2.unity
     guid: ed9044903848f6d4892126ec81247be0
   - enabled: 1
-    path: Assets/Scenes/Tutorial/Gravity box.unity
+    path: Assets/Scenes/Tutorial/4.unity
     guid: c5998e17a954f5546af00d7e61fd7a57
   - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial icons.unity
+    path: Assets/Scenes/Tutorial/3.unity
     guid: ea727f8a92b4d654081e4123fac9cd10
   - enabled: 1
     path: Assets/Scenes/Levels/1.unity

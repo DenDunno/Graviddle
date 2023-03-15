@@ -4,7 +4,7 @@ using UnityEngine;
 public class Reward : MonoBehaviour, IRestart
 {
     private IReadOnlyCollection<LevelStar> _levelStars;
-    private const int _maxStars = 3;
+    private readonly int _maxStars = 3;
 
     public int CollectedStars { get; private set; }
     public bool IsMaxStars => CollectedStars == _maxStars;

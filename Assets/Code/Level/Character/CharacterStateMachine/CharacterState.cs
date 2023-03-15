@@ -13,15 +13,24 @@ public abstract class CharacterState
     }
 
     public event Action Entered;
+    public event Action Exited;
 
     public void Enter()
     {
         Entered?.Invoke();
         _animator.Play(_animationName);
 
-        OnEnterState();
+        OnEnter();
     }
 
+    public void Exit()
+    {
+        Exited?.Invoke();
+        OnExit();
+    }
+
+    public virtual void FixedUpdate() { }
     public virtual void Update() { }
-    protected virtual void OnEnterState() { }
+    protected virtual void OnEnter() { }
+    protected virtual void OnExit() { }
 }

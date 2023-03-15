@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class CameraAnimationHandler : ISubscriber, IDisposable
 {
+    private readonly LevelZoomCalculator _zoomCalculator;
     private readonly CameraAnimation _animation;
     private readonly SwipeHandler _swipeHandler;
     private readonly CharacterCapture _capture;
@@ -13,8 +14,8 @@ public class CameraAnimationHandler : ISubscriber, IDisposable
     public CameraAnimationHandler(CameraData data, Camera camera, CharacterCapture capture)
     {
         CameraMovingToCentreAnimation movingToCentreAnimation = new(data.Borders, camera);
-        LevelZoomCalculator zoomCalculator = new(camera, data.Borders, data.CharacterGravityState);
-        CameraZoomAnimation zoomAnimation = new(camera, zoomCalculator);
+        _zoomCalculator = new LevelZoomCalculator(camera, data.Borders);
+        CameraZoomAnimation zoomAnimation = new(camera, _zoomCalculator);
         
         _animation = new CameraAnimation(movingToCentreAnimation, zoomAnimation);
         _zoomOutButton = data.ZoomOutButton;
@@ -53,6 +54,7 @@ public class CameraAnimationHandler : ISubscriber, IDisposable
     {
         if (_capture.IsActive == false)
         {
+            _zoomCalculator.SetDirection(direction);
             ZoomOut();
         }
     }

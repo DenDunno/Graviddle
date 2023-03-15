@@ -5,8 +5,8 @@ using UnityEngine;
 public class LevelButtonsUnlocker : MonoBehaviour
 {
     private LevelButton[] _allButtons;
-    private const string _saves = "Saves";
-    private const int _menuScenesCount = 3;
+    private readonly string _saves = "Saves";
+    private readonly int _menuScenesCount = 1;
 
     private void Start()
     {

@@ -10,12 +10,12 @@ public class CharacterGravity : ISubscriber
         _gravity = gravity;
     }
 
-    public void Subscribe()
+    void ISubscriber.Subscribe()
     {
         _swipeHandler.GravityChanged += OnGravityChanged;
     }
 
-    public void Unsubscribe()
+    void ISubscriber.Unsubscribe()
     {
         _swipeHandler.GravityChanged -= OnGravityChanged;
     }

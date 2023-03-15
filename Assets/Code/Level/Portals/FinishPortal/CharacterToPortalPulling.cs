@@ -17,12 +17,12 @@ public class CharacterToPortalPulling : ISubscriber
         _gravityRotation = gravityRotation;
     }
 
-    public void Subscribe()
+    void ISubscriber.Subscribe()
     {
         _winState.Entered += PullToPortal;
     }
 
-    public void Unsubscribe()
+    void ISubscriber.Unsubscribe()
     {
         _winState.Entered -= PullToPortal;
     }

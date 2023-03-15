@@ -14,13 +14,13 @@ public abstract class CharacterFallingEventsHandler : IRestart, ISubscriber
 
     void ISubscriber.Subscribe()
     {
-        _fallState.CharacterFalling += OnCharacterFalling;
+        _fallState.Entered += OnCharacterFalling;
         _fallToIdleTransition.TransitionHappened += OnCharacterFell;
     }
 
     void ISubscriber.Unsubscribe()
     {
-        _fallState.CharacterFalling -= OnCharacterFalling;
+        _fallState.Entered -= OnCharacterFalling;
         _fallToIdleTransition.TransitionHappened -= OnCharacterFell;
     }
 

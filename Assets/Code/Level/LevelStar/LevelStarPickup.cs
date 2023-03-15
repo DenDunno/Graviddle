@@ -6,13 +6,13 @@ public class LevelStarPickup : ISubscriber, IRestart
     private readonly PhysicsEventBroadcaster _physicsEvent;
     private readonly StarPickupFeedback _feedback;
     private readonly Action _onStarCollected;
-    private readonly Transform _transform;
+    private readonly Transform _starTransform;
 
-    public LevelStarPickup(PhysicsEventBroadcaster physicsEvent, StarPickupFeedback feedback, Transform transform, Action onStarCollected)
+    public LevelStarPickup(PhysicsEventBroadcaster physicsEvent, StarPickupFeedback feedback, Transform starTransform, Action onStarCollected)
     {
         _onStarCollected = onStarCollected;
         _physicsEvent = physicsEvent;
-        _transform = transform;
+        _starTransform = starTransform;
         _feedback = feedback;
     }
 
@@ -28,15 +28,15 @@ public class LevelStarPickup : ISubscriber, IRestart
 
     private void OnCharacterEntered(Character character)
     {
-        _transform.gameObject.SetActive(false);
+        _starTransform.gameObject.SetActive(false);
             
-        _feedback.Play(_transform.position);
+        _feedback.Play(_starTransform.position);
             
         _onStarCollected?.Invoke();
     }
 
     void IRestart.Restart()
     {
-        _transform.gameObject.SetActive(true);
+        _starTransform.gameObject.SetActive(true);
     }
 }

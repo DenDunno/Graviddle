@@ -4,7 +4,7 @@ using UnityEngine;
 [Serializable]
 public class CharacterMovementDirection : IUpdate
 {
-    [SerializeField] private InputButton[] _inputButtons;
+    [SerializeField] private PlayerInput _input;
     [SerializeField] private CharacterSpriteFlipping _characterSpriteFlipping;
     private IGravityState _gravityState;
 
@@ -17,20 +17,7 @@ public class CharacterMovementDirection : IUpdate
     
     void IUpdate.Update()
     {
-        MovementState state = MovementState.Stop;
-        
-        TryRun(0, ref state, MovementState.Left);
-        TryRun(1, ref state, MovementState.Right);
-        
-        Direction = _gravityState.Data.Rotation * (Vector2.right * (int) state);
-    }
-
-    private void TryRun(int buttonIndex, ref MovementState state, MovementState targetState)
-    {
-        if (_inputButtons[buttonIndex].IsTouching)
-        {
-            state = targetState;
-            _characterSpriteFlipping.FlipCharacter(state);
-        }
+        Direction = _gravityState.Data.Rotation * _input.Input;
+        _characterSpriteFlipping.FlipCharacter(_input.State);
     }
 }

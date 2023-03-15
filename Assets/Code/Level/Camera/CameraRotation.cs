@@ -10,7 +10,7 @@ public class CameraRotation : ILateUpdate
     {
         _character = character;
         _transform = transform;
-    }
+    }   
 
     void ILateUpdate.LateUpdate()
     {

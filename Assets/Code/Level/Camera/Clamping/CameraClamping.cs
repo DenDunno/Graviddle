@@ -3,7 +3,7 @@
 public class CameraClamping 
 {
     private readonly CameraBordersWithOrientation _borders;
-    private const float _cameraZPosition = -10;
+    private readonly float _cameraZPosition = -10;
 
     public CameraClamping(CameraBordersWithOrientation borders)
     {
